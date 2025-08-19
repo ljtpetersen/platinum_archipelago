@@ -1,0 +1,444 @@
+
+from dataclasses import dataclass, field
+from collections.abc import Callable, Mapping, MutableMapping, Set, Sequence
+from typing import Any
+import tomllib
+from data_gen_rules import Rule, parse_rule
+import re
+
+def default_accessible_encounters() -> Sequence[str]:
+    return ["land", "surf", "old_rod", "good_rod", "super_rod"]
+
+def get_toml(name: str) -> Mapping[str, Any]:
+    with open(f"data_gen/{name}.toml", "rb") as f:
+        return tomllib.load(f)
+
+def convert_frozenset(seq: Sequence[str]) -> str:
+    return f"frozenset({{{", ".join(map(lambda s : f"\"{s}\"", seq))}}})"
+
+@dataclass(frozen=True)
+class Region:
+    exits: Sequence[str]
+    header: str
+    locs: Sequence[str] = field(default_factory=list)
+    events: Sequence[str] = field(default_factory=list)
+    accessible_encounters: Sequence[str] = field(default_factory=default_accessible_encounters)
+
+    def encounter_connection(self, type: str) -> str:
+        return f"{self.header} -> {self.header}_{type}"
+
+    def __str__(self) -> str:
+        ret = f"RegionData(header=\"{self.header}\""
+        centre = ", ".join([f"{name}={convert_frozenset(val)}"
+            for name, val in map(lambda name : (name, getattr(self, name)),
+                                  ["exits", "locs", "events", "accessible_encounters"])
+            if val])
+        if centre:
+            centre = ", " + centre
+        return ret + centre + ")"
+
+
+@dataclass(frozen=True)
+class Encounters:
+    land: Sequence[str] = field(default_factory=list)
+    surf: Sequence[str] = field(default_factory=list)
+    old_rod: Sequence[str] = field(default_factory=list)
+    good_rod: Sequence[str] = field(default_factory=list)
+    super_rod: Sequence[str] = field(default_factory=list)
+
+    def __str__(self) -> str:
+        centre = ", ".join([f"{type}={convert_frozenset(encs)}"
+            for type, encs in map(lambda type : (type, getattr(self, type)),
+                                  ["land", "surf", "old_rod", "good_rod", "super_rod"])
+            if encs])
+
+        return f"EncounterData({centre})"
+
+@dataclass(frozen=True)
+class Check:
+    id: int
+    value: int | None = None
+    op: str = "eq"
+    invert: bool = False
+
+    def __str__(self) -> str:
+        if self.value is None:
+            ret = f"FlagCheck(id=0x{self.id:X}"
+            if self.invert:
+                ret += ", invert=True"
+            ret += ")"
+            return ret
+        else:
+            ret = f"VarCheck(id=0x{self.id:X}, value=0x{self.value:X}"
+            if self.op != "eq":
+                ret += f", op=operator.{self.op}"
+            ret += ")"
+            return ret
+
+@dataclass(frozen=True)
+class Location:
+    original_item: str
+    type: str
+    table: str
+    label: str
+    id: int
+    check: int | Check
+
+    def __str__(self) -> str:
+        ret = f"LocationData(label=\"{self.label}\", "
+        ret += f"table=LocationTable.{self.table.upper()}, "
+        ret += f"id=0x{self.id:X}, "
+        ret += f"original_item=\"{self.original_item}\", "
+        ret += f"type=\"self.type\", "
+        check = self.check
+        if isinstance(check, int):
+            check = Check(check)
+        ret += f"check={check})"
+        return ret
+
+@dataclass(frozen=True)
+class Item:
+    label: str
+    id: int
+    clas: str
+    group: str
+    classification: str = "filler"
+    count: int | None = None
+
+    def __str__(self) -> str:
+        ret = f"ItemData(label=\"{self.label}\", "
+        ret += f"id=0x{self.id:X}, "
+        ret += f"clas=ItemClass.{self.clas.upper()}"
+        if self.count and self.count != 1:
+            ret += f", count={self.count}"
+        if self.classification != "filler":
+            ret += f", classification=ItemClassification.{self.classification}"
+        ret += ")"
+        return ret
+
+@dataclass(frozen=True)
+class RomInterface:
+    loc_table: Mapping[str, int]
+    item_clas: Mapping[str, int]
+    hm: Mapping[str, str]
+    hm_badge: Mapping[str, str]
+
+@dataclass(frozen=True)
+class PreEvolution:
+    species: str
+    item: str | None = None
+
+    def to_string(self, item_name_map: Callable[[str], str]) -> str:
+        ret = f"PreEvolution(species=\"{self.species}\""
+        if self.item:
+            ret += f", item={item_name_map(self.item)}"
+        ret += ")"
+        return ret
+
+@dataclass(frozen=True)
+class Species:
+    hms: Sequence[str]
+    pre_evolution: str | PreEvolution | None = None
+
+    def to_string(self, item_name_map: Callable[[str], str]) -> str:
+        ret = f"SpeciesData(hms="
+        if self.hms:
+            ret += f"{{{", ".join(map(lambda s : f"Hm.{s.upper()}", self.hms))}}}"
+        else:
+            ret += "set()"
+        
+        if self.pre_evolution:
+            pre_ev = self.pre_evolution
+            if isinstance(pre_ev, str):
+                pre_ev = PreEvolution(pre_ev)
+            ret += f", pre_evolution={pre_ev.to_string(item_name_map)}"
+        ret += ")"
+
+        return ret
+
+@dataclass(frozen=True)
+class Rules:
+    exits: Mapping[str, Mapping[str, Rule]] = field(default_factory=dict)
+    encounters: Mapping[str, Mapping[str, Rule]] = field(default_factory=dict)
+    locs: Mapping[str, Rule] = field(default_factory=dict)
+    loc_types: Mapping[str, Rule] = field(default_factory=dict)
+    enc_types: Mapping[str, Rule] = field(default_factory=dict)
+
+class ParserState:
+    regions: Mapping[str, Region]
+    encounters: Mapping[str, Encounters]
+    locations: Mapping[str, Location]
+    species: Mapping[str, Species]
+    items: Mapping[str, Item]
+    rom_interface: RomInterface
+    rules: Rules
+
+    def __getattr__(self, name: str) -> Any:
+        getattr(self, "parse_" + name)()
+        return getattr(self, name)
+
+    def parse_regions(self):
+        self.regions = {k:Region(**v) for k, v in get_toml("regions").items()}
+
+    def parse_encounters(self):
+        self.encounters = {k:Encounters(**v) for k, v in get_toml("encounters").items()}
+
+    def parse_items(self):
+        self.items = {k:Item(**v) for k, v in get_toml("items").items()}
+
+    def parse_locations(self):
+        def convert_inner_check(val: MutableMapping[str, Any]) -> Mapping[str, Any]:
+            check = val["check"]
+            if not isinstance(check, int):
+                val["check"] = Check(**check)
+            return val
+        self.locations = {k:Location(**convert_inner_check(v)) for k, v in get_toml("locations").items()}
+
+    def parse_rom_interface(self):
+        self.rom_interface = RomInterface(**get_toml("rom_interface"))
+
+    def parse_species(self):
+        def convert_inner_pre_evolution(val: MutableMapping[str, Any]) -> Mapping[str, Any]:
+            if "pre_evolution" in val:
+                pre_evol = val["pre_evolution"]
+                if not isinstance(pre_evol, str):
+                    val["pre_evolution"] = PreEvolution(**pre_evol)
+            return val
+        self.species = {k:Species(**convert_inner_pre_evolution(v)) for k, v in get_toml("species").items()}
+
+    def parse_rules(self):
+        def convert_rules(val):
+            if isinstance(val, str):
+                return parse_rule(val)
+            else:
+                for k in val:
+                    val[k] = convert_rules(val[k])
+                return val
+        self.rules = Rules(**convert_rules(get_toml("rules"))) # type: ignore
+
+    def validate(self):
+        encounter_types = {"land", "surf", "old_rod", "good_rod", "super_rod"}
+        events = set()
+        for region in self.regions.values():
+            cur = set()
+            for loc in region.locs:
+                assert loc in self.locations, f"{loc} is a location"
+                assert loc not in cur, f"{loc} is repeated"
+                cur.add(loc)
+            cur = set()
+            for enc in region.accessible_encounters:
+                assert enc in encounter_types, f"{enc} is an encounter type"
+                assert enc not in cur, f"{enc} is repeated"
+                cur.add(enc)
+            cur = set()
+            for exit in region.exits:
+                assert exit in self.regions, f"{exit} is a region"
+                assert exit not in cur, f"{exit} is repeated"
+                cur.add(exit)
+            for event in region.events:
+                assert event not in events, f"{event} is a unique event"
+                events.add(event)
+        for encounter in self.encounters.values():
+            for type in encounter_types:
+                for spec in getattr(encounter, type):
+                    assert spec in self.species, f"{spec} is a species"
+        location_labels = set()
+        for loc in self.locations.values():
+            assert loc.original_item in self.items, f"{loc.original_item} is an item"
+            assert loc.table in self.rom_interface.loc_table, f"{loc.table} is a location table"
+            assert loc.label not in location_labels, f"{loc.label} is a unique location label"
+            location_labels.add(loc.label)
+            assert loc.id >= 0, f"location id must be positive ({loc.label})"
+            if isinstance(loc.check, Check):
+                assert loc.check.op in ["eq", "ne", "lt", "le", "gt", "ge"]
+        item_labels = set()
+        item_classifications = {"filler", "progression", "useful"}
+        for item in self.items.values():
+            assert item.label not in item_labels, f"{item.label} is a unique item label"
+            item_labels.add(item.label)
+            assert item.clas in self.rom_interface.item_clas, f"{item.clas} is an item class"
+            assert item.classification in item_classifications, f"{item.classification} is an item classification"
+            if item.count is not None:
+                assert item.clas == "bagitem", f"item {item.label} with count is not bag item"
+        for spec in self.species.values():
+            prev_hms = set()
+            for hm in spec.hms:
+                assert hm in self.rom_interface.hm, f"{hm} is a field move"
+                assert hm not in prev_hms, f"repeated hm {hm}"
+                prev_hms.add(hm)
+            if spec.pre_evolution is not None:
+                if isinstance(spec.pre_evolution, PreEvolution):
+                    assert spec.pre_evolution.species in self.species, f"{spec.pre_evolution.species} is a species"
+                    if spec.pre_evolution.item is not None:
+                        assert spec.pre_evolution.item in self.items, f"{spec.pre_evolution.item} is an item"
+                else:
+                    assert spec.pre_evolution in self.species, f"{spec.pre_evolution} is a species"
+        for src, exits in self.rules.exits.items():
+            assert src in self.regions, f"{src} is a region"
+            for dest in exits:
+                assert dest in self.regions, f"{dest} is a region"
+        for region, rules in self.rules.encounters.items():
+            assert region in self.regions, f"{region} is a region"
+            for type in rules:
+                assert type in encounter_types, f"{type} is an encounter type"
+        for loc in self.rules.locs:
+            assert loc in self.locations, f"{loc} is a location"
+
+    def generate_items(self) -> Mapping[str, Sequence[str]]:
+        ret = {}
+
+        ret["ITEM_CLASSES"] = [f"{k.upper()} = 0x{v:X}\n" for k, v in self.rom_interface.item_clas.items()]
+        ret["ITEMS"] = [f"\"{k}\": {v},\n" for k, v in self.items.items()]
+
+        return ret
+
+    def get_rule_items(self) -> Set[str]:
+        ret = set()
+        for exit_rules in self.rules.exits.values():
+            for rule in exit_rules.values():
+                rule.add_dependent_items(ret)
+        for enc_rules in self.rules.encounters.values():
+            for rule in enc_rules.values():
+                rule.add_dependent_items(ret)
+        for rule in self.rules.locs.values():
+            rule.add_dependent_items(ret)
+        for rule in self.rules.loc_types.values():
+            rule.add_dependent_items(ret)
+        ret &= self.items.keys()
+        ret |= set(self.rom_interface.hm.values())
+        ret |= set(self.rom_interface.hm_badge.values())
+        return ret
+
+    def generate_locations(self) -> Mapping[str, Sequence[str]]:
+        ret = {}
+        
+        ret["LOCATION_TABLES"] = [f"{k.upper()} = 0x{v:X}\n"
+            for k, v in self.rom_interface.loc_table.items()]
+        ret["LOCATIONS"] = [f"\"{k}\": {v},\n" for k, v in self.locations.items()]
+        rule_items = self.get_rule_items()
+        print(rule_items)
+        ret["REQUIRED_LOCATIONS"] = [f"\"{k}\",\n"
+                                     for k, v in self.locations.items()
+                                     if v.original_item in rule_items]
+
+        return ret
+
+    def get_item_set(self) -> Set[str]:
+        return self.items.keys() | {event for region in self.regions.values() for event in region.events}
+
+    def item_name_map(self, name: str) -> str:
+        if name in self.items:
+            return f"\"{self.items[name].label}\""
+        else:
+            return f"\"{name}\""
+
+    def create_loc_rule(self, type_rule: Rule, loc: str) -> Rule:
+        if loc in self.rules.locs:
+            return Rule({self.rules.locs[loc], type_rule})
+        else:
+            return type_rule
+
+    def create_enc_rule(self, enc_type: str, region: str) -> Rule:
+        if region in self.rules.encounters and enc_type in self.rules.encounters[region]:
+            return Rule({self.rules.encounters[region][enc_type], self.rules.enc_types[enc_type]})
+        else:
+            return self.rules.enc_types[enc_type]
+
+    def encounter_connection(self, region: str, type: str) -> str:
+        return f"{region} -> {self.regions[region].header}_{type}"
+
+    def has_encounters(self, region: str, type: str) -> bool:
+        header = self.regions[region].header
+        return header in self.encounters and getattr(self.encounters[header], type)
+
+    def generate_rules(self) -> Mapping[str, Sequence[str]]:
+        ret = {}
+        item_set = self.get_item_set()
+
+        ret["EXIT_RULES"] = [f"\"{src} -> {dest}\": {rule.to_string(item_set, self.item_name_map)},\n"
+            for src, eles in self.rules.exits.items()
+            for dest, rule in eles.items()]
+        ret["EXIT_RULES"] += [f"\"{self.encounter_connection(region, type)}\": {rule.to_string(item_set, self.item_name_map)},\n"
+            for region, eles in self.rules.encounters.items()
+            for type, rule in eles.items()
+            if type not in self.rules.enc_types]
+        ret["EXIT_RULES"] += [f"\"{self.encounter_connection(region, type)}\": {self.create_enc_rule(type, region).to_string(item_set, self.item_name_map)},\n"
+            for type in self.rules.enc_types
+            for region in self.regions
+            if self.has_encounters(region, type)]
+
+        ret["LOCATION_RULES"] = [f"\"{self.locations[loc].label}\": {rule.to_string(item_set, self.item_name_map)},\n"
+            for loc, rule in self.rules.locs.items()
+            if self.locations[loc].type not in self.rules.loc_types]
+        ret["LOCATION_RULES"] += [f"\"{location.label}\": {self.create_loc_rule(type_rule, loc).to_string(item_set, self.item_name_map)},\n"
+            for type, type_rule in self.rules.loc_types.items()
+            for loc, location in self.locations.items()
+            if location.type == type]
+
+        return ret
+
+    def generate___init__(self) -> Mapping[str, Sequence[str]]:
+        ret = {}
+
+        ret["HMS"] = [f"{hm.upper()} = \"{self.items[item].label}\"\n"
+            for hm, item in self.rom_interface.hm.items()]
+        ret["HM_BADGE_ITEMS"] = [f"case Hm.{hm.upper()}: return \"{self.items[item].label}\"\n"
+                                 for hm, item in self.rom_interface.hm_badge.items()]
+
+        return ret
+
+    def generate_species(self) -> Mapping[str, Sequence[str]]:
+        ret = {}
+
+        ret["SPECIES"] = [f"\"{name}\": {spec.to_string(self.item_name_map)},\n"
+            for name, spec in self.species.items()]
+
+        return ret
+
+    def generate_encounters(self) -> Mapping[str, Sequence[str]]:
+        ret = {}
+
+        ret["ENCOUNTERS"] = [f"\"{name}\": {encs},\n" for name, encs in self.encounters.items()]
+
+        return ret
+
+    def generate_regions(self) -> Mapping[str, Sequence[str]]:
+        ret = {}
+
+        ret["REGIONS"] = [f"\"{name}\": {region},\n" for name, region in self.regions.items()]
+
+        return ret
+
+def fill_template(name: str, values: Mapping[str, Sequence[str]]) -> None:
+    output = "# THIS IS AN AUTO-GENERATED FILE. DO NOT MODIFY.\n"
+    with open(f"data_gen_templates/{name}.py", "r", encoding="utf-8") as template:
+        for line in template:
+            if line.strip().endswith("# TEMPLATE: DELETE"):
+                continue
+            matches = re.match(r"\s*", line)
+            if matches:
+                spaces = matches.group()
+            else:
+                spaces = ""
+            prefix = spaces + "# TEMPLATE: "
+            if not line.startswith(prefix):
+                output += line
+                continue
+            kw = line.removeprefix(prefix).strip()
+            if kw not in values:
+                raise NameError(f"template has unknown keyword {kw}")
+            for inner_line in values[kw]:
+                output += spaces + inner_line
+    with open(f"data/{name}.py", "w", encoding="utf-8") as f:
+        f.write(output)
+
+def main():
+    state = ParserState()
+    state.validate()
+
+    to_generate = ["items", "locations", "rules", "__init__", "species", "encounters", "regions"]
+    for name in to_generate:
+        fill_template(name, getattr(state, "generate_" + name)())
+
+if __name__ == "__main__":
+    main()

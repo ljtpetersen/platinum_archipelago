@@ -1,0 +1,4277 @@
+[great_marsh_3]
+exits = [
+    "great_marsh_6",
+    "great_marsh_2",
+]
+header = "great_marsh_3"
+locs = [
+    "great_marsh_3_great_ball",
+    "great_marsh_3_leaf_stone",
+]
+
+[route_225]
+exits = [
+    "survival_area",
+    "route_225_gate_to_fight_area",
+    "route_225_house",
+    "fight_area",
+]
+header = "route_225"
+locs = [
+    "route_225_razor_fang",
+    "route_225_rare_candy",
+    "route_225_hp_up",
+    "route_225_lax_incense",
+    "route_225_dubious_disc",
+    "route_225_dawn_stone",
+    "route_225_revive",
+    "route_225_green_shard",
+    "route_225_rare_candy_0",
+    "route_225_big_mushroom",
+    "route_225_leaf_stone",
+    "route_225_ultra_ball",
+]
+
+[route_225_gate_to_fight_area]
+exits = [
+    "route_225",
+    "fight_area",
+]
+header = "route_225_gate_to_fight_area"
+
+[great_marsh_4]
+exits = [
+    "great_marsh_5",
+    "great_marsh_1",
+]
+header = "great_marsh_4"
+locs = [
+    "great_marsh_4_green_shard",
+    "great_marsh_4_poke_ball",
+    "great_marsh_4_hyper_potion",
+]
+
+[victory_road_1f]
+exits = [
+    "victory_road_2f",
+    "pokemon_league",
+    "victory_road_1f_room_1",
+    "victory_road_b1f",
+]
+header = "victory_road_1f"
+locs = [
+    "victory_road_1f_rare_candy",
+    "victory_road_1f_max_repel",
+    "victory_road_1f_tm41",
+    "victory_road_1f_razor_claw",
+    "victory_road_1f_zinc",
+    "victory_road_1f_ultra_ball",
+    "victory_road_1f_max_revive",
+    "victory_road_1f_nugget",
+]
+
+[pokemon_league]
+exits = [
+    "route_224",
+    "pokemon_league_south_pokecenter_1f",
+    "pokemon_league_north_pokecenter_1f",
+    "victory_road_1f",
+]
+header = "pokemon_league"
+locs = [
+    "pokemon_league_sky_plate",
+]
+
+[victory_road_2f]
+exits = [
+    "victory_road_1f",
+]
+header = "victory_road_2f"
+locs = [
+    "victory_road_2f_tm79",
+    "victory_road_2f_max_elixir",
+    "victory_road_2f_full_restore",
+    "victory_road_2f_tm71",
+    "victory_road_2f_full_restore_0",
+    "victory_road_2f_rare_candy",
+]
+
+[route_224]
+exits = [
+    "pokemon_league",
+    "victory_road_1f_room_3",
+]
+header = "route_224"
+locs = [
+    "route_224_razor_claw",
+    "route_224_rare_candy",
+    "route_224_destiny_knot",
+    "route_224_repeat_ball",
+    "route_224_pp_max",
+    "route_224_ultra_ball",
+    "route_224_upgrade",
+    "route_224_rare_candy_0",
+    "route_224_pearl",
+    "route_224_heart_scale",
+    "route_224_big_pearl",
+    "route_224_pearl_0",
+    "route_224_zinc",
+    "route_224_ultra_ball_0",
+]
+
+[victory_road_1f_room_1]
+exits = [
+    "victory_road_1f_room_2",
+    "victory_road_1f",
+]
+header = "victory_road_1f_room_1"
+
+[great_marsh_1]
+exits = [
+    "great_marsh_4",
+]
+header = "great_marsh_1"
+locs = [
+    "great_marsh_1_yellow_shard",
+    "great_marsh_1_poke_ball",
+    "great_marsh_1_rare_candy",
+]
+
+[pokemon_league_south_pokecenter_1f]
+exits = [
+    "pokemon_league_south_pokecenter_b1f",
+    "pokemon_league",
+    "pokemon_league_south_pokecenter_2f",
+]
+header = "pokemon_league_south_pokecenter_1f"
+
+[survival_area]
+exits = [
+    "survival_area_south_house",
+    "route_225",
+    "survival_area_north_house",
+    "survival_area_pokecenter_1f",
+    "survival_area_mart",
+    "battleground",
+]
+header = "survival_area"
+locs = [
+    "survival_area_rare_candy",
+    "survival_area_red_shard",
+    "survival_area_pp_up",
+]
+
+[survival_area_south_house]
+exits = [
+    "survival_area",
+]
+header = "survival_area_south_house"
+
+[survival_area_north_house]
+exits = [
+    "survival_area",
+]
+header = "survival_area_north_house"
+
+[battleground]
+exits = [
+    "survival_area",
+]
+header = "battleground"
+
+[route_225_house]
+exits = [
+    "route_225",
+]
+header = "route_225_house"
+
+[survival_area_mart]
+exits = [
+    "survival_area",
+]
+header = "survival_area_mart"
+
+[pokemon_league_north_pokecenter_1f]
+exits = [
+    "pokemon_league",
+    "pokemon_league_elevator_to_aaron_room",
+    "pokemon_league_north_pokecenter_2f",
+    "pokemon_league_north_pokecenter_b1f",
+]
+header = "pokemon_league_north_pokecenter_1f"
+
+[pokemon_league_north_pokecenter_2f]
+exits = [
+    "union_room",
+    "pokemon_league_north_pokecenter_1f",
+]
+header = "pokemon_league_north_pokecenter_2f"
+
+[great_marsh_5]
+exits = [
+    "great_marsh_4",
+]
+header = "great_marsh_5"
+locs = [
+    "great_marsh_5_great_ball",
+    "great_marsh_5_big_mushroom",
+]
+
+[pokemon_league_south_pokecenter_2f]
+exits = [
+    "union_room",
+    "pokemon_league_south_pokecenter_1f",
+]
+header = "pokemon_league_south_pokecenter_2f"
+
+[fullmoon_island]
+exits = [
+    "fullmoon_island_forest",
+]
+header = "fullmoon_island"
+
+[fullmoon_island_forest]
+exits = [
+    "fullmoon_island",
+]
+header = "fullmoon_island_forest"
+locs = [
+    "fullmoon_island_forest_lunar_wing",
+]
+
+[twinleaf_town_player_house_2f]
+exits = [
+    "twinleaf_town_player_house_1f",
+]
+header = "twinleaf_town_player_house_2f"
+
+[victory_road_b1f]
+exits = [
+    "victory_road_1f",
+]
+header = "victory_road_b1f"
+locs = [
+    "victory_road_b1f_tm59",
+    "victory_road_b1f_ultra_ball",
+    "victory_road_b1f_calcium",
+    "victory_road_b1f_heart_scale",
+    "victory_road_b1f_max_elixir",
+]
+
+[union_room]
+exits = [
+    "sandgem_town_pokecenter_2f",
+]
+header = "union_room"
+
+[sandgem_town_pokecenter_2f]
+exits = [
+    "sandgem_town_pokecenter_1f",
+    "union_room",
+]
+header = "sandgem_town_pokecenter_2f"
+
+[great_marsh_2]
+exits = [
+    "great_marsh_3",
+]
+header = "great_marsh_2"
+locs = [
+    "great_marsh_2_blue_shard",
+    "great_marsh_2_toxic_plate",
+]
+
+[route_226]
+exits = [
+    "route_228_gate_to_route_226",
+    "route_228",
+    "route_227",
+    "route_226_house",
+]
+header = "route_226"
+locs = [
+    "route_226_tm53",
+    "route_226_carbos",
+    "route_226_lagging_tail",
+    "route_226_heart_scale",
+    "route_226_tinymushroom",
+    "route_226_big_mushroom",
+    "route_226_pp_max",
+    "route_226_rare_candy",
+]
+
+[route_227]
+exits = [
+    "route_228",
+    "route_226",
+    "route_227_house",
+]
+header = "route_227"
+locs = [
+    "route_227_charcoal",
+    "route_227_zinc",
+    "route_227_yellow_shard",
+    "route_227_star_piece",
+    "route_227_max_repel",
+    "route_227_rare_candy",
+]
+
+[route_227_house]
+exits = [
+    "route_227",
+]
+header = "route_227_house"
+
+[route_226_house]
+exits = [
+    "route_226",
+]
+header = "route_226_house"
+
+[route_228]
+exits = [
+    "route_230",
+    "route_227",
+    "route_226",
+    "route_228_gate_to_route_226",
+    "route_228_south_house",
+    "route_228_north_house",
+    "route_228_rock_peak_ruins",
+    "route_229",
+    "rock_peak_ruins",
+]
+header = "route_228"
+locs = [
+    "route_228_protector",
+    "route_228_iron",
+    "route_228_shiny_stone",
+    "route_228_shed_shell",
+    "route_228_tm37",
+    "route_228_calcium",
+    "route_228_full_restore",
+    "route_228_star_piece",
+    "route_228_rare_candy",
+    "route_228_max_repel",
+    "route_228_pp_max",
+]
+
+[route_228_north_house]
+exits = [
+    "route_228",
+]
+header = "route_228_north_house"
+
+[route_230]
+exits = [
+    "route_228",
+]
+header = "route_230"
+locs = [
+    "route_230_rare_candy",
+    "route_230_blue_shard",
+    "route_230_ultra_ball",
+    "route_230_water_stone",
+]
+
+[celestic_town]
+exits = [
+    "celestic_town_northeast_house",
+    "celestic_town_northwest_house",
+    "celestic_town_southwest_house",
+    "celestic_town_pokecenter_1f",
+    "celestic_town_cave",
+    "celestic_town_north_house",
+]
+header = "celestic_town"
+locs = [
+    "celestic_town_dragon_fang",
+    "celestic_town_kings_rock",
+]
+
+[celestic_town_northeast_house]
+exits = [
+    "celestic_town",
+]
+header = "celestic_town_northeast_house"
+
+[celestic_town_northwest_house]
+exits = [
+    "celestic_town",
+]
+header = "celestic_town_northwest_house"
+
+[celestic_town_cave]
+exits = [
+    "celestic_town",
+]
+header = "celestic_town_cave"
+
+[celestic_town_north_house]
+exits = [
+    "celestic_town",
+]
+header = "celestic_town_north_house"
+
+[victory_road_1f_room_2]
+exits = [
+    "victory_road_1f_room_1",
+    "victory_road_1f_room_3",
+]
+header = "victory_road_1f_room_2"
+locs = [
+    "victory_road_1f_room_2_nugget",
+    "victory_road_1f_room_2_full_restore",
+    "victory_road_1f_room_2_dusk_stone",
+    "victory_road_1f_room_2_leftovers",
+    "victory_road_1f_room_2_heart_scale",
+    "victory_road_1f_room_2_hp_up",
+    "victory_road_1f_room_2_ultra_ball",
+    "victory_road_1f_room_2_rare_candy",
+    "victory_road_1f_room_2_ultra_ball_0",
+]
+
+[pokemon_league_north_pokecenter_b1f]
+exits = [
+    "pokemon_league_north_pokecenter_1f",
+]
+header = "pokemon_league_north_pokecenter_b1f"
+
+[celestic_town_southwest_house]
+exits = [
+    "celestic_town",
+]
+header = "celestic_town_southwest_house"
+
+[pokemon_league_south_pokecenter_b1f]
+exits = [
+    "pokemon_league_south_pokecenter_1f",
+]
+header = "pokemon_league_south_pokecenter_b1f"
+
+[celestic_town_pokecenter_1f]
+exits = [
+    "celestic_town_pokecenter_2f",
+    "celestic_town_pokecenter_b1f",
+    "celestic_town",
+]
+header = "celestic_town_pokecenter_1f"
+
+[celestic_town_pokecenter_b1f]
+exits = [
+    "celestic_town_pokecenter_1f",
+]
+header = "celestic_town_pokecenter_b1f"
+
+[celestic_town_pokecenter_2f]
+exits = [
+    "celestic_town_pokecenter_1f",
+    "union_room",
+]
+header = "celestic_town_pokecenter_2f"
+
+[survival_area_pokecenter_1f]
+exits = [
+    "survival_area",
+    "survival_area_pokecenter_b1f",
+    "survival_area_pokecenter_2f",
+]
+header = "survival_area_pokecenter_1f"
+
+[sandgem_town_pokecenter_1f]
+exits = [
+    "sandgem_town_pokecenter_b1f",
+    "sandgem_town_pokecenter_2f",
+    "sandgem_town",
+]
+header = "sandgem_town_pokecenter_1f"
+
+[survival_area_pokecenter_b1f]
+exits = [
+    "survival_area_pokecenter_1f",
+]
+header = "survival_area_pokecenter_b1f"
+
+[survival_area_pokecenter_2f]
+exits = [
+    "survival_area_pokecenter_1f",
+    "union_room",
+]
+header = "survival_area_pokecenter_2f"
+
+[sandgem_town]
+exits = [
+    "sandgem_town_counterpart_house_1f",
+    "sandgem_town_house",
+    "sandgem_town_mart",
+    "sandgem_town_pokecenter_1f",
+    "sandgem_town_pokemon_research_lab",
+]
+header = "sandgem_town"
+
+[sandgem_town_house]
+exits = [
+    "sandgem_town",
+]
+header = "sandgem_town_house"
+
+[sandgem_town_counterpart_house_1f]
+exits = [
+    "sandgem_town_counterpart_house_2f",
+    "sandgem_town",
+]
+header = "sandgem_town_counterpart_house_1f"
+
+[sandgem_town_counterpart_house_2f]
+exits = [
+    "sandgem_town_counterpart_house_1f",
+]
+header = "sandgem_town_counterpart_house_2f"
+
+[sandgem_town_mart]
+exits = [
+    "sandgem_town",
+]
+header = "sandgem_town_mart"
+
+[route_228_gate_to_route_226]
+exits = [
+    "route_228",
+    "route_226",
+]
+header = "route_228_gate_to_route_226"
+
+[route_229]
+exits = [
+    "resort_area",
+    "route_228",
+]
+header = "route_229"
+locs = [
+    "route_229_reaper_cloth",
+    "route_229_full_restore",
+    "route_229_protein",
+    "route_229_thunderstone",
+]
+
+[resort_area]
+exits = [
+    "resort_area_pokecenter_1f",
+    "villa",
+    "resort_area_house",
+    "resort_area_ribbon_syndicate_1f",
+    "route_229",
+]
+header = "resort_area"
+locs = [
+    "resort_area_nugget",
+    "resort_area_nugget_0",
+    "resort_area_thunderstone",
+]
+
+[resort_area_ribbon_syndicate_1f]
+exits = [
+    "resort_area_ribbon_syndicate_elevator",
+    "resort_area",
+]
+header = "resort_area_ribbon_syndicate_1f"
+
+[villa]
+exits = [
+    "resort_area",
+]
+header = "villa"
+
+[resort_area_ribbon_syndicate_elevator]
+exits = []
+header = "resort_area_ribbon_syndicate_elevator"
+
+[resort_area_pokecenter_1f]
+exits = [
+    "resort_area",
+    "resort_area_pokecenter_b1f",
+    "resort_area_pokecenter_2f",
+]
+header = "resort_area_pokecenter_1f"
+
+[resort_area_pokecenter_2f]
+exits = [
+    "resort_area_pokecenter_1f",
+    "union_room",
+]
+header = "resort_area_pokecenter_2f"
+
+[resort_area_pokecenter_b1f]
+exits = [
+    "resort_area_pokecenter_1f",
+]
+header = "resort_area_pokecenter_b1f"
+
+[pokemon_league_elevator_to_aaron_room]
+exits = [
+    "pokemon_league_aaron_room",
+    "pokemon_league_north_pokecenter_1f",
+]
+header = "pokemon_league_elevator_to_aaron_room"
+
+[route_228_south_house]
+exits = [
+    "route_228",
+]
+header = "route_228_south_house"
+
+[twinleaf_town_player_house_1f]
+exits = [
+    "twinleaf_town",
+    "twinleaf_town_player_house_2f",
+]
+header = "twinleaf_town_player_house_1f"
+
+[twinleaf_town]
+exits = [
+    "verity_lakefront",
+    "twinleaf_town_southwest_house",
+    "twinleaf_town_player_house_1f",
+    "twinleaf_town_northeast_house",
+    "twinleaf_town_rival_house_1f",
+    "route_201",
+]
+header = "twinleaf_town"
+locs = [
+    "twinleaf_town_odd_keystone",
+]
+
+[route_201]
+exits = [
+    "twinleaf_town",
+    "route_202",
+    "verity_lakefront",
+    "route_219",
+]
+header = "route_201"
+
+[twinleaf_town_southwest_house]
+exits = [
+    "twinleaf_town",
+]
+header = "twinleaf_town_southwest_house"
+
+[fight_area]
+exits = [
+    "route_225_gate_to_fight_area",
+    "route_225",
+    "fight_area_middle_house",
+    "fight_area_mart",
+    "fight_area_pokecenter_1f",
+    "battle_frontier_gate_to_fight_area",
+    "fight_area_south_house",
+]
+header = "fight_area"
+
+[fight_area_middle_house]
+exits = [
+    "fight_area",
+]
+header = "fight_area_middle_house"
+
+[fight_area_mart]
+exits = [
+    "fight_area",
+]
+header = "fight_area_mart"
+
+[fight_area_south_house]
+exits = [
+    "fight_area",
+]
+header = "fight_area_south_house"
+
+[fight_area_pokecenter_1f]
+exits = [
+    "fight_area_pokecenter_b1f",
+    "fight_area_pokecenter_2f",
+    "fight_area",
+]
+header = "fight_area_pokecenter_1f"
+
+[fight_area_pokecenter_b1f]
+exits = [
+    "fight_area_pokecenter_1f",
+]
+header = "fight_area_pokecenter_b1f"
+
+[fight_area_pokecenter_2f]
+exits = [
+    "fight_area_pokecenter_1f",
+    "union_room",
+]
+header = "fight_area_pokecenter_2f"
+
+[great_marsh_6]
+exits = [
+    "great_marsh_3",
+    "pastoria_city_observatory_gate_1f",
+]
+header = "great_marsh_6"
+locs = [
+    "great_marsh_6_red_shard",
+    "great_marsh_6_max_repel",
+]
+
+[pastoria_city_observatory_gate_1f]
+exits = [
+    "pastoria_city_observatory_gate_2f",
+    "great_marsh_6",
+    "pastoria_city",
+]
+header = "pastoria_city_observatory_gate_1f"
+
+[pastoria_city_observatory_gate_2f]
+exits = [
+    "pastoria_city_observatory_gate_1f",
+]
+header = "pastoria_city_observatory_gate_2f"
+
+[verity_lakefront]
+exits = [
+    "twinleaf_town",
+    "lake_verity_low_water",
+    "lake_verity",
+    "route_201",
+]
+header = "verity_lakefront"
+locs = [
+    "verity_lakefront_tinymushroom",
+]
+
+[lake_verity_low_water]
+exits = [
+    "verity_lakefront",
+]
+header = "lake_verity_low_water"
+locs = [
+    "lake_verity_low_water_tm38",
+]
+
+[pastoria_city]
+exits = [
+    "route_213_gate_to_pastoria_city",
+    "route_212_south",
+    "pastoria_city_pokecenter_1f",
+    "pastoria_city_east_house",
+    "pastoria_city_gym",
+    "pastoria_city_middle_house",
+    "route_213",
+    "pastoria_city_northeast_house",
+    "pastoria_city_observatory_gate_1f",
+    "pastoria_city_southwest_house",
+    "pastoria_city_mart",
+    "pastoria_city_north_house",
+]
+header = "pastoria_city"
+locs = [
+    "pastoria_city_mystic_water",
+    "pastoria_city_zinc",
+]
+
+[pastoria_city_pokecenter_1f]
+exits = [
+    "pastoria_city_pokecenter_2f",
+    "pastoria_city_pokecenter_b1f",
+    "pastoria_city",
+]
+header = "pastoria_city_pokecenter_1f"
+
+[pastoria_city_pokecenter_2f]
+exits = [
+    "union_room",
+    "pastoria_city_pokecenter_1f",
+]
+header = "pastoria_city_pokecenter_2f"
+
+[iron_island]
+exits = [
+    "iron_island_b3f",
+    "iron_island_house",
+    "iron_island_1f",
+]
+header = "iron_island"
+locs = [
+    "iron_island_star_piece",
+]
+
+[iron_island_b3f]
+exits = [
+    "iron_island",
+    "iron_island_iron_ruins",
+    "iron_island_b2f_left_room",
+    "iron_ruins",
+]
+header = "iron_island_b3f"
+locs = [
+    "iron_island_b3f_shiny_stone",
+]
+
+[iron_island_b2f_left_room]
+exits = [
+    "iron_island_b1f_right_room",
+    "iron_island_b3f",
+]
+header = "iron_island_b2f_left_room"
+locs = [
+    "iron_island_b2f_left_room_ultra_ball",
+    "iron_island_b2f_left_room_dusk_ball",
+    "iron_island_b2f_left_room_max_potion",
+    "iron_island_b2f_left_room_hp_up",
+    "iron_island_b2f_left_room_red_shard",
+    "iron_island_b2f_left_room_magnet",
+    "iron_island_b2f_left_room_iron_plate",
+    "iron_island_b2f_left_room_star_piece",
+    "iron_island_b2f_left_room_star_piece_0",
+]
+
+[iron_island_b1f_right_room]
+exits = [
+    "iron_island_b2f_right_room",
+    "iron_island_b2f_left_room",
+    "iron_island_1f",
+]
+header = "iron_island_b1f_right_room"
+locs = [
+    "iron_island_b1f_right_room_max_repel",
+    "iron_island_b1f_right_room_escape_rope",
+    "iron_island_b1f_right_room_revive",
+    "iron_island_b1f_right_room_star_piece",
+]
+
+[pastoria_city_southwest_house]
+exits = [
+    "pastoria_city",
+]
+header = "pastoria_city_southwest_house"
+
+[iron_island_b2f_right_room]
+exits = [
+    "iron_island_b1f_right_room",
+]
+header = "iron_island_b2f_right_room"
+locs = [
+    "iron_island_b2f_right_room_elixir",
+    "iron_island_b2f_right_room_tm23",
+    "iron_island_b2f_right_room_star_piece",
+]
+
+[pastoria_city_northeast_house]
+exits = [
+    "pastoria_city",
+]
+header = "pastoria_city_northeast_house"
+
+[victory_road_1f_room_3]
+exits = [
+    "route_224",
+    "victory_road_1f_room_2",
+]
+header = "victory_road_1f_room_3"
+
+[route_213]
+exits = [
+    "route_213_gate_to_pastoria_city",
+    "grand_lake_route_213_east_house",
+    "valor_lakefront",
+    "pastoria_city",
+    "grand_lake_route_213_northwest_house",
+    "grand_lake_route_213_lobby",
+    "footstep_house",
+    "grand_lake_route_213_northeast_house",
+    "route_222",
+]
+header = "route_213"
+locs = [
+    "route_213_tm40",
+    "route_213_yellow_shard",
+    "route_213_max_revive",
+    "route_213_water_stone",
+    "route_213_tm05",
+    "route_213_pp_up",
+    "route_213_protein",
+    "route_213_hp_up",
+    "route_213_big_pearl",
+    "route_213_pearl",
+    "route_213_hyper_potion",
+    "route_213_pearl_0",
+    "route_213_pearl_1",
+    "route_213_max_revive_0",
+    "route_213_heart_scale",
+    "route_213_big_pearl_0",
+    "route_213_heart_scale_0",
+    "route_213_suite_key",
+    "route_213_pearl_2",
+]
+
+[grand_lake_route_213_east_house]
+exits = [
+    "route_213",
+]
+header = "grand_lake_route_213_east_house"
+
+[grand_lake_route_213_lobby]
+exits = [
+    "route_213",
+]
+header = "grand_lake_route_213_lobby"
+
+[pastoria_city_gym]
+exits = [
+    "pastoria_city",
+]
+header = "pastoria_city_gym"
+
+[twinleaf_town_rival_house_1f]
+exits = [
+    "twinleaf_town",
+    "twinleaf_town_rival_house_2f",
+]
+header = "twinleaf_town_rival_house_1f"
+
+[twinleaf_town_rival_house_2f]
+exits = [
+    "twinleaf_town_rival_house_1f",
+]
+header = "twinleaf_town_rival_house_2f"
+
+[route_219]
+exits = [
+    "route_201",
+    "route_220",
+]
+header = "route_219"
+locs = [
+    "route_219_antidote",
+    "route_219_zinc",
+]
+
+[grand_lake_route_213_northwest_house]
+exits = [
+    "route_213",
+]
+header = "grand_lake_route_213_northwest_house"
+
+[iron_island_house]
+exits = [
+    "iron_island",
+]
+header = "iron_island_house"
+
+[route_221]
+exits = [
+    "route_221_house",
+    "pal_park_lobby",
+]
+header = "route_221"
+locs = [
+    "route_221_protein",
+    "route_221_tm81",
+    "route_221_ultra_ball",
+    "route_221_pure_incense",
+    "route_221_hyper_potion",
+    "route_221_big_mushroom",
+    "route_221_ultra_ball_0",
+    "route_221_carbos",
+    "route_221_max_revive",
+]
+
+[pal_park_lobby]
+exits = [
+    "route_221",
+    "pal_park",
+]
+header = "pal_park_lobby"
+
+[stark_mountain_outside]
+exits = [
+    "stark_mountain_room_1",
+]
+header = "stark_mountain_outside"
+locs = [
+    "stark_mountain_outside_life_orb",
+    "stark_mountain_outside_max_elixir",
+]
+
+[pal_park]
+exits = [
+    "pal_park_lobby",
+]
+header = "pal_park"
+
+[pastoria_city_mart]
+exits = [
+    "pastoria_city",
+]
+header = "pastoria_city_mart"
+
+[iron_island_1f]
+exits = [
+    "iron_island",
+    "iron_island_b1f_right_room",
+    "iron_island_b1f_left_room",
+]
+header = "iron_island_1f"
+
+[iron_island_b1f_left_room]
+exits = [
+    "iron_island_1f",
+]
+header = "iron_island_b1f_left_room"
+locs = [
+    "iron_island_b1f_left_room_protector",
+    "iron_island_b1f_left_room_yellow_shard",
+]
+
+[pastoria_city_north_house]
+exits = [
+    "pastoria_city",
+]
+header = "pastoria_city_north_house"
+
+[route_213_gate_to_pastoria_city]
+exits = [
+    "pastoria_city",
+    "route_213",
+]
+header = "route_213_gate_to_pastoria_city"
+
+[iron_island_iron_ruins]
+exits = [
+    "iron_island_b3f",
+]
+header = "iron_island_iron_ruins"
+locs = [
+    "iron_island_iron_ruins_metal_coat",
+    "iron_island_iron_ruins_nugget",
+]
+
+[route_212_south]
+exits = [
+    "route_212_north",
+    "route_212_house",
+    "pastoria_city",
+]
+header = "route_212_south"
+locs = [
+    "route_212_south_full_heal",
+    "route_212_south_tm84",
+    "route_212_south_tm62",
+    "route_212_south_zinc",
+    "route_212_south_hyper_potion",
+    "route_212_south_tm06",
+    "route_212_south_revive",
+    "route_212_south_elixir",
+    "route_212_south_blue_shard",
+    "route_212_south_max_ether",
+    "route_212_south_dawn_stone",
+    "route_212_south_full_heal_0",
+    "route_212_south_rare_candy",
+    "route_212_south_hyper_potion_0",
+    "route_212_south_max_repel",
+    "route_212_south_ultra_ball",
+    "route_212_south_big_mushroom",
+]
+
+[route_212_north]
+exits = [
+    "route_212_south",
+    "route_208",
+    "route_212_gate_to_hearthome_city",
+    "hearthome_city",
+    "pokemon_mansion",
+]
+header = "route_212_north"
+locs = [
+    "route_212_north_rose_incense",
+    "route_212_north_tm11",
+    "route_212_north_elixir",
+    "route_212_north_green_shard",
+    "route_212_north_iron",
+    "route_212_north_ultra_ball",
+    "route_212_north_pearl",
+]
+
+[route_208]
+exits = [
+    "route_212_north",
+    "hearthome_city",
+    "mt_coronet_1f_south",
+    "route_208_house",
+    "route_208_gate_to_hearthome_city",
+]
+header = "route_208"
+locs = [
+    "route_208_ether",
+    "route_208_carbos",
+    "route_208_great_ball",
+    "route_208_star_piece",
+    "route_208_tinymushroom",
+]
+
+[route_212_gate_to_hearthome_city]
+exits = [
+    "route_212_north",
+    "hearthome_city",
+]
+header = "route_212_gate_to_hearthome_city"
+
+[hearthome_city]
+exits = [
+    "poffin_house",
+    "hearthome_city_pokecenter_1f",
+    "route_208",
+    "hearthome_city_west_gate_to_amity_square",
+    "route_212_north",
+    "route_212_gate_to_hearthome_city",
+    "hearthome_city_southeast_house_1f",
+    "hearthome_city_northwest_house",
+    "route_208_gate_to_hearthome_city",
+    "hearthome_city_east_gate_to_amity_square",
+    "hearthome_city_gym_entrance_room",
+    "contest_hall_lobby",
+    "route_209_gate_to_hearthome_city",
+    "hearthome_city_pokemon_fan_club",
+    "foreign_building",
+    "hearthome_city_northeast_house_1f",
+    "hearthome_city_mart",
+    "route_209",
+]
+header = "hearthome_city"
+locs = [
+    "hearthome_city_big_mushroom",
+]
+
+[poffin_house]
+exits = [
+    "hearthome_city",
+]
+header = "poffin_house"
+
+[hearthome_city_west_gate_to_amity_square]
+exits = [
+    "hearthome_city",
+    "amity_square",
+]
+header = "hearthome_city_west_gate_to_amity_square"
+
+[route_208_house]
+exits = [
+    "route_208",
+]
+header = "route_208_house"
+
+[route_209_gate_to_hearthome_city]
+exits = [
+    "route_209",
+    "hearthome_city",
+]
+header = "route_209_gate_to_hearthome_city"
+
+[stark_mountain_room_1]
+exits = [
+    "stark_mountain_room_2",
+    "stark_mountain_outside",
+]
+header = "stark_mountain_room_1"
+locs = [
+    "stark_mountain_room_1_full_heal",
+    "stark_mountain_room_1_escape_rope",
+    "stark_mountain_room_1_pp_up",
+    "stark_mountain_room_1_full_restore",
+    "stark_mountain_room_1_star_piece",
+]
+
+[battle_frontier_gate_to_fight_area]
+exits = [
+    "battle_frontier",
+    "fight_area",
+]
+header = "battle_frontier_gate_to_fight_area"
+
+[battle_frontier]
+exits = [
+    "battle_castle",
+    "battle_frontier_gate_to_fight_area",
+    "battle_arcade",
+    "battle_factory",
+    "battle_hall",
+    "battle_tower",
+]
+header = "battle_frontier"
+
+[battle_arcade]
+exits = [
+    "battle_frontier",
+]
+header = "battle_arcade"
+
+[route_228_rock_peak_ruins]
+exits = [
+    "route_228",
+]
+header = "route_228_rock_peak_ruins"
+locs = [
+    "route_228_rock_peak_ruins_hard_stone",
+    "route_228_rock_peak_ruins_nugget",
+]
+
+[sandgem_town_pokecenter_b1f]
+exits = [
+    "sandgem_town_pokecenter_1f",
+]
+header = "sandgem_town_pokecenter_b1f"
+
+[iron_ruins]
+exits = [
+    "iron_island_b3f",
+]
+header = "iron_ruins"
+
+[pastoria_city_middle_house]
+exits = [
+    "pastoria_city",
+]
+header = "pastoria_city_middle_house"
+
+[lake_verity]
+exits = [
+    "verity_cavern",
+    "verity_lakefront",
+]
+header = "lake_verity"
+locs = [
+    "lake_verity_tm38",
+]
+
+[footstep_house]
+exits = [
+    "route_213",
+]
+header = "footstep_house"
+
+[battle_factory]
+exits = [
+    "battle_frontier",
+]
+header = "battle_factory"
+
+[route_220]
+exits = [
+    "route_219",
+]
+header = "route_220"
+locs = [
+    "route_220_carbos",
+    "route_220_splash_plate",
+    "route_220_max_repel",
+    "route_220_big_pearl",
+    "route_220_zinc",
+]
+
+[foreign_building]
+exits = [
+    "hearthome_city",
+]
+header = "foreign_building"
+
+[hearthome_city_northeast_house_1f]
+exits = [
+    "hearthome_city",
+    "hearthome_city_northeast_house_elevator",
+]
+header = "hearthome_city_northeast_house_1f"
+
+[hearthome_city_northeast_house_elevator]
+exits = []
+header = "hearthome_city_northeast_house_elevator"
+
+[route_202]
+exits = [
+    "jubilife_city",
+    "route_201",
+]
+header = "route_202"
+locs = [
+    "route_202_potion",
+    "route_202_stardust",
+]
+
+[hearthome_city_pokecenter_1f]
+exits = [
+    "hearthome_city_pokecenter_2f",
+    "hearthome_city",
+    "hearthome_city_pokecenter_b1f",
+]
+header = "hearthome_city_pokecenter_1f"
+
+[hearthome_city_pokecenter_2f]
+exits = [
+    "union_room",
+    "hearthome_city_pokecenter_1f",
+]
+header = "hearthome_city_pokecenter_2f"
+
+[hearthome_city_pokecenter_b1f]
+exits = [
+    "hearthome_city_pokecenter_1f",
+]
+header = "hearthome_city_pokecenter_b1f"
+
+[battle_hall]
+exits = [
+    "battle_frontier",
+]
+header = "battle_hall"
+
+[battle_castle]
+exits = [
+    "battle_frontier",
+]
+header = "battle_castle"
+
+[verity_cavern]
+exits = [
+    "lake_verity",
+]
+header = "verity_cavern"
+
+[hearthome_city_southeast_house_1f]
+exits = [
+    "hearthome_city",
+    "hearthome_city_southeast_house_elevator",
+]
+header = "hearthome_city_southeast_house_1f"
+
+[route_209]
+exits = [
+    "solaceon_town",
+    "route_209_lost_tower_1f",
+    "hearthome_city",
+    "route_209_gate_to_hearthome_city",
+]
+header = "route_209"
+locs = [
+    "route_209_great_ball",
+    "route_209_hyper_potion",
+    "route_209_tm47",
+    "route_209_calcium",
+    "route_209_tm19",
+    "route_209_ether",
+    "route_209_stardust",
+    "route_209_great_ball_0",
+    "route_209_revive",
+    "route_209_super_repel",
+]
+
+[route_209_lost_tower_1f]
+exits = [
+    "route_209_lost_tower_2f",
+    "route_209",
+]
+header = "route_209_lost_tower_1f"
+
+[hearthome_city_northwest_house]
+exits = [
+    "hearthome_city",
+]
+header = "hearthome_city_northwest_house"
+
+[grand_lake_route_213_northeast_house]
+exits = [
+    "route_213",
+]
+header = "grand_lake_route_213_northeast_house"
+locs = [
+    "grand_lake_route_213_northeast_house_max_revive",
+]
+
+[hearthome_city_southeast_house_elevator]
+exits = []
+header = "hearthome_city_southeast_house_elevator"
+
+[route_208_gate_to_hearthome_city]
+exits = [
+    "hearthome_city",
+    "route_208",
+]
+header = "route_208_gate_to_hearthome_city"
+
+[jubilife_city]
+exits = [
+    "global_terminal_1f",
+    "jubilife_city_mart",
+    "jubilife_city_unknown_house_4",
+    "route_218_gate_to_jubilife_city",
+    "jubilife_city_condominiums_1f",
+    "route_204_south",
+    "jubilife_city_southwest_house_1f",
+    "jubilife_city_unknown_house_3",
+    "jubilife_tv_1f",
+    "jubilife_city_south_house_1f",
+    "route_218",
+    "jubilife_city_pokecenter_1f",
+    "route_203",
+    "trainers_school",
+    "route_202",
+    "poketch_co_1f",
+]
+header = "jubilife_city"
+locs = [
+    "jubilife_city_potion",
+    "jubilife_city_stardust",
+]
+
+[jubilife_city_unknown_house_4]
+exits = [
+    "jubilife_city",
+]
+header = "jubilife_city_unknown_house_4"
+
+[solaceon_town]
+exits = [
+    "solaceon_town_northeast_house",
+    "solaceon_town_mart",
+    "solaceon_town_pokemon_news_press",
+    "solaceon_ruins_room_1",
+    "pokemon_day_care",
+    "solaceon_town_north_house",
+    "solaceon_town_pokecenter_1f",
+    "solaceon_town_east_house",
+    "solaceon_ruins_maniac_tunnel_room",
+    "route_210_south",
+    "route_209",
+]
+header = "solaceon_town"
+locs = [
+    "solaceon_town_pp_up",
+    "solaceon_town_rare_candy",
+    "solaceon_town_big_mushroom",
+]
+
+[route_210_south]
+exits = [
+    "solaceon_town",
+    "cafe",
+    "route_210_north",
+    "route_215",
+]
+header = "route_210_south"
+locs = [
+    "route_210_south_max_repel",
+    "route_210_south_super_repel",
+    "route_210_south_nest_ball",
+    "route_210_south_hyper_potion",
+    "route_210_south_full_heal",
+    "route_210_south_ultra_ball",
+    "route_210_south_rare_candy",
+    "route_210_south_hyper_potion_0",
+    "route_210_south_ultra_ball_0",
+]
+
+[route_209_lost_tower_2f]
+exits = [
+    "route_209_lost_tower_1f",
+    "route_209_lost_tower_3f",
+]
+header = "route_209_lost_tower_2f"
+locs = [
+    "route_209_lost_tower_2f_oval_stone",
+    "route_209_lost_tower_2f_honey_x3",
+]
+
+[route_204_south]
+exits = [
+    "jubilife_city",
+    "ravaged_path",
+    "route_203",
+]
+header = "route_204_south"
+locs = [
+    "route_204_south_sea_incense",
+    "route_204_south_hp_up",
+    "route_204_south_parlyz_heal",
+]
+
+[route_210_north]
+exits = [
+    "route_210_grandma_wilma_house",
+    "route_210_south",
+]
+header = "route_210_north"
+locs = [
+    "route_210_north_smoke_ball",
+    "route_210_north_wave_incense",
+    "route_210_north_tm30",
+    "route_210_north_zinc",
+    "route_210_north_red_shard",
+    "route_210_north_shiny_stone",
+    "route_210_north_meadow_plate",
+]
+
+[route_210_grandma_wilma_house]
+exits = [
+    "route_210_north",
+]
+header = "route_210_grandma_wilma_house"
+
+[route_209_lost_tower_3f]
+exits = [
+    "route_209_lost_tower_4f",
+    "route_209_lost_tower_2f",
+]
+header = "route_209_lost_tower_3f"
+locs = [
+    "route_209_lost_tower_3f_revive",
+]
+
+[solaceon_town_northeast_house]
+exits = [
+    "solaceon_town",
+]
+header = "solaceon_town_northeast_house"
+
+[route_218]
+exits = [
+    "jubilife_city",
+    "route_218_gate_to_jubilife_city",
+    "route_218_gate_to_canalave_city",
+    "canalave_city",
+]
+header = "route_218"
+locs = [
+    "route_218_rare_candy",
+    "route_218_hyper_potion",
+    "route_218_x_accuracy",
+]
+
+[jubilife_tv_1f]
+exits = [
+    "jubilife_city",
+    "jubilife_tv_2f",
+    "jubilife_tv_elevator",
+]
+header = "jubilife_tv_1f"
+
+[jubilife_tv_2f]
+exits = [
+    "jubilife_tv_1f",
+    "jubilife_tv_3f",
+    "jubilife_tv_2f_gallery",
+    "jubilife_tv_elevator",
+]
+header = "jubilife_tv_2f"
+
+[jubilife_tv_3f]
+exits = [
+    "jubilife_tv_2f",
+    "jubilife_tv_3f_group_ranking_room",
+    "jubilife_tv_4f",
+    "jubilife_tv_elevator",
+    "jubilife_tv_3f_global_ranking_room",
+]
+header = "jubilife_tv_3f"
+
+[solaceon_ruins_room_1]
+exits = [
+    "solaceon_ruins_room_2",
+    "solaceon_town",
+    "solaceon_ruins_room_1_northwest_dead_end",
+    "solaceon_ruins_room_1_southeast_dead_end",
+]
+header = "solaceon_ruins_room_1"
+
+[hearthome_city_mart]
+exits = [
+    "hearthome_city",
+]
+header = "hearthome_city_mart"
+
+[solaceon_ruins_room_1_southeast_dead_end]
+exits = [
+    "solaceon_ruins_room_1",
+]
+header = "solaceon_ruins_room_1_southeast_dead_end"
+
+[solaceon_ruins_room_1_northwest_dead_end]
+exits = [
+    "solaceon_ruins_room_1",
+]
+header = "solaceon_ruins_room_1_northwest_dead_end"
+locs = [
+    "solaceon_ruins_room_1_northwest_dead_end_fire_stone",
+]
+
+[route_209_lost_tower_4f]
+exits = [
+    "route_209_lost_tower_5f",
+    "route_209_lost_tower_3f",
+]
+header = "route_209_lost_tower_4f"
+locs = [
+    "route_209_lost_tower_4f_tm27",
+    "route_209_lost_tower_4f_great_ball",
+]
+
+[route_209_lost_tower_5f]
+exits = [
+    "route_209_lost_tower_4f",
+]
+header = "route_209_lost_tower_5f"
+
+[pokemon_day_care]
+exits = [
+    "solaceon_town",
+]
+header = "pokemon_day_care"
+
+[solaceon_town_north_house]
+exits = [
+    "solaceon_town",
+]
+header = "solaceon_town_north_house"
+
+[solaceon_town_pokecenter_1f]
+exits = [
+    "solaceon_town",
+    "solaceon_town_pokecenter_b1f",
+    "solaceon_town_pokecenter_2f",
+]
+header = "solaceon_town_pokecenter_1f"
+
+[solaceon_town_pokecenter_2f]
+exits = [
+    "union_room",
+    "solaceon_town_pokecenter_1f",
+]
+header = "solaceon_town_pokecenter_2f"
+
+[jubilife_tv_elevator]
+exits = []
+header = "jubilife_tv_elevator"
+
+[cafe]
+exits = [
+    "route_210_south",
+]
+header = "cafe"
+
+[sandgem_town_pokemon_research_lab]
+exits = [
+    "sandgem_town",
+]
+header = "sandgem_town_pokemon_research_lab"
+
+[route_222]
+exits = [
+    "route_222_east_house",
+    "valor_lakefront",
+    "route_222_gate_to_sunyshore_city",
+    "route_222_west_house",
+    "route_213",
+    "sunyshore_city",
+]
+header = "route_222"
+locs = [
+    "route_222_full_restore",
+    "route_222_carbos",
+    "route_222_quick_ball",
+    "route_222_pp_up",
+    "route_222_full_restore_0",
+    "route_222_pp_up_0",
+    "route_222_tinymushroom",
+    "route_222_ultra_ball",
+    "route_222_big_mushroom",
+    "route_222_pearl",
+    "route_222_heart_scale",
+    "route_222_heart_scale_0",
+]
+
+[route_222_east_house]
+exits = [
+    "route_222",
+]
+header = "route_222_east_house"
+
+[route_222_west_house]
+exits = [
+    "route_222",
+]
+header = "route_222_west_house"
+
+[sunyshore_city]
+exits = [
+    "sunyshore_city_unknown_house_1",
+    "vista_lighthouse_elevator",
+    "sunyshore_city_northeast_house",
+    "sunyshore_city_east_house",
+    "route_222_gate_to_sunyshore_city",
+    "sunyshore_city_gym_room_1",
+    "sunyshore_city_northwest_house",
+    "sunyshore_city_pokecenter_1f",
+    "sunyshore_market",
+    "sunyshore_city_mart",
+    "sunyshore_city_west_house",
+    "route_223",
+    "sunyshore_city_unknown_house_2",
+    "route_222",
+]
+header = "sunyshore_city"
+locs = [
+    "sunyshore_city_thunderstone",
+    "sunyshore_city_carbos",
+    "sunyshore_city_zap_plate",
+]
+
+[vista_lighthouse_elevator]
+exits = []
+header = "vista_lighthouse_elevator"
+
+[sunyshore_city_northwest_house]
+exits = [
+    "sunyshore_city",
+]
+header = "sunyshore_city_northwest_house"
+
+[sunyshore_market]
+exits = [
+    "sunyshore_city",
+]
+header = "sunyshore_market"
+
+[sunyshore_city_west_house]
+exits = [
+    "sunyshore_city",
+]
+header = "sunyshore_city_west_house"
+
+[route_223]
+exits = [
+    "sunyshore_city",
+]
+header = "route_223"
+locs = [
+    "route_223_tm18",
+    "route_223_ultra_ball",
+    "route_223_dive_ball",
+    "route_223_rare_candy",
+    "route_223_heart_scale",
+    "route_223_heart_scale_0",
+]
+
+[rock_peak_ruins]
+exits = [
+    "route_228",
+]
+header = "rock_peak_ruins"
+
+[battle_tower]
+exits = [
+    "battle_frontier",
+]
+header = "battle_tower"
+
+[poketch_co_1f]
+exits = [
+    "jubilife_city",
+    "poketch_co_2f",
+]
+header = "poketch_co_1f"
+
+[poketch_co_2f]
+exits = [
+    "poketch_co_3f",
+    "poketch_co_1f",
+]
+header = "poketch_co_2f"
+
+[global_terminal_1f]
+exits = [
+    "jubilife_city",
+    "global_terminal_3f",
+    "global_terminal_2f",
+]
+header = "global_terminal_1f"
+
+[global_terminal_3f]
+exits = [
+    "global_terminal_1f",
+    "global_terminal_2f",
+]
+header = "global_terminal_3f"
+
+[global_terminal_2f]
+exits = [
+    "global_terminal_1f",
+    "global_terminal_3f",
+]
+header = "global_terminal_2f"
+
+[trainers_school]
+exits = [
+    "jubilife_city",
+]
+header = "trainers_school"
+locs = [
+    "trainers_school_x_attack",
+]
+
+[ravaged_path]
+exits = [
+    "route_204_south",
+    "route_204_north",
+]
+header = "ravaged_path"
+locs = [
+    "ravaged_path_tm39",
+    "ravaged_path_luck_incense",
+    "ravaged_path_tm03",
+    "ravaged_path_potion",
+]
+
+[route_204_north]
+exits = [
+    "ravaged_path",
+    "floaroma_town",
+]
+header = "route_204_north"
+locs = [
+    "route_204_north_tm09",
+    "route_204_north_awakening",
+]
+
+[route_218_gate_to_canalave_city]
+exits = [
+    "canalave_city",
+    "route_218",
+]
+header = "route_218_gate_to_canalave_city"
+
+[sunyshore_city_northeast_house]
+exits = [
+    "sunyshore_city",
+]
+header = "sunyshore_city_northeast_house"
+
+[sunyshore_city_east_house]
+exits = [
+    "sunyshore_city",
+]
+header = "sunyshore_city_east_house"
+
+[solaceon_town_pokemon_news_press]
+exits = [
+    "solaceon_town",
+]
+header = "solaceon_town_pokemon_news_press"
+
+[jubilife_city_mart]
+exits = [
+    "jubilife_city",
+]
+header = "jubilife_city_mart"
+
+[canalave_city]
+exits = [
+    "canalave_city_mart",
+    "canalave_city_southeast_house",
+    "route_218_gate_to_canalave_city",
+    "route_218",
+    "canalave_city_harbor_inn",
+    "canalave_city_west_house",
+    "canalave_library_1f",
+    "canalave_city_gym",
+    "canalave_city_pokecenter_1f",
+    "canalave_city_east_house",
+    "canalave_city_sailor_eldritch_house",
+]
+header = "canalave_city"
+locs = [
+    "canalave_city_tm89",
+    "canalave_city_big_pearl",
+]
+
+[canalave_city_mart]
+exits = [
+    "canalave_city",
+]
+header = "canalave_city_mart"
+
+[poketch_co_3f]
+exits = [
+    "poketch_co_2f",
+]
+header = "poketch_co_3f"
+
+[sunyshore_city_mart]
+exits = [
+    "sunyshore_city",
+]
+header = "sunyshore_city_mart"
+
+[canalave_city_west_house]
+exits = [
+    "canalave_city",
+]
+header = "canalave_city_west_house"
+
+[resort_area_house]
+exits = [
+    "resort_area",
+]
+header = "resort_area_house"
+
+[canalave_library_1f]
+exits = [
+    "canalave_library_2f",
+    "canalave_city",
+]
+header = "canalave_library_1f"
+
+[canalave_library_2f]
+exits = [
+    "canalave_library_1f",
+    "canalave_library_3f",
+]
+header = "canalave_library_2f"
+
+[canalave_library_3f]
+exits = [
+    "canalave_library_2f",
+]
+header = "canalave_library_3f"
+
+[route_205_south]
+exits = [
+    "fuego_ironworks_outside",
+    "floaroma_town",
+    "eterna_forest_outside",
+    "route_205_house",
+    "eterna_forest",
+]
+header = "route_205_south"
+locs = [
+    "route_205_south_heal_ball",
+    "route_205_south_x_sp_def",
+    "route_205_south_super_potion",
+    "route_205_south_repel",
+    "route_205_south_stardust",
+]
+
+[valley_windworks_outside]
+exits = [
+    "valley_windworks_building",
+    "floaroma_town",
+]
+header = "valley_windworks_outside"
+locs = [
+    "valley_windworks_outside_tm24",
+    "valley_windworks_outside_potion",
+    "valley_windworks_outside_electirizer",
+    "valley_windworks_outside_max_elixir",
+]
+
+[route_205_house]
+exits = [
+    "route_205_south",
+]
+header = "route_205_house"
+
+[eterna_forest]
+exits = [
+    "route_205_north",
+    "old_chateau",
+    "route_205_south",
+]
+header = "eterna_forest"
+locs = [
+    "eterna_forest_antidote",
+    "eterna_forest_parlyz_heal",
+    "eterna_forest_net_ball",
+    "eterna_forest_green_shard",
+    "eterna_forest_ether",
+    "eterna_forest_potion",
+    "eterna_forest_insect_plate",
+]
+
+[fuego_ironworks_outside]
+exits = [
+    "eterna_forest_outside",
+    "fuego_ironworks_building",
+    "route_205_south",
+]
+header = "fuego_ironworks_outside"
+locs = [
+    "fuego_ironworks_outside_ultra_ball",
+    "fuego_ironworks_outside_big_mushroom",
+]
+
+[fuego_ironworks_building]
+exits = [
+    "fuego_ironworks_outside",
+]
+header = "fuego_ironworks_building"
+locs = [
+    "fuego_ironworks_building_tm35",
+    "fuego_ironworks_building_calcium",
+    "fuego_ironworks_building_rock_incense",
+    "fuego_ironworks_building_fire_stone",
+    "fuego_ironworks_building_blue_shard",
+    "fuego_ironworks_building_red_shard",
+    "fuego_ironworks_building_green_shard",
+    "fuego_ironworks_building_yellow_shard",
+    "fuego_ironworks_building_star_piece",
+    "fuego_ironworks_building_protein",
+]
+
+[old_chateau]
+exits = [
+    "eterna_forest",
+    "old_chateau_dining_area",
+    "old_chateau_side_rooms",
+    "old_chateau_corridor",
+]
+header = "old_chateau"
+
+[old_chateau_side_rooms]
+exits = [
+    "old_chateau",
+]
+header = "old_chateau_side_rooms"
+locs = [
+    "old_chateau_side_rooms_old_gateau",
+]
+
+[valley_windworks_building]
+exits = [
+    "valley_windworks_outside",
+]
+header = "valley_windworks_building"
+
+[route_205_north]
+exits = [
+    "eterna_forest_outside",
+    "eterna_city",
+    "eterna_forest",
+]
+header = "route_205_north"
+locs = [
+    "route_205_north_guard_spec",
+    "route_205_north_super_potion",
+]
+
+[eterna_city]
+exits = [
+    "eterna_city_condominiums_1f",
+    "route_206_cycling_road_north_gate",
+    "eterna_city_east_house",
+    "route_205_north",
+    "eterna_city_underground_man_house",
+    "cycle_shop",
+    "eterna_city_north_house",
+    "eterna_city_south_house",
+    "eterna_city_pokecenter_1f",
+    "team_galactic_eterna_building_1f",
+    "eterna_city_mart",
+    "eterna_city_gym",
+]
+header = "eterna_city"
+locs = [
+    "eterna_city_tm46",
+    "eterna_city_super_potion",
+    "eterna_city_draco_plate",
+    "eterna_city_super_potion_0",
+    "eterna_city_great_ball",
+    "eterna_city_moon_stone",
+]
+
+[eterna_city_east_house]
+exits = [
+    "eterna_city",
+]
+header = "eterna_city_east_house"
+
+[route_212_house]
+exits = [
+    "route_212_south",
+]
+header = "route_212_house"
+
+[eterna_city_underground_man_house]
+exits = [
+    "eterna_city",
+]
+header = "eterna_city_underground_man_house"
+
+[eterna_city_gym]
+exits = [
+    "eterna_city_dp_gym",
+    "eterna_city",
+]
+header = "eterna_city_gym"
+
+[jubilife_city_south_house_1f]
+exits = [
+    "jubilife_city",
+    "jubilife_city_south_house_2f",
+]
+header = "jubilife_city_south_house_1f"
+
+[eterna_city_condominiums_1f]
+exits = [
+    "eterna_city_condominiums_2f",
+    "eterna_city",
+]
+header = "eterna_city_condominiums_1f"
+
+[jubilife_city_south_house_2f]
+exits = [
+    "jubilife_city_south_house_1f",
+    "jubilife_city_south_house_3f",
+]
+header = "jubilife_city_south_house_2f"
+
+[jubilife_city_south_house_3f]
+exits = [
+    "jubilife_city_south_house_4f",
+    "jubilife_city_south_house_2f",
+]
+header = "jubilife_city_south_house_3f"
+
+[route_222_gate_to_sunyshore_city]
+exits = [
+    "sunyshore_city",
+    "route_222",
+]
+header = "route_222_gate_to_sunyshore_city"
+
+[eterna_city_pokecenter_1f]
+exits = [
+    "eterna_city_pokecenter_b1f",
+    "eterna_city",
+    "eterna_city_pokecenter_2f",
+]
+header = "eterna_city_pokecenter_1f"
+
+[eterna_city_pokecenter_b1f]
+exits = [
+    "eterna_city_pokecenter_1f",
+]
+header = "eterna_city_pokecenter_b1f"
+
+[pastoria_city_pokecenter_b1f]
+exits = [
+    "pastoria_city_pokecenter_1f",
+]
+header = "pastoria_city_pokecenter_b1f"
+
+[eterna_city_pokecenter_2f]
+exits = [
+    "union_room",
+    "eterna_city_pokecenter_1f",
+]
+header = "eterna_city_pokecenter_2f"
+
+[eterna_city_dp_gym]
+exits = [
+    "eterna_city_gym",
+]
+header = "eterna_city_dp_gym"
+
+[old_chateau_corridor]
+exits = [
+    "old_chateau_back_west_room",
+    "old_chateau_back_middle_east_room",
+    "old_chateau",
+    "old_chateau_back_middle_west_room",
+    "old_chateau_back_east_room",
+    "old_chateau_back_middle_room",
+]
+header = "old_chateau_corridor"
+
+[old_chateau_back_east_room]
+exits = [
+    "old_chateau_corridor",
+]
+header = "old_chateau_back_east_room"
+locs = [
+    "old_chateau_back_east_room_tm90",
+]
+
+[old_chateau_back_west_room]
+exits = [
+    "old_chateau_corridor",
+]
+header = "old_chateau_back_west_room"
+locs = [
+    "old_chateau_back_west_room_dread_plate",
+]
+
+[stark_mountain_room_2]
+exits = [
+    "stark_mountain_room_1",
+    "stark_mountain_room_3",
+]
+header = "stark_mountain_room_2"
+locs = [
+    "stark_mountain_room_2_tm50",
+    "stark_mountain_room_2_calcium",
+    "stark_mountain_room_2_max_revive",
+    "stark_mountain_room_2_rare_candy",
+    "stark_mountain_room_2_iron_ball",
+    "stark_mountain_room_2_max_elixir",
+    "stark_mountain_room_2_nugget",
+    "stark_mountain_room_2_ultra_ball",
+    "stark_mountain_room_2_stardust",
+    "stark_mountain_room_2_iron",
+    "stark_mountain_room_2_flame_plate",
+    "stark_mountain_room_2_max_revive_0",
+    "stark_mountain_room_2_star_piece",
+    "stark_mountain_room_2_ultra_ball_0",
+    "stark_mountain_room_2_fire_stone",
+]
+
+[stark_mountain_room_3]
+exits = [
+    "stark_mountain_room_2",
+]
+header = "stark_mountain_room_3"
+
+[route_221_house]
+exits = [
+    "route_221",
+]
+header = "route_221_house"
+
+[canalave_city_southeast_house]
+exits = [
+    "canalave_city",
+]
+header = "canalave_city_southeast_house"
+
+[floaroma_town]
+exits = [
+    "floaroma_town_southeast_house",
+    "floaroma_town_mart",
+    "route_205_south",
+    "floaroma_town_pokecenter_1f",
+    "floaroma_meadow",
+    "floaroma_town_middle_house",
+    "flower_shop",
+    "valley_windworks_outside",
+]
+header = "floaroma_town"
+
+[floaroma_town_middle_house]
+exits = [
+    "floaroma_town",
+]
+header = "floaroma_town_middle_house"
+
+[jubilife_tv_2f_gallery]
+exits = [
+    "jubilife_tv_2f",
+]
+header = "jubilife_tv_2f_gallery"
+
+[valor_lakefront]
+exits = [
+    "spring_path",
+    "grand_lake_valor_lakefront_east_house",
+    "grand_lake_valor_lakefront_west_house",
+    "restaurant",
+    "lake_valor_drained",
+    "route_213",
+    "route_214",
+    "lake_valor",
+    "route_222",
+]
+header = "valor_lakefront"
+locs = [
+    "valor_lakefront_tm85",
+    "valor_lakefront_ultra_ball",
+    "valor_lakefront_iron",
+    "valor_lakefront_sun_stone",
+    "valor_lakefront_pp_up",
+    "valor_lakefront_max_revive",
+    "valor_lakefront_big_mushroom",
+]
+
+[grand_lake_valor_lakefront_east_house]
+exits = [
+    "valor_lakefront",
+]
+header = "grand_lake_valor_lakefront_east_house"
+
+[solaceon_ruins_room_2]
+exits = [
+    "solaceon_ruins_room_1",
+    "solaceon_ruins_room_3",
+    "solaceon_ruins_room_2_southeast_dead_end",
+    "solaceon_ruins_room_2_northeast_dead_end",
+]
+header = "solaceon_ruins_room_2"
+
+[route_214]
+exits = [
+    "spring_path",
+    "route_214_gate_to_veilstone_city",
+    "valor_lakefront",
+    "ruin_maniac_cave_short",
+    "ruin_maniac_cave_long",
+    "maniac_tunnel",
+    "veilstone_city",
+]
+header = "route_214"
+locs = [
+    "route_214_rare_candy",
+    "route_214_max_repel",
+    "route_214_red_shard",
+    "route_214_big_root",
+    "route_214_magmarizer",
+    "route_214_carbos",
+    "route_214_big_mushroom",
+    "route_214_razor_fang",
+]
+
+[ruin_maniac_cave_short]
+exits = [
+    "route_214",
+]
+header = "ruin_maniac_cave_short"
+locs = [
+    "ruin_maniac_cave_short_tm28",
+]
+
+[solaceon_ruins_room_3]
+exits = [
+    "solaceon_ruins_room_2",
+    "solaceon_ruins_room_3_southwest_dead_end",
+    "solaceon_ruins_room_4",
+    "solaceon_ruins_room_3_northwest_dead_end",
+]
+header = "solaceon_ruins_room_3"
+
+[eterna_city_mart]
+exits = [
+    "eterna_city",
+]
+header = "eterna_city_mart"
+
+[solaceon_ruins_room_3_northwest_dead_end]
+exits = [
+    "solaceon_ruins_room_3",
+]
+header = "solaceon_ruins_room_3_northwest_dead_end"
+
+[ruin_maniac_cave_long]
+exits = [
+    "route_214",
+]
+header = "ruin_maniac_cave_long"
+locs = [
+    "ruin_maniac_cave_long_tm28",
+]
+
+[maniac_tunnel]
+exits = [
+    "route_214",
+    "solaceon_ruins_maniac_tunnel_room",
+]
+header = "maniac_tunnel"
+locs = [
+    "maniac_tunnel_tm28",
+]
+
+[canalave_city_sailor_eldritch_house]
+exits = [
+    "canalave_city",
+]
+header = "canalave_city_sailor_eldritch_house"
+
+[veilstone_city]
+exits = [
+    "veilstone_city_pokecenter_1f",
+    "veilstone_city_gym",
+    "veilstone_city_southeast_house",
+    "route_215",
+    "veilstone_city_prize_exchange",
+    "route_215_gate_to_veilstone_city",
+    "route_214",
+    "galactic_hq_1f",
+    "veilstone_store_1f",
+    "veilstone_city_northeast_house",
+    "veilstone_city_galactic_warehouse",
+    "route_214_gate_to_veilstone_city",
+    "game_corner",
+    "veilstone_city_southwest_house",
+    "veilstone_city_northwest_house",
+]
+header = "veilstone_city"
+locs = [
+    "veilstone_city_full_incense",
+    "veilstone_city_rare_candy",
+    "veilstone_city_star_piece",
+    "veilstone_city_calcium",
+    "veilstone_city_pp_up",
+    "veilstone_city_star_piece_0",
+]
+
+[eterna_city_condominiums_2f]
+exits = [
+    "eterna_city_condominiums_1f",
+    "eterna_city_condominiums_3f",
+]
+header = "eterna_city_condominiums_2f"
+
+[veilstone_city_pokecenter_1f]
+exits = [
+    "veilstone_city_pokecenter_b1f",
+    "veilstone_city_pokecenter_2f",
+    "veilstone_city",
+]
+header = "veilstone_city_pokecenter_1f"
+
+[veilstone_city_southeast_house]
+exits = [
+    "veilstone_city",
+]
+header = "veilstone_city_southeast_house"
+
+[veilstone_city_northeast_house]
+exits = [
+    "veilstone_city",
+]
+header = "veilstone_city_northeast_house"
+
+[spring_path]
+exits = [
+    "valor_lakefront",
+    "route_214",
+    "sendoff_spring",
+]
+header = "spring_path"
+
+[sendoff_spring]
+exits = [
+    "spring_path",
+    "turnback_cave_entrance",
+]
+header = "sendoff_spring"
+
+[turnback_cave_entrance]
+exits = [
+    "sendoff_spring",
+]
+header = "turnback_cave_entrance"
+
+[veilstone_city_gym]
+exits = [
+    "veilstone_city",
+]
+header = "veilstone_city_gym"
+
+[route_218_gate_to_jubilife_city]
+exits = [
+    "jubilife_city",
+    "route_218",
+]
+header = "route_218_gate_to_jubilife_city"
+
+[solaceon_town_east_house]
+exits = [
+    "solaceon_town",
+]
+header = "solaceon_town_east_house"
+
+[old_chateau_dining_area]
+exits = [
+    "old_chateau",
+]
+header = "old_chateau_dining_area"
+locs = [
+    "old_chateau_dining_area_rare_candy",
+    "old_chateau_dining_area_big_pearl",
+    "old_chateau_dining_area_honey_x3",
+]
+
+[veilstone_city_prize_exchange]
+exits = [
+    "veilstone_city",
+]
+header = "veilstone_city_prize_exchange"
+
+[floaroma_meadow]
+exits = [
+    "floaroma_town",
+    "floaroma_meadow_house",
+]
+header = "floaroma_meadow"
+locs = [
+    "floaroma_meadow_miracle_seed",
+    "floaroma_meadow_leaf_stone",
+    "floaroma_meadow_ultra_ball",
+    "floaroma_meadow_rare_candy",
+    "floaroma_meadow_honey",
+    "floaroma_meadow_honey_0",
+    "floaroma_meadow_honey_1",
+    "floaroma_meadow_max_revive",
+    "floaroma_meadow_pp_up",
+    "floaroma_meadow_honey_2",
+    "floaroma_meadow_honey_3",
+    "floaroma_meadow_hyper_potion",
+    "floaroma_meadow_revive",
+    "floaroma_meadow_full_heal",
+    "floaroma_meadow_honey_4",
+]
+
+[floaroma_meadow_house]
+exits = [
+    "floaroma_meadow",
+]
+header = "floaroma_meadow_house"
+
+[jubilife_city_condominiums_1f]
+exits = [
+    "jubilife_city",
+    "jubilife_city_condominiums_2f",
+]
+header = "jubilife_city_condominiums_1f"
+
+[jubilife_city_condominiums_2f]
+exits = [
+    "jubilife_city_condominiums_3f",
+    "jubilife_city_condominiums_1f",
+]
+header = "jubilife_city_condominiums_2f"
+
+[jubilife_city_condominiums_3f]
+exits = [
+    "jubilife_city_condominiums_2f",
+    "jubilife_city_condominiums_4f",
+]
+header = "jubilife_city_condominiums_3f"
+
+[amity_square]
+exits = [
+    "hearthome_city_west_gate_to_amity_square",
+    "hearthome_city_east_gate_to_amity_square",
+]
+header = "amity_square"
+locs = [
+    "amity_square_tm45",
+    "amity_square_tm43",
+    "amity_square_spooky_plate",
+    "amity_square_amulet_coin",
+]
+
+[game_corner]
+exits = [
+    "veilstone_city",
+]
+header = "game_corner"
+
+[galactic_hq_1f]
+exits = [
+    "galactic_hq_b1f",
+    "galactic_hq_b2f",
+    "galactic_hq_4f",
+    "galactic_hq_2f",
+    "veilstone_city",
+]
+header = "galactic_hq_1f"
+locs = [
+    "galactic_hq_1f_tm49",
+    "galactic_hq_1f_dubious_disc",
+    "galactic_hq_1f_pp_up",
+]
+
+[galactic_hq_b1f]
+exits = [
+    "galactic_hq_b2f",
+    "galactic_hq_1f",
+]
+header = "galactic_hq_b1f"
+
+[galactic_hq_4f]
+exits = [
+    "galactic_hq_laboratory",
+    "galactic_hq_hall",
+    "galactic_hq_1f",
+    "galactic_hq_3f",
+]
+header = "galactic_hq_4f"
+locs = [
+    "galactic_hq_4f_razor_claw",
+]
+
+[galactic_hq_3f]
+exits = [
+    "galactic_hq_2f",
+    "galactic_hq_4f",
+]
+header = "galactic_hq_3f"
+locs = [
+    "galactic_hq_3f_tm21",
+    "galactic_hq_3f_max_elixir",
+    "galactic_hq_3f_protein",
+    "galactic_hq_3f_elixir",
+    "galactic_hq_3f_rare_candy",
+    "galactic_hq_3f_nugget",
+]
+
+[jubilife_city_condominiums_4f]
+exits = [
+    "jubilife_city_condominiums_3f",
+]
+header = "jubilife_city_condominiums_4f"
+
+[old_chateau_back_middle_west_room]
+exits = [
+    "old_chateau_corridor",
+]
+header = "old_chateau_back_middle_west_room"
+locs = [
+    "old_chateau_back_middle_west_room_dread_plate",
+]
+
+[galactic_hq_b2f]
+exits = [
+    "galactic_hq_b1f",
+    "veilstone_city_galactic_warehouse",
+    "galactic_hq_1f",
+]
+header = "galactic_hq_b2f"
+locs = [
+    "galactic_hq_b2f_tm36",
+    "galactic_hq_b2f_galactic_key",
+    "galactic_hq_b2f_zinc",
+]
+
+[old_chateau_back_middle_room]
+exits = [
+    "old_chateau_corridor",
+]
+header = "old_chateau_back_middle_room"
+
+[galactic_hq_laboratory]
+exits = [
+    "galactic_hq_4f",
+    "galactic_hq_control_room",
+]
+header = "galactic_hq_laboratory"
+locs = [
+    "galactic_hq_laboratory_full_restore",
+]
+
+[galactic_hq_control_room]
+exits = [
+    "galactic_hq_laboratory",
+]
+header = "galactic_hq_control_room"
+
+[route_206_cycling_road_north_gate]
+exits = [
+    "eterna_city",
+    "route_206",
+]
+header = "route_206_cycling_road_north_gate"
+
+[grand_lake_valor_lakefront_west_house]
+exits = [
+    "valor_lakefront",
+]
+header = "grand_lake_valor_lakefront_west_house"
+
+[pokemon_mansion]
+exits = [
+    "route_212_north",
+    "trophy_garden",
+    "pokemon_mansion_office",
+    "pokemon_mansion_maids_room",
+]
+header = "pokemon_mansion"
+
+[solaceon_ruins_maniac_tunnel_room]
+exits = [
+    "solaceon_town",
+    "maniac_tunnel",
+]
+header = "solaceon_ruins_maniac_tunnel_room"
+
+[pokemon_mansion_maids_room]
+exits = [
+    "pokemon_mansion",
+]
+header = "pokemon_mansion_maids_room"
+locs = [
+    "pokemon_mansion_maids_room_luxury_ball",
+    "pokemon_mansion_maids_room_protein",
+]
+
+[route_214_gate_to_veilstone_city]
+exits = [
+    "route_214",
+    "veilstone_city",
+]
+header = "route_214_gate_to_veilstone_city"
+
+[veilstone_city_pokecenter_2f]
+exits = [
+    "veilstone_city_pokecenter_1f",
+    "union_room",
+]
+header = "veilstone_city_pokecenter_2f"
+
+[veilstone_store_1f]
+exits = [
+    "veilstone_store_elevator",
+    "veilstone_store_2f",
+    "veilstone_store_b1f",
+    "veilstone_city",
+]
+header = "veilstone_store_1f"
+
+[veilstone_store_2f]
+exits = [
+    "veilstone_store_1f",
+    "veilstone_store_elevator",
+    "veilstone_store_3f",
+]
+header = "veilstone_store_2f"
+
+[veilstone_store_3f]
+exits = [
+    "veilstone_store_elevator",
+    "veilstone_store_2f",
+    "veilstone_store_4f",
+]
+header = "veilstone_store_3f"
+
+[veilstone_store_4f]
+exits = [
+    "veilstone_store_elevator",
+    "veilstone_store_3f",
+    "veilstone_store_5f",
+]
+header = "veilstone_store_4f"
+
+[veilstone_store_5f]
+exits = [
+    "veilstone_store_elevator",
+    "veilstone_store_4f",
+]
+header = "veilstone_store_5f"
+
+[veilstone_city_northwest_house]
+exits = [
+    "veilstone_city",
+]
+header = "veilstone_city_northwest_house"
+
+[route_206]
+exits = [
+    "route_206_cycling_road_south_gate",
+    "wayward_cave_1f",
+    "route_206_cycling_road_north_gate",
+    "route_207",
+]
+header = "route_206"
+locs = [
+    "route_206_poison_barb",
+    "route_206_pp_up",
+    "route_206_burn_heal",
+    "route_206_super_repel",
+    "route_206_ether",
+    "route_206_tinymushroom",
+]
+
+[jubilife_city_unknown_house_3]
+exits = [
+    "jubilife_city",
+]
+header = "jubilife_city_unknown_house_3"
+
+[trophy_garden]
+exits = [
+    "pokemon_mansion",
+]
+header = "trophy_garden"
+
+[flower_shop]
+exits = [
+    "floaroma_town",
+]
+header = "flower_shop"
+
+[route_207]
+exits = [
+    "mt_coronet_1f_south",
+    "oreburgh_city",
+    "mt_coronet_2f",
+    "route_206",
+]
+header = "route_207"
+locs = [
+    "route_207_poke_ball",
+    "route_207_revive",
+    "route_207_iron",
+    "route_207_super_potion",
+    "route_207_timer_ball",
+    "route_207_rare_candy",
+    "route_207_red_shard",
+    "route_207_poke_ball_0",
+    "route_207_great_ball",
+    "route_207_revive_0",
+]
+
+[mt_coronet_2f]
+exits = [
+    "mt_coronet_1f_south",
+    "mt_coronet_3f",
+    "route_207",
+]
+header = "mt_coronet_2f"
+locs = [
+    "mt_coronet_2f_max_revive",
+    "mt_coronet_2f_max_repel",
+    "mt_coronet_2f_tm80",
+    "mt_coronet_2f_escape_rope",
+    "mt_coronet_2f_star_piece",
+    "mt_coronet_2f_red_shard",
+]
+
+[mt_coronet_3f]
+exits = [
+    "mt_coronet_outside_south",
+    "mt_coronet_2f",
+]
+header = "mt_coronet_3f"
+locs = [
+    "mt_coronet_3f_max_repel",
+]
+
+[mt_coronet_outside_south]
+exits = [
+    "mt_coronet_3f",
+    "mt_coronet_4f_rooms_1_and_2",
+]
+header = "mt_coronet_outside_south"
+locs = [
+    "mt_coronet_outside_south_star_piece",
+    "mt_coronet_outside_south_star_piece_0",
+    "mt_coronet_outside_south_blue_shard",
+    "mt_coronet_outside_south_max_potion",
+    "mt_coronet_outside_south_revival_herb",
+    "mt_coronet_outside_south_energy_root",
+]
+
+[mt_coronet_4f_rooms_1_and_2]
+exits = [
+    "mt_coronet_outside_south",
+    "mt_coronet_outside_north",
+]
+header = "mt_coronet_4f_rooms_1_and_2"
+locs = [
+    "mt_coronet_4f_rooms_1_and_2_adamant_orb",
+    "mt_coronet_4f_rooms_1_and_2_lustrous_orb",
+    "mt_coronet_4f_rooms_1_and_2_sun_stone",
+    "mt_coronet_4f_rooms_1_and_2_full_heal",
+    "mt_coronet_4f_rooms_1_and_2_max_revive",
+    "mt_coronet_4f_rooms_1_and_2_heal_powder",
+    "mt_coronet_4f_rooms_1_and_2_yellow_shard",
+    "mt_coronet_4f_rooms_1_and_2_stardust",
+    "mt_coronet_4f_rooms_1_and_2_stone_plate",
+    "mt_coronet_4f_rooms_1_and_2_ultra_ball",
+]
+
+[mt_coronet_outside_north]
+exits = [
+    "mt_coronet_4f_room_3",
+    "mt_coronet_1f_tunnel_room",
+    "mt_coronet_4f_rooms_1_and_2",
+]
+header = "mt_coronet_outside_north"
+locs = [
+    "mt_coronet_outside_north_star_piece",
+    "mt_coronet_outside_north_star_piece_0",
+    "mt_coronet_outside_north_stardust",
+    "mt_coronet_outside_north_full_restore",
+    "mt_coronet_outside_north_moon_stone",
+    "mt_coronet_outside_north_revival_herb",
+    "mt_coronet_outside_north_energy_root",
+]
+
+[galactic_hq_2f]
+exits = [
+    "galactic_hq_hall",
+    "galactic_hq_1f",
+    "galactic_hq_3f",
+]
+header = "galactic_hq_2f"
+locs = [
+    "galactic_hq_2f_max_revive",
+    "galactic_hq_2f_green_shard",
+    "galactic_hq_2f_poke_doll",
+    "galactic_hq_2f_max_potion",
+]
+
+[floaroma_town_southeast_house]
+exits = [
+    "floaroma_town",
+]
+header = "floaroma_town_southeast_house"
+
+[veilstone_store_elevator]
+exits = []
+header = "veilstone_store_elevator"
+
+[canalave_city_harbor_inn]
+exits = [
+    "canalave_city",
+]
+header = "canalave_city_harbor_inn"
+
+[floaroma_town_mart]
+exits = [
+    "floaroma_town",
+]
+header = "floaroma_town_mart"
+
+[jubilife_city_south_house_4f]
+exits = [
+    "jubilife_city_south_house_3f",
+]
+header = "jubilife_city_south_house_4f"
+
+[solaceon_ruins_room_2_northeast_dead_end]
+exits = [
+    "solaceon_ruins_room_2",
+]
+header = "solaceon_ruins_room_2_northeast_dead_end"
+
+[route_206_cycling_road_south_gate]
+exits = [
+    "route_206",
+]
+header = "route_206_cycling_road_south_gate"
+
+[restaurant]
+exits = [
+    "valor_lakefront",
+]
+header = "restaurant"
+
+[eterna_city_north_house]
+exits = [
+    "eterna_city",
+]
+header = "eterna_city_north_house"
+
+[veilstone_store_b1f]
+exits = [
+    "veilstone_store_1f",
+    "veilstone_store_elevator",
+]
+header = "veilstone_store_b1f"
+
+[sunyshore_city_pokecenter_1f]
+exits = [
+    "sunyshore_city_pokecenter_2f",
+    "sunyshore_city_pokecenter_b1f",
+    "sunyshore_city",
+]
+header = "sunyshore_city_pokecenter_1f"
+
+[sunyshore_city_pokecenter_b1f]
+exits = [
+    "sunyshore_city_pokecenter_1f",
+]
+header = "sunyshore_city_pokecenter_b1f"
+
+[sunyshore_city_pokecenter_2f]
+exits = [
+    "sunyshore_city_pokecenter_1f",
+    "union_room",
+]
+header = "sunyshore_city_pokecenter_2f"
+
+[lake_valor_drained]
+exits = [
+    "valor_lakefront",
+    "valor_cavern",
+]
+header = "lake_valor_drained"
+locs = [
+    "lake_valor_drained_tm25",
+    "lake_valor_drained_hp_up",
+]
+
+[valor_cavern]
+exits = [
+    "lake_valor_drained",
+    "lake_valor",
+]
+header = "valor_cavern"
+
+[eterna_forest_outside]
+exits = [
+    "route_205_north",
+    "fuego_ironworks_outside",
+    "route_205_south",
+]
+header = "eterna_forest_outside"
+locs = [
+    "eterna_forest_outside_tm82",
+    "eterna_forest_outside_silverpowder",
+]
+
+[pokemon_mansion_office]
+exits = [
+    "pokemon_mansion",
+]
+header = "pokemon_mansion_office"
+locs = [
+    "pokemon_mansion_office_tm87",
+]
+
+[mt_coronet_1f_tunnel_room]
+exits = [
+    "mt_coronet_outside_north",
+    "mt_coronet_1f_north_room_1",
+]
+header = "mt_coronet_1f_tunnel_room"
+locs = [
+    "mt_coronet_1f_tunnel_room_green_shard",
+    "mt_coronet_1f_tunnel_room_stardust",
+    "mt_coronet_1f_tunnel_room_heal_powder",
+    "mt_coronet_1f_tunnel_room_max_potion",
+    "mt_coronet_1f_tunnel_room_rare_candy",
+    "mt_coronet_1f_tunnel_room_green_shard_0",
+]
+
+[mt_coronet_1f_north_room_1]
+exits = [
+    "mt_coronet_b1f",
+    "mt_coronet_1f_tunnel_room",
+    "route_211_west",
+    "route_211_east",
+]
+header = "mt_coronet_1f_north_room_1"
+locs = [
+    "mt_coronet_1f_north_room_1_rare_candy",
+    "mt_coronet_1f_north_room_1_tm69",
+    "mt_coronet_1f_north_room_1_escape_rope",
+    "mt_coronet_1f_north_room_1_tm02",
+    "mt_coronet_1f_north_room_1_ice_heal",
+    "mt_coronet_1f_north_room_1_red_shard",
+    "mt_coronet_1f_north_room_1_star_piece",
+    "mt_coronet_1f_north_room_1_stardust",
+    "mt_coronet_1f_north_room_1_energypowder",
+    "mt_coronet_1f_north_room_1_nugget",
+]
+
+[mt_coronet_b1f]
+exits = [
+    "mt_coronet_1f_north_room_1",
+    "mt_coronet_1f_north_room_2",
+]
+header = "mt_coronet_b1f"
+locs = [
+    "mt_coronet_b1f_revive",
+    "mt_coronet_b1f_soft_sand",
+    "mt_coronet_b1f_light_clay",
+    "mt_coronet_b1f_max_elixir",
+    "mt_coronet_b1f_full_restore",
+    "mt_coronet_b1f_ultra_ball",
+    "mt_coronet_b1f_star_piece",
+    "mt_coronet_b1f_rare_candy",
+    "mt_coronet_b1f_blue_shard",
+    "mt_coronet_b1f_green_shard",
+]
+
+[mt_coronet_1f_north_room_2]
+exits = [
+    "route_216",
+    "mt_coronet_iceberg_ruins",
+    "mt_coronet_b1f",
+    "iceberg_ruins",
+]
+header = "mt_coronet_1f_north_room_2"
+locs = [
+    "mt_coronet_1f_north_room_2_yellow_shard",
+]
+
+[route_216]
+exits = [
+    "route_216_house",
+    "route_217",
+    "mt_coronet_1f_north_room_2",
+]
+header = "route_216"
+locs = [
+    "route_216_tm13",
+    "route_216_full_heal",
+    "route_216_mental_herb",
+    "route_216_hp_up",
+    "route_216_max_potion",
+    "route_216_revive",
+    "route_216_pp_up",
+]
+
+[route_211_east]
+exits = [
+    "mt_coronet_1f_north_room_1",
+]
+header = "route_211_east"
+locs = [
+    "route_211_east_tm29",
+    "route_211_east_carbos",
+    "route_211_east_calcium",
+]
+
+[mt_coronet_iceberg_ruins]
+exits = [
+    "mt_coronet_1f_north_room_2",
+]
+header = "mt_coronet_iceberg_ruins"
+locs = [
+    "mt_coronet_iceberg_ruins_nevermeltice",
+    "mt_coronet_iceberg_ruins_nugget",
+]
+
+[route_217]
+exits = [
+    "route_217_northeast_house",
+    "route_216",
+    "route_217_west_house",
+    "acuity_lakefront",
+]
+header = "route_217"
+locs = [
+    "route_217_hm08",
+    "route_217_iron",
+    "route_217_tm07",
+    "route_217_blue_shard",
+    "route_217_ultra_ball",
+    "route_217_rare_candy",
+    "route_217_iron_0",
+    "route_217_max_revive",
+    "route_217_ultra_ball_0",
+    "route_217_revival_herb",
+    "route_217_max_repel",
+    "route_217_ultra_ball_1",
+    "route_217_protein",
+    "route_217_max_potion",
+    "route_217_full_heal",
+    "route_217_nugget",
+]
+
+[route_217_west_house]
+exits = [
+    "route_217",
+]
+header = "route_217_west_house"
+
+[canalave_city_pokecenter_1f]
+exits = [
+    "canalave_city_pokecenter_b1f",
+    "canalave_city",
+    "canalave_city_pokecenter_2f",
+]
+header = "canalave_city_pokecenter_1f"
+
+[canalave_city_pokecenter_b1f]
+exits = [
+    "canalave_city_pokecenter_1f",
+]
+header = "canalave_city_pokecenter_b1f"
+
+[contest_hall_lobby]
+exits = [
+    "hearthome_city",
+    "contest_hall_stage_no_contest",
+]
+header = "contest_hall_lobby"
+
+[contest_hall_stage_no_contest]
+exits = [
+    "contest_hall_lobby",
+]
+header = "contest_hall_stage_no_contest"
+
+[iceberg_ruins]
+exits = [
+    "mt_coronet_1f_north_room_2",
+]
+header = "iceberg_ruins"
+
+[pastoria_city_east_house]
+exits = [
+    "pastoria_city",
+]
+header = "pastoria_city_east_house"
+
+[route_217_northeast_house]
+exits = [
+    "route_217",
+]
+header = "route_217_northeast_house"
+
+[acuity_lakefront]
+exits = [
+    "lake_acuity",
+    "lake_acuity_low_water",
+    "route_217",
+    "snowpoint_city",
+]
+header = "acuity_lakefront"
+locs = [
+    "acuity_lakefront_ultra_ball",
+    "acuity_lakefront_reaper_cloth",
+]
+
+[lake_acuity]
+exits = [
+    "acuity_cavern",
+    "acuity_lakefront",
+]
+header = "lake_acuity"
+locs = [
+    "lake_acuity_tm14",
+]
+
+[lake_acuity_low_water]
+exits = [
+    "acuity_lakefront",
+]
+header = "lake_acuity_low_water"
+locs = [
+    "lake_acuity_low_water_tm14",
+]
+
+[snowpoint_city]
+exits = [
+    "snowpoint_city_mart",
+    "snowpoint_city_gym",
+    "snowpoint_city_pokecenter_1f",
+    "snowpoint_temple_1f",
+    "acuity_lakefront",
+    "snowpoint_city_west_house",
+    "snowpoint_city_east_house",
+]
+header = "snowpoint_city"
+locs = [
+    "snowpoint_city_ultra_ball",
+    "snowpoint_city_rare_candy",
+]
+
+[snowpoint_city_pokecenter_1f]
+exits = [
+    "snowpoint_city_pokecenter_2f",
+    "snowpoint_city",
+    "snowpoint_city_pokecenter_b1f",
+]
+header = "snowpoint_city_pokecenter_1f"
+
+[snowpoint_city_pokecenter_2f]
+exits = [
+    "snowpoint_city_pokecenter_1f",
+    "union_room",
+]
+header = "snowpoint_city_pokecenter_2f"
+
+[snowpoint_temple_1f]
+exits = [
+    "snowpoint_temple_b1f",
+    "snowpoint_city",
+]
+header = "snowpoint_temple_1f"
+
+[snowpoint_temple_b1f]
+exits = [
+    "snowpoint_temple_1f",
+    "snowpoint_temple_b2f",
+]
+header = "snowpoint_temple_b1f"
+locs = [
+    "snowpoint_temple_b1f_calcium",
+]
+
+[snowpoint_temple_b2f]
+exits = [
+    "snowpoint_temple_b1f",
+    "snowpoint_temple_b3f",
+]
+header = "snowpoint_temple_b2f"
+
+[snowpoint_city_mart]
+exits = [
+    "snowpoint_city",
+]
+header = "snowpoint_city_mart"
+
+[mt_coronet_4f_room_3]
+exits = [
+    "mt_coronet_outside_north",
+    "mt_coronet_5f",
+]
+header = "mt_coronet_4f_room_3"
+locs = [
+    "mt_coronet_4f_room_3_max_elixir",
+]
+
+[snowpoint_city_gym]
+exits = [
+    "snowpoint_city",
+]
+header = "snowpoint_city_gym"
+
+[snowpoint_temple_b3f]
+exits = [
+    "snowpoint_temple_b4f",
+    "snowpoint_temple_b2f",
+]
+header = "snowpoint_temple_b3f"
+locs = [
+    "snowpoint_temple_b3f_full_restore",
+]
+
+[snowpoint_temple_b4f]
+exits = [
+    "snowpoint_temple_b5f",
+    "snowpoint_temple_b3f",
+]
+header = "snowpoint_temple_b4f"
+locs = [
+    "snowpoint_temple_b4f_full_heal",
+]
+
+[snowpoint_temple_b5f]
+exits = [
+    "snowpoint_temple_b4f",
+]
+header = "snowpoint_temple_b5f"
+
+[veilstone_city_pokecenter_b1f]
+exits = [
+    "veilstone_city_pokecenter_1f",
+]
+header = "veilstone_city_pokecenter_b1f"
+
+[snowpoint_city_pokecenter_b1f]
+exits = [
+    "snowpoint_city_pokecenter_1f",
+]
+header = "snowpoint_city_pokecenter_b1f"
+
+[snowpoint_city_west_house]
+exits = [
+    "snowpoint_city",
+]
+header = "snowpoint_city_west_house"
+
+[solaceon_ruins_room_2_southeast_dead_end]
+exits = [
+    "solaceon_ruins_room_2",
+]
+header = "solaceon_ruins_room_2_southeast_dead_end"
+
+[route_215]
+exits = [
+    "route_215_gate_to_veilstone_city",
+    "route_210_south",
+    "veilstone_city",
+]
+header = "route_215"
+locs = [
+    "route_215_hyper_potion",
+    "route_215_full_heal",
+    "route_215_max_ether",
+    "route_215_tm34",
+    "route_215_fist_plate",
+    "route_215_hp_up",
+    "route_215_revive",
+    "route_215_ultra_ball",
+    "route_215_iron",
+]
+
+[team_galactic_eterna_building_1f]
+exits = [
+    "rotoms_room",
+    "eterna_city",
+    "team_galactic_eterna_building_2f",
+]
+header = "team_galactic_eterna_building_1f"
+
+[rotoms_room]
+exits = [
+    "team_galactic_eterna_building_1f",
+]
+header = "rotoms_room"
+
+[team_galactic_eterna_building_2f]
+exits = [
+    "team_galactic_eterna_building_3f",
+    "team_galactic_eterna_building_1f",
+]
+header = "team_galactic_eterna_building_2f"
+locs = [
+    "team_galactic_eterna_building_2f_x_speed",
+]
+
+[team_galactic_eterna_building_3f]
+exits = [
+    "team_galactic_eterna_building_4f",
+    "team_galactic_eterna_building_2f",
+]
+header = "team_galactic_eterna_building_3f"
+locs = [
+    "team_galactic_eterna_building_3f_x_special",
+]
+
+[team_galactic_eterna_building_4f]
+exits = [
+    "team_galactic_eterna_building_3f",
+]
+header = "team_galactic_eterna_building_4f"
+locs = [
+    "team_galactic_eterna_building_4f_revive",
+    "team_galactic_eterna_building_4f_blue_shard",
+    "team_galactic_eterna_building_4f_upgrade",
+]
+
+[route_215_gate_to_veilstone_city]
+exits = [
+    "route_215",
+    "veilstone_city",
+]
+header = "route_215_gate_to_veilstone_city"
+
+[wayward_cave_1f]
+exits = [
+    "wayward_cave_b1f",
+    "route_206",
+]
+header = "wayward_cave_1f"
+locs = [
+    "wayward_cave_1f_tm26",
+    "wayward_cave_1f_tm32",
+    "wayward_cave_1f_revive",
+    "wayward_cave_1f_escape_rope",
+    "wayward_cave_1f_yellow_shard",
+    "wayward_cave_1f_great_ball",
+    "wayward_cave_1f_red_shard",
+    "wayward_cave_1f_green_shard",
+    "wayward_cave_1f_super_potion",
+    "wayward_cave_1f_blue_shard",
+]
+
+[wayward_cave_b1f]
+exits = [
+    "wayward_cave_1f",
+]
+header = "wayward_cave_b1f"
+locs = [
+    "wayward_cave_b1f_grip_claw",
+    "wayward_cave_b1f_max_ether",
+    "wayward_cave_b1f_rare_candy",
+    "wayward_cave_b1f_stardust",
+    "wayward_cave_b1f_dusk_stone",
+]
+
+[hearthome_city_east_gate_to_amity_square]
+exits = [
+    "hearthome_city",
+    "amity_square",
+]
+header = "hearthome_city_east_gate_to_amity_square"
+
+[solaceon_ruins_room_3_southwest_dead_end]
+exits = [
+    "solaceon_ruins_room_3",
+]
+header = "solaceon_ruins_room_3_southwest_dead_end"
+locs = [
+    "solaceon_ruins_room_3_southwest_dead_end_water_stone",
+]
+
+[galactic_hq_hall]
+exits = [
+    "galactic_hq_2f",
+    "galactic_hq_4f",
+]
+header = "galactic_hq_hall"
+
+[jubilife_tv_3f_global_ranking_room]
+exits = [
+    "jubilife_tv_3f",
+]
+header = "jubilife_tv_3f_global_ranking_room"
+
+[sunyshore_city_unknown_house_2]
+exits = [
+    "sunyshore_city",
+]
+header = "sunyshore_city_unknown_house_2"
+
+[canalave_city_east_house]
+exits = [
+    "canalave_city",
+]
+header = "canalave_city_east_house"
+
+[lake_valor]
+exits = [
+    "valor_lakefront",
+    "valor_cavern",
+]
+header = "lake_valor"
+locs = [
+    "lake_valor_tm25",
+]
+
+[solaceon_town_pokecenter_b1f]
+exits = [
+    "solaceon_town_pokecenter_1f",
+]
+header = "solaceon_town_pokecenter_b1f"
+
+[route_211_west]
+exits = [
+    "mt_coronet_1f_north_room_1",
+]
+header = "route_211_west"
+locs = [
+    "route_211_west_tm12",
+    "route_211_west_great_ball",
+    "route_211_west_moon_stone",
+]
+
+[jubilife_city_southwest_house_1f]
+exits = [
+    "jubilife_city",
+    "jubilife_city_southwest_house_2f",
+]
+header = "jubilife_city_southwest_house_1f"
+
+[jubilife_city_southwest_house_2f]
+exits = [
+    "jubilife_city_southwest_house_1f",
+]
+header = "jubilife_city_southwest_house_2f"
+
+[hearthome_city_gym_entrance_room]
+exits = [
+    "hearthome_city_gym_trainer_room_2",
+    "hearthome_city_gym_leader_room",
+    "hearthome_city",
+    "hearthome_city_gym_trainer_room_1",
+]
+header = "hearthome_city_gym_entrance_room"
+
+[hearthome_city_gym_leader_room]
+exits = [
+    "hearthome_city_dp_gym_trainer_room_2",
+    "hearthome_city_dp_gym_trainer_room_1",
+    "hearthome_city_dp_gym_elevator_room_1",
+    "hearthome_city_gym_entrance_room",
+]
+header = "hearthome_city_gym_leader_room"
+
+[hearthome_city_dp_gym_trainer_room_1]
+exits = [
+    "hearthome_city_gym_leader_room",
+]
+header = "hearthome_city_dp_gym_trainer_room_1"
+
+[twinleaf_town_northeast_house]
+exits = [
+    "twinleaf_town",
+]
+header = "twinleaf_town_northeast_house"
+
+[hearthome_city_dp_gym_elevator_room_1]
+exits = [
+    "hearthome_city_dp_gym_trainer_room_3",
+    "hearthome_city_dp_gym_elevator_room_2",
+    "hearthome_city_gym_leader_room",
+    "hearthome_city_dp_gym_trainer_room_4",
+]
+header = "hearthome_city_dp_gym_elevator_room_1"
+
+[hearthome_city_gym_trainer_room_2]
+exits = [
+    "hearthome_city_gym_leader_room",
+    "hearthome_city_gym_entrance_room",
+]
+header = "hearthome_city_gym_trainer_room_2"
+
+[acuity_cavern]
+exits = [
+    "lake_acuity",
+]
+header = "acuity_cavern"
+
+[hearthome_city_dp_gym_elevator_room_2]
+exits = [
+    "hearthome_city_dp_gym_trainer_room_5",
+    "hearthome_city_dp_gym_leader_room",
+    "hearthome_city_dp_gym_elevator_room_1",
+    "hearthome_city_dp_gym_trainer_room_6",
+]
+header = "hearthome_city_dp_gym_elevator_room_2"
+
+[hearthome_city_dp_gym_leader_room]
+exits = [
+    "hearthome_city_dp_gym_elevator_room_2",
+]
+header = "hearthome_city_dp_gym_leader_room"
+
+[hearthome_city_dp_gym_trainer_room_6]
+exits = [
+    "hearthome_city_dp_gym_elevator_room_2",
+]
+header = "hearthome_city_dp_gym_trainer_room_6"
+
+[route_216_house]
+exits = [
+    "route_216",
+]
+header = "route_216_house"
+
+[sunyshore_city_unknown_house_1]
+exits = [
+    "sunyshore_city",
+]
+header = "sunyshore_city_unknown_house_1"
+
+[oreburgh_city]
+exits = [
+    "oreburgh_gate_1f",
+    "oreburgh_city_west_house",
+    "oreburgh_city_south_house",
+    "oreburgh_city_mart",
+    "oreburgh_city_middle_house",
+    "oreburgh_city_gym",
+    "oreburgh_city_pokecenter_1f",
+    "oreburgh_city_northwest_house_1f",
+    "mining_museum",
+    "oreburgh_city_north_house_1f",
+    "oreburgh_city_east_house_1f",
+    "oreburgh_mine_b1f",
+    "route_207",
+]
+header = "oreburgh_city"
+locs = [
+    "oreburgh_city_dire_hit",
+    "oreburgh_city_yellow_shard",
+    "oreburgh_city_pearl",
+    "oreburgh_city_heart_scale",
+]
+
+[oreburgh_city_gym]
+exits = [
+    "oreburgh_city",
+]
+header = "oreburgh_city_gym"
+
+[oreburgh_city_pokecenter_1f]
+exits = [
+    "oreburgh_city_pokecenter_2f",
+    "oreburgh_city",
+    "oreburgh_city_pokecenter_b1f",
+]
+header = "oreburgh_city_pokecenter_1f"
+
+[oreburgh_city_pokecenter_b1f]
+exits = [
+    "oreburgh_city_pokecenter_1f",
+]
+header = "oreburgh_city_pokecenter_b1f"
+
+[hearthome_city_gym_trainer_room_1]
+exits = [
+    "hearthome_city_gym_trainer_room_2",
+    "hearthome_city_gym_entrance_room",
+]
+header = "hearthome_city_gym_trainer_room_1"
+
+[oreburgh_city_north_house_1f]
+exits = [
+    "oreburgh_city",
+    "oreburgh_city_north_house_2f",
+]
+header = "oreburgh_city_north_house_1f"
+
+[oreburgh_city_north_house_2f]
+exits = [
+    "oreburgh_city_north_house_1f",
+    "oreburgh_city_north_house_3f",
+]
+header = "oreburgh_city_north_house_2f"
+
+[oreburgh_city_north_house_3f]
+exits = [
+    "oreburgh_city_north_house_4f",
+    "oreburgh_city_north_house_2f",
+]
+header = "oreburgh_city_north_house_3f"
+
+[oreburgh_city_east_house_1f]
+exits = [
+    "oreburgh_city_east_house_2f",
+    "oreburgh_city",
+]
+header = "oreburgh_city_east_house_1f"
+
+[oreburgh_city_north_house_4f]
+exits = [
+    "oreburgh_city_north_house_3f",
+]
+header = "oreburgh_city_north_house_4f"
+
+[oreburgh_city_mart]
+exits = [
+    "oreburgh_city",
+]
+header = "oreburgh_city_mart"
+
+[hearthome_city_dp_gym_trainer_room_5]
+exits = [
+    "hearthome_city_dp_gym_elevator_room_2",
+]
+header = "hearthome_city_dp_gym_trainer_room_5"
+
+[oreburgh_city_northwest_house_1f]
+exits = [
+    "oreburgh_city_northwest_house_2f",
+    "oreburgh_city",
+]
+header = "oreburgh_city_northwest_house_1f"
+
+[mining_museum]
+exits = [
+    "oreburgh_city",
+]
+header = "mining_museum"
+
+[oreburgh_city_northwest_house_2f]
+exits = [
+    "oreburgh_city_northwest_house_3f",
+    "oreburgh_city_northwest_house_1f",
+]
+header = "oreburgh_city_northwest_house_2f"
+
+[oreburgh_city_northwest_house_3f]
+exits = [
+    "oreburgh_city_northwest_house_2f",
+    "oreburgh_city_northwest_house_4f",
+]
+header = "oreburgh_city_northwest_house_3f"
+
+[oreburgh_city_northwest_house_4f]
+exits = [
+    "oreburgh_city_northwest_house_3f",
+]
+header = "oreburgh_city_northwest_house_4f"
+
+[oreburgh_city_east_house_2f]
+exits = [
+    "oreburgh_city_east_house_3f",
+    "oreburgh_city_east_house_1f",
+]
+header = "oreburgh_city_east_house_2f"
+
+[oreburgh_city_east_house_3f]
+exits = [
+    "oreburgh_city_east_house_2f",
+]
+header = "oreburgh_city_east_house_3f"
+
+[oreburgh_mine_b1f]
+exits = [
+    "oreburgh_city",
+    "oreburgh_mine_b2f",
+]
+header = "oreburgh_mine_b1f"
+locs = [
+    "oreburgh_mine_b1f_poke_ball",
+]
+
+[oreburgh_mine_b2f]
+exits = [
+    "oreburgh_mine_b1f",
+]
+header = "oreburgh_mine_b2f"
+locs = [
+    "oreburgh_mine_b2f_escape_rope",
+    "oreburgh_mine_b2f_potion",
+]
+
+[oreburgh_city_west_house]
+exits = [
+    "oreburgh_city",
+]
+header = "oreburgh_city_west_house"
+
+[oreburgh_gate_1f]
+exits = [
+    "oreburgh_city",
+    "oreburgh_gate_b1f",
+    "route_203",
+]
+header = "oreburgh_gate_1f"
+
+[oreburgh_gate_b1f]
+exits = [
+    "oreburgh_gate_1f",
+]
+header = "oreburgh_gate_b1f"
+locs = [
+    "oreburgh_gate_b1f_tm01",
+    "oreburgh_gate_b1f_earth_plate",
+    "oreburgh_gate_b1f_tm31",
+    "oreburgh_gate_b1f_tm70",
+    "oreburgh_gate_b1f_big_pearl",
+]
+
+[veilstone_city_galactic_warehouse]
+exits = [
+    "galactic_hq_b2f",
+    "veilstone_city",
+]
+header = "veilstone_city_galactic_warehouse"
+locs = [
+    "veilstone_city_galactic_warehouse_dusk_stone",
+    "veilstone_city_galactic_warehouse_hm02",
+]
+
+[jubilife_tv_3f_group_ranking_room]
+exits = [
+    "jubilife_tv_3f",
+]
+header = "jubilife_tv_3f_group_ranking_room"
+
+[jubilife_tv_4f]
+exits = [
+    "jubilife_tv_3f",
+    "jubilife_tv_elevator",
+]
+header = "jubilife_tv_4f"
+
+[solaceon_town_mart]
+exits = [
+    "solaceon_town",
+]
+header = "solaceon_town_mart"
+
+[hearthome_city_dp_gym_trainer_room_2]
+exits = [
+    "hearthome_city_gym_leader_room",
+]
+header = "hearthome_city_dp_gym_trainer_room_2"
+
+[cycle_shop]
+exits = [
+    "eterna_city",
+]
+header = "cycle_shop"
+
+[hearthome_city_pokemon_fan_club]
+exits = [
+    "hearthome_city",
+]
+header = "hearthome_city_pokemon_fan_club"
+
+[hearthome_city_dp_gym_trainer_room_3]
+exits = [
+    "hearthome_city_dp_gym_elevator_room_1",
+]
+header = "hearthome_city_dp_gym_trainer_room_3"
+
+[oreburgh_city_south_house]
+exits = [
+    "oreburgh_city",
+]
+header = "oreburgh_city_south_house"
+
+[sunyshore_city_gym_room_1]
+exits = [
+    "sunyshore_city",
+    "sunyshore_city_gym_room_2",
+]
+header = "sunyshore_city_gym_room_1"
+
+[sunyshore_city_gym_room_2]
+exits = [
+    "sunyshore_city_gym_room_1",
+    "sunyshore_city_gym_room_3",
+]
+header = "sunyshore_city_gym_room_2"
+
+[sunyshore_city_gym_room_3]
+exits = [
+    "sunyshore_city_gym_room_2",
+]
+header = "sunyshore_city_gym_room_3"
+
+[solaceon_ruins_room_4]
+exits = [
+    "solaceon_ruins_room_5",
+    "solaceon_ruins_room_3",
+    "solaceon_ruins_room_4_southeast_dead_end",
+]
+header = "solaceon_ruins_room_4"
+
+[solaceon_ruins_room_5]
+exits = [
+    "solaceon_ruins_room_6",
+    "solaceon_ruins_room_4",
+    "solaceon_ruins_room_5_southeast_deadend",
+    "solaceon_ruins_room_5_southwest_dead_end",
+]
+header = "solaceon_ruins_room_5"
+
+[solaceon_ruins_room_5_southeast_deadend]
+exits = [
+    "solaceon_ruins_room_5",
+]
+header = "solaceon_ruins_room_5_southeast_deadend"
+locs = [
+    "solaceon_ruins_room_5_southeast_deadend_thunderstone",
+]
+
+[solaceon_ruins_room_5_southwest_dead_end]
+exits = [
+    "solaceon_ruins_room_5",
+]
+header = "solaceon_ruins_room_5_southwest_dead_end"
+
+[mt_coronet_5f]
+exits = [
+    "mt_coronet_6f",
+    "mt_coronet_4f_room_3",
+]
+header = "mt_coronet_5f"
+locs = [
+    "mt_coronet_5f_full_restore",
+    "mt_coronet_5f_rare_candy",
+]
+
+[mt_coronet_6f]
+exits = [
+    "mt_coronet_5f",
+    "spear_pillar_dialga",
+    "spear_pillar",
+    "spear_pillar_distorted",
+    "spear_pillar_palkia",
+]
+header = "mt_coronet_6f"
+
+[spear_pillar]
+exits = [
+    "mt_coronet_6f",
+]
+header = "spear_pillar"
+
+[spear_pillar_dialga]
+exits = [
+    "mt_coronet_6f",
+]
+header = "spear_pillar_dialga"
+
+[spear_pillar_distorted]
+exits = [
+    "mt_coronet_6f",
+]
+header = "spear_pillar_distorted"
+
+[spear_pillar_palkia]
+exits = [
+    "mt_coronet_6f",
+]
+header = "spear_pillar_palkia"
+
+[old_chateau_back_middle_east_room]
+exits = [
+    "old_chateau_corridor",
+]
+header = "old_chateau_back_middle_east_room"
+locs = [
+    "old_chateau_back_middle_east_room_tm90",
+]
+
+[jubilife_city_pokecenter_1f]
+exits = [
+    "jubilife_city",
+    "jubilife_city_pokecenter_b1f",
+    "jubilife_city_pokecenter_2f",
+]
+header = "jubilife_city_pokecenter_1f"
+
+[jubilife_city_pokecenter_b1f]
+exits = [
+    "jubilife_city_pokecenter_1f",
+]
+header = "jubilife_city_pokecenter_b1f"
+
+[route_203]
+exits = [
+    "jubilife_city",
+    "oreburgh_gate_1f",
+    "route_204_south",
+]
+header = "route_203"
+locs = [
+    "route_203_repel",
+    "route_203_poke_ball",
+    "route_203_x_defense",
+]
+
+[canalave_city_pokecenter_2f]
+exits = [
+    "canalave_city_pokecenter_1f",
+    "union_room",
+]
+header = "canalave_city_pokecenter_2f"
+
+[pokemon_league_aaron_room]
+exits = [
+    "pokemon_league_elevator_to_bertha_room",
+    "pokemon_league_elevator_to_aaron_room",
+]
+header = "pokemon_league_aaron_room"
+
+[pokemon_league_elevator_to_bertha_room]
+exits = [
+    "pokemon_league_aaron_room",
+    "pokemon_league_bertha_room",
+]
+header = "pokemon_league_elevator_to_bertha_room"
+
+[pokemon_league_bertha_room]
+exits = [
+    "pokemon_league_elevator_to_bertha_room",
+    "pokemon_league_elevator_to_flint_room",
+]
+header = "pokemon_league_bertha_room"
+
+[oreburgh_city_middle_house]
+exits = [
+    "oreburgh_city",
+]
+header = "oreburgh_city_middle_house"
+
+[mt_coronet_1f_south]
+exits = [
+    "route_208",
+    "mt_coronet_2f",
+    "route_207",
+]
+header = "mt_coronet_1f_south"
+locs = [
+    "mt_coronet_1f_south_protein",
+    "mt_coronet_1f_south_dawn_stone",
+    "mt_coronet_1f_south_stardust",
+    "mt_coronet_1f_south_energypowder",
+    "mt_coronet_1f_south_revive",
+]
+
+[canalave_city_gym]
+exits = [
+    "canalave_city",
+]
+header = "canalave_city_gym"
+
+[floaroma_town_pokecenter_1f]
+exits = [
+    "floaroma_town",
+    "floaroma_town_pokecenter_2f",
+    "floaroma_town_pokecenter_b1f",
+]
+header = "floaroma_town_pokecenter_1f"
+
+[floaroma_town_pokecenter_2f]
+exits = [
+    "floaroma_town_pokecenter_1f",
+    "union_room",
+]
+header = "floaroma_town_pokecenter_2f"
+
+[floaroma_town_pokecenter_b1f]
+exits = [
+    "floaroma_town_pokecenter_1f",
+]
+header = "floaroma_town_pokecenter_b1f"
+
+[eterna_city_south_house]
+exits = [
+    "eterna_city",
+]
+header = "eterna_city_south_house"
+
+[eterna_city_condominiums_3f]
+exits = [
+    "eterna_city_condominiums_4f",
+    "eterna_city_condominiums_2f",
+]
+header = "eterna_city_condominiums_3f"
+
+[eterna_city_condominiums_4f]
+exits = [
+    "eterna_city_condominiums_3f",
+]
+header = "eterna_city_condominiums_4f"
+
+[battle_park]
+exits = [
+    "battle_park_gate_to_fight_area",
+    "battle_park_exchange_service_corner",
+]
+header = "battle_park"
+locs = [
+    "battle_park_razor_fang",
+]
+
+[battle_park_gate_to_fight_area]
+exits = [
+    "battle_park",
+]
+header = "battle_park_gate_to_fight_area"
+
+[battle_park_exchange_service_corner]
+exits = [
+    "battle_park",
+]
+header = "battle_park_exchange_service_corner"
+
+[solaceon_ruins_room_6]
+exits = [
+    "solaceon_ruins_room_5",
+    "solaceon_ruins_room_7",
+    "solaceon_ruins_room_6_southeast_dead_end",
+    "solaceon_ruins_room_6_northwest_dead_end",
+]
+header = "solaceon_ruins_room_6"
+
+[solaceon_ruins_room_6_northwest_dead_end]
+exits = [
+    "solaceon_ruins_room_6",
+]
+header = "solaceon_ruins_room_6_northwest_dead_end"
+
+[solaceon_ruins_room_6_southeast_dead_end]
+exits = [
+    "solaceon_ruins_room_6",
+]
+header = "solaceon_ruins_room_6_southeast_dead_end"
+
+[veilstone_city_southwest_house]
+exits = [
+    "veilstone_city",
+]
+header = "veilstone_city_southwest_house"
+
+[oreburgh_city_pokecenter_2f]
+exits = [
+    "union_room",
+    "oreburgh_city_pokecenter_1f",
+]
+header = "oreburgh_city_pokecenter_2f"
+
+[hearthome_city_dp_gym_trainer_room_4]
+exits = [
+    "hearthome_city_dp_gym_elevator_room_1",
+]
+header = "hearthome_city_dp_gym_trainer_room_4"
+
+[solaceon_ruins_room_7]
+exits = [
+    "solaceon_ruins_room_6",
+]
+header = "solaceon_ruins_room_7"
+locs = [
+    "solaceon_ruins_room_7_mind_plate",
+    "solaceon_ruins_room_7_odd_incense",
+    "solaceon_ruins_room_7_nugget",
+    "solaceon_ruins_room_7_hm05",
+]
+
+[solaceon_ruins_room_4_southeast_dead_end]
+exits = [
+    "solaceon_ruins_room_4",
+]
+header = "solaceon_ruins_room_4_southeast_dead_end"
+
+[pokemon_league_elevator_to_flint_room]
+exits = [
+    "pokemon_league_flint_room",
+    "pokemon_league_bertha_room",
+]
+header = "pokemon_league_elevator_to_flint_room"
+
+[pokemon_league_flint_room]
+exits = [
+    "pokemon_league_elevator_to_flint_room",
+    "pokemon_league_elevator_to_lucian_room",
+]
+header = "pokemon_league_flint_room"
+
+[pokemon_league_elevator_to_lucian_room]
+exits = [
+    "pokemon_league_flint_room",
+    "pokemon_league_lucian_room",
+]
+header = "pokemon_league_elevator_to_lucian_room"
+
+[pokemon_league_lucian_room]
+exits = [
+    "pokemon_league_elevator_to_champion_room",
+    "pokemon_league_elevator_to_lucian_room",
+]
+header = "pokemon_league_lucian_room"
+
+[pokemon_league_elevator_to_champion_room]
+exits = [
+    "pokemon_league_champion_room",
+    "pokemon_league_lucian_room",
+]
+header = "pokemon_league_elevator_to_champion_room"
+
+[pokemon_league_champion_room]
+exits = [
+    "pokemon_league_elevator_to_champion_room",
+    "pokemon_league_elevator_to_hall_of_fame",
+]
+header = "pokemon_league_champion_room"
+
+[pokemon_league_elevator_to_hall_of_fame]
+exits = [
+    "pokemon_league_champion_room",
+    "pokemon_league_hall_of_fame",
+]
+header = "pokemon_league_elevator_to_hall_of_fame"
+
+[pokemon_league_hall_of_fame]
+exits = [
+    "pokemon_league_elevator_to_hall_of_fame",
+]
+header = "pokemon_league_hall_of_fame"
+
+[jubilife_city_pokecenter_2f]
+exits = [
+    "union_room",
+    "jubilife_city_pokecenter_1f",
+]
+header = "jubilife_city_pokecenter_2f"
+
+[snowpoint_city_east_house]
+exits = [
+    "snowpoint_city",
+]
+header = "snowpoint_city_east_house"

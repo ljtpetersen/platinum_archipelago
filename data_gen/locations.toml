@@ -1,0 +1,4727 @@
+[great_marsh_3_great_ball]
+original_item = "great_ball"
+type = "overworld"
+table = "overworld"
+check = 1084
+label = "Great Marsh - Overworld (Great Ball)"
+id = 70
+
+[great_marsh_3_leaf_stone]
+original_item = "leaf_stone"
+type = "hidden"
+table = "hidden"
+check = 942
+label = "Great Marsh - Hidden (Leaf Stone)"
+id = 212
+
+[route_225_razor_fang]
+original_item = "razor_fang"
+type = "overworld"
+table = "overworld"
+check = 1212
+label = "Route 225 - Overworld (Razor Fang)"
+id = 198
+
+[route_225_rare_candy]
+original_item = "rare_candy"
+type = "overworld"
+table = "overworld"
+check = 1213
+label = "Route 225 - Overworld (Rare Candy)"
+id = 199
+
+[route_225_hp_up]
+original_item = "hp_up"
+type = "overworld"
+table = "overworld"
+check = 1214
+label = "Route 225 - Overworld (HP Up)"
+id = 200
+
+[route_225_lax_incense]
+original_item = "lax_incense"
+type = "overworld"
+table = "overworld"
+check = 1215
+label = "Route 225 - Overworld (Lax Incense)"
+id = 201
+
+[route_225_dubious_disc]
+original_item = "dubious_disc"
+type = "overworld"
+table = "overworld"
+check = 1216
+label = "Route 225 - Overworld (Dubious Disc)"
+id = 202
+
+[route_225_dawn_stone]
+original_item = "dawn_stone"
+type = "overworld"
+table = "overworld"
+check = 1217
+label = "Route 225 - Overworld (Dawn Stone)"
+id = 203
+
+[route_225_revive]
+original_item = "revive"
+type = "overworld"
+table = "overworld"
+check = 1218
+label = "Route 225 - Overworld (Revive)"
+id = 204
+
+[route_225_green_shard]
+original_item = "green_shard"
+type = "overworld"
+table = "overworld"
+check = 1321
+label = "Route 225 - Overworld (Green Shard)"
+id = 306
+
+[route_225_rare_candy_0]
+original_item = "rare_candy"
+type = "hidden"
+table = "hidden"
+check = 860
+label = "Route 225 - Hidden (Rare Candy)"
+id = 130
+
+[route_225_big_mushroom]
+original_item = "big_mushroom"
+type = "hidden"
+table = "hidden"
+check = 903
+label = "Route 225 - Hidden (Big Mushroom)"
+id = 173
+
+[route_225_leaf_stone]
+original_item = "leaf_stone"
+type = "hidden"
+table = "hidden"
+check = 933
+label = "Route 225 - Hidden (Leaf Stone)"
+id = 203
+
+[route_225_ultra_ball]
+original_item = "ultra_ball"
+type = "hidden"
+table = "hidden"
+check = 934
+label = "Route 225 - Hidden (Ultra Ball)"
+id = 204
+
+[great_marsh_4_green_shard]
+original_item = "green_shard"
+type = "overworld"
+table = "overworld"
+check = 1085
+label = "Great Marsh - Overworld (Green Shard)"
+id = 71
+
+[great_marsh_4_poke_ball]
+original_item = "poke_ball"
+type = "overworld"
+table = "overworld"
+check = 1083
+label = "Great Marsh - Overworld (Poké Ball)"
+id = 69
+
+[great_marsh_4_hyper_potion]
+original_item = "hyper_potion"
+type = "hidden"
+table = "hidden"
+check = 943
+label = "Great Marsh - Hidden (Hyper Potion)"
+id = 213
+
+[victory_road_1f_rare_candy]
+original_item = "rare_candy"
+type = "overworld"
+table = "overworld"
+check = 1197
+label = "Victory Road - Overworld (Rare Candy)"
+id = 183
+
+[victory_road_1f_max_repel]
+original_item = "max_repel"
+type = "overworld"
+table = "overworld"
+check = 1196
+label = "Victory Road - Overworld (Max Repel)"
+id = 182
+
+[victory_road_1f_tm41]
+original_item = "tm41"
+type = "overworld"
+table = "overworld"
+check = 1195
+label = "Victory Road - Overworld (TM41)"
+id = 181
+
+[victory_road_1f_razor_claw]
+original_item = "razor_claw"
+type = "overworld"
+table = "overworld"
+check = 1199
+label = "Victory Road - Overworld (Razor Claw)"
+id = 185
+
+[victory_road_1f_zinc]
+original_item = "zinc"
+type = "overworld"
+table = "overworld"
+check = 1198
+label = "Victory Road - Overworld (Zinc)"
+id = 184
+
+[victory_road_1f_ultra_ball]
+original_item = "ultra_ball"
+type = "hidden"
+table = "hidden"
+check = 844
+label = "Victory Road - Hidden (Ultra Ball)"
+id = 114
+
+[victory_road_1f_max_revive]
+original_item = "max_revive"
+type = "hidden"
+table = "hidden"
+check = 845
+label = "Victory Road - Hidden (Max Revive)"
+id = 115
+
+[victory_road_1f_nugget]
+original_item = "nugget"
+type = "hidden"
+table = "hidden"
+check = 843
+label = "Victory Road - Hidden (Nugget)"
+id = 113
+
+[pokemon_league_sky_plate]
+original_item = "sky_plate"
+type = "hidden"
+table = "hidden"
+check = 850
+label = "Pokémon League - Hidden (Sky Plate)"
+id = 120
+
+[victory_road_2f_tm79]
+original_item = "tm79"
+type = "overworld"
+table = "overworld"
+check = 1202
+label = "Victory Road - Overworld (TM79)"
+id = 188
+
+[victory_road_2f_max_elixir]
+original_item = "max_elixir"
+type = "overworld"
+table = "overworld"
+check = 1200
+label = "Victory Road - Overworld (Max Elixir)"
+id = 186
+
+[victory_road_2f_full_restore]
+original_item = "full_restore"
+type = "overworld"
+table = "overworld"
+check = 1201
+label = "Victory Road - Overworld (Full Restore)"
+id = 187
+
+[victory_road_2f_tm71]
+original_item = "tm71"
+type = "overworld"
+table = "overworld"
+check = 1203
+label = "Victory Road - Overworld (TM71)"
+id = 189
+
+[victory_road_2f_full_restore_0]
+original_item = "full_restore"
+type = "hidden"
+table = "hidden"
+check = 846
+label = "Victory Road - Hidden (Full Restore)"
+id = 116
+
+[victory_road_2f_rare_candy]
+original_item = "rare_candy"
+type = "hidden"
+table = "hidden"
+check = 847
+label = "Victory Road - Hidden (Rare Candy)"
+id = 117
+
+[route_224_razor_claw]
+original_item = "razor_claw"
+type = "overworld"
+table = "overworld"
+check = 1208
+label = "Route 224 - Overworld (Razor Claw)"
+id = 194
+
+[route_224_rare_candy]
+original_item = "rare_candy"
+type = "overworld"
+table = "overworld"
+check = 1209
+label = "Route 224 - Overworld (Rare Candy)"
+id = 195
+
+[route_224_destiny_knot]
+original_item = "destiny_knot"
+type = "overworld"
+table = "overworld"
+check = 1210
+label = "Route 224 - Overworld (Destiny Knot)"
+id = 196
+
+[route_224_repeat_ball]
+original_item = "repeat_ball"
+type = "overworld"
+table = "overworld"
+check = 1318
+label = "Route 224 - Overworld (Repeat Ball)"
+id = 303
+
+[route_224_pp_max]
+original_item = "pp_max"
+type = "overworld"
+table = "overworld"
+check = 1319
+label = "Route 224 - Overworld (PP Max)"
+id = 304
+
+[route_224_ultra_ball]
+original_item = "ultra_ball"
+type = "overworld"
+table = "overworld"
+check = 1320
+label = "Route 224 - Overworld (Ultra Ball)"
+id = 305
+
+[route_224_upgrade]
+original_item = "upgrade"
+type = "overworld"
+table = "overworld"
+check = 1317
+label = "Route 224 - Overworld (Up-Grade)"
+id = 302
+
+[route_224_rare_candy_0]
+original_item = "rare_candy"
+type = "hidden"
+table = "hidden"
+check = 854
+label = "Route 224 - Hidden (Rare Candy)"
+id = 124
+
+[route_224_pearl]
+original_item = "pearl"
+type = "hidden"
+table = "hidden"
+check = 855
+label = "Route 224 - Hidden (Pearl)"
+id = 125
+
+[route_224_heart_scale]
+original_item = "heart_scale"
+type = "hidden"
+table = "hidden"
+check = 856
+label = "Route 224 - Hidden (Heart Scale)"
+id = 126
+
+[route_224_big_pearl]
+original_item = "big_pearl"
+type = "hidden"
+table = "hidden"
+check = 857
+label = "Route 224 - Hidden (Big Pearl)"
+id = 127
+
+[route_224_pearl_0]
+original_item = "pearl"
+type = "hidden"
+table = "hidden"
+check = 900
+label = "Route 224 - Hidden (Pearl) 1"
+id = 170
+
+[route_224_zinc]
+original_item = "zinc"
+type = "hidden"
+table = "hidden"
+check = 901
+label = "Route 224 - Hidden (Zinc)"
+id = 171
+
+[route_224_ultra_ball_0]
+original_item = "ultra_ball"
+type = "hidden"
+table = "hidden"
+check = 902
+label = "Route 224 - Hidden (Ultra Ball)"
+id = 172
+
+[great_marsh_1_yellow_shard]
+original_item = "yellow_shard"
+type = "overworld"
+table = "overworld"
+check = 1080
+label = "Great Marsh - Overworld (Yellow Shard)"
+id = 66
+
+[great_marsh_1_poke_ball]
+original_item = "poke_ball"
+type = "overworld"
+table = "overworld"
+check = 1081
+label = "Great Marsh - Overworld (Poké Ball) 1"
+id = 67
+
+[great_marsh_1_rare_candy]
+original_item = "rare_candy"
+type = "hidden"
+table = "hidden"
+check = 940
+label = "Great Marsh - Hidden (Rare Candy)"
+id = 210
+
+[survival_area_rare_candy]
+original_item = "rare_candy"
+type = "overworld"
+table = "overworld"
+check = 1329
+label = "Survival Area - Overworld (Rare Candy)"
+id = 314
+
+[survival_area_red_shard]
+original_item = "red_shard"
+type = "overworld"
+table = "overworld"
+check = 1326
+label = "Survival Area - Overworld (Red Shard)"
+id = 311
+
+[survival_area_pp_up]
+original_item = "pp_up"
+type = "hidden"
+table = "hidden"
+check = 861
+label = "Survival Area - Hidden (PP Up)"
+id = 131
+
+[great_marsh_5_great_ball]
+original_item = "great_ball"
+type = "overworld"
+table = "overworld"
+check = 1086
+label = "Great Marsh - Overworld (Great Ball) 1"
+id = 72
+
+[great_marsh_5_big_mushroom]
+original_item = "big_mushroom"
+type = "hidden"
+table = "hidden"
+check = 944
+label = "Great Marsh - Hidden (Big Mushroom)"
+id = 214
+
+[fullmoon_island_forest_lunar_wing]
+original_item = "lunar_wing"
+type = "overworld"
+table = "overworld"
+check = 1106
+label = "Fullmoon Island - Overworld (Lunar Wing)"
+id = 92
+
+[victory_road_b1f_tm59]
+original_item = "tm59"
+type = "overworld"
+table = "overworld"
+check = 1204
+label = "Victory Road - Overworld (TM59)"
+id = 190
+
+[victory_road_b1f_ultra_ball]
+original_item = "ultra_ball"
+type = "overworld"
+table = "overworld"
+check = 1327
+label = "Victory Road - Overworld (Ultra Ball)"
+id = 312
+
+[victory_road_b1f_calcium]
+original_item = "calcium"
+type = "overworld"
+table = "overworld"
+check = 1328
+label = "Victory Road - Overworld (Calcium)"
+id = 313
+
+[victory_road_b1f_heart_scale]
+original_item = "heart_scale"
+type = "hidden"
+table = "hidden"
+check = 848
+label = "Victory Road - Hidden (Heart Scale)"
+id = 118
+
+[victory_road_b1f_max_elixir]
+original_item = "max_elixir"
+type = "hidden"
+table = "hidden"
+check = 849
+label = "Victory Road - Hidden (Max Elixir)"
+id = 119
+
+[great_marsh_2_blue_shard]
+original_item = "blue_shard"
+type = "overworld"
+table = "overworld"
+check = 1082
+label = "Great Marsh - Overworld (Blue Shard)"
+id = 68
+
+[great_marsh_2_toxic_plate]
+original_item = "toxic_plate"
+type = "hidden"
+table = "hidden"
+check = 941
+label = "Great Marsh - Hidden (Toxic Plate)"
+id = 211
+
+[route_226_tm53]
+original_item = "tm53"
+type = "overworld"
+table = "overworld"
+check = 1219
+label = "Route 226 - Overworld (TM53)"
+id = 205
+
+[route_226_carbos]
+original_item = "carbos"
+type = "overworld"
+table = "overworld"
+check = 1221
+label = "Route 226 - Overworld (Carbos)"
+id = 207
+
+[route_226_lagging_tail]
+original_item = "lagging_tail"
+type = "overworld"
+table = "overworld"
+check = 1220
+label = "Route 226 - Overworld (Lagging Tail)"
+id = 206
+
+[route_226_heart_scale]
+original_item = "heart_scale"
+type = "hidden"
+table = "hidden"
+check = 865
+label = "Route 226 - Hidden (Heart Scale)"
+id = 135
+
+[route_226_tinymushroom]
+original_item = "tinymushroom"
+type = "hidden"
+table = "hidden"
+check = 862
+label = "Route 226 - Hidden (TinyMushroom)"
+id = 132
+
+[route_226_big_mushroom]
+original_item = "big_mushroom"
+type = "hidden"
+table = "hidden"
+check = 864
+label = "Route 226 - Hidden (Big Mushroom)"
+id = 134
+
+[route_226_pp_max]
+original_item = "pp_max"
+type = "hidden"
+table = "hidden"
+check = 863
+label = "Route 226 - Hidden (PP Max)"
+id = 133
+
+[route_226_rare_candy]
+original_item = "rare_candy"
+type = "hidden"
+table = "hidden"
+check = 889
+label = "Route 226 - Hidden (Rare Candy)"
+id = 159
+
+[route_227_charcoal]
+original_item = "charcoal"
+type = "overworld"
+table = "overworld"
+check = 1222
+label = "Route 227 - Overworld (Charcoal)"
+id = 208
+
+[route_227_zinc]
+original_item = "zinc"
+type = "overworld"
+table = "overworld"
+check = 1223
+label = "Route 227 - Overworld (Zinc)"
+id = 209
+
+[route_227_yellow_shard]
+original_item = "yellow_shard"
+type = "overworld"
+table = "overworld"
+check = 1322
+label = "Route 227 - Overworld (Yellow Shard)"
+id = 307
+
+[route_227_star_piece]
+original_item = "star_piece"
+type = "hidden"
+table = "hidden"
+check = 866
+label = "Route 227 - Hidden (Star Piece)"
+id = 136
+
+[route_227_max_repel]
+original_item = "max_repel"
+type = "hidden"
+table = "hidden"
+check = 867
+label = "Route 227 - Hidden (Max Repel)"
+id = 137
+
+[route_227_rare_candy]
+original_item = "rare_candy"
+type = "hidden"
+table = "hidden"
+check = 889
+label = "Route 227 - Hidden (Rare Candy)"
+id = 159
+
+[route_228_protector]
+original_item = "protector"
+type = "overworld"
+table = "overworld"
+check = 1238
+label = "Route 228 - Overworld (Protector)"
+id = 224
+
+[route_228_iron]
+original_item = "iron"
+type = "overworld"
+table = "overworld"
+check = 1239
+label = "Route 228 - Overworld (Iron)"
+id = 225
+
+[route_228_shiny_stone]
+original_item = "shiny_stone"
+type = "overworld"
+table = "overworld"
+check = 1240
+label = "Route 228 - Overworld (Shiny Stone)"
+id = 226
+
+[route_228_shed_shell]
+original_item = "shed_shell"
+type = "overworld"
+table = "overworld"
+check = 1241
+label = "Route 228 - Overworld (Shed Shell)"
+id = 227
+
+[route_228_tm37]
+original_item = "tm37"
+type = "overworld"
+table = "overworld"
+check = 1242
+label = "Route 228 - Overworld (TM37)"
+id = 228
+
+[route_228_calcium]
+original_item = "calcium"
+type = "hidden"
+table = "hidden"
+check = 872
+label = "Route 228 - Hidden (Calcium)"
+id = 142
+
+[route_228_full_restore]
+original_item = "full_restore"
+type = "hidden"
+table = "hidden"
+check = 874
+label = "Route 228 - Hidden (Full Restore)"
+id = 144
+
+[route_228_star_piece]
+original_item = "star_piece"
+type = "hidden"
+table = "hidden"
+check = 873
+label = "Route 228 - Hidden (Star Piece)"
+id = 143
+
+[route_228_rare_candy]
+original_item = "rare_candy"
+type = "hidden"
+table = "hidden"
+check = 935
+label = "Route 228 - Hidden (Rare Candy)"
+id = 205
+
+[route_228_max_repel]
+original_item = "max_repel"
+type = "hidden"
+table = "hidden"
+check = 936
+label = "Route 228 - Hidden (Max Repel)"
+id = 206
+
+[route_228_pp_max]
+original_item = "pp_max"
+type = "hidden"
+table = "hidden"
+check = 937
+label = "Route 228 - Hidden (PP Max)"
+id = 207
+
+[route_230_rare_candy]
+original_item = "rare_candy"
+type = "overworld"
+table = "overworld"
+check = 1247
+label = "Route 230 - Overworld (Rare Candy)"
+id = 233
+
+[route_230_blue_shard]
+original_item = "blue_shard"
+type = "overworld"
+table = "overworld"
+check = 1323
+label = "Route 230 - Overworld (Blue Shard)"
+id = 308
+
+[route_230_ultra_ball]
+original_item = "ultra_ball"
+type = "hidden"
+table = "hidden"
+check = 877
+label = "Route 230 - Hidden (Ultra Ball)"
+id = 147
+
+[route_230_water_stone]
+original_item = "water_stone"
+type = "hidden"
+table = "hidden"
+check = 878
+label = "Route 230 - Hidden (Water Stone)"
+id = 148
+
+[celestic_town_dragon_fang]
+original_item = "dragon_fang"
+type = "overworld"
+table = "overworld"
+check = 1334
+label = "Celestic Town - Overworld (Dragon Fang)"
+id = 319
+
+[celestic_town_kings_rock]
+original_item = "kings_rock"
+type = "hidden"
+table = "hidden"
+check = 1003
+label = "Celestic Town - Hidden (King’s Rock)"
+id = 273
+
+[victory_road_1f_room_2_nugget]
+original_item = "nugget"
+type = "overworld"
+table = "overworld"
+check = 1207
+label = "Victory Road - Overworld (Nugget)"
+id = 193
+
+[victory_road_1f_room_2_full_restore]
+original_item = "full_restore"
+type = "overworld"
+table = "overworld"
+check = 1205
+label = "Victory Road - Overworld (Full Restore) 1"
+id = 191
+
+[victory_road_1f_room_2_dusk_stone]
+original_item = "dusk_stone"
+type = "overworld"
+table = "overworld"
+check = 1206
+label = "Victory Road - Overworld (Dusk Stone)"
+id = 192
+
+[victory_road_1f_room_2_leftovers]
+original_item = "leftovers"
+type = "overworld"
+table = "overworld"
+check = 1211
+label = "Victory Road - Overworld (Leftovers)"
+id = 197
+
+[victory_road_1f_room_2_heart_scale]
+original_item = "heart_scale"
+type = "hidden"
+table = "hidden"
+check = 853
+label = "Victory Road - Hidden (Heart Scale) 1"
+id = 123
+
+[victory_road_1f_room_2_hp_up]
+original_item = "hp_up"
+type = "hidden"
+table = "hidden"
+check = 852
+label = "Victory Road - Hidden (HP Up)"
+id = 122
+
+[victory_road_1f_room_2_ultra_ball]
+original_item = "ultra_ball"
+type = "hidden"
+table = "hidden"
+check = 851
+label = "Victory Road - Hidden (Ultra Ball) 1"
+id = 121
+
+[victory_road_1f_room_2_rare_candy]
+original_item = "rare_candy"
+type = "hidden"
+table = "hidden"
+check = 859
+label = "Victory Road - Hidden (Rare Candy) 1"
+id = 129
+
+[victory_road_1f_room_2_ultra_ball_0]
+original_item = "ultra_ball"
+type = "hidden"
+table = "hidden"
+check = 858
+label = "Victory Road - Hidden (Ultra Ball) 2"
+id = 128
+
+[route_229_reaper_cloth]
+original_item = "reaper_cloth"
+type = "overworld"
+table = "overworld"
+check = 1243
+label = "Route 229 - Overworld (Reaper Cloth)"
+id = 229
+
+[route_229_full_restore]
+original_item = "full_restore"
+type = "overworld"
+table = "overworld"
+check = 1245
+label = "Route 229 - Overworld (Full Restore)"
+id = 231
+
+[route_229_protein]
+original_item = "protein"
+type = "overworld"
+table = "overworld"
+check = 1244
+label = "Route 229 - Overworld (Protein)"
+id = 230
+
+[route_229_thunderstone]
+original_item = "thunderstone"
+type = "hidden"
+table = "hidden"
+check = 875
+label = "Route 229 - Hidden (Thunderstone)"
+id = 145
+
+[resort_area_nugget]
+original_item = "nugget"
+type = "overworld"
+table = "overworld"
+check = 1246
+label = "Resort Area - Overworld (Nugget)"
+id = 232
+
+[resort_area_nugget_0]
+original_item = "nugget"
+type = "hidden"
+table = "hidden"
+check = 876
+label = "Resort Area - Hidden (Nugget)"
+id = 146
+
+[resort_area_thunderstone]
+original_item = "thunderstone"
+type = "hidden"
+table = "hidden"
+check = 875
+label = "Resort Area - Hidden (Thunderstone)"
+id = 145
+
+[twinleaf_town_odd_keystone]
+original_item = "odd_keystone"
+type = "hidden"
+table = "hidden"
+check = 931
+label = "Twinleaf Town - Hidden (Odd Keystone)"
+id = 201
+
+[great_marsh_6_red_shard]
+original_item = "red_shard"
+type = "overworld"
+table = "overworld"
+check = 1087
+label = "Great Marsh - Overworld (Red Shard)"
+id = 73
+
+[great_marsh_6_max_repel]
+original_item = "max_repel"
+type = "hidden"
+table = "hidden"
+check = 945
+label = "Great Marsh - Hidden (Max Repel)"
+id = 215
+
+[verity_lakefront_tinymushroom]
+original_item = "tinymushroom"
+type = "hidden"
+table = "hidden"
+check = 890
+label = "Verity Lakefront - Hidden (TinyMushroom)"
+id = 160
+
+[lake_verity_low_water_tm38]
+original_item = "tm38"
+type = "overworld"
+table = "overworld"
+check = 1253
+label = "Lake Verity - Overworld (TM38)"
+id = 239
+
+[pastoria_city_mystic_water]
+original_item = "mystic_water"
+type = "overworld"
+table = "overworld"
+check = 1088
+label = "Pastoria City - Overworld (Mystic Water)"
+id = 74
+
+[pastoria_city_zinc]
+original_item = "zinc"
+type = "hidden"
+table = "hidden"
+check = 757
+label = "Pastoria City - Hidden (Zinc)"
+id = 27
+
+[iron_island_star_piece]
+original_item = "star_piece"
+type = "hidden"
+table = "hidden"
+check = 781
+label = "Iron Island - Hidden (Star Piece)"
+id = 51
+
+[iron_island_b3f_shiny_stone]
+original_item = "shiny_stone"
+type = "overworld"
+table = "overworld"
+check = 1158
+label = "Iron Island - Overworld (Shiny Stone)"
+id = 144
+
+[iron_island_b2f_left_room_ultra_ball]
+original_item = "ultra_ball"
+type = "overworld"
+table = "overworld"
+check = 1156
+label = "Iron Island - Overworld (Ultra Ball)"
+id = 142
+
+[iron_island_b2f_left_room_dusk_ball]
+original_item = "dusk_ball"
+type = "overworld"
+table = "overworld"
+check = 1154
+label = "Iron Island - Overworld (Dusk Ball)"
+id = 140
+
+[iron_island_b2f_left_room_max_potion]
+original_item = "max_potion"
+type = "overworld"
+table = "overworld"
+check = 1155
+label = "Iron Island - Overworld (Max Potion)"
+id = 141
+
+[iron_island_b2f_left_room_hp_up]
+original_item = "hp_up"
+type = "overworld"
+table = "overworld"
+check = 1157
+label = "Iron Island - Overworld (HP Up)"
+id = 143
+
+[iron_island_b2f_left_room_red_shard]
+original_item = "red_shard"
+type = "overworld"
+table = "overworld"
+check = 1301
+label = "Iron Island - Overworld (Red Shard)"
+id = 286
+
+[iron_island_b2f_left_room_magnet]
+original_item = "magnet"
+type = "overworld"
+table = "overworld"
+check = 1303
+label = "Iron Island - Overworld (Magnet)"
+id = 288
+
+[iron_island_b2f_left_room_iron_plate]
+original_item = "iron_plate"
+type = "hidden"
+table = "hidden"
+check = 786
+label = "Iron Island - Hidden (Iron Plate)"
+id = 56
+
+[iron_island_b2f_left_room_star_piece]
+original_item = "star_piece"
+type = "hidden"
+table = "hidden"
+check = 784
+label = "Iron Island - Hidden (Star Piece) 1"
+id = 54
+
+[iron_island_b2f_left_room_star_piece_0]
+original_item = "star_piece"
+type = "hidden"
+table = "hidden"
+check = 785
+label = "Iron Island - Hidden (Star Piece) 2"
+id = 55
+
+[iron_island_b1f_right_room_max_repel]
+original_item = "max_repel"
+type = "overworld"
+table = "overworld"
+check = 1151
+label = "Iron Island - Overworld (Max Repel)"
+id = 137
+
+[iron_island_b1f_right_room_escape_rope]
+original_item = "escape_rope"
+type = "overworld"
+table = "overworld"
+check = 1150
+label = "Iron Island - Overworld (Escape Rope)"
+id = 136
+
+[iron_island_b1f_right_room_revive]
+original_item = "revive"
+type = "overworld"
+table = "overworld"
+check = 1304
+label = "Iron Island - Overworld (Revive)"
+id = 289
+
+[iron_island_b1f_right_room_star_piece]
+original_item = "star_piece"
+type = "hidden"
+table = "hidden"
+check = 782
+label = "Iron Island - Hidden (Star Piece) 3"
+id = 52
+
+[iron_island_b2f_right_room_elixir]
+original_item = "elixir"
+type = "overworld"
+table = "overworld"
+check = 1152
+label = "Iron Island - Overworld (Elixir)"
+id = 138
+
+[iron_island_b2f_right_room_tm23]
+original_item = "tm23"
+type = "overworld"
+table = "overworld"
+check = 1153
+label = "Iron Island - Overworld (TM23)"
+id = 139
+
+[iron_island_b2f_right_room_star_piece]
+original_item = "star_piece"
+type = "hidden"
+table = "hidden"
+check = 783
+label = "Iron Island - Hidden (Star Piece) 4"
+id = 53
+
+[route_213_tm40]
+original_item = "tm40"
+type = "overworld"
+table = "overworld"
+check = 1090
+label = "Route 213 - Overworld (TM40)"
+id = 76
+
+[route_213_yellow_shard]
+original_item = "yellow_shard"
+type = "overworld"
+table = "overworld"
+check = 1091
+label = "Route 213 - Overworld (Yellow Shard)"
+id = 77
+
+[route_213_max_revive]
+original_item = "max_revive"
+type = "overworld"
+table = "overworld"
+check = 1092
+label = "Route 213 - Overworld (Max Revive)"
+id = 78
+
+[route_213_water_stone]
+original_item = "water_stone"
+type = "overworld"
+table = "overworld"
+check = 1093
+label = "Route 213 - Overworld (Water Stone)"
+id = 79
+
+[route_213_tm05]
+original_item = "tm05"
+type = "overworld"
+table = "overworld"
+check = 1089
+label = "Route 213 - Overworld (TM05)"
+id = 75
+
+[route_213_pp_up]
+original_item = "pp_up"
+type = "overworld"
+table = "overworld"
+check = 1094
+label = "Route 213 - Overworld (PP Up)"
+id = 80
+
+[route_213_protein]
+original_item = "protein"
+type = "overworld"
+table = "overworld"
+check = 1095
+label = "Route 213 - Overworld (Protein)"
+id = 81
+
+[route_213_hp_up]
+original_item = "hp_up"
+type = "hidden"
+table = "hidden"
+check = 760
+label = "Route 213 - Hidden (HP Up)"
+id = 30
+
+[route_213_big_pearl]
+original_item = "big_pearl"
+type = "hidden"
+table = "hidden"
+check = 759
+label = "Route 213 - Hidden (Big Pearl)"
+id = 29
+
+[route_213_pearl]
+original_item = "pearl"
+type = "hidden"
+table = "hidden"
+check = 758
+label = "Route 213 - Hidden (Pearl)"
+id = 28
+
+[route_213_hyper_potion]
+original_item = "hyper_potion"
+type = "hidden"
+table = "hidden"
+check = 882
+label = "Route 213 - Hidden (Hyper Potion)"
+id = 152
+
+[route_213_pearl_0]
+original_item = "pearl"
+type = "hidden"
+table = "hidden"
+check = 894
+label = "Route 213 - Hidden (Pearl) 1"
+id = 164
+
+[route_213_pearl_1]
+original_item = "pearl"
+type = "hidden"
+table = "hidden"
+check = 895
+label = "Route 213 - Hidden (Pearl) 2"
+id = 165
+
+[route_213_max_revive_0]
+original_item = "max_revive"
+type = "hidden"
+table = "hidden"
+check = 896
+label = "Route 213 - Hidden (Max Revive)"
+id = 166
+
+[route_213_heart_scale]
+original_item = "heart_scale"
+type = "hidden"
+table = "hidden"
+check = 914
+label = "Route 213 - Hidden (Heart Scale)"
+id = 184
+
+[route_213_big_pearl_0]
+original_item = "big_pearl"
+type = "hidden"
+table = "hidden"
+check = 915
+label = "Route 213 - Hidden (Big Pearl) 1"
+id = 185
+
+[route_213_heart_scale_0]
+original_item = "heart_scale"
+type = "hidden"
+table = "hidden"
+check = 916
+label = "Route 213 - Hidden (Heart Scale) 1"
+id = 186
+
+[route_213_suite_key]
+original_item = "suite_key"
+type = "hidden"
+table = "hidden"
+check = 946
+label = "Route 213 - Hidden (Suite Key)"
+id = 216
+
+[route_213_pearl_2]
+original_item = "pearl"
+type = "hidden"
+table = "hidden"
+check = 988
+label = "Route 213 - Hidden (Pearl) 3"
+id = 258
+
+[route_219_antidote]
+original_item = "antidote"
+type = "overworld"
+table = "overworld"
+check = 1138
+label = "Route 219 - Overworld (Antidote)"
+id = 124
+
+[route_219_zinc]
+original_item = "zinc"
+type = "hidden"
+table = "hidden"
+check = 899
+label = "Route 219 - Hidden (Zinc)"
+id = 169
+
+[route_221_protein]
+original_item = "protein"
+type = "overworld"
+table = "overworld"
+check = 1144
+label = "Route 221 - Overworld (Protein)"
+id = 130
+
+[route_221_tm81]
+original_item = "tm81"
+type = "overworld"
+table = "overworld"
+check = 1145
+label = "Route 221 - Overworld (TM81)"
+id = 131
+
+[route_221_ultra_ball]
+original_item = "ultra_ball"
+type = "overworld"
+table = "overworld"
+check = 1143
+label = "Route 221 - Overworld (Ultra Ball)"
+id = 129
+
+[route_221_pure_incense]
+original_item = "pure_incense"
+type = "overworld"
+table = "overworld"
+check = 1115
+label = "Route 221 - Overworld (Pure Incense)"
+id = 101
+
+[route_221_hyper_potion]
+original_item = "hyper_potion"
+type = "hidden"
+table = "hidden"
+check = 780
+label = "Route 221 - Hidden (Hyper Potion)"
+id = 50
+
+[route_221_big_mushroom]
+original_item = "big_mushroom"
+type = "hidden"
+table = "hidden"
+check = 779
+label = "Route 221 - Hidden (Big Mushroom)"
+id = 49
+
+[route_221_ultra_ball_0]
+original_item = "ultra_ball"
+type = "hidden"
+table = "hidden"
+check = 920
+label = "Route 221 - Hidden (Ultra Ball)"
+id = 190
+
+[route_221_carbos]
+original_item = "carbos"
+type = "hidden"
+table = "hidden"
+check = 921
+label = "Route 221 - Hidden (Carbos)"
+id = 191
+
+[route_221_max_revive]
+original_item = "max_revive"
+type = "hidden"
+table = "hidden"
+check = 922
+label = "Route 221 - Hidden (Max Revive)"
+id = 192
+
+[stark_mountain_outside_life_orb]
+original_item = "life_orb"
+type = "overworld"
+table = "overworld"
+check = 1225
+label = "Stark Mountain - Overworld (Life Orb)"
+id = 211
+
+[stark_mountain_outside_max_elixir]
+original_item = "max_elixir"
+type = "overworld"
+table = "overworld"
+check = 1224
+label = "Stark Mountain - Overworld (Max Elixir)"
+id = 210
+
+[iron_island_b1f_left_room_protector]
+original_item = "protector"
+type = "overworld"
+table = "overworld"
+check = 1149
+label = "Iron Island - Overworld (Protector)"
+id = 135
+
+[iron_island_b1f_left_room_yellow_shard]
+original_item = "yellow_shard"
+type = "overworld"
+table = "overworld"
+check = 1302
+label = "Iron Island - Overworld (Yellow Shard)"
+id = 287
+
+[iron_island_iron_ruins_metal_coat]
+original_item = "metal_coat"
+type = "overworld"
+table = "overworld"
+check = 1337
+label = "Iron Island - Overworld (Metal Coat)"
+id = 322
+
+[iron_island_iron_ruins_nugget]
+original_item = "nugget"
+type = "hidden"
+table = "hidden"
+check = 1004
+label = "Iron Island - Hidden (Nugget)"
+id = 274
+
+[route_212_south_full_heal]
+original_item = "full_heal"
+type = "overworld"
+table = "overworld"
+check = 1073
+label = "Route 212 - Overworld (Full Heal)"
+id = 59
+
+[route_212_south_tm84]
+original_item = "tm84"
+type = "overworld"
+table = "overworld"
+check = 1074
+label = "Route 212 - Overworld (TM84)"
+id = 60
+
+[route_212_south_tm62]
+original_item = "tm62"
+type = "overworld"
+table = "overworld"
+check = 1075
+label = "Route 212 - Overworld (TM62)"
+id = 61
+
+[route_212_south_zinc]
+original_item = "zinc"
+type = "overworld"
+table = "overworld"
+check = 1076
+label = "Route 212 - Overworld (Zinc)"
+id = 62
+
+[route_212_south_hyper_potion]
+original_item = "hyper_potion"
+type = "overworld"
+table = "overworld"
+check = 1077
+label = "Route 212 - Overworld (Hyper Potion)"
+id = 63
+
+[route_212_south_tm06]
+original_item = "tm06"
+type = "overworld"
+table = "overworld"
+check = 1078
+label = "Route 212 - Overworld (TM06)"
+id = 64
+
+[route_212_south_revive]
+original_item = "revive"
+type = "overworld"
+table = "overworld"
+check = 1079
+label = "Route 212 - Overworld (Revive)"
+id = 65
+
+[route_212_south_elixir]
+original_item = "elixir"
+type = "overworld"
+table = "overworld"
+check = 1290
+label = "Route 212 - Overworld (Elixir)"
+id = 275
+
+[route_212_south_blue_shard]
+original_item = "blue_shard"
+type = "overworld"
+table = "overworld"
+check = 1289
+label = "Route 212 - Overworld (Blue Shard)"
+id = 274
+
+[route_212_south_max_ether]
+original_item = "max_ether"
+type = "hidden"
+table = "hidden"
+check = 749
+label = "Route 212 - Hidden (Max Ether)"
+id = 19
+
+[route_212_south_dawn_stone]
+original_item = "dawn_stone"
+type = "hidden"
+table = "hidden"
+check = 756
+label = "Route 212 - Hidden (Dawn Stone)"
+id = 26
+
+[route_212_south_full_heal_0]
+original_item = "full_heal"
+type = "hidden"
+table = "hidden"
+check = 755
+label = "Route 212 - Hidden (Full Heal)"
+id = 25
+
+[route_212_south_rare_candy]
+original_item = "rare_candy"
+type = "hidden"
+table = "hidden"
+check = 751
+label = "Route 212 - Hidden (Rare Candy)"
+id = 21
+
+[route_212_south_hyper_potion_0]
+original_item = "hyper_potion"
+type = "hidden"
+table = "hidden"
+check = 754
+label = "Route 212 - Hidden (Hyper Potion)"
+id = 24
+
+[route_212_south_max_repel]
+original_item = "max_repel"
+type = "hidden"
+table = "hidden"
+check = 753
+label = "Route 212 - Hidden (Max Repel)"
+id = 23
+
+[route_212_south_ultra_ball]
+original_item = "ultra_ball"
+type = "hidden"
+table = "hidden"
+check = 752
+label = "Route 212 - Hidden (Ultra Ball)"
+id = 22
+
+[route_212_south_big_mushroom]
+original_item = "big_mushroom"
+type = "hidden"
+table = "hidden"
+check = 750
+label = "Route 212 - Hidden (Big Mushroom)"
+id = 20
+
+[route_212_north_rose_incense]
+original_item = "rose_incense"
+type = "overworld"
+table = "overworld"
+check = 1069
+label = "Route 212 - Overworld (Rose Incense)"
+id = 55
+
+[route_212_north_tm11]
+original_item = "tm11"
+type = "overworld"
+table = "overworld"
+check = 1068
+label = "Route 212 - Overworld (TM11)"
+id = 54
+
+[route_212_north_elixir]
+original_item = "elixir"
+type = "overworld"
+table = "overworld"
+check = 1070
+label = "Route 212 - Overworld (Elixir) 1"
+id = 56
+
+[route_212_north_green_shard]
+original_item = "green_shard"
+type = "overworld"
+table = "overworld"
+check = 1288
+label = "Route 212 - Overworld (Green Shard)"
+id = 273
+
+[route_212_north_iron]
+original_item = "iron"
+type = "overworld"
+table = "overworld"
+check = 1287
+label = "Route 212 - Overworld (Iron)"
+id = 272
+
+[route_212_north_ultra_ball]
+original_item = "ultra_ball"
+type = "hidden"
+table = "hidden"
+check = 748
+label = "Route 212 - Hidden (Ultra Ball) 1"
+id = 18
+
+[route_212_north_pearl]
+original_item = "pearl"
+type = "hidden"
+table = "hidden"
+check = 747
+label = "Route 212 - Hidden (Pearl)"
+id = 17
+
+[route_208_ether]
+original_item = "ether"
+type = "overworld"
+table = "overworld"
+check = 1064
+label = "Route 208 - Overworld (Ether)"
+id = 50
+
+[route_208_carbos]
+original_item = "carbos"
+type = "overworld"
+table = "overworld"
+check = 1062
+label = "Route 208 - Overworld (Carbos)"
+id = 48
+
+[route_208_great_ball]
+original_item = "great_ball"
+type = "overworld"
+table = "overworld"
+check = 1063
+label = "Route 208 - Overworld (Great Ball)"
+id = 49
+
+[route_208_star_piece]
+original_item = "star_piece"
+type = "hidden"
+table = "hidden"
+check = 744
+label = "Route 208 - Hidden (Star Piece)"
+id = 14
+
+[route_208_tinymushroom]
+original_item = "tinymushroom"
+type = "hidden"
+table = "hidden"
+check = 745
+label = "Route 208 - Hidden (TinyMushroom)"
+id = 15
+
+[hearthome_city_big_mushroom]
+original_item = "big_mushroom"
+type = "hidden"
+table = "hidden"
+check = 746
+label = "Hearthome City - Hidden (Big Mushroom)"
+id = 16
+
+[stark_mountain_room_1_full_heal]
+original_item = "full_heal"
+type = "overworld"
+table = "overworld"
+check = 1226
+label = "Stark Mountain - Overworld (Full Heal)"
+id = 212
+
+[stark_mountain_room_1_escape_rope]
+original_item = "escape_rope"
+type = "overworld"
+table = "overworld"
+check = 1227
+label = "Stark Mountain - Overworld (Escape Rope)"
+id = 213
+
+[stark_mountain_room_1_pp_up]
+original_item = "pp_up"
+type = "overworld"
+table = "overworld"
+check = 1228
+label = "Stark Mountain - Overworld (PP Up)"
+id = 214
+
+[stark_mountain_room_1_full_restore]
+original_item = "full_restore"
+type = "overworld"
+table = "overworld"
+check = 1229
+label = "Stark Mountain - Overworld (Full Restore)"
+id = 215
+
+[stark_mountain_room_1_star_piece]
+original_item = "star_piece"
+type = "hidden"
+table = "hidden"
+check = 868
+label = "Stark Mountain - Hidden (Star Piece)"
+id = 138
+
+[route_228_rock_peak_ruins_hard_stone]
+original_item = "hard_stone"
+type = "overworld"
+table = "overworld"
+check = 1339
+label = "Route 228 - Overworld (Hard Stone)"
+id = 324
+
+[route_228_rock_peak_ruins_nugget]
+original_item = "nugget"
+type = "hidden"
+table = "hidden"
+check = 1006
+label = "Route 228 - Hidden (Nugget)"
+id = 276
+
+[lake_verity_tm38]
+original_item = "tm38"
+type = "overworld"
+table = "overworld"
+check = 1253
+label = "Lake Verity - Overworld (TM38) 1"
+id = 239
+
+[route_220_carbos]
+original_item = "carbos"
+type = "overworld"
+table = "overworld"
+check = 1141
+label = "Route 220 - Overworld (Carbos)"
+id = 127
+
+[route_220_splash_plate]
+original_item = "splash_plate"
+type = "overworld"
+table = "overworld"
+check = 1139
+label = "Route 220 - Overworld (Splash Plate)"
+id = 125
+
+[route_220_max_repel]
+original_item = "max_repel"
+type = "overworld"
+table = "overworld"
+check = 1142
+label = "Route 220 - Overworld (Max Repel)"
+id = 128
+
+[route_220_big_pearl]
+original_item = "big_pearl"
+type = "hidden"
+table = "hidden"
+check = 778
+label = "Route 220 - Hidden (Big Pearl)"
+id = 48
+
+[route_220_zinc]
+original_item = "zinc"
+type = "hidden"
+table = "hidden"
+check = 899
+label = "Route 220 - Hidden (Zinc)"
+id = 169
+
+[route_202_potion]
+original_item = "potion"
+type = "overworld"
+table = "overworld"
+check = 1014
+label = "Route 202 - Overworld (Potion)"
+id = 0
+
+[route_202_stardust]
+original_item = "stardust"
+type = "hidden"
+table = "hidden"
+check = 891
+label = "Route 202 - Hidden (Stardust)"
+id = 161
+
+[route_209_great_ball]
+original_item = "great_ball"
+type = "overworld"
+table = "overworld"
+check = 1100
+label = "Route 209 - Overworld (Great Ball)"
+id = 86
+
+[route_209_hyper_potion]
+original_item = "hyper_potion"
+type = "overworld"
+table = "overworld"
+check = 1101
+label = "Route 209 - Overworld (Hyper Potion)"
+id = 87
+
+[route_209_tm47]
+original_item = "tm47"
+type = "overworld"
+table = "overworld"
+check = 1103
+label = "Route 209 - Overworld (TM47)"
+id = 89
+
+[route_209_calcium]
+original_item = "calcium"
+type = "overworld"
+table = "overworld"
+check = 1102
+label = "Route 209 - Overworld (Calcium)"
+id = 88
+
+[route_209_tm19]
+original_item = "tm19"
+type = "overworld"
+table = "overworld"
+check = 1104
+label = "Route 209 - Overworld (TM19)"
+id = 90
+
+[route_209_ether]
+original_item = "ether"
+type = "overworld"
+table = "overworld"
+check = 1283
+label = "Route 209 - Overworld (Ether)"
+id = 268
+
+[route_209_stardust]
+original_item = "stardust"
+type = "hidden"
+table = "hidden"
+check = 763
+label = "Route 209 - Hidden (Stardust)"
+id = 33
+
+[route_209_great_ball_0]
+original_item = "great_ball"
+type = "hidden"
+table = "hidden"
+check = 762
+label = "Route 209 - Hidden (Great Ball)"
+id = 32
+
+[route_209_revive]
+original_item = "revive"
+type = "hidden"
+table = "hidden"
+check = 765
+label = "Route 209 - Hidden (Revive)"
+id = 35
+
+[route_209_super_repel]
+original_item = "super_repel"
+type = "hidden"
+table = "hidden"
+check = 883
+label = "Route 209 - Hidden (Super Repel)"
+id = 153
+
+[grand_lake_route_213_northeast_house_max_revive]
+original_item = "max_revive"
+type = "hidden"
+table = "hidden"
+check = 904
+label = "Grand Lake - Hidden (Max Revive)"
+id = 174
+
+[jubilife_city_potion]
+original_item = "potion"
+type = "overworld"
+table = "overworld"
+check = 1272
+label = "Jubilife City - Overworld (Potion)"
+id = 257
+
+[jubilife_city_stardust]
+original_item = "stardust"
+type = "hidden"
+table = "hidden"
+check = 891
+label = "Jubilife City - Hidden (Stardust)"
+id = 161
+
+[solaceon_town_pp_up]
+original_item = "pp_up"
+type = "overworld"
+table = "overworld"
+check = 1284
+label = "Solaceon Town - Overworld (PP Up)"
+id = 269
+
+[solaceon_town_rare_candy]
+original_item = "rare_candy"
+type = "overworld"
+table = "overworld"
+check = 1291
+label = "Solaceon Town - Overworld (Rare Candy)"
+id = 276
+
+[solaceon_town_big_mushroom]
+original_item = "big_mushroom"
+type = "hidden"
+table = "hidden"
+check = 764
+label = "Solaceon Town - Hidden (Big Mushroom)"
+id = 34
+
+[route_210_south_max_repel]
+original_item = "max_repel"
+type = "overworld"
+table = "overworld"
+check = 1114
+label = "Route 210 - Overworld (Max Repel)"
+id = 100
+
+[route_210_south_super_repel]
+original_item = "super_repel"
+type = "overworld"
+table = "overworld"
+check = 1113
+label = "Route 210 - Overworld (Super Repel)"
+id = 99
+
+[route_210_south_nest_ball]
+original_item = "nest_ball"
+type = "overworld"
+table = "overworld"
+check = 1116
+label = "Route 210 - Overworld (Nest Ball)"
+id = 102
+
+[route_210_south_hyper_potion]
+original_item = "hyper_potion"
+type = "overworld"
+table = "overworld"
+check = 1117
+label = "Route 210 - Overworld (Hyper Potion)"
+id = 103
+
+[route_210_south_full_heal]
+original_item = "full_heal"
+type = "hidden"
+table = "hidden"
+check = 769
+label = "Route 210 - Hidden (Full Heal)"
+id = 39
+
+[route_210_south_ultra_ball]
+original_item = "ultra_ball"
+type = "hidden"
+table = "hidden"
+check = 879
+label = "Route 210 - Hidden (Ultra Ball)"
+id = 149
+
+[route_210_south_rare_candy]
+original_item = "rare_candy"
+type = "hidden"
+table = "hidden"
+check = 884
+label = "Route 210 - Hidden (Rare Candy)"
+id = 154
+
+[route_210_south_hyper_potion_0]
+original_item = "hyper_potion"
+type = "hidden"
+table = "hidden"
+check = 919
+label = "Route 210 - Hidden (Hyper Potion)"
+id = 189
+
+[route_210_south_ultra_ball_0]
+original_item = "ultra_ball"
+type = "hidden"
+table = "hidden"
+check = 932
+label = "Route 210 - Hidden (Ultra Ball) 1"
+id = 202
+
+[route_209_lost_tower_2f_oval_stone]
+original_item = "oval_stone"
+type = "overworld"
+table = "overworld"
+check = 1105
+label = "Route 209 - Overworld (Oval Stone)"
+id = 91
+
+[route_209_lost_tower_2f_honey_x3]
+original_item = "honey_x3"
+type = "hidden"
+table = "hidden"
+check = 917
+label = "Route 209 - Hidden (Honey) x3"
+id = 187
+
+[route_204_south_sea_incense]
+original_item = "sea_incense"
+type = "overworld"
+table = "overworld"
+check = 1023
+label = "Route 204 - Overworld (Sea Incense)"
+id = 9
+
+[route_204_south_hp_up]
+original_item = "hp_up"
+type = "overworld"
+table = "overworld"
+check = 1024
+label = "Route 204 - Overworld (HP Up)"
+id = 10
+
+[route_204_south_parlyz_heal]
+original_item = "parlyz_heal"
+type = "overworld"
+table = "overworld"
+check = 1096
+label = "Route 204 - Overworld (Parlyz Heal)"
+id = 82
+
+[route_210_north_smoke_ball]
+original_item = "smoke_ball"
+type = "overworld"
+table = "overworld"
+check = 1131
+label = "Route 210 - Overworld (Smoke Ball)"
+id = 117
+
+[route_210_north_wave_incense]
+original_item = "wave_incense"
+type = "overworld"
+table = "overworld"
+check = 1132
+label = "Route 210 - Overworld (Wave Incense)"
+id = 118
+
+[route_210_north_tm30]
+original_item = "tm30"
+type = "overworld"
+table = "overworld"
+check = 1133
+label = "Route 210 - Overworld (TM30)"
+id = 119
+
+[route_210_north_zinc]
+original_item = "zinc"
+type = "overworld"
+table = "overworld"
+check = 1294
+label = "Route 210 - Overworld (Zinc)"
+id = 279
+
+[route_210_north_red_shard]
+original_item = "red_shard"
+type = "overworld"
+table = "overworld"
+check = 1293
+label = "Route 210 - Overworld (Red Shard)"
+id = 278
+
+[route_210_north_shiny_stone]
+original_item = "shiny_stone"
+type = "hidden"
+table = "hidden"
+check = 775
+label = "Route 210 - Hidden (Shiny Stone)"
+id = 45
+
+[route_210_north_meadow_plate]
+original_item = "meadow_plate"
+type = "hidden"
+table = "hidden"
+check = 774
+label = "Route 210 - Hidden (Meadow Plate)"
+id = 44
+
+[route_209_lost_tower_3f_revive]
+original_item = "revive"
+type = "overworld"
+table = "overworld"
+check = 1107
+label = "Route 209 - Overworld (Revive)"
+id = 93
+
+[route_218_rare_candy]
+original_item = "rare_candy"
+type = "overworld"
+table = "overworld"
+check = 1146
+label = "Route 218 - Overworld (Rare Candy)"
+id = 132
+
+[route_218_hyper_potion]
+original_item = "hyper_potion"
+type = "overworld"
+table = "overworld"
+check = 1147
+label = "Route 218 - Overworld (Hyper Potion)"
+id = 133
+
+[route_218_x_accuracy]
+original_item = "x_accuracy"
+type = "overworld"
+table = "overworld"
+check = 1271
+label = "Route 218 - Overworld (X Accuracy)"
+id = 256
+
+[solaceon_ruins_room_1_northwest_dead_end_fire_stone]
+original_item = "fire_stone"
+type = "hidden"
+table = "hidden"
+check = 766
+label = "Solaceon Ruins - Hidden (Fire Stone)"
+id = 36
+
+[route_209_lost_tower_4f_tm27]
+original_item = "tm27"
+type = "overworld"
+table = "overworld"
+check = 1108
+label = "Route 209 - Overworld (TM27)"
+id = 94
+
+[route_209_lost_tower_4f_great_ball]
+original_item = "great_ball"
+type = "hidden"
+table = "hidden"
+check = 918
+label = "Route 209 - Hidden (Great Ball) 1"
+id = 188
+
+[route_222_full_restore]
+original_item = "full_restore"
+type = "overworld"
+table = "overworld"
+check = 1190
+label = "Route 222 - Overworld (Full Restore)"
+id = 176
+
+[route_222_carbos]
+original_item = "carbos"
+type = "overworld"
+table = "overworld"
+check = 1189
+label = "Route 222 - Overworld (Carbos)"
+id = 175
+
+[route_222_quick_ball]
+original_item = "quick_ball"
+type = "overworld"
+table = "overworld"
+check = 1314
+label = "Route 222 - Overworld (Quick Ball)"
+id = 299
+
+[route_222_pp_up]
+original_item = "pp_up"
+type = "overworld"
+table = "overworld"
+check = 1315
+label = "Route 222 - Overworld (PP Up)"
+id = 300
+
+[route_222_full_restore_0]
+original_item = "full_restore"
+type = "hidden"
+table = "hidden"
+check = 839
+label = "Route 222 - Hidden (Full Restore)"
+id = 109
+
+[route_222_pp_up_0]
+original_item = "pp_up"
+type = "hidden"
+table = "hidden"
+check = 737
+label = "Route 222 - Hidden (PP Up)"
+id = 7
+
+[route_222_tinymushroom]
+original_item = "tinymushroom"
+type = "hidden"
+table = "hidden"
+check = 887
+label = "Route 222 - Hidden (TinyMushroom)"
+id = 157
+
+[route_222_ultra_ball]
+original_item = "ultra_ball"
+type = "hidden"
+table = "hidden"
+check = 888
+label = "Route 222 - Hidden (Ultra Ball)"
+id = 158
+
+[route_222_big_mushroom]
+original_item = "big_mushroom"
+type = "hidden"
+table = "hidden"
+check = 993
+label = "Route 222 - Hidden (Big Mushroom)"
+id = 263
+
+[route_222_pearl]
+original_item = "pearl"
+type = "hidden"
+table = "hidden"
+check = 994
+label = "Route 222 - Hidden (Pearl)"
+id = 264
+
+[route_222_heart_scale]
+original_item = "heart_scale"
+type = "hidden"
+table = "hidden"
+check = 995
+label = "Route 222 - Hidden (Heart Scale)"
+id = 265
+
+[route_222_heart_scale_0]
+original_item = "heart_scale"
+type = "hidden"
+table = "hidden"
+check = 996
+label = "Route 222 - Hidden (Heart Scale) 1"
+id = 266
+
+[sunyshore_city_thunderstone]
+original_item = "thunderstone"
+type = "overworld"
+table = "overworld"
+check = 1191
+label = "Sunyshore City - Overworld (Thunderstone)"
+id = 177
+
+[sunyshore_city_carbos]
+original_item = "carbos"
+type = "hidden"
+table = "hidden"
+check = 841
+label = "Sunyshore City - Hidden (Carbos)"
+id = 111
+
+[sunyshore_city_zap_plate]
+original_item = "zap_plate"
+type = "hidden"
+table = "hidden"
+check = 840
+label = "Sunyshore City - Hidden (Zap Plate)"
+id = 110
+
+[route_223_tm18]
+original_item = "tm18"
+type = "overworld"
+table = "overworld"
+check = 1194
+label = "Route 223 - Overworld (TM18)"
+id = 180
+
+[route_223_ultra_ball]
+original_item = "ultra_ball"
+type = "overworld"
+table = "overworld"
+check = 1192
+label = "Route 223 - Overworld (Ultra Ball)"
+id = 178
+
+[route_223_dive_ball]
+original_item = "dive_ball"
+type = "overworld"
+table = "overworld"
+check = 1193
+label = "Route 223 - Overworld (Dive Ball)"
+id = 179
+
+[route_223_rare_candy]
+original_item = "rare_candy"
+type = "overworld"
+table = "overworld"
+check = 1316
+label = "Route 223 - Overworld (Rare Candy)"
+id = 301
+
+[route_223_heart_scale]
+original_item = "heart_scale"
+type = "hidden"
+table = "hidden"
+check = 842
+label = "Route 223 - Hidden (Heart Scale)"
+id = 112
+
+[route_223_heart_scale_0]
+original_item = "heart_scale"
+type = "hidden"
+table = "hidden"
+check = 997
+label = "Route 223 - Hidden (Heart Scale) 1"
+id = 267
+
+[trainers_school_x_attack]
+original_item = "x_attack"
+type = "overworld"
+table = "overworld"
+check = 1273
+label = "Trainers’ School - Overworld (X Attack)"
+id = 258
+
+[ravaged_path_tm39]
+original_item = "tm39"
+type = "overworld"
+table = "overworld"
+check = 1025
+label = "Ravaged Path - Overworld (TM39)"
+id = 11
+
+[ravaged_path_luck_incense]
+original_item = "luck_incense"
+type = "overworld"
+table = "overworld"
+check = 1026
+label = "Ravaged Path - Overworld (Luck Incense)"
+id = 12
+
+[ravaged_path_tm03]
+original_item = "tm03"
+type = "overworld"
+table = "overworld"
+check = 1027
+label = "Ravaged Path - Overworld (TM03)"
+id = 13
+
+[ravaged_path_potion]
+original_item = "potion"
+type = "overworld"
+table = "overworld"
+check = 1265
+label = "Ravaged Path - Overworld (Potion)"
+id = 251
+
+[route_204_north_tm09]
+original_item = "tm09"
+type = "overworld"
+table = "overworld"
+check = 1028
+label = "Route 204 - Overworld (TM09)"
+id = 14
+
+[route_204_north_awakening]
+original_item = "awakening"
+type = "overworld"
+table = "overworld"
+check = 1268
+label = "Route 204 - Overworld (Awakening)"
+id = 254
+
+[canalave_city_tm89]
+original_item = "tm89"
+type = "overworld"
+table = "overworld"
+check = 1148
+label = "Canalave City - Overworld (TM89)"
+id = 134
+
+[canalave_city_big_pearl]
+original_item = "big_pearl"
+type = "hidden"
+table = "hidden"
+check = 948
+label = "Canalave City - Hidden (Big Pearl)"
+id = 218
+
+[route_205_south_heal_ball]
+original_item = "heal_ball"
+type = "overworld"
+table = "overworld"
+check = 1030
+label = "Route 205 - Overworld (Heal Ball)"
+id = 16
+
+[route_205_south_x_sp_def]
+original_item = "x_sp_def"
+type = "overworld"
+table = "overworld"
+check = 1031
+label = "Route 205 - Overworld (X Sp. Def)"
+id = 17
+
+[route_205_south_super_potion]
+original_item = "super_potion"
+type = "overworld"
+table = "overworld"
+check = 1267
+label = "Route 205 - Overworld (Super Potion)"
+id = 253
+
+[route_205_south_repel]
+original_item = "repel"
+type = "overworld"
+table = "overworld"
+check = 1140
+label = "Route 205 - Overworld (Repel)"
+id = 126
+
+[route_205_south_stardust]
+original_item = "stardust"
+type = "hidden"
+table = "hidden"
+check = 947
+label = "Route 205 - Hidden (Stardust)"
+id = 217
+
+[valley_windworks_outside_tm24]
+original_item = "tm24"
+type = "overworld"
+table = "overworld"
+check = 1029
+label = "Valley Windworks - Overworld (TM24)"
+id = 15
+
+[valley_windworks_outside_potion]
+original_item = "potion"
+type = "overworld"
+table = "overworld"
+check = 1266
+label = "Valley Windworks - Overworld (Potion)"
+id = 252
+
+[valley_windworks_outside_electirizer]
+original_item = "electirizer"
+type = "overworld"
+table = "overworld"
+check = 1333
+label = "Valley Windworks - Overworld (Electirizer)"
+id = 318
+
+[valley_windworks_outside_max_elixir]
+original_item = "max_elixir"
+type = "hidden"
+table = "hidden"
+check = 730
+label = "Valley Windworks - Hidden (Max Elixir)"
+id = 0
+
+[eterna_forest_antidote]
+original_item = "antidote"
+type = "overworld"
+table = "overworld"
+check = 1032
+label = "Eterna Forest - Overworld (Antidote)"
+id = 18
+
+[eterna_forest_parlyz_heal]
+original_item = "parlyz_heal"
+type = "overworld"
+table = "overworld"
+check = 1033
+label = "Eterna Forest - Overworld (Parlyz Heal)"
+id = 19
+
+[eterna_forest_net_ball]
+original_item = "net_ball"
+type = "overworld"
+table = "overworld"
+check = 1034
+label = "Eterna Forest - Overworld (Net Ball)"
+id = 20
+
+[eterna_forest_green_shard]
+original_item = "green_shard"
+type = "overworld"
+table = "overworld"
+check = 1035
+label = "Eterna Forest - Overworld (Green Shard)"
+id = 21
+
+[eterna_forest_ether]
+original_item = "ether"
+type = "overworld"
+table = "overworld"
+check = 1099
+label = "Eterna Forest - Overworld (Ether)"
+id = 85
+
+[eterna_forest_potion]
+original_item = "potion"
+type = "overworld"
+table = "overworld"
+check = 1263
+label = "Eterna Forest - Overworld (Potion)"
+id = 249
+
+[eterna_forest_insect_plate]
+original_item = "insect_plate"
+type = "hidden"
+table = "hidden"
+check = 731
+label = "Eterna Forest - Hidden (Insect Plate)"
+id = 1
+
+[fuego_ironworks_outside_ultra_ball]
+original_item = "ultra_ball"
+type = "hidden"
+table = "hidden"
+check = 886
+label = "Fuego Ironworks - Hidden (Ultra Ball)"
+id = 156
+
+[fuego_ironworks_outside_big_mushroom]
+original_item = "big_mushroom"
+type = "hidden"
+table = "hidden"
+check = 885
+label = "Fuego Ironworks - Hidden (Big Mushroom)"
+id = 155
+
+[fuego_ironworks_building_tm35]
+original_item = "tm35"
+type = "overworld"
+table = "overworld"
+check = 1134
+label = "Fuego Ironworks - Overworld (TM35)"
+id = 120
+
+[fuego_ironworks_building_calcium]
+original_item = "calcium"
+type = "overworld"
+table = "overworld"
+check = 1136
+label = "Fuego Ironworks - Overworld (Calcium)"
+id = 122
+
+[fuego_ironworks_building_rock_incense]
+original_item = "rock_incense"
+type = "overworld"
+table = "overworld"
+check = 1135
+label = "Fuego Ironworks - Overworld (Rock Incense)"
+id = 121
+
+[fuego_ironworks_building_fire_stone]
+original_item = "fire_stone"
+type = "overworld"
+table = "overworld"
+check = 1137
+label = "Fuego Ironworks - Overworld (Fire Stone)"
+id = 123
+
+[fuego_ironworks_building_blue_shard]
+original_item = "blue_shard"
+type = "overworld"
+table = "overworld"
+check = 1295
+label = "Fuego Ironworks - Overworld (Blue Shard)"
+id = 280
+
+[fuego_ironworks_building_red_shard]
+original_item = "red_shard"
+type = "overworld"
+table = "overworld"
+check = 1296
+label = "Fuego Ironworks - Overworld (Red Shard)"
+id = 281
+
+[fuego_ironworks_building_green_shard]
+original_item = "green_shard"
+type = "overworld"
+table = "overworld"
+check = 1297
+label = "Fuego Ironworks - Overworld (Green Shard)"
+id = 282
+
+[fuego_ironworks_building_yellow_shard]
+original_item = "yellow_shard"
+type = "overworld"
+table = "overworld"
+check = 1298
+label = "Fuego Ironworks - Overworld (Yellow Shard)"
+id = 283
+
+[fuego_ironworks_building_star_piece]
+original_item = "star_piece"
+type = "hidden"
+table = "hidden"
+check = 777
+label = "Fuego Ironworks - Hidden (Star Piece)"
+id = 47
+
+[fuego_ironworks_building_protein]
+original_item = "protein"
+type = "hidden"
+table = "hidden"
+check = 776
+label = "Fuego Ironworks - Hidden (Protein)"
+id = 46
+
+[old_chateau_side_rooms_old_gateau]
+original_item = "old_gateau"
+type = "overworld"
+table = "overworld"
+check = 1036
+label = "Old Chateau - Overworld (Old Gateau)"
+id = 22
+
+[route_205_north_guard_spec]
+original_item = "guard_spec"
+type = "overworld"
+table = "overworld"
+check = 1037
+label = "Route 205 - Overworld (Guard Spec.)"
+id = 23
+
+[route_205_north_super_potion]
+original_item = "super_potion"
+type = "hidden"
+table = "hidden"
+check = 880
+label = "Route 205 - Hidden (Super Potion)"
+id = 150
+
+[eterna_city_tm46]
+original_item = "tm46"
+type = "overworld"
+table = "overworld"
+check = 1038
+label = "Eterna City - Overworld (TM46)"
+id = 24
+
+[eterna_city_super_potion]
+original_item = "super_potion"
+type = "overworld"
+table = "overworld"
+check = 1040
+label = "Eterna City - Overworld (Super Potion)"
+id = 26
+
+[eterna_city_draco_plate]
+original_item = "draco_plate"
+type = "hidden"
+table = "hidden"
+check = 732
+label = "Eterna City - Hidden (Draco Plate)"
+id = 2
+
+[eterna_city_super_potion_0]
+original_item = "super_potion"
+type = "hidden"
+table = "hidden"
+check = 880
+label = "Eterna City - Hidden (Super Potion)"
+id = 150
+
+[eterna_city_great_ball]
+original_item = "great_ball"
+type = "hidden"
+table = "hidden"
+check = 733
+label = "Eterna City - Hidden (Great Ball)"
+id = 3
+
+[eterna_city_moon_stone]
+original_item = "moon_stone"
+type = "hidden"
+table = "hidden"
+check = 958
+label = "Eterna City - Hidden (Moon Stone)"
+id = 228
+
+[old_chateau_back_east_room_tm90]
+original_item = "tm90"
+type = "overworld"
+table = "overworld"
+check = 1262
+label = "Old Chateau - Overworld (TM90)"
+id = 248
+
+[old_chateau_back_west_room_dread_plate]
+original_item = "dread_plate"
+type = "overworld"
+table = "overworld"
+check = 1261
+label = "Old Chateau - Overworld (Dread Plate)"
+id = 247
+
+[stark_mountain_room_2_tm50]
+original_item = "tm50"
+type = "overworld"
+table = "overworld"
+check = 1230
+label = "Stark Mountain - Overworld (TM50)"
+id = 216
+
+[stark_mountain_room_2_calcium]
+original_item = "calcium"
+type = "overworld"
+table = "overworld"
+check = 1237
+label = "Stark Mountain - Overworld (Calcium)"
+id = 223
+
+[stark_mountain_room_2_max_revive]
+original_item = "max_revive"
+type = "overworld"
+table = "overworld"
+check = 1236
+label = "Stark Mountain - Overworld (Max Revive)"
+id = 222
+
+[stark_mountain_room_2_rare_candy]
+original_item = "rare_candy"
+type = "overworld"
+table = "overworld"
+check = 1234
+label = "Stark Mountain - Overworld (Rare Candy)"
+id = 220
+
+[stark_mountain_room_2_iron_ball]
+original_item = "iron_ball"
+type = "overworld"
+table = "overworld"
+check = 1231
+label = "Stark Mountain - Overworld (Iron Ball)"
+id = 217
+
+[stark_mountain_room_2_max_elixir]
+original_item = "max_elixir"
+type = "overworld"
+table = "overworld"
+check = 1232
+label = "Stark Mountain - Overworld (Max Elixir) 1"
+id = 218
+
+[stark_mountain_room_2_nugget]
+original_item = "nugget"
+type = "overworld"
+table = "overworld"
+check = 1233
+label = "Stark Mountain - Overworld (Nugget)"
+id = 219
+
+[stark_mountain_room_2_ultra_ball]
+original_item = "ultra_ball"
+type = "overworld"
+table = "overworld"
+check = 1235
+label = "Stark Mountain - Overworld (Ultra Ball)"
+id = 221
+
+[stark_mountain_room_2_stardust]
+original_item = "stardust"
+type = "hidden"
+table = "hidden"
+check = 870
+label = "Stark Mountain - Hidden (Stardust)"
+id = 140
+
+[stark_mountain_room_2_iron]
+original_item = "iron"
+type = "hidden"
+table = "hidden"
+check = 871
+label = "Stark Mountain - Hidden (Iron)"
+id = 141
+
+[stark_mountain_room_2_flame_plate]
+original_item = "flame_plate"
+type = "hidden"
+table = "hidden"
+check = 869
+label = "Stark Mountain - Hidden (Flame Plate)"
+id = 139
+
+[stark_mountain_room_2_max_revive_0]
+original_item = "max_revive"
+type = "hidden"
+table = "hidden"
+check = 905
+label = "Stark Mountain - Hidden (Max Revive)"
+id = 175
+
+[stark_mountain_room_2_star_piece]
+original_item = "star_piece"
+type = "hidden"
+table = "hidden"
+check = 906
+label = "Stark Mountain - Hidden (Star Piece) 1"
+id = 176
+
+[stark_mountain_room_2_ultra_ball_0]
+original_item = "ultra_ball"
+type = "hidden"
+table = "hidden"
+check = 907
+label = "Stark Mountain - Hidden (Ultra Ball)"
+id = 177
+
+[stark_mountain_room_2_fire_stone]
+original_item = "fire_stone"
+type = "hidden"
+table = "hidden"
+check = 998
+label = "Stark Mountain - Hidden (Fire Stone)"
+id = 268
+
+[valor_lakefront_tm85]
+original_item = "tm85"
+type = "overworld"
+table = "overworld"
+check = 1097
+label = "Valor Lakefront - Overworld (TM85)"
+id = 83
+
+[valor_lakefront_ultra_ball]
+original_item = "ultra_ball"
+type = "overworld"
+table = "overworld"
+check = 1098
+label = "Valor Lakefront - Overworld (Ultra Ball)"
+id = 84
+
+[valor_lakefront_iron]
+original_item = "iron"
+type = "overworld"
+table = "overworld"
+check = 1330
+label = "Valor Lakefront - Overworld (Iron)"
+id = 315
+
+[valor_lakefront_sun_stone]
+original_item = "sun_stone"
+type = "hidden"
+table = "hidden"
+check = 761
+label = "Valor Lakefront - Hidden (Sun Stone)"
+id = 31
+
+[valor_lakefront_pp_up]
+original_item = "pp_up"
+type = "hidden"
+table = "hidden"
+check = 737
+label = "Valor Lakefront - Hidden (PP Up)"
+id = 7
+
+[valor_lakefront_max_revive]
+original_item = "max_revive"
+type = "hidden"
+table = "hidden"
+check = 896
+label = "Valor Lakefront - Hidden (Max Revive)"
+id = 166
+
+[valor_lakefront_big_mushroom]
+original_item = "big_mushroom"
+type = "hidden"
+table = "hidden"
+check = 910
+label = "Valor Lakefront - Hidden (Big Mushroom)"
+id = 180
+
+[route_214_rare_candy]
+original_item = "rare_candy"
+type = "overworld"
+table = "overworld"
+check = 1129
+label = "Route 214 - Overworld (Rare Candy)"
+id = 115
+
+[route_214_max_repel]
+original_item = "max_repel"
+type = "overworld"
+table = "overworld"
+check = 1128
+label = "Route 214 - Overworld (Max Repel)"
+id = 114
+
+[route_214_red_shard]
+original_item = "red_shard"
+type = "overworld"
+table = "overworld"
+check = 1127
+label = "Route 214 - Overworld (Red Shard)"
+id = 113
+
+[route_214_big_root]
+original_item = "big_root"
+type = "overworld"
+table = "overworld"
+check = 1126
+label = "Route 214 - Overworld (Big Root)"
+id = 112
+
+[route_214_magmarizer]
+original_item = "magmarizer"
+type = "overworld"
+table = "overworld"
+check = 1332
+label = "Route 214 - Overworld (Magmarizer)"
+id = 317
+
+[route_214_carbos]
+original_item = "carbos"
+type = "hidden"
+table = "hidden"
+check = 773
+label = "Route 214 - Hidden (Carbos)"
+id = 43
+
+[route_214_big_mushroom]
+original_item = "big_mushroom"
+type = "hidden"
+table = "hidden"
+check = 772
+label = "Route 214 - Hidden (Big Mushroom)"
+id = 42
+
+[route_214_razor_fang]
+original_item = "razor_fang"
+type = "hidden"
+table = "hidden"
+check = 898
+label = "Route 214 - Hidden (Razor Fang)"
+id = 168
+
+[ruin_maniac_cave_short_tm28]
+original_item = "tm28"
+type = "overworld"
+table = "overworld"
+check = 1130
+label = "Ruin Maniac Cave - Overworld (TM28)"
+id = 116
+
+[ruin_maniac_cave_long_tm28]
+original_item = "tm28"
+type = "overworld"
+table = "overworld"
+check = 1130
+label = "Ruin Maniac Cave - Overworld (TM28) 1"
+id = 116
+
+[maniac_tunnel_tm28]
+original_item = "tm28"
+type = "overworld"
+table = "overworld"
+check = 1130
+label = "Maniac Tunnel - Overworld (TM28)"
+id = 116
+
+[veilstone_city_full_incense]
+original_item = "full_incense"
+type = "overworld"
+table = "overworld"
+check = 1123
+label = "Veilstone City - Overworld (Full Incense)"
+id = 109
+
+[veilstone_city_rare_candy]
+original_item = "rare_candy"
+type = "overworld"
+table = "overworld"
+check = 1124
+label = "Veilstone City - Overworld (Rare Candy)"
+id = 110
+
+[veilstone_city_star_piece]
+original_item = "star_piece"
+type = "overworld"
+table = "overworld"
+check = 1286
+label = "Veilstone City - Overworld (Star Piece)"
+id = 271
+
+[veilstone_city_calcium]
+original_item = "calcium"
+type = "hidden"
+table = "hidden"
+check = 771
+label = "Veilstone City - Hidden (Calcium)"
+id = 41
+
+[veilstone_city_pp_up]
+original_item = "pp_up"
+type = "hidden"
+table = "hidden"
+check = 770
+label = "Veilstone City - Hidden (PP Up)"
+id = 40
+
+[veilstone_city_star_piece_0]
+original_item = "star_piece"
+type = "hidden"
+table = "hidden"
+check = 989
+label = "Veilstone City - Hidden (Star Piece)"
+id = 259
+
+[old_chateau_dining_area_rare_candy]
+original_item = "rare_candy"
+type = "overworld"
+table = "overworld"
+check = 1281
+label = "Old Chateau - Overworld (Rare Candy)"
+id = 266
+
+[old_chateau_dining_area_big_pearl]
+original_item = "big_pearl"
+type = "overworld"
+table = "overworld"
+check = 1282
+label = "Old Chateau - Overworld (Big Pearl)"
+id = 267
+
+[old_chateau_dining_area_honey_x3]
+original_item = "honey_x3"
+type = "hidden"
+table = "hidden"
+check = 897
+label = "Old Chateau - Hidden (Honey) x3"
+id = 167
+
+[floaroma_meadow_miracle_seed]
+original_item = "miracle_seed"
+type = "overworld"
+table = "overworld"
+check = 1160
+label = "Floaroma Meadow - Overworld (Miracle Seed)"
+id = 146
+
+[floaroma_meadow_leaf_stone]
+original_item = "leaf_stone"
+type = "overworld"
+table = "overworld"
+check = 1248
+label = "Floaroma Meadow - Overworld (Leaf Stone)"
+id = 234
+
+[floaroma_meadow_ultra_ball]
+original_item = "ultra_ball"
+type = "overworld"
+table = "overworld"
+check = 1299
+label = "Floaroma Meadow - Overworld (Ultra Ball)"
+id = 284
+
+[floaroma_meadow_rare_candy]
+original_item = "rare_candy"
+type = "overworld"
+table = "overworld"
+check = 1300
+label = "Floaroma Meadow - Overworld (Rare Candy)"
+id = 285
+
+[floaroma_meadow_honey]
+original_item = "honey"
+type = "hidden"
+table = "hidden"
+check = 788
+label = "Floaroma Meadow - Hidden (Honey)"
+id = 58
+
+[floaroma_meadow_honey_0]
+original_item = "honey"
+type = "hidden"
+table = "hidden"
+check = 789
+label = "Floaroma Meadow - Hidden (Honey) 1"
+id = 59
+
+[floaroma_meadow_honey_1]
+original_item = "honey"
+type = "hidden"
+table = "hidden"
+check = 950
+label = "Floaroma Meadow - Hidden (Honey) 2"
+id = 220
+
+[floaroma_meadow_max_revive]
+original_item = "max_revive"
+type = "hidden"
+table = "hidden"
+check = 957
+label = "Floaroma Meadow - Hidden (Max Revive)"
+id = 227
+
+[floaroma_meadow_pp_up]
+original_item = "pp_up"
+type = "hidden"
+table = "hidden"
+check = 956
+label = "Floaroma Meadow - Hidden (PP Up)"
+id = 226
+
+[floaroma_meadow_honey_2]
+original_item = "honey"
+type = "hidden"
+table = "hidden"
+check = 949
+label = "Floaroma Meadow - Hidden (Honey) 3"
+id = 219
+
+[floaroma_meadow_honey_3]
+original_item = "honey"
+type = "hidden"
+table = "hidden"
+check = 952
+label = "Floaroma Meadow - Hidden (Honey) 4"
+id = 222
+
+[floaroma_meadow_hyper_potion]
+original_item = "hyper_potion"
+type = "hidden"
+table = "hidden"
+check = 953
+label = "Floaroma Meadow - Hidden (Hyper Potion)"
+id = 223
+
+[floaroma_meadow_revive]
+original_item = "revive"
+type = "hidden"
+table = "hidden"
+check = 954
+label = "Floaroma Meadow - Hidden (Revive)"
+id = 224
+
+[floaroma_meadow_full_heal]
+original_item = "full_heal"
+type = "hidden"
+table = "hidden"
+check = 955
+label = "Floaroma Meadow - Hidden (Full Heal)"
+id = 225
+
+[floaroma_meadow_honey_4]
+original_item = "honey"
+type = "hidden"
+table = "hidden"
+check = 951
+label = "Floaroma Meadow - Hidden (Honey) 5"
+id = 221
+
+[amity_square_tm45]
+original_item = "tm45"
+type = "overworld"
+table = "overworld"
+check = 1065
+label = "Amity Square - Overworld (TM45)"
+id = 51
+
+[amity_square_tm43]
+original_item = "tm43"
+type = "overworld"
+table = "overworld"
+check = 1066
+label = "Amity Square - Overworld (TM43)"
+id = 52
+
+[amity_square_spooky_plate]
+original_item = "spooky_plate"
+type = "overworld"
+table = "overworld"
+check = 1067
+label = "Amity Square - Overworld (Spooky Plate)"
+id = 53
+
+[amity_square_amulet_coin]
+original_item = "amulet_coin"
+type = "overworld"
+table = "overworld"
+check = 1264
+label = "Amity Square - Overworld (Amulet Coin)"
+id = 250
+
+[galactic_hq_1f_tm49]
+original_item = "tm49"
+type = "overworld"
+table = "overworld"
+check = 1179
+label = "Galactic HQ - Overworld (TM49)"
+id = 165
+
+[galactic_hq_1f_dubious_disc]
+original_item = "dubious_disc"
+type = "overworld"
+table = "overworld"
+check = 1312
+label = "Galactic HQ - Overworld (Dubious Disc)"
+id = 297
+
+[galactic_hq_1f_pp_up]
+original_item = "pp_up"
+type = "hidden"
+table = "hidden"
+check = 804
+label = "Galactic HQ - Hidden (PP Up)"
+id = 74
+
+[galactic_hq_4f_razor_claw]
+original_item = "razor_claw"
+type = "hidden"
+table = "hidden"
+check = 810
+label = "Galactic HQ - Hidden (Razor Claw)"
+id = 80
+
+[galactic_hq_3f_tm21]
+original_item = "tm21"
+type = "overworld"
+table = "overworld"
+check = 1180
+label = "Galactic HQ - Overworld (TM21)"
+id = 166
+
+[galactic_hq_3f_max_elixir]
+original_item = "max_elixir"
+type = "overworld"
+table = "overworld"
+check = 1182
+label = "Galactic HQ - Overworld (Max Elixir)"
+id = 168
+
+[galactic_hq_3f_protein]
+original_item = "protein"
+type = "overworld"
+table = "overworld"
+check = 1310
+label = "Galactic HQ - Overworld (Protein)"
+id = 295
+
+[galactic_hq_3f_elixir]
+original_item = "elixir"
+type = "hidden"
+table = "hidden"
+check = 808
+label = "Galactic HQ - Hidden (Elixir)"
+id = 78
+
+[galactic_hq_3f_rare_candy]
+original_item = "rare_candy"
+type = "hidden"
+table = "hidden"
+check = 807
+label = "Galactic HQ - Hidden (Rare Candy)"
+id = 77
+
+[galactic_hq_3f_nugget]
+original_item = "nugget"
+type = "hidden"
+table = "hidden"
+check = 809
+label = "Galactic HQ - Hidden (Nugget)"
+id = 79
+
+[old_chateau_back_middle_west_room_dread_plate]
+original_item = "dread_plate"
+type = "overworld"
+table = "overworld"
+check = 1261
+label = "Old Chateau - Overworld (Dread Plate) 1"
+id = 247
+
+[galactic_hq_b2f_tm36]
+original_item = "tm36"
+type = "overworld"
+table = "overworld"
+check = 1178
+label = "Galactic HQ - Overworld (TM36)"
+id = 164
+
+[galactic_hq_b2f_galactic_key]
+original_item = "galactic_key"
+type = "overworld"
+table = "overworld"
+check = 1251
+label = "Galactic HQ - Overworld (Galactic Key)"
+id = 237
+
+[galactic_hq_b2f_zinc]
+original_item = "zinc"
+type = "overworld"
+table = "overworld"
+check = 1258
+label = "Galactic HQ - Overworld (Zinc)"
+id = 244
+
+[galactic_hq_laboratory_full_restore]
+original_item = "full_restore"
+type = "overworld"
+table = "overworld"
+check = 1311
+label = "Galactic HQ - Overworld (Full Restore)"
+id = 296
+
+[pokemon_mansion_maids_room_luxury_ball]
+original_item = "luxury_ball"
+type = "overworld"
+table = "overworld"
+check = 1072
+label = "Pokémon Mansion - Overworld (Luxury Ball)"
+id = 58
+
+[pokemon_mansion_maids_room_protein]
+original_item = "protein"
+type = "hidden"
+table = "hidden"
+check = 893
+label = "Pokémon Mansion - Hidden (Protein)"
+id = 163
+
+[route_206_poison_barb]
+original_item = "poison_barb"
+type = "overworld"
+table = "overworld"
+check = 1044
+label = "Route 206 - Overworld (Poison Barb)"
+id = 30
+
+[route_206_pp_up]
+original_item = "pp_up"
+type = "overworld"
+table = "overworld"
+check = 1045
+label = "Route 206 - Overworld (PP Up)"
+id = 31
+
+[route_206_burn_heal]
+original_item = "burn_heal"
+type = "overworld"
+table = "overworld"
+check = 1047
+label = "Route 206 - Overworld (Burn Heal)"
+id = 33
+
+[route_206_super_repel]
+original_item = "super_repel"
+type = "overworld"
+table = "overworld"
+check = 1046
+label = "Route 206 - Overworld (Super Repel)"
+id = 32
+
+[route_206_ether]
+original_item = "ether"
+type = "hidden"
+table = "hidden"
+check = 734
+label = "Route 206 - Hidden (Ether)"
+id = 4
+
+[route_206_tinymushroom]
+original_item = "tinymushroom"
+type = "hidden"
+table = "hidden"
+check = 735
+label = "Route 206 - Hidden (TinyMushroom)"
+id = 5
+
+[route_207_poke_ball]
+original_item = "poke_ball"
+type = "overworld"
+table = "overworld"
+check = 1057
+label = "Route 207 - Overworld (Poké Ball)"
+id = 43
+
+[route_207_revive]
+original_item = "revive"
+type = "overworld"
+table = "overworld"
+check = 1058
+label = "Route 207 - Overworld (Revive)"
+id = 44
+
+[route_207_iron]
+original_item = "iron"
+type = "overworld"
+table = "overworld"
+check = 1059
+label = "Route 207 - Overworld (Iron)"
+id = 45
+
+[route_207_super_potion]
+original_item = "super_potion"
+type = "overworld"
+table = "overworld"
+check = 1159
+label = "Route 207 - Overworld (Super Potion)"
+id = 145
+
+[route_207_timer_ball]
+original_item = "timer_ball"
+type = "overworld"
+table = "overworld"
+check = 1335
+label = "Route 207 - Overworld (Timer Ball)"
+id = 320
+
+[route_207_rare_candy]
+original_item = "rare_candy"
+type = "hidden"
+table = "hidden"
+check = 742
+label = "Route 207 - Hidden (Rare Candy)"
+id = 12
+
+[route_207_red_shard]
+original_item = "red_shard"
+type = "hidden"
+table = "hidden"
+check = 738
+label = "Route 207 - Hidden (Red Shard)"
+id = 8
+
+[route_207_poke_ball_0]
+original_item = "poke_ball"
+type = "hidden"
+table = "hidden"
+check = 821
+label = "Route 207 - Hidden (Poké Ball)"
+id = 91
+
+[route_207_great_ball]
+original_item = "great_ball"
+type = "hidden"
+table = "hidden"
+check = 881
+label = "Route 207 - Hidden (Great Ball)"
+id = 151
+
+[route_207_revive_0]
+original_item = "revive"
+type = "hidden"
+table = "hidden"
+check = 986
+label = "Route 207 - Hidden (Revive)"
+id = 256
+
+[mt_coronet_2f_max_revive]
+original_item = "max_revive"
+type = "overworld"
+table = "overworld"
+check = 1184
+label = "Mt. Coronet - Overworld (Max Revive)"
+id = 170
+
+[mt_coronet_2f_max_repel]
+original_item = "max_repel"
+type = "overworld"
+table = "overworld"
+check = 1186
+label = "Mt. Coronet - Overworld (Max Repel)"
+id = 172
+
+[mt_coronet_2f_tm80]
+original_item = "tm80"
+type = "overworld"
+table = "overworld"
+check = 1185
+label = "Mt. Coronet - Overworld (TM80)"
+id = 171
+
+[mt_coronet_2f_escape_rope]
+original_item = "escape_rope"
+type = "overworld"
+table = "overworld"
+check = 1187
+label = "Mt. Coronet - Overworld (Escape Rope)"
+id = 173
+
+[mt_coronet_2f_star_piece]
+original_item = "star_piece"
+type = "hidden"
+table = "hidden"
+check = 812
+label = "Mt. Coronet - Hidden (Star Piece)"
+id = 82
+
+[mt_coronet_2f_red_shard]
+original_item = "red_shard"
+type = "hidden"
+table = "hidden"
+check = 811
+label = "Mt. Coronet - Hidden (Red Shard)"
+id = 81
+
+[mt_coronet_3f_max_repel]
+original_item = "max_repel"
+type = "hidden"
+table = "hidden"
+check = 813
+label = "Mt. Coronet - Hidden (Max Repel)"
+id = 83
+
+[mt_coronet_outside_south_star_piece]
+original_item = "star_piece"
+type = "hidden"
+table = "hidden"
+check = 814
+label = "Mt. Coronet - Hidden (Star Piece) 1"
+id = 84
+
+[mt_coronet_outside_south_star_piece_0]
+original_item = "star_piece"
+type = "hidden"
+table = "hidden"
+check = 822
+label = "Mt. Coronet - Hidden (Star Piece) 2"
+id = 92
+
+[mt_coronet_outside_south_blue_shard]
+original_item = "blue_shard"
+type = "hidden"
+table = "hidden"
+check = 819
+label = "Mt. Coronet - Hidden (Blue Shard)"
+id = 89
+
+[mt_coronet_outside_south_max_potion]
+original_item = "max_potion"
+type = "hidden"
+table = "hidden"
+check = 820
+label = "Mt. Coronet - Hidden (Max Potion)"
+id = 90
+
+[mt_coronet_outside_south_revival_herb]
+original_item = "revival_herb"
+type = "hidden"
+table = "hidden"
+check = 990
+label = "Mt. Coronet - Hidden (Revival Herb)"
+id = 260
+
+[mt_coronet_outside_south_energy_root]
+original_item = "energy_root"
+type = "hidden"
+table = "hidden"
+check = 999
+label = "Mt. Coronet - Hidden (Energy Root)"
+id = 269
+
+[mt_coronet_4f_rooms_1_and_2_adamant_orb]
+original_item = "adamant_orb"
+type = "overworld"
+table = "overworld"
+check = 1051
+label = "Mt. Coronet - Overworld (Adamant Orb)"
+id = 37
+
+[mt_coronet_4f_rooms_1_and_2_lustrous_orb]
+original_item = "lustrous_orb"
+type = "overworld"
+table = "overworld"
+check = 1053
+label = "Mt. Coronet - Overworld (Lustrous Orb)"
+id = 39
+
+[mt_coronet_4f_rooms_1_and_2_sun_stone]
+original_item = "sun_stone"
+type = "hidden"
+table = "hidden"
+check = 823
+label = "Mt. Coronet - Hidden (Sun Stone)"
+id = 93
+
+[mt_coronet_4f_rooms_1_and_2_full_heal]
+original_item = "full_heal"
+type = "hidden"
+table = "hidden"
+check = 824
+label = "Mt. Coronet - Hidden (Full Heal)"
+id = 94
+
+[mt_coronet_4f_rooms_1_and_2_max_revive]
+original_item = "max_revive"
+type = "hidden"
+table = "hidden"
+check = 825
+label = "Mt. Coronet - Hidden (Max Revive)"
+id = 95
+
+[mt_coronet_4f_rooms_1_and_2_heal_powder]
+original_item = "heal_powder"
+type = "hidden"
+table = "hidden"
+check = 828
+label = "Mt. Coronet - Hidden (Heal Powder)"
+id = 98
+
+[mt_coronet_4f_rooms_1_and_2_yellow_shard]
+original_item = "yellow_shard"
+type = "hidden"
+table = "hidden"
+check = 827
+label = "Mt. Coronet - Hidden (Yellow Shard)"
+id = 97
+
+[mt_coronet_4f_rooms_1_and_2_stardust]
+original_item = "stardust"
+type = "hidden"
+table = "hidden"
+check = 826
+label = "Mt. Coronet - Hidden (Stardust)"
+id = 96
+
+[mt_coronet_4f_rooms_1_and_2_stone_plate]
+original_item = "stone_plate"
+type = "hidden"
+table = "hidden"
+check = 829
+label = "Mt. Coronet - Hidden (Stone Plate)"
+id = 99
+
+[mt_coronet_4f_rooms_1_and_2_ultra_ball]
+original_item = "ultra_ball"
+type = "hidden"
+table = "hidden"
+check = 991
+label = "Mt. Coronet - Hidden (Ultra Ball)"
+id = 261
+
+[mt_coronet_outside_north_star_piece]
+original_item = "star_piece"
+type = "hidden"
+table = "hidden"
+check = 814
+label = "Mt. Coronet - Hidden (Star Piece) 3"
+id = 84
+
+[mt_coronet_outside_north_star_piece_0]
+original_item = "star_piece"
+type = "hidden"
+table = "hidden"
+check = 822
+label = "Mt. Coronet - Hidden (Star Piece) 4"
+id = 92
+
+[mt_coronet_outside_north_stardust]
+original_item = "stardust"
+type = "hidden"
+table = "hidden"
+check = 815
+label = "Mt. Coronet - Hidden (Stardust) 1"
+id = 85
+
+[mt_coronet_outside_north_full_restore]
+original_item = "full_restore"
+type = "hidden"
+table = "hidden"
+check = 816
+label = "Mt. Coronet - Hidden (Full Restore)"
+id = 86
+
+[mt_coronet_outside_north_moon_stone]
+original_item = "moon_stone"
+type = "hidden"
+table = "hidden"
+check = 818
+label = "Mt. Coronet - Hidden (Moon Stone)"
+id = 88
+
+[mt_coronet_outside_north_revival_herb]
+original_item = "revival_herb"
+type = "hidden"
+table = "hidden"
+check = 992
+label = "Mt. Coronet - Hidden (Revival Herb) 1"
+id = 262
+
+[mt_coronet_outside_north_energy_root]
+original_item = "energy_root"
+type = "hidden"
+table = "hidden"
+check = 1000
+label = "Mt. Coronet - Hidden (Energy Root) 1"
+id = 270
+
+[galactic_hq_2f_max_revive]
+original_item = "max_revive"
+type = "overworld"
+table = "overworld"
+check = 1181
+label = "Galactic HQ - Overworld (Max Revive)"
+id = 167
+
+[galactic_hq_2f_green_shard]
+original_item = "green_shard"
+type = "overworld"
+table = "overworld"
+check = 1313
+label = "Galactic HQ - Overworld (Green Shard)"
+id = 298
+
+[galactic_hq_2f_poke_doll]
+original_item = "poke_doll"
+type = "hidden"
+table = "hidden"
+check = 805
+label = "Galactic HQ - Hidden (Poké Doll)"
+id = 75
+
+[galactic_hq_2f_max_potion]
+original_item = "max_potion"
+type = "hidden"
+table = "hidden"
+check = 806
+label = "Galactic HQ - Hidden (Max Potion)"
+id = 76
+
+[lake_valor_drained_tm25]
+original_item = "tm25"
+type = "overworld"
+table = "overworld"
+check = 1254
+label = "Lake Valor - Overworld (TM25)"
+id = 240
+
+[lake_valor_drained_hp_up]
+original_item = "hp_up"
+type = "hidden"
+table = "hidden"
+check = 787
+label = "Lake Valor - Hidden (HP Up)"
+id = 57
+
+[eterna_forest_outside_tm82]
+original_item = "tm82"
+type = "overworld"
+table = "overworld"
+check = 1042
+label = "Eterna Forest - Overworld (TM82)"
+id = 28
+
+[eterna_forest_outside_silverpowder]
+original_item = "silverpowder"
+type = "overworld"
+table = "overworld"
+check = 1043
+label = "Eterna Forest - Overworld (SilverPowder)"
+id = 29
+
+[pokemon_mansion_office_tm87]
+original_item = "tm87"
+type = "overworld"
+table = "overworld"
+check = 1071
+label = "Pokémon Mansion - Overworld (TM87)"
+id = 57
+
+[mt_coronet_1f_tunnel_room_green_shard]
+original_item = "green_shard"
+type = "hidden"
+table = "hidden"
+check = 835
+label = "Mt. Coronet - Hidden (Green Shard)"
+id = 105
+
+[mt_coronet_1f_tunnel_room_stardust]
+original_item = "stardust"
+type = "hidden"
+table = "hidden"
+check = 833
+label = "Mt. Coronet - Hidden (Stardust) 2"
+id = 103
+
+[mt_coronet_1f_tunnel_room_heal_powder]
+original_item = "heal_powder"
+type = "hidden"
+table = "hidden"
+check = 834
+label = "Mt. Coronet - Hidden (Heal Powder) 1"
+id = 104
+
+[mt_coronet_1f_tunnel_room_max_potion]
+original_item = "max_potion"
+type = "hidden"
+table = "hidden"
+check = 837
+label = "Mt. Coronet - Hidden (Max Potion) 1"
+id = 107
+
+[mt_coronet_1f_tunnel_room_rare_candy]
+original_item = "rare_candy"
+type = "hidden"
+table = "hidden"
+check = 836
+label = "Mt. Coronet - Hidden (Rare Candy)"
+id = 106
+
+[mt_coronet_1f_tunnel_room_green_shard_0]
+original_item = "green_shard"
+type = "hidden"
+table = "hidden"
+check = 838
+label = "Mt. Coronet - Hidden (Green Shard) 1"
+id = 108
+
+[mt_coronet_1f_north_room_1_rare_candy]
+original_item = "rare_candy"
+type = "overworld"
+table = "overworld"
+check = 1164
+label = "Mt. Coronet - Overworld (Rare Candy)"
+id = 150
+
+[mt_coronet_1f_north_room_1_tm69]
+original_item = "tm69"
+type = "overworld"
+table = "overworld"
+check = 1162
+label = "Mt. Coronet - Overworld (TM69)"
+id = 148
+
+[mt_coronet_1f_north_room_1_escape_rope]
+original_item = "escape_rope"
+type = "overworld"
+table = "overworld"
+check = 1163
+label = "Mt. Coronet - Overworld (Escape Rope) 1"
+id = 149
+
+[mt_coronet_1f_north_room_1_tm02]
+original_item = "tm02"
+type = "overworld"
+table = "overworld"
+check = 1188
+label = "Mt. Coronet - Overworld (TM02)"
+id = 174
+
+[mt_coronet_1f_north_room_1_ice_heal]
+original_item = "ice_heal"
+type = "overworld"
+table = "overworld"
+check = 1276
+label = "Mt. Coronet - Overworld (Ice Heal)"
+id = 261
+
+[mt_coronet_1f_north_room_1_red_shard]
+original_item = "red_shard"
+type = "hidden"
+table = "hidden"
+check = 795
+label = "Mt. Coronet - Hidden (Red Shard) 1"
+id = 65
+
+[mt_coronet_1f_north_room_1_star_piece]
+original_item = "star_piece"
+type = "hidden"
+table = "hidden"
+check = 796
+label = "Mt. Coronet - Hidden (Star Piece) 5"
+id = 66
+
+[mt_coronet_1f_north_room_1_stardust]
+original_item = "stardust"
+type = "hidden"
+table = "hidden"
+check = 794
+label = "Mt. Coronet - Hidden (Stardust) 3"
+id = 64
+
+[mt_coronet_1f_north_room_1_energypowder]
+original_item = "energypowder"
+type = "hidden"
+table = "hidden"
+check = 792
+label = "Mt. Coronet - Hidden (EnergyPowder)"
+id = 62
+
+[mt_coronet_1f_north_room_1_nugget]
+original_item = "nugget"
+type = "hidden"
+table = "hidden"
+check = 793
+label = "Mt. Coronet - Hidden (Nugget)"
+id = 63
+
+[mt_coronet_b1f_revive]
+original_item = "revive"
+type = "overworld"
+table = "overworld"
+check = 1170
+label = "Mt. Coronet - Overworld (Revive)"
+id = 156
+
+[mt_coronet_b1f_soft_sand]
+original_item = "soft_sand"
+type = "overworld"
+table = "overworld"
+check = 1165
+label = "Mt. Coronet - Overworld (Soft Sand)"
+id = 151
+
+[mt_coronet_b1f_light_clay]
+original_item = "light_clay"
+type = "overworld"
+table = "overworld"
+check = 1166
+label = "Mt. Coronet - Overworld (Light Clay)"
+id = 152
+
+[mt_coronet_b1f_max_elixir]
+original_item = "max_elixir"
+type = "overworld"
+table = "overworld"
+check = 1169
+label = "Mt. Coronet - Overworld (Max Elixir)"
+id = 155
+
+[mt_coronet_b1f_full_restore]
+original_item = "full_restore"
+type = "overworld"
+table = "overworld"
+check = 1168
+label = "Mt. Coronet - Overworld (Full Restore)"
+id = 154
+
+[mt_coronet_b1f_ultra_ball]
+original_item = "ultra_ball"
+type = "overworld"
+table = "overworld"
+check = 1167
+label = "Mt. Coronet - Overworld (Ultra Ball)"
+id = 153
+
+[mt_coronet_b1f_star_piece]
+original_item = "star_piece"
+type = "hidden"
+table = "hidden"
+check = 800
+label = "Mt. Coronet - Hidden (Star Piece) 6"
+id = 70
+
+[mt_coronet_b1f_rare_candy]
+original_item = "rare_candy"
+type = "hidden"
+table = "hidden"
+check = 799
+label = "Mt. Coronet - Hidden (Rare Candy) 1"
+id = 69
+
+[mt_coronet_b1f_blue_shard]
+original_item = "blue_shard"
+type = "hidden"
+table = "hidden"
+check = 798
+label = "Mt. Coronet - Hidden (Blue Shard) 1"
+id = 68
+
+[mt_coronet_b1f_green_shard]
+original_item = "green_shard"
+type = "hidden"
+table = "hidden"
+check = 797
+label = "Mt. Coronet - Hidden (Green Shard) 2"
+id = 67
+
+[mt_coronet_1f_north_room_2_yellow_shard]
+original_item = "yellow_shard"
+type = "hidden"
+table = "hidden"
+check = 791
+label = "Mt. Coronet - Hidden (Yellow Shard) 1"
+id = 61
+
+[route_216_tm13]
+original_item = "tm13"
+type = "overworld"
+table = "overworld"
+check = 1171
+label = "Route 216 - Overworld (TM13)"
+id = 157
+
+[route_216_full_heal]
+original_item = "full_heal"
+type = "overworld"
+table = "overworld"
+check = 1173
+label = "Route 216 - Overworld (Full Heal)"
+id = 159
+
+[route_216_mental_herb]
+original_item = "mental_herb"
+type = "overworld"
+table = "overworld"
+check = 1172
+label = "Route 216 - Overworld (Mental Herb)"
+id = 158
+
+[route_216_hp_up]
+original_item = "hp_up"
+type = "overworld"
+table = "overworld"
+check = 1260
+label = "Route 216 - Overworld (HP Up)"
+id = 246
+
+[route_216_max_potion]
+original_item = "max_potion"
+type = "overworld"
+table = "overworld"
+check = 1305
+label = "Route 216 - Overworld (Max Potion)"
+id = 290
+
+[route_216_revive]
+original_item = "revive"
+type = "overworld"
+table = "overworld"
+check = 1306
+label = "Route 216 - Overworld (Revive)"
+id = 291
+
+[route_216_pp_up]
+original_item = "pp_up"
+type = "hidden"
+table = "hidden"
+check = 801
+label = "Route 216 - Hidden (PP Up)"
+id = 71
+
+[route_211_east_tm29]
+original_item = "tm29"
+type = "overworld"
+table = "overworld"
+check = 1161
+label = "Route 211 - Overworld (TM29)"
+id = 147
+
+[route_211_east_carbos]
+original_item = "carbos"
+type = "overworld"
+table = "overworld"
+check = 1331
+label = "Route 211 - Overworld (Carbos)"
+id = 316
+
+[route_211_east_calcium]
+original_item = "calcium"
+type = "hidden"
+table = "hidden"
+check = 790
+label = "Route 211 - Hidden (Calcium)"
+id = 60
+
+[mt_coronet_iceberg_ruins_nevermeltice]
+original_item = "nevermeltice"
+type = "overworld"
+table = "overworld"
+check = 1338
+label = "Mt. Coronet - Overworld (NeverMeltIce)"
+id = 323
+
+[mt_coronet_iceberg_ruins_nugget]
+original_item = "nugget"
+type = "hidden"
+table = "hidden"
+check = 1005
+label = "Mt. Coronet - Hidden (Nugget) 1"
+id = 275
+
+[route_217_hm08]
+original_item = "hm08"
+type = "overworld"
+table = "overworld"
+check = 1175
+label = "Route 217 - Overworld (HM08)"
+id = 161
+
+[route_217_iron]
+original_item = "iron"
+type = "overworld"
+table = "overworld"
+check = 1176
+label = "Route 217 - Overworld (Iron)"
+id = 162
+
+[route_217_tm07]
+original_item = "tm07"
+type = "overworld"
+table = "overworld"
+check = 1174
+label = "Route 217 - Overworld (TM07)"
+id = 160
+
+[route_217_blue_shard]
+original_item = "blue_shard"
+type = "overworld"
+table = "overworld"
+check = 1307
+label = "Route 217 - Overworld (Blue Shard)"
+id = 292
+
+[route_217_ultra_ball]
+original_item = "ultra_ball"
+type = "overworld"
+table = "overworld"
+check = 1308
+label = "Route 217 - Overworld (Ultra Ball)"
+id = 293
+
+[route_217_rare_candy]
+original_item = "rare_candy"
+type = "overworld"
+table = "overworld"
+check = 1309
+label = "Route 217 - Overworld (Rare Candy)"
+id = 294
+
+[route_217_iron_0]
+original_item = "iron"
+type = "hidden"
+table = "hidden"
+check = 802
+label = "Route 217 - Hidden (Iron)"
+id = 72
+
+[route_217_max_revive]
+original_item = "max_revive"
+type = "hidden"
+table = "hidden"
+check = 803
+label = "Route 217 - Hidden (Max Revive)"
+id = 73
+
+[route_217_ultra_ball_0]
+original_item = "ultra_ball"
+type = "hidden"
+table = "hidden"
+check = 923
+label = "Route 217 - Hidden (Ultra Ball)"
+id = 193
+
+[route_217_revival_herb]
+original_item = "revival_herb"
+type = "hidden"
+table = "hidden"
+check = 924
+label = "Route 217 - Hidden (Revival Herb)"
+id = 194
+
+[route_217_max_repel]
+original_item = "max_repel"
+type = "hidden"
+table = "hidden"
+check = 925
+label = "Route 217 - Hidden (Max Repel)"
+id = 195
+
+[route_217_ultra_ball_1]
+original_item = "ultra_ball"
+type = "hidden"
+table = "hidden"
+check = 926
+label = "Route 217 - Hidden (Ultra Ball) 1"
+id = 196
+
+[route_217_protein]
+original_item = "protein"
+type = "hidden"
+table = "hidden"
+check = 927
+label = "Route 217 - Hidden (Protein)"
+id = 197
+
+[route_217_max_potion]
+original_item = "max_potion"
+type = "hidden"
+table = "hidden"
+check = 928
+label = "Route 217 - Hidden (Max Potion)"
+id = 198
+
+[route_217_full_heal]
+original_item = "full_heal"
+type = "hidden"
+table = "hidden"
+check = 929
+label = "Route 217 - Hidden (Full Heal)"
+id = 199
+
+[route_217_nugget]
+original_item = "nugget"
+type = "hidden"
+table = "hidden"
+check = 930
+label = "Route 217 - Hidden (Nugget)"
+id = 200
+
+[acuity_lakefront_ultra_ball]
+original_item = "ultra_ball"
+type = "overworld"
+table = "overworld"
+check = 1177
+label = "Acuity Lakefront - Overworld (Ultra Ball)"
+id = 163
+
+[acuity_lakefront_reaper_cloth]
+original_item = "reaper_cloth"
+type = "overworld"
+table = "overworld"
+check = 1324
+label = "Acuity Lakefront - Overworld (Reaper Cloth)"
+id = 309
+
+[lake_acuity_tm14]
+original_item = "tm14"
+type = "overworld"
+table = "overworld"
+check = 1255
+label = "Lake Acuity - Overworld (TM14)"
+id = 241
+
+[lake_acuity_low_water_tm14]
+original_item = "tm14"
+type = "overworld"
+table = "overworld"
+check = 1255
+label = "Lake Acuity - Overworld (TM14) 1"
+id = 241
+
+[snowpoint_city_ultra_ball]
+original_item = "ultra_ball"
+type = "overworld"
+table = "overworld"
+check = 1325
+label = "Snowpoint City - Overworld (Ultra Ball)"
+id = 310
+
+[snowpoint_city_rare_candy]
+original_item = "rare_candy"
+type = "hidden"
+table = "hidden"
+check = 908
+label = "Snowpoint City - Hidden (Rare Candy)"
+id = 178
+
+[snowpoint_temple_b1f_calcium]
+original_item = "calcium"
+type = "overworld"
+table = "overworld"
+check = 1256
+label = "Snowpoint Temple - Overworld (Calcium)"
+id = 242
+
+[mt_coronet_4f_room_3_max_elixir]
+original_item = "max_elixir"
+type = "hidden"
+table = "hidden"
+check = 830
+label = "Mt. Coronet - Hidden (Max Elixir)"
+id = 100
+
+[snowpoint_temple_b3f_full_restore]
+original_item = "full_restore"
+type = "hidden"
+table = "hidden"
+check = 909
+label = "Snowpoint Temple - Hidden (Full Restore)"
+id = 179
+
+[snowpoint_temple_b4f_full_heal]
+original_item = "full_heal"
+type = "overworld"
+table = "overworld"
+check = 1257
+label = "Snowpoint Temple - Overworld (Full Heal)"
+id = 243
+
+[route_215_hyper_potion]
+original_item = "hyper_potion"
+type = "overworld"
+table = "overworld"
+check = 1119
+label = "Route 215 - Overworld (Hyper Potion)"
+id = 105
+
+[route_215_full_heal]
+original_item = "full_heal"
+type = "overworld"
+table = "overworld"
+check = 1121
+label = "Route 215 - Overworld (Full Heal)"
+id = 107
+
+[route_215_max_ether]
+original_item = "max_ether"
+type = "overworld"
+table = "overworld"
+check = 1120
+label = "Route 215 - Overworld (Max Ether)"
+id = 106
+
+[route_215_tm34]
+original_item = "tm34"
+type = "overworld"
+table = "overworld"
+check = 1122
+label = "Route 215 - Overworld (TM34)"
+id = 108
+
+[route_215_fist_plate]
+original_item = "fist_plate"
+type = "overworld"
+table = "overworld"
+check = 1118
+label = "Route 215 - Overworld (Fist Plate)"
+id = 104
+
+[route_215_hp_up]
+original_item = "hp_up"
+type = "overworld"
+table = "overworld"
+check = 1285
+label = "Route 215 - Overworld (HP Up)"
+id = 270
+
+[route_215_revive]
+original_item = "revive"
+type = "hidden"
+table = "hidden"
+check = 911
+label = "Route 215 - Hidden (Revive)"
+id = 181
+
+[route_215_ultra_ball]
+original_item = "ultra_ball"
+type = "hidden"
+table = "hidden"
+check = 912
+label = "Route 215 - Hidden (Ultra Ball)"
+id = 182
+
+[route_215_iron]
+original_item = "iron"
+type = "hidden"
+table = "hidden"
+check = 913
+label = "Route 215 - Hidden (Iron)"
+id = 183
+
+[team_galactic_eterna_building_2f_x_speed]
+original_item = "x_speed"
+type = "overworld"
+table = "overworld"
+check = 1277
+label = "T.G. Eterna Bldg - Overworld (X Speed)"
+id = 262
+
+[team_galactic_eterna_building_3f_x_special]
+original_item = "x_special"
+type = "overworld"
+table = "overworld"
+check = 1278
+label = "T.G. Eterna Bldg - Overworld (X Special)"
+id = 263
+
+[team_galactic_eterna_building_4f_revive]
+original_item = "revive"
+type = "overworld"
+table = "overworld"
+check = 1292
+label = "T.G. Eterna Bldg - Overworld (Revive)"
+id = 277
+
+[team_galactic_eterna_building_4f_blue_shard]
+original_item = "blue_shard"
+type = "overworld"
+table = "overworld"
+check = 1279
+label = "T.G. Eterna Bldg - Overworld (Blue Shard)"
+id = 264
+
+[team_galactic_eterna_building_4f_upgrade]
+original_item = "upgrade"
+type = "overworld"
+table = "overworld"
+check = 1280
+label = "T.G. Eterna Bldg - Overworld (Up-Grade)"
+id = 265
+
+[wayward_cave_1f_tm26]
+original_item = "tm26"
+type = "overworld"
+table = "overworld"
+check = 1052
+label = "Wayward Cave - Overworld (TM26)"
+id = 38
+
+[wayward_cave_1f_tm32]
+original_item = "tm32"
+type = "overworld"
+table = "overworld"
+check = 1048
+label = "Wayward Cave - Overworld (TM32)"
+id = 34
+
+[wayward_cave_1f_revive]
+original_item = "revive"
+type = "overworld"
+table = "overworld"
+check = 1049
+label = "Wayward Cave - Overworld (Revive)"
+id = 35
+
+[wayward_cave_1f_escape_rope]
+original_item = "escape_rope"
+type = "overworld"
+table = "overworld"
+check = 1050
+label = "Wayward Cave - Overworld (Escape Rope)"
+id = 36
+
+[wayward_cave_1f_yellow_shard]
+original_item = "yellow_shard"
+type = "hidden"
+table = "hidden"
+check = 736
+label = "Wayward Cave - Hidden (Yellow Shard)"
+id = 6
+
+[wayward_cave_1f_great_ball]
+original_item = "great_ball"
+type = "hidden"
+table = "hidden"
+check = 739
+label = "Wayward Cave - Hidden (Great Ball)"
+id = 9
+
+[wayward_cave_1f_red_shard]
+original_item = "red_shard"
+type = "hidden"
+table = "hidden"
+check = 738
+label = "Wayward Cave - Hidden (Red Shard)"
+id = 8
+
+[wayward_cave_1f_green_shard]
+original_item = "green_shard"
+type = "hidden"
+table = "hidden"
+check = 892
+label = "Wayward Cave - Hidden (Green Shard)"
+id = 162
+
+[wayward_cave_1f_super_potion]
+original_item = "super_potion"
+type = "hidden"
+table = "hidden"
+check = 938
+label = "Wayward Cave - Hidden (Super Potion)"
+id = 208
+
+[wayward_cave_1f_blue_shard]
+original_item = "blue_shard"
+type = "hidden"
+table = "hidden"
+check = 939
+label = "Wayward Cave - Hidden (Blue Shard)"
+id = 209
+
+[wayward_cave_b1f_grip_claw]
+original_item = "grip_claw"
+type = "overworld"
+table = "overworld"
+check = 1056
+label = "Wayward Cave - Overworld (Grip Claw)"
+id = 42
+
+[wayward_cave_b1f_max_ether]
+original_item = "max_ether"
+type = "overworld"
+table = "overworld"
+check = 1054
+label = "Wayward Cave - Overworld (Max Ether)"
+id = 40
+
+[wayward_cave_b1f_rare_candy]
+original_item = "rare_candy"
+type = "overworld"
+table = "overworld"
+check = 1055
+label = "Wayward Cave - Overworld (Rare Candy)"
+id = 41
+
+[wayward_cave_b1f_stardust]
+original_item = "stardust"
+type = "hidden"
+table = "hidden"
+check = 741
+label = "Wayward Cave - Hidden (Stardust)"
+id = 11
+
+[wayward_cave_b1f_dusk_stone]
+original_item = "dusk_stone"
+type = "hidden"
+table = "hidden"
+check = 740
+label = "Wayward Cave - Hidden (Dusk Stone)"
+id = 10
+
+[solaceon_ruins_room_3_southwest_dead_end_water_stone]
+original_item = "water_stone"
+type = "hidden"
+table = "hidden"
+check = 767
+label = "Solaceon Ruins - Hidden (Water Stone)"
+id = 37
+
+[lake_valor_tm25]
+original_item = "tm25"
+type = "overworld"
+table = "overworld"
+check = 1254
+label = "Lake Valor - Overworld (TM25) 1"
+id = 240
+
+[route_211_west_tm12]
+original_item = "tm12"
+type = "overworld"
+table = "overworld"
+check = 1041
+label = "Route 211 - Overworld (TM12)"
+id = 27
+
+[route_211_west_great_ball]
+original_item = "great_ball"
+type = "hidden"
+table = "hidden"
+check = 733
+label = "Route 211 - Hidden (Great Ball)"
+id = 3
+
+[route_211_west_moon_stone]
+original_item = "moon_stone"
+type = "hidden"
+table = "hidden"
+check = 958
+label = "Route 211 - Hidden (Moon Stone)"
+id = 228
+
+[oreburgh_city_dire_hit]
+original_item = "dire_hit"
+type = "overworld"
+table = "overworld"
+check = 1274
+label = "Oreburgh City - Overworld (Dire Hit)"
+id = 259
+
+[oreburgh_city_yellow_shard]
+original_item = "yellow_shard"
+type = "overworld"
+table = "overworld"
+check = 1275
+label = "Oreburgh City - Overworld (Yellow Shard)"
+id = 260
+
+[oreburgh_city_pearl]
+original_item = "pearl"
+type = "hidden"
+table = "hidden"
+check = 817
+label = "Oreburgh City - Hidden (Pearl)"
+id = 87
+
+[oreburgh_city_heart_scale]
+original_item = "heart_scale"
+type = "hidden"
+table = "hidden"
+check = 987
+label = "Oreburgh City - Hidden (Heart Scale)"
+id = 257
+
+[oreburgh_mine_b1f_poke_ball]
+original_item = "poke_ball"
+type = "overworld"
+table = "overworld"
+check = 1249
+label = "Oreburgh Mine - Overworld (Poké Ball)"
+id = 235
+
+[oreburgh_mine_b2f_escape_rope]
+original_item = "escape_rope"
+type = "overworld"
+table = "overworld"
+check = 1021
+label = "Oreburgh Mine - Overworld (Escape Rope)"
+id = 7
+
+[oreburgh_mine_b2f_potion]
+original_item = "potion"
+type = "overworld"
+table = "overworld"
+check = 1022
+label = "Oreburgh Mine - Overworld (Potion)"
+id = 8
+
+[oreburgh_gate_b1f_tm01]
+original_item = "tm01"
+type = "overworld"
+table = "overworld"
+check = 1017
+label = "Oreburgh Gate - Overworld (TM01)"
+id = 3
+
+[oreburgh_gate_b1f_earth_plate]
+original_item = "earth_plate"
+type = "overworld"
+table = "overworld"
+check = 1020
+label = "Oreburgh Gate - Overworld (Earth Plate)"
+id = 6
+
+[oreburgh_gate_b1f_tm31]
+original_item = "tm31"
+type = "overworld"
+table = "overworld"
+check = 1018
+label = "Oreburgh Gate - Overworld (TM31)"
+id = 4
+
+[oreburgh_gate_b1f_tm70]
+original_item = "tm70"
+type = "overworld"
+table = "overworld"
+check = 1019
+label = "Oreburgh Gate - Overworld (TM70)"
+id = 5
+
+[oreburgh_gate_b1f_big_pearl]
+original_item = "big_pearl"
+type = "overworld"
+table = "overworld"
+check = 1183
+label = "Oreburgh Gate - Overworld (Big Pearl)"
+id = 169
+
+[veilstone_city_galactic_warehouse_dusk_stone]
+original_item = "dusk_stone"
+type = "overworld"
+table = "overworld"
+check = 1125
+label = "Veilstone City - Overworld (Dusk Stone)"
+id = 111
+
+[veilstone_city_galactic_warehouse_hm02]
+original_item = "hm02"
+type = "overworld"
+table = "overworld"
+check = 1250
+label = "Veilstone City - Overworld (HM02)"
+id = 236
+
+[solaceon_ruins_room_5_southeast_deadend_thunderstone]
+original_item = "thunderstone"
+type = "hidden"
+table = "hidden"
+check = 768
+label = "Solaceon Ruins - Hidden (Thunderstone)"
+id = 38
+
+[mt_coronet_5f_full_restore]
+original_item = "full_restore"
+type = "hidden"
+table = "hidden"
+check = 832
+label = "Mt. Coronet - Hidden (Full Restore) 1"
+id = 102
+
+[mt_coronet_5f_rare_candy]
+original_item = "rare_candy"
+type = "hidden"
+table = "hidden"
+check = 831
+label = "Mt. Coronet - Hidden (Rare Candy) 2"
+id = 101
+
+[old_chateau_back_middle_east_room_tm90]
+original_item = "tm90"
+type = "overworld"
+table = "overworld"
+check = 1262
+label = "Old Chateau - Overworld (TM90) 1"
+id = 248
+
+[route_203_repel]
+original_item = "repel"
+type = "overworld"
+table = "overworld"
+check = 1015
+label = "Route 203 - Overworld (Repel)"
+id = 1
+
+[route_203_poke_ball]
+original_item = "poke_ball"
+type = "overworld"
+table = "overworld"
+check = 1016
+label = "Route 203 - Overworld (Poké Ball)"
+id = 2
+
+[route_203_x_defense]
+original_item = "x_defense"
+type = "overworld"
+table = "overworld"
+check = 1270
+label = "Route 203 - Overworld (X Defend)"
+id = 255
+
+[mt_coronet_1f_south_protein]
+original_item = "protein"
+type = "overworld"
+table = "overworld"
+check = 1060
+label = "Mt. Coronet - Overworld (Protein)"
+id = 46
+
+[mt_coronet_1f_south_dawn_stone]
+original_item = "dawn_stone"
+type = "overworld"
+table = "overworld"
+check = 1061
+label = "Mt. Coronet - Overworld (Dawn Stone)"
+id = 47
+
+[mt_coronet_1f_south_stardust]
+original_item = "stardust"
+type = "hidden"
+table = "hidden"
+check = 743
+label = "Mt. Coronet - Hidden (Stardust) 4"
+id = 13
+
+[mt_coronet_1f_south_energypowder]
+original_item = "energypowder"
+type = "hidden"
+table = "hidden"
+check = 1001
+label = "Mt. Coronet - Hidden (EnergyPowder) 1"
+id = 271
+
+[mt_coronet_1f_south_revive]
+original_item = "revive"
+type = "hidden"
+table = "hidden"
+check = 1002
+label = "Mt. Coronet - Hidden (Revive)"
+id = 272
+
+[battle_park_razor_fang]
+original_item = "razor_fang"
+type = "overworld"
+table = "overworld"
+check = 1259
+label = "Battle Park - Overworld (Razor Fang)"
+id = 245
+
+[solaceon_ruins_room_7_mind_plate]
+original_item = "mind_plate"
+type = "overworld"
+table = "overworld"
+check = 1109
+label = "Solaceon Ruins - Overworld (Mind Plate)"
+id = 95
+
+[solaceon_ruins_room_7_odd_incense]
+original_item = "odd_incense"
+type = "overworld"
+table = "overworld"
+check = 1110
+label = "Solaceon Ruins - Overworld (Odd Incense)"
+id = 96
+
+[solaceon_ruins_room_7_nugget]
+original_item = "nugget"
+type = "overworld"
+table = "overworld"
+check = 1111
+label = "Solaceon Ruins - Overworld (Nugget)"
+id = 97
+
+[solaceon_ruins_room_7_hm05]
+original_item = "hm05"
+type = "overworld"
+table = "overworld"
+check = 1112
+label = "Solaceon Ruins - Overworld (HM05)"
+id = 98

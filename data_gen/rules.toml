@@ -1,0 +1,7 @@
+exits.ravaged_path.route_204_north = "rock_smash"
+exits.floaroma_town.route_205_south = "works_key"
+loc_types.hidden = "dowsingmachine_if_opt"
+enc_types.surf = "surf"
+enc_types.good_rod = "good_rod"
+enc_types.super_rod = "super_rod"
+enc_types.old_rod = "old_rod"

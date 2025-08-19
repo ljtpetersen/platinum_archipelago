@@ -1,0 +1,31 @@
+loc_table.base = 0
+loc_table.overworld = 1
+loc_table.hidden = 2
+
+item_clas.bagitem = 0
+item_clas.multibagitem0 = 1
+item_clas.multibagitem1 = 2
+item_clas.multibagitem2 = 3
+item_clas.specialbagitem = 4
+item_clas.poketchapp = 5
+item_clas.badge = 6
+item_clas.special = 0xE
+
+hm.cut = "hm01"
+hm.fly = "hm02"
+hm.surf = "hm03"
+hm.strength = "hm04"
+hm.defog = "hm05"
+hm.rock_smash = "hm06"
+hm.waterfall = "hm07"
+hm.rock_climb = "hm08"
+hm.flash = "tm70"
+
+hm_badge.cut = "forest_badge"
+hm_badge.fly = "cobble_badge"
+hm_badge.surf = "fen_badge"
+hm_badge.strength = "mine_badge"
+hm_badge.defog = "relic_badge"
+hm_badge.rock_smash = "coal_badge"
+hm_badge.waterfall = "beacon_badge"
+hm_badge.rock_climb = "icicle_badge"

@@ -1,0 +1,3455 @@
+[bulbasaur]
+hms = [
+    "cut",
+    "strength",
+    "rock_smash",
+    "flash",
+]
+
+[ivysaur]
+hms = [
+    "cut",
+    "strength",
+    "rock_smash",
+    "flash",
+]
+pre_evolution = "bulbasaur"
+
+[venusaur]
+hms = [
+    "flash",
+    "rock_smash",
+    "cut",
+    "strength",
+    "rock_climb",
+]
+pre_evolution = "ivysaur"
+
+[charmander]
+hms = [
+    "strength",
+    "rock_smash",
+    "cut",
+]
+
+[charmeleon]
+hms = [
+    "strength",
+    "rock_smash",
+    "cut",
+]
+pre_evolution = "charmander"
+
+[charizard]
+hms = [
+    "rock_smash",
+    "defog",
+    "cut",
+    "strength",
+    "fly",
+]
+pre_evolution = "charmeleon"
+
+[squirtle]
+hms = [
+    "strength",
+    "waterfall",
+    "rock_smash",
+    "surf",
+]
+
+[wartortle]
+hms = [
+    "strength",
+    "waterfall",
+    "rock_smash",
+    "surf",
+]
+pre_evolution = "squirtle"
+
+[blastoise]
+hms = [
+    "waterfall",
+    "rock_smash",
+    "strength",
+    "rock_climb",
+    "surf",
+]
+pre_evolution = "wartortle"
+
+[caterpie]
+hms = []
+
+[metapod]
+hms = []
+pre_evolution = "caterpie"
+
+[butterfree]
+hms = [
+    "defog",
+    "flash",
+]
+pre_evolution = "metapod"
+
+[weedle]
+hms = []
+
+[kakuna]
+hms = []
+pre_evolution = "weedle"
+
+[beedrill]
+hms = [
+    "cut",
+    "rock_smash",
+    "defog",
+    "flash",
+]
+pre_evolution = "kakuna"
+
+[pidgey]
+hms = [
+    "fly",
+    "defog",
+]
+
+[pidgeotto]
+hms = [
+    "fly",
+    "defog",
+]
+pre_evolution = "pidgey"
+
+[pidgeot]
+hms = [
+    "fly",
+    "defog",
+]
+pre_evolution = "pidgeotto"
+
+[rattata]
+hms = [
+    "rock_smash",
+    "cut",
+]
+
+[raticate]
+hms = [
+    "strength",
+    "rock_smash",
+    "cut",
+]
+pre_evolution = "rattata"
+
+[spearow]
+hms = [
+    "fly",
+    "defog",
+]
+
+[fearow]
+hms = [
+    "fly",
+    "defog",
+]
+pre_evolution = "spearow"
+
+[ekans]
+hms = [
+    "strength",
+]
+
+[arbok]
+hms = [
+    "strength",
+]
+pre_evolution = "ekans"
+
+[pikachu]
+hms = [
+    "strength",
+    "rock_smash",
+    "flash",
+]
+pre_evolution = "pichu"
+
+[raichu]
+hms = [
+    "strength",
+    "rock_smash",
+    "flash",
+]
+
+[sandshrew]
+hms = [
+    "strength",
+    "rock_climb",
+    "rock_smash",
+    "cut",
+]
+
+[sandslash]
+hms = [
+    "strength",
+    "rock_climb",
+    "rock_smash",
+    "cut",
+]
+pre_evolution = "sandshrew"
+
+[nidoran_f]
+hms = [
+    "strength",
+    "rock_smash",
+    "cut",
+]
+
+[nidorina]
+hms = [
+    "strength",
+    "rock_smash",
+    "cut",
+]
+pre_evolution = "nidoran_f"
+
+[nidoqueen]
+hms = [
+    "rock_smash",
+    "cut",
+    "strength",
+    "rock_climb",
+    "surf",
+]
+
+[nidoran_m]
+hms = [
+    "strength",
+    "rock_smash",
+    "cut",
+]
+
+[nidorino]
+hms = [
+    "strength",
+    "rock_smash",
+    "cut",
+]
+pre_evolution = "nidoran_m"
+
+[nidoking]
+hms = [
+    "rock_smash",
+    "cut",
+    "strength",
+    "rock_climb",
+    "surf",
+]
+
+[clefairy]
+hms = [
+    "strength",
+    "rock_smash",
+    "flash",
+]
+pre_evolution = "cleffa"
+
+[clefable]
+hms = [
+    "strength",
+    "rock_smash",
+    "flash",
+]
+
+[vulpix]
+hms = []
+
+[ninetales]
+hms = []
+
+[jigglypuff]
+hms = [
+    "strength",
+    "flash",
+]
+pre_evolution = "igglybuff"
+
+[wigglytuff]
+hms = [
+    "strength",
+    "flash",
+]
+
+[zubat]
+hms = [
+    "fly",
+    "defog",
+]
+
+[golbat]
+hms = [
+    "fly",
+    "defog",
+]
+pre_evolution = "zubat"
+
+[oddish]
+hms = [
+    "cut",
+    "flash",
+]
+
+[gloom]
+hms = [
+    "cut",
+    "flash",
+]
+pre_evolution = "oddish"
+
+[vileplume]
+hms = [
+    "cut",
+    "flash",
+]
+
+[paras]
+hms = [
+    "cut",
+    "rock_smash",
+    "flash",
+]
+
+[parasect]
+hms = [
+    "cut",
+    "rock_smash",
+    "flash",
+]
+pre_evolution = "paras"
+
+[venonat]
+hms = [
+    "flash",
+]
+
+[venomoth]
+hms = [
+    "defog",
+    "flash",
+]
+pre_evolution = "venonat"
+
+[diglett]
+hms = [
+    "rock_smash",
+    "cut",
+]
+
+[dugtrio]
+hms = [
+    "rock_smash",
+    "cut",
+]
+pre_evolution = "diglett"
+
+[meowth]
+hms = [
+    "cut",
+    "flash",
+]
+
+[persian]
+hms = [
+    "cut",
+    "flash",
+]
+pre_evolution = "meowth"
+
+[psyduck]
+hms = [
+    "rock_smash",
+    "waterfall",
+    "flash",
+    "strength",
+    "surf",
+]
+
+[golduck]
+hms = [
+    "rock_smash",
+    "waterfall",
+    "flash",
+    "strength",
+    "rock_climb",
+    "surf",
+]
+pre_evolution = "psyduck"
+
+[mankey]
+hms = [
+    "strength",
+    "rock_climb",
+    "rock_smash",
+]
+
+[primeape]
+hms = [
+    "strength",
+    "rock_climb",
+    "rock_smash",
+]
+pre_evolution = "mankey"
+
+[growlithe]
+hms = [
+    "strength",
+    "rock_smash",
+]
+
+[arcanine]
+hms = [
+    "strength",
+    "rock_climb",
+    "rock_smash",
+]
+
+[poliwag]
+hms = [
+    "waterfall",
+    "surf",
+]
+
+[poliwhirl]
+hms = [
+    "strength",
+    "waterfall",
+    "rock_smash",
+    "surf",
+]
+pre_evolution = "poliwag"
+
+[poliwrath]
+hms = [
+    "waterfall",
+    "rock_smash",
+    "strength",
+    "rock_climb",
+    "surf",
+]
+
+[abra]
+hms = [
+    "flash",
+]
+
+[kadabra]
+hms = [
+    "flash",
+]
+pre_evolution = "abra"
+
+[alakazam]
+hms = [
+    "flash",
+]
+
+[machop]
+hms = [
+    "strength",
+    "rock_climb",
+    "rock_smash",
+]
+
+[machoke]
+hms = [
+    "strength",
+    "rock_climb",
+    "rock_smash",
+]
+pre_evolution = "machop"
+
+[machamp]
+hms = [
+    "strength",
+    "rock_climb",
+    "rock_smash",
+]
+
+[bellsprout]
+hms = [
+    "cut",
+    "flash",
+]
+
+[weepinbell]
+hms = [
+    "cut",
+    "flash",
+]
+pre_evolution = "bellsprout"
+
+[victreebel]
+hms = [
+    "cut",
+    "flash",
+]
+
+[tentacool]
+hms = [
+    "waterfall",
+    "surf",
+    "cut",
+]
+
+[tentacruel]
+hms = [
+    "waterfall",
+    "surf",
+    "cut",
+]
+pre_evolution = "tentacool"
+
+[geodude]
+hms = [
+    "strength",
+    "rock_climb",
+    "rock_smash",
+]
+
+[graveler]
+hms = [
+    "strength",
+    "rock_climb",
+    "rock_smash",
+]
+pre_evolution = "geodude"
+
+[golem]
+hms = [
+    "strength",
+    "rock_climb",
+    "rock_smash",
+]
+
+[ponyta]
+hms = [
+    "strength",
+]
+
+[rapidash]
+hms = [
+    "strength",
+]
+pre_evolution = "ponyta"
+
+[slowpoke]
+hms = [
+    "strength",
+    "surf",
+    "flash",
+]
+
+[slowbro]
+hms = [
+    "rock_smash",
+    "strength",
+    "surf",
+    "flash",
+]
+pre_evolution = "slowpoke"
+
+[magnemite]
+hms = [
+    "flash",
+]
+
+[magneton]
+hms = [
+    "flash",
+]
+pre_evolution = "magnemite"
+
+[farfetchd]
+hms = [
+    "fly",
+    "defog",
+    "cut",
+]
+
+[doduo]
+hms = [
+    "fly",
+]
+
+[dodrio]
+hms = [
+    "fly",
+]
+pre_evolution = "doduo"
+
+[seel]
+hms = [
+    "waterfall",
+    "surf",
+]
+
+[dewgong]
+hms = [
+    "waterfall",
+    "surf",
+]
+pre_evolution = "seel"
+
+[grimer]
+hms = [
+    "strength",
+]
+
+[muk]
+hms = [
+    "strength",
+    "rock_smash",
+]
+pre_evolution = "grimer"
+
+[shellder]
+hms = [
+    "surf",
+]
+
+[cloyster]
+hms = [
+    "surf",
+]
+
+[gastly]
+hms = []
+
+[haunter]
+hms = []
+pre_evolution = "gastly"
+
+[gengar]
+hms = [
+    "strength",
+    "rock_smash",
+]
+
+[onix]
+hms = [
+    "strength",
+    "rock_climb",
+    "rock_smash",
+]
+
+[drowzee]
+hms = [
+    "flash",
+]
+
+[hypno]
+hms = [
+    "flash",
+]
+pre_evolution = "drowzee"
+
+[krabby]
+hms = [
+    "rock_smash",
+    "strength",
+    "surf",
+    "cut",
+]
+
+[kingler]
+hms = [
+    "rock_smash",
+    "strength",
+    "surf",
+    "cut",
+]
+pre_evolution = "krabby"
+
+[voltorb]
+hms = [
+    "flash",
+]
+
+[electrode]
+hms = [
+    "flash",
+]
+pre_evolution = "voltorb"
+
+[exeggcute]
+hms = [
+    "strength",
+    "flash",
+]
+
+[exeggutor]
+hms = [
+    "strength",
+    "flash",
+]
+
+[cubone]
+hms = [
+    "strength",
+    "rock_climb",
+    "rock_smash",
+]
+
+[marowak]
+hms = [
+    "strength",
+    "rock_climb",
+    "rock_smash",
+]
+pre_evolution = "cubone"
+
+[hitmonlee]
+hms = [
+    "strength",
+    "rock_climb",
+    "rock_smash",
+]
+pre_evolution = "tyrogue"
+
+[hitmonchan]
+hms = [
+    "strength",
+    "rock_climb",
+    "rock_smash",
+]
+pre_evolution = "tyrogue"
+
+[lickitung]
+hms = [
+    "rock_smash",
+    "cut",
+    "strength",
+    "rock_climb",
+    "surf",
+]
+
+[koffing]
+hms = [
+    "flash",
+]
+
+[weezing]
+hms = [
+    "flash",
+]
+pre_evolution = "koffing"
+
+[rhyhorn]
+hms = [
+    "strength",
+    "rock_climb",
+    "rock_smash",
+]
+
+[rhydon]
+hms = [
+    "rock_smash",
+    "cut",
+    "strength",
+    "rock_climb",
+    "surf",
+]
+pre_evolution = "rhyhorn"
+
+[chansey]
+hms = [
+    "strength",
+    "rock_climb",
+    "rock_smash",
+    "flash",
+]
+
+[chansey.pre_evolution]
+species = "happiny"
+item = "oval_stone"
+
+[tangela]
+hms = [
+    "cut",
+    "rock_smash",
+    "flash",
+]
+
+[kangaskhan]
+hms = [
+    "rock_smash",
+    "cut",
+    "strength",
+    "rock_climb",
+    "surf",
+]
+
+[horsea]
+hms = [
+    "waterfall",
+    "surf",
+]
+
+[seadra]
+hms = [
+    "waterfall",
+    "surf",
+]
+pre_evolution = "horsea"
+
+[goldeen]
+hms = [
+    "waterfall",
+    "surf",
+]
+
+[seaking]
+hms = [
+    "waterfall",
+    "surf",
+]
+pre_evolution = "goldeen"
+
+[staryu]
+hms = [
+    "waterfall",
+    "surf",
+    "flash",
+]
+
+[starmie]
+hms = [
+    "waterfall",
+    "surf",
+    "flash",
+]
+
+[mr_mime]
+hms = [
+    "flash",
+]
+
+[scyther]
+hms = [
+    "rock_smash",
+    "defog",
+    "cut",
+]
+
+[jynx]
+hms = [
+    "flash",
+]
+pre_evolution = "smoochum"
+
+[electabuzz]
+hms = [
+    "strength",
+    "rock_climb",
+    "rock_smash",
+    "flash",
+]
+pre_evolution = "elekid"
+
+[magmar]
+hms = [
+    "strength",
+    "rock_climb",
+    "rock_smash",
+]
+pre_evolution = "magby"
+
+[pinsir]
+hms = [
+    "strength",
+    "rock_climb",
+    "rock_smash",
+    "cut",
+]
+
+[tauros]
+hms = [
+    "strength",
+    "rock_climb",
+    "rock_smash",
+    "surf",
+]
+
+[magikarp]
+hms = []
+
+[gyarados]
+hms = [
+    "strength",
+    "waterfall",
+    "rock_smash",
+    "surf",
+]
+pre_evolution = "magikarp"
+
+[lapras]
+hms = [
+    "strength",
+    "waterfall",
+    "rock_smash",
+    "surf",
+]
+
+[ditto]
+hms = []
+
+[eevee]
+hms = []
+
+[vaporeon]
+hms = [
+    "strength",
+    "waterfall",
+    "rock_smash",
+    "surf",
+]
+
+[jolteon]
+hms = [
+    "strength",
+    "rock_smash",
+    "flash",
+]
+
+[flareon]
+hms = [
+    "strength",
+    "rock_smash",
+]
+
+[porygon]
+hms = [
+    "flash",
+]
+
+[omanyte]
+hms = [
+    "waterfall",
+    "rock_smash",
+    "surf",
+]
+
+[omastar]
+hms = [
+    "rock_climb",
+    "waterfall",
+    "rock_smash",
+    "surf",
+]
+pre_evolution = "omanyte"
+
+[kabuto]
+hms = [
+    "waterfall",
+    "rock_smash",
+    "surf",
+]
+
+[kabutops]
+hms = [
+    "rock_smash",
+    "waterfall",
+    "cut",
+    "rock_climb",
+    "surf",
+]
+pre_evolution = "kabuto"
+
+[aerodactyl]
+hms = [
+    "rock_smash",
+    "strength",
+    "fly",
+    "defog",
+]
+
+[snorlax]
+hms = [
+    "strength",
+    "rock_climb",
+    "rock_smash",
+    "surf",
+]
+pre_evolution = "munchlax"
+
+[articuno]
+hms = [
+    "rock_smash",
+    "fly",
+    "defog",
+]
+
+[zapdos]
+hms = [
+    "rock_smash",
+    "fly",
+    "defog",
+    "flash",
+]
+
+[moltres]
+hms = [
+    "rock_smash",
+    "fly",
+    "defog",
+]
+
+[dratini]
+hms = [
+    "waterfall",
+    "surf",
+]
+
+[dragonair]
+hms = [
+    "waterfall",
+    "surf",
+]
+pre_evolution = "dratini"
+
+[dragonite]
+hms = [
+    "defog",
+    "rock_smash",
+    "cut",
+    "waterfall",
+    "strength",
+    "fly",
+    "surf",
+]
+pre_evolution = "dragonair"
+
+[mewtwo]
+hms = [
+    "strength",
+    "rock_climb",
+    "rock_smash",
+    "flash",
+]
+
+[mew]
+hms = [
+    "rock_climb",
+    "flash",
+    "defog",
+    "rock_smash",
+    "cut",
+    "waterfall",
+    "strength",
+    "fly",
+    "surf",
+]
+
+[chikorita]
+hms = [
+    "cut",
+    "flash",
+]
+
+[bayleef]
+hms = [
+    "cut",
+    "strength",
+    "rock_smash",
+    "flash",
+]
+pre_evolution = "chikorita"
+
+[meganium]
+hms = [
+    "flash",
+    "rock_smash",
+    "cut",
+    "strength",
+    "rock_climb",
+]
+pre_evolution = "bayleef"
+
+[cyndaquil]
+hms = [
+    "cut",
+]
+
+[quilava]
+hms = [
+    "strength",
+    "rock_smash",
+    "cut",
+]
+pre_evolution = "cyndaquil"
+
+[typhlosion]
+hms = [
+    "strength",
+    "rock_climb",
+    "rock_smash",
+    "cut",
+]
+pre_evolution = "quilava"
+
+[totodile]
+hms = [
+    "waterfall",
+    "surf",
+    "cut",
+]
+
+[croconaw]
+hms = [
+    "rock_smash",
+    "waterfall",
+    "cut",
+    "strength",
+    "surf",
+]
+pre_evolution = "totodile"
+
+[feraligatr]
+hms = [
+    "rock_smash",
+    "waterfall",
+    "cut",
+    "strength",
+    "rock_climb",
+    "surf",
+]
+pre_evolution = "croconaw"
+
+[sentret]
+hms = [
+    "surf",
+    "cut",
+]
+
+[furret]
+hms = [
+    "rock_smash",
+    "strength",
+    "surf",
+    "cut",
+]
+pre_evolution = "sentret"
+
+[hoothoot]
+hms = [
+    "fly",
+    "defog",
+]
+
+[noctowl]
+hms = [
+    "fly",
+    "defog",
+]
+pre_evolution = "hoothoot"
+
+[ledyba]
+hms = [
+    "flash",
+]
+
+[ledian]
+hms = [
+    "strength",
+    "rock_smash",
+    "flash",
+]
+pre_evolution = "ledyba"
+
+[spinarak]
+hms = [
+    "flash",
+]
+
+[ariados]
+hms = [
+    "flash",
+]
+pre_evolution = "spinarak"
+
+[crobat]
+hms = [
+    "fly",
+    "defog",
+]
+pre_evolution = "golbat"
+
+[chinchou]
+hms = [
+    "waterfall",
+    "surf",
+    "flash",
+]
+
+[lanturn]
+hms = [
+    "waterfall",
+    "surf",
+    "flash",
+]
+pre_evolution = "chinchou"
+
+[pichu]
+hms = [
+    "flash",
+]
+
+[cleffa]
+hms = [
+    "flash",
+]
+
+[igglybuff]
+hms = [
+    "flash",
+]
+
+[togepi]
+hms = [
+    "rock_smash",
+    "flash",
+]
+
+[togetic]
+hms = [
+    "rock_smash",
+    "fly",
+    "defog",
+    "flash",
+]
+pre_evolution = "togepi"
+
+[natu]
+hms = [
+    "flash",
+]
+
+[xatu]
+hms = [
+    "fly",
+    "defog",
+    "flash",
+]
+pre_evolution = "natu"
+
+[mareep]
+hms = [
+    "flash",
+]
+
+[flaaffy]
+hms = [
+    "strength",
+    "rock_smash",
+    "flash",
+]
+pre_evolution = "mareep"
+
+[ampharos]
+hms = [
+    "strength",
+    "rock_climb",
+    "rock_smash",
+    "flash",
+]
+pre_evolution = "flaaffy"
+
+[bellossom]
+hms = [
+    "cut",
+    "flash",
+]
+
+[marill]
+hms = [
+    "strength",
+    "waterfall",
+    "rock_smash",
+    "surf",
+]
+pre_evolution = "azurill"
+
+[azumarill]
+hms = [
+    "strength",
+    "waterfall",
+    "rock_smash",
+    "surf",
+]
+pre_evolution = "marill"
+
+[sudowoodo]
+hms = [
+    "strength",
+    "rock_smash",
+]
+
+[politoed]
+hms = [
+    "strength",
+    "waterfall",
+    "rock_smash",
+    "surf",
+]
+
+[hoppip]
+hms = [
+    "flash",
+]
+
+[skiploom]
+hms = [
+    "flash",
+]
+pre_evolution = "hoppip"
+
+[jumpluff]
+hms = [
+    "flash",
+]
+pre_evolution = "skiploom"
+
+[aipom]
+hms = [
+    "strength",
+    "rock_smash",
+    "cut",
+]
+
+[sunkern]
+hms = [
+    "cut",
+    "flash",
+]
+
+[sunflora]
+hms = [
+    "cut",
+    "flash",
+]
+
+[yanma]
+hms = [
+    "defog",
+    "flash",
+]
+
+[wooper]
+hms = [
+    "rock_smash",
+    "waterfall",
+    "surf",
+    "flash",
+]
+
+[quagsire]
+hms = [
+    "rock_smash",
+    "waterfall",
+    "flash",
+    "strength",
+    "surf",
+]
+pre_evolution = "wooper"
+
+[espeon]
+hms = [
+    "cut",
+    "flash",
+]
+pre_evolution = "eevee"
+
+[umbreon]
+hms = [
+    "cut",
+    "flash",
+]
+pre_evolution = "eevee"
+
+[murkrow]
+hms = [
+    "fly",
+    "defog",
+]
+
+[slowking]
+hms = [
+    "rock_smash",
+    "strength",
+    "surf",
+    "flash",
+]
+
+[misdreavus]
+hms = [
+    "flash",
+]
+
+[unown]
+hms = []
+
+[wobbuffet]
+hms = []
+pre_evolution = "wynaut"
+
+[girafarig]
+hms = [
+    "strength",
+    "rock_smash",
+    "flash",
+]
+
+[pineco]
+hms = [
+    "strength",
+    "rock_smash",
+]
+
+[forretress]
+hms = [
+    "strength",
+    "rock_smash",
+]
+pre_evolution = "pineco"
+
+[dunsparce]
+hms = [
+    "strength",
+    "rock_smash",
+]
+
+[gligar]
+hms = [
+    "rock_smash",
+    "strength",
+    "defog",
+    "cut",
+]
+
+[steelix]
+hms = [
+    "strength",
+    "rock_climb",
+    "rock_smash",
+    "cut",
+]
+
+[snubbull]
+hms = [
+    "strength",
+    "rock_smash",
+]
+
+[granbull]
+hms = [
+    "strength",
+    "rock_climb",
+    "rock_smash",
+]
+pre_evolution = "snubbull"
+
+[qwilfish]
+hms = [
+    "waterfall",
+    "surf",
+]
+
+[scizor]
+hms = [
+    "rock_smash",
+    "strength",
+    "defog",
+    "cut",
+]
+
+[shuckle]
+hms = [
+    "strength",
+    "rock_smash",
+    "flash",
+]
+
+[heracross]
+hms = [
+    "strength",
+    "rock_smash",
+    "cut",
+]
+
+[sneasel]
+hms = [
+    "rock_smash",
+    "strength",
+    "surf",
+    "cut",
+]
+
+[teddiursa]
+hms = [
+    "strength",
+    "rock_smash",
+    "cut",
+]
+
+[ursaring]
+hms = [
+    "strength",
+    "rock_climb",
+    "rock_smash",
+    "cut",
+]
+pre_evolution = "teddiursa"
+
+[slugma]
+hms = [
+    "rock_smash",
+]
+
+[magcargo]
+hms = [
+    "strength",
+    "rock_smash",
+]
+pre_evolution = "slugma"
+
+[swinub]
+hms = [
+    "strength",
+    "rock_smash",
+]
+
+[piloswine]
+hms = [
+    "strength",
+    "rock_smash",
+]
+pre_evolution = "swinub"
+
+[corsola]
+hms = [
+    "strength",
+    "rock_smash",
+    "surf",
+]
+
+[remoraid]
+hms = [
+    "waterfall",
+    "surf",
+]
+
+[octillery]
+hms = [
+    "waterfall",
+    "surf",
+]
+pre_evolution = "remoraid"
+
+[delibird]
+hms = [
+    "fly",
+    "defog",
+]
+
+[mantine]
+hms = [
+    "waterfall",
+    "defog",
+    "surf",
+]
+
+[skarmory]
+hms = [
+    "flash",
+    "rock_smash",
+    "defog",
+    "cut",
+    "fly",
+]
+
+[houndour]
+hms = [
+    "rock_smash",
+]
+
+[houndoom]
+hms = [
+    "strength",
+    "rock_smash",
+]
+pre_evolution = "houndour"
+
+[kingdra]
+hms = [
+    "waterfall",
+    "surf",
+]
+
+[phanpy]
+hms = [
+    "strength",
+    "rock_smash",
+]
+
+[donphan]
+hms = [
+    "strength",
+    "rock_smash",
+]
+pre_evolution = "phanpy"
+
+[porygon2]
+hms = [
+    "flash",
+]
+
+[stantler]
+hms = [
+    "flash",
+]
+
+[smeargle]
+hms = []
+
+[tyrogue]
+hms = [
+    "strength",
+    "rock_smash",
+]
+
+[hitmontop]
+hms = [
+    "strength",
+    "rock_smash",
+]
+pre_evolution = "tyrogue"
+
+[smoochum]
+hms = [
+    "flash",
+]
+
+[elekid]
+hms = [
+    "rock_smash",
+    "flash",
+]
+
+[magby]
+hms = [
+    "rock_smash",
+]
+
+[miltank]
+hms = [
+    "strength",
+    "rock_smash",
+    "surf",
+]
+
+[blissey]
+hms = [
+    "strength",
+    "rock_climb",
+    "rock_smash",
+    "flash",
+]
+pre_evolution = "chansey"
+
+[raikou]
+hms = [
+    "flash",
+    "rock_smash",
+    "cut",
+    "strength",
+    "rock_climb",
+]
+
+[entei]
+hms = [
+    "flash",
+    "rock_smash",
+    "cut",
+    "strength",
+    "rock_climb",
+]
+
+[suicune]
+hms = [
+    "rock_smash",
+    "waterfall",
+    "cut",
+    "rock_climb",
+    "surf",
+]
+
+[larvitar]
+hms = [
+    "rock_smash",
+]
+
+[pupitar]
+hms = [
+    "rock_smash",
+]
+pre_evolution = "larvitar"
+
+[tyranitar]
+hms = [
+    "rock_smash",
+    "cut",
+    "strength",
+    "rock_climb",
+    "surf",
+]
+pre_evolution = "pupitar"
+
+[lugia]
+hms = [
+    "defog",
+    "rock_smash",
+    "flash",
+    "waterfall",
+    "strength",
+    "fly",
+    "surf",
+]
+
+[ho_oh]
+hms = [
+    "rock_smash",
+    "defog",
+    "flash",
+    "strength",
+    "fly",
+]
+
+[celebi]
+hms = [
+    "cut",
+    "flash",
+]
+
+[treecko]
+hms = [
+    "cut",
+    "strength",
+    "rock_smash",
+    "flash",
+]
+
+[grovyle]
+hms = [
+    "cut",
+    "strength",
+    "rock_smash",
+    "flash",
+]
+pre_evolution = "treecko"
+
+[sceptile]
+hms = [
+    "flash",
+    "rock_smash",
+    "cut",
+    "strength",
+    "rock_climb",
+]
+pre_evolution = "grovyle"
+
+[torchic]
+hms = [
+    "strength",
+    "rock_smash",
+    "cut",
+]
+
+[combusken]
+hms = [
+    "strength",
+    "rock_smash",
+    "cut",
+]
+pre_evolution = "torchic"
+
+[blaziken]
+hms = [
+    "strength",
+    "rock_climb",
+    "rock_smash",
+    "cut",
+]
+pre_evolution = "combusken"
+
+[mudkip]
+hms = [
+    "strength",
+    "waterfall",
+    "rock_smash",
+    "surf",
+]
+
+[marshtomp]
+hms = [
+    "strength",
+    "waterfall",
+    "rock_smash",
+    "surf",
+]
+pre_evolution = "mudkip"
+
+[swampert]
+hms = [
+    "waterfall",
+    "rock_smash",
+    "strength",
+    "rock_climb",
+    "surf",
+]
+pre_evolution = "marshtomp"
+
+[poochyena]
+hms = [
+    "rock_smash",
+]
+
+[mightyena]
+hms = [
+    "strength",
+    "rock_smash",
+]
+pre_evolution = "poochyena"
+
+[zigzagoon]
+hms = [
+    "rock_smash",
+    "surf",
+    "cut",
+]
+
+[linoone]
+hms = [
+    "rock_smash",
+    "strength",
+    "surf",
+    "cut",
+]
+pre_evolution = "zigzagoon"
+
+[wurmple]
+hms = []
+
+[silcoon]
+hms = []
+
+[beautifly]
+hms = [
+    "defog",
+    "flash",
+]
+pre_evolution = "silcoon"
+
+[cascoon]
+hms = []
+
+[dustox]
+hms = [
+    "defog",
+    "flash",
+]
+pre_evolution = "cascoon"
+
+[lotad]
+hms = [
+    "surf",
+    "flash",
+]
+
+[lombre]
+hms = [
+    "rock_smash",
+    "waterfall",
+    "flash",
+    "strength",
+    "surf",
+]
+pre_evolution = "lotad"
+
+[ludicolo]
+hms = [
+    "rock_smash",
+    "waterfall",
+    "flash",
+    "strength",
+    "rock_climb",
+    "surf",
+]
+
+[seedot]
+hms = [
+    "rock_smash",
+    "flash",
+]
+
+[nuzleaf]
+hms = [
+    "cut",
+    "strength",
+    "rock_smash",
+    "flash",
+]
+pre_evolution = "seedot"
+
+[shiftry]
+hms = [
+    "flash",
+    "rock_smash",
+    "defog",
+    "cut",
+    "strength",
+]
+
+[taillow]
+hms = [
+    "fly",
+    "defog",
+]
+
+[swellow]
+hms = [
+    "fly",
+    "defog",
+]
+pre_evolution = "taillow"
+
+[wingull]
+hms = [
+    "fly",
+    "defog",
+]
+
+[pelipper]
+hms = [
+    "fly",
+    "defog",
+    "surf",
+]
+pre_evolution = "wingull"
+
+[ralts]
+hms = [
+    "flash",
+]
+
+[kirlia]
+hms = [
+    "flash",
+]
+pre_evolution = "ralts"
+
+[gardevoir]
+hms = [
+    "flash",
+]
+pre_evolution = "kirlia"
+
+[surskit]
+hms = [
+    "flash",
+]
+
+[masquerain]
+hms = [
+    "defog",
+    "flash",
+]
+pre_evolution = "surskit"
+
+[shroomish]
+hms = [
+    "flash",
+]
+
+[breloom]
+hms = [
+    "cut",
+    "strength",
+    "rock_smash",
+    "flash",
+]
+pre_evolution = "shroomish"
+
+[slakoth]
+hms = [
+    "strength",
+    "rock_smash",
+    "cut",
+]
+
+[vigoroth]
+hms = [
+    "strength",
+    "rock_climb",
+    "rock_smash",
+    "cut",
+]
+pre_evolution = "slakoth"
+
+[slaking]
+hms = [
+    "strength",
+    "rock_climb",
+    "rock_smash",
+    "cut",
+]
+pre_evolution = "vigoroth"
+
+[nincada]
+hms = [
+    "cut",
+    "flash",
+]
+
+[ninjask]
+hms = [
+    "cut",
+    "defog",
+    "flash",
+]
+
+[shedinja]
+hms = [
+    "cut",
+    "flash",
+]
+
+[whismur]
+hms = []
+
+[loudred]
+hms = [
+    "strength",
+    "rock_smash",
+]
+pre_evolution = "whismur"
+
+[exploud]
+hms = [
+    "strength",
+    "rock_climb",
+    "rock_smash",
+    "surf",
+]
+pre_evolution = "loudred"
+
+[makuhita]
+hms = [
+    "strength",
+    "rock_climb",
+    "rock_smash",
+    "surf",
+]
+
+[hariyama]
+hms = [
+    "strength",
+    "rock_climb",
+    "rock_smash",
+    "surf",
+]
+pre_evolution = "makuhita"
+
+[azurill]
+hms = [
+    "waterfall",
+    "surf",
+]
+
+[nosepass]
+hms = [
+    "strength",
+    "rock_smash",
+]
+
+[skitty]
+hms = [
+    "flash",
+]
+
+[delcatty]
+hms = [
+    "strength",
+    "rock_smash",
+    "flash",
+]
+
+[sableye]
+hms = [
+    "cut",
+    "rock_smash",
+    "flash",
+]
+
+[mawile]
+hms = [
+    "strength",
+    "rock_smash",
+]
+
+[aron]
+hms = [
+    "strength",
+    "rock_smash",
+    "cut",
+]
+
+[lairon]
+hms = [
+    "strength",
+    "rock_smash",
+    "cut",
+]
+pre_evolution = "aron"
+
+[aggron]
+hms = [
+    "rock_smash",
+    "cut",
+    "strength",
+    "rock_climb",
+    "surf",
+]
+pre_evolution = "lairon"
+
+[meditite]
+hms = [
+    "strength",
+    "rock_smash",
+    "flash",
+]
+
+[medicham]
+hms = [
+    "strength",
+    "rock_smash",
+    "flash",
+]
+pre_evolution = "meditite"
+
+[electrike]
+hms = [
+    "strength",
+    "flash",
+]
+
+[manectric]
+hms = [
+    "strength",
+    "flash",
+]
+pre_evolution = "electrike"
+
+[plusle]
+hms = [
+    "flash",
+]
+
+[minun]
+hms = [
+    "flash",
+]
+
+[volbeat]
+hms = [
+    "flash",
+]
+
+[illumise]
+hms = [
+    "flash",
+]
+
+[roselia]
+hms = [
+    "cut",
+    "flash",
+]
+pre_evolution = "budew"
+
+[gulpin]
+hms = [
+    "strength",
+    "rock_smash",
+]
+
+[swalot]
+hms = [
+    "strength",
+    "rock_smash",
+]
+pre_evolution = "gulpin"
+
+[carvanha]
+hms = [
+    "waterfall",
+    "surf",
+]
+
+[sharpedo]
+hms = [
+    "strength",
+    "waterfall",
+    "rock_smash",
+    "surf",
+]
+pre_evolution = "carvanha"
+
+[wailmer]
+hms = [
+    "strength",
+    "waterfall",
+    "rock_smash",
+    "surf",
+]
+
+[wailord]
+hms = [
+    "strength",
+    "waterfall",
+    "rock_smash",
+    "surf",
+]
+pre_evolution = "wailmer"
+
+[numel]
+hms = [
+    "strength",
+    "rock_smash",
+]
+
+[camerupt]
+hms = [
+    "strength",
+    "rock_smash",
+]
+pre_evolution = "numel"
+
+[torkoal]
+hms = [
+    "strength",
+    "rock_smash",
+]
+
+[spoink]
+hms = [
+    "flash",
+]
+
+[grumpig]
+hms = [
+    "flash",
+]
+pre_evolution = "spoink"
+
+[spinda]
+hms = [
+    "strength",
+    "rock_smash",
+    "flash",
+]
+
+[trapinch]
+hms = [
+    "strength",
+    "rock_smash",
+]
+
+[vibrava]
+hms = [
+    "rock_smash",
+    "strength",
+    "fly",
+    "defog",
+]
+pre_evolution = "trapinch"
+
+[flygon]
+hms = [
+    "rock_smash",
+    "strength",
+    "fly",
+    "defog",
+]
+pre_evolution = "vibrava"
+
+[cacnea]
+hms = [
+    "cut",
+    "flash",
+]
+
+[cacturne]
+hms = [
+    "cut",
+    "strength",
+    "flash",
+]
+pre_evolution = "cacnea"
+
+[swablu]
+hms = [
+    "fly",
+]
+
+[altaria]
+hms = [
+    "fly",
+    "rock_smash",
+]
+pre_evolution = "swablu"
+
+[zangoose]
+hms = [
+    "strength",
+    "rock_climb",
+    "rock_smash",
+]
+
+[seviper]
+hms = [
+    "strength",
+    "rock_smash",
+]
+
+[lunatone]
+hms = [
+    "flash",
+]
+
+[solrock]
+hms = [
+    "flash",
+]
+
+[barboach]
+hms = [
+    "waterfall",
+    "surf",
+]
+
+[whiscash]
+hms = [
+    "strength",
+    "waterfall",
+    "rock_smash",
+    "surf",
+]
+pre_evolution = "barboach"
+
+[corphish]
+hms = [
+    "rock_smash",
+    "waterfall",
+    "cut",
+    "strength",
+    "surf",
+]
+
+[crawdaunt]
+hms = [
+    "rock_smash",
+    "waterfall",
+    "cut",
+    "strength",
+    "surf",
+]
+pre_evolution = "corphish"
+
+[baltoy]
+hms = [
+    "flash",
+]
+
+[claydol]
+hms = [
+    "strength",
+    "rock_smash",
+    "flash",
+]
+pre_evolution = "baltoy"
+
+[lileep]
+hms = [
+    "flash",
+]
+
+[cradily]
+hms = [
+    "strength",
+    "rock_smash",
+    "flash",
+]
+pre_evolution = "lileep"
+
+[anorith]
+hms = [
+    "rock_smash",
+    "cut",
+]
+
+[armaldo]
+hms = [
+    "strength",
+    "rock_smash",
+    "cut",
+]
+pre_evolution = "anorith"
+
+[feebas]
+hms = [
+    "waterfall",
+    "surf",
+]
+
+[milotic]
+hms = [
+    "waterfall",
+    "surf",
+]
+
+[castform]
+hms = [
+    "flash",
+]
+
+[kecleon]
+hms = [
+    "cut",
+    "strength",
+    "rock_smash",
+    "flash",
+]
+
+[shuppet]
+hms = [
+    "flash",
+]
+
+[banette]
+hms = [
+    "flash",
+]
+pre_evolution = "shuppet"
+
+[duskull]
+hms = [
+    "flash",
+]
+
+[dusclops]
+hms = [
+    "strength",
+    "rock_smash",
+    "flash",
+]
+pre_evolution = "duskull"
+
+[tropius]
+hms = [
+    "flash",
+    "defog",
+    "rock_smash",
+    "cut",
+    "strength",
+    "fly",
+]
+
+[chimecho]
+hms = [
+    "flash",
+]
+pre_evolution = "chingling"
+
+[absol]
+hms = [
+    "cut",
+    "strength",
+    "rock_smash",
+    "flash",
+]
+
+[wynaut]
+hms = []
+
+[snorunt]
+hms = [
+    "flash",
+]
+
+[glalie]
+hms = [
+    "flash",
+]
+pre_evolution = "snorunt"
+
+[spheal]
+hms = [
+    "strength",
+    "waterfall",
+    "rock_smash",
+    "surf",
+]
+
+[sealeo]
+hms = [
+    "strength",
+    "waterfall",
+    "rock_smash",
+    "surf",
+]
+pre_evolution = "spheal"
+
+[walrein]
+hms = [
+    "strength",
+    "waterfall",
+    "rock_smash",
+    "surf",
+]
+pre_evolution = "sealeo"
+
+[clamperl]
+hms = [
+    "waterfall",
+    "surf",
+]
+
+[huntail]
+hms = [
+    "waterfall",
+    "surf",
+]
+
+[gorebyss]
+hms = [
+    "waterfall",
+    "surf",
+]
+
+[relicanth]
+hms = [
+    "waterfall",
+    "rock_smash",
+    "surf",
+]
+
+[luvdisc]
+hms = [
+    "waterfall",
+    "surf",
+]
+
+[bagon]
+hms = [
+    "strength",
+    "rock_smash",
+    "cut",
+]
+
+[shelgon]
+hms = [
+    "strength",
+    "rock_smash",
+    "cut",
+]
+pre_evolution = "bagon"
+
+[salamence]
+hms = [
+    "rock_smash",
+    "defog",
+    "cut",
+    "strength",
+    "fly",
+]
+pre_evolution = "shelgon"
+
+[beldum]
+hms = []
+
+[metang]
+hms = [
+    "cut",
+    "strength",
+    "rock_smash",
+    "flash",
+]
+pre_evolution = "beldum"
+
+[metagross]
+hms = [
+    "cut",
+    "strength",
+    "rock_smash",
+    "flash",
+]
+pre_evolution = "metang"
+
+[regirock]
+hms = [
+    "strength",
+    "rock_climb",
+    "rock_smash",
+]
+
+[regice]
+hms = [
+    "strength",
+    "rock_climb",
+    "rock_smash",
+]
+
+[registeel]
+hms = [
+    "strength",
+    "rock_climb",
+    "rock_smash",
+]
+
+[latias]
+hms = [
+    "flash",
+    "defog",
+    "waterfall",
+    "cut",
+    "fly",
+    "surf",
+]
+
+[latios]
+hms = [
+    "flash",
+    "defog",
+    "waterfall",
+    "cut",
+    "fly",
+    "surf",
+]
+
+[kyogre]
+hms = [
+    "strength",
+    "waterfall",
+    "rock_smash",
+    "surf",
+]
+
+[groudon]
+hms = [
+    "strength",
+    "rock_climb",
+    "rock_smash",
+    "cut",
+]
+
+[rayquaza]
+hms = [
+    "waterfall",
+    "rock_smash",
+    "strength",
+    "fly",
+    "surf",
+]
+
+[jirachi]
+hms = [
+    "flash",
+]
+
+[deoxys]
+hms = [
+    "cut",
+    "strength",
+    "rock_smash",
+    "flash",
+]
+
+[turtwig]
+hms = [
+    "flash",
+    "rock_smash",
+    "cut",
+    "strength",
+    "rock_climb",
+]
+
+[grotle]
+hms = [
+    "flash",
+    "rock_smash",
+    "cut",
+    "strength",
+    "rock_climb",
+]
+pre_evolution = "turtwig"
+
+[torterra]
+hms = [
+    "flash",
+    "rock_smash",
+    "cut",
+    "strength",
+    "rock_climb",
+]
+pre_evolution = "grotle"
+
+[chimchar]
+hms = [
+    "strength",
+    "rock_climb",
+    "rock_smash",
+    "cut",
+]
+
+[monferno]
+hms = [
+    "strength",
+    "rock_climb",
+    "rock_smash",
+    "cut",
+]
+pre_evolution = "chimchar"
+
+[infernape]
+hms = [
+    "strength",
+    "rock_climb",
+    "rock_smash",
+    "cut",
+]
+pre_evolution = "monferno"
+
+[piplup]
+hms = [
+    "defog",
+    "waterfall",
+    "surf",
+    "cut",
+]
+
+[prinplup]
+hms = [
+    "rock_smash",
+    "defog",
+    "cut",
+    "waterfall",
+    "strength",
+    "surf",
+]
+pre_evolution = "piplup"
+
+[empoleon]
+hms = [
+    "rock_smash",
+    "defog",
+    "cut",
+    "waterfall",
+    "strength",
+    "rock_climb",
+    "surf",
+]
+pre_evolution = "prinplup"
+
+[starly]
+hms = [
+    "fly",
+    "defog",
+]
+
+[staravia]
+hms = [
+    "fly",
+    "defog",
+]
+pre_evolution = "starly"
+
+[staraptor]
+hms = [
+    "fly",
+    "defog",
+]
+pre_evolution = "staravia"
+
+[bidoof]
+hms = [
+    "rock_smash",
+    "cut",
+]
+
+[bibarel]
+hms = [
+    "rock_smash",
+    "waterfall",
+    "cut",
+    "strength",
+    "rock_climb",
+    "surf",
+]
+pre_evolution = "bidoof"
+
+[kricketot]
+hms = []
+
+[kricketune]
+hms = [
+    "cut",
+    "strength",
+    "rock_smash",
+    "flash",
+]
+pre_evolution = "kricketot"
+
+[shinx]
+hms = [
+    "strength",
+    "flash",
+]
+
+[luxio]
+hms = [
+    "strength",
+    "flash",
+]
+pre_evolution = "shinx"
+
+[luxray]
+hms = [
+    "strength",
+    "flash",
+]
+pre_evolution = "luxio"
+
+[budew]
+hms = [
+    "cut",
+    "flash",
+]
+
+[roserade]
+hms = [
+    "cut",
+    "flash",
+]
+
+[cranidos]
+hms = [
+    "strength",
+    "rock_climb",
+    "rock_smash",
+]
+
+[rampardos]
+hms = [
+    "rock_smash",
+    "cut",
+    "strength",
+    "rock_climb",
+    "surf",
+]
+pre_evolution = "cranidos"
+
+[shieldon]
+hms = [
+    "strength",
+    "rock_smash",
+]
+
+[bastiodon]
+hms = [
+    "strength",
+    "rock_smash",
+]
+pre_evolution = "shieldon"
+
+[burmy]
+hms = []
+
+[wormadam]
+hms = [
+    "flash",
+]
+pre_evolution = "burmy"
+
+[mothim]
+hms = [
+    "defog",
+    "flash",
+]
+pre_evolution = "burmy"
+
+[combee]
+hms = []
+
+[vespiquen]
+hms = [
+    "cut",
+    "defog",
+    "flash",
+]
+pre_evolution = "combee"
+
+[pachirisu]
+hms = [
+    "cut",
+    "flash",
+]
+
+[buizel]
+hms = [
+    "strength",
+    "waterfall",
+    "rock_smash",
+    "surf",
+]
+
+[floatzel]
+hms = [
+    "strength",
+    "waterfall",
+    "rock_smash",
+    "surf",
+]
+pre_evolution = "buizel"
+
+[cherubi]
+hms = [
+    "flash",
+]
+
+[cherrim]
+hms = [
+    "flash",
+]
+pre_evolution = "cherubi"
+
+[shellos]
+hms = [
+    "surf",
+]
+
+[gastrodon]
+hms = [
+    "rock_smash",
+    "waterfall",
+    "flash",
+    "strength",
+    "surf",
+]
+pre_evolution = "shellos"
+
+[ambipom]
+hms = [
+    "strength",
+    "rock_smash",
+    "cut",
+]
+
+[drifloon]
+hms = [
+    "cut",
+    "defog",
+    "flash",
+]
+
+[drifblim]
+hms = [
+    "cut",
+    "fly",
+    "defog",
+    "flash",
+]
+pre_evolution = "drifloon"
+
+[buneary]
+hms = [
+    "rock_smash",
+    "cut",
+]
+
+[lopunny]
+hms = [
+    "strength",
+    "rock_smash",
+    "cut",
+]
+pre_evolution = "buneary"
+
+[mismagius]
+hms = [
+    "flash",
+]
+
+[honchkrow]
+hms = [
+    "fly",
+    "defog",
+]
+
+[glameow]
+hms = [
+    "cut",
+    "flash",
+]
+
+[purugly]
+hms = [
+    "cut",
+    "flash",
+]
+pre_evolution = "glameow"
+
+[chingling]
+hms = [
+    "flash",
+]
+
+[stunky]
+hms = [
+    "rock_smash",
+    "defog",
+    "cut",
+]
+
+[skuntank]
+hms = [
+    "rock_smash",
+    "strength",
+    "defog",
+    "cut",
+]
+pre_evolution = "stunky"
+
+[bronzor]
+hms = [
+    "flash",
+]
+
+[bronzong]
+hms = [
+    "strength",
+    "rock_smash",
+    "flash",
+]
+pre_evolution = "bronzor"
+
+[bonsly]
+hms = []
+
+[mime_jr]
+hms = [
+    "flash",
+]
+
+[happiny]
+hms = [
+    "flash",
+]
+
+[chatot]
+hms = [
+    "fly",
+    "defog",
+]
+
+[spiritomb]
+hms = [
+    "flash",
+]
+
+[gible]
+hms = [
+    "strength",
+    "rock_climb",
+    "rock_smash",
+    "cut",
+]
+
+[gabite]
+hms = [
+    "strength",
+    "rock_climb",
+    "rock_smash",
+    "cut",
+]
+pre_evolution = "gible"
+
+[garchomp]
+hms = [
+    "rock_smash",
+    "cut",
+    "strength",
+    "rock_climb",
+    "surf",
+]
+pre_evolution = "gabite"
+
+[munchlax]
+hms = [
+    "strength",
+    "rock_climb",
+    "rock_smash",
+    "surf",
+]
+
+[riolu]
+hms = [
+    "strength",
+    "rock_smash",
+]
+
+[lucario]
+hms = [
+    "strength",
+    "rock_climb",
+    "rock_smash",
+]
+pre_evolution = "riolu"
+
+[hippopotas]
+hms = [
+    "strength",
+    "rock_smash",
+]
+
+[hippowdon]
+hms = [
+    "strength",
+    "rock_smash",
+]
+pre_evolution = "hippopotas"
+
+[skorupi]
+hms = [
+    "cut",
+    "strength",
+    "rock_smash",
+    "flash",
+]
+
+[drapion]
+hms = [
+    "flash",
+    "rock_smash",
+    "cut",
+    "strength",
+    "rock_climb",
+]
+pre_evolution = "skorupi"
+
+[croagunk]
+hms = [
+    "strength",
+    "rock_climb",
+    "rock_smash",
+]
+
+[toxicroak]
+hms = [
+    "strength",
+    "rock_climb",
+    "rock_smash",
+    "cut",
+]
+pre_evolution = "croagunk"
+
+[carnivine]
+hms = [
+    "cut",
+    "flash",
+]
+
+[finneon]
+hms = [
+    "defog",
+    "waterfall",
+    "surf",
+    "flash",
+]
+
+[lumineon]
+hms = [
+    "defog",
+    "waterfall",
+    "surf",
+    "flash",
+]
+pre_evolution = "finneon"
+
+[mantyke]
+hms = [
+    "waterfall",
+    "surf",
+]
+
+[snover]
+hms = [
+    "flash",
+]
+
+[abomasnow]
+hms = [
+    "strength",
+    "rock_climb",
+    "rock_smash",
+    "flash",
+]
+pre_evolution = "snover"
+
+[weavile]
+hms = [
+    "rock_smash",
+    "strength",
+    "surf",
+    "cut",
+]
+
+[weavile.pre_evolution]
+species = "sneasel"
+item = "razor_claw"
+
+[magnezone]
+hms = [
+    "flash",
+]
+
+[lickilicky]
+hms = [
+    "rock_smash",
+    "cut",
+    "strength",
+    "rock_climb",
+    "surf",
+]
+
+[rhyperior]
+hms = [
+    "rock_smash",
+    "cut",
+    "strength",
+    "rock_climb",
+    "surf",
+]
+
+[tangrowth]
+hms = [
+    "cut",
+    "strength",
+    "rock_smash",
+    "flash",
+]
+
+[electivire]
+hms = [
+    "strength",
+    "rock_climb",
+    "rock_smash",
+    "flash",
+]
+
+[magmortar]
+hms = [
+    "strength",
+    "rock_climb",
+    "rock_smash",
+]
+
+[togekiss]
+hms = [
+    "rock_smash",
+    "fly",
+    "defog",
+    "flash",
+]
+
+[yanmega]
+hms = [
+    "defog",
+    "flash",
+]
+
+[leafeon]
+hms = [
+    "strength",
+    "rock_smash",
+    "flash",
+]
+
+[glaceon]
+hms = [
+    "strength",
+    "rock_smash",
+]
+
+[gliscor]
+hms = [
+    "rock_smash",
+    "strength",
+    "defog",
+    "cut",
+]
+
+[gliscor.pre_evolution]
+species = "gligar"
+item = "razor_fang"
+
+[mamoswine]
+hms = [
+    "strength",
+    "rock_climb",
+    "rock_smash",
+]
+
+[porygon_z]
+hms = [
+    "flash",
+]
+
+[gallade]
+hms = [
+    "cut",
+    "strength",
+    "rock_smash",
+    "flash",
+]
+
+[probopass]
+hms = [
+    "strength",
+    "rock_smash",
+]
+
+[dusknoir]
+hms = [
+    "strength",
+    "rock_smash",
+    "flash",
+]
+
+[froslass]
+hms = [
+    "flash",
+]
+
+[rotom]
+hms = [
+    "flash",
+]
+
+[uxie]
+hms = [
+    "flash",
+]
+
+[mesprit]
+hms = [
+    "flash",
+]
+
+[azelf]
+hms = [
+    "flash",
+]
+
+[dialga]
+hms = [
+    "cut",
+    "strength",
+    "rock_smash",
+    "flash",
+]
+
+[palkia]
+hms = [
+    "rock_smash",
+    "strength",
+    "surf",
+    "cut",
+]
+
+[heatran]
+hms = [
+    "strength",
+    "rock_climb",
+    "rock_smash",
+]
+
+[regigigas]
+hms = [
+    "strength",
+    "rock_climb",
+    "rock_smash",
+]
+
+[giratina]
+hms = [
+    "rock_climb",
+    "rock_smash",
+    "defog",
+    "cut",
+    "strength",
+    "fly",
+]
+
+[cresselia]
+hms = [
+    "flash",
+]
+
+[phione]
+hms = [
+    "waterfall",
+    "surf",
+]
+
+[manaphy]
+hms = [
+    "waterfall",
+    "surf",
+    "flash",
+]
+
+[darkrai]
+hms = [
+    "flash",
+    "rock_smash",
+    "cut",
+    "strength",
+    "rock_climb",
+]
+
+[shaymin]
+hms = [
+    "flash",
+]
+
+[arceus]
+hms = [
+    "rock_climb",
+    "flash",
+    "defog",
+    "rock_smash",
+    "cut",
+    "waterfall",
+    "strength",
+    "fly",
+    "surf",
+]

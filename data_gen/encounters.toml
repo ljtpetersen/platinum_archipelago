@@ -1,0 +1,1925 @@
+[great_marsh_3]
+land = [
+    "yanma",
+    "tangela",
+    "wooper",
+    "bibarel",
+    "quagsire",
+]
+surf = [
+    "quagsire",
+    "wooper",
+]
+old_rod = [
+    "magikarp",
+]
+good_rod = [
+    "barboach",
+    "magikarp",
+]
+super_rod = [
+    "whiscash",
+    "gyarados",
+    "carvanha",
+]
+
+[route_225]
+land = [
+    "raticate",
+    "graveler",
+    "spearow",
+    "rattata",
+    "machoke",
+    "fearow",
+]
+surf = [
+    "golduck",
+    "psyduck",
+]
+old_rod = [
+    "magikarp",
+]
+good_rod = [
+    "barboach",
+    "magikarp",
+]
+super_rod = [
+    "whiscash",
+    "gyarados",
+]
+
+[great_marsh_4]
+land = [
+    "yanma",
+    "tangela",
+    "wooper",
+    "bibarel",
+    "quagsire",
+]
+surf = [
+    "quagsire",
+    "wooper",
+]
+old_rod = [
+    "magikarp",
+]
+good_rod = [
+    "barboach",
+    "magikarp",
+]
+super_rod = [
+    "whiscash",
+    "gyarados",
+    "carvanha",
+]
+
+[victory_road_1f]
+land = [
+    "onix",
+    "gabite",
+    "graveler",
+    "rhydon",
+    "rhyhorn",
+    "golbat",
+    "steelix",
+]
+
+[pokemon_league]
+surf = [
+    "pelipper",
+    "tentacruel",
+    "wingull",
+]
+old_rod = [
+    "magikarp",
+]
+good_rod = [
+    "remoraid",
+    "magikarp",
+]
+super_rod = [
+    "gyarados",
+    "luvdisc",
+    "octillery",
+]
+
+[victory_road_2f]
+land = [
+    "onix",
+    "gabite",
+    "magneton",
+    "graveler",
+    "golbat",
+    "steelix",
+]
+
+[route_224]
+land = [
+    "roselia",
+    "weepinbell",
+    "floatzel",
+    "gastrodon",
+    "beautifly",
+    "dustox",
+    "gloom",
+    "pelipper",
+    "bellsprout",
+]
+surf = [
+    "pelipper",
+    "tentacruel",
+    "gastrodon",
+]
+old_rod = [
+    "magikarp",
+]
+good_rod = [
+    "remoraid",
+    "magikarp",
+]
+super_rod = [
+    "gyarados",
+    "luvdisc",
+    "octillery",
+]
+
+[victory_road_1f_room_1]
+land = [
+    "onix",
+    "gabite",
+    "floatzel",
+    "graveler",
+    "golbat",
+    "steelix",
+]
+
+[great_marsh_1]
+land = [
+    "yanma",
+    "tangela",
+    "wooper",
+    "bibarel",
+    "quagsire",
+    "tropius",
+]
+surf = [
+    "quagsire",
+    "wooper",
+]
+old_rod = [
+    "magikarp",
+]
+good_rod = [
+    "barboach",
+    "magikarp",
+]
+super_rod = [
+    "whiscash",
+    "gyarados",
+    "carvanha",
+]
+
+[great_marsh_5]
+land = [
+    "yanma",
+    "tangela",
+    "wooper",
+    "bibarel",
+    "quagsire",
+]
+surf = [
+    "quagsire",
+    "wooper",
+]
+old_rod = [
+    "magikarp",
+]
+good_rod = [
+    "barboach",
+    "magikarp",
+]
+super_rod = [
+    "whiscash",
+    "gyarados",
+    "carvanha",
+]
+
+[victory_road_b1f]
+land = [
+    "onix",
+    "gabite",
+    "floatzel",
+    "azumarill",
+    "graveler",
+    "golbat",
+    "steelix",
+]
+surf = [
+    "golbat",
+    "floatzel",
+]
+old_rod = [
+    "magikarp",
+]
+good_rod = [
+    "magikarp",
+]
+super_rod = [
+    "gyarados",
+]
+
+[great_marsh_2]
+land = [
+    "yanma",
+    "tangela",
+    "wooper",
+    "bibarel",
+    "quagsire",
+    "tropius",
+]
+surf = [
+    "quagsire",
+    "wooper",
+]
+old_rod = [
+    "magikarp",
+]
+good_rod = [
+    "barboach",
+    "magikarp",
+]
+super_rod = [
+    "whiscash",
+    "gyarados",
+    "carvanha",
+]
+
+[route_226]
+land = [
+    "raticate",
+    "wingull",
+    "graveler",
+    "rattata",
+    "machoke",
+    "fearow",
+]
+surf = [
+    "pelipper",
+    "tentacruel",
+    "wingull",
+]
+old_rod = [
+    "magikarp",
+]
+good_rod = [
+    "horsea",
+    "magikarp",
+]
+super_rod = [
+    "relicanth",
+    "gyarados",
+    "seadra",
+]
+
+[route_227]
+land = [
+    "numel",
+    "graveler",
+    "rhydon",
+    "rhyhorn",
+    "weezing",
+    "fearow",
+    "skarmory",
+    "camerupt",
+]
+surf = [
+    "poliwag",
+    "poliwhirl",
+]
+old_rod = [
+    "magikarp",
+]
+good_rod = [
+    "barboach",
+    "magikarp",
+]
+super_rod = [
+    "whiscash",
+    "gyarados",
+]
+
+[route_228]
+land = [
+    "dugtrio",
+    "cacturne",
+    "hippowdon",
+    "rhydon",
+    "diglett",
+    "cacnea",
+]
+surf = [
+    "poliwag",
+    "poliwhirl",
+]
+old_rod = [
+    "magikarp",
+]
+good_rod = [
+    "whiscash",
+    "barboach",
+    "magikarp",
+]
+super_rod = [
+    "whiscash",
+    "gyarados",
+]
+
+[route_230]
+land = [
+    "roselia",
+    "weepinbell",
+    "floatzel",
+    "wingull",
+    "gloom",
+    "pelipper",
+    "bellsprout",
+]
+surf = [
+    "pelipper",
+    "tentacruel",
+    "sealeo",
+]
+old_rod = [
+    "magikarp",
+]
+good_rod = [
+    "remoraid",
+    "magikarp",
+]
+super_rod = [
+    "wailmer",
+    "gyarados",
+    "wailord",
+    "octillery",
+]
+
+[celestic_town]
+surf = [
+    "golduck",
+    "psyduck",
+]
+old_rod = [
+    "magikarp",
+]
+good_rod = [
+    "goldeen",
+    "magikarp",
+]
+super_rod = [
+    "seaking",
+    "gyarados",
+    "crawdaunt",
+    "corphish",
+]
+
+[victory_road_1f_room_2]
+land = [
+    "gabite",
+    "floatzel",
+    "azumarill",
+    "graveler",
+    "dewgong",
+    "golbat",
+]
+surf = [
+    "lapras",
+    "dewgong",
+    "floatzel",
+]
+old_rod = [
+    "magikarp",
+]
+good_rod = [
+    "magikarp",
+]
+super_rod = [
+    "gyarados",
+]
+
+[route_229]
+land = [
+    "roselia",
+    "pidgey",
+    "volbeat",
+    "illumise",
+    "beautifly",
+    "dustox",
+    "ledian",
+]
+surf = [
+    "masquerain",
+    "surskit",
+]
+old_rod = [
+    "magikarp",
+]
+good_rod = [
+    "goldeen",
+    "magikarp",
+]
+super_rod = [
+    "seaking",
+    "gyarados",
+]
+
+[resort_area]
+surf = [
+    "golduck",
+    "psyduck",
+]
+old_rod = [
+    "magikarp",
+]
+good_rod = [
+    "magikarp",
+]
+super_rod = [
+    "magikarp",
+]
+
+[twinleaf_town]
+surf = [
+    "golduck",
+    "psyduck",
+]
+old_rod = [
+    "magikarp",
+]
+good_rod = [
+    "goldeen",
+    "magikarp",
+]
+super_rod = [
+    "seaking",
+    "gyarados",
+]
+
+[route_201]
+land = [
+    "kricketot",
+    "starly",
+    "bidoof",
+]
+
+[great_marsh_6]
+land = [
+    "yanma",
+    "tangela",
+    "wooper",
+    "bibarel",
+    "quagsire",
+]
+surf = [
+    "quagsire",
+    "wooper",
+]
+old_rod = [
+    "magikarp",
+]
+good_rod = [
+    "barboach",
+    "magikarp",
+]
+super_rod = [
+    "whiscash",
+    "gyarados",
+    "carvanha",
+]
+
+[lake_verity_low_water]
+land = [
+    "starly",
+    "bidoof",
+]
+surf = [
+    "golduck",
+    "psyduck",
+]
+old_rod = [
+    "magikarp",
+]
+good_rod = [
+    "seaking",
+    "goldeen",
+    "magikarp",
+]
+super_rod = [
+    "seaking",
+    "gyarados",
+]
+
+[pastoria_city]
+surf = [
+    "shellos",
+    "gastrodon",
+    "wingull",
+    "tentacool",
+    "tentacruel",
+]
+old_rod = [
+    "magikarp",
+]
+good_rod = [
+    "remoraid",
+    "magikarp",
+]
+super_rod = [
+    "gyarados",
+    "octillery",
+]
+
+[iron_island]
+surf = [
+    "pelipper",
+    "tentacool",
+    "wingull",
+    "tentacruel",
+]
+old_rod = [
+    "magikarp",
+]
+good_rod = [
+    "finneon",
+    "magikarp",
+]
+super_rod = [
+    "gyarados",
+    "lumineon",
+    "qwilfish",
+]
+
+[iron_island_b3f]
+land = [
+    "golbat",
+    "graveler",
+    "steelix",
+]
+
+[iron_island_b2f_left_room]
+land = [
+    "golbat",
+    "onix",
+    "graveler",
+    "steelix",
+]
+
+[iron_island_b1f_right_room]
+land = [
+    "golbat",
+    "onix",
+    "graveler",
+]
+
+[iron_island_b2f_right_room]
+land = [
+    "golbat",
+    "onix",
+    "graveler",
+    "steelix",
+]
+
+[victory_road_1f_room_3]
+land = [
+    "onix",
+    "gabite",
+    "floatzel",
+    "graveler",
+    "golbat",
+    "steelix",
+]
+
+[route_213]
+land = [
+    "buizel",
+    "wingull",
+    "shellos",
+    "chatot",
+]
+surf = [
+    "shellos",
+    "wingull",
+    "gastrodon",
+    "tentacool",
+    "tentacruel",
+]
+old_rod = [
+    "magikarp",
+]
+good_rod = [
+    "remoraid",
+    "magikarp",
+]
+super_rod = [
+    "gyarados",
+    "octillery",
+]
+
+[route_219]
+surf = [
+    "pelipper",
+    "tentacool",
+    "wingull",
+    "tentacruel",
+]
+old_rod = [
+    "magikarp",
+]
+good_rod = [
+    "finneon",
+    "magikarp",
+    "lumineon",
+]
+super_rod = [
+    "gyarados",
+    "lumineon",
+]
+
+[route_221]
+land = [
+    "girafarig",
+    "roselia",
+    "sudowoodo",
+    "floatzel",
+]
+surf = [
+    "pelipper",
+    "tentacool",
+    "wingull",
+    "tentacruel",
+]
+old_rod = [
+    "magikarp",
+]
+good_rod = [
+    "finneon",
+    "magikarp",
+    "lumineon",
+]
+super_rod = [
+    "gyarados",
+    "lumineon",
+]
+
+[stark_mountain_outside]
+land = [
+    "numel",
+    "graveler",
+    "rhydon",
+    "rhyhorn",
+    "weezing",
+    "fearow",
+    "skarmory",
+    "camerupt",
+]
+
+[iron_island_1f]
+land = [
+    "onix",
+    "graveler",
+    "zubat",
+    "geodude",
+    "golbat",
+]
+
+[iron_island_b1f_left_room]
+land = [
+    "golbat",
+    "onix",
+    "graveler",
+]
+
+[route_212_south]
+land = [
+    "croagunk",
+    "buizel",
+    "quagsire",
+    "shellos",
+]
+surf = [
+    "tentacool",
+    "gastrodon",
+    "shellos",
+    "tentacruel",
+]
+old_rod = [
+    "magikarp",
+]
+good_rod = [
+    "remoraid",
+    "magikarp",
+]
+super_rod = [
+    "gyarados",
+    "octillery",
+]
+
+[route_212_north]
+land = [
+    "marill",
+    "roselia",
+    "staravia",
+    "kirlia",
+]
+surf = [
+    "golduck",
+    "psyduck",
+]
+old_rod = [
+    "magikarp",
+]
+good_rod = [
+    "goldeen",
+    "magikarp",
+]
+super_rod = [
+    "seaking",
+    "gyarados",
+]
+
+[route_208]
+land = [
+    "budew",
+    "roselia",
+    "bibarel",
+    "bidoof",
+    "ralts",
+]
+surf = [
+    "golduck",
+    "psyduck",
+]
+old_rod = [
+    "magikarp",
+]
+good_rod = [
+    "goldeen",
+    "magikarp",
+]
+super_rod = [
+    "seaking",
+    "gyarados",
+]
+
+[stark_mountain_room_1]
+land = [
+    "graveler",
+    "rhydon",
+    "rhyhorn",
+    "weezing",
+    "golbat",
+    "magcargo",
+    "slugma",
+]
+
+[lake_verity]
+land = [
+    "starly",
+    "bidoof",
+]
+surf = [
+    "golduck",
+    "psyduck",
+]
+old_rod = [
+    "magikarp",
+]
+good_rod = [
+    "seaking",
+    "goldeen",
+    "magikarp",
+]
+super_rod = [
+    "seaking",
+    "gyarados",
+]
+
+[route_220]
+surf = [
+    "pelipper",
+    "tentacool",
+    "wingull",
+    "tentacruel",
+]
+old_rod = [
+    "magikarp",
+]
+good_rod = [
+    "finneon",
+    "magikarp",
+    "lumineon",
+]
+super_rod = [
+    "chinchou",
+    "gyarados",
+    "lumineon",
+]
+
+[route_202]
+land = [
+    "shinx",
+    "kricketot",
+    "starly",
+    "bidoof",
+]
+
+[route_209]
+land = [
+    "staravia",
+    "roselia",
+    "bibarel",
+    "chansey",
+    "ralts",
+]
+surf = [
+    "golduck",
+    "psyduck",
+]
+old_rod = [
+    "magikarp",
+]
+good_rod = [
+    "goldeen",
+    "magikarp",
+]
+super_rod = [
+    "seaking",
+    "gyarados",
+]
+
+[route_209_lost_tower_1f]
+land = [
+    "zubat",
+    "gastly",
+]
+
+[route_210_south]
+land = [
+    "staravia",
+    "roselia",
+    "ponyta",
+    "chansey",
+    "geodude",
+    "scyther",
+]
+
+[route_209_lost_tower_2f]
+land = [
+    "zubat",
+    "gastly",
+]
+
+[route_204_south]
+land = [
+    "budew",
+    "kricketot",
+    "shinx",
+    "wurmple",
+    "starly",
+    "bidoof",
+]
+surf = [
+    "golduck",
+    "psyduck",
+]
+old_rod = [
+    "magikarp",
+]
+good_rod = [
+    "goldeen",
+    "magikarp",
+]
+super_rod = [
+    "seaking",
+    "gyarados",
+]
+
+[route_210_north]
+land = [
+    "meditite",
+    "bibarel",
+    "swablu",
+    "scyther",
+    "machoke",
+    "machop",
+]
+surf = [
+    "golduck",
+    "psyduck",
+]
+old_rod = [
+    "magikarp",
+]
+good_rod = [
+    "whiscash",
+    "barboach",
+    "magikarp",
+]
+super_rod = [
+    "whiscash",
+    "gyarados",
+]
+
+[route_209_lost_tower_3f]
+land = [
+    "zubat",
+    "golbat",
+    "gastly",
+]
+
+[route_218]
+land = [
+    "mr_mime",
+    "gastrodon",
+    "chatot",
+    "floatzel",
+]
+surf = [
+    "tentacool",
+    "gastrodon",
+    "shellos",
+    "tentacruel",
+]
+old_rod = [
+    "magikarp",
+]
+good_rod = [
+    "finneon",
+    "magikarp",
+]
+super_rod = [
+    "gyarados",
+    "lumineon",
+]
+
+[solaceon_ruins_room_1_southeast_dead_end]
+land = [
+    "unown",
+]
+
+[solaceon_ruins_room_1_northwest_dead_end]
+land = [
+    "unown",
+]
+
+[route_209_lost_tower_4f]
+land = [
+    "zubat",
+    "golbat",
+    "gastly",
+]
+
+[route_209_lost_tower_5f]
+land = [
+    "zubat",
+    "golbat",
+    "gastly",
+]
+
+[route_222]
+land = [
+    "chatot",
+    "floatzel",
+    "electabuzz",
+    "magnemite",
+    "wingull",
+    "magneton",
+    "pelipper",
+    "luxio",
+]
+surf = [
+    "pelipper",
+    "tentacool",
+    "wingull",
+    "tentacruel",
+]
+old_rod = [
+    "magikarp",
+]
+good_rod = [
+    "remoraid",
+    "magikarp",
+]
+super_rod = [
+    "gyarados",
+    "octillery",
+]
+
+[sunyshore_city]
+surf = [
+    "pelipper",
+    "tentacool",
+    "wingull",
+    "tentacruel",
+]
+old_rod = [
+    "magikarp",
+]
+good_rod = [
+    "remoraid",
+    "magikarp",
+]
+super_rod = [
+    "staryu",
+    "gyarados",
+    "octillery",
+]
+
+[route_223]
+surf = [
+    "pelipper",
+    "tentacruel",
+    "mantyke",
+]
+old_rod = [
+    "magikarp",
+]
+good_rod = [
+    "remoraid",
+    "octillery",
+    "magikarp",
+]
+super_rod = [
+    "wailmer",
+    "gyarados",
+    "wailord",
+    "octillery",
+]
+
+[ravaged_path]
+land = [
+    "zubat",
+    "psyduck",
+]
+surf = [
+    "zubat",
+    "golbat",
+    "golduck",
+    "psyduck",
+]
+old_rod = [
+    "magikarp",
+]
+good_rod = [
+    "barboach",
+    "magikarp",
+]
+super_rod = [
+    "whiscash",
+    "gyarados",
+]
+
+[route_204_north]
+land = [
+    "budew",
+    "kricketot",
+    "shinx",
+    "wurmple",
+    "starly",
+    "bidoof",
+]
+surf = [
+    "golduck",
+    "psyduck",
+]
+old_rod = [
+    "magikarp",
+]
+good_rod = [
+    "goldeen",
+    "magikarp",
+]
+super_rod = [
+    "seaking",
+    "gyarados",
+]
+
+[canalave_city]
+surf = [
+    "tentacool",
+    "gastrodon",
+    "shellos",
+    "tentacruel",
+]
+old_rod = [
+    "magikarp",
+]
+good_rod = [
+    "finneon",
+    "magikarp",
+]
+super_rod = [
+    "staryu",
+    "gyarados",
+    "lumineon",
+]
+
+[route_205_south]
+land = [
+    "pachirisu",
+    "buizel",
+    "shellos",
+    "bidoof",
+]
+surf = [
+    "tentacool",
+    "gastrodon",
+    "shellos",
+    "tentacruel",
+]
+old_rod = [
+    "magikarp",
+]
+good_rod = [
+    "finneon",
+    "magikarp",
+]
+super_rod = [
+    "gyarados",
+    "shellder",
+    "lumineon",
+]
+
+[valley_windworks_outside]
+land = [
+    "pachirisu",
+    "buizel",
+    "shinx",
+    "shellos",
+]
+surf = [
+    "tentacool",
+    "gastrodon",
+    "shellos",
+    "tentacruel",
+]
+old_rod = [
+    "magikarp",
+]
+good_rod = [
+    "finneon",
+    "magikarp",
+]
+super_rod = [
+    "gyarados",
+    "shellder",
+    "lumineon",
+]
+
+[eterna_forest]
+land = [
+    "budew",
+    "gastly",
+    "kricketot",
+    "wurmple",
+    "cascoon",
+    "beautifly",
+    "dustox",
+    "bidoof",
+    "silcoon",
+    "buneary",
+]
+
+[fuego_ironworks_outside]
+land = [
+    "magmar",
+    "gastrodon",
+    "magnemite",
+    "floatzel",
+]
+surf = [
+    "tentacool",
+    "gastrodon",
+    "shellos",
+    "tentacruel",
+]
+old_rod = [
+    "magikarp",
+]
+good_rod = [
+    "finneon",
+    "magikarp",
+]
+super_rod = [
+    "gyarados",
+    "shellder",
+    "lumineon",
+]
+
+[old_chateau]
+land = [
+    "gastly",
+]
+
+[old_chateau_side_rooms]
+land = [
+    "gastly",
+]
+
+[route_205_north]
+land = [
+    "budew",
+    "kricketot",
+    "wurmple",
+    "cascoon",
+    "beautifly",
+    "dustox",
+    "bidoof",
+    "silcoon",
+]
+surf = [
+    "golduck",
+    "psyduck",
+]
+old_rod = [
+    "magikarp",
+]
+good_rod = [
+    "barboach",
+    "magikarp",
+]
+super_rod = [
+    "whiscash",
+    "gyarados",
+]
+
+[eterna_city]
+surf = [
+    "golduck",
+    "psyduck",
+]
+old_rod = [
+    "magikarp",
+]
+good_rod = [
+    "barboach",
+    "magikarp",
+]
+super_rod = [
+    "whiscash",
+    "gyarados",
+]
+
+[old_chateau_corridor]
+land = [
+    "gastly",
+]
+
+[old_chateau_back_east_room]
+land = [
+    "gastly",
+]
+
+[old_chateau_back_west_room]
+land = [
+    "gastly",
+]
+
+[stark_mountain_room_2]
+land = [
+    "graveler",
+    "rhydon",
+    "weezing",
+    "koffing",
+    "golbat",
+    "magcargo",
+    "slugma",
+]
+
+[valor_lakefront]
+land = [
+    "staravia",
+    "kricketune",
+    "girafarig",
+    "bibarel",
+    "houndour",
+]
+
+[solaceon_ruins_room_2]
+land = [
+    "unown",
+]
+
+[route_214]
+land = [
+    "geodude",
+    "rhyhorn",
+    "graveler",
+    "houndour",
+]
+surf = [
+    "golduck",
+    "psyduck",
+]
+old_rod = [
+    "magikarp",
+]
+good_rod = [
+    "goldeen",
+    "magikarp",
+]
+super_rod = [
+    "seaking",
+    "gyarados",
+]
+
+[ruin_maniac_cave_short]
+land = [
+    "hippopotas",
+    "geodude",
+]
+
+[solaceon_ruins_room_3]
+land = [
+    "unown",
+]
+
+[solaceon_ruins_room_3_northwest_dead_end]
+land = [
+    "unown",
+]
+
+[ruin_maniac_cave_long]
+land = [
+    "hippopotas",
+    "geodude",
+]
+
+[maniac_tunnel]
+land = [
+    "hippopotas",
+    "geodude",
+]
+
+[sendoff_spring]
+land = [
+    "staravia",
+    "dusclops",
+    "graveler",
+    "chingling",
+    "bibarel",
+]
+surf = [
+    "golduck",
+]
+old_rod = [
+    "magikarp",
+]
+good_rod = [
+    "goldeen",
+    "magikarp",
+]
+super_rod = [
+    "seaking",
+    "gyarados",
+]
+
+[old_chateau_dining_area]
+land = [
+    "gastly",
+]
+
+[old_chateau_back_middle_west_room]
+land = [
+    "gastly",
+]
+
+[old_chateau_back_middle_room]
+land = [
+    "gastly",
+]
+
+[solaceon_ruins_maniac_tunnel_room]
+land = [
+    "unown",
+]
+
+[route_206]
+land = [
+    "ponyta",
+    "gligar",
+    "kricketune",
+    "geodude",
+    "machop",
+]
+
+[trophy_garden]
+land = [
+    "staravia",
+    "roselia",
+    "pikachu",
+    "kricketune",
+    "pichu",
+]
+
+[route_207]
+land = [
+    "geodude",
+    "ponyta",
+    "machop",
+    "kricketot",
+]
+
+[mt_coronet_2f]
+land = [
+    "medicham",
+    "nosepass",
+    "graveler",
+    "machoke",
+    "chingling",
+    "clefairy",
+    "bronzong",
+    "golbat",
+]
+
+[mt_coronet_3f]
+land = [
+    "medicham",
+    "nosepass",
+    "graveler",
+    "machoke",
+    "chingling",
+    "clefairy",
+    "bronzong",
+    "golbat",
+]
+
+[mt_coronet_outside_south]
+land = [
+    "medicham",
+    "snover",
+    "absol",
+    "nosepass",
+    "abomasnow",
+    "chingling",
+    "machoke",
+]
+
+[mt_coronet_4f_rooms_1_and_2]
+land = [
+    "medicham",
+    "nosepass",
+    "graveler",
+    "machoke",
+    "chingling",
+    "clefairy",
+    "bronzong",
+    "golbat",
+]
+surf = [
+    "zubat",
+    "golbat",
+]
+old_rod = [
+    "magikarp",
+]
+good_rod = [
+    "barboach",
+    "magikarp",
+]
+super_rod = [
+    "whiscash",
+    "gyarados",
+    "dratini",
+    "dragonair",
+]
+
+[mt_coronet_outside_north]
+land = [
+    "medicham",
+    "snover",
+    "absol",
+    "nosepass",
+    "abomasnow",
+    "chingling",
+    "machoke",
+]
+
+[solaceon_ruins_room_2_northeast_dead_end]
+land = [
+    "unown",
+]
+
+[mt_coronet_1f_tunnel_room]
+land = [
+    "medicham",
+    "nosepass",
+    "graveler",
+    "machoke",
+    "chingling",
+    "clefairy",
+    "golbat",
+]
+
+[mt_coronet_1f_north_room_1]
+land = [
+    "meditite",
+    "cleffa",
+    "nosepass",
+    "chingling",
+    "zubat",
+    "geodude",
+    "bronzor",
+    "machop",
+]
+
+[mt_coronet_b1f]
+land = [
+    "meditite",
+    "nosepass",
+    "graveler",
+    "machoke",
+    "chingling",
+    "clefairy",
+    "golbat",
+    "bronzor",
+]
+surf = [
+    "zubat",
+    "golbat",
+]
+old_rod = [
+    "magikarp",
+]
+good_rod = [
+    "barboach",
+    "magikarp",
+]
+super_rod = [
+    "whiscash",
+    "gyarados",
+]
+
+[mt_coronet_1f_north_room_2]
+land = [
+    "meditite",
+    "nosepass",
+    "graveler",
+    "machoke",
+    "chingling",
+    "clefairy",
+    "golbat",
+    "bronzor",
+]
+
+[route_216]
+land = [
+    "meditite",
+    "sneasel",
+    "snover",
+    "graveler",
+]
+
+[route_211_east]
+land = [
+    "meditite",
+    "graveler",
+    "chingling",
+    "machoke",
+    "bronzor",
+]
+
+[route_217]
+land = [
+    "sneasel",
+    "snover",
+    "swinub",
+]
+
+[acuity_lakefront]
+land = [
+    "sneasel",
+    "snover",
+    "swinub",
+]
+
+[lake_acuity]
+land = [
+    "sneasel",
+    "snover",
+    "psyduck",
+    "bibarel",
+    "golduck",
+]
+surf = [
+    "golduck",
+    "psyduck",
+]
+old_rod = [
+    "magikarp",
+]
+good_rod = [
+    "seaking",
+    "goldeen",
+    "magikarp",
+]
+super_rod = [
+    "seaking",
+    "gyarados",
+]
+
+[snowpoint_temple_1f]
+land = [
+    "sneasel",
+    "golbat",
+    "smoochum",
+]
+
+[snowpoint_temple_b1f]
+land = [
+    "golbat",
+    "sneasel",
+    "jynx",
+]
+
+[snowpoint_temple_b2f]
+land = [
+    "golbat",
+    "sneasel",
+    "jynx",
+]
+
+[mt_coronet_4f_room_3]
+land = [
+    "medicham",
+    "nosepass",
+    "graveler",
+    "machoke",
+    "chingling",
+    "clefairy",
+    "bronzong",
+    "chimecho",
+    "golbat",
+]
+
+[snowpoint_temple_b3f]
+land = [
+    "golbat",
+    "sneasel",
+    "jynx",
+]
+
+[snowpoint_temple_b4f]
+land = [
+    "golbat",
+    "sneasel",
+    "jynx",
+]
+
+[snowpoint_temple_b5f]
+land = [
+    "golbat",
+    "sneasel",
+    "jynx",
+]
+
+[solaceon_ruins_room_2_southeast_dead_end]
+land = [
+    "unown",
+]
+
+[route_215]
+land = [
+    "staravia",
+    "kadabra",
+    "marill",
+    "scyther",
+    "abra",
+    "lickitung",
+]
+
+[wayward_cave_1f]
+land = [
+    "zubat",
+    "onix",
+    "geodude",
+    "bronzor",
+]
+
+[wayward_cave_b1f]
+land = [
+    "onix",
+    "zubat",
+    "gible",
+    "geodude",
+    "bronzor",
+]
+
+[solaceon_ruins_room_3_southwest_dead_end]
+land = [
+    "unown",
+]
+
+[lake_valor]
+land = [
+    "bibarel",
+    "golduck",
+    "staravia",
+    "psyduck",
+]
+surf = [
+    "golduck",
+    "psyduck",
+]
+old_rod = [
+    "magikarp",
+]
+good_rod = [
+    "seaking",
+    "goldeen",
+    "magikarp",
+]
+super_rod = [
+    "seaking",
+    "gyarados",
+]
+
+[route_211_west]
+land = [
+    "meditite",
+    "chingling",
+    "bidoof",
+    "bronzor",
+    "machop",
+]
+
+[oreburgh_mine_b1f]
+land = [
+    "zubat",
+    "onix",
+    "geodude",
+]
+
+[oreburgh_mine_b2f]
+land = [
+    "zubat",
+    "onix",
+    "geodude",
+]
+
+[oreburgh_gate_1f]
+land = [
+    "zubat",
+    "geodude",
+    "psyduck",
+]
+
+[oreburgh_gate_b1f]
+land = [
+    "zubat",
+    "golbat",
+    "geodude",
+    "psyduck",
+]
+surf = [
+    "zubat",
+    "golbat",
+    "golduck",
+    "psyduck",
+]
+old_rod = [
+    "magikarp",
+]
+good_rod = [
+    "barboach",
+    "magikarp",
+]
+super_rod = [
+    "whiscash",
+    "gyarados",
+]
+
+[solaceon_ruins_room_4]
+land = [
+    "unown",
+]
+
+[solaceon_ruins_room_5]
+land = [
+    "unown",
+]
+
+[solaceon_ruins_room_5_southeast_deadend]
+land = [
+    "unown",
+]
+
+[solaceon_ruins_room_5_southwest_dead_end]
+land = [
+    "unown",
+]
+
+[mt_coronet_5f]
+land = [
+    "medicham",
+    "nosepass",
+    "graveler",
+    "machoke",
+    "chingling",
+    "clefairy",
+    "bronzong",
+    "chimecho",
+    "golbat",
+]
+
+[mt_coronet_6f]
+land = [
+    "medicham",
+    "nosepass",
+    "graveler",
+    "machoke",
+    "clefairy",
+    "bronzong",
+    "chimecho",
+    "golbat",
+]
+
+[old_chateau_back_middle_east_room]
+land = [
+    "gastly",
+]
+
+[route_203]
+land = [
+    "kricketot",
+    "shinx",
+    "starly",
+    "bidoof",
+    "abra",
+]
+surf = [
+    "golduck",
+    "psyduck",
+]
+old_rod = [
+    "magikarp",
+]
+good_rod = [
+    "goldeen",
+    "magikarp",
+]
+super_rod = [
+    "seaking",
+    "gyarados",
+]
+
+[mt_coronet_1f_south]
+land = [
+    "meditite",
+    "nosepass",
+    "chingling",
+    "zubat",
+    "clefairy",
+    "geodude",
+    "bronzor",
+    "machop",
+]
+surf = [
+    "zubat",
+    "golbat",
+]
+old_rod = [
+    "magikarp",
+]
+good_rod = [
+    "barboach",
+    "magikarp",
+]
+super_rod = [
+    "whiscash",
+    "gyarados",
+]
+
+[solaceon_ruins_room_6]
+land = [
+    "unown",
+]
+
+[solaceon_ruins_room_6_northwest_dead_end]
+land = [
+    "unown",
+]
+
+[solaceon_ruins_room_6_southeast_dead_end]
+land = [
+    "unown",
+]
+
+[solaceon_ruins_room_7]
+land = [
+    "unown",
+]
+
+[solaceon_ruins_room_4_southeast_dead_end]
+land = [
+    "unown",
+]
