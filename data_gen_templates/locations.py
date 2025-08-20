@@ -31,6 +31,9 @@ class LocationData:
     type: str
     check: LocationCheck
 
+    def get_raw_id(self) -> int:
+        return self.table << 16 | self.id
+
 locations: Mapping[str, LocationData] = {
     # TEMPLATE: LOCATIONS
 }

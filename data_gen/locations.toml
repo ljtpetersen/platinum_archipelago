@@ -902,14 +902,6 @@ check = 890
 label = "Verity Lakefront - Hidden (TinyMushroom)"
 id = 160
 
-[lake_verity_low_water_tm38]
-original_item = "tm38"
-type = "overworld"
-table = "overworld"
-check = 1253
-label = "Lake Verity - Overworld (TM38)"
-id = 239
-
 [pastoria_city_mystic_water]
 original_item = "mystic_water"
 type = "overworld"
@@ -2870,22 +2862,6 @@ check = 1130
 label = "Ruin Maniac Cave - Overworld (TM28)"
 id = 116
 
-[ruin_maniac_cave_long_tm28]
-original_item = "tm28"
-type = "overworld"
-table = "overworld"
-check = 1130
-label = "Ruin Maniac Cave - Overworld (TM28) 1"
-id = 116
-
-[maniac_tunnel_tm28]
-original_item = "tm28"
-type = "overworld"
-table = "overworld"
-check = 1130
-label = "Maniac Tunnel - Overworld (TM28)"
-id = 116
-
 [veilstone_city_full_incense]
 original_item = "full_incense"
 type = "overworld"
@@ -3189,14 +3165,6 @@ table = "hidden"
 check = 809
 label = "Galactic HQ - Hidden (Nugget)"
 id = 79
-
-[old_chateau_back_middle_west_room_dread_plate]
-original_item = "dread_plate"
-type = "overworld"
-table = "overworld"
-check = 1261
-label = "Old Chateau - Overworld (Dread Plate) 1"
-id = 247
 
 [galactic_hq_b2f_tm36]
 original_item = "tm36"
@@ -3646,14 +3614,6 @@ check = 806
 label = "Galactic HQ - Hidden (Max Potion)"
 id = 76
 
-[lake_valor_drained_tm25]
-original_item = "tm25"
-type = "overworld"
-table = "overworld"
-check = 1254
-label = "Lake Valor - Overworld (TM25)"
-id = 240
-
 [lake_valor_drained_hp_up]
 original_item = "hp_up"
 type = "hidden"
@@ -4000,7 +3960,7 @@ id = 275
 
 [route_217_hm08]
 original_item = "hm08"
-type = "overworld"
+type = "hm"
 table = "overworld"
 check = 1175
 label = "Route 217 - Overworld (HM08)"
@@ -4148,14 +4108,6 @@ type = "overworld"
 table = "overworld"
 check = 1255
 label = "Lake Acuity - Overworld (TM14)"
-id = 241
-
-[lake_acuity_low_water_tm14]
-original_item = "tm14"
-type = "overworld"
-table = "overworld"
-check = 1255
-label = "Lake Acuity - Overworld (TM14) 1"
 id = 241
 
 [snowpoint_city_ultra_ball]
@@ -4560,7 +4512,7 @@ id = 4
 
 [oreburgh_gate_b1f_tm70]
 original_item = "tm70"
-type = "overworld"
+type = "hm"
 table = "overworld"
 check = 1019
 label = "Oreburgh Gate - Overworld (TM70)"
@@ -4584,7 +4536,7 @@ id = 111
 
 [veilstone_city_galactic_warehouse_hm02]
 original_item = "hm02"
-type = "overworld"
+type = "hm"
 table = "overworld"
 check = 1250
 label = "Veilstone City - Overworld (HM02)"
@@ -4613,14 +4565,6 @@ table = "hidden"
 check = 831
 label = "Mt. Coronet - Hidden (Rare Candy) 2"
 id = 101
-
-[old_chateau_back_middle_east_room_tm90]
-original_item = "tm90"
-type = "overworld"
-table = "overworld"
-check = 1262
-label = "Old Chateau - Overworld (TM90) 1"
-id = 248
 
 [route_203_repel]
 original_item = "repel"
@@ -4686,14 +4630,6 @@ check = 1002
 label = "Mt. Coronet - Hidden (Revive)"
 id = 272
 
-[battle_park_razor_fang]
-original_item = "razor_fang"
-type = "overworld"
-table = "overworld"
-check = 1259
-label = "Battle Park - Overworld (Razor Fang)"
-id = 245
-
 [solaceon_ruins_room_7_mind_plate]
 original_item = "mind_plate"
 type = "overworld"
@@ -4720,8 +4656,208 @@ id = 97
 
 [solaceon_ruins_room_7_hm05]
 original_item = "hm05"
-type = "overworld"
+type = "hm"
 table = "overworld"
 check = 1112
 label = "Solaceon Ruins - Overworld (HM05)"
 id = 98
+
+[oreburgh_city_gym_coal_badge]
+original_item = "coal_badge"
+type = "badge"
+table = "base"
+check = 0x75
+label = "Oreburgh City Gym - Badge (From Roark)"
+id = 0
+
+[oreburgh_city_gym_tm76]
+original_item = "tm76"
+type = "npc_gift"
+table = "base"
+check = 0x75
+label = "Oreburgh City Gym - TM75 (From Roark)"
+id = 1
+
+[eterna_city_gym_forest_badge]
+original_item = "forest_badge"
+type = "badge"
+table = "base"
+check = 0x74
+label = "Oreburgh City Gym - Badge (From Gardenia)"
+id = 2
+
+[eterna_city_gym_tm86]
+original_item = "tm86"
+type = "npc_gift"
+table = "base"
+check = 0x74
+label = "Eterna City Gym - TM86 (From Gardenia)"
+id = 3
+
+[veilstone_city_gym_cobble_badge]
+original_item = "cobble_badge"
+type = "badge"
+table = "base"
+check = 0x9D
+label = "Veilstone City Gym - Badge (From Maylene)"
+id = 4
+
+[veilstone_city_gym_tm60]
+original_item = "tm60"
+type = "npc_gift"
+table = "base"
+check = 0x9D
+label = "Veilstone City Gym - TM60 (From Maylene)"
+id = 5
+
+[pastoria_city_gym_fen_badge]
+original_item = "fen_badge"
+type = "badge"
+table = "base"
+check = 0x9C
+label = "Pastoria City Gym - Badge (From Crasher Wake)"
+id = 6
+
+[pastoria_city_gym_tm55]
+original_item = "tm55"
+type = "npc_gift"
+table = "base"
+check = 0x9C
+label = "Pastoria City Gym - TM55 (From Crasher Wake)"
+id = 7
+
+[hearthome_city_gym_leader_room_relic_badge]
+original_item = "relic_badge"
+type = "badge"
+table = "base"
+check = 0x7D
+label = "Hearthome City Gym - Badge (From Fantina)"
+id = 8
+
+[hearthome_city_gym_leader_room_tm65]
+original_item = "tm65"
+type = "npc_gift"
+table = "base"
+check = 0x7D
+label = "Hearthome City Gym - TM65 (From Fantina)"
+id = 9
+
+[canalave_city_gym_mine_badge]
+original_item = "mine_badge"
+type = "badge"
+table = "base"
+check = 0x92
+label = "Canalave City Gym - Badge (From Byron)"
+id = 10
+
+[canalave_city_gym_tm91]
+original_item = "tm91"
+type = "npc_gift"
+table = "base"
+check = 0x92
+label = "Canalave City Gym - TM91 (From Byron)"
+id = 11
+
+[snowpoint_city_gym_icicle_badge]
+original_item = "icicle_badge"
+type = "badge"
+table = "base"
+check = 0x9E
+label = "Snowpoint City Gym - Badge (From Candice)"
+id = 12
+
+[snowpoint_city_gym_tm72]
+original_item = "tm72"
+type = "npc_gift"
+table = "base"
+check = 0x9E
+label = "Snowpoint City Gym - TM72 (From Candice)"
+id = 13
+
+[sunyshore_city_gym_room_3_beacon_badge]
+original_item = "beacon_badge"
+type = "badge"
+table = "base"
+check = 0xB6
+label = "Sunyshore City Gym - Badge (From Volkner)"
+id = 14
+
+[sunyshore_city_gym_room_3_tm57]
+original_item = "tm57"
+type = "npc_gift"
+table = "base"
+check = 0xB6
+label = "Sunyshore City Gym - TM57 (From Volkner)"
+id = 15
+
+[eterna_city_hm01]
+original_item = "hm01"
+type = "hm"
+table = "base"
+check = { id = 0x407A, value = 2, op = "ge" }
+label = "Eterna City - HM01 (From Cynthia)"
+id = 16
+
+[oreburgh_gate_1f_hm06]
+original_item = "hm06"
+type = "hm"
+table = "base"
+check = 0x93
+label = "Oreburgh Gate - HM06 (From Hiker)"
+id = 17
+
+[celestic_town_cave_hm03]
+original_item = "hm03"
+type = "hm"
+table = "base"
+check = 2445
+label = "Celestic Town Cave - HM03 (From Cynthia's Grandmother)"
+id = 18
+
+[iron_island_hm04]
+original_item = "hm04"
+type = "hm"
+table = "base"
+check = 0x214
+label = "Iron Island - HM04 (From Riley)"
+id = 19
+
+[sunyshore_city_hm07]
+original_item = "hm07"
+type = "hm"
+table = "base"
+check = 0x9A
+label = "Sunyshore City - HM07 (From Jasmine)"
+id = 20
+
+[route_207_dowsingmachine]
+original_item = "dowsingmachine"
+type = "poketchapp"
+table = "base"
+check = { id = 0x408C, value = 1, op = "ge" }
+label = "Route 207 - Dowsing Machine (From Counterpart)"
+id = 21
+
+[route_218_gate_to_jubilife_city_old_rod]
+original_item = "old_rod"
+type = "rod"
+table = "base"
+check = 0x84
+label = "Jubilife City Gate to Route 218 - Old Rod (From Fisherman)"
+id = 22
+
+[route_209_good_rod]
+original_item = "good_rod"
+type = "rod"
+table = "base"
+check = 0xA2
+label = "Route 209 - Good Rod (From Fisherman)"
+id = 23
+
+[fight_area_super_rod]
+original_item = "super_rod"
+type = "rod"
+table = "base"
+check = 0x6B
+label = "Fight Area - Super Rod (From Fisherman)"
+id = 24

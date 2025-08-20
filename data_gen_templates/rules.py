@@ -21,9 +21,12 @@ class Rules:
     location_rules: Mapping[str, Rule]
     common_rules: MutableMapping[str, Rule]
     
-    def __init__(self, player: int):
+    def __init__(self, player: int, common_rules: MutableMapping[str, Rule]):
         self.player = player
-        self.common_rules = { hm.name.lower():self.create_hm_rule(hm, player) for hm in Hm }
+        self.common_rules = common_rules
+        self.common_rules.update({ hm.name.lower():self.create_hm_rule(hm, player) for hm in Hm })
+
+    def fill_rules(self):
         self.exit_rules = {
             # TEMPLATE: EXIT_RULES
         }
@@ -49,7 +52,7 @@ class Rules:
                 spec = new_spec
 
         def hm_rule(state: CollectionState) -> bool:
-            if not (state.has(hm, player) and self.common_rules[f"{hm.name}_badge"]):
+            if not (state.has(hm, player) and self.common_rules[f"{hm.name.lower()}_badge"]):
                 return False
             if state.has_any(mons, player):
                 return True

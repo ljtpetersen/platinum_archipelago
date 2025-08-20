@@ -2247,6 +2247,7 @@ label = "TM70"
 id = 397
 clas = "bagitem"
 group = "tmhms"
+classification = "progression"
 
 [tm71]
 label = "TM71"
@@ -2385,48 +2386,56 @@ label = "HM01"
 id = 420
 clas = "bagitem"
 group = "tmhms"
+classification = "progression"
 
 [hm02]
 label = "HM02"
 id = 421
 clas = "bagitem"
 group = "tmhms"
+classification = "progression"
 
 [hm03]
 label = "HM03"
 id = 422
 clas = "bagitem"
 group = "tmhms"
+classification = "progression"
 
 [hm04]
 label = "HM04"
 id = 423
 clas = "bagitem"
 group = "tmhms"
+classification = "progression"
 
 [hm05]
 label = "HM05"
 id = 424
 clas = "bagitem"
 group = "tmhms"
+classification = "progression"
 
 [hm06]
 label = "HM06"
 id = 425
 clas = "bagitem"
 group = "tmhms"
+classification = "progression"
 
 [hm07]
 label = "HM07"
 id = 426
 clas = "bagitem"
 group = "tmhms"
+classification = "progression"
 
 [hm08]
 label = "HM08"
 id = 427
 clas = "bagitem"
 group = "tmhms"
+classification = "progression"
 
 [explorer_kit]
 label = "Explorer Kit"
@@ -2493,6 +2502,7 @@ label = "Works Key"
 id = 438
 clas = "bagitem"
 group = "key_items"
+classification = "progression"
 
 [old_charm]
 label = "Old Charm"
@@ -2535,18 +2545,21 @@ label = "Old Rod"
 id = 445
 clas = "bagitem"
 group = "key_items"
+classification = "progression"
 
 [good_rod]
 label = "Good Rod"
 id = 446
 clas = "bagitem"
 group = "key_items"
+classification = "progression"
 
 [super_rod]
 label = "Super Rod"
 id = 447
 clas = "bagitem"
 group = "key_items"
+classification = "progression"
 
 [sprayduck]
 label = "Sprayduck"
@@ -2716,6 +2729,7 @@ label = "DOWSING MACHINE"
 id = 6
 clas = "poketchapp"
 group = "poketch_apps"
+classification = "progression"
 
 [berrysearcher]
 label = "BERRY SEARCHER"
@@ -2830,45 +2844,53 @@ label = "Coal Badge"
 id = 0
 clas = "badge"
 group = "badges"
+classification = "progression"
 
 [forest_badge]
 label = "Forest Badge"
 id = 1
 clas = "badge"
 group = "badges"
+classification = "progression"
 
 [cobble_badge]
 label = "Cobble Badge"
 id = 2
 clas = "badge"
 group = "badges"
+classification = "progression"
 
 [fen_badge]
 label = "Fen Badge"
 id = 3
 clas = "badge"
 group = "badges"
+classification = "progression"
 
 [relic_badge]
 label = "Relic Badge"
 id = 4
 clas = "badge"
 group = "badges"
+classification = "progression"
 
 [mine_badge]
 label = "Mine Badge"
 id = 5
 clas = "badge"
 group = "badges"
+classification = "progression"
 
 [icicle_badge]
 label = "Icicle Badge"
 id = 6
 clas = "badge"
 group = "badges"
+classification = "progression"
 
 [beacon_badge]
 label = "Beacon Badge"
 id = 7
 clas = "badge"
 group = "badges"
+classification = "progression"

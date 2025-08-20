@@ -89,7 +89,7 @@ class Location:
         ret += f"table=LocationTable.{self.table.upper()}, "
         ret += f"id=0x{self.id:X}, "
         ret += f"original_item=\"{self.original_item}\", "
-        ret += f"type=\"self.type\", "
+        ret += f"type=\"{self.type}\", "
         check = self.check
         if isinstance(check, int):
             check = Check(check)
@@ -304,6 +304,8 @@ class ParserState:
             rule.add_dependent_items(ret)
         for rule in self.rules.loc_types.values():
             rule.add_dependent_items(ret)
+        for rule in self.rules.enc_types.values():
+            rule.add_dependent_items(ret)
         ret &= self.items.keys()
         ret |= set(self.rom_interface.hm.values())
         ret |= set(self.rom_interface.hm_badge.values())
@@ -409,6 +411,9 @@ class ParserState:
 
         return ret
 
+    def generate_charmap(self) -> Mapping[str, Sequence[str]]:
+        return {}
+
 def fill_template(name: str, values: Mapping[str, Sequence[str]]) -> None:
     output = "# THIS IS AN AUTO-GENERATED FILE. DO NOT MODIFY.\n"
     with open(f"data_gen_templates/{name}.py", "r", encoding="utf-8") as template:
@@ -436,7 +441,7 @@ def main():
     state = ParserState()
     state.validate()
 
-    to_generate = ["items", "locations", "rules", "__init__", "species", "encounters", "regions"]
+    to_generate = ["items", "locations", "rules", "__init__", "species", "encounters", "regions", "charmap"]
     for name in to_generate:
         fill_template(name, getattr(state, "generate_" + name)())
 

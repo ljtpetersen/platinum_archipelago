@@ -12,3 +12,5 @@ class EncounterData:
 encounters: Mapping[str, EncounterData] = {
     # TEMPLATE: ENCOUNTERS
 }
+
+encounter_types: Set[str] = frozenset({"land", "surf", "good_rod", "old_rod", "super_rod"})

@@ -45,9 +45,9 @@ class Rule:
             case 1:
                 for item in str_items:
                     break
-                exprs = [f"state.has({item_name_map(item)}, player)"] # type: ignore
+                exprs = [f"state.has({item_name_map(item)}, self.player)"] # type: ignore
             case _:
-                exprs = [f"state.has_{self.op.get_has()}({", ".join(map(item_name_map, str_items))}, player)"]
+                exprs = [f"state.has_{self.op.get_has()}({", ".join(map(item_name_map, str_items))}, self.player)"]
         for val in self.items - item_set:
             if isinstance(val, str):
                 exprs.append(f"self.common_rules[\"{val}\"]")
