@@ -122,6 +122,7 @@ class RomInterface:
     item_clas: Mapping[str, int]
     hm: Mapping[str, str]
     hm_badge: Mapping[str, str]
+    req_items: Sequence[str]
 
 @dataclass(frozen=True)
 class PreEvolution:
@@ -138,6 +139,7 @@ class PreEvolution:
 @dataclass(frozen=True)
 class Species:
     hms: Sequence[str]
+    regional: bool = False
     pre_evolution: str | PreEvolution | None = None
 
     def to_string(self, item_name_map: Callable[[str], str]) -> str:
@@ -159,10 +161,12 @@ class Species:
 @dataclass(frozen=True)
 class Rules:
     exits: Mapping[str, Mapping[str, Rule]] = field(default_factory=dict)
-    encounters: Mapping[str, Mapping[str, Rule]] = field(default_factory=dict)
+    encs: Mapping[str, Mapping[str, Rule]] = field(default_factory=dict)
     locs: Mapping[str, Rule] = field(default_factory=dict)
+    events: Mapping[str, Rule] = field(default_factory=dict)
     loc_types: Mapping[str, Rule] = field(default_factory=dict)
     enc_types: Mapping[str, Rule] = field(default_factory=dict)
+    common: Mapping[str, Rule] = field(default_factory=dict)
 
 class ParserState:
     regions: Mapping[str, Region]
@@ -217,6 +221,7 @@ class ParserState:
         self.rules = Rules(**convert_rules(get_toml("rules"))) # type: ignore
 
     def validate(self):
+        loc_pairs = set()
         encounter_types = {"land", "surf", "old_rod", "good_rod", "super_rod"}
         events = set()
         for region in self.regions.values():
@@ -249,6 +254,9 @@ class ParserState:
             assert loc.label not in location_labels, f"{loc.label} is a unique location label"
             location_labels.add(loc.label)
             assert loc.id >= 0, f"location id must be positive ({loc.label})"
+            lp = (loc.table, loc.id)
+            assert lp not in loc_pairs, f"location table+id {lp} is unique ({loc.label})"
+            loc_pairs.add(lp)
             if isinstance(loc.check, Check):
                 assert loc.check.op in ["eq", "ne", "lt", "le", "gt", "ge"]
         item_labels = set()
@@ -276,13 +284,18 @@ class ParserState:
         for src, exits in self.rules.exits.items():
             assert src in self.regions, f"{src} is a region"
             for dest in exits:
+                assert dest in self.regions[src].exits, f"{dest} is an exit of {src}"
                 assert dest in self.regions, f"{dest} is a region"
-        for region, rules in self.rules.encounters.items():
+        for region, rules in self.rules.encs.items():
             assert region in self.regions, f"{region} is a region"
             for type in rules:
                 assert type in encounter_types, f"{type} is an encounter type"
         for loc in self.rules.locs:
             assert loc in self.locations, f"{loc} is a location"
+        for event in self.rules.events:
+            assert event in events, f"{event} is an event"
+        for req_item in self.rom_interface.req_items:
+            assert req_item in self.items, f"{req_item} is an item"
 
     def generate_items(self) -> Mapping[str, Sequence[str]]:
         ret = {}
@@ -297,7 +310,7 @@ class ParserState:
         for exit_rules in self.rules.exits.values():
             for rule in exit_rules.values():
                 rule.add_dependent_items(ret)
-        for enc_rules in self.rules.encounters.values():
+        for enc_rules in self.rules.encs.values():
             for rule in enc_rules.values():
                 rule.add_dependent_items(ret)
         for rule in self.rules.locs.values():
@@ -306,9 +319,12 @@ class ParserState:
             rule.add_dependent_items(ret)
         for rule in self.rules.enc_types.values():
             rule.add_dependent_items(ret)
-        ret &= self.items.keys()
+        for rule in self.rules.common.values():
+            rule.add_dependent_items(ret)
         ret |= set(self.rom_interface.hm.values())
         ret |= set(self.rom_interface.hm_badge.values())
+        ret |= set(self.rom_interface.req_items)
+        ret &= self.items.keys()
         return ret
 
     def generate_locations(self) -> Mapping[str, Sequence[str]]:
@@ -326,7 +342,7 @@ class ParserState:
         return ret
 
     def get_item_set(self) -> Set[str]:
-        return self.items.keys() | {event for region in self.regions.values() for event in region.events}
+        return self.items.keys() | {event for region in self.regions.values() for event in region.events} | {f"mon_{spec}" for spec in self.species}
 
     def item_name_map(self, name: str) -> str:
         if name in self.items:
@@ -336,13 +352,13 @@ class ParserState:
 
     def create_loc_rule(self, type_rule: Rule, loc: str) -> Rule:
         if loc in self.rules.locs:
-            return Rule({self.rules.locs[loc], type_rule})
+            return Rule(frozenset({self.rules.locs[loc], type_rule}))
         else:
             return type_rule
 
     def create_enc_rule(self, enc_type: str, region: str) -> Rule:
-        if region in self.rules.encounters and enc_type in self.rules.encounters[region]:
-            return Rule({self.rules.encounters[region][enc_type], self.rules.enc_types[enc_type]})
+        if region in self.rules.encs and enc_type in self.rules.encs[region]:
+            return Rule(frozenset({self.rules.encs[region][enc_type], self.rules.enc_types[enc_type]}))
         else:
             return self.rules.enc_types[enc_type]
 
@@ -361,7 +377,7 @@ class ParserState:
             for src, eles in self.rules.exits.items()
             for dest, rule in eles.items()]
         ret["EXIT_RULES"] += [f"\"{self.encounter_connection(region, type)}\": {rule.to_string(item_set, self.item_name_map)},\n"
-            for region, eles in self.rules.encounters.items()
+            for region, eles in self.rules.encs.items()
             for type, rule in eles.items()
             if type not in self.rules.enc_types]
         ret["EXIT_RULES"] += [f"\"{self.encounter_connection(region, type)}\": {self.create_enc_rule(type, region).to_string(item_set, self.item_name_map)},\n"
@@ -376,6 +392,11 @@ class ParserState:
             for type, type_rule in self.rules.loc_types.items()
             for loc, location in self.locations.items()
             if location.type == type]
+        ret["LOCATION_RULES"] += [f"\"{event}\": {rule.to_string(item_set, self.item_name_map)},\n"
+            for event, rule in self.rules.events.items()]
+        
+        ret["COMMON_RULES"] = [f"\"{name}\": {rule.to_string(item_set, self.item_name_map)},\n"
+                                for name, rule in self.rules.common.items()]
 
         return ret
 
@@ -394,6 +415,9 @@ class ParserState:
 
         ret["SPECIES"] = [f"\"{name}\": {spec.to_string(self.item_name_map)},\n"
             for name, spec in self.species.items()]
+        ret["REGIONAL_SPECIES"] = [f"\"{name}\",\n"
+            for name, spec in self.species.items()
+            if spec.regional]
 
         return ret
 

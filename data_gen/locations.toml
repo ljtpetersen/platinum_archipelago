@@ -550,14 +550,6 @@ check = 863
 label = "Route 226 - Hidden (PP Max)"
 id = 133
 
-[route_226_rare_candy]
-original_item = "rare_candy"
-type = "hidden"
-table = "hidden"
-check = 889
-label = "Route 226 - Hidden (Rare Candy)"
-id = 159
-
 [route_227_charcoal]
 original_item = "charcoal"
 type = "overworld"
@@ -861,14 +853,6 @@ table = "hidden"
 check = 876
 label = "Resort Area - Hidden (Nugget)"
 id = 146
-
-[resort_area_thunderstone]
-original_item = "thunderstone"
-type = "hidden"
-table = "hidden"
-check = 875
-label = "Resort Area - Hidden (Thunderstone)"
-id = 145
 
 [twinleaf_town_odd_keystone]
 original_item = "odd_keystone"
@@ -1221,14 +1205,6 @@ table = "overworld"
 check = 1138
 label = "Route 219 - Overworld (Antidote)"
 id = 124
-
-[route_219_zinc]
-original_item = "zinc"
-type = "hidden"
-table = "hidden"
-check = 899
-label = "Route 219 - Hidden (Zinc)"
-id = 169
 
 [route_221_protein]
 original_item = "protein"
@@ -1691,7 +1667,7 @@ original_item = "zinc"
 type = "hidden"
 table = "hidden"
 check = 899
-label = "Route 220 - Hidden (Zinc)"
+label = "Route 219 - Hidden (Zinc)"
 id = 169
 
 [route_202_potion]
@@ -1805,14 +1781,6 @@ table = "overworld"
 check = 1272
 label = "Jubilife City - Overworld (Potion)"
 id = 257
-
-[jubilife_city_stardust]
-original_item = "stardust"
-type = "hidden"
-table = "hidden"
-check = 891
-label = "Jubilife City - Hidden (Stardust)"
-id = 161
 
 [solaceon_town_pp_up]
 original_item = "pp_up"
@@ -2542,14 +2510,6 @@ check = 1037
 label = "Route 205 - Overworld (Guard Spec.)"
 id = 23
 
-[route_205_north_super_potion]
-original_item = "super_potion"
-type = "hidden"
-table = "hidden"
-check = 880
-label = "Route 205 - Hidden (Super Potion)"
-id = 150
-
 [eterna_city_tm46]
 original_item = "tm46"
 type = "overworld"
@@ -2581,14 +2541,6 @@ table = "hidden"
 check = 880
 label = "Eterna City - Hidden (Super Potion)"
 id = 150
-
-[eterna_city_great_ball]
-original_item = "great_ball"
-type = "hidden"
-table = "hidden"
-check = 733
-label = "Eterna City - Hidden (Great Ball)"
-id = 3
 
 [eterna_city_moon_stone]
 original_item = "moon_stone"
@@ -2765,22 +2717,6 @@ table = "hidden"
 check = 761
 label = "Valor Lakefront - Hidden (Sun Stone)"
 id = 31
-
-[valor_lakefront_pp_up]
-original_item = "pp_up"
-type = "hidden"
-table = "hidden"
-check = 737
-label = "Valor Lakefront - Hidden (PP Up)"
-id = 7
-
-[valor_lakefront_max_revive]
-original_item = "max_revive"
-type = "hidden"
-table = "hidden"
-check = 896
-label = "Valor Lakefront - Hidden (Max Revive)"
-id = 166
 
 [valor_lakefront_big_mushroom]
 original_item = "big_mushroom"
@@ -3310,14 +3246,6 @@ check = 742
 label = "Route 207 - Hidden (Rare Candy)"
 id = 12
 
-[route_207_red_shard]
-original_item = "red_shard"
-type = "hidden"
-table = "hidden"
-check = 738
-label = "Route 207 - Hidden (Red Shard)"
-id = 8
-
 [route_207_poke_ball_0]
 original_item = "poke_ball"
 type = "hidden"
@@ -3397,22 +3325,6 @@ table = "hidden"
 check = 813
 label = "Mt. Coronet - Hidden (Max Repel)"
 id = 83
-
-[mt_coronet_outside_south_star_piece]
-original_item = "star_piece"
-type = "hidden"
-table = "hidden"
-check = 814
-label = "Mt. Coronet - Hidden (Star Piece) 1"
-id = 84
-
-[mt_coronet_outside_south_star_piece_0]
-original_item = "star_piece"
-type = "hidden"
-table = "hidden"
-check = 822
-label = "Mt. Coronet - Hidden (Star Piece) 2"
-id = 92
 
 [mt_coronet_outside_south_blue_shard]
 original_item = "blue_shard"
@@ -3525,22 +3437,6 @@ table = "hidden"
 check = 991
 label = "Mt. Coronet - Hidden (Ultra Ball)"
 id = 261
-
-[mt_coronet_outside_north_star_piece]
-original_item = "star_piece"
-type = "hidden"
-table = "hidden"
-check = 814
-label = "Mt. Coronet - Hidden (Star Piece) 3"
-id = 84
-
-[mt_coronet_outside_north_star_piece_0]
-original_item = "star_piece"
-type = "hidden"
-table = "hidden"
-check = 822
-label = "Mt. Coronet - Hidden (Star Piece) 4"
-id = 92
 
 [mt_coronet_outside_north_stardust]
 original_item = "stardust"
@@ -4422,14 +4318,6 @@ check = 733
 label = "Route 211 - Hidden (Great Ball)"
 id = 3
 
-[route_211_west_moon_stone]
-original_item = "moon_stone"
-type = "hidden"
-table = "hidden"
-check = 958
-label = "Route 211 - Hidden (Moon Stone)"
-id = 228
-
 [oreburgh_city_dire_hit]
 original_item = "dire_hit"
 type = "overworld"
@@ -4861,3 +4749,355 @@ table = "base"
 check = 0x6B
 label = "Fight Area - Super Rod (From Fisherman)"
 id = 24
+
+[twinleaf_town_player_house_1f_running_shoes]
+original_item = "running_shoes"
+type = "running_shoes"
+table = "base"
+check = { id = 0x40A4, value = 4, op = "ge" }
+label = "Twinleaf Town - Running Shoes (From Mom)"
+id = 25
+
+[twinleaf_town_player_house_1f_journal]
+original_item = "journal"
+type = "key_item"
+table = "base"
+check = 0x8F
+label = "Twinleaf Town - Journal (From Mom)"
+id = 26
+
+[twinleaf_town_player_house_1f_parcel]
+original_item = "parcel"
+type = "key_item"
+table = "base"
+check = 0x8F
+label = "Twinleaf Town - Parcel (From Rival's Mom)"
+id = 27
+
+[route_201_potion]
+original_item = "potion"
+type = "npc_gift"
+table = "base"
+check = 0x6C
+label = "Route 201 - Potion (From Clerk)"
+id = 28
+
+[sandgem_town_pokemon_research_lab_pokedex]
+original_item = "pokedex"
+type = "pokedex"
+table = "base"
+check = 0x90
+label = "Pokemon Research Lab - Pokédex (From Rowan)"
+id = 29
+
+[sandgem_town_pokemon_research_lab_pokedex_2]
+original_item = "pokedex"
+type = "pokedex"
+table = "base"
+check = 0xB62
+label = "Pokemon Research Lab - National Pokédex (From Oak)"
+id = 30
+
+[sandgem_town_pokemon_research_lab_poke_radar]
+original_item = "poke_radar"
+type = "key_item"
+table = "base"
+check = 0xB62
+label = "Pokemon Research Lab - Poké Radar (From Rowan)"
+id = 31
+
+[sandgem_town_tm27]
+original_item = "tm27"
+type = "npc_gift"
+table = "base"
+check = { id = 0x2C4, invert = true }
+label = "Sandgem Town - TM27 (From Rowan)"
+id = 32
+
+[pal_park_lobby_kitchentimer]
+original_item = "kitchentimer"
+type = "poketchapp"
+table = "base"
+check = 0xB63
+label = "Pal Park Lobby - Kitchen Timer App"
+id = 33
+
+[pal_park_lobby_colorchanger]
+original_item = "colorchanger"
+type = "poketchapp"
+table = "base"
+check = 0xB64
+label = "Pal Park Lobby - Color Changer App"
+id = 34
+
+[pal_park_lobby_counter]
+original_item = "radarchaincounter"
+type = "poketchapp"
+table = "base"
+check = { id = 0x40C6, value = 1 }
+label = "Pal Park Lobby - Trainer Counter App"
+id = 35
+
+[route_202_poke_ball_x5]
+original_item = "poke_ball_x5"
+type = "npc_gift"
+table = "base"
+check = 0x188
+label = "Route 202 - Poké Ball x5 (From Dawn)"
+id = 36
+
+[jubilife_city_vs_recorder]
+original_item = "vs_recorder"
+type = "key_item"
+table = "base"
+check = { id = 0x4077, value = 1, op = "ge" }
+label = "Jubilife City - Vs. Recorder (From Looker)"
+id = 37
+
+[trainers_school_town_map]
+original_item = "town_map"
+type = "key_item"
+table = "base"
+check = 0x1F4
+label = "Trainers' School - Town Map (From Parcel)"
+id = 38
+
+[trainers_school_potion]
+original_item = "potion"
+type = "npc_gift"
+table = "base"
+check = 0x112
+label = "Trainers' School - Potion (From Schoolkid)"
+id = 39
+
+[jubilife_city_coupon_1]
+original_item = "coupon_1"
+type = "all_key_item"
+table = "base"
+check = 0xED
+label = "Jubilife City - Coupon 1 (From Poketch Campaign Clown)"
+id = 40
+
+[jubilife_city_coupon_2]
+original_item = "coupon_2"
+type = "all_key_item"
+table = "base"
+check = 0xEE
+label = "Jubilife City - Coupon 2 (From Poketch Campaign Clown)"
+id = 41
+
+[jubilife_city_coupon_3]
+original_item = "coupon_3"
+type = "all_key_item"
+table = "base"
+check = 0xEF
+label = "Jubilife City - Coupon 3 (From Poketch Campaign Clown)"
+id = 42
+
+[jubilife_city_poketch]
+original_item = "poketch"
+type = "poketchapp"
+table = "base"
+check = { id = 0x4077, value = 2, op = "ge" }
+label = "Jubilife City - Poketch"
+id = 43
+
+[jubilife_city_calculator]
+original_item = "calculator"
+type = "poketchapp"
+table = "base"
+check = { id = 0x4077, value = 2, op = "ge" }
+label = "Jubilife City - Calculator App"
+id = 44
+
+[jubilife_city_pedometer]
+original_item = "pedometer"
+type = "poketchapp"
+table = "base"
+check = { id = 0x4077, value = 2, op = "ge" }
+label = "Jubilife City - Pedometer App"
+id = 45
+
+[jubilife_city_partystatus]
+original_item = "partystatus"
+type = "poketchapp"
+table = "base"
+check = { id = 0x4077, value = 2, op = "ge" }
+label = "Jubilife City - Party Status App"
+id = 46
+
+[cycle_shop_bicycle]
+original_item = "bicycle"
+type = "bicycle"
+table = "base"
+check = 0x82
+label = "Cycle Shop - Bicycle"
+id = 47
+
+[oreburgh_city_northwest_house_2f_dusk_ball]
+original_item = "dusk_ball"
+type = "npc_gift"
+table = "base"
+check = 0xC0
+label = "Oreburgh City - Dusk Ball (Gift in Northwest House)"
+id = 48
+
+[oreburgh_city_north_house_2f_heal_ball]
+original_item = "heal_ball"
+type = "npc_gift"
+table = "base"
+check = 0xC1
+label = "Oreburgh City - Heal Ball (Gift in North House)"
+id = 49
+
+[oreburgh_city_east_house_2f_great_ball]
+original_item = "great_ball"
+type = "npc_gift"
+table = "base"
+check = 0x10A
+label = "Oreburgh City - Great Ball (Gift in East House)"
+id = 50
+
+[oreburgh_city_super_potion]
+original_item = "super_potion"
+type = "npc_gift"
+table = "base"
+check = 0x109
+label = "Oreburgh City - Super Potion (Gift from Worker by Mines)"
+id = 51
+
+[jubilife_city_condominiums_1f_quick_claw]
+original_item = "quick_claw"
+type = "npc_gift"
+table = "base"
+check = 0xBF
+label = "Jubilife City Condominiums - Quick Claw"
+id = 52
+
+[jubilife_city_fashion_case]
+original_item = "fashion_case"
+type = "key_item"
+table = "base"
+check = 0xF2
+label = "Jubilife City - Fashion Case (From Reporter after Defeating Grunts)"
+id = 53
+
+[route_204_north_tm78]
+original_item = "tm78"
+type = "npc_gift"
+table = "base"
+check = 0xC5
+label = "Route 204 North - TM78 (Gift)"
+id = 54
+
+[floaroma_meadow_works_key]
+original_item = "works_key"
+type = "key_item"
+table = "base"
+check = 0x9F
+label = "Floaroma Meadow - Works Key"
+id = 55
+
+[floaroma_meadow_honey_x10]
+original_item = "honey_x10"
+type = "npc_gift"
+table = "base"
+check = 0x9F
+label = "Floaroma Meadow - Honey x10"
+id = 56
+
+[floaroma_town_middle_house_tm88]
+original_item = "tm88"
+type = "npc_gift"
+table = "base"
+check = 0x83
+label = "Floaroma Town - TM88 (Middle House)"
+id = 57
+
+[flower_shop_sprayduck]
+original_item = "sprayduck"
+type = "key_item"
+table = "base"
+check = 0x80
+label = "Floaroma Town Flower Shop - Sprayduck"
+id = 58
+
+[fuego_ironworks_building_star_piece_0]
+original_item = "star_piece"
+type = "npc_gift"
+table = "base"
+check = 0x138
+label = "Fuego Ironworks - Star Piece (From Mr. Fuego)"
+id = 59
+
+[eterna_forest_soothe_bell]
+original_item = "soothe_bell"
+type = "npc_gift"
+table = "base"
+check = 0xE3
+label = "Eterna Forest - Soothe Bell (From Cheryl)"
+id = 60
+
+[eterna_city_pokecenter_1f_friendshipchecker]
+original_item = "friendshipchecker"
+type = "poketchapp"
+table = "base"
+check = 0xB66
+label = "Eterna City Pokémon Center - Friendship Checker App"
+id = 61
+
+[eterna_city_underground_man_house_explorer_kit]
+original_item = "explorer_kit"
+type = "key_item"
+table = "base"
+check = 0x79
+label = "Eterna City Underground Man House - Explorer Kit"
+id = 62
+
+[eterna_city_south_house_upgrade]
+original_item = "upgrade"
+type = "npc_gift"
+table = "base"
+check = 0x119
+label = "Eterna City - Up-Grade (From Oak)"
+id = 63
+
+[route_206_cycling_road_north_gate_exp_share]
+original_item = "exp_share"
+type = "npc_gift"
+table = "base"
+check = 0x10B
+label = "Eterna City - Exp. Share (From Rowan's Assistant)"
+id = 64
+
+[route_207_vs_seeker]
+original_item = "vs_seeker"
+type = "npc_gift"
+table = "base"
+check = { id = 0x408C, value = 1, op = "ge" }
+label = "Route 207 - Vs. Seeker (From Counterpart)"
+id = 65
+
+[mt_coronet_2f_black_flute]
+original_item = "black_flute"
+type = "npc_gift"
+table = "base"
+check = 0x160
+label = "Mt. Coronet 2F - Black Flute (From Looker)"
+id = 66
+
+[route_208_odd_keystone]
+original_item = "odd_keystone"
+type = "npc_gift"
+table = "base"
+check = 0x13F
+label = "Route 208 - Odd Keystone (From Black Belt)"
+id = 67
+
+[route_208_house_berrysearcher]
+original_item = "berrysearcher"
+type = "poketchapp"
+table = "base"
+check = 0xB6B
+label = "Route 208 House - Berry Searcher App"
+id = 68

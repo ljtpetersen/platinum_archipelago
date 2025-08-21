@@ -16,3 +16,7 @@ class SpeciesData:
 species: Mapping[str, SpeciesData] = {
     # TEMPLATE: SPECIES
 }
+
+regional_mons: Set[str] = frozenset({
+    # TEMPLATE: REGIONAL_SPECIES
+})

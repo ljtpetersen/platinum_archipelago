@@ -1,6 +1,118 @@
-exits.ravaged_path.route_204_north = "rock_smash"
 loc_types.hidden = "dowsingmachine_if_opt"
+
 enc_types.surf = "surf"
 enc_types.good_rod = "good_rod"
 enc_types.super_rod = "super_rod"
 enc_types.old_rod = "old_rod"
+
+common.national_dex = "pokedex * 2"
+
+locs.twinleaf_town_odd_keystone = "surf"
+locs.lake_verity_tm38 = "surf"
+
+events.event_lake_explosion = "iron_island_get_hm04 & event_mine_badge"
+exits.valor_lakefront.lake_valor_drained = "event_lake_explosion"
+exits.verity_lakefront.lake_verity = "event_lake_explosion"
+exits.acuity_lakefront.lake_acuity = "event_lake_explosion"
+
+locs.sandgem_town_pokemon_research_lab_pokedex_2 = "regional_mons(50)"
+locs.sandgem_town_pokemon_research_lab_poke_radar = "regional_mons(50)"
+
+exits.route_219.route_220 = "surf"
+exits.route_221.pal_park_lobby = "national_dex"
+#locs.pal_park_lobby_kitchentimer = "mon_snorlax"
+#locs.pal_park_lobby_colorchanger = "mon_kecleon & mon_snorlax"
+
+locs.trainers_school_town_map = "parcel"
+locs.jubilife_city_coupon_1 = "parcel"
+locs.jubilife_city_coupon_2 = "parcel"
+locs.jubilife_city_coupon_3 = "parcel"
+locs.jubilife_city_poketch = "parcel & coupon_1 & coupon_2 & coupon_3"
+exits.jubilife_city.route_203 = "parcel & coupon_1 & coupon_2 & coupon_3"
+
+exits.oreburgh_gate_1f.oreburgh_gate_b1f = "rock_smash"
+locs.oreburgh_gate_b1f_tm31 = "surf | bicycle"
+locs.oreburgh_gate_b1f_tm01 = "surf & strength"
+locs.oreburgh_gate_b1f_earth_plate = "surf & strength"
+
+locs.oreburgh_city_north_house_2f_heal_ball = "mon_geodude"
+exits.route_207_south.route_207 = "bicycle"
+
+locs.jubilife_city_fashion_case = "event_coal_badge"
+
+locs.route_204_south_sea_incense = "surf"
+locs.route_204_south_hp_up = "surf"
+
+locs.ravaged_path_tm39 = "rock_smash"
+locs.ravaged_path_tm03 = "rock_smash & surf"
+locs.ravaged_path_luck_incense = "rock_smash & surf"
+exits.ravaged_path.route_204_north = "rock_smash"
+encs.ravaged_path.old_rod = "rock_smash"
+encs.ravaged_path.good_rod = "rock_smash"
+encs.ravaged_path.super_rod = "rock_smash"
+encs.ravaged_path.surf = "rock_smash"
+
+locs.route_204_north_tm78 = "cut"
+
+exits.floaroma_town.route_205_south = "works_key | surf"
+exits.route_205_south.fuego_ironworks_outside = "surf"
+locs.valley_windworks_outside_tm24 = "surf"
+locs.valley_windworks_outside_electirizer = "surf"
+locs.valley_windworks_outside_max_elixir = "surf"
+
+exits.route_205_south.eterna_forest_outside = "cut"
+exits.route_205_north.eterna_forest_outside = "cut"
+locs.eterna_forest_insect_plate = "cut"
+locs.eterna_forest_ether = "cut"
+exits.eterna_forest.old_chateau = "cut"
+
+exits.eterna_city.team_galactic_eterna_building_1f = "cut"
+locs.eterna_city_tm46 = "cut"
+locs.cycle_shop_bicycle = "event_eterna_defeat_team_galactic"
+locs.eterna_city_moon_stone = "surf"
+locs.eterna_city_south_house_upgrade = "event_met_oak_pal_park"
+locs.route_206_cycling_road_north_gate_exp_share = "mons(35)"
+
+locs.route_211_west_tm12 = "rock_smash"
+
+exits.mt_coronet_1f_north_room_1_left.mt_coronet_1f_north_room_1_middle = "rock_smash"
+exits.mt_coronet_1f_north_room_1_middle.mt_coronet_1f_north_room_1_left = "rock_smash | strength"
+exits.mt_coronet_1f_north_room_1_middle.mt_coronet_1f_north_room_1_right = "strength"
+exits.mt_coronet_1f_north_room_1_right.mt_coronet_1f_north_room_1_middle = "strength"
+exits.mt_coronet_1f_north_room_1_right.mt_coronet_1f_north_room_1_bottom = "strength"
+exits.mt_coronet_1f_north_room_1_right.mt_coronet_1f_north_room_1_top = "strength"
+exits.mt_coronet_1f_north_room_1_top.mt_coronet_1f_north_room_1_right = "strength"
+exits.mt_coronet_1f_north_room_1_bottom.mt_coronet_1f_north_room_1_right = "strength"
+locs.mt_coronet_1f_north_room_1_rare_candy = "rock_smash"
+locs.mt_coronet_1f_north_room_1_tm69 = "strength"
+
+exits.route_206_cycling_road_north_gate.cycling_road = "bicycle"
+exits.route_206_cycling_road_south_gate.cycling_road = "bicycle"
+exits.route_206.route_206_upper = "cut"
+exits.route_206_upper.wayward_cave_1f = "flash_if_opt"
+
+locs.wayward_cave_1f_tm32 = "rock_smash"
+locs.wayward_cave_1f_revive = "rock_smash"
+locs.wayward_cave_1f_escape_rope = "rock_smash"
+locs.wayward_cave_1f_yellow_shard = "rock_smash"
+locs.wayward_cave_1f_great_ball = "rock_smash"
+locs.wayward_cave_1f_green_shard = "rock_smash"
+locs.wayward_cave_1f_super_potion = "rock_smash"
+locs.wayward_cave_1f_blue_shard = "rock_smash"
+
+locs.wayward_cave_1f_tm26 = "bicycle"
+locs.wayward_cave_b1f_grip_claw = "bicycle"
+locs.wayward_cave_b1f_max_ether = "bicycle"
+locs.wayward_cave_b1f_rare_candy = "bicycle"
+locs.wayward_cave_b1f_stardust = "bicycle"
+
+locs.route_207_iron = "rock_climb"
+
+locs.mt_coronet_1f_south_protein = "surf"
+locs.mt_coronet_1f_south_dawn_stone = "surf"
+exits.mt_coronet_1f_south.mt_coronet_2f_right = "surf & rock_climb"
+exits.mt_coronet_2f_right.mt_coronet_2f_left = "strength"
+
+locs.route_208_star_piece = "rock_climb"
+locs.route_208_carbos = "waterfall"
+locs.route_208_ether = "rock_smash"

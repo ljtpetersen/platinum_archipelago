@@ -32,7 +32,7 @@ class VersionData:
 AP_VERSION_DATA: Mapping[int, VersionData] = {
     0: VersionData(
         savedata_ptr_offset=16,
-        champion_flag=0,
+        champion_flag=2404,
         recv_item_id_offset=20,
         vars_flags_offset_in_save=0xDC0,
         vars_offset_in_vars_flags=0,

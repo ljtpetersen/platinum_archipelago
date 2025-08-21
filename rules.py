@@ -13,6 +13,8 @@ def always_true(_: CollectionState) -> bool:
     return True
 
 def is_location_present(label: str, world: "PokemonPlatinumWorld") -> bool:
+    if label.startswith("event_"):
+        return True
     const_name = raw_id_to_const_name[world.location_name_to_id[label]]
     return location_types[locationdata.locations[const_name].type].is_enabled(world.options) or const_name in locationdata.required_locations
 
@@ -32,7 +34,10 @@ def set_rules(world: "PokemonPlatinumWorld") -> None:
         common_rules["flash_if_opt"] = always_true
         common_rules["defog_if_opt"] = always_true
     if world.options.dowsing_machine_logic.value == 1:
-        common_rules["dowsingmachine_if_opt"] = lambda state : state.has(itemdata.items["dowsingmachine"].label, world.player)
+        common_rules["dowsingmachine_if_opt"] = lambda state : state.has_all([
+            itemdata.items["dowsingmachine"].label,
+            itemdata.items["poketch"].label,
+        ], world.player)
     else:
         common_rules["dowsingmachine_if_opt"] = always_true
 
@@ -51,5 +56,4 @@ def set_rules(world: "PokemonPlatinumWorld") -> None:
         case _:
             raise ValueError(f"invalid goal {world.options.goal}")
     world.multiworld.completion_condition[world.player] = lambda state : state.has(goal_event, world.player)
-
 

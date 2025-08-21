@@ -300,7 +300,6 @@ locs = [
     "route_226_tinymushroom",
     "route_226_big_mushroom",
     "route_226_pp_max",
-    "route_226_rare_candy",
 ]
 
 [route_227]
@@ -510,7 +509,11 @@ exits = [
     "sandgem_town_mart",
     "sandgem_town_pokecenter_1f",
     "sandgem_town_pokemon_research_lab",
+    "route_201",
+    "route_202",
+    "route_219",
 ]
+locs = ["sandgem_town_tm27"]
 header = "sandgem_town"
 
 [sandgem_town_house]
@@ -570,7 +573,6 @@ header = "resort_area"
 locs = [
     "resort_area_nugget",
     "resort_area_nugget_0",
-    "resort_area_thunderstone",
 ]
 
 [resort_area_ribbon_syndicate_1f]
@@ -629,11 +631,15 @@ exits = [
     "twinleaf_town",
     "twinleaf_town_player_house_2f",
 ]
+locs = [
+    "twinleaf_town_player_house_1f_running_shoes",
+    "twinleaf_town_player_house_1f_journal",
+    "twinleaf_town_player_house_1f_parcel",
+]
 header = "twinleaf_town_player_house_1f"
 
 [twinleaf_town]
 exits = [
-    "verity_lakefront",
     "twinleaf_town_southwest_house",
     "twinleaf_town_player_house_1f",
     "twinleaf_town_northeast_house",
@@ -648,10 +654,10 @@ locs = [
 [route_201]
 exits = [
     "twinleaf_town",
-    "route_202",
+    "sandgem_town",
     "verity_lakefront",
-    "route_219",
 ]
+locs = ["route_201_potion"]
 header = "route_201"
 
 [twinleaf_town_southwest_house]
@@ -744,7 +750,6 @@ header = "pastoria_city_observatory_gate_2f"
 
 [verity_lakefront]
 exits = [
-    "twinleaf_town",
     "lake_verity_low_water",
     "lake_verity",
     "route_201",
@@ -807,6 +812,7 @@ locs = [
     "iron_island_star_piece",
     "iron_island_hm04",
 ]
+events = ["iron_island_get_hm04"]
 
 [iron_island_b3f]
 exits = [
@@ -933,6 +939,7 @@ header = "grand_lake_route_213_lobby"
 exits = [
     "pastoria_city",
 ]
+events = ["event_fen_badge"]
 locs = [
     "pastoria_city_gym_fen_badge",
     "pastoria_city_gym_tm55",
@@ -954,13 +961,12 @@ header = "twinleaf_town_rival_house_2f"
 
 [route_219]
 exits = [
-    "route_201",
+    "sandgem_town",
     "route_220",
 ]
 header = "route_219"
 locs = [
     "route_219_antidote",
-    "route_219_zinc",
 ]
 
 [grand_lake_route_213_northwest_house]
@@ -999,7 +1005,13 @@ exits = [
     "route_221",
     "pal_park",
 ]
+locs = [
+    #"pal_park_lobby_kitchentimer",
+    #"pal_park_lobby_colorchanger",
+    "pal_park_lobby_counter",
+]
 header = "pal_park_lobby"
+events = ["event_met_oak_pal_park"]
 
 [stark_mountain_outside]
 exits = [
@@ -1113,8 +1125,6 @@ locs = [
 
 [route_208]
 exits = [
-    "route_212_north",
-    "hearthome_city",
     "mt_coronet_1f_south",
     "route_208_house",
     "route_208_gate_to_hearthome_city",
@@ -1126,6 +1136,7 @@ locs = [
     "route_208_great_ball",
     "route_208_star_piece",
     "route_208_tinymushroom",
+    "route_208_odd_keystone",
 ]
 
 [route_212_gate_to_hearthome_city]
@@ -1179,6 +1190,7 @@ exits = [
     "route_208",
 ]
 header = "route_208_house"
+locs = ["route_208_house_berrysearcher"]
 
 [route_209_gate_to_hearthome_city]
 exits = [
@@ -1309,12 +1321,13 @@ header = "hearthome_city_northeast_house_elevator"
 [route_202]
 exits = [
     "jubilife_city",
-    "route_201",
+    "sandgem_town",
 ]
 header = "route_202"
 locs = [
     "route_202_potion",
     "route_202_stardust",
+    "route_202_poke_ball_x5",
 ]
 
 [hearthome_city_pokecenter_1f]
@@ -1430,7 +1443,6 @@ exits = [
     "jubilife_city_unknown_house_3",
     "jubilife_tv_1f",
     "jubilife_city_south_house_1f",
-    "route_218",
     "jubilife_city_pokecenter_1f",
     "route_203",
     "trainers_school",
@@ -1440,7 +1452,15 @@ exits = [
 header = "jubilife_city"
 locs = [
     "jubilife_city_potion",
-    "jubilife_city_stardust",
+    "jubilife_city_vs_recorder",
+    "jubilife_city_coupon_1",
+    "jubilife_city_coupon_2",
+    "jubilife_city_coupon_3",
+    "jubilife_city_poketch",
+    "jubilife_city_calculator",
+    "jubilife_city_pedometer",
+    "jubilife_city_partystatus",
+    "jubilife_city_fashion_case",
 ]
 
 [jubilife_city_unknown_house_4]
@@ -1505,7 +1525,6 @@ locs = [
 exits = [
     "jubilife_city",
     "ravaged_path",
-    "route_203",
 ]
 header = "route_204_south"
 locs = [
@@ -1682,6 +1701,11 @@ header = "cafe"
 exits = [
     "sandgem_town",
 ]
+locs = [
+    "sandgem_town_pokemon_research_lab_pokedex",
+    "sandgem_town_pokemon_research_lab_pokedex_2",
+    "sandgem_town_pokemon_research_lab_poke_radar",
+]
 header = "sandgem_town_pokemon_research_lab"
 
 [route_222]
@@ -1838,6 +1862,8 @@ exits = [
 header = "trainers_school"
 locs = [
     "trainers_school_x_attack",
+    "trainers_school_town_map",
+    "trainers_school_potion",
 ]
 
 [ravaged_path]
@@ -1857,11 +1883,13 @@ locs = [
 exits = [
     "ravaged_path",
     "floaroma_town",
+    "route_204_south",
 ]
 header = "route_204_north"
 locs = [
     "route_204_north_tm09",
     "route_204_north_awakening",
+    "route_204_north_tm78",
 ]
 
 [route_218_gate_to_canalave_city]
@@ -1965,6 +1993,7 @@ header = "canalave_library_2f"
 exits = [
     "canalave_library_2f",
 ]
+events = ["event_lake_explosion"]
 header = "canalave_library_3f"
 
 [route_205_south]
@@ -2018,11 +2047,12 @@ locs = [
     "eterna_forest_ether",
     "eterna_forest_potion",
     "eterna_forest_insect_plate",
+    "eterna_forest_soothe_bell",
 ]
 
 [fuego_ironworks_outside]
 exits = [
-    "eterna_forest_outside",
+    "floaroma_meadow",
     "fuego_ironworks_building",
     "route_205_south",
 ]
@@ -2047,6 +2077,7 @@ locs = [
     "fuego_ironworks_building_green_shard",
     "fuego_ironworks_building_yellow_shard",
     "fuego_ironworks_building_star_piece",
+    "fuego_ironworks_building_star_piece_0",
     "fuego_ironworks_building_protein",
 ]
 
@@ -2083,7 +2114,6 @@ exits = [
 header = "route_205_north"
 locs = [
     "route_205_north_guard_spec",
-    "route_205_north_super_potion",
 ]
 
 [eterna_city]
@@ -2100,6 +2130,7 @@ exits = [
     "team_galactic_eterna_building_1f",
     "eterna_city_mart",
     "eterna_city_gym",
+    "route_211_west",
 ]
 header = "eterna_city"
 locs = [
@@ -2107,7 +2138,6 @@ locs = [
     "eterna_city_super_potion",
     "eterna_city_draco_plate",
     "eterna_city_super_potion_0",
-    "eterna_city_great_ball",
     "eterna_city_moon_stone",
     "eterna_city_hm01",
 ]
@@ -2129,11 +2159,13 @@ exits = [
     "eterna_city",
 ]
 header = "eterna_city_underground_man_house"
+locs = ["eterna_city_underground_man_house_explorer_kit"]
 
 [eterna_city_gym]
 exits = [
     "eterna_city",
 ]
+events = ["event_forest_badge"]
 locs = [
     "eterna_city_gym_forest_badge",
     "eterna_city_gym_tm86",
@@ -2182,6 +2214,7 @@ exits = [
     "eterna_city_pokecenter_2f",
 ]
 header = "eterna_city_pokecenter_1f"
+locs = ["eterna_city_pokecenter_1f_friendshipchecker"]
 
 [eterna_city_pokecenter_b1f]
 exits = [
@@ -2279,7 +2312,7 @@ exits = [
     "floaroma_town_mart",
     "route_205_south",
     "floaroma_town_pokecenter_1f",
-    "floaroma_meadow",
+    "floaroma_meadow_south",
     "floaroma_town_middle_house",
     "flower_shop",
     "valley_windworks_outside",
@@ -2290,6 +2323,7 @@ header = "floaroma_town"
 exits = [
     "floaroma_town",
 ]
+locs = ["floaroma_town_middle_house_tm88"]
 header = "floaroma_town_middle_house"
 
 [jubilife_tv_2f_gallery]
@@ -2316,8 +2350,6 @@ locs = [
     "valor_lakefront_ultra_ball",
     "valor_lakefront_iron",
     "valor_lakefront_sun_stone",
-    "valor_lakefront_pp_up",
-    "valor_lakefront_max_revive",
     "valor_lakefront_big_mushroom",
 ]
 
@@ -2487,6 +2519,7 @@ header = "turnback_cave_entrance"
 exits = [
     "veilstone_city",
 ]
+events = ["event_cobble_badge"]
 locs = [
     "veilstone_city_gym_cobble_badge",
     "veilstone_city_gym_tm60",
@@ -2524,10 +2557,20 @@ exits = [
 ]
 header = "veilstone_city_prize_exchange"
 
-[floaroma_meadow]
+[floaroma_meadow_south]
 exits = [
     "floaroma_town",
     "floaroma_meadow_house",
+]
+locs = [
+    "floaroma_meadow_works_key",
+    "floaroma_meadow_honey_x10",
+]
+header = "floaroma_meadow"
+
+[floaroma_meadow]
+exits = [
+    "route_205_south",
 ]
 header = "floaroma_meadow"
 locs = [
@@ -2550,7 +2593,7 @@ locs = [
 
 [floaroma_meadow_house]
 exits = [
-    "floaroma_meadow",
+    "floaroma_meadow_south",
 ]
 header = "floaroma_meadow_house"
 
@@ -2559,6 +2602,7 @@ exits = [
     "jubilife_city",
     "jubilife_city_condominiums_2f",
 ]
+locs = ["jubilife_city_condominiums_1f_quick_claw"]
 header = "jubilife_city_condominiums_1f"
 
 [jubilife_city_condominiums_2f]
@@ -2693,9 +2737,15 @@ header = "galactic_hq_control_room"
 [route_206_cycling_road_north_gate]
 exits = [
     "eterna_city",
-    "route_206",
+    "cycling_road",
 ]
 header = "route_206_cycling_road_north_gate"
+locs = ["route_206_cycling_road_north_gate_exp_share"]
+
+[cycling_road]
+exits = ["route_206_cycling_road_north_gate", "route_206_cycling_road_south_gate"]
+header = "route_206"
+accessible_encounters = []
 
 [grand_lake_valor_lakefront_west_house]
 exits = [
@@ -2789,14 +2839,11 @@ exits = [
 ]
 header = "veilstone_city_northwest_house"
 
-[route_206]
+[route_206_upper]
 exits = [
-    "route_206_cycling_road_south_gate",
+    "route_206",
     "wayward_cave_1f",
-    "route_206_cycling_road_north_gate",
-    "route_207",
 ]
-header = "route_206"
 locs = [
     "route_206_poison_barb",
     "route_206_pp_up",
@@ -2805,6 +2852,17 @@ locs = [
     "route_206_ether",
     "route_206_tinymushroom",
 ]
+header = "route_206"
+
+[route_206]
+exits = [
+    "route_206_cycling_road_south_gate",
+    "route_206_upper",
+    "route_206_cycling_road_north_gate",
+    "route_207",
+]
+accessible_encounters = []
+header = "route_206"
 
 [jubilife_city_unknown_house_3]
 exits = [
@@ -2822,50 +2880,77 @@ header = "trophy_garden"
 exits = [
     "floaroma_town",
 ]
+locs = ["flower_shop_sprayduck"]
 header = "flower_shop"
+
+[route_207_south]
+exits = [
+    "oreburgh_city",
+    "route_207",
+]
+locs = [
+    "route_207_poke_ball",
+    "route_207_poke_ball_0",
+]
+header = "route_207"
+
+[route_207_right]
+exits = [
+    "mt_coronet_2f_left",
+    "virt_wayward_cave_1f_red_shard",
+]
+locs = [
+    "route_207_timer_ball",
+    "route_207_iron",
+]
+header = "route_207"
 
 [route_207]
 exits = [
     "mt_coronet_1f_south",
-    "oreburgh_city",
-    "mt_coronet_2f",
     "route_206",
 ]
 header = "route_207"
 locs = [
-    "route_207_poke_ball",
     "route_207_revive",
-    "route_207_iron",
     "route_207_super_potion",
-    "route_207_timer_ball",
     "route_207_rare_candy",
-    "route_207_red_shard",
-    "route_207_poke_ball_0",
     "route_207_great_ball",
     "route_207_revive_0",
     "route_207_dowsingmachine",
+    "route_207_vs_seeker",
 ]
 
-[mt_coronet_2f]
+[mt_coronet_2f_right]
 exits = [
+    "mt_coronet_2f_left",
     "mt_coronet_1f_south",
+]
+header = "mt_coronet_2f"
+locs = [
+    "mt_coronet_2f_max_repel",
+    "mt_coronet_2f_red_shard",
+]
+
+[mt_coronet_2f_left]
+exits = [
     "mt_coronet_3f",
-    "route_207",
+    "mt_coronet_2f_right",
+    "route_207_right",
 ]
 header = "mt_coronet_2f"
 locs = [
     "mt_coronet_2f_max_revive",
-    "mt_coronet_2f_max_repel",
     "mt_coronet_2f_tm80",
     "mt_coronet_2f_escape_rope",
     "mt_coronet_2f_star_piece",
-    "mt_coronet_2f_red_shard",
+    "mt_coronet_2f_black_flute",
 ]
 
 [mt_coronet_3f]
 exits = [
     "mt_coronet_outside_south",
-    "mt_coronet_2f",
+    "mt_coronet_2f_left",
 ]
 header = "mt_coronet_3f"
 locs = [
@@ -2879,8 +2964,6 @@ exits = [
 ]
 header = "mt_coronet_outside_south"
 locs = [
-    "mt_coronet_outside_south_star_piece",
-    "mt_coronet_outside_south_star_piece_0",
     "mt_coronet_outside_south_blue_shard",
     "mt_coronet_outside_south_max_potion",
     "mt_coronet_outside_south_revival_herb",
@@ -2914,8 +2997,6 @@ exits = [
 ]
 header = "mt_coronet_outside_north"
 locs = [
-    "mt_coronet_outside_north_star_piece",
-    "mt_coronet_outside_north_star_piece_0",
     "mt_coronet_outside_north_stardust",
     "mt_coronet_outside_north_full_restore",
     "mt_coronet_outside_north_moon_stone",
@@ -2974,6 +3055,7 @@ header = "solaceon_ruins_room_2_northeast_dead_end"
 [route_206_cycling_road_south_gate]
 exits = [
     "route_206",
+    "cycling_road",
 ]
 header = "route_206_cycling_road_south_gate"
 
@@ -3037,7 +3119,6 @@ header = "valor_cavern"
 [eterna_forest_outside]
 exits = [
     "route_205_north",
-    "fuego_ironworks_outside",
     "route_205_south",
 ]
 header = "eterna_forest_outside"
@@ -3058,7 +3139,7 @@ locs = [
 [mt_coronet_1f_tunnel_room]
 exits = [
     "mt_coronet_outside_north",
-    "mt_coronet_1f_north_room_1",
+    "mt_coronet_1f_north_room_1_bottom",
 ]
 header = "mt_coronet_1f_tunnel_room"
 locs = [
@@ -3070,30 +3151,54 @@ locs = [
     "mt_coronet_1f_tunnel_room_green_shard_0",
 ]
 
-[mt_coronet_1f_north_room_1]
+[mt_coronet_1f_north_room_1_left]
+exits = ["route_211_west", "mt_coronet_1f_north_room_1_middle"]
+header = "mt_coronet_1f_north_room_1"
+locs = [
+    "mt_coronet_1f_north_room_1_energypowder",
+]
+
+[mt_coronet_1f_north_room_1_middle]
+exits = ["mt_coronet_1f_north_room_1_left", "mt_coronet_1f_north_room_1_right"]
+header = "mt_coronet_1f_north_room_1"
+locs = [
+    "mt_coronet_1f_north_room_1_tm69",
+    "mt_coronet_1f_north_room_1_ice_heal",
+    "mt_coronet_1f_north_room_1_stardust",
+]
+
+[mt_coronet_1f_north_room_1_right]
 exits = [
-    "mt_coronet_b1f",
-    "mt_coronet_1f_tunnel_room",
-    "route_211_west",
+    "mt_coronet_1f_north_room_1_middle",
+    "mt_coronet_1f_north_room_1_top",
+    "mt_coronet_1f_north_room_1_bottom",
     "route_211_east",
 ]
 header = "mt_coronet_1f_north_room_1"
 locs = [
-    "mt_coronet_1f_north_room_1_rare_candy",
-    "mt_coronet_1f_north_room_1_tm69",
-    "mt_coronet_1f_north_room_1_escape_rope",
-    "mt_coronet_1f_north_room_1_tm02",
-    "mt_coronet_1f_north_room_1_ice_heal",
-    "mt_coronet_1f_north_room_1_red_shard",
     "mt_coronet_1f_north_room_1_star_piece",
-    "mt_coronet_1f_north_room_1_stardust",
-    "mt_coronet_1f_north_room_1_energypowder",
+    "mt_coronet_1f_north_room_1_escape_rope",
+]
+
+[mt_coronet_1f_north_room_1_top]
+exits = ["mt_coronet_1f_north_room_1_right", "mt_coronet_b1f"]
+header = "mt_coronet_1f_north_room_1"
+locs = [
+    "mt_coronet_1f_north_room_1_red_shard",
+    "mt_coronet_1f_north_room_1_rare_candy",
+]
+
+[mt_coronet_1f_north_room_1_bottom]
+exits = ["mt_coronet_1f_north_room_1_right", "mt_coronet_1f_tunnel_room"]
+header = "mt_coronet_1f_north_room_1"
+locs = [
     "mt_coronet_1f_north_room_1_nugget",
+    "mt_coronet_1f_north_room_1_tm02",
 ]
 
 [mt_coronet_b1f]
 exits = [
-    "mt_coronet_1f_north_room_1",
+    "mt_coronet_1f_north_room_1_top",
     "mt_coronet_1f_north_room_2",
 ]
 header = "mt_coronet_b1f"
@@ -3141,7 +3246,7 @@ locs = [
 
 [route_211_east]
 exits = [
-    "mt_coronet_1f_north_room_1",
+    "mt_coronet_1f_north_room_1_right",
 ]
 header = "route_211_east"
 locs = [
@@ -3343,6 +3448,7 @@ locs = [
 exits = [
     "snowpoint_city",
 ]
+events = ["event_icicle_badge"]
 locs = [
     "snowpoint_city_gym_icicle_badge",
     "snowpoint_city_gym_tm72",
@@ -3451,6 +3557,7 @@ header = "team_galactic_eterna_building_3f"
 locs = [
     "team_galactic_eterna_building_3f_x_special",
 ]
+events = ["event_eterna_defeat_team_galactic"]
 
 [team_galactic_eterna_building_4f]
 exits = [
@@ -3473,7 +3580,8 @@ header = "route_215_gate_to_veilstone_city"
 [wayward_cave_1f]
 exits = [
     "wayward_cave_b1f",
-    "route_206",
+    "route_206_upper",
+    "virt_wayward_cave_1f_red_shard",
 ]
 header = "wayward_cave_1f"
 locs = [
@@ -3483,7 +3591,6 @@ locs = [
     "wayward_cave_1f_escape_rope",
     "wayward_cave_1f_yellow_shard",
     "wayward_cave_1f_great_ball",
-    "wayward_cave_1f_red_shard",
     "wayward_cave_1f_green_shard",
     "wayward_cave_1f_super_potion",
     "wayward_cave_1f_blue_shard",
@@ -3561,13 +3668,13 @@ header = "solaceon_town_pokecenter_b1f"
 
 [route_211_west]
 exits = [
-    "mt_coronet_1f_north_room_1",
+    "mt_coronet_1f_north_room_1_left",
+    "eterna_city",
 ]
 header = "route_211_west"
 locs = [
     "route_211_west_tm12",
     "route_211_west_great_ball",
-    "route_211_west_moon_stone",
 ]
 
 [jubilife_city_southwest_house_1f]
@@ -3596,6 +3703,7 @@ header = "hearthome_city_gym_entrance_room"
 exits = [
     "hearthome_city_gym_entrance_room",
 ]
+events = ["event_relic_badge"]
 locs = [
     "hearthome_city_gym_leader_room_relic_badge",
     "hearthome_city_gym_leader_room_tm65",
@@ -3647,7 +3755,7 @@ exits = [
     "oreburgh_city_north_house_1f",
     "oreburgh_city_east_house_1f",
     "oreburgh_mine_b1f",
-    "route_207",
+    "route_207_south",
 ]
 header = "oreburgh_city"
 locs = [
@@ -3655,12 +3763,14 @@ locs = [
     "oreburgh_city_yellow_shard",
     "oreburgh_city_pearl",
     "oreburgh_city_heart_scale",
+    "oreburgh_city_super_potion",
 ]
 
 [oreburgh_city_gym]
 exits = [
     "oreburgh_city",
 ]
+events = ["event_coal_badge"]
 locs = [
     "oreburgh_city_gym_coal_badge",
     "oreburgh_city_gym_tm76",
@@ -3700,6 +3810,7 @@ exits = [
     "oreburgh_city_north_house_1f",
     "oreburgh_city_north_house_3f",
 ]
+locs = ["oreburgh_city_north_house_2f_heal_ball"]
 header = "oreburgh_city_north_house_2f"
 
 [oreburgh_city_north_house_3f]
@@ -3714,6 +3825,7 @@ exits = [
     "oreburgh_city_east_house_2f",
     "oreburgh_city",
 ]
+locs = ["oreburgh_city_east_house_2f_great_ball"]
 header = "oreburgh_city_east_house_1f"
 
 [oreburgh_city_north_house_4f]
@@ -3746,6 +3858,7 @@ exits = [
     "oreburgh_city_northwest_house_3f",
     "oreburgh_city_northwest_house_1f",
 ]
+locs = ["oreburgh_city_northwest_house_2f_dusk_ball"]
 header = "oreburgh_city_northwest_house_2f"
 
 [oreburgh_city_northwest_house_3f]
@@ -3856,6 +3969,7 @@ header = "solaceon_town_mart"
 exits = [
     "eterna_city",
 ]
+locs = ["cycle_shop_bicycle"]
 header = "cycle_shop"
 
 [hearthome_city_pokemon_fan_club]
@@ -3888,6 +4002,7 @@ header = "sunyshore_city_gym_room_2"
 exits = [
     "sunyshore_city_gym_room_2",
 ]
+events = ["event_beacon_badge"]
 locs = [
     "sunyshore_city_gym_room_3_beacon_badge",
     "sunyshore_city_gym_room_3_tm57",
@@ -4041,7 +4156,7 @@ header = "oreburgh_city_middle_house"
 [mt_coronet_1f_south]
 exits = [
     "route_208",
-    "mt_coronet_2f",
+    "mt_coronet_2f_right",
     "route_207",
 ]
 header = "mt_coronet_1f_south"
@@ -4057,6 +4172,7 @@ locs = [
 exits = [
     "canalave_city",
 ]
+events = ["event_mine_badge"]
 locs = [
     "canalave_city_gym_mine_badge",
     "canalave_city_gym_tm91",
@@ -4089,6 +4205,7 @@ exits = [
     "eterna_city",
 ]
 header = "eterna_city_south_house"
+locs = ["eterna_city_south_house_upgrade"]
 
 [eterna_city_condominiums_3f]
 exits = [
@@ -4223,3 +4340,8 @@ exits = [
     "snowpoint_city",
 ]
 header = "snowpoint_city_east_house"
+
+[virt_wayward_cave_1f_red_shard]
+locs = ["wayward_cave_1f_red_shard"]
+header = "virt"
+exits = []

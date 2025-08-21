@@ -26,6 +26,9 @@ location_types: Mapping[str, LocationType] = {
     "npc_gift": LocationType(is_enabled = lambda opts : opts.npc_gifts.value == 1),
     "rod": LocationType(is_enabled = lambda opts : opts.rods.value == 1),
     "poketchapp": LocationType(is_enabled = lambda opts : opts.poketch_apps.value == 1),
+    "running_shoes": LocationType(is_enabled = lambda opts : opts.running_shoes.value == 1),
+    "bicycle": LocationType(is_enabled = lambda opts : opts.bicycle.value == 1),
+    "pokedex": LocationType(is_enabled = lambda opts : opts.pokedex.value == 1),
 }
 
 def create_location_label_to_code_map() -> Dict[str, int]:
@@ -60,10 +63,14 @@ def create_locations(world: "PokemonPlatinumWorld", regions: Mapping[str, Region
             if not (is_enabled or name in locationdata.required_locations):
                 continue
             item = itemdata.items[loc.original_item]
+            if is_enabled:
+                address = loc.get_raw_id()
+            else:
+                address = None
             plat_loc = PokemonPlatinumLocation(
                 world.player,
                 loc.label,
-                address=loc.get_raw_id(),
+                address=address,
                 parent=region,
                 default_item_id=item.get_raw_id(),
                 is_enabled=is_enabled)

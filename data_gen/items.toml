@@ -1161,6 +1161,7 @@ label = "Exp. Share"
 id = 216
 clas = "bagitem"
 group = "items"
+classification = "useful"
 
 [quick_claw]
 label = "Quick Claw"
@@ -2470,7 +2471,7 @@ group = "key_items"
 [journal]
 label = "Journal"
 id = 433
-clas = "bagitem"
+clas = "specialbagitem"
 group = "key_items"
 
 [seal_case]
@@ -2531,7 +2532,7 @@ group = "key_items"
 [vs_seeker]
 label = "Vs. Seeker"
 id = 443
-clas = "bagitem"
+clas = "specialbagitem"
 group = "key_items"
 
 [coin_case]
@@ -2578,6 +2579,7 @@ label = "Bicycle"
 id = 450
 clas = "bagitem"
 group = "key_items"
+classification = "progression"
 
 [suite_key]
 label = "Suite Key"
@@ -2632,24 +2634,28 @@ label = "Parcel"
 id = 459
 clas = "bagitem"
 group = "key_items"
+classification = "progression"
 
 [coupon_1]
 label = "Coupon 1"
 id = 460
 clas = "bagitem"
 group = "key_items"
+classification = "progression"
 
 [coupon_2]
 label = "Coupon 2"
 id = 461
 clas = "bagitem"
 group = "key_items"
+classification = "progression"
 
 [coupon_3]
 label = "Coupon 3"
 id = 462
 clas = "bagitem"
 group = "key_items"
+classification = "progression"
 
 [storage_key]
 label = "Storage Key"
@@ -2894,3 +2900,38 @@ id = 7
 clas = "badge"
 group = "badges"
 classification = "progression"
+
+[running_shoes]
+label = "Running Shoes"
+id = 1
+clas = "special"
+group = "runningshoes"
+classification = "useful"
+
+[pokedex]
+label = "Upgradable Pokédex"
+id = 2
+clas = "special"
+group = "pokedex"
+classification = "progression"
+
+[poke_ball_x5]
+label = "Poké Ball x5"
+id = 4
+clas = "bagitem"
+group = "balls"
+count = 5
+
+[poketch]
+label = "Pokétch"
+id = 3
+clas = "special"
+group = "poketchapp"
+classification = "progression"
+
+[honey_x10]
+label = "Honey x10"
+id = 94
+clas = "bagitem"
+group = "items"
+count = 10

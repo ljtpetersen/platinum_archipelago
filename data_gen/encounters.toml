@@ -501,22 +501,6 @@ land = [
     "starly",
     "bidoof",
 ]
-surf = [
-    "golduck",
-    "psyduck",
-]
-old_rod = [
-    "magikarp",
-]
-good_rod = [
-    "seaking",
-    "goldeen",
-    "magikarp",
-]
-super_rod = [
-    "seaking",
-    "gyarados",
-]
 
 [pastoria_city]
 surf = [

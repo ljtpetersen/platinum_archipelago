@@ -32,6 +32,16 @@ class RandomizeRods(DefaultOnToggle):
 class RandomizePoketchApps(DefaultOnToggle):
     display_name = "Randomize Poketch Apps"
 
+class RandomizeRunningShoes(Toggle):
+    display_name = "Randomize Running Shoes"
+
+class RandomizeBicycle(Toggle):
+    display_name = "Randomize Bicycle"
+
+class RandomizePokedex(Toggle):
+    """Add the Pokedex to the pool. Note: this also adds the national dex to the pool."""
+    display_name = "Randomize Pokedex"
+
 class HmBadgeRequirements(DefaultOnToggle):
     display_name = "Require Badges for HMs"
 
@@ -130,6 +140,9 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
     key_items: RandomizeKeyItems
     rods: RandomizeRods
     poketch_apps: RandomizePoketchApps
+    running_shoes: RandomizeRunningShoes
+    bicycle: RandomizeBicycle
+    pokedex: RandomizePokedex
 
     hm_badge_requirement: HmBadgeRequirements
     remove_badge_requirements: RemoveBadgeRequirement
