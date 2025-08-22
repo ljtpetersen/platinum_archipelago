@@ -20,13 +20,13 @@ def is_location_present(label: str, world: "PokemonPlatinumWorld") -> bool:
 
 def set_rules(world: "PokemonPlatinumWorld") -> None:
     common_rules = {}
-    rules = ruledata.Rules(world.player, common_rules)
     for hm in Hm:
         if world.options.requires_badge(hm.name):
             rule = ruledata.create_hm_badge_rule(hm, world.player)
         else:
             rule = always_true
         common_rules[f"{hm.name.lower()}_badge"] = rule
+    rules = ruledata.Rules(world.player, common_rules)
     if world.options.visibility_hm_logic.value == 1:
         common_rules["flash_if_opt"] = common_rules["flash"]
         common_rules["defog_if_opt"] = common_rules["defog"]

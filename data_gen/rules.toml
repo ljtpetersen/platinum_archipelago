@@ -15,8 +15,8 @@ exits.valor_lakefront.lake_valor_drained = "event_lake_explosion"
 exits.verity_lakefront.lake_verity = "event_lake_explosion"
 exits.acuity_lakefront.lake_acuity = "event_lake_explosion"
 
-locs.sandgem_town_pokemon_research_lab_pokedex_2 = "regional_mons(50)"
-locs.sandgem_town_pokemon_research_lab_poke_radar = "regional_mons(50)"
+locs.sandgem_town_pokemon_research_lab_pokedex_2 = "regional_mons(60)"
+locs.sandgem_town_pokemon_research_lab_poke_radar = "regional_mons(60)"
 
 exits.route_219.route_220 = "surf"
 exits.route_221.pal_park_lobby = "national_dex"
@@ -114,5 +114,38 @@ exits.mt_coronet_1f_south.mt_coronet_2f_right = "surf & rock_climb"
 exits.mt_coronet_2f_right.mt_coronet_2f_left = "strength"
 
 locs.route_208_star_piece = "rock_climb"
-locs.route_208_carbos = "waterfall"
+locs.route_208_carbos = "surf & waterfall"
 locs.route_208_ether = "rock_smash"
+
+locs.route_209_tm19 = "surf"
+locs.route_209_calcium = "bicycle"
+locs.route_209_tm47 = "cut"
+
+exits.route_209_lost_tower_2f.route_209_lost_tower_3f = "defog_if_opt"
+locs.route_209_lost_tower_5f_cleanse_tag = "defog"
+locs.route_209_lost_tower_5f_spell_tag = "defog"
+
+locs.solaceon_town_pokemonhistory = "regional_mons(50)"
+exits.maniac_tunnel.solaceon_ruins_maniac_tunnel_room = "event_solaceon_ruins"
+locs.solaceon_ruins_room_2_green_shard = "hm05"
+
+exits.route_210_south.route_210_south_upper = "secretpotion"
+exits.route_210_south_upper.route_210_north = "defog_if_opt"
+locs.route_210_north_tm30 = "rock_smash"
+locs.route_210_north_shiny_stone = "rock_climb"
+locs.route_210_north_meadow_plate = "surf & waterfall"
+locs.route_210_north_wave_incense = "surf & waterfall"
+locs.route_210_north_zinc = "rock_climb"
+exits.route_210_north.route_210_grandma_wilma_house = "rock_climb"
+exits.celestic_town.route_210_north = "defog_if_opt"
+
+locs.route_211_east_calcium = "rock_climb & rock_smash"
+locs.route_211_east_tm29 = "rock_climb & rock_smash"
+
+locs.route_215_fist_plate = "cut"
+locs.route_215_tm34 = "cut"
+
+locs.veilstone_city_full_incense = "rock_climb"
+
+exits.veilstone_city_galactic_warehouse_right.veilstone_city_galactic_warehouse = "event_lake_acuity_meet_jupiter"
+exits.veilstone_city_galactic_warehouse.veilstone_city_galactic_warehouse_right = "event_lake_acuity_meet_jupiter"

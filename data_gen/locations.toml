@@ -2790,12 +2790,12 @@ check = 898
 label = "Route 214 - Hidden (Razor Fang)"
 id = 168
 
-[ruin_maniac_cave_short_tm28]
+[maniac_tunnel_tm28]
 original_item = "tm28"
 type = "overworld"
 table = "overworld"
 check = 1130
-label = "Ruin Maniac Cave - Overworld (TM28)"
+label = "Maniac Tunnel - Overworld (TM28)"
 id = 116
 
 [veilstone_city_full_incense]
@@ -5101,3 +5101,131 @@ table = "base"
 check = 0xB6B
 label = "Route 208 House - Berry Searcher App"
 id = 68
+
+[hearthome_city_pokemon_fan_club_poffin_case]
+original_item = "poffin_case"
+type = "key_item"
+table = "base"
+check = 0x8D
+label = "Hearthome City - Poffin Case (In Pokémon Fan Club)"
+id = 69
+
+[hearthome_city_southeast_house_2f_shell_bell]
+original_item = "shell_bell"
+type = "npc_gift"
+table = "base"
+check = 0x8C
+label = "Hearthome City - Shell Bell (In Southeast House)"
+id = 70
+
+[route_209_lost_tower_5f_cleanse_tag]
+id = 71
+check = 0x116
+original_item = "cleanse_tag"
+type = "npc_gift"
+table = "base"
+label = "Route 209 Lost Tower - Cleanse Tag (From NPC At Top)"
+
+[route_209_lost_tower_5f_spell_tag]
+id = 72
+check = 0xA1
+original_item = "spell_tag"
+type = "npc_gift"
+table = "base"
+label = "Route 209 Lost Tower - Spell Tag (From NPC At Top)"
+
+[solaceon_town_pokemonhistory]
+id = 73
+check = 0xB6C
+original_item = "pokemonhistory"
+type = "poketchapp"
+table = "base"
+label = "Solaceon Town - Pokémon History App"
+
+[pokemon_day_care_daycarechecker]
+id = 74
+check = 0xB6D
+original_item = "daycarechecker"
+type = "poketchapp"
+table = "base"
+label = "Pokémon Day-Care - Day-Care Checker App"
+
+[solaceon_ruins_room_2_green_shard]
+id = 75
+check = 0xD2
+original_item = "green_shard"
+type = "npc_gift"
+table = "base"
+label = "Solaceon Ruins - Green Shard (From NPC)"
+
+[solaceon_town_east_house_seal_case]
+id = 76
+check = 0x117
+original_item = "seal_case"
+type = "key_item"
+table = "base"
+label = "Solaceon Town - Seal Case"
+
+[valor_lakefront_secretpotion]
+id = 77
+check = 0xB7
+original_item = "secretpotion"
+type = "key_item"
+table = "base"
+label = "Valor Lakefront - SecretPotion (From Cynthia)"
+
+[route_210_south_tm51]
+id = 78
+check = 0xC7
+original_item = "tm51"
+type = "npc_gift"
+table = "base"
+label = "Route 210 - TM51"
+
+[route_210_south_old_charm]
+id = 79
+check = 0x107
+original_item = "old_charm"
+type = "key_item"
+table = "base"
+label = "Route 210 - Old Charm (From Cynthia)"
+
+[route_211_east_tm77]
+id = 80
+check = 0xC6
+original_item = "tm77"
+type = "npc_gift"
+table = "base"
+label = "Route 211 East - TM77"
+
+[celestic_town_southwest_house_analogwatch]
+id = 81
+check = 0xB6E
+original_item = "analogwatch"
+type = "poketchapp"
+table = "base"
+label = "Celestic Town - Analog Watch App"
+
+[route_215_tm66]
+id = 82
+check = 0xCD
+original_item = "tm66"
+type = "npc_gift"
+table = "base"
+label = "Route 215 - TM66 (From Black Belt)"
+
+[veilstone_city_tm63]
+id = 83
+check = 0xCC
+original_item = "tm63"
+type = "npc_gift"
+table = "base"
+label = "Veilstone City - TM63 (From Roughneck)"
+
+[veilstone_city_southeast_house_coin_case]
+id = 84
+check = 0xBC
+original_item = "coin_case"
+type = "key_item"
+table = "base"
+label = "Veilstone City - Coin Case"

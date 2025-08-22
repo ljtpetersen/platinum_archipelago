@@ -2514,8 +2514,9 @@ group = "key_items"
 [galactic_key]
 label = "Galactic Key"
 id = 440
-clas = "bagitem"
+clas = "specialbagitem"
 group = "key_items"
+classification = "progression"
 
 [red_chain]
 label = "Red Chain"
@@ -2668,6 +2669,7 @@ label = "SecretPotion"
 id = 464
 clas = "bagitem"
 group = "key_items"
+classification = "progression"
 
 [vs_recorder]
 label = "Vs. Recorder"
@@ -2935,3 +2937,10 @@ id = 94
 clas = "bagitem"
 group = "items"
 count = 10
+
+[master_repel]
+label = "Master Repel"
+id = 468
+clas = "bagitem"
+group = "key_items"
+classification = "useful"

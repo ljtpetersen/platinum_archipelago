@@ -378,6 +378,8 @@ locs = [
 
 [celestic_town]
 exits = [
+    "route_210_north",
+    "route_211_east",
     "celestic_town_northeast_house",
     "celestic_town_northwest_house",
     "celestic_town_southwest_house",
@@ -444,6 +446,7 @@ header = "pokemon_league_north_pokecenter_b1f"
 exits = [
     "celestic_town",
 ]
+locs = ["celestic_town_southwest_house_analogwatch"]
 header = "celestic_town_southwest_house"
 
 [pokemon_league_south_pokecenter_b1f]
@@ -1150,9 +1153,7 @@ header = "route_212_gate_to_hearthome_city"
 exits = [
     "poffin_house",
     "hearthome_city_pokecenter_1f",
-    "route_208",
     "hearthome_city_west_gate_to_amity_square",
-    "route_212_north",
     "route_212_gate_to_hearthome_city",
     "hearthome_city_southeast_house_1f",
     "hearthome_city_northwest_house",
@@ -1165,7 +1166,6 @@ exits = [
     "foreign_building",
     "hearthome_city_northeast_house_1f",
     "hearthome_city_mart",
-    "route_209",
 ]
 header = "hearthome_city"
 locs = [
@@ -1310,13 +1310,13 @@ header = "foreign_building"
 [hearthome_city_northeast_house_1f]
 exits = [
     "hearthome_city",
-    "hearthome_city_northeast_house_elevator",
+    "hearthome_city_northeast_house_2f",
 ]
 header = "hearthome_city_northeast_house_1f"
 
-[hearthome_city_northeast_house_elevator]
-exits = []
-header = "hearthome_city_northeast_house_elevator"
+[hearthome_city_northeast_house_2f]
+exits = ["hearthome_city_northeast_house_1f"]
+header = "hearthome_city_northeast_house_2f"
 
 [route_202]
 exits = [
@@ -1372,9 +1372,14 @@ header = "verity_cavern"
 [hearthome_city_southeast_house_1f]
 exits = [
     "hearthome_city",
-    "hearthome_city_southeast_house_elevator",
+    "hearthome_city_southeast_house_2f",
 ]
 header = "hearthome_city_southeast_house_1f"
+
+[hearthome_city_southeast_house_2f]
+exits = ["hearthome_city_southeast_house_1f"]
+header = "hearthome_city_southeast_house_2f"
+locs = ["hearthome_city_southeast_house_2f_shell_bell"]
 
 [route_209]
 exits = [
@@ -1419,10 +1424,6 @@ header = "grand_lake_route_213_northeast_house"
 locs = [
     "grand_lake_route_213_northeast_house_max_revive",
 ]
-
-[hearthome_city_southeast_house_elevator]
-exits = []
-header = "hearthome_city_southeast_house_elevator"
 
 [route_208_gate_to_hearthome_city]
 exits = [
@@ -1474,40 +1475,38 @@ exits = [
     "solaceon_town_northeast_house",
     "solaceon_town_mart",
     "solaceon_town_pokemon_news_press",
-    "solaceon_ruins_room_1",
     "pokemon_day_care",
     "solaceon_town_north_house",
     "solaceon_town_pokecenter_1f",
     "solaceon_town_east_house",
-    "solaceon_ruins_maniac_tunnel_room",
     "route_210_south",
     "route_209",
+    "solaceon_ruins_room_1",
 ]
 header = "solaceon_town"
 locs = [
     "solaceon_town_pp_up",
-    "solaceon_town_rare_candy",
     "solaceon_town_big_mushroom",
+    "solaceon_town_pokemonhistory",
 ]
+
+[solaceon_town_ledge]
+locs = ["solaceon_town_rare_candy"]
+exits = ["solaceon_ruins_maniac_tunnel_room"]
+header = "virt"
 
 [route_210_south]
 exits = [
     "solaceon_town",
     "cafe",
-    "route_210_north",
+    "route_210_south_upper",
     "route_215",
 ]
 header = "route_210_south"
 locs = [
-    "route_210_south_max_repel",
     "route_210_south_super_repel",
-    "route_210_south_nest_ball",
-    "route_210_south_hyper_potion",
-    "route_210_south_full_heal",
-    "route_210_south_ultra_ball",
     "route_210_south_rare_candy",
-    "route_210_south_hyper_potion_0",
-    "route_210_south_ultra_ball_0",
+    "route_210_south_tm51",
 ]
 
 [route_209_lost_tower_2f]
@@ -1533,10 +1532,24 @@ locs = [
     "route_204_south_parlyz_heal",
 ]
 
+[route_210_south_upper]
+exits = ["route_210_north", "route_210_south"]
+header = "route_210_south"
+locs = [
+    "route_210_south_max_repel",
+    "route_210_south_full_heal",
+    "route_210_south_hyper_potion",
+    "route_210_south_hyper_potion_0",
+    "route_210_south_ultra_ball",
+    "route_210_south_ultra_ball_0",
+    "route_210_south_nest_ball",
+    "route_210_south_old_charm",
+]
+
 [route_210_north]
 exits = [
     "route_210_grandma_wilma_house",
-    "route_210_south",
+    "route_210_south_upper",
     "celestic_town",
 ]
 header = "route_210_north"
@@ -1620,6 +1633,7 @@ exits = [
     "solaceon_ruins_room_1_northwest_dead_end",
     "solaceon_ruins_room_1_southeast_dead_end",
 ]
+events = ["event_solaceon_ruins"]
 header = "solaceon_ruins_room_1"
 
 [hearthome_city_mart]
@@ -1659,6 +1673,7 @@ exits = [
     "route_209_lost_tower_4f",
 ]
 header = "route_209_lost_tower_5f"
+locs = ["route_209_lost_tower_5f_cleanse_tag", "route_209_lost_tower_5f_spell_tag"]
 
 [pokemon_day_care]
 exits = [
@@ -2351,6 +2366,7 @@ locs = [
     "valor_lakefront_iron",
     "valor_lakefront_sun_stone",
     "valor_lakefront_big_mushroom",
+    "valor_lakefront_secretpotion",
 ]
 
 [grand_lake_valor_lakefront_east_house]
@@ -2367,16 +2383,14 @@ exits = [
     "solaceon_ruins_room_2_northeast_dead_end",
 ]
 header = "solaceon_ruins_room_2"
+locs = ["solaceon_ruins_room_2_green_shard"]
 
 [route_214]
 exits = [
     "spring_path",
     "route_214_gate_to_veilstone_city",
     "valor_lakefront",
-    "ruin_maniac_cave_short",
-    "ruin_maniac_cave_long",
     "maniac_tunnel",
-    "veilstone_city",
 ]
 header = "route_214"
 locs = [
@@ -2388,15 +2402,6 @@ locs = [
     "route_214_carbos",
     "route_214_big_mushroom",
     "route_214_razor_fang",
-]
-
-[ruin_maniac_cave_short]
-exits = [
-    "route_214",
-]
-header = "ruin_maniac_cave_short"
-locs = [
-    "ruin_maniac_cave_short_tm28",
 ]
 
 [solaceon_ruins_room_3]
@@ -2420,17 +2425,12 @@ exits = [
 ]
 header = "solaceon_ruins_room_3_northwest_dead_end"
 
-[ruin_maniac_cave_long]
-exits = [
-    "route_214",
-]
-header = "ruin_maniac_cave_long"
-
 [maniac_tunnel]
 exits = [
     "route_214",
     "solaceon_ruins_maniac_tunnel_room",
 ]
+locs = ["maniac_tunnel_tm28"]
 header = "maniac_tunnel"
 
 [canalave_city_sailor_eldritch_house]
@@ -2441,21 +2441,19 @@ header = "canalave_city_sailor_eldritch_house"
 
 [veilstone_city]
 exits = [
+    "route_215_gate_to_veilstone_city",
+    "route_214_gate_to_veilstone_city",
     "veilstone_city_pokecenter_1f",
     "veilstone_city_gym",
     "veilstone_city_southeast_house",
-    "route_215",
     "veilstone_city_prize_exchange",
-    "route_215_gate_to_veilstone_city",
-    "route_214",
-    "galactic_hq_1f",
     "veilstone_store_1f",
     "veilstone_city_northeast_house",
-    "veilstone_city_galactic_warehouse",
-    "route_214_gate_to_veilstone_city",
     "game_corner",
     "veilstone_city_southwest_house",
     "veilstone_city_northwest_house",
+    "galactic_hq_1f",
+    "veilstone_city_galactic_warehouse",
 ]
 header = "veilstone_city"
 locs = [
@@ -2465,6 +2463,7 @@ locs = [
     "veilstone_city_calcium",
     "veilstone_city_pp_up",
     "veilstone_city_star_piece_0",
+    "veilstone_city_tm63",
 ]
 
 [eterna_city_condominiums_2f]
@@ -2487,6 +2486,7 @@ exits = [
     "veilstone_city",
 ]
 header = "veilstone_city_southeast_house"
+locs = ["veilstone_city_southeast_house_coin_case"]
 
 [veilstone_city_northeast_house]
 exits = [
@@ -2538,6 +2538,7 @@ header = "route_218_gate_to_jubilife_city"
 exits = [
     "solaceon_town",
 ]
+locs = ["solaceon_town_east_house_seal_case"]
 header = "solaceon_town_east_house"
 
 [old_chateau_dining_area]
@@ -2702,7 +2703,7 @@ header = "old_chateau_back_middle_west_room"
 [galactic_hq_b2f]
 exits = [
     "galactic_hq_b1f",
-    "veilstone_city_galactic_warehouse",
+    "veilstone_city_galactic_warehouse_right",
     "galactic_hq_1f",
 ]
 header = "galactic_hq_b2f"
@@ -2764,7 +2765,7 @@ header = "pokemon_mansion"
 
 [solaceon_ruins_maniac_tunnel_room]
 exits = [
-    "solaceon_town",
+    "solaceon_town_ledge",
     "maniac_tunnel",
 ]
 header = "solaceon_ruins_maniac_tunnel_room"
@@ -3247,12 +3248,14 @@ locs = [
 [route_211_east]
 exits = [
     "mt_coronet_1f_north_room_1_right",
+    "celestic_town",
 ]
 header = "route_211_east"
 locs = [
     "route_211_east_tm29",
     "route_211_east_carbos",
     "route_211_east_calcium",
+    "route_211_east_tm77",
 ]
 
 [mt_coronet_iceberg_ruins]
@@ -3365,6 +3368,7 @@ header = "lake_acuity"
 locs = [
     "lake_acuity_tm14",
 ]
+events = ["event_lake_acuity_meet_jupiter"]
 
 [lake_acuity_low_water]
 exits = [
@@ -3509,7 +3513,6 @@ header = "solaceon_ruins_room_2_southeast_dead_end"
 exits = [
     "route_215_gate_to_veilstone_city",
     "route_210_south",
-    "veilstone_city",
 ]
 header = "route_215"
 locs = [
@@ -3522,6 +3525,7 @@ locs = [
     "route_215_revive",
     "route_215_ultra_ball",
     "route_215_iron",
+    "route_215_tm66",
 ]
 
 [team_galactic_eterna_building_1f]
@@ -3692,8 +3696,6 @@ header = "jubilife_city_southwest_house_2f"
 
 [hearthome_city_gym_entrance_room]
 exits = [
-    "hearthome_city_gym_trainer_room_2",
-    "hearthome_city_gym_leader_room",
     "hearthome_city",
     "hearthome_city_gym_trainer_room_1",
 ]
@@ -3702,6 +3704,7 @@ header = "hearthome_city_gym_entrance_room"
 [hearthome_city_gym_leader_room]
 exits = [
     "hearthome_city_gym_entrance_room",
+    "hearthome_city_gym_trainer_room_2",
 ]
 events = ["event_relic_badge"]
 locs = [
@@ -3719,7 +3722,7 @@ header = "twinleaf_town_northeast_house"
 [hearthome_city_gym_trainer_room_2]
 exits = [
     "hearthome_city_gym_leader_room",
-    "hearthome_city_gym_entrance_room",
+    "hearthome_city_gym_trainer_room_1",
 ]
 header = "hearthome_city_gym_trainer_room_2"
 
@@ -3937,13 +3940,22 @@ locs = [
 
 [veilstone_city_galactic_warehouse]
 exits = [
-    "galactic_hq_b2f",
     "veilstone_city",
+    "veilstone_city_galactic_warehouse_right",
+]
+header = "veilstone_city_galactic_warehouse"
+locs = [
+    "veilstone_city_galactic_warehouse_hm02",
+]
+
+[veilstone_city_galactic_warehouse_right]
+exits = [
+    "veilstone_city_galactic_warehouse",
+    "galactic_hq_b2f",
 ]
 header = "veilstone_city_galactic_warehouse"
 locs = [
     "veilstone_city_galactic_warehouse_dusk_stone",
-    "veilstone_city_galactic_warehouse_hm02",
 ]
 
 [jubilife_tv_3f_group_ranking_room]
@@ -3977,6 +3989,7 @@ exits = [
     "hearthome_city",
 ]
 header = "hearthome_city_pokemon_fan_club"
+locs = ["hearthome_city_pokemon_fan_club_poffin_case"]
 
 [oreburgh_city_south_house]
 exits = [

@@ -70,7 +70,9 @@ class Rule:
         if parent_op is None and len(self.items) == 1:
             for item in self.items:
                 break
-            if item not in item_set and isinstance(item, str): # type: ignore
+            if isinstance(item, FuncCall): # type: ignore
+                return str(item)
+            elif item not in item_set and isinstance(item, str): # type: ignore
                 return f"self.common_rules[\"{item}\"]" # type: ignore
         str_items: Set[str] = self.items & item_set # type: ignore
         match len(str_items):
@@ -84,11 +86,11 @@ class Rule:
                 exprs = [f"state.has_{self.op.get_has()}([{", ".join(map(item_name_map, str_items))}], self.player)"]
         for val in self.items - item_set:
             if isinstance(val, str):
-                exprs.append(f"self.common_rules[\"{val}\"]")
+                exprs.append(f"self.common_rules[\"{val}\"](state)")
             elif isinstance(val, Rule):
                 exprs.append(val.to_string(item_set, item_name_map, self.op))
             elif isinstance(val, FuncCall):
-                exprs.append(str(val))
+                exprs.append(f"{val}(state)")
             elif isinstance(val, CountItem):
                 exprs.append(val.to_string(item_name_map))
         centre = f" {self.op.name.lower()} ".join(exprs)

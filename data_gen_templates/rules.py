@@ -32,7 +32,7 @@ class Rules:
         def mons(n: int) -> Rule:
             mons = [f"mon_{spec}" for spec in species.species.keys()]
             def rule(state: CollectionState) -> bool:
-                return state.count_from_list_unique(mons, player) >= n
+                return state.has_from_list_unique(mons, player, n)
             return rule
         self.common_rules["regional_mons"] = regional_mons
         self.common_rules["mons"] = mons
@@ -66,7 +66,7 @@ class Rules:
                 spec = new_spec
 
         def hm_rule(state: CollectionState) -> bool:
-            if not (state.has(hm, player) and self.common_rules[f"{hm.name.lower()}_badge"]):
+            if not (state.has(hm, player) and self.common_rules[f"{hm.name.lower()}_badge"](state)):
                 return False
             if state.has_any(mons, player):
                 return True
