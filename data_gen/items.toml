@@ -3,6 +3,7 @@ label = "Master Ball"
 id = 1
 clas = "bagitem"
 group = "balls"
+classification = "useful"
 
 [ultra_ball]
 label = "Ultra Ball"
@@ -2587,6 +2588,7 @@ label = "Suite Key"
 id = 451
 clas = "bagitem"
 group = "key_items"
+classification = "progression"
 
 [oaks_letter]
 label = "Oak’s Letter"

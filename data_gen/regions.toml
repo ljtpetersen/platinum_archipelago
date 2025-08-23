@@ -744,6 +744,7 @@ exits = [
     "pastoria_city",
 ]
 header = "pastoria_city_observatory_gate_1f"
+locs = ["pastoria_city_observatory_gate_1f_matchupchecker"]
 
 [pastoria_city_observatory_gate_2f]
 exits = [
@@ -776,7 +777,6 @@ exits = [
     "pastoria_city_east_house",
     "pastoria_city_gym",
     "pastoria_city_middle_house",
-    "route_213",
     "pastoria_city_northeast_house",
     "pastoria_city_observatory_gate_1f",
     "pastoria_city_southwest_house",
@@ -806,7 +806,6 @@ header = "pastoria_city_pokecenter_2f"
 
 [iron_island]
 exits = [
-    "iron_island_b3f",
     "iron_island_house",
     "iron_island_1f",
 ]
@@ -843,8 +842,6 @@ locs = [
     "iron_island_b2f_left_room_red_shard",
     "iron_island_b2f_left_room_magnet",
     "iron_island_b2f_left_room_iron_plate",
-    "iron_island_b2f_left_room_star_piece",
-    "iron_island_b2f_left_room_star_piece_0",
 ]
 
 [iron_island_b1f_right_room]
@@ -858,7 +855,6 @@ locs = [
     "iron_island_b1f_right_room_max_repel",
     "iron_island_b1f_right_room_escape_rope",
     "iron_island_b1f_right_room_revive",
-    "iron_island_b1f_right_room_star_piece",
 ]
 
 [pastoria_city_southwest_house]
@@ -875,7 +871,6 @@ header = "iron_island_b2f_right_room"
 locs = [
     "iron_island_b2f_right_room_elixir",
     "iron_island_b2f_right_room_tm23",
-    "iron_island_b2f_right_room_star_piece",
 ]
 
 [pastoria_city_northeast_house]
@@ -896,12 +891,10 @@ exits = [
     "route_213_gate_to_pastoria_city",
     "grand_lake_route_213_east_house",
     "valor_lakefront",
-    "pastoria_city",
     "grand_lake_route_213_northwest_house",
     "grand_lake_route_213_lobby",
     "footstep_house",
     "grand_lake_route_213_northeast_house",
-    "route_222",
 ]
 header = "route_213"
 locs = [
@@ -977,12 +970,14 @@ exits = [
     "route_213",
 ]
 header = "grand_lake_route_213_northwest_house"
+locs = ["grand_lake_route_213_northwest_house_tm92"]
 
 [iron_island_house]
 exits = [
     "iron_island",
 ]
 header = "iron_island_house"
+locs = ["iron_island_house_metal_coat"]
 
 [route_221]
 exits = [
@@ -1423,6 +1418,7 @@ exits = [
 header = "grand_lake_route_213_northeast_house"
 locs = [
     "grand_lake_route_213_northeast_house_max_revive",
+    "grand_lake_route_213_northeast_house_cointoss",
 ]
 
 [route_208_gate_to_hearthome_city]
@@ -1590,7 +1586,6 @@ exits = [
     "jubilife_city",
     "route_218_gate_to_jubilife_city",
     "route_218_gate_to_canalave_city",
-    "canalave_city",
 ]
 header = "route_218"
 locs = [
@@ -1729,7 +1724,6 @@ exits = [
     "valor_lakefront",
     "route_222_gate_to_sunyshore_city",
     "route_222_west_house",
-    "route_213",
     "sunyshore_city",
 ]
 header = "route_222"
@@ -1942,8 +1936,6 @@ header = "jubilife_city_mart"
 exits = [
     "canalave_city_mart",
     "canalave_city_southeast_house",
-    "route_218_gate_to_canalave_city",
-    "route_218",
     "canalave_city_harbor_inn",
     "canalave_city_west_house",
     "canalave_library_1f",
@@ -1951,6 +1943,7 @@ exits = [
     "canalave_city_pokecenter_1f",
     "canalave_city_east_house",
     "canalave_city_sailor_eldritch_house",
+    "route_218_gate_to_canalave_city",
     "iron_island",
     "fullmoon_island",
 ]
@@ -2320,6 +2313,7 @@ exits = [
     "canalave_city",
 ]
 header = "canalave_city_southeast_house"
+locs = ["canalave_city_southeast_house_tm48"]
 
 [floaroma_town]
 exits = [
@@ -2349,7 +2343,6 @@ header = "jubilife_tv_2f_gallery"
 
 [valor_lakefront]
 exits = [
-    "spring_path",
     "grand_lake_valor_lakefront_east_house",
     "grand_lake_valor_lakefront_west_house",
     "restaurant",
@@ -2374,6 +2367,9 @@ exits = [
     "valor_lakefront",
 ]
 header = "grand_lake_valor_lakefront_east_house"
+locs = [
+    "valor_lakefront_white_flute",
+]
 
 [solaceon_ruins_room_2]
 exits = [
@@ -2452,7 +2448,7 @@ exits = [
     "game_corner",
     "veilstone_city_southwest_house",
     "veilstone_city_northwest_house",
-    "galactic_hq_1f",
+    "galactic_hq_w_key",
     "veilstone_city_galactic_warehouse",
 ]
 header = "veilstone_city"
@@ -2464,6 +2460,7 @@ locs = [
     "veilstone_city_pp_up",
     "veilstone_city_star_piece_0",
     "veilstone_city_tm63",
+    "galactic_hq_1f_pp_up",
 ]
 
 [eterna_city_condominiums_2f]
@@ -2496,7 +2493,6 @@ header = "veilstone_city_northeast_house"
 
 [spring_path]
 exits = [
-    "valor_lakefront",
     "route_214",
     "sendoff_spring",
 ]
@@ -2639,54 +2635,37 @@ exits = [
 ]
 header = "game_corner"
 
-[galactic_hq_1f]
-exits = [
-    "galactic_hq_b1f",
-    "galactic_hq_b2f",
-    "galactic_hq_4f",
-    "galactic_hq_2f",
-    "veilstone_city",
-]
-header = "galactic_hq_1f"
+[galactic_hq_wo_key]
+exits = ["veilstone_city_galactic_warehouse"]
+header = "virt"
 locs = [
+    "veilstone_city_galactic_warehouse_dusk_stone",
+    "galactic_hq_b2f_tm36",
+    "galactic_hq_b2f_galactic_key",
+    "galactic_hq_b2f_zinc",
     "galactic_hq_1f_tm49",
     "galactic_hq_1f_dubious_disc",
-    "galactic_hq_1f_pp_up",
+    "galactic_hq_3f_rare_candy",
+    "galactic_hq_3f_tm21",
 ]
 
-[galactic_hq_b1f]
-exits = [
-    "galactic_hq_b2f",
-    "galactic_hq_1f",
-]
-header = "galactic_hq_b1f"
-
-[galactic_hq_4f]
-exits = [
-    "galactic_hq_laboratory",
-    "galactic_hq_hall",
-    "galactic_hq_1f",
-    "galactic_hq_3f",
-]
-header = "galactic_hq_4f"
+[galactic_hq_w_key]
+exits = ["veilstone_city"]
+header = "virt"
 locs = [
     "galactic_hq_4f_razor_claw",
-]
-
-[galactic_hq_3f]
-exits = [
-    "galactic_hq_2f",
-    "galactic_hq_4f",
-]
-header = "galactic_hq_3f"
-locs = [
-    "galactic_hq_3f_tm21",
     "galactic_hq_3f_max_elixir",
     "galactic_hq_3f_protein",
     "galactic_hq_3f_elixir",
-    "galactic_hq_3f_rare_candy",
     "galactic_hq_3f_nugget",
+    "galactic_hq_2f_max_revive",
+    "galactic_hq_2f_green_shard",
+    "galactic_hq_2f_poke_doll",
+    "galactic_hq_2f_max_potion",
+    "galactic_hq_laboratory_full_restore",
+    "galactic_hq_master_ball"
 ]
+events = ["event_galactic_hq_defeat_cyrus"]
 
 [jubilife_city_condominiums_4f]
 exits = [
@@ -2700,40 +2679,11 @@ exits = [
 ]
 header = "old_chateau_back_middle_west_room"
 
-[galactic_hq_b2f]
-exits = [
-    "galactic_hq_b1f",
-    "veilstone_city_galactic_warehouse_right",
-    "galactic_hq_1f",
-]
-header = "galactic_hq_b2f"
-locs = [
-    "galactic_hq_b2f_tm36",
-    "galactic_hq_b2f_galactic_key",
-    "galactic_hq_b2f_zinc",
-]
-
 [old_chateau_back_middle_room]
 exits = [
     "old_chateau_corridor",
 ]
 header = "old_chateau_back_middle_room"
-
-[galactic_hq_laboratory]
-exits = [
-    "galactic_hq_4f",
-    "galactic_hq_control_room",
-]
-header = "galactic_hq_laboratory"
-locs = [
-    "galactic_hq_laboratory_full_restore",
-]
-
-[galactic_hq_control_room]
-exits = [
-    "galactic_hq_laboratory",
-]
-header = "galactic_hq_control_room"
 
 [route_206_cycling_road_north_gate]
 exits = [
@@ -2778,6 +2728,7 @@ header = "pokemon_mansion_maids_room"
 locs = [
     "pokemon_mansion_maids_room_luxury_ball",
     "pokemon_mansion_maids_room_protein",
+    "pokemon_mansion_maids_room_soothe_bell",
 ]
 
 [route_214_gate_to_veilstone_city]
@@ -3005,20 +2956,6 @@ locs = [
     "mt_coronet_outside_north_energy_root",
 ]
 
-[galactic_hq_2f]
-exits = [
-    "galactic_hq_hall",
-    "galactic_hq_1f",
-    "galactic_hq_3f",
-]
-header = "galactic_hq_2f"
-locs = [
-    "galactic_hq_2f_max_revive",
-    "galactic_hq_2f_green_shard",
-    "galactic_hq_2f_poke_doll",
-    "galactic_hq_2f_max_potion",
-]
-
 [floaroma_town_southeast_house]
 exits = [
     "floaroma_town",
@@ -3137,17 +3074,25 @@ locs = [
     "pokemon_mansion_office_tm87",
 ]
 
+[mt_coronet_1f_tunnel_room_base]
+exits = [
+    "mt_coronet_1f_tunnel_room",
+]
+header = "mt_coronet_1f_tunnel_room"
+locs = [
+    "mt_coronet_1f_tunnel_room_max_potion",
+    "mt_coronet_1f_tunnel_room_stardust",
+    "mt_coronet_1f_tunnel_room_heal_powder",
+]
+
 [mt_coronet_1f_tunnel_room]
 exits = [
     "mt_coronet_outside_north",
-    "mt_coronet_1f_north_room_1_bottom",
+    "mt_coronet_1f_tunnel_room_base"
 ]
 header = "mt_coronet_1f_tunnel_room"
 locs = [
     "mt_coronet_1f_tunnel_room_green_shard",
-    "mt_coronet_1f_tunnel_room_stardust",
-    "mt_coronet_1f_tunnel_room_heal_powder",
-    "mt_coronet_1f_tunnel_room_max_potion",
     "mt_coronet_1f_tunnel_room_rare_candy",
     "mt_coronet_1f_tunnel_room_green_shard_0",
 ]
@@ -3171,8 +3116,8 @@ locs = [
 [mt_coronet_1f_north_room_1_right]
 exits = [
     "mt_coronet_1f_north_room_1_middle",
-    "mt_coronet_1f_north_room_1_top",
     "mt_coronet_1f_north_room_1_bottom",
+    "mt_coronet_1f_north_room_1_top",
     "route_211_east",
 ]
 header = "mt_coronet_1f_north_room_1"
@@ -3182,7 +3127,7 @@ locs = [
 ]
 
 [mt_coronet_1f_north_room_1_top]
-exits = ["mt_coronet_1f_north_room_1_right", "mt_coronet_b1f"]
+exits = ["mt_coronet_b1f"]
 header = "mt_coronet_1f_north_room_1"
 locs = [
     "mt_coronet_1f_north_room_1_red_shard",
@@ -3190,7 +3135,7 @@ locs = [
 ]
 
 [mt_coronet_1f_north_room_1_bottom]
-exits = ["mt_coronet_1f_north_room_1_right", "mt_coronet_1f_tunnel_room"]
+exits = ["mt_coronet_1f_north_room_1_right", "mt_coronet_1f_tunnel_room_base"]
 header = "mt_coronet_1f_north_room_1"
 locs = [
     "mt_coronet_1f_north_room_1_nugget",
@@ -3300,6 +3245,7 @@ exits = [
     "route_217",
 ]
 header = "route_217_west_house"
+locs = ["route_217_west_house_icicle_plate"]
 
 [canalave_city_pokecenter_1f]
 exits = [
@@ -3345,6 +3291,7 @@ exits = [
     "route_217",
 ]
 header = "route_217_northeast_house"
+locs = ["route_217_northeast_house_spell_tag"]
 
 [acuity_lakefront]
 exits = [
@@ -3628,13 +3575,6 @@ header = "solaceon_ruins_room_3_southwest_dead_end"
 locs = [
     "solaceon_ruins_room_3_southwest_dead_end_water_stone",
 ]
-
-[galactic_hq_hall]
-exits = [
-    "galactic_hq_2f",
-    "galactic_hq_4f",
-]
-header = "galactic_hq_hall"
 
 [jubilife_tv_3f_global_ranking_room]
 exits = [
@@ -3941,21 +3881,11 @@ locs = [
 [veilstone_city_galactic_warehouse]
 exits = [
     "veilstone_city",
-    "veilstone_city_galactic_warehouse_right",
+    "galactic_hq_wo_key",
 ]
 header = "veilstone_city_galactic_warehouse"
 locs = [
     "veilstone_city_galactic_warehouse_hm02",
-]
-
-[veilstone_city_galactic_warehouse_right]
-exits = [
-    "veilstone_city_galactic_warehouse",
-    "galactic_hq_b2f",
-]
-header = "veilstone_city_galactic_warehouse"
-locs = [
-    "veilstone_city_galactic_warehouse_dusk_stone",
 ]
 
 [jubilife_tv_3f_group_ranking_room]
@@ -4068,16 +3998,14 @@ locs = [
 [mt_coronet_6f]
 exits = [
     "mt_coronet_5f",
-    "spear_pillar_dialga",
     "spear_pillar",
-    "spear_pillar_distorted",
-    "spear_pillar_palkia",
 ]
 header = "mt_coronet_6f"
 
 [spear_pillar]
 exits = [
     "mt_coronet_6f",
+    "distortion_world"
 ]
 header = "spear_pillar"
 
@@ -4325,7 +4253,6 @@ exits = [
     "pokemon_league_elevator_to_champion_room",
     "pokemon_league_elevator_to_hall_of_fame",
 ]
-events = ["event_beat_cynthia"]
 header = "pokemon_league_champion_room"
 
 [pokemon_league_elevator_to_hall_of_fame]
@@ -4339,6 +4266,7 @@ header = "pokemon_league_elevator_to_hall_of_fame"
 exits = [
     "pokemon_league_elevator_to_hall_of_fame",
 ]
+events = ["event_beat_cynthia"]
 header = "pokemon_league_hall_of_fame"
 
 [jubilife_city_pokecenter_2f]
@@ -4358,3 +4286,8 @@ header = "snowpoint_city_east_house"
 locs = ["wayward_cave_1f_red_shard"]
 header = "virt"
 exits = []
+
+[distortion_world]
+exits = ["sendoff_spring"]
+header = "virt"
+events = ["event_distortion_world"]

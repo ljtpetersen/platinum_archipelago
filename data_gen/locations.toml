@@ -432,7 +432,7 @@ id = 214
 
 [fullmoon_island_forest_lunar_wing]
 original_item = "lunar_wing"
-type = "overworld"
+type = "key_item"
 table = "overworld"
 check = 1106
 label = "Fullmoon Island - Overworld (Lunar Wing)"
@@ -1184,7 +1184,7 @@ id = 186
 
 [route_213_suite_key]
 original_item = "suite_key"
-type = "hidden"
+type = "key_item"
 table = "hidden"
 check = 946
 label = "Route 213 - Hidden (Suite Key)"
@@ -3112,7 +3112,7 @@ id = 164
 
 [galactic_hq_b2f_galactic_key]
 original_item = "galactic_key"
-type = "overworld"
+type = "key_item"
 table = "overworld"
 check = 1251
 label = "Galactic HQ - Overworld (Galactic Key)"
@@ -5229,3 +5229,83 @@ original_item = "coin_case"
 type = "key_item"
 table = "base"
 label = "Veilstone City - Coin Case"
+
+[galactic_hq_master_ball]
+id = 85
+check = { id = 0x40D6, value = 1 }
+original_item = "master_ball"
+type = "npc_gift"
+table = "base"
+label = "Veilstone Galactic HQ - Master Ball (From Cyrus)"
+
+[valor_lakefront_white_flute]
+id = 86
+check = 0x13A
+original_item = "white_flute"
+type = "npc_gift"
+table = "base"
+label = "Valor Lakefront - White Flute (After Returning Suite Key)"
+
+[grand_lake_route_213_northeast_house_cointoss]
+id = 87
+check = 0xB6F
+original_item = "cointoss"
+type = "poketchapp"
+table = "base"
+label = "Route 213 - Coin Toss App"
+
+[grand_lake_route_213_northwest_house_tm92]
+id = 88
+check = 0xCA
+original_item = "tm92"
+type = "npc_gift"
+table = "base"
+label = "Route 213 - TM92 (From Clown)"
+
+[pastoria_city_observatory_gate_1f_matchupchecker]
+id = 89
+check = 0xA3
+original_item = "matchupchecker"
+type = "poketchapp"
+table = "base"
+label = "Great Marsh - Matchup Checker App"
+
+[pokemon_mansion_maids_room_soothe_bell]
+id = 90
+check = 0x139
+original_item = "soothe_bell"
+type = "npc_gift"
+table = "base"
+label = "Pokémon Mansion - Soothe Bell (From Maid)"
+
+[canalave_city_southeast_house_tm48]
+id = 91
+check = 0xC9
+original_item = "tm48"
+type = "npc_gift"
+table = "base"
+label = "Canalave City - TM48"
+
+[iron_island_house_metal_coat]
+id = 92
+check = 0x11D
+original_item = "metal_coat"
+type = "npc_gift"
+table = "base"
+label = "Iron Island - Metal Coat (From Byron)"
+
+[route_217_west_house_icicle_plate]
+id = 93
+check = 0xDE
+original_item = "icicle_plate"
+type = "npc_gift"
+table = "base"
+label = "Route 217 - Icicle Plate (From Hiker After Sharing HM08)"
+
+[route_217_northeast_house_spell_tag]
+id = 94
+check = 0x13B
+original_item = "spell_tag"
+type = "npc_gift"
+table = "base"
+label = "Route 217 - Spell Tag"
