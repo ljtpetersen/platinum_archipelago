@@ -1,3 +1,10 @@
+#!/usr/bin/env python3
+
+# data_gen.py
+#
+# Copyright (C) 2025 James Petersen <m@jamespetersen.ca>
+# Licensed under MIT. See LICENSE
+
 
 from dataclasses import dataclass, field
 from collections.abc import Callable, Mapping, MutableMapping, Set, Sequence
@@ -5,6 +12,7 @@ from typing import Any
 import tomllib
 from data_gen_rules import Rule, parse_rule
 import re
+import os
 
 def default_accessible_encounters() -> Sequence[str]:
     return ["land", "surf", "old_rod", "good_rod", "super_rod"]
@@ -224,12 +232,12 @@ class ParserState:
         loc_pairs = set()
         encounter_types = {"land", "surf", "old_rod", "good_rod", "super_rod"}
         events = set()
+        used_locs = set()
         for region in self.regions.values():
-            cur = set()
             for loc in region.locs:
                 assert loc in self.locations, f"{loc} is a location"
-                assert loc not in cur, f"{loc} is repeated"
-                cur.add(loc)
+                assert loc not in used_locs, f"{loc} is repeated"
+                used_locs.add(loc)
             cur = set()
             for enc in region.accessible_encounters:
                 assert enc in encounter_types, f"{enc} is an encounter type"
@@ -334,7 +342,6 @@ class ParserState:
             for k, v in self.rom_interface.loc_table.items()]
         ret["LOCATIONS"] = [f"\"{k}\": {v},\n" for k, v in self.locations.items()]
         rule_items = self.get_rule_items()
-        print(rule_items)
         ret["REQUIRED_LOCATIONS"] = [f"\"{k}\",\n"
                                      for k, v in self.locations.items()
                                      if v.original_item in rule_items]
@@ -366,6 +373,8 @@ class ParserState:
         return f"{region} -> {self.regions[region].header}_{type}"
 
     def has_encounters(self, region: str, type: str) -> bool:
+        if type not in self.regions[region].accessible_encounters:
+            return False
         header = self.regions[region].header
         return header in self.encounters and getattr(self.encounters[header], type)
 
@@ -385,13 +394,16 @@ class ParserState:
             for region in self.regions
             if self.has_encounters(region, type)]
 
+        accessible_locs = set()
+        for region in self.regions.values():
+            accessible_locs |= set(region.locs)
         ret["LOCATION_RULES"] = [f"\"{self.locations[loc].label}\": {rule.to_string(item_set, self.item_name_map)},\n"
             for loc, rule in self.rules.locs.items()
-            if self.locations[loc].type not in self.rules.loc_types]
+            if self.locations[loc].type not in self.rules.loc_types and loc in accessible_locs]
         ret["LOCATION_RULES"] += [f"\"{location.label}\": {self.create_loc_rule(type_rule, loc).to_string(item_set, self.item_name_map)},\n"
             for type, type_rule in self.rules.loc_types.items()
             for loc, location in self.locations.items()
-            if location.type == type]
+            if location.type == type and loc in accessible_locs]
         ret["LOCATION_RULES"] += [f"\"{event}\": {rule.to_string(item_set, self.item_name_map)},\n"
             for event, rule in self.rules.events.items()]
         
@@ -462,6 +474,11 @@ def fill_template(name: str, values: Mapping[str, Sequence[str]]) -> None:
         f.write(output)
 
 def main():
+    try:
+        os.mkdir("data")
+    except FileExistsError:
+        pass
+
     state = ParserState()
     state.validate()
 

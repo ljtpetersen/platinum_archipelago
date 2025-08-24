@@ -1,3 +1,7 @@
+# __init__.py
+#
+# Copyright (C) 2025 James Petersen <m@jamespetersen.ca>
+# Licensed under MIT. See LICENSE
 
 from BaseClasses import ItemClassification, Tutorial
 from collections.abc import Iterable, Mapping
@@ -96,9 +100,10 @@ class PokemonPlatinumWorld(World):
 
     def generate_output(self, output_directory: str) -> None:
         patch = PokemonPlatinumPatch(player=self.player, player_name=self.player_name)
-        base_patches = ["base_patch_us_rev0", "base_patch_us_rev1"]
+        base_patches = ["us_rev0", "us_rev1"]
         for name in base_patches:
-            patch.write_file(f"{name}.bsdiff4", pkgutil.get_data(__name__, f"data/{name}.bsdiff4")) # type: ignore
+            name = "base_patch_" + name
+            patch.write_file(f"{name}.bsdiff4", pkgutil.get_data(__name__, f"patches/{name}.bsdiff4")) # type: ignore
         generate_output(self, output_directory, patch)
 
     def create_event(self, name: str) -> PokemonPlatinumItem:

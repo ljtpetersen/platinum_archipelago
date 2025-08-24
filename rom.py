@@ -1,3 +1,8 @@
+# rom.py
+#
+# Copyright (C) 2025 James Petersen <m@jamespetersen.ca>
+# Licensed under MIT. See LICENSE
+
 import bsdiff4
 import os
 import pkgutil
@@ -50,6 +55,7 @@ class PokemonPlatinumPatch(APAutoPatchInterface):
         ap_bin_start = data.find(b'AP BIN FILLER ' * 5)
         ap_bin_end = data.find(b'\0', ap_bin_start)
         ap_bin_len = ap_bin_end - ap_bin_start + 1
+        print(f"s: {ap_bin_start}, e: {ap_bin_end}, l: {ap_bin_len}")
 
         ap_bin = self.get_file("ap.bin")
         if len(ap_bin) > ap_bin_len:
@@ -69,6 +75,13 @@ class PokemonPlatinumPatch(APAutoPatchInterface):
         manifest["allowed_hashes"] = self.hashes
         return manifest
 
+    def read_contents(self, opened_zipfile: zipfile.ZipFile) -> Dict[str, Any]:
+        manifest = super().read_contents(opened_zipfile)
+        for file in opened_zipfile.namelist():
+            if file not in ["archipelago.json"]:
+                self.files[file] = opened_zipfile.read(file)
+        return manifest
+
     def write_contents(self, opened_zipfile: zipfile.ZipFile) -> None:
         super().write_contents(opened_zipfile)
         for file in self.files:
@@ -78,6 +91,7 @@ class PokemonPlatinumPatch(APAutoPatchInterface):
     def get_file(self, file: str) -> bytes:
         if file not in self.files:
             self.read()
+        print(self.files.keys())
         return self.files[file]
 
     def write_file(self, file_name: str, file: bytes) -> None:

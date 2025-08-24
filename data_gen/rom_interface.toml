@@ -1,3 +1,8 @@
+# data_gen/rom_interface.toml
+#
+# Copyright (C) 2025 James Petersen <m@jamespetersen.ca>
+# Licensed under MIT. See LICENSE
+
 loc_table.base = 0
 loc_table.overworld = 1
 loc_table.hidden = 2

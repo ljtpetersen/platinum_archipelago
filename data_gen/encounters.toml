@@ -1,3 +1,8 @@
+# data_gen/encounters.toml
+#
+# Copyright (C) 2025 James Petersen <m@jamespetersen.ca>
+# Licensed under MIT. See LICENSE
+
 [great_marsh_3]
 land = [
     "yanma",

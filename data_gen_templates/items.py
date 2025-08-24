@@ -1,3 +1,7 @@
+# data_gen_templates/items.py
+#
+# Copyright (C) 2025 James Petersen <m@jamespetersen.ca>
+# Licensed under MIT. See LICENSE
 
 from BaseClasses import ItemClassification
 from collections.abc import Mapping

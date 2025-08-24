@@ -1,3 +1,8 @@
+# options.py
+#
+# Copyright (C) 2025 James Petersen <m@jamespetersen.ca>
+# Licensed under MIT. See LICENSE
+
 from dataclasses import dataclass
 from Options import Choice, DefaultOnToggle, OptionDict, OptionSet, PerGameCommonOptions, Toggle
 

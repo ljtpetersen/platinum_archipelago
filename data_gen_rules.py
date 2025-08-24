@@ -1,3 +1,7 @@
+# data_gen_rules.py
+#
+# Copyright (C) 2025 James Petersen <m@jamespetersen.ca>
+# Licensed under MIT. See LICENSE
 
 from collections.abc import Callable, Set
 from dataclasses import dataclass

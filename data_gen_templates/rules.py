@@ -1,7 +1,11 @@
+# data_gen_templates/rules.py
+#
+# Copyright (C) 2025 James Petersen <m@jamespetersen.ca>
+# Licensed under MIT. See LICENSE
 
 from BaseClasses import CollectionState
 from collections.abc import Callable, Mapping, MutableMapping
-from . import Hm, species
+from . import Hm, items, locations, species
 
 Rule = Callable[[CollectionState], bool]
 
@@ -34,8 +38,15 @@ class Rules:
             def rule(state: CollectionState) -> bool:
                 return state.has_from_list_unique(mons, player, n)
             return rule
+        def badges(n: int) -> Rule:
+            badges = [items.items[loc.original_item].label
+                for loc in locations.locations.values() if loc.type == "badge"]
+            def rule(state: CollectionState) -> bool:
+                return state.has_from_list_unique(badges, player, n)
+            return rule
         self.common_rules["regional_mons"] = regional_mons
         self.common_rules["mons"] = mons
+        self.common_rules["badges"] = badges
 
     def fill_rules(self):
         self.common_rules.update({

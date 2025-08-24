@@ -1,3 +1,8 @@
+# data_gen/items.toml
+#
+# Copyright (C) 2025 James Petersen <m@jamespetersen.ca>
+# Licensed under MIT. See LICENSE
+
 [master_ball]
 label = "Master Ball"
 id = 1
@@ -298,6 +303,7 @@ label = "Rare Candy"
 id = 50
 clas = "bagitem"
 group = "medicine"
+classification = "useful"
 
 [pp_up]
 label = "PP Up"
@@ -2946,3 +2952,11 @@ id = 468
 clas = "bagitem"
 group = "key_items"
 classification = "useful"
+
+[rare_candy_x15]
+label = "Rare Candy x15"
+id = 50
+clas = "bagitem"
+group = "medicine"
+classification = "useful"
+count = 15

@@ -1,3 +1,8 @@
+# regions.py
+#
+# Copyright (C) 2025 James Petersen <m@jamespetersen.ca>
+# Licensed under MIT. See LICENSE
+
 from BaseClasses import Region
 from collections.abc import Mapping, Sequence
 from typing import Tuple, TYPE_CHECKING

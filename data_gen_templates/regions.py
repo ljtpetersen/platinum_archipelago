@@ -1,3 +1,8 @@
+# data_gen_templates/regions.py
+#
+# Copyright (C) 2025 James Petersen <m@jamespetersen.ca>
+# Licensed under MIT. See LICENSE
+
 from collections.abc import Mapping, Set
 from dataclasses import dataclass
 

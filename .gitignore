@@ -1,4 +1,11 @@
+# .gitignore
+#
+# Copyright (C) 2025 James Petersen <m@jamespetersen.ca>
+# Licensed under MIT. See LICENSE
+
 /data
 /scrape_data.py
 /scraped_data
+/roms
+*.apworld
 __pycache__

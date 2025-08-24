@@ -1,3 +1,8 @@
+# data_gen/locations.toml
+#
+# Copyright (C) 2025 James Petersen <m@jamespetersen.ca>
+# Licensed under MIT. See LICENSE
+
 [great_marsh_3_great_ball]
 original_item = "great_ball"
 type = "overworld"
@@ -434,7 +439,7 @@ id = 214
 original_item = "lunar_wing"
 type = "key_item"
 table = "overworld"
-check = 1106
+check = 0xB78
 label = "Fullmoon Island - Overworld (Lunar Wing)"
 id = 92
 
@@ -5309,3 +5314,83 @@ original_item = "spell_tag"
 type = "npc_gift"
 table = "base"
 label = "Route 217 - Spell Tag"
+
+[mt_coronet_outside_north_star_piece]
+id = 84
+check = 814
+original_item = "star_piece"
+type = "hidden"
+table = "hidden"
+label = "Mt. Coronet - Hidden (Star Piece) 1"
+
+[mt_coronet_outside_north_star_piece_0]
+id = 92
+check = 822
+original_item = "star_piece"
+type = "hidden"
+table = "hidden"
+label = "Mt. Coronet - Hidden (Star Piece) 2"
+
+[route_222_tm56]
+id = 95
+check = 0xCE
+original_item = "tm56"
+type = "npc_gift"
+table = "base"
+label = "Route 222 - TM56 (From Rich Boy)"
+
+[sunyshore_city_east_house_roulette]
+id = 96
+check = 0xB71
+original_item = "roulette"
+type = "poketchapp"
+table = "base"
+label = "Sunyshore City - Roulette App"
+
+[sunyshore_city_east_house_dotart]
+id = 97
+check = 0xB72
+original_item = "dotart"
+type = "poketchapp"
+table = "base"
+label = "Sunyshore City - Dot Art App"
+
+[sunyshore_city_east_house_calendar]
+id = 98
+check = 0xB73
+original_item = "calendar"
+type = "poketchapp"
+table = "base"
+label = "Sunyshore City - Calendar App"
+
+[poketch_co_1f_memopad]
+id = 99
+check = 0xB74
+original_item = "memopad"
+type = "poketchapp"
+table = "base"
+label = "Pokétch Company - Memo Pad App"
+
+[poketch_co_1f_markingmap]
+id = 100
+check = 0xB75
+original_item = "markingmap"
+type = "poketchapp"
+table = "base"
+label = "Pokétch Company - Marking Map App"
+
+[poketch_co_1f_linksearcher]
+id = 101
+check = 0xB76
+original_item = "linksearcher"
+type = "poketchapp"
+table = "base"
+label = "Pokétch Company - Link Searcher App"
+
+[poketch_co_1f_movetester]
+id = 102
+check = 0xB77
+original_item = "movetester"
+type = "poketchapp"
+table = "base"
+label = "Pokétch Company - Move Tester App"

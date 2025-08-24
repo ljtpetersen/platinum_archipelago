@@ -1,3 +1,8 @@
+# data_gen/species.toml
+#
+# Copyright (C) 2025 James Petersen <m@jamespetersen.ca>
+# Licensed under MIT. See LICENSE
+
 [bulbasaur]
 hms = [
     "cut",

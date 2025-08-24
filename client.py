@@ -1,3 +1,8 @@
+# client.py
+#
+# Copyright (C) 2025 James Petersen <m@jamespetersen.ca>
+# Licensed under MIT. See LICENSE
+
 from collections.abc import Mapping, Set
 from dataclasses import dataclass
 from NetUtils import ClientStatus
@@ -84,7 +89,7 @@ class PokemonPlatinumClient(BizHawkClient):
     def initialize_client(self):
         self.goal_flag = None
         self.local_checked_locations = set()
-        self.expected_header = AP_MAGIC * 2 + self.rom_version.to_bytes(length=4, byteorder='little') + AP_MAGIC
+        self.expected_header = AP_MAGIC * 3 + self.rom_version.to_bytes(length=4, byteorder='little')
 
     async def validate_rom(self, ctx: "BizHawkClientContext") -> bool:
         from CommonClient import logger
@@ -133,6 +138,7 @@ class PokemonPlatinumClient(BizHawkClient):
                 header = (await bizhawk.read(ctx.bizhawk_ctx, [(addr, 16, "ARM9 System Bus")]))[0]
                 if header == self.expected_header:
                     self.ap_struct_address = addr
+                    print(f"found ap struct at addr {addr:X}")
         except bizhawk.RequestFailedError:
             pass
 

@@ -1,3 +1,8 @@
+# data_gen/regions.toml
+#
+# Copyright (C) 2025 James Petersen <m@jamespetersen.ca>
+# Licensed under MIT. See LICENSE
+
 [great_marsh_3]
 exits = [
     "great_marsh_6",
@@ -54,10 +59,10 @@ locs = [
 [victory_road_1f]
 exits = [
     "victory_road_2f",
+    "pokemon_league_south",
     "pokemon_league",
     "victory_road_1f_room_1",
     "victory_road_b1f",
-    "route_223",
 ]
 header = "victory_road_1f"
 locs = [
@@ -71,10 +76,21 @@ locs = [
     "victory_road_1f_nugget",
 ]
 
+[pokemon_league_south_south]
+exits = ["pokemon_league_south", "route_223"]
+header = "pokemon_league"
+accessible_encounters = ["surf"]
+
+[pokemon_league_south]
+exits = [
+    "pokemon_league_south_pokecenter_1f",
+    "victory_road_1f",
+    "pokemon_league_south_south",
+]
+header = "pokemon_league"
+
 [pokemon_league]
 exits = [
-    "route_224",
-    "pokemon_league_south_pokecenter_1f",
     "pokemon_league_north_pokecenter_1f",
     "victory_road_1f",
 ]
@@ -99,7 +115,6 @@ locs = [
 
 [route_224]
 exits = [
-    "pokemon_league",
     "victory_road_1f_room_3",
 ]
 header = "route_224"
@@ -814,7 +829,6 @@ locs = [
     "iron_island_star_piece",
     "iron_island_hm04",
 ]
-events = ["iron_island_get_hm04"]
 
 [iron_island_b3f]
 exits = [
@@ -1583,7 +1597,6 @@ header = "solaceon_town_northeast_house"
 
 [route_218]
 exits = [
-    "jubilife_city",
     "route_218_gate_to_jubilife_city",
     "route_218_gate_to_canalave_city",
 ]
@@ -1724,7 +1737,6 @@ exits = [
     "valor_lakefront",
     "route_222_gate_to_sunyshore_city",
     "route_222_west_house",
-    "sunyshore_city",
 ]
 header = "route_222"
 locs = [
@@ -1740,6 +1752,7 @@ locs = [
     "route_222_pearl",
     "route_222_heart_scale",
     "route_222_heart_scale_0",
+    "route_222_tm56"
 ]
 
 [route_222_east_house]
@@ -1769,7 +1782,6 @@ exits = [
     "sunyshore_city_west_house",
     "route_223",
     "sunyshore_city_unknown_house_2",
-    "route_222",
 ]
 header = "sunyshore_city"
 locs = [
@@ -1804,7 +1816,7 @@ header = "sunyshore_city_west_house"
 [route_223]
 exits = [
     "sunyshore_city",
-    "victory_road_1f",
+    "pokemon_league_south_south",
 ]
 header = "route_223"
 locs = [
@@ -1834,6 +1846,12 @@ exits = [
     "poketch_co_2f",
 ]
 header = "poketch_co_1f"
+locs = [
+    "poketch_co_1f_memopad",
+    "poketch_co_1f_markingmap",
+    "poketch_co_1f_linksearcher",
+    "poketch_co_1f_movetester",
+]
 
 [poketch_co_2f]
 exits = [
@@ -1919,6 +1937,11 @@ exits = [
     "sunyshore_city",
 ]
 header = "sunyshore_city_east_house"
+locs = [
+    "sunyshore_city_east_house_roulette",
+    "sunyshore_city_east_house_dotart",
+    "sunyshore_city_east_house_calendar",
+]
 
 [solaceon_town_pokemon_news_press]
 exits = [
@@ -2901,7 +2924,7 @@ locs = [
 
 [mt_coronet_3f]
 exits = [
-    "mt_coronet_outside_south",
+    "mt_coronet_outside_south_entrance",
     "mt_coronet_2f_left",
 ]
 header = "mt_coronet_3f"
@@ -2909,35 +2932,61 @@ locs = [
     "mt_coronet_3f_max_repel",
 ]
 
-[mt_coronet_outside_south]
+[mt_coronet_outside_north_plat]
+exits = ["mt_coronet_outside_south"]
+header = "mt_coronet_outside_north"
+locs = [
+    "mt_coronet_outside_north_star_piece_0",
+    "mt_coronet_outside_south_energy_root",
+]
+
+[mt_coronet_outside_south_entrance]
 exits = [
     "mt_coronet_3f",
-    "mt_coronet_4f_rooms_1_and_2",
+    "mt_coronet_outside_south",
+]
+header = "mt_coronet_outside_south"
+locs = [
+    "mt_coronet_outside_south_max_potion",
+]
+
+[mt_coronet_outside_south]
+exits = [
+    "mt_coronet_4f_rooms_1_and_2_lower",
+    "mt_coronet_outside_north_plat",
+    "mt_coronet_outside_south_entrance",
 ]
 header = "mt_coronet_outside_south"
 locs = [
     "mt_coronet_outside_south_blue_shard",
-    "mt_coronet_outside_south_max_potion",
     "mt_coronet_outside_south_revival_herb",
-    "mt_coronet_outside_south_energy_root",
 ]
 
-[mt_coronet_4f_rooms_1_and_2]
+[mt_coronet_4f_rooms_1_and_2_lower]
 exits = [
     "mt_coronet_outside_south",
-    "mt_coronet_outside_north",
+    "mt_coronet_4f_rooms_1_and_2",
 ]
 header = "mt_coronet_4f_rooms_1_and_2"
 locs = [
     "mt_coronet_4f_rooms_1_and_2_adamant_orb",
     "mt_coronet_4f_rooms_1_and_2_lustrous_orb",
+    "mt_coronet_4f_rooms_1_and_2_yellow_shard",
+    "mt_coronet_4f_rooms_1_and_2_stone_plate",
+    "mt_coronet_4f_rooms_1_and_2_heal_powder",
+    "mt_coronet_4f_rooms_1_and_2_stardust",
+]
+
+[mt_coronet_4f_rooms_1_and_2]
+exits = [
+    "mt_coronet_outside_north",
+    "mt_coronet_4f_rooms_1_and_2_lower",
+]
+header = "mt_coronet_4f_rooms_1_and_2"
+locs = [
     "mt_coronet_4f_rooms_1_and_2_sun_stone",
     "mt_coronet_4f_rooms_1_and_2_full_heal",
     "mt_coronet_4f_rooms_1_and_2_max_revive",
-    "mt_coronet_4f_rooms_1_and_2_heal_powder",
-    "mt_coronet_4f_rooms_1_and_2_yellow_shard",
-    "mt_coronet_4f_rooms_1_and_2_stardust",
-    "mt_coronet_4f_rooms_1_and_2_stone_plate",
     "mt_coronet_4f_rooms_1_and_2_ultra_ball",
 ]
 
@@ -2952,8 +3001,8 @@ locs = [
     "mt_coronet_outside_north_stardust",
     "mt_coronet_outside_north_full_restore",
     "mt_coronet_outside_north_moon_stone",
-    "mt_coronet_outside_north_revival_herb",
     "mt_coronet_outside_north_energy_root",
+    "mt_coronet_outside_north_revival_herb",
 ]
 
 [floaroma_town_southeast_house]
@@ -3077,6 +3126,7 @@ locs = [
 [mt_coronet_1f_tunnel_room_base]
 exits = [
     "mt_coronet_1f_tunnel_room",
+    "mt_coronet_1f_north_room_1_bottom",
 ]
 header = "mt_coronet_1f_tunnel_room"
 locs = [
@@ -3116,7 +3166,6 @@ locs = [
 [mt_coronet_1f_north_room_1_right]
 exits = [
     "mt_coronet_1f_north_room_1_middle",
-    "mt_coronet_1f_north_room_1_bottom",
     "mt_coronet_1f_north_room_1_top",
     "route_211_east",
 ]
@@ -3127,7 +3176,10 @@ locs = [
 ]
 
 [mt_coronet_1f_north_room_1_top]
-exits = ["mt_coronet_b1f"]
+exits = [
+    "mt_coronet_b1f",
+    "mt_coronet_1f_north_room_1_right",
+]
 header = "mt_coronet_1f_north_room_1"
 locs = [
     "mt_coronet_1f_north_room_1_red_shard",

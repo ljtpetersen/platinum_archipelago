@@ -1,3 +1,7 @@
+# items.py
+#
+# Copyright (C) 2025 James Petersen <m@jamespetersen.ca>
+# Licensed under MIT. See LICENSE
 
 from BaseClasses import Item, ItemClassification
 from typing import Dict
