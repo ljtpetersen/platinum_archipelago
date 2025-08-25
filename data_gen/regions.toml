@@ -2492,6 +2492,9 @@ exits = [
     "eterna_city_condominiums_3f",
 ]
 header = "eterna_city_condominiums_2f"
+locs = [
+    "eterna_city_condominiums_2f_tm67",
+]
 
 [veilstone_city_pokecenter_1f]
 exits = [

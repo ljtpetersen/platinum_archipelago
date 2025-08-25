@@ -141,18 +141,21 @@ label = "Full Restore"
 id = 23
 clas = "bagitem"
 group = "medicine"
+classification = "useful"
 
 [max_potion]
 label = "Max Potion"
 id = 24
 clas = "bagitem"
 group = "medicine"
+classification = "useful"
 
 [hyper_potion]
 label = "Hyper Potion"
 id = 25
 clas = "bagitem"
 group = "medicine"
+classification = "useful"
 
 [super_potion]
 label = "Super Potion"
@@ -165,6 +168,7 @@ label = "Full Heal"
 id = 27
 clas = "bagitem"
 group = "medicine"
+classification = "useful"
 
 [revive]
 label = "Revive"
@@ -177,6 +181,7 @@ label = "Max Revive"
 id = 29
 clas = "bagitem"
 group = "medicine"
+classification = "useful"
 
 [fresh_water]
 label = "Fresh Water"
@@ -225,30 +230,35 @@ label = "Revival Herb"
 id = 37
 clas = "bagitem"
 group = "medicine"
+classification = "useful"
 
 [ether]
 label = "Ether"
 id = 38
 clas = "bagitem"
 group = "medicine"
+classification = "useful"
 
 [max_ether]
 label = "Max Ether"
 id = 39
 clas = "bagitem"
 group = "medicine"
+classification = "useful"
 
 [elixir]
 label = "Elixir"
 id = 40
 clas = "bagitem"
 group = "medicine"
+classification = "useful"
 
 [max_elixir]
 label = "Max Elixir"
 id = 41
 clas = "bagitem"
 group = "medicine"
+classification = "useful"
 
 [lava_cookie]
 label = "Lava Cookie"
@@ -273,30 +283,35 @@ label = "HP Up"
 id = 45
 clas = "bagitem"
 group = "medicine"
+classification = "useful"
 
 [protein]
 label = "Protein"
 id = 46
 clas = "bagitem"
 group = "medicine"
+classification = "useful"
 
 [iron]
 label = "Iron"
 id = 47
 clas = "bagitem"
 group = "medicine"
+classification = "useful"
 
 [carbos]
 label = "Carbos"
 id = 48
 clas = "bagitem"
 group = "medicine"
+classification = "useful"
 
 [calcium]
 label = "Calcium"
 id = 49
 clas = "bagitem"
 group = "medicine"
+classification = "useful"
 
 [rare_candy]
 label = "Rare Candy"
@@ -310,18 +325,21 @@ label = "PP Up"
 id = 51
 clas = "bagitem"
 group = "medicine"
+classification = "useful"
 
 [zinc]
 label = "Zinc"
 id = 52
 clas = "bagitem"
 group = "medicine"
+classification = "useful"
 
 [pp_max]
 label = "PP Max"
 id = 53
 clas = "bagitem"
 group = "medicine"
+classification = "useful"
 
 [old_gateau]
 label = "Old Gateau"
@@ -1211,6 +1229,7 @@ label = "Amulet Coin"
 id = 223
 clas = "bagitem"
 group = "items"
+classification = "useful"
 
 [cleanse_tag]
 label = "Cleanse Tag"
@@ -2517,6 +2536,7 @@ label = "Old Charm"
 id = 439
 clas = "bagitem"
 group = "key_items"
+classification = "progression"
 
 [galactic_key]
 label = "Galactic Key"

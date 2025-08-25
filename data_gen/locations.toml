@@ -4561,7 +4561,7 @@ type = "badge"
 table = "base"
 check = 0x75
 label = "Oreburgh City Gym - Badge (From Roark)"
-id = 0
+id = 103
 
 [oreburgh_city_gym_tm76]
 original_item = "tm76"
@@ -5394,3 +5394,11 @@ original_item = "movetester"
 type = "poketchapp"
 table = "base"
 label = "Pokétch Company - Move Tester App"
+
+[eterna_city_condominiums_2f_tm67]
+id = 104
+check = 0xC2
+original_item = "tm67"
+type = "npc_gift"
+table = "base"
+label = "Eterna City Condominiums - TM67"

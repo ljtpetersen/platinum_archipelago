@@ -52,7 +52,7 @@ data_gen: $(DATA)
 	@echo DATA GEN
 	$Q./data_gen.py
 
-pokemon_platinum.apworld: data_gen $(SOURCES) #$(PATCHES)
+pokemon_platinum.apworld: data_gen $(SOURCES) $(PATCHES)
 	@echo MAKE APWORLD
 	$Qzip $@ $(SOURCES) $(DATA_GEN_OUT) $(PATCHES)
 	

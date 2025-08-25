@@ -70,6 +70,13 @@ class Goal(Choice):
     default = 0
     option_champion = 0
 
+class AddMasterRepel(Toggle):
+    """
+    Add a master repel item to the item pool. The master repel is a key item.
+    It is a repel that blocks all encounters, and never runs out.
+    """
+    display_name = "Add Master Repel"
+
 class GameOptions(OptionDict):
     """
     Presets in-game options.
@@ -155,6 +162,7 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
     dowsing_machine_logic: DowsingMachineLogic
     goal: Goal
     game_options: GameOptions
+    master_repel: AddMasterRepel
 
     def requires_badge(self, hm: str) -> bool:
         return self.hm_badge_requirement.value == 1 or hm in self.remove_badge_requirements
