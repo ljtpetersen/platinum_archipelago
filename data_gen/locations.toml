@@ -5402,3 +5402,11 @@ original_item = "tm67"
 type = "npc_gift"
 table = "base"
 label = "Eterna City Condominiums - TM67"
+
+[route_218_gate_to_canalave_city_pokedex_forms]
+id = 105
+check = 0x21C
+original_item = "pokedex"
+type = "pokedex"
+table = "base"
+label = "Route 218 Gate to Canalave - Pokédex Forms"

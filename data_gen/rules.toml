@@ -10,7 +10,7 @@ enc_types.good_rod = "good_rod"
 enc_types.super_rod = "super_rod"
 enc_types.old_rod = "old_rod"
 
-common.national_dex = "pokedex * 2"
+common.national_dex = "pokedex * 3"
 
 locs.twinleaf_town_odd_keystone = "surf"
 locs.lake_verity_tm38 = "surf"

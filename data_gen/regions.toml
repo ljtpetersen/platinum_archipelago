@@ -1925,6 +1925,7 @@ exits = [
     "route_218",
 ]
 header = "route_218_gate_to_canalave_city"
+locs = ["route_218_gate_to_canalave_city_pokedex_forms"]
 
 [sunyshore_city_northeast_house]
 exits = [
