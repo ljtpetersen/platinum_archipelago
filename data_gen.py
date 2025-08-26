@@ -31,6 +31,7 @@ class Region:
     locs: Sequence[str] = field(default_factory=list)
     events: Sequence[str] = field(default_factory=list)
     accessible_encounters: Sequence[str] = field(default_factory=default_accessible_encounters)
+    group: str = "generic"
 
     def encounter_connection(self, type: str) -> str:
         return f"{self.header} -> {self.header}_{type}"
@@ -43,6 +44,8 @@ class Region:
             if val])
         if centre:
             centre = ", " + centre
+        if self.group != "generic":
+            centre += f", group=\"{self.group}\""
         return ret + centre + ")"
 
 
@@ -92,12 +95,14 @@ class Location:
     id: int
     check: int | Check
 
-    def __str__(self) -> str:
+    def to_string(self, parent_region: str | None) -> str:
         ret = f"LocationData(label=\"{self.label}\", "
         ret += f"table=LocationTable.{self.table.upper()}, "
         ret += f"id=0x{self.id:X}, "
         ret += f"original_item=\"{self.original_item}\", "
         ret += f"type=\"{self.type}\", "
+        if parent_region:
+            ret += f"parent_region=\"{parent_region}\", "
         check = self.check
         if isinstance(check, int):
             check = Check(check)
@@ -337,10 +342,16 @@ class ParserState:
 
     def generate_locations(self) -> Mapping[str, Sequence[str]]:
         ret = {}
+
+        location_region_map: Mapping[str, str | None] = {}
+        for name, region in self.regions.items():
+            for loc in region.locs:
+                location_region_map[loc] = name
+        location_region_map.update({k:None for k in (self.locations.keys() - location_region_map.keys())})
         
         ret["LOCATION_TABLES"] = [f"{k.upper()} = 0x{v:X}\n"
             for k, v in self.rom_interface.loc_table.items()]
-        ret["LOCATIONS"] = [f"\"{k}\": {v},\n" for k, v in self.locations.items()]
+        ret["LOCATIONS"] = [f"\"{k}\": {v.to_string(location_region_map[k])},\n" for k, v in self.locations.items()]
         rule_items = self.get_rule_items()
         ret["REQUIRED_LOCATIONS"] = [f"\"{k}\",\n"
                                      for k, v in self.locations.items()
@@ -370,7 +381,7 @@ class ParserState:
             return self.rules.enc_types[enc_type]
 
     def encounter_connection(self, region: str, type: str) -> str:
-        return f"{region} -> {self.regions[region].header}_{type}"
+        return f"(\"{region}\", \"{self.regions[region].header}_{type}\")"
 
     def has_encounters(self, region: str, type: str) -> bool:
         if type not in self.regions[region].accessible_encounters:
@@ -382,14 +393,14 @@ class ParserState:
         ret = {}
         item_set = self.get_item_set()
 
-        ret["EXIT_RULES"] = [f"\"{src} -> {dest}\": {rule.to_string(item_set, self.item_name_map)},\n"
+        ret["EXIT_RULES"] = [f"(\"{src}\", \"{dest}\"): {rule.to_string(item_set, self.item_name_map)},\n"
             for src, eles in self.rules.exits.items()
             for dest, rule in eles.items()]
-        ret["EXIT_RULES"] += [f"\"{self.encounter_connection(region, type)}\": {rule.to_string(item_set, self.item_name_map)},\n"
+        ret["EXIT_RULES"] += [f"{self.encounter_connection(region, type)}: {rule.to_string(item_set, self.item_name_map)},\n"
             for region, eles in self.rules.encs.items()
             for type, rule in eles.items()
             if type not in self.rules.enc_types]
-        ret["EXIT_RULES"] += [f"\"{self.encounter_connection(region, type)}\": {self.create_enc_rule(type, region).to_string(item_set, self.item_name_map)},\n"
+        ret["EXIT_RULES"] += [f"{self.encounter_connection(region, type)}: {self.create_enc_rule(type, region).to_string(item_set, self.item_name_map)},\n"
             for type in self.rules.enc_types
             for region in self.regions
             if self.has_encounters(region, type)]
@@ -444,6 +455,9 @@ class ParserState:
         ret = {}
 
         ret["REGIONS"] = [f"\"{name}\": {region},\n" for name, region in self.regions.items()]
+        ret["EVENT_REGION_MAP"] = [f"\"{event}\": \"{name}\",\n"
+            for name, region in self.regions.items()
+            for event in region.events]
 
         return ret
 

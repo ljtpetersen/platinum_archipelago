@@ -2018,7 +2018,7 @@ clas = "bagitem"
 group = "tmhms"
 
 [tm28]
-label = "TM28"
+label = "TM28 Dig"
 id = 355
 clas = "bagitem"
 group = "tmhms"
@@ -2270,7 +2270,7 @@ clas = "bagitem"
 group = "tmhms"
 
 [tm70]
-label = "TM70"
+label = "TM70 Flash"
 id = 397
 clas = "bagitem"
 group = "tmhms"
@@ -2409,56 +2409,56 @@ clas = "bagitem"
 group = "tmhms"
 
 [hm01]
-label = "HM01"
+label = "HM01 Cut"
 id = 420
 clas = "bagitem"
 group = "tmhms"
 classification = "progression"
 
 [hm02]
-label = "HM02"
+label = "HM02 Fly"
 id = 421
 clas = "bagitem"
 group = "tmhms"
 classification = "progression"
 
 [hm03]
-label = "HM03"
+label = "HM03 Surf"
 id = 422
 clas = "bagitem"
 group = "tmhms"
 classification = "progression"
 
 [hm04]
-label = "HM04"
+label = "HM04 Strength"
 id = 423
 clas = "bagitem"
 group = "tmhms"
 classification = "progression"
 
 [hm05]
-label = "HM05"
+label = "HM05 Defog"
 id = 424
 clas = "bagitem"
 group = "tmhms"
 classification = "progression"
 
 [hm06]
-label = "HM06"
+label = "HM06 Rock Smash"
 id = 425
 clas = "bagitem"
 group = "tmhms"
 classification = "progression"
 
 [hm07]
-label = "HM07"
+label = "HM07 Waterfall"
 id = 426
 clas = "bagitem"
 group = "tmhms"
 classification = "progression"
 
 [hm08]
-label = "HM08"
+label = "HM08 Rock Climb"
 id = 427
 clas = "bagitem"
 group = "tmhms"

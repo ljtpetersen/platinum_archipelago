@@ -36,6 +36,7 @@ locs = [
     "route_225_leaf_stone",
     "route_225_ultra_ball",
 ]
+group = "fight_area"
 
 [route_225_gate_to_fight_area]
 exits = [
@@ -43,6 +44,7 @@ exits = [
     "fight_area",
 ]
 header = "route_225_gate_to_fight_area"
+group = "fight_area"
 
 [great_marsh_4]
 exits = [
@@ -56,6 +58,25 @@ locs = [
     "great_marsh_4_hyper_potion",
 ]
 
+[victory_road_1f_entrance]
+exits = [
+    "pokemon_league_south",
+    "victory_road_2f_entrance",
+]
+header = "victory_road_1f"
+locs = [
+    "victory_road_1f_tm41",
+    "victory_road_1f_max_repel",
+    "victory_road_1f_nugget",
+]
+
+[victory_road_2f_entrance]
+exits = [
+    "victory_road_1f_entrance",
+    "victory_road_2f",
+]
+header = "victory_road_2f"
+
 [victory_road_1f]
 exits = [
     "victory_road_2f",
@@ -67,13 +88,10 @@ exits = [
 header = "victory_road_1f"
 locs = [
     "victory_road_1f_rare_candy",
-    "victory_road_1f_max_repel",
-    "victory_road_1f_tm41",
     "victory_road_1f_razor_claw",
     "victory_road_1f_zinc",
     "victory_road_1f_ultra_ball",
     "victory_road_1f_max_revive",
-    "victory_road_1f_nugget",
 ]
 
 [pokemon_league_south_south]
@@ -84,7 +102,7 @@ accessible_encounters = ["surf"]
 [pokemon_league_south]
 exits = [
     "pokemon_league_south_pokecenter_1f",
-    "victory_road_1f",
+    "victory_road_1f_entrance",
     "pokemon_league_south_south",
 ]
 header = "pokemon_league"
@@ -102,6 +120,7 @@ locs = [
 [victory_road_2f]
 exits = [
     "victory_road_1f",
+    "victory_road_2f_entrance",
 ]
 header = "victory_road_2f"
 locs = [
@@ -177,36 +196,42 @@ locs = [
     "survival_area_red_shard",
     "survival_area_pp_up",
 ]
+group = "fight_area"
 
 [survival_area_south_house]
 exits = [
     "survival_area",
 ]
 header = "survival_area_south_house"
+group = "fight_area"
 
 [survival_area_north_house]
 exits = [
     "survival_area",
 ]
 header = "survival_area_north_house"
+group = "fight_area"
 
 [battleground]
 exits = [
     "survival_area",
 ]
 header = "battleground"
+group = "fight_area"
 
 [route_225_house]
 exits = [
     "route_225",
 ]
 header = "route_225_house"
+group = "fight_area"
 
 [survival_area_mart]
 exits = [
     "survival_area",
 ]
 header = "survival_area_mart"
+group = "fight_area"
 
 [pokemon_league_north_pokecenter_1f]
 exits = [
@@ -316,6 +341,7 @@ locs = [
     "route_226_big_mushroom",
     "route_226_pp_max",
 ]
+group = "fight_area"
 
 [route_227]
 exits = [
@@ -333,18 +359,21 @@ locs = [
     "route_227_max_repel",
     "route_227_rare_candy",
 ]
+group = "fight_area"
 
 [route_227_house]
 exits = [
     "route_227",
 ]
 header = "route_227_house"
+group = "fight_area"
 
 [route_226_house]
 exits = [
     "route_226",
 ]
 header = "route_226_house"
+group = "fight_area"
 
 [route_228]
 exits = [
@@ -372,12 +401,14 @@ locs = [
     "route_228_max_repel",
     "route_228_pp_max",
 ]
+group = "fight_area"
 
 [route_228_north_house]
 exits = [
     "route_228",
 ]
 header = "route_228_north_house"
+group = "fight_area"
 
 [route_230]
 exits = [
@@ -390,6 +421,7 @@ locs = [
     "route_230_ultra_ball",
     "route_230_water_stone",
 ]
+group = "fight_area"
 
 [celestic_town]
 exits = [
@@ -498,6 +530,7 @@ exits = [
     "survival_area_pokecenter_2f",
 ]
 header = "survival_area_pokecenter_1f"
+group = "fight_area"
 
 [sandgem_town_pokecenter_1f]
 exits = [
@@ -512,6 +545,7 @@ exits = [
     "survival_area_pokecenter_1f",
 ]
 header = "survival_area_pokecenter_b1f"
+group = "fight_area"
 
 [survival_area_pokecenter_2f]
 exits = [
@@ -519,6 +553,7 @@ exits = [
     "union_room",
 ]
 header = "survival_area_pokecenter_2f"
+group = "fight_area"
 
 [sandgem_town]
 exits = [
@@ -565,6 +600,7 @@ exits = [
     "route_226",
 ]
 header = "route_228_gate_to_route_226"
+group = "fight_area"
 
 [route_229]
 exits = [
@@ -578,6 +614,7 @@ locs = [
     "route_229_protein",
     "route_229_thunderstone",
 ]
+group = "fight_area"
 
 [resort_area]
 exits = [
@@ -592,6 +629,7 @@ locs = [
     "resort_area_nugget",
     "resort_area_nugget_0",
 ]
+group = "fight_area"
 
 [resort_area_ribbon_syndicate_1f]
 exits = [
@@ -599,16 +637,19 @@ exits = [
     "resort_area",
 ]
 header = "resort_area_ribbon_syndicate_1f"
+group = "fight_area"
 
 [villa]
 exits = [
     "resort_area",
 ]
 header = "villa"
+group = "fight_area"
 
 [resort_area_ribbon_syndicate_elevator]
 exits = []
 header = "resort_area_ribbon_syndicate_elevator"
+group = "fight_area"
 
 [resort_area_pokecenter_1f]
 exits = [
@@ -617,6 +658,7 @@ exits = [
     "resort_area_pokecenter_2f",
 ]
 header = "resort_area_pokecenter_1f"
+group = "fight_area"
 
 [resort_area_pokecenter_2f]
 exits = [
@@ -624,12 +666,14 @@ exits = [
     "union_room",
 ]
 header = "resort_area_pokecenter_2f"
+group = "fight_area"
 
 [resort_area_pokecenter_b1f]
 exits = [
     "resort_area_pokecenter_1f",
 ]
 header = "resort_area_pokecenter_b1f"
+group = "fight_area"
 
 [pokemon_league_elevator_to_aaron_room]
 exits = [
@@ -643,6 +687,7 @@ exits = [
     "route_228",
 ]
 header = "route_228_south_house"
+group = "fight_area"
 
 [twinleaf_town_player_house_1f]
 exits = [
@@ -696,24 +741,28 @@ exits = [
 ]
 locs = ["fight_area_super_rod"]
 header = "fight_area"
+group = "fight_area"
 
 [fight_area_middle_house]
 exits = [
     "fight_area",
 ]
 header = "fight_area_middle_house"
+group = "fight_area"
 
 [fight_area_mart]
 exits = [
     "fight_area",
 ]
 header = "fight_area_mart"
+group = "fight_area"
 
 [fight_area_south_house]
 exits = [
     "fight_area",
 ]
 header = "fight_area_south_house"
+group = "fight_area"
 
 [fight_area_pokecenter_1f]
 exits = [
@@ -722,12 +771,14 @@ exits = [
     "fight_area",
 ]
 header = "fight_area_pokecenter_1f"
+group = "fight_area"
 
 [fight_area_pokecenter_b1f]
 exits = [
     "fight_area_pokecenter_1f",
 ]
 header = "fight_area_pokecenter_b1f"
+group = "fight_area"
 
 [fight_area_pokecenter_2f]
 exits = [
@@ -735,6 +786,7 @@ exits = [
     "union_room",
 ]
 header = "fight_area_pokecenter_2f"
+group = "fight_area"
 
 [great_marsh_6]
 exits = [
@@ -1035,6 +1087,7 @@ locs = [
     "stark_mountain_outside_life_orb",
     "stark_mountain_outside_max_elixir",
 ]
+group = "fight_area"
 
 [pal_park]
 exits = [
@@ -1221,6 +1274,7 @@ locs = [
     "stark_mountain_room_1_full_restore",
     "stark_mountain_room_1_star_piece",
 ]
+group = "fight_area"
 
 [battle_frontier_gate_to_fight_area]
 exits = [
@@ -1228,6 +1282,7 @@ exits = [
     "fight_area",
 ]
 header = "battle_frontier_gate_to_fight_area"
+group = "fight_area"
 
 [battle_frontier]
 exits = [
@@ -1239,12 +1294,14 @@ exits = [
     "battle_tower",
 ]
 header = "battle_frontier"
+group = "fight_area"
 
 [battle_arcade]
 exits = [
     "battle_frontier",
 ]
 header = "battle_arcade"
+group = "fight_area"
 
 [route_228_rock_peak_ruins]
 exits = [
@@ -1255,6 +1312,7 @@ locs = [
     "route_228_rock_peak_ruins_hard_stone",
     "route_228_rock_peak_ruins_nugget",
 ]
+group = "fight_area"
 
 [sandgem_town_pokecenter_b1f]
 exits = [
@@ -1295,6 +1353,7 @@ exits = [
     "battle_frontier",
 ]
 header = "battle_factory"
+group = "fight_area"
 
 [route_220]
 exits = [
@@ -1365,12 +1424,14 @@ exits = [
     "battle_frontier",
 ]
 header = "battle_hall"
+group = "fight_area"
 
 [battle_castle]
 exits = [
     "battle_frontier",
 ]
 header = "battle_castle"
+group = "fight_area"
 
 [verity_cavern]
 exits = [
@@ -1688,6 +1749,7 @@ exits = [
     "solaceon_town",
 ]
 header = "pokemon_day_care"
+locs = ["pokemon_day_care_daycarechecker"]
 
 [solaceon_town_north_house]
 exits = [
@@ -1833,12 +1895,14 @@ exits = [
     "route_228",
 ]
 header = "rock_peak_ruins"
+group = "fight_area"
 
 [battle_tower]
 exits = [
     "battle_frontier",
 ]
 header = "battle_tower"
+group = "fight_area"
 
 [poketch_co_1f]
 exits = [
@@ -2006,6 +2070,7 @@ exits = [
     "resort_area",
 ]
 header = "resort_area_house"
+group = "fight_area"
 
 [canalave_library_1f]
 exits = [
@@ -2319,12 +2384,14 @@ locs = [
     "stark_mountain_room_2_ultra_ball_0",
     "stark_mountain_room_2_fire_stone",
 ]
+group = "fight_area"
 
 [stark_mountain_room_3]
 exits = [
     "stark_mountain_room_2",
 ]
 header = "stark_mountain_room_3"
+group = "fight_area"
 
 [route_221_house]
 exits = [
@@ -2595,6 +2662,7 @@ header = "floaroma_meadow"
 [floaroma_meadow]
 exits = [
     "route_205_south",
+    "floaroma_meadow_south",
 ]
 header = "floaroma_meadow"
 locs = [

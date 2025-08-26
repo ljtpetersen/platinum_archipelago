@@ -13,8 +13,12 @@ class RegionData:
     locs: Set[str] = frozenset()
     events: Set[str] = frozenset()
     accessible_encounters: Set[str] = frozenset()
+    group: str = "generic"
 
 regions: Mapping[str, RegionData] = {
     # TEMPLATE: REGIONS
 }
 
+event_region_map: Mapping[str, str] = {
+    # TEMPLATE: EVENT_REGION_MAP
+}

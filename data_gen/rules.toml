@@ -7,7 +7,7 @@ loc_types.hidden = "dowsingmachine_if_opt"
 
 enc_types.surf = "surf"
 enc_types.good_rod = "good_rod"
-enc_types.super_rod = "super_rod"
+#enc_types.super_rod = "super_rod"
 enc_types.old_rod = "old_rod"
 
 common.national_dex = "pokedex * 3"
@@ -57,7 +57,7 @@ locs.ravaged_path_luck_incense = "rock_smash & surf"
 exits.ravaged_path.route_204_north = "rock_smash"
 encs.ravaged_path.old_rod = "rock_smash"
 encs.ravaged_path.good_rod = "rock_smash"
-encs.ravaged_path.super_rod = "rock_smash"
+#encs.ravaged_path.super_rod = "rock_smash"
 encs.ravaged_path.surf = "rock_smash"
 
 locs.route_204_north_tm78 = "cut"
@@ -148,6 +148,8 @@ exits.route_210_north.route_210_grandma_wilma_house = "rock_climb"
 exits.celestic_town.route_210_north = "defog_if_opt"
 
 locs.celestic_town_cave_hm03 = "old_charm"
+locs.celestic_town_dragon_fang = "old_charm"
+locs.celestic_town_kings_rock = "old_charm"
 
 locs.route_211_east_calcium = "rock_climb & rock_smash"
 locs.route_211_east_tm29 = "rock_climb & rock_smash"
@@ -201,6 +203,7 @@ locs.route_212_south_tm62 = "bicycle"
 locs.route_218_rare_candy = "surf"
 locs.route_218_hyper_potion = "surf"
 exits.route_218.route_218_gate_to_canalave_city = "surf"
+encs.route_218.land = "surf"
 
 exits.canalave_city.fullmoon_island = "national_dex & event_beat_cynthia"
 locs.canalave_city_tm89 = "surf"
@@ -284,3 +287,8 @@ locs.victory_road_2f_full_restore = "bicycle"
 locs.victory_road_2f_max_elixir = "bicycle"
 
 exits.pokemon_league_north_pokecenter_1f.pokemon_league_elevator_to_aaron_room = "badges(8)"
+
+locs.victory_road_1f_tm41 = "rock_climb"
+locs.victory_road_1f_nugget = "rock_climb"
+exits.victory_road_1f_entrance.victory_road_2f_entrance = "rock_climb"
+exits.victory_road_2f_entrance.victory_road_2f = "rock_smash & strength"

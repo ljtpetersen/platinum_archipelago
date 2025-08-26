@@ -4,8 +4,11 @@
 # Licensed under MIT. See LICENSE
 
 from BaseClasses import Region
-from collections.abc import Mapping, Sequence
+from collections.abc import Callable, Mapping, MutableSet, Sequence
+from dataclasses import dataclass
 from typing import Tuple, TYPE_CHECKING
+
+from worlds.pokemon_platinum.options import PokemonPlatinumOptions
 
 from .data import regions as regiondata
 from .data.encounters import encounter_types, encounters
@@ -13,6 +16,27 @@ from .locations import PokemonPlatinumLocation
 
 if TYPE_CHECKING:
     from . import PokemonPlatinumWorld
+
+@dataclass(frozen=True)
+class RegionType:
+    is_enabled: Callable[[PokemonPlatinumOptions], bool]
+
+region_groups: Mapping[str, RegionType] = {
+    "generic": RegionType(is_enabled = lambda _ : True),
+    "fight_area": RegionType(is_enabled = lambda _ : False),
+}
+
+def is_region_enabled(region: str | None, opts: PokemonPlatinumOptions) -> bool:
+    if region:
+        if region in regiondata.regions:
+            return region_groups[regiondata.regions[region].group].is_enabled(opts)
+        else:
+            return True
+    else:
+        return False
+
+def is_event_region_enabled(event: str, opts: PokemonPlatinumOptions) -> bool:
+    return is_region_enabled(regiondata.event_region_map[event], opts)
 
 def create_regions(world: "PokemonPlatinumWorld") -> Mapping[str, Region]:
     regions: Mapping[str, Region] = {}
@@ -25,6 +49,9 @@ def create_regions(world: "PokemonPlatinumWorld") -> Mapping[str, Region]:
         encs = encounters[wild_region_data.header]
         for type in encounter_types:
             if type not in wild_region_data.accessible_encounters:
+                continue
+            if type == "super_rod":
+                # TODO: Remove when stark mountain finished (stopgap because super rod not in pool)
                 continue
             e = getattr(encs, type)
             name = f"{header}_{type}"
@@ -45,7 +72,12 @@ def create_regions(world: "PokemonPlatinumWorld") -> Mapping[str, Region]:
                 wild_region = regions[name]
             parent_region.connect(wild_region, f"{parent_region.name} -> {name}")
 
+
+    ignored_regions: MutableSet[str] = set()
     for region_name, region_data in regiondata.regions.items():
+        if not region_groups[region_data.group].is_enabled(world.options):
+            ignored_regions.add(region_name)
+            continue
         new_region = Region(region_name, world.player, world.multiworld)
 
         regions[region_name] = new_region
@@ -65,6 +97,8 @@ def create_regions(world: "PokemonPlatinumWorld") -> Mapping[str, Region]:
             connections.append((f"{region_name} -> {region_exit}", region_name, region_exit))
 
     for name, source, dest in connections:
+        if dest in ignored_regions:
+            continue
         regions[source].connect(regions[dest], name)
 
     regions["Menu"] = Region("Menu", world.player, world.multiworld)

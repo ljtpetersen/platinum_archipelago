@@ -7,8 +7,9 @@ from BaseClasses import CollectionState
 from typing import TYPE_CHECKING
 from worlds.generic.Rules import set_rule
 
-from .data import Hm, items as itemdata, locations as locationdata, rules as ruledata
-from .locations import location_types, raw_id_to_const_name
+from .data import Hm, items as itemdata, rules as ruledata
+from .locations import is_location_enabled, get_parent_region
+from .regions import is_event_region_enabled, is_region_enabled
 
 if TYPE_CHECKING:
     from . import PokemonPlatinumWorld
@@ -17,10 +18,10 @@ def always_true(_: CollectionState) -> bool:
     return True
 
 def is_location_present(label: str, world: "PokemonPlatinumWorld") -> bool:
-    if label.startswith("event_"):
+    if label.startswith("event_") and is_event_region_enabled(label, world.options):
         return True
-    const_name = raw_id_to_const_name[world.location_name_to_id[label]]
-    return location_types[locationdata.locations[const_name].type].is_enabled(world.options) or const_name in locationdata.required_locations
+    parent_region = get_parent_region(label, world)
+    return is_region_enabled(parent_region, world.options) and is_location_enabled(label, world)
 
 def set_rules(world: "PokemonPlatinumWorld") -> None:
     common_rules = {}
@@ -47,8 +48,9 @@ def set_rules(world: "PokemonPlatinumWorld") -> None:
 
     rules.fill_rules()
 
-    for name, rule in rules.exit_rules.items():
-        set_rule(world.multiworld.get_entrance(name, world.player), rule)
+    for (src, dest), rule in rules.exit_rules.items():
+        if is_region_enabled(src, world.options) and is_region_enabled(dest, world.options):
+            set_rule(world.multiworld.get_entrance(f"{src} -> {dest}", world.player), rule)
 
     for name, rule in rules.location_rules.items():
         if is_location_present(name, world):

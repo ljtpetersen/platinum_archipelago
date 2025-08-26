@@ -3,6 +3,7 @@
 # Copyright (C) 2025 James Petersen <m@jamespetersen.ca>
 # Licensed under MIT. See LICENSE
 
+from typing import Tuple
 from BaseClasses import CollectionState
 from collections.abc import Callable, Mapping, MutableMapping
 from . import Hm, items, locations, species
@@ -20,7 +21,7 @@ def create_hm_badge_rule(hm: Hm, player: int) -> Rule:
     return hm_badge_rule
 
 class Rules:
-    exit_rules: Mapping[str, Rule]
+    exit_rules: Mapping[Tuple[str, str], Rule]
     location_rules: Mapping[str, Rule]
     common_rules: MutableMapping[str, Callable]
     

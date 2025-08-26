@@ -35,6 +35,14 @@ location_types: Mapping[str, LocationType] = {
     "pokedex": LocationType(is_enabled = lambda opts : opts.pokedex.value == 1),
 }
 
+def get_parent_region(label: str, world: "PokemonPlatinumWorld") -> str | None:
+    const_name = raw_id_to_const_name[world.location_name_to_id[label]]
+    return locationdata.locations[const_name].parent_region
+
+def is_location_enabled(label: str, world: "PokemonPlatinumWorld"):
+    const_name = raw_id_to_const_name[world.location_name_to_id[label]]
+    return location_types[locationdata.locations[const_name].type].is_enabled(world.options) or const_name in locationdata.required_locations
+
 def create_location_label_to_code_map() -> Dict[str, int]:
     return {v.label:v.get_raw_id() for v in locationdata.locations.values()}
 

@@ -34,6 +34,7 @@ class LocationData:
     original_item: str
     type: str
     check: LocationCheck
+    parent_region: str | None = None
 
     def get_raw_id(self) -> int:
         return self.table << 16 | self.id
