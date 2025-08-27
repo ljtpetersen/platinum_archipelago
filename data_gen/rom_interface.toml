@@ -35,7 +35,7 @@ hm_badge.rock_smash = "coal_badge"
 hm_badge.waterfall = "beacon_badge"
 hm_badge.rock_climb = "icicle_badge"
 
-req_items = ["dowsingmachine", "pokedex"]
+req_items = ["dowsingmachine", "poketch"]
 
 item_group.items = "Items"
 item_group.key_items = "Key Items"
