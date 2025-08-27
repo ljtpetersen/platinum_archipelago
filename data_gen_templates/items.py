@@ -7,6 +7,7 @@ from BaseClasses import ItemClassification
 from collections.abc import Mapping
 from dataclasses import dataclass
 from enum import IntEnum
+from typing import Dict, Set
 
 class ItemClass(IntEnum):
     """These are the possible item classes."""
@@ -32,4 +33,8 @@ class ItemData:
 
 items: Mapping[str, ItemData] = {
     # TEMPLATE: ITEMS
+}
+
+item_groups: Dict[str, Set[str]] = {
+    # TEMPLATE: ITEM_GROUPS
 }

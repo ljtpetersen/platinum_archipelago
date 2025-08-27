@@ -12,7 +12,7 @@ from worlds.AutoWorld import WebWorld, World
 
 from .client import PokemonPlatinumClient
 from .data import items as itemdata
-from .items import create_item_label_to_code_map, get_item_classification, PokemonPlatinumItem
+from .items import create_item_label_to_code_map, get_item_classification, PokemonPlatinumItem, get_item_groups
 from .locations import PokemonPlatinumLocation, create_location_label_to_code_map, create_locations
 from .options import PokemonPlatinumOptions
 from .regions import create_regions
@@ -54,6 +54,7 @@ class PokemonPlatinumWorld(World):
 
     item_name_to_id = create_item_label_to_code_map()
     location_name_to_id = create_location_label_to_code_map()
+    item_name_groups = get_item_groups()
 
     def get_filler_item_name(self) -> str:
         # TODO

@@ -2956,7 +2956,7 @@ count = 5
 label = "Pokétch"
 id = 3
 clas = "special"
-group = "poketchapp"
+group = "poketch_apps"
 classification = "progression"
 
 [honey_x10]

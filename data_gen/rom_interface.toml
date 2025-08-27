@@ -36,3 +36,16 @@ hm_badge.waterfall = "beacon_badge"
 hm_badge.rock_climb = "icicle_badge"
 
 req_items = ["dowsingmachine", "pokedex"]
+
+item_group.items = "Items"
+item_group.key_items = "Key Items"
+item_group.badges = "Badges"
+item_group.berries = "Berries"
+item_group.pokedex = "Pokédex"
+item_group.balls = "Balls"
+item_group.tmhms = "TMs and HMs"
+item_group.medicine = "Medicine"
+item_group.mail = "Mail"
+item_group.poketch_apps = "Pokétch"
+item_group.battle_items = "Battle Items"
+item_group.runningshoes = "Running Shoes"

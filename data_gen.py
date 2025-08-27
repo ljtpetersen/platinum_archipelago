@@ -24,6 +24,12 @@ def get_toml(name: str) -> Mapping[str, Any]:
 def convert_frozenset(seq: Sequence[str]) -> str:
     return f"frozenset({{{", ".join(map(lambda s : f"\"{s}\"", seq))}}})"
 
+def convert_item_groups(group: str, items: Set[str]) -> Sequence[str]:
+    ret = [f"{group}: {{\n"]
+    ret += [f"    {item},\n" for item in items]
+    ret.append("},\n")
+    return ret
+
 @dataclass(frozen=True)
 class Region:
     exits: Sequence[str]
@@ -136,6 +142,7 @@ class RomInterface:
     hm: Mapping[str, str]
     hm_badge: Mapping[str, str]
     req_items: Sequence[str]
+    item_group: Mapping[str, str]
 
 @dataclass(frozen=True)
 class PreEvolution:
@@ -315,6 +322,11 @@ class ParserState:
 
         ret["ITEM_CLASSES"] = [f"{k.upper()} = 0x{v:X}\n" for k, v in self.rom_interface.item_clas.items()]
         ret["ITEMS"] = [f"\"{k}\": {v},\n" for k, v in self.items.items()]
+        item_groups: Mapping[str, Set[str]] = {f"\"{label}\"":{f"\"{item.label}\""
+            for item in self.items.values() if item.group == group}
+            for group, label in self.rom_interface.item_group.items()}
+        ret["ITEM_GROUPS"] = [l for group, items in item_groups.items()
+            for l in convert_item_groups(group, items)]
 
         return ret
 
@@ -343,16 +355,15 @@ class ParserState:
     def generate_locations(self) -> Mapping[str, Sequence[str]]:
         ret = {}
 
-        location_region_map: Mapping[str, str | None] = {
+        location_region_map: Mapping[str, str] = {
             loc:name
             for name, region in self.regions.items()
             for loc in region.locs
         }
-        location_region_map.update({k:None for k in (self.locations.keys() - location_region_map.keys())}) # type: ignore
         
         ret["LOCATION_TABLES"] = [f"{k.upper()} = 0x{v:X}\n"
             for k, v in self.rom_interface.loc_table.items()]
-        ret["LOCATIONS"] = [f"\"{k}\": {v.to_string(location_region_map[k])},\n" for k, v in self.locations.items()]
+        ret["LOCATIONS"] = [f"\"{k}\": {v.to_string(location_region_map.get(k))},\n" for k, v in self.locations.items()]
         rule_items = self.get_rule_items()
         ret["REQUIRED_LOCATIONS"] = [f"\"{k}\",\n"
                                      for k, v in self.locations.items()
