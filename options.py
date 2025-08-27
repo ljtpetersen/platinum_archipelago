@@ -4,6 +4,7 @@
 # Licensed under MIT. See LICENSE
 
 from dataclasses import dataclass
+from typing import Any
 from Options import Choice, DefaultOnToggle, OptionDict, OptionSet, PerGameCommonOptions, Range, Toggle
 
 class RandomizeHms(DefaultOnToggle):
@@ -166,6 +167,9 @@ class GameOptions(OptionDict):
         "default_rival_name": "random",
         "default_gender": "vanilla",
     }
+
+    def __getattr__(self, name: str) -> Any:
+        return self.get(name, GameOptions.default[name])
 
 @dataclass
 class PokemonPlatinumOptions(PerGameCommonOptions):

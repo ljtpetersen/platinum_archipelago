@@ -12,6 +12,8 @@ from settings import get_settings
 from worlds.Files import APAutoPatchInterface
 import zipfile
 
+from worlds.pokemon_platinum.options import GameOptions
+
 from .data.charmap import charmap
 from .data.locations import locations, LocationTable
 from .data.items import items
@@ -154,59 +156,76 @@ def process_name(name: str, world: "PokemonPlatinumWorld") -> bytes:
         return b'\xFF' * 16
 
 def generate_output(world: "PokemonPlatinumWorld", output_directory: str, patch: PokemonPlatinumPatch) -> None:
+    game_opts = world.options.game_options
     ap_bin = bytes()
-    ap_bin += process_name(world.options.game_options["default_player_name"], world)
-    ap_bin += process_name(world.options.game_options["default_rival_name"], world)
-    match world.options.game_options["default_gender"]:
+    ap_bin += process_name(game_opts.default_player_name, world)
+    ap_bin += process_name(game_opts.default_rival_name, world)
+    match game_opts.default_gender:
         case "male":
             ap_bin += b'\x00'
         case "female":
             ap_bin += b'\x01'
         case "random":
             ap_bin += random.choice([b'\x00', b'\x01'])
-        case _:
+        case "vanilla":
             ap_bin += b'\x02'
-    match world.options.game_options["text_speed"]:
+        case _:
+            raise ValueError(f"invalid default gender: \"{game_opts.default_gender}\"")
+    match game_opts.text_speed:
         case "fast":
             ap_bin += b'\x02'
         case "slow":
             ap_bin += b'\x00'
-        case _:
+        case "mid":
             ap_bin += b'\x01'
-    match world.options.game_options["sound"]:
+        case _:
+            raise ValueError(f"invalid text speed: \"{game_opts.text_speed}\"")
+    match game_opts.sound:
         case "mono":
             ap_bin += b'\x01'
-        case _:
+        case "stereo":
             ap_bin += b'\x00'
-    match world.options.game_options["battle_scene"]:
+        case _:
+            raise ValueError(f"invalid sound: \"{game_opts.sound}\"")
+    match game_opts.battle_scene:
         case "off":
             ap_bin += b'\x01'
-        case _:
+        case "on":
             ap_bin += b'\x00'
-    match world.options.game_options["battle_style"]:
+        case _:
+            raise ValueError(f"invalid battle scene: \"{game_opts.battle_scene}\"")
+    match game_opts.battle_style:
         case "set":
             ap_bin += b'\x01'
-        case _:
+        case "shift":
             ap_bin += b'\x00'
-    match world.options.game_options["button_mode"]:
+        case _:
+            raise ValueError(f"invalid battle style: \"{game_opts.battle_style}\"")
+    match game_opts.button_mode:
         case "start=x":
             ap_bin += b'\x01'
         case "l=a":
             ap_bin += b'\x02'
-        case _:
+        case "normal":
             ap_bin += b'\x00'
-    text_frame = world.options.game_options["text_frame"]
+        case _:
+            raise ValueError(f"invalid button mode: \"{game_opts.button_mode}\"")
+    text_frame = game_opts.text_frame
     if isinstance(text_frame, int) and 1 <= text_frame and text_frame <= 20:
         ap_bin += (text_frame - 1).to_bytes(length=1, byteorder='little')
+    elif text_frame == "random":
+        ap_bin += random.randint(0, 19).to_bytes(length=1, byteorder='little')
     else:
-        ap_bin += b'\x00'
-    match world.options.game_options["received_items_notification"]:
+        raise ValueError(f"invalid text frame: \"{text_frame}\"")
+    match game_opts.received_items_notification:
         case "nothing":
             ap_bin += b'\x00'
         case "message":
             ap_bin += b'\x03'
-        case _:
+        case "jingle":
             ap_bin += b'\x04'
+        case _:
+            raise ValueError(f"invalid received items notification: \"{game_opts.received_items_notification}\"")
 
     if world.options.hm_badge_requirement.value == 1:
         hm_accum = 0
