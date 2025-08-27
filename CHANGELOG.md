@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * Crashes when giving multiple Pokétches with `jingle` and `nothing` item receiving notification options.
 * Generation error when using `poketch_apps = false`.
 * Issues running data generation with Python version < 3.12.
+* Hardlock when obtaining the Pokétch from a local location.
 
 ## [0.0.1] - 2025-08-26
 The first release of this project.
