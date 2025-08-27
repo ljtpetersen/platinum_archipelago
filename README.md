@@ -4,7 +4,6 @@ The setup guide is [here](docs/setup_en.md).
 
 ## Running From Source
 The following are required.
-* Python version at least 3.11.
 * Additionally to what Archipelago requires, the `pyparsing` library is required.
 This can be installed via PIP.
 

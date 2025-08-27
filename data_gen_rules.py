@@ -87,7 +87,7 @@ class Rule:
                     break
                 exprs = [f"state.has({item_name_map(item)}, self.player)"] # type: ignore
             case _:
-                exprs = [f"state.has_{self.op.get_has()}([{", ".join(map(item_name_map, str_items))}], self.player)"]
+                exprs = [f"state.has_{self.op.get_has()}([{', '.join(map(item_name_map, str_items))}], self.player)"]
         for val in self.items - item_set:
             if isinstance(val, str):
                 exprs.append(f"self.common_rules[\"{val}\"](state)")
@@ -111,11 +111,11 @@ name_str = Word(alphas + "_", alphanums + "_").set_parse_action(lambda s : f"\"{
 integer = Regex(r"[+-]?(0[xX][0-9a-fA-F]+|0[bB][01]+|0[oO][0-7]+|[0-9]+)")
 func_arg = Forward()
 arg_dict = LC + Optional(delimited_list(Group(name_str + COLON + func_arg))) + RC
-arg_dict.set_parse_action(lambda val : f"{{{", ".join(map(lambda arr : f"{arr[0]}: {arr[1]}", val))}}}")
+arg_dict.set_parse_action(lambda val : f"{{{', '.join(map(lambda arr : f'{arr[0]}: {arr[1]}', val))}}}")
 arg_seq = LS + Optional(delimited_list(func_arg)) + RS
-arg_seq.set_parse_action(lambda val : f"[{", ".join(val)}]")
+arg_seq.set_parse_action(lambda val : f"[{', '.join(val)}]")
 arg_set = LC + Optional(delimited_list(func_arg)) + RC
-arg_set.set_parse_action(lambda val : f"{{{", ".join(val)}}}")
+arg_set.set_parse_action(lambda val : f"{{{', '.join(val)}}}")
 func_arg <<= name_str | integer | arg_seq | arg_dict | arg_set
 func_args = Optional(delimited_list(func_arg)).set_parse_action(getattr(", ", "join"))
 func_call = (NAME + LPAR + func_args + RPAR).set_parse_action(lambda v : FuncCall(*v))

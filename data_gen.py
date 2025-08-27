@@ -22,7 +22,7 @@ def get_toml(name: str) -> Mapping[str, Any]:
         return tomllib.load(f)
 
 def convert_frozenset(seq: Sequence[str]) -> str:
-    return f"frozenset({{{", ".join(map(lambda s : f"\"{s}\"", seq))}}})"
+    return "frozenset({{{}}})".format(", ".join(map(lambda s : f'"{s}"', seq)))
 
 def convert_item_groups(group: str, items: Set[str]) -> Sequence[str]:
     ret = [f"{group}: {{\n"]
@@ -165,7 +165,7 @@ class Species:
     def to_string(self, item_name_map: Callable[[str], str]) -> str:
         ret = f"SpeciesData(hms="
         if self.hms:
-            ret += f"{{{", ".join(map(lambda s : f"Hm.{s.upper()}", self.hms))}}}"
+            ret += "{{{}}}".format(", ".join(map(lambda s : f"Hm.{s.upper()}", self.hms)))
         else:
             ret += "set()"
         
