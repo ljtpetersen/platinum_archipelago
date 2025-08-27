@@ -12,7 +12,7 @@ With these, clone this repository in the `worlds` directory of the Archipelago r
 With every modification to the files in `data_gen` or `data_gen_templates`, and when first cloning the
 repository, the `data_gen.py` file must be executed. (Do `python data_gen.py` in the root directory of the repository)
 
-To make the `.apworld` file, run `make` within the root directory of the repository. (For this to work, the folder containing the repository must be named `pokemon_platinum`.
+To make the `.apworld` file, run `make` within the root directory of the repository.
 
 ## Where Help is Needed
 * Better documentation! (`docs/setup_en.md` and `en_Pokemon Platinum.md`)
