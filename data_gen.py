@@ -343,11 +343,12 @@ class ParserState:
     def generate_locations(self) -> Mapping[str, Sequence[str]]:
         ret = {}
 
-        location_region_map: Mapping[str, str | None] = {}
-        for name, region in self.regions.items():
-            for loc in region.locs:
-                location_region_map[loc] = name
-        location_region_map.update({k:None for k in (self.locations.keys() - location_region_map.keys())})
+        location_region_map: Mapping[str, str | None] = {
+            loc:name
+            for name, region in self.regions.items()
+            for loc in region.locs
+        }
+        location_region_map.update({k:None for k in (self.locations.keys() - location_region_map.keys())}) # type: ignore
         
         ret["LOCATION_TABLES"] = [f"{k.upper()} = 0x{v:X}\n"
             for k, v in self.rom_interface.loc_table.items()]
