@@ -217,6 +217,10 @@ def generate_output(world: "PokemonPlatinumWorld", output_directory: str, patch:
     else:
         hm_accum = 0xFF
     ap_bin += hm_accum.to_bytes(length=1, byteorder='little')
+
+    ap_bin += world.options.exp_multiplier.value.to_bytes(length=1, byteorder='little')
+    ap_bin += world.options.blind_trainers.value.to_bytes(length=1, byteorder='little')
+
     if len(ap_bin) % 2 == 1:
         ap_bin += b'\x00'
 

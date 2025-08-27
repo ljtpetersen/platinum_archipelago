@@ -4,24 +4,30 @@
 # Licensed under MIT. See LICENSE
 
 from dataclasses import dataclass
-from Options import Choice, DefaultOnToggle, OptionDict, OptionSet, PerGameCommonOptions, Toggle
+from Options import Choice, DefaultOnToggle, OptionDict, OptionSet, PerGameCommonOptions, Range, Toggle
 
 class RandomizeHms(DefaultOnToggle):
+    """Adds the HMs to the pool."""
     display_name = "Randomize HMs"
 
 class RandomizeBadges(DefaultOnToggle):
+    """Adds the badges to the pool."""
     display_name = "Randomize Badges"
 
 class RandomizeOverworlds(DefaultOnToggle):
+    """Adds overworld items to the pool."""
     display_name = "Randomize Overworlds"
 
 class RandomizeHiddenItems(Toggle):
+    """Adds hidden items to the pool."""
     display_name = "Randomize Hidden Items"
 
 class RandomizeNpcGifts(DefaultOnToggle):
+    """Adds NPC gifts to the pool."""
     display_name = "Randomize NPC Gifts"
 
 class RandomizeKeyItems(Choice):
+    """Adds key items to the pool."""
     display_name = "Randomize Key Items"
     default = 1
     option_vanilla = 0
@@ -32,15 +38,19 @@ class RandomizeKeyItems(Choice):
         return self.value >= self.option_most
 
 class RandomizeRods(DefaultOnToggle):
+    """Adds rods to the pool. Currently, the Super Rod is unavailable, as it is post-game."""
     display_name = "Randomize Rods"
 
 class RandomizePoketchApps(DefaultOnToggle):
+    """Adds Pokétch apps to the pool (and the Pokétch)."""
     display_name = "Randomize Poketch Apps"
 
 class RandomizeRunningShoes(Toggle):
+    """Adds the running shoes to the pool."""
     display_name = "Randomize Running Shoes"
 
 class RandomizeBicycle(Toggle):
+    """Adds the bicycle to the pool."""
     display_name = "Randomize Bicycle"
 
 class RandomizePokedex(Toggle):
@@ -48,11 +58,12 @@ class RandomizePokedex(Toggle):
     display_name = "Randomize Pokedex"
 
 class HmBadgeRequirements(DefaultOnToggle):
+    """Require the corresponding badge to use an HM outside of battle."""
     display_name = "Require Badges for HMs"
 
 class RemoveBadgeRequirement(OptionSet):
     """
-    Specify which HMs do not require a badge to use. This overrides the HM Badge Requirements setting.
+    Specify which HMs do not require a badge to use outside of battle. This overrides the HM Badge Requirements setting.
 
     HMs should be provided in the form: "FLY", "WATERFALL", "ROCK_SMASH", etc.
     """
@@ -60,12 +71,15 @@ class RemoveBadgeRequirement(OptionSet):
     valid_keys = ["CUT", "FLY", "SURF", "STRENGTH", "DEFOG", "ROCK_SMASH", "WATERFALL", "ROCK_CLIMB"]
 
 class VisibilityHmLogic(DefaultOnToggle):
+    """Logically require Flash or Defog for traversing and finding locations in applicable regions."""
     display_name = "Logically Require Flash or Defog for Applicable Regions"
 
 class DowsingMachineLogic(DefaultOnToggle):
+    """Logically require the Dowsing Machine to find hidden items."""
     display_name = "Logically Require Dowsing Machine for Hidden Items"
 
 class Goal(Choice):
+    """The goal of the randomizer. Currently, this only supports defeating the champion and entering the hall of fame."""
     display_name = "Goal"
     default = 0
     option_champion = 0
@@ -76,6 +90,17 @@ class AddMasterRepel(Toggle):
     It is a repel that blocks all encounters, and never runs out.
     """
     display_name = "Add Master Repel"
+
+class ExpMultiplier(Range):
+    """Set an experience multiplier for all gained experience."""
+    display_name = "Exp. Multiplier"
+    range_start = 1
+    range_end = 16
+    default = 1
+
+class BlindTrainers(Toggle):
+    """Set whether trainers will be blind."""
+    display_name = "Blind Trainers"
 
 class GameOptions(OptionDict):
     """
@@ -99,12 +124,12 @@ class GameOptions(OptionDict):
     and the following symbols: , . ' - : ; ! ? " ( ) ~ @ # % + * / =,
     and as spaces.
     as well, there are some special sequences.
-      \\" is an opening double-quotation mark
-      \\' is an opening single-quotation mark
-      \\. is a centred dot (centred vertically)
-      \\Z are two superimposed Zs (as in sleep)
+      {"} is an opening double-quotation mark
+      {'} is an opening single-quotation mark
+      {.} is a centred dot (centred vertically)
+      {Z} are two superimposed Zs (as in sleep)
       ^ is an upwards arrow
-      \\v is a downwards arrow
+      {v} is a downwards arrow
       {MALE} is the male sign
       {FEMALE} is the female sign
       {...} are ellipsis
@@ -163,6 +188,8 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
     goal: Goal
     game_options: GameOptions
     master_repel: AddMasterRepel
+    exp_multiplier: ExpMultiplier
+    blind_trainers: BlindTrainers
 
     def requires_badge(self, hm: str) -> bool:
         return self.hm_badge_requirement.value == 1 or hm in self.remove_badge_requirements
