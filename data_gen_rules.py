@@ -3,11 +3,11 @@
 # Copyright (C) 2025 James Petersen <m@jamespetersen.ca>
 # Licensed under MIT. See LICENSE
 
-from collections.abc import Callable, Set
+from collections.abc import Callable, Sequence, Set
 from dataclasses import dataclass
 from enum import StrEnum
-from typing import Union
-from pyparsing import Forward, ParseResults, Regex, alphas, alphanums, Group, delimited_list, infix_notation, opAssoc, Optional, Suppress, Word
+from typing import Tuple, Union
+from pyparsing import Forward, MatchFirst, ParseResults, Regex, alphas, alphanums, Group, delimited_list, infix_notation, opAssoc, Optional, Suppress, Word
 
 class RuleOp(StrEnum):
     AND = "&"
@@ -19,6 +19,41 @@ class RuleOp(StrEnum):
                 return "all"
             case RuleOp.OR:
                 return "any"
+
+class Comparison(StrEnum):
+    EQ = "=="
+    NE = "!="
+    LE = "<="
+    GE = ">="
+    LT = "<"
+    GT = ">"
+
+    def inverted(self) -> "Comparison":
+        match self:
+            case Comparison.EQ:
+                return Comparison.NE
+            case Comparison.NE:
+                return Comparison.EQ
+            case Comparison.LE:
+                return Comparison.GT
+            case Comparison.GE:
+                return Comparison.LT
+            case Comparison.LT:
+                return Comparison.GE
+            case Comparison.GT:
+                return Comparison.LE
+
+@dataclass(frozen=True)
+class ConditionNode:
+    left: str
+    op: Comparison = Comparison.NE
+    right: str = "0"
+
+@dataclass(frozen=True)
+class Condition:
+    conds: Set[Union[ConditionNode, "Condition"]]
+    op: RuleOp
+    invert: bool = False
 
 @dataclass(frozen=True)
 class FuncCall:
@@ -105,7 +140,13 @@ class Rule:
         else:
             return centre
 
+@dataclass(frozen=True)
+class RuleWithOpts:
+    rules: Sequence[Tuple[Condition | None, Rule]]
+
 LPAR, RPAR, LS, RS, LC, RC, COLON, AST = map(Suppress, "()[]{}:*")
+IF = Suppress("if")
+ELSE = Suppress("else")
 NAME = Word(alphas + "_", alphanums + "_")
 name_str = Word(alphas + "_", alphanums + "_").set_parse_action(lambda s : f"\"{s[0]}\"")
 integer = Regex(r"[+-]?(0[xX][0-9a-fA-F]+|0[bB][01]+|0[oO][0-7]+|[0-9]+)")
@@ -120,6 +161,47 @@ func_arg <<= name_str | integer | arg_seq | arg_dict | arg_set
 func_args = Optional(delimited_list(func_arg)).set_parse_action(getattr(", ", "join"))
 func_call = (NAME + LPAR + func_args + RPAR).set_parse_action(lambda v : FuncCall(*v))
 rule_expr = Forward()
+
+comparisons = MatchFirst(Comparison).set_parse_action(lambda s : s[0]) # type: ignore
+opt_str = Word(alphas + "_", alphanums + "_").set_parse_action(lambda s : ConditionNode(str(s[0])))
+opt_cmp_ele = (NAME | integer).set_parse_action(lambda s : str(s[0]))
+opt_cmp = opt_cmp_ele + comparisons + opt_cmp_ele
+opt_cmp.set_parse_action(lambda v : ConditionNode(*v)) # type: ignore
+opt_operand = opt_cmp | opt_str
+
+def make_opt_parse_action(op: RuleOp) -> Callable[[ParseResults], Condition]:
+    def parse_action(res: ParseResults) -> Condition:
+        [res] = res
+        vals = set()
+        for v in res[::2]:
+            if isinstance(v, Condition) and v.op == op and not v.invert:
+                vals |= v.conds
+            else:
+                vals.add(v)
+        return Condition(frozenset(vals), op)
+    return parse_action
+
+def opt_not_parse_action(res: ParseResults) -> Condition | ConditionNode:
+    [[res]] = res
+    if isinstance(res, Condition):
+        return Condition(res.conds, res.op, not res.invert)
+    else:
+        return ConditionNode(res.left, res.op.inverted(), res.right) # type: ignore
+
+opt = infix_notation(opt_operand, [
+    (Suppress("!"), 1, opAssoc.RIGHT, opt_not_parse_action),
+    ("&", 2, opAssoc.LEFT, make_opt_parse_action(RuleOp.AND)),
+    ("|", 2, opAssoc.LEFT, make_opt_parse_action(RuleOp.OR)),
+])
+
+def opt_parse_action(res: ParseResults) -> Condition:
+    [res] = res
+    if not isinstance(res, Condition):
+        return Condition(frozenset([res]), RuleOp.AND) # type: ignore
+    else:
+        return res
+
+opt.set_parse_action(opt_parse_action)
 
 count_seq_and = LS + delimited_list(NAME, delim='&', min=1) + RS
 count_seq_and.set_parse_action(lambda val : (frozenset(val), RuleOp.AND))
@@ -146,6 +228,30 @@ rule_expr <<= infix_notation(operand, [
     ("&", 2, opAssoc.LEFT, make_rule_parse_action(RuleOp.AND)),
     ("|", 2, opAssoc.LEFT, make_rule_parse_action(RuleOp.OR)),
 ])
+def rule_parse_action(res: ParseResults) -> Rule:
+    [res] = res
+    if not isinstance(res, Rule):
+        return Rule(frozenset([res])) # type: ignore
+    else:
+        return res
+rule_expr.set_parse_action(rule_parse_action)
+
+rule_with_opt_expr = Forward()
+rule_with_opt_expr <<= rule_expr + Optional(IF + opt + Optional(ELSE + rule_with_opt_expr))
+
+def rule_with_opt_parse_action(res: ParseResults) -> RuleWithOpts:
+    current = res
+    l = len(current)
+    seq: Sequence[Tuple[Condition, Rule]] = []
+    if l >= 2:
+        cond = current[1]
+        if l == 3:
+            seq = current[2].rules # type: ignore
+    else:
+        cond = None
+    seq.append((cond, current[0])) # type: ignore
+    return RuleWithOpts(seq) # type: ignore
+rule_with_opt_expr.set_parse_action(rule_with_opt_parse_action)
 
 def parse_rule(val: str) -> Rule:
     ret = rule_expr.parse_string(val, parseAll=True)[0]
@@ -153,3 +259,9 @@ def parse_rule(val: str) -> Rule:
         return Rule(frozenset([ret])) # type: ignore
     else:
         return ret
+
+def main():
+    rule_with_opt_expr.parse_string("unowns if unown == option_vanilla else up_unown * 26 if unown == option_items", parseAll=True).pprint()
+
+if __name__ == "__main__":
+    main()
