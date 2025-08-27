@@ -258,6 +258,11 @@ def generate_output(world: "PokemonPlatinumWorld", output_directory: str, patch:
         ap_bin += (len(data) // 2).to_bytes(length=4, byteorder='little')
         ap_bin += data
 
+    start_inventory = world.options.start_inventory
+    entries = [world.item_name_to_id[label].to_bytes(length=2, byteorder='little') + count.to_bytes(length=2, byteorder='little') for label, count in start_inventory.items()]
+    ap_bin += len(entries).to_bytes(length=4, byteorder='little')
+    ap_bin += b''.join(entries)
+
     patch.write_file("ap.bin", ap_bin)
 
     out_file_name = world.multiworld.get_out_file_name_base(world.player)
