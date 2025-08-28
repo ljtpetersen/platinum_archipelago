@@ -1,0 +1,24 @@
+name: Fuzz APWorld
+on:
+  push:
+    branches: [ master, ci ]
+  pull_request:
+    branches: [ master ]
+
+
+jobs:
+  fuzz:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+
+      - name: Make apworld
+        shell: bash
+        run: make pokemon_platinum.apworld
+
+      - uses: Eijebong/ap-actions/fuzz@main
+        with:
+          apworld-path: pokemon_platinum.apworld
+          ap-version: '0.6.3'
+          python-version: '3.12'
+          checkout: false
