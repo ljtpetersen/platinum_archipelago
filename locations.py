@@ -75,14 +75,10 @@ def create_locations(world: "PokemonPlatinumWorld", regions: Mapping[str, Region
             if not (is_enabled or name in locationdata.required_locations):
                 continue
             item = itemdata.items[loc.original_item]
-            if is_enabled:
-                address = loc.get_raw_id()
-            else:
-                address = None
             plat_loc = PokemonPlatinumLocation(
                 world.player,
                 loc.label,
-                address=address,
+                address=loc.get_raw_id(),
                 parent=region,
                 default_item_id=item.get_raw_id(),
                 is_enabled=is_enabled)

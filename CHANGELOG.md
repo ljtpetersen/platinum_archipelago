@@ -17,9 +17,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * Hardlock when obtaining the Pokétch from a local location.
 * Random text frame is now random.
 * Added connection from Route 207 to Route 207 South.
+* A potential issue when getting multiple journals.
+* A bug where, when using `nothing` item receiving notification, the upgradable Pokédex would
+skip over the forms, and the second one would give the National Pokédex.
 # Changed
 * Game options now use the default value if there is no corresponding entry in the YAML.
 * Game options now raise exceptions if invalid values are entered.
+* Locations which are disabled by options are now properly tracked, and will be logged in the client/server when checked.
 
 ## [0.0.1] - 2025-08-26
 The first release of this project.

@@ -69,7 +69,7 @@ class PokemonPlatinumWorld(World):
     def create_items(self) -> None:
         locations: Iterable[PokemonPlatinumLocation] = self.multiworld.get_locations(self.player) # type: ignore
         item_locations = filter(
-            lambda loc : loc.address is not None and loc.is_enabled,
+            lambda loc : loc.address is not None and loc.is_enabled and not loc.locked,
             locations)
 
         add_items: list[str] = []
