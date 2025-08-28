@@ -5,12 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## 0.1.0 - TBD
+## 0.?.? - TBD
 ### Added
 * An option to show/hide unrandomized progression items in the chat.
 * A remote items option.
 * An option to logically require fly for North Sinnoh.
 * An option to stop Looker from blocking the East exit to Jubilife City.
+* A 60 FPS patch option.
 ### Fixed
 * Incorrect rules on Route 208 hidden Star Piece.
 * The secret entrance to Wayward Cave no longer optionally requires flash.

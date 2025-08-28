@@ -203,6 +203,12 @@ class RemoteItems(Toggle):
     """
     display_name = "Remote Items"
 
+class FPS60(Toggle):
+    """
+    Whether the 60 FPS patch should be applied.
+    """
+    display_name = "60 FPS"
+
 @dataclass
 class PokemonPlatinumOptions(PerGameCommonOptions):
     hms: RandomizeHms
@@ -223,6 +229,7 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
     dowsing_machine_logic: DowsingMachineLogic
     north_sinnoh_fly: RequireFlyForNorthSinnoh
     parcel_coupons_route_203: RequireParcelCouponsCheckRoute203
+    fps60: FPS60
 
     game_options: GameOptions
     master_repel: AddMasterRepel
