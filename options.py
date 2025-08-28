@@ -209,6 +209,13 @@ class FPS60(Toggle):
     """
     display_name = "60 FPS"
 
+class AddSSTicket(Toggle):
+    """
+    Add the S.S. Ticket to the item pool.
+    The S.S. ticket can be used to travel to the fight area before defeating Cynthia.
+    """
+    display_name = "Add S.S. Ticket"
+
 @dataclass
 class PokemonPlatinumOptions(PerGameCommonOptions):
     hms: RandomizeHms
@@ -233,6 +240,7 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
 
     game_options: GameOptions
     master_repel: AddMasterRepel
+    s_s_ticket: AddSSTicket
     exp_multiplier: ExpMultiplier
     blind_trainers: BlindTrainers
     show_unrandomized_progression_items: ShowUnrandomizedProgressionItems

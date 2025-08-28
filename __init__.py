@@ -81,6 +81,8 @@ class PokemonPlatinumWorld(World):
         add_items: list[str] = []
         if self.options.master_repel.value == 1:
             add_items.append("master_repel")
+        if self.options.s_s_ticket.value == 1:
+            add_items.append("s_s_ticket")
 
         itempool = []
         for loc in item_locations:

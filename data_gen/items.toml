@@ -2645,6 +2645,7 @@ label = "S.S. Ticket"
 id = 456
 clas = "bagitem"
 group = "key_items"
+classification = "progression"
 
 [contest_pass]
 label = "Contest Pass"
