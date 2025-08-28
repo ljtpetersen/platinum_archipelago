@@ -6,7 +6,6 @@
 import bsdiff4
 import os
 import pkgutil
-import random
 from typing import Any, Dict, TYPE_CHECKING
 from settings import get_settings
 from worlds.Files import APAutoPatchInterface
@@ -139,7 +138,7 @@ def process_name(name: str, world: "PokemonPlatinumWorld") -> bytes:
         return b'\xFF' * 16
     if name == "random":
         other_players = [world.multiworld.get_file_safe_player_name(id) for id in world.multiworld.player_name if id != world.player] # type: ignore
-        random.shuffle(other_players)
+        world.random.shuffle(other_players)
         # if no player name matches, then return vanilla
         for name in other_players:
             ret = encode_name(name)
@@ -166,7 +165,7 @@ def generate_output(world: "PokemonPlatinumWorld", output_directory: str, patch:
         case "female":
             ap_bin += b'\x01'
         case "random":
-            ap_bin += random.choice([b'\x00', b'\x01'])
+            ap_bin += world.random.choice([b'\x00', b'\x01'])
         case "vanilla":
             ap_bin += b'\x02'
         case _:
@@ -214,7 +213,7 @@ def generate_output(world: "PokemonPlatinumWorld", output_directory: str, patch:
     if isinstance(text_frame, int) and 1 <= text_frame and text_frame <= 20:
         ap_bin += (text_frame - 1).to_bytes(length=1, byteorder='little')
     elif text_frame == "random":
-        ap_bin += random.randint(0, 19).to_bytes(length=1, byteorder='little')
+        ap_bin += world.random.randint(0, 19).to_bytes(length=1, byteorder='little')
     else:
         raise ValueError(f"invalid text frame: \"{text_frame}\"")
     match game_opts.received_items_notification:
