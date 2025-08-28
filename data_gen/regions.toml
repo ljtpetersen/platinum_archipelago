@@ -301,9 +301,7 @@ locs = [
 ]
 
 [union_room]
-exits = [
-    "sandgem_town_pokecenter_2f",
-]
+exits = []
 header = "union_room"
 
 [sandgem_town_pokecenter_2f]
@@ -2956,6 +2954,7 @@ header = "route_207"
 exits = [
     "mt_coronet_1f_south",
     "route_206",
+    "route_207_south",
 ]
 header = "route_207"
 locs = [

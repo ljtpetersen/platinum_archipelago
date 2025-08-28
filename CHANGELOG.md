@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * Issues running data generation with Python version < 3.12.
 * Hardlock when obtaining the Pokétch from a local location.
 * Random text frame is now random.
+* Added connection from Route 207 to Route 207 South.
 # Changed
 * Game options now use the default value if there is no corresponding entry in the YAML.
 * Game options now raise exceptions if invalid values are entered.
