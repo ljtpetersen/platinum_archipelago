@@ -4903,7 +4903,7 @@ id = 42
 original_item = "poketch"
 type = "poketchapp"
 table = "base"
-check = { id = 0x4077, value = 2, op = "ge" }
+check = 0xB7C
 label = "Jubilife City - Poketch"
 id = 43
 
@@ -4911,7 +4911,7 @@ id = 43
 original_item = "calculator"
 type = "poketchapp"
 table = "base"
-check = { id = 0x4077, value = 2, op = "ge" }
+check = 0xB7C
 label = "Jubilife City - Calculator App"
 id = 44
 
@@ -4919,7 +4919,7 @@ id = 44
 original_item = "pedometer"
 type = "poketchapp"
 table = "base"
-check = { id = 0x4077, value = 2, op = "ge" }
+check = 0xB7C
 label = "Jubilife City - Pedometer App"
 id = 45
 
@@ -4927,7 +4927,7 @@ id = 45
 original_item = "partystatus"
 type = "poketchapp"
 table = "base"
-check = { id = 0x4077, value = 2, op = "ge" }
+check = 0xB7C
 label = "Jubilife City - Party Status App"
 id = 46
 

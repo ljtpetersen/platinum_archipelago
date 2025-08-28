@@ -174,6 +174,35 @@ class GameOptions(OptionDict):
         else:
             raise AttributeError(name, self)
 
+class RequireFlyForNorthSinnoh(Toggle):
+    """
+    Require HM02 Fly (and the badge if necessary) to logically access North Sinnoh.
+    """
+    display_name = "North Sinnoh Requires Fly"
+
+class RequireParcelCouponsCheckRoute203(DefaultOnToggle):
+    """
+    Whether Looker blocks you from exiting Jubilife city towards Route 203 if you
+    haven't delivered the parcel and exchanged the three coupons.
+    """
+    display_name = "Require Parcel and Coupons for Route 203 from Jubilife"
+
+class ShowUnrandomizedProgressionItems(DefaultOnToggle):
+    """
+    Whether unrandomized progression items should be sent to the server and
+    displayed in the chat. This also means that trackers will consider it a location
+    to be checked. If this is off, trackers may assume that it is obtained when
+    accessible.
+    """
+    display_name = "Show Unrandomized Progression Items"
+
+class RemoteItems(Toggle):
+    """
+    Whether local items should be given in-game, or sent by the server.
+    This overrides the show randomized progression items option: all items are shown.
+    """
+    display_name = "Remote Items"
+
 @dataclass
 class PokemonPlatinumOptions(PerGameCommonOptions):
     hms: RandomizeHms
@@ -192,11 +221,17 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
     remove_badge_requirements: RemoveBadgeRequirement
     visibility_hm_logic: VisibilityHmLogic
     dowsing_machine_logic: DowsingMachineLogic
-    goal: Goal
+    north_sinnoh_fly: RequireFlyForNorthSinnoh
+    parcel_coupons_route_203: RequireParcelCouponsCheckRoute203
+
     game_options: GameOptions
     master_repel: AddMasterRepel
     exp_multiplier: ExpMultiplier
     blind_trainers: BlindTrainers
+    show_unrandomized_progression_items: ShowUnrandomizedProgressionItems
+    remote_items: RemoteItems
+
+    goal: Goal
 
     def requires_badge(self, hm: str) -> bool:
         return self.hm_badge_requirement.value == 1 or hm in self.remove_badge_requirements

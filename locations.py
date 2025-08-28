@@ -72,21 +72,32 @@ def create_locations(world: "PokemonPlatinumWorld", regions: Mapping[str, Region
         if region_name not in regions:
             continue
         region = regions[region_name]
+        show_unrandomized_progression_items = world.options.show_unrandomized_progression_items.value == 1
+        remote_items = world.options.remote_items.value == 1
+        show_unrandomized_progression_items |= remote_items
         for name in region_data.locs:
             loc = locationdata.locations[name]
             is_enabled = location_types[loc.type].is_enabled(world.options)
-            if not (is_enabled or name in world.required_locations):
+            if not (is_enabled or name in world.required_locations or remote_items):
                 continue
             item = itemdata.items[loc.original_item]
+            if is_enabled or show_unrandomized_progression_items:
+                address = loc.get_raw_id()
+            else:
+                address = None
             plat_loc = PokemonPlatinumLocation(
                 world.player,
                 loc.label,
                 loc.type,
-                address=loc.get_raw_id(),
+                address=address,
                 parent=region,
                 default_item_id=item.get_raw_id(),
                 is_enabled=is_enabled)
             if not is_enabled:
-                plat_loc.place_locked_item(world.create_item(item.label))
+                if show_unrandomized_progression_items:
+                    ap_item = world.create_item(item.label)
+                else:
+                    ap_item = world.create_event(item.label)
+                plat_loc.place_locked_item(ap_item)
                 plat_loc.show_in_spoiler = False
             region.locations.append(plat_loc)

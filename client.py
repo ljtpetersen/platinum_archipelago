@@ -8,9 +8,11 @@ from dataclasses import dataclass
 from NetUtils import ClientStatus
 from typing import TYPE_CHECKING, Tuple
 
+import Utils
+
 from .data.locations import FlagCheck, LocationCheck, locations, VarCheck
 from .locations import raw_id_to_const_name
-from .options import Goal
+from .options import Goal, RemoteItems
 
 import worlds._bizhawk as bizhawk
 from worlds._bizhawk.client import BizHawkClient
@@ -154,6 +156,13 @@ class PokemonPlatinumClient(BizHawkClient):
 
         if ctx.slot_data["goal"] == Goal.option_champion:
             self.goal_flag = FlagCheck(id=version_data.champion_flag)
+
+        if ctx.slot_data["remote_items"] == RemoteItems.option_true and not ctx.items_handling & 0b010: # type: ignore
+            ctx.items_handling = 0b011
+            Utils.async_start(ctx.send_msgs([{
+                "cmd": "ConnectUpdate",
+                "items_handling": ctx.items_handling
+            }]))
 
         try:
             ap_struct_guard = (self.ap_struct_address, self.expected_header, "ARM9 System Bus")
