@@ -268,7 +268,7 @@ def generate_output(world: "PokemonPlatinumWorld", output_directory: str, patch:
             table = LocationTable(location.address >> 16)
             id = location.address & 0xFFFF
             filled_locations.add(location.name)
-            if location.native_item:
+            if location.item.player == world.player:
                 item_id = location.item.code
             else:
                 item_id = 0xE000
