@@ -8,6 +8,8 @@ from dataclasses import dataclass
 from enum import IntEnum
 import operator
 
+from worlds.pokemon_platinum.options import PokemonPlatinumOptions
+
 class LocationTable(IntEnum):
     # TEMPLATE: LOCATION_TABLES
     pass # TEMPLATE: DELETE
@@ -43,6 +45,15 @@ locations: Mapping[str, LocationData] = {
     # TEMPLATE: LOCATIONS
 }
 
-required_locations: Set[str] = frozenset({
-    # TEMPLATE: REQUIRED_LOCATIONS
-})
+class RequiredLocations:
+    opts: PokemonPlatinumOptions
+    loc_rules: Set[str]
+
+    def __init__(self, opts: PokemonPlatinumOptions):
+        self.opts = opts
+        self.loc_rules = set()
+        # TEMPLATE: REQUIRED_LOCATIONS
+
+    def __contains__(self, loc: str) -> bool:
+        return loc in self.loc_rules
+
