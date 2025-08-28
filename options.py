@@ -216,6 +216,17 @@ class AddSSTicket(Toggle):
     """
     display_name = "Add S.S. Ticket"
 
+class NationalDexNumMons(Range):
+    """
+    Number of seen regional Pokémon required to complete the Regional
+    Pokédex. (This is when you can receive the National Dex from Oak)
+    """
+    display_name = "National Dex Num Mons"
+    range_start = 60
+    # range end will be expanded as more encounters are added.
+    range_end = 80
+    default = 60
+
 @dataclass
 class PokemonPlatinumOptions(PerGameCommonOptions):
     hms: RandomizeHms
@@ -237,6 +248,7 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
     north_sinnoh_fly: RequireFlyForNorthSinnoh
     parcel_coupons_route_203: RequireParcelCouponsCheckRoute203
     fps60: FPS60
+    regional_dex_goal: NationalDexNumMons
 
     game_options: GameOptions
     master_repel: AddMasterRepel
