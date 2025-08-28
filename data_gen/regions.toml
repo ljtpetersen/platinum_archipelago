@@ -2888,6 +2888,7 @@ header = "veilstone_city_northwest_house"
 exits = [
     "route_206",
     "wayward_cave_1f",
+    "wayward_cave_1f_secret",
 ]
 locs = [
     "route_206_poison_barb",
@@ -3653,13 +3654,11 @@ header = "route_215_gate_to_veilstone_city"
 
 [wayward_cave_1f]
 exits = [
-    "wayward_cave_b1f",
     "route_206_upper",
     "virt_wayward_cave_1f_red_shard",
 ]
 header = "wayward_cave_1f"
 locs = [
-    "wayward_cave_1f_tm26",
     "wayward_cave_1f_tm32",
     "wayward_cave_1f_revive",
     "wayward_cave_1f_escape_rope",
@@ -3670,9 +3669,13 @@ locs = [
     "wayward_cave_1f_blue_shard",
 ]
 
+[wayward_cave_1f_secret]
+exits = ["route_206_upper", "wayward_cave_b1f"]
+header = "wayward_cave_1f"
+
 [wayward_cave_b1f]
 exits = [
-    "wayward_cave_1f",
+    "wayward_cave_1f_secret",
 ]
 header = "wayward_cave_b1f"
 locs = [
@@ -3681,6 +3684,7 @@ locs = [
     "wayward_cave_b1f_rare_candy",
     "wayward_cave_b1f_stardust",
     "wayward_cave_b1f_dusk_stone",
+    "wayward_cave_1f_tm26",
 ]
 
 [hearthome_city_east_gate_to_amity_square]
@@ -4131,24 +4135,6 @@ exits = [
     "distortion_world"
 ]
 header = "spear_pillar"
-
-[spear_pillar_dialga]
-exits = [
-    "mt_coronet_6f",
-]
-header = "spear_pillar_dialga"
-
-[spear_pillar_distorted]
-exits = [
-    "mt_coronet_6f",
-]
-header = "spear_pillar_distorted"
-
-[spear_pillar_palkia]
-exits = [
-    "mt_coronet_6f",
-]
-header = "spear_pillar_palkia"
 
 [old_chateau_back_middle_east_room]
 exits = [

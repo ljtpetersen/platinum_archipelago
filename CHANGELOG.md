@@ -8,6 +8,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## 0.1.0 - TBD
 ### Fixed
 * Incorrect rules on Route 208 hidden Star Piece.
+* The secret entrance to Wayward Cave no longer optionally requires flash.
+* The Archipelago Unit Test suite now runs.
 
 ## [0.0.2] - 2025-08-28
 ### Added

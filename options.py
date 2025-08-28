@@ -169,7 +169,10 @@ class GameOptions(OptionDict):
     }
 
     def __getattr__(self, name: str) -> Any:
-        return self.get(name, GameOptions.default[name])
+        if name in GameOptions.default:
+            return self.get(name, GameOptions.default[name])
+        else:
+            raise AttributeError(name, self)
 
 @dataclass
 class PokemonPlatinumOptions(PerGameCommonOptions):
