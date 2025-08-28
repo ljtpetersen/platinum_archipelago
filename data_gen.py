@@ -10,7 +10,7 @@ from dataclasses import dataclass, field
 from collections.abc import Callable, Mapping, MutableMapping, Set, Sequence
 from typing import Any
 import tomllib
-from data_gen_rules import Rule, parse_rule
+from data_gen_rules import ItemConditions, RuleWithOpts, parse_rule
 import re
 import os
 
@@ -180,13 +180,13 @@ class Species:
 
 @dataclass(frozen=True)
 class Rules:
-    exits: Mapping[str, Mapping[str, Rule]] = field(default_factory=dict)
-    encs: Mapping[str, Mapping[str, Rule]] = field(default_factory=dict)
-    locs: Mapping[str, Rule] = field(default_factory=dict)
-    events: Mapping[str, Rule] = field(default_factory=dict)
-    loc_types: Mapping[str, Rule] = field(default_factory=dict)
-    enc_types: Mapping[str, Rule] = field(default_factory=dict)
-    common: Mapping[str, Rule] = field(default_factory=dict)
+    exits: Mapping[str, Mapping[str, RuleWithOpts]] = field(default_factory=dict)
+    encs: Mapping[str, Mapping[str, RuleWithOpts]] = field(default_factory=dict)
+    locs: Mapping[str, RuleWithOpts] = field(default_factory=dict)
+    events: Mapping[str, RuleWithOpts] = field(default_factory=dict)
+    loc_types: Mapping[str, RuleWithOpts] = field(default_factory=dict)
+    enc_types: Mapping[str, RuleWithOpts] = field(default_factory=dict)
+    common: Mapping[str, RuleWithOpts] = field(default_factory=dict)
 
 class ParserState:
     regions: Mapping[str, Region]
@@ -330,27 +330,27 @@ class ParserState:
 
         return ret
 
-    def get_rule_items(self) -> Set[str]:
-        ret = set()
+    def get_rule_items(self) -> ItemConditions:
+        item_conds = ItemConditions()
         for exit_rules in self.rules.exits.values():
             for rule in exit_rules.values():
-                rule.add_dependent_items(ret)
+                rule.add_dependent_items(item_conds)
         for enc_rules in self.rules.encs.values():
             for rule in enc_rules.values():
-                rule.add_dependent_items(ret)
+                rule.add_dependent_items(item_conds)
         for rule in self.rules.locs.values():
-            rule.add_dependent_items(ret)
+            rule.add_dependent_items(item_conds)
         for rule in self.rules.loc_types.values():
-            rule.add_dependent_items(ret)
+            rule.add_dependent_items(item_conds)
         for rule in self.rules.enc_types.values():
-            rule.add_dependent_items(ret)
+            rule.add_dependent_items(item_conds)
         for rule in self.rules.common.values():
-            rule.add_dependent_items(ret)
-        ret |= set(self.rom_interface.hm.values())
-        ret |= set(self.rom_interface.hm_badge.values())
-        ret |= set(self.rom_interface.req_items)
-        ret &= self.items.keys()
-        return ret
+            rule.add_dependent_items(item_conds)
+        item_conds.add_all(self.rom_interface.hm.values())
+        item_conds.add_all(self.rom_interface.hm_badge.values())
+        item_conds.add_all(self.rom_interface.req_items)
+        item_conds.restrict(self.items.keys())
+        return item_conds
 
     def generate_locations(self) -> Mapping[str, Sequence[str]]:
         ret = {}
@@ -365,9 +365,7 @@ class ParserState:
             for k, v in self.rom_interface.loc_table.items()]
         ret["LOCATIONS"] = [f"\"{k}\": {v.to_string(location_region_map.get(k))},\n" for k, v in self.locations.items()]
         rule_items = self.get_rule_items()
-        ret["REQUIRED_LOCATIONS"] = [f"\"{k}\",\n"
-                                     for k, v in self.locations.items()
-                                     if v.original_item in rule_items]
+        ret["REQUIRED_LOCATIONS"] = [l for k, v in self.locations.items() for l in rule_items.cond_to_string(k, v.original_item)]
 
         return ret
 
@@ -380,26 +378,8 @@ class ParserState:
         else:
             return f"\"{name}\""
 
-    def create_loc_rule(self, type_rule: Rule, loc: str) -> Rule:
-        if loc in self.rules.locs:
-            return Rule(frozenset({self.rules.locs[loc], type_rule}))
-        else:
-            return type_rule
-
-    def create_enc_rule(self, enc_type: str, region: str) -> Rule:
-        if region in self.rules.encs and enc_type in self.rules.encs[region]:
-            return Rule(frozenset({self.rules.encs[region][enc_type], self.rules.enc_types[enc_type]}))
-        else:
-            return self.rules.enc_types[enc_type]
-
     def encounter_connection(self, region: str, type: str) -> str:
         return f"(\"{region}\", \"{self.regions[region].header}_{type}\")"
-
-    def has_encounters(self, region: str, type: str) -> bool:
-        if type not in self.regions[region].accessible_encounters:
-            return False
-        header = self.regions[region].header
-        return header in self.encounters and getattr(self.encounters[header], type)
 
     def generate_rules(self) -> Mapping[str, Sequence[str]]:
         ret = {}
@@ -410,28 +390,24 @@ class ParserState:
             for dest, rule in eles.items()]
         ret["EXIT_RULES"] += [f"{self.encounter_connection(region, type)}: {rule.to_string(item_set, self.item_name_map)},\n"
             for region, eles in self.rules.encs.items()
-            for type, rule in eles.items()
-            if type not in self.rules.enc_types]
-        ret["EXIT_RULES"] += [f"{self.encounter_connection(region, type)}: {self.create_enc_rule(type, region).to_string(item_set, self.item_name_map)},\n"
-            for type in self.rules.enc_types
-            for region in self.regions
-            if self.has_encounters(region, type)]
+            for type, rule in eles.items()]
 
         accessible_locs = set()
         for region in self.regions.values():
             accessible_locs |= set(region.locs)
         ret["LOCATION_RULES"] = [f"\"{self.locations[loc].label}\": {rule.to_string(item_set, self.item_name_map)},\n"
             for loc, rule in self.rules.locs.items()
-            if self.locations[loc].type not in self.rules.loc_types and loc in accessible_locs]
-        ret["LOCATION_RULES"] += [f"\"{location.label}\": {self.create_loc_rule(type_rule, loc).to_string(item_set, self.item_name_map)},\n"
-            for type, type_rule in self.rules.loc_types.items()
-            for loc, location in self.locations.items()
-            if location.type == type and loc in accessible_locs]
+            if loc in accessible_locs]
         ret["LOCATION_RULES"] += [f"\"{event}\": {rule.to_string(item_set, self.item_name_map)},\n"
             for event, rule in self.rules.events.items()]
         
         ret["COMMON_RULES"] = [f"\"{name}\": {rule.to_string(item_set, self.item_name_map)},\n"
                                 for name, rule in self.rules.common.items()]
+
+        ret["LOCATION_TYPE_RULES"] = [f"\"{type}\": {rule.to_string(item_set, self.item_name_map)},\n"
+                                      for type, rule in self.rules.loc_types.items()]
+        ret["ENCOUNTER_TYPE_RULES"] = [f"\"{type}\": {rule.to_string(item_set, self.item_name_map)},\n"
+                                      for type, rule in self.rules.enc_types.items()]
 
         return ret
 

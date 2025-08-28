@@ -5,9 +5,9 @@
 
 from BaseClasses import CollectionState
 from typing import TYPE_CHECKING
-from worlds.generic.Rules import set_rule
+from worlds.generic.Rules import add_rule, set_rule
 
-from .data import Hm, items as itemdata, rules as ruledata
+from .data import encounters as encounterdata, Hm, items as itemdata, regions as regiondata, rules as ruledata
 from .locations import is_location_enabled, get_parent_region
 from .regions import is_event_region_enabled, is_region_enabled
 
@@ -31,20 +31,7 @@ def set_rules(world: "PokemonPlatinumWorld") -> None:
         else:
             rule = always_true
         common_rules[f"{hm.name.lower()}_badge"] = rule
-    rules = ruledata.Rules(world.player, common_rules)
-    if world.options.visibility_hm_logic.value == 1:
-        common_rules["flash_if_opt"] = common_rules["flash"]
-        common_rules["defog_if_opt"] = common_rules["defog"]
-    else:
-        common_rules["flash_if_opt"] = always_true
-        common_rules["defog_if_opt"] = always_true
-    if world.options.dowsing_machine_logic.value == 1:
-        common_rules["dowsingmachine_if_opt"] = lambda state : state.has_all([
-            itemdata.items["dowsingmachine"].label,
-            itemdata.items["poketch"].label,
-        ], world.player)
-    else:
-        common_rules["dowsingmachine_if_opt"] = always_true
+    rules = ruledata.Rules(world.player, common_rules, world.options)
 
     rules.fill_rules()
 
@@ -55,6 +42,17 @@ def set_rules(world: "PokemonPlatinumWorld") -> None:
     for name, rule in rules.location_rules.items():
         if is_location_present(name, world):
             set_rule(world.multiworld.get_location(name, world.player), rule)
+
+    for loc in world.multiworld.get_locations(world.player):
+        if loc.type in rules.location_type_rules: # type: ignore
+            add_rule(loc, rules.location_type_rules[loc.type]) # type: ignore
+
+    for region_name, region_data in regiondata.regions.items():
+        header = region_data.header
+        if is_region_enabled(region_name, world.options) and header in encounterdata.encounters:
+            for type, rule in rules.encounter_type_rules.items():
+                if type in region_data.accessible_encounters and getattr(encounterdata.encounters[header], type):
+                    add_rule(world.multiworld.get_entrance(f"{region_name} -> {header}_{type}", world.player), rule)
 
     match world.options.goal.value:
         case 0:

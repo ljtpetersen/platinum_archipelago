@@ -3,11 +3,16 @@
 # Copyright (C) 2025 James Petersen <m@jamespetersen.ca>
 # Licensed under MIT. See LICENSE
 
-from collections.abc import Callable, MutableMapping, MutableSet, Sequence, Set
+from collections.abc import Callable, MutableMapping, MutableSequence, MutableSet, Sequence, Set
 from dataclasses import dataclass
 from enum import StrEnum
 from typing import Tuple, Union
 from pyparsing import Forward, MatchFirst, ParseResults, Regex, alphas, alphanums, Group, delimited_list, infix_notation, opAssoc, Optional, Suppress, Word
+
+integer = Regex(r"[+-]?(0[xX][0-9a-fA-F]+|0[bB][01]+|0[oO][0-7]+|[0-9]+)")
+
+def is_integer(val: str) -> bool:
+    return integer.matches(val)
 
 class RuleOp(StrEnum):
     AND = "&"
@@ -43,20 +48,85 @@ class Comparison(StrEnum):
             case Comparison.GT:
                 return Comparison.LE
 
+def triage_cond_cmp_side(val: str) -> str:
+    if val.startswith("option_"):
+        return "OPT_VAL"
+    elif is_integer(val):
+        return "INT"
+    else:
+        return "OPT_NAME"
+
+def get_other_side(name: str, other_side: str, other_side_triage: str) -> str:
+    if other_side_triage == "OPT_VAL":
+        return f"self.opts.{name}.{other_side}"
+    elif other_side_triage == "INT":
+        return other_side
+    else:
+        raise Exception("this should be unreachable")
+
+def get_name_side(name: str) -> str:
+    return f"self.opts.{name}.value"
+
 @dataclass(frozen=True)
 class ConditionNode:
     left: str
     op: Comparison = Comparison.NE
     right: str = "0"
 
+    def __str__(self) -> str:
+        left_triage = triage_cond_cmp_side(self.left)
+        right_triage = triage_cond_cmp_side(self.right)
+        if left_triage == right_triage:
+            raise ValueError(f"condition comparison cannot have two values of the same type on both sides. comparison: {self.left} {self.op} {self.right}")
+        if left_triage == "OPT_NAME":
+            left = get_name_side(self.left)
+            right = get_other_side(self.left, self.right, right_triage)
+        elif right_triage == "OPT_NAME":
+            right = get_name_side(self.right)
+            left = get_other_side(self.right, self.left, left_triage)
+        else:
+            raise ValueError(f"condition comparison must have an option name (identifier that does not start with option_). comparison: {self.left} {self.op} {self.right}")
+        return f"{left} {self.op} {right}"
+
 @dataclass(frozen=True)
 class Condition:
-    conds: Set[Union[ConditionNode, "Condition"]]
-    op: RuleOp
+    conds: Sequence[Union[ConditionNode, "Condition"]]
+    op: RuleOp = RuleOp.AND
     invert: bool = False
 
+    @staticmethod
+    def none_of(conds) -> Union["Condition", None]:
+        if conds:
+            return Condition(list(conds), RuleOp.OR, True)
+        else:
+            return None
+
+    @staticmethod
+    def none_of_and(prev_conds, cond) -> "Condition":
+        if prev_conds:
+            return Condition([Condition(list(prev_conds), RuleOp.OR, True), cond])
+        else:
+            return cond
+
+    def __str__(self) -> str:
+        def inner_str(cond: ConditionNode | Condition) -> str:
+            if isinstance(cond, Condition) and cond.op != self.op and len(cond.conds) > 1 and not cond.invert:
+                return f"({cond})"
+            return str(cond)
+        centre = f" {self.op.name.lower()} ".join(map(inner_str, self.conds))
+        if self.invert:
+            if len(self.conds) > 1:
+                return f"not ({centre})"
+            else:
+                return f"not {centre}"
+        else:
+            return centre
+
 class ItemConditions:
-    base: MutableMapping[str, MutableSet[Condition] | None]
+    base: MutableMapping[str, MutableSequence[Condition] | None]
+
+    def __init__(self):
+        self.base = {}
 
     def add(self, item: str, cond: Condition | None):
         if cond is None:
@@ -64,9 +134,26 @@ class ItemConditions:
         elif item in self.base:
             conds = self.base[item]
             if conds is not None:
-                conds.add(cond)
+                conds.append(cond)
         else:
-            self.base[item] = {cond}
+            self.base[item] = [cond]
+
+    def add_all(self, items):
+        for item in items:
+            self.base[item] = None
+
+    def restrict(self, items):
+        for k in self.base.keys() - items:
+            del self.base[k]
+
+    def cond_to_string(self, loc: str, item: str) -> Sequence[str]:
+        if item not in self.base:
+            return []
+        cond = self.base[item]
+        if cond is not None:
+            return [f"if {Condition(cond)}:\n", f"    self.loc_rules.add(\"{loc}\")\n"]
+        else:
+            return [f"self.loc_rules.add(\"{loc}\")\n"]
 
 @dataclass(frozen=True)
 class FuncCall:
@@ -112,7 +199,7 @@ class Rule:
         for ele in self.items:
             if isinstance(ele, str):
                 conds.add(ele, cond)
-            else:
+            elif isinstance(ele, Rule) or isinstance(ele, CountItem):
                 ele.add_dependent_items(conds, cond)
 
     def to_string(
@@ -159,12 +246,28 @@ class Rule:
 class RuleWithOpts:
     rules: Sequence[Tuple[Condition | None, Rule]]
 
+    def add_dependent_items(self, conds: ItemConditions):
+        accum = []
+        for cond, rule in reversed(self.rules):
+            if cond is None:
+                rule.add_dependent_items(conds, Condition.none_of(accum))
+            else:
+                rule.add_dependent_items(conds, Condition.none_of_and(accum, cond))
+                accum.append(cond)
+
+    def to_string(self, item_set: Set[str], item_name_map: Callable[[str], str]):
+        accum = ""
+        for cond, rule in reversed(self.rules):
+            if cond is None:
+                return f"{accum}({rule.to_string(item_set, item_name_map)})"
+            accum += f"({rule.to_string(item_set, item_name_map)}) if {cond} else "
+        return f"{accum}always_true"
+
 LPAR, RPAR, LS, RS, LC, RC, COLON, AST = map(Suppress, "()[]{}:*")
 IF = Suppress("if")
 ELSE = Suppress("else")
 NAME = Word(alphas + "_", alphanums + "_")
 name_str = Word(alphas + "_", alphanums + "_").set_parse_action(lambda s : f"\"{s[0]}\"")
-integer = Regex(r"[+-]?(0[xX][0-9a-fA-F]+|0[bB][01]+|0[oO][0-7]+|[0-9]+)")
 func_arg = Forward()
 arg_dict = LC + Optional(delimited_list(Group(name_str + COLON + func_arg))) + RC
 arg_dict.set_parse_action(lambda val : f"{{{', '.join(map(lambda arr : f'{arr[0]}: {arr[1]}', val))}}}")
@@ -187,13 +290,13 @@ opt_operand = opt_cmp | opt_str
 def make_opt_parse_action(op: RuleOp) -> Callable[[ParseResults], Condition]:
     def parse_action(res: ParseResults) -> Condition:
         [res] = res
-        vals = set()
+        vals = []
         for v in res[::2]:
             if isinstance(v, Condition) and v.op == op and not v.invert:
-                vals |= v.conds
+                vals.extend(v.conds)
             else:
-                vals.add(v)
-        return Condition(frozenset(vals), op)
+                vals.append(v)
+        return Condition(vals, op)
     return parse_action
 
 def opt_not_parse_action(res: ParseResults) -> Condition | ConditionNode:
@@ -268,15 +371,14 @@ def rule_with_opt_parse_action(res: ParseResults) -> RuleWithOpts:
     return RuleWithOpts(seq) # type: ignore
 rule_with_opt_expr.set_parse_action(rule_with_opt_parse_action)
 
-def parse_rule(val: str) -> Rule:
-    ret = rule_expr.parse_string(val, parseAll=True)[0]
-    if not isinstance(ret, Rule):
-        return Rule(frozenset([ret])) # type: ignore
-    else:
-        return ret
+def parse_rule(val: str) -> RuleWithOpts:
+    return rule_with_opt_expr.parse_string(val, parse_all=True)[0] # type: ignore
 
 def main():
-    rule_with_opt_expr.parse_string("unowns if unown == option_vanilla else up_unown * 26 if unown == option_items", parseAll=True).pprint()
+    conds = ["unown == option_vanilla", "!(key_items > 2 & nonzero) | bruh"]
+    for cond in conds:
+        print(f"{cond} converts to {opt.parse_string(cond, parse_all=True)[0]}")
+    rule_with_opt_expr.parse_string("unowns if unown == option_vanilla else up_unown * 26 if unown == option_items else true", parse_all=True).pprint()
 
 if __name__ == "__main__":
     main()

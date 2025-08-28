@@ -7,8 +7,12 @@ from typing import Tuple
 from BaseClasses import CollectionState
 from collections.abc import Callable, Mapping, MutableMapping
 from . import Hm, items, locations, species
+from ..options import PokemonPlatinumOptions
 
 Rule = Callable[[CollectionState], bool]
+
+def always_true(*args, **kwargs) -> bool:
+    return True
 
 def create_hm_badge_rule(hm: Hm, player: int) -> Rule:
     badge_item = hm.badge_item()
@@ -23,10 +27,14 @@ def create_hm_badge_rule(hm: Hm, player: int) -> Rule:
 class Rules:
     exit_rules: Mapping[Tuple[str, str], Rule]
     location_rules: Mapping[str, Rule]
+    encounter_type_rules: Mapping[str, Rule]
+    location_type_rules: Mapping[str, Rule]
     common_rules: MutableMapping[str, Callable]
+    opts: PokemonPlatinumOptions
     
-    def __init__(self, player: int, common_rules: MutableMapping[str, Callable]):
+    def __init__(self, player: int, common_rules: MutableMapping[str, Callable], opts: PokemonPlatinumOptions):
         self.player = player
+        self.opts = opts
         self.common_rules = common_rules
         self.common_rules.update({ hm.name.lower():self.create_hm_rule(hm, player) for hm in Hm })
         def regional_mons(n: int) -> Rule:
@@ -58,6 +66,12 @@ class Rules:
         }
         self.location_rules = {
             # TEMPLATE: LOCATION_RULES
+        }
+        self.location_type_rules = {
+            # TEMPLATE: LOCATION_TYPE_RULES
+        }
+        self.encounter_type_rules = {
+            # TEMPLATE: ENCOUNTER_TYPE_RULES
         }
 
     def create_hm_rule(self, hm: Hm, player: int) -> Rule:

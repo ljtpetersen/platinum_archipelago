@@ -41,13 +41,14 @@ def get_parent_region(label: str, world: "PokemonPlatinumWorld") -> str | None:
 
 def is_location_enabled(label: str, world: "PokemonPlatinumWorld"):
     const_name = raw_id_to_const_name[world.location_name_to_id[label]]
-    return location_types[locationdata.locations[const_name].type].is_enabled(world.options) or const_name in locationdata.required_locations
+    return location_types[locationdata.locations[const_name].type].is_enabled(world.options) or const_name in world.required_locations
 
 def create_location_label_to_code_map() -> Dict[str, int]:
     return {v.label:v.get_raw_id() for v in locationdata.locations.values()}
 
 class PokemonPlatinumLocation(Location):
     game: str = "Pokemon Platinum"
+    type: str
     default_item_id: int | None
     is_enabled: bool
 
@@ -55,6 +56,7 @@ class PokemonPlatinumLocation(Location):
         self,
         player: int,
         name: str,
+        type: str,
         address: int | None = None,
         parent: Region | None = None,
         default_item_id: int | None = None,
@@ -63,6 +65,7 @@ class PokemonPlatinumLocation(Location):
         super().__init__(player, name, address, parent)
         self.default_item_id = default_item_id
         self.is_enabled = is_enabled
+        self.type = type
 
 def create_locations(world: "PokemonPlatinumWorld", regions: Mapping[str, Region]) -> None:
     for region_name, region_data in regiondata.regions.items():
@@ -72,12 +75,13 @@ def create_locations(world: "PokemonPlatinumWorld", regions: Mapping[str, Region
         for name in region_data.locs:
             loc = locationdata.locations[name]
             is_enabled = location_types[loc.type].is_enabled(world.options)
-            if not (is_enabled or name in locationdata.required_locations):
+            if not (is_enabled or name in world.required_locations):
                 continue
             item = itemdata.items[loc.original_item]
             plat_loc = PokemonPlatinumLocation(
                 world.player,
                 loc.label,
+                loc.type,
                 address=loc.get_raw_id(),
                 parent=region,
                 default_item_id=item.get_raw_id(),
