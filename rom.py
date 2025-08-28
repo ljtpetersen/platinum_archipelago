@@ -150,7 +150,7 @@ def process_name(name: str, world: "PokemonPlatinumWorld") -> bytes:
         ret = encode_name(world.multiworld.get_file_safe_player_name(world.player))
     else:
         ret = encode_name(name)
-    if ret:
+    if ret is not None:
         return ret
     else:
         return b'\xFF' * 16

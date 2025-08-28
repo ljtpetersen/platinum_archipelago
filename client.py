@@ -58,7 +58,7 @@ class VarsFlags:
             return self.get_flag(check.id) ^ check.invert
         elif isinstance(check, VarCheck):
             var = self.get_var(check.id)
-            if var:
+            if var is not None:
                 return check.op(var, check.value)
             else:
                 return False
@@ -190,7 +190,7 @@ class PokemonPlatinumClient(BizHawkClient):
                 [guards["AP STRUCT VALID"], guards["SAVEDATA PTR"]]
             )
 
-            if not read_result:
+            if read_result is None:
                 return
 
             recv_item_count = int.from_bytes(read_result[0], byteorder='little')

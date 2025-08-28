@@ -27,7 +27,7 @@ region_groups: Mapping[str, RegionType] = {
 }
 
 def is_region_enabled(region: str | None, opts: PokemonPlatinumOptions) -> bool:
-    if region:
+    if region is not None:
         if region in regiondata.regions:
             return region_groups[regiondata.regions[region].group].is_enabled(opts)
         else:

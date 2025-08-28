@@ -12,7 +12,7 @@ Rule = Callable[[CollectionState], bool]
 
 def create_hm_badge_rule(hm: Hm, player: int) -> Rule:
     badge_item = hm.badge_item()
-    if badge_item:
+    if badge_item is not None:
         def hm_badge_rule(state: CollectionState) -> bool:
             return state.has(badge_item, player)
     else:
