@@ -12,6 +12,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * An option to logically require fly for North Sinnoh.
 * An option to stop Looker from blocking the East exit to Jubilife City.
 * A 60 FPS patch option.
+* Veilstone Department Store locations.
+* Pal Pad Location in Pokémon Center Basement.
 ### Fixed
 * Incorrect rules on Route 208 hidden Star Piece.
 * The secret entrance to Wayward Cave no longer optionally requires flash.

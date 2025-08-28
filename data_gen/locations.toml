@@ -5410,3 +5410,27 @@ original_item = "pokedex"
 type = "pokedex"
 table = "base"
 label = "Route 218 Gate to Canalave - Pokédex Forms"
+
+[veilstone_store_2f_counter]
+id = 106
+check = 0xB7D
+original_item = "counter"
+type = "poketchapp"
+table = "base"
+label = "Veilstone Department Store - Counter App"
+
+[veilstone_store_5f_sticky_barb]
+id = 107
+check = 0x105
+original_item = "sticky_barb"
+type = "npc_gift"
+table = "base"
+label = "Veilstone Department Store - Sticky Barb"
+
+[pokecenter_b1f_pal_pad]
+id = 108
+check = { id = 0x40D4, value = 1 }
+original_item = "pal_pad"
+type = "key_item"
+table = "base"
+label = "Pokémon Center Basement - Pal Pad"

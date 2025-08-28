@@ -484,6 +484,7 @@ locs = [
 [pokemon_league_north_pokecenter_b1f]
 exits = [
     "pokemon_league_north_pokecenter_1f",
+    "virt_pal_pad",
 ]
 header = "pokemon_league_north_pokecenter_b1f"
 
@@ -497,6 +498,7 @@ header = "celestic_town_southwest_house"
 [pokemon_league_south_pokecenter_b1f]
 exits = [
     "pokemon_league_south_pokecenter_1f",
+    "virt_pal_pad",
 ]
 header = "pokemon_league_south_pokecenter_b1f"
 
@@ -511,6 +513,7 @@ header = "celestic_town_pokecenter_1f"
 [celestic_town_pokecenter_b1f]
 exits = [
     "celestic_town_pokecenter_1f",
+    "virt_pal_pad",
 ]
 header = "celestic_town_pokecenter_b1f"
 
@@ -541,6 +544,7 @@ header = "sandgem_town_pokecenter_1f"
 [survival_area_pokecenter_b1f]
 exits = [
     "survival_area_pokecenter_1f",
+    "virt_pal_pad",
 ]
 header = "survival_area_pokecenter_b1f"
 group = "fight_area"
@@ -669,6 +673,7 @@ group = "fight_area"
 [resort_area_pokecenter_b1f]
 exits = [
     "resort_area_pokecenter_1f",
+    "virt_pal_pad",
 ]
 header = "resort_area_pokecenter_b1f"
 group = "fight_area"
@@ -774,6 +779,7 @@ group = "fight_area"
 [fight_area_pokecenter_b1f]
 exits = [
     "fight_area_pokecenter_1f",
+    "virt_pal_pad",
 ]
 header = "fight_area_pokecenter_b1f"
 group = "fight_area"
@@ -1315,6 +1321,7 @@ group = "fight_area"
 [sandgem_town_pokecenter_b1f]
 exits = [
     "sandgem_town_pokecenter_1f",
+    "virt_pal_pad",
 ]
 header = "sandgem_town_pokecenter_b1f"
 
@@ -1414,6 +1421,7 @@ header = "hearthome_city_pokecenter_2f"
 [hearthome_city_pokecenter_b1f]
 exits = [
     "hearthome_city_pokecenter_1f",
+    "virt_pal_pad",
 ]
 header = "hearthome_city_pokecenter_b1f"
 
@@ -2314,12 +2322,14 @@ locs = ["eterna_city_pokecenter_1f_friendshipchecker"]
 [eterna_city_pokecenter_b1f]
 exits = [
     "eterna_city_pokecenter_1f",
+    "virt_pal_pad",
 ]
 header = "eterna_city_pokecenter_b1f"
 
 [pastoria_city_pokecenter_b1f]
 exits = [
     "pastoria_city_pokecenter_1f",
+    "virt_pal_pad",
 ]
 header = "pastoria_city_pokecenter_b1f"
 
@@ -2854,6 +2864,7 @@ exits = [
     "veilstone_store_3f",
 ]
 header = "veilstone_store_2f"
+locs = ["veilstone_store_2f_counter"]
 
 [veilstone_store_3f]
 exits = [
@@ -2877,6 +2888,7 @@ exits = [
     "veilstone_store_4f",
 ]
 header = "veilstone_store_5f"
+locs = ["veilstone_store_5f_sticky_barb"]
 
 [veilstone_city_northwest_house]
 exits = [
@@ -3148,6 +3160,7 @@ header = "sunyshore_city_pokecenter_1f"
 [sunyshore_city_pokecenter_b1f]
 exits = [
     "sunyshore_city_pokecenter_1f",
+    "virt_pal_pad",
 ]
 header = "sunyshore_city_pokecenter_b1f"
 
@@ -3382,6 +3395,7 @@ header = "canalave_city_pokecenter_1f"
 [canalave_city_pokecenter_b1f]
 exits = [
     "canalave_city_pokecenter_1f",
+    "virt_pal_pad",
 ]
 header = "canalave_city_pokecenter_b1f"
 
@@ -3559,12 +3573,14 @@ header = "snowpoint_temple_b5f"
 [veilstone_city_pokecenter_b1f]
 exits = [
     "veilstone_city_pokecenter_1f",
+    "virt_pal_pad",
 ]
 header = "veilstone_city_pokecenter_b1f"
 
 [snowpoint_city_pokecenter_b1f]
 exits = [
     "snowpoint_city_pokecenter_1f",
+    "virt_pal_pad",
 ]
 header = "snowpoint_city_pokecenter_b1f"
 
@@ -3734,6 +3750,7 @@ locs = [
 [solaceon_town_pokecenter_b1f]
 exits = [
     "solaceon_town_pokecenter_1f",
+    "virt_pal_pad",
 ]
 header = "solaceon_town_pokecenter_b1f"
 
@@ -3858,6 +3875,7 @@ header = "oreburgh_city_pokecenter_1f"
 [oreburgh_city_pokecenter_b1f]
 exits = [
     "oreburgh_city_pokecenter_1f",
+    "virt_pal_pad",
 ]
 header = "oreburgh_city_pokecenter_b1f"
 
@@ -4153,6 +4171,7 @@ header = "jubilife_city_pokecenter_1f"
 [jubilife_city_pokecenter_b1f]
 exits = [
     "jubilife_city_pokecenter_1f",
+    "virt_pal_pad",
 ]
 header = "jubilife_city_pokecenter_b1f"
 
@@ -4247,6 +4266,7 @@ header = "floaroma_town_pokecenter_2f"
 [floaroma_town_pokecenter_b1f]
 exits = [
     "floaroma_town_pokecenter_1f",
+    "virt_pal_pad",
 ]
 header = "floaroma_town_pokecenter_b1f"
 
@@ -4400,3 +4420,8 @@ exits = []
 exits = ["sendoff_spring"]
 header = "virt"
 events = ["event_distortion_world"]
+
+[virt_pal_pad]
+exits = []
+header = "virt"
+locs = ["pokecenter_b1f_pal_pad"]
