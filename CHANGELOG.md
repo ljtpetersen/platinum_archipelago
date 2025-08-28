@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * Incorrect rules on Route 208 hidden Star Piece.
 * The secret entrance to Wayward Cave no longer optionally requires flash.
 * The Archipelago Unit Test suite now runs.
+* The Pokédex is no longer accessible until the player receives a starter Pokémon.
 
 ## [0.0.2] - 2025-08-28
 ### Added
