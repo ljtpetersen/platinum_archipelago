@@ -54,7 +54,7 @@ data_gen: $(DATA)
 
 pokemon_platinum.apworld: data_gen $(SOURCES) #$(PATCHES)
 	@echo MAKE APWORLD
-	rm $@
+	rm -f $@
 	$Qmkdir -p pokemon_platinum/docs pokemon_platinum/data pokemon_platinum/patches
 	$Qcp $(DATA_GEN_OUT) pokemon_platinum/data
 	$Qcp $(DOCS) pokemon_platinum/docs
