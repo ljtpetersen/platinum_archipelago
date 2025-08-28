@@ -107,7 +107,7 @@ class Location:
         ret += f"id=0x{self.id:X}, "
         ret += f"original_item=\"{self.original_item}\", "
         ret += f"type=\"{self.type}\", "
-        if parent_region:
+        if parent_region is not None:
             ret += f"parent_region=\"{parent_region}\", "
         check = self.check
         if isinstance(check, int):
@@ -128,7 +128,7 @@ class Item:
         ret = f"ItemData(label=\"{self.label}\", "
         ret += f"id=0x{self.id:X}, "
         ret += f"clas=ItemClass.{self.clas.upper()}"
-        if self.count and self.count != 1:
+        if self.count is not None and self.count != 1:
             ret += f", count={self.count}"
         if self.classification != "filler":
             ret += f", classification=ItemClassification.{self.classification}"
@@ -151,7 +151,7 @@ class PreEvolution:
 
     def to_string(self, item_name_map: Callable[[str], str]) -> str:
         ret = f"PreEvolution(species=\"{self.species}\""
-        if self.item:
+        if self.item is not None:
             ret += f", item={item_name_map(self.item)}"
         ret += ")"
         return ret
@@ -169,7 +169,7 @@ class Species:
         else:
             ret += "set()"
         
-        if self.pre_evolution:
+        if self.pre_evolution is not None:
             pre_ev = self.pre_evolution
             if isinstance(pre_ev, str):
                 pre_ev = PreEvolution(pre_ev)
@@ -483,10 +483,10 @@ def fill_template(name: str, values: Mapping[str, Sequence[str]]) -> None:
             if line.strip().endswith("# TEMPLATE: DELETE"):
                 continue
             matches = re.match(r"\s*", line)
-            if matches:
-                spaces = matches.group()
-            else:
+            if matches is None:
                 spaces = ""
+            else:
+                spaces = matches.group()
             prefix = spaces + "# TEMPLATE: "
             if not line.startswith(prefix):
                 output += line

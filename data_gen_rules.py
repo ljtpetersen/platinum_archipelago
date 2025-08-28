@@ -3,7 +3,7 @@
 # Copyright (C) 2025 James Petersen <m@jamespetersen.ca>
 # Licensed under MIT. See LICENSE
 
-from collections.abc import Callable, Sequence, Set
+from collections.abc import Callable, MutableMapping, MutableSet, Sequence, Set
 from dataclasses import dataclass
 from enum import StrEnum
 from typing import Tuple, Union
@@ -55,6 +55,19 @@ class Condition:
     op: RuleOp
     invert: bool = False
 
+class ItemConditions:
+    base: MutableMapping[str, MutableSet[Condition] | None]
+
+    def add(self, item: str, cond: Condition | None):
+        if cond is None:
+            self.base[item] = None
+        elif item in self.base:
+            conds = self.base[item]
+            if conds is not None:
+                conds.add(cond)
+        else:
+            self.base[item] = {cond}
+
 @dataclass(frozen=True)
 class FuncCall:
     name: str
@@ -68,6 +81,10 @@ class CountItem:
     names: Set[str]
     count: str
     op: RuleOp = RuleOp.AND
+
+    def add_dependent_items(self, conds: ItemConditions, cond: Condition | None = None):
+        for item in self.names:
+            conds.add(item, cond)
 
     def to_string(
         self,
@@ -91,14 +108,12 @@ class Rule:
     items: Set[Union["Rule", str, FuncCall]]
     op: RuleOp = RuleOp.AND
 
-    def add_dependent_items(self, base = set()):
+    def add_dependent_items(self, conds: ItemConditions, cond: Condition | None = None):
         for ele in self.items:
             if isinstance(ele, str):
-                base.add(ele)
-            elif isinstance(ele, Rule):
-                ele.add_dependent_items(base)
-            elif isinstance(ele, CountItem):
-                base |= ele.names
+                conds.add(ele, cond)
+            else:
+                ele.add_dependent_items(conds, cond)
 
     def to_string(
         self,
