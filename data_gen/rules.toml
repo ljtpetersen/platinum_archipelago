@@ -124,7 +124,7 @@ locs.mt_coronet_1f_south_dawn_stone = "surf"
 exits.mt_coronet_1f_south.mt_coronet_2f_right = "surf & rock_climb"
 exits.mt_coronet_2f_right.mt_coronet_2f_left = "strength"
 
-locs.route_208_star_piece = "rock_climb"
+locs.route_208_star_piece = "rock_smash & rock_climb"
 locs.route_208_carbos = "surf & waterfall"
 locs.route_208_ether = "rock_smash"
 
