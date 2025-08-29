@@ -4,6 +4,7 @@
 # Licensed under MIT. See LICENSE
 
 import bsdiff4
+from collections import Counter
 import os
 import pkgutil
 from typing import Any, Dict, TYPE_CHECKING
@@ -285,8 +286,9 @@ def generate_output(world: "PokemonPlatinumWorld", output_directory: str, patch:
         ap_bin += (len(data) // 2).to_bytes(length=4, byteorder='little')
         ap_bin += data
 
-    start_inventory = world.options.start_inventory
-    entries = [world.item_name_to_id[label].to_bytes(length=2, byteorder='little') + count.to_bytes(length=2, byteorder='little') for label, count in start_inventory.items()]
+    precollected = world.multiworld.precollected_items[world.player]
+    start_inventory: Counter[int] = Counter(map(lambda item : item.code, precollected)) # type: ignore
+    entries = [code.to_bytes(length=2, byteorder='little') + count.to_bytes(length=2, byteorder='little') for code, count in start_inventory.items()]
     ap_bin += len(entries).to_bytes(length=4, byteorder='little')
     ap_bin += b''.join(entries)
 

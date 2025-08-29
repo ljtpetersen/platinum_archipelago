@@ -94,6 +94,8 @@ class PokemonPlatinumWorld(World):
                 itempool.append(self.create_item_by_code(item_id))
 
         self.multiworld.itempool += itempool
+        for item in add_items:
+            self.multiworld.push_precollected(self.create_item(itemdata.items[item].label))
 
     def create_item(self, name: str) -> PokemonPlatinumItem:
         return self.create_item_by_code(self.item_name_to_id[name])

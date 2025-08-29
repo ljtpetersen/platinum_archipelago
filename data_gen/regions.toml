@@ -3654,7 +3654,6 @@ header = "team_galactic_eterna_building_3f"
 locs = [
     "team_galactic_eterna_building_3f_x_special",
 ]
-events = ["event_eterna_defeat_team_galactic"]
 
 [team_galactic_eterna_building_4f]
 exits = [
@@ -3666,6 +3665,7 @@ locs = [
     "team_galactic_eterna_building_4f_blue_shard",
     "team_galactic_eterna_building_4f_upgrade",
 ]
+events = ["event_eterna_defeat_team_galactic"]
 
 [route_215_gate_to_veilstone_city]
 exits = [
