@@ -245,46 +245,45 @@ def generate_output(world: "PokemonPlatinumWorld", output_directory: str, patch:
     add_opt_byte("parcel_coupons_route_203")
     add_opt_byte("fps60")
     add_opt_byte("regional_dex_goal")
+    add_opt_byte("marsh_pass")
+    add_opt_byte("remote_items")
 
     if len(ap_bin) % 2 == 1:
         ap_bin += b'\x00'
 
-    if not world.options.remote_items:
-        tables: dict[LocationTable, bytearray] = {}
+    tables: dict[LocationTable, bytearray] = {}
 
-        def put_in_table(table: LocationTable, id: int, item_id: int):
-            if table not in tables:
-                tables[table] = bytearray()
-            l = len(tables[table])
-            if id >= l // 2:
-                tables[table] = tables[table] + b'\x00\xF0' * (id - l // 2 + 1)
-            tables[table][2*id:2*(id+1)] = item_id.to_bytes(length=2, byteorder='little')
+    def put_in_table(table: LocationTable, id: int, item_id: int):
+        if table not in tables:
+            tables[table] = bytearray()
+        l = len(tables[table])
+        if id >= l // 2:
+            tables[table] = tables[table] + b'\x00\xF0' * (id - l // 2 + 1)
+        tables[table][2*id:2*(id+1)] = item_id.to_bytes(length=2, byteorder='little')
 
-        filled_locations = set()
+    filled_locations = set()
 
-        for location in world.multiworld.get_locations(world.player):
-            if location.address is None or location.item is None or location.item.code is None:
-                continue
-            table = LocationTable(location.address >> 16)
-            id = location.address & 0xFFFF
-            filled_locations.add(location.name)
-            if location.item.player == world.player:
-                item_id = location.item.code
-            else:
-                item_id = 0xE000
-            put_in_table(table, id, item_id)
+    for location in world.multiworld.get_locations(world.player):
+        if location.address is None or location.item is None or location.item.code is None:
+            continue
+        table = LocationTable(location.address >> 16)
+        id = location.address & 0xFFFF
+        filled_locations.add(location.name)
+        if location.item.player == world.player:
+            item_id = location.item.code
+        else:
+            item_id = 0xE000
+        put_in_table(table, id, item_id)
 
-        for location in locations.values():
-            if location.label not in filled_locations:
-                put_in_table(location.table, location.id, items[location.original_item].get_raw_id())
+    for location in locations.values():
+        if location.label not in filled_locations:
+            put_in_table(location.table, location.id, items[location.original_item].get_raw_id())
 
-        ap_bin += len(tables).to_bytes(length=4, byteorder='little')
-        for table in sorted(tables.keys()):
-            data = tables[table]
-            ap_bin += (len(data) // 2).to_bytes(length=4, byteorder='little')
-            ap_bin += data
-    else:
-        ap_bin += int.to_bytes(0, length=4, byteorder='little')
+    ap_bin += len(tables).to_bytes(length=4, byteorder='little')
+    for table in sorted(tables.keys()):
+        data = tables[table]
+        ap_bin += (len(data) // 2).to_bytes(length=4, byteorder='little')
+        ap_bin += data
 
     start_inventory = world.options.start_inventory
     entries = [world.item_name_to_id[label].to_bytes(length=2, byteorder='little') + count.to_bytes(length=2, byteorder='little') for label, count in start_inventory.items()]

@@ -2981,3 +2981,10 @@ clas = "bagitem"
 group = "medicine"
 classification = "useful"
 count = 15
+
+[marsh_pass]
+label = "Marsh Pass"
+id = 469
+clas = "bagitem"
+group = "key_items"
+classification = "progression"

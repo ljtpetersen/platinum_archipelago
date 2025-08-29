@@ -296,3 +296,5 @@ locs.victory_road_1f_tm41 = "rock_climb"
 locs.victory_road_1f_nugget = "rock_climb"
 exits.victory_road_1f_entrance.victory_road_2f_entrance = "rock_climb"
 exits.victory_road_2f_entrance.victory_road_2f = "rock_smash & strength"
+
+exits.pastoria_city_observatory_gate_1f.virt_great_marsh = "marsh_pass if marsh_pass"

@@ -803,16 +803,22 @@ locs = [
     "great_marsh_6_max_repel",
 ]
 
-[pastoria_city_observatory_gate_1f]
+[virt_great_marsh]
 exits = [
-    "pastoria_city_observatory_gate_2f",
     "great_marsh_1",
     "great_marsh_2",
     "great_marsh_3",
     "great_marsh_4",
     "great_marsh_5",
     "great_marsh_6",
+]
+header = "virt"
+
+[pastoria_city_observatory_gate_1f]
+exits = [
+    "pastoria_city_observatory_gate_2f",
     "pastoria_city",
+    "virt_great_marsh",
 ]
 header = "pastoria_city_observatory_gate_1f"
 locs = ["pastoria_city_observatory_gate_1f_matchupchecker"]

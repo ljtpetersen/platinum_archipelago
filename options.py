@@ -200,6 +200,8 @@ class RemoteItems(Toggle):
     """
     Whether local items should be given in-game, or sent by the server.
     This overrides the show randomized progression items option: all items are shown.
+    It is highly recommended to use nothing for received items notification, otherwise
+    you will be notified twice for each item.
     """
     display_name = "Remote Items"
 
@@ -227,6 +229,14 @@ class NationalDexNumMons(Range):
     range_end = 80
     default = 60
 
+class AddMarshPass(Toggle):
+    """
+    Add the Marsh Pass item to the game. The Marsh pass gives free access to the Great Marsh,
+    but if it is enabled, it is required to enter. (i.e., you cannot pay to enter the Great Marsh
+    if this option is enabled)
+    """
+    display_name = "Add Marsh Pass"
+
 @dataclass
 class PokemonPlatinumOptions(PerGameCommonOptions):
     hms: RandomizeHms
@@ -253,6 +263,7 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
     game_options: GameOptions
     master_repel: AddMasterRepel
     s_s_ticket: AddSSTicket
+    marsh_pass: AddMarshPass
     exp_multiplier: ExpMultiplier
     blind_trainers: BlindTrainers
     show_unrandomized_progression_items: ShowUnrandomizedProgressionItems
