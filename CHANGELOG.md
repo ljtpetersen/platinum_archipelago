@@ -23,6 +23,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * The Pokédex is no longer accessible until the player receives a starter Pokémon.
 * Issue where items for other Platinum worlds are also given to the local world.
 * Old Charm Location in Route 210 now requires SecretPotion in logic.
+* Super Repel on Route 210 South now logically requires the Bicycle.
+* TM27 from Rowan will now be detected even if it was given when the client was not connected.
 ### Changed
 * Access to Pokémon Center Basements in Jubilife and Sandgem are no longer blocked before defeating Roark.
 * The S.S. Spiral can now be used if the player has defeated Cynthia, *or* of they have the S.S. Ticket.

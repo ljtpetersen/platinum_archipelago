@@ -4815,7 +4815,7 @@ id = 31
 original_item = "tm27"
 type = "npc_gift"
 table = "base"
-check = { id = 0x2C4, invert = true }
+check = { id = 0x4071, value = 2, op = "ge" }
 label = "Sandgem Town - TM27 (From Rowan)"
 id = 32
 
