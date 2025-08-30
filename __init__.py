@@ -61,6 +61,7 @@ class PokemonPlatinumWorld(World):
 
     def generate_early(self) -> None:
         self.required_locations = RequiredLocations(self.options)
+        self.options.validate()
 
     def get_filler_item_name(self) -> str:
         # TODO

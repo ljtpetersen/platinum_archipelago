@@ -5,7 +5,7 @@
 
 from dataclasses import dataclass
 from typing import Any
-from Options import Choice, DefaultOnToggle, OptionDict, OptionSet, PerGameCommonOptions, Range, Toggle
+from Options import Choice, DefaultOnToggle, OptionDict, OptionError, OptionSet, PerGameCommonOptions, Range, Toggle
 
 class RandomizeHms(DefaultOnToggle):
     """Adds the HMs to the pool."""
@@ -322,3 +322,11 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
 
     def requires_badge(self, hm: str) -> bool:
         return self.hm_badge_requirement.value == 1 or hm in self.remove_badge_requirements
+
+    def validate(self) -> None:
+        if self.pastoria_barriers:
+            if not self.badges and self.requires_badge("SURF"):
+                raise OptionError(f"cannot enable Pastoria barriers if Surf requires the Fen Badge and badges are not randomized.")
+            if not (self.hms or self.key_items.are_most_randomized()):
+                raise OptionError(f"cannot enable Pastoria barriers if both HMs and Key Items are not randomized.")
+
