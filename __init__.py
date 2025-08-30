@@ -15,7 +15,7 @@ from .data import items as itemdata
 from .data.locations import RequiredLocations
 from .items import create_item_label_to_code_map, get_item_classification, PokemonPlatinumItem, get_item_groups
 from .locations import PokemonPlatinumLocation, create_location_label_to_code_map, create_locations
-from .options import PokemonPlatinumOptions
+from .options import PokemonPlatinumOptions, UnownsOption
 from .regions import create_regions
 from .rom import generate_output, PokemonPlatinumPatch
 from .rules import set_rules
@@ -79,9 +79,15 @@ class PokemonPlatinumWorld(World):
             locations)
 
         add_items: list[str] = []
-        for item in ["master_repel", "s_s_ticket", "marsh_pass"]:
+        for item in ["master_repel", "s_s_ticket", "marsh_pass", "storage_key"]:
             if getattr(self.options, item).value == 1:
                 add_items.append(item)
+        if self.options.bag.value == 1:
+            add_items.append("bag")
+        else:
+            self.multiworld.push_precollected(self.create_item(itemdata.items["bag"].label))
+        if self.options.unown_option == UnownsOption.option_item:
+            add_items += ["uunown"] * 28
 
         itempool = []
         for loc in item_locations:

@@ -6,9 +6,9 @@
 loc_types.hidden = "dowsingmachine_if_opt"
 
 enc_types.surf = "surf"
-enc_types.good_rod = "good_rod"
-#enc_types.super_rod = "super_rod"
-enc_types.old_rod = "old_rod"
+enc_types.good_rod = "good_rod & bag"
+#enc_types.super_rod = "super_rod & bag"
+enc_types.old_rod = "old_rod & bag"
 
 common.national_dex = "pokedex * 3"
 common.dowsingmachine_if_opt = "dowsingmachine & poketch if dowsing_machine_logic"
@@ -164,8 +164,8 @@ locs.route_215_tm34 = "cut"
 
 locs.veilstone_city_full_incense = "rock_climb"
 
-exits.galactic_hq_wo_key.veilstone_city_galactic_warehouse = "event_lake_acuity_meet_jupiter"
-exits.veilstone_city_galactic_warehouse.galactic_hq_wo_key = "event_lake_acuity_meet_jupiter"
+exits.galactic_hq_wo_key.veilstone_city_galactic_warehouse = "event_lake_acuity_meet_jupiter | storage_key"
+exits.veilstone_city_galactic_warehouse.galactic_hq_wo_key = "event_lake_acuity_meet_jupiter | storage_key"
 exits.veilstone_city.galactic_hq_w_key = "galactic_key"
 locs.galactic_hq_3f_tm21 = "galactic_key"
 
@@ -202,8 +202,8 @@ locs.route_212_south_zinc = "cut"
 locs.route_212_north_tm11 = "cut | surf"
 locs.route_212_north_rose_incense = "surf"
 locs.route_212_north_iron = "surf"
-locs.route_212_south_big_mushroom = "bicycle"
-locs.route_212_south_tm62 = "bicycle"
+locs.route_212_south_big_mushroom = "bicycle & cut"
+locs.route_212_south_tm62 = "bicycle & bag if pastoria_barriers else bicycle"
 
 locs.route_218_rare_candy = "surf"
 locs.route_218_hyper_potion = "surf"
@@ -300,3 +300,8 @@ exits.victory_road_2f_entrance.victory_road_2f = "rock_smash & strength"
 
 exits.pastoria_city_observatory_gate_1f.virt_great_marsh = "marsh_pass if marsh_pass"
 locs.route_210_south_old_charm = "secretpotion"
+
+exits.route_212_north_top.route_212_north = "surf if pastoria_barriers"
+exits.route_212_north.route_212_north_top = "surf if pastoria_barriers"
+exits.route_214_top.route_214 = "surf if pastoria_barriers"
+exits.route_214.route_214_top = "surf if pastoria_barriers"

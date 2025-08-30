@@ -2692,6 +2692,7 @@ label = "Storage Key"
 id = 463
 clas = "bagitem"
 group = "key_items"
+classification = "progression"
 
 [secretpotion]
 label = "SecretPotion"
@@ -2987,4 +2988,18 @@ label = "Marsh Pass"
 id = 469
 clas = "bagitem"
 group = "key_items"
+classification = "progression"
+
+[uunown]
+label = "Unown Form"
+id = 470
+clas = "bagitem"
+group = "key_items"
+classification = "progression"
+
+[bag]
+label = "Bag"
+id = 4
+clas = "special"
+group = "bag"
 classification = "progression"

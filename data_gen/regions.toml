@@ -1179,12 +1179,19 @@ locs = [
     "route_212_south_big_mushroom",
 ]
 
+[route_212_north_top]
+exits = [
+    "route_212_north",
+    "route_212_gate_to_hearthome_city",
+]
+header = "route_212_north"
+accessible_encounters = ["old_rod", "good_rod", "super_rod"]
+
 [route_212_north]
 exits = [
+    "route_212_north_top",
     "route_212_south",
     "route_208",
-    "route_212_gate_to_hearthome_city",
-    "hearthome_city",
     "pokemon_mansion",
 ]
 header = "route_212_north"
@@ -1216,7 +1223,7 @@ locs = [
 
 [route_212_gate_to_hearthome_city]
 exits = [
-    "route_212_north",
+    "route_212_north_top",
     "hearthome_city",
 ]
 header = "route_212_gate_to_hearthome_city"
@@ -2490,7 +2497,7 @@ locs = ["solaceon_ruins_room_2_green_shard"]
 [route_214]
 exits = [
     "spring_path",
-    "route_214_gate_to_veilstone_city",
+    "route_214_top",
     "valor_lakefront",
     "maniac_tunnel",
 ]
@@ -2843,10 +2850,18 @@ locs = [
 
 [route_214_gate_to_veilstone_city]
 exits = [
-    "route_214",
+    "route_214_top",
     "veilstone_city",
 ]
 header = "route_214_gate_to_veilstone_city"
+
+[route_214_top]
+exits = [
+    "route_214_gate_to_veilstone_city",
+    "route_214",
+]
+header = "route_214"
+accessible_encounters = ["good_rod", "old_rod", "super_rod"]
 
 [veilstone_city_pokecenter_2f]
 exits = [

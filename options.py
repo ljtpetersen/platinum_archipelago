@@ -244,6 +244,41 @@ class SunyshoreEarly(Toggle):
     """
     display_name = "Early Sunyshore"
 
+class AddStorageKey(Toggle):
+    """
+    Add the Storage Key item to the item pool. This allows access to the warehouse portion
+    of the Veilstone Galactic HQ without having to clear all three lake events.
+    """
+    display_name = "Add Storage Key"
+
+class UnownsOption(Choice):
+    """
+    How the Maniac Tunnel is handled.
+
+    Vanilla: 26 Unown forms must be encountered before the Maniac Tunnel is traversable.
+    Item: 28 "Unown Form" items are added to the item pool. 26 of them must be collected
+    before the Maniac Tunnel is traversable.
+    None: The Maniac Tunnel is always traversable.
+    """
+    display_name = "Unowns Choice"
+    option_vanilla = 0
+    option_item = 1
+    option_none = 2
+    default = 0
+
+class AddBag(Toggle):
+    """
+    Add the bag to the item pool. Before obtaining it, the bag cannot be opened in the menu.
+    """
+    display_name = "Add Bag"
+
+class PastoriaBarriers(Toggle):
+    """
+    Add barriers in Route 212 and Route 214, blocking the path to Pastoria City
+    until the player has surf.
+    """
+    display_name = "Pastoria Barriers"
+
 @dataclass
 class PokemonPlatinumOptions(PerGameCommonOptions):
     hms: RandomizeHms
@@ -267,13 +302,19 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
     fps60: FPS60
     regional_dex_goal: NationalDexNumMons
     early_sunyshore: SunyshoreEarly
+    pastoria_barriers: PastoriaBarriers
 
     game_options: GameOptions
+
     master_repel: AddMasterRepel
     s_s_ticket: AddSSTicket
     marsh_pass: AddMarshPass
     exp_multiplier: ExpMultiplier
     blind_trainers: BlindTrainers
+    storage_key: AddStorageKey
+    bag: AddBag
+    unown_option: UnownsOption
+
     show_unrandomized_progression_items: ShowUnrandomizedProgressionItems
     remote_items: RemoteItems
 

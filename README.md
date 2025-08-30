@@ -29,5 +29,6 @@ for each item that should be marked as useful, add the line `classification = "u
 * Various QOL things.
 
 ## Credits
-* Thanks to [Linneus](https://github.com/Linneus) for map changes and help with scripts/events/rules.
+* Thanks to [Linneus](https://github.com/Linneus) for map changes and help with scripts/events/rules,
+as well as for creating item icons.
 * Thanks to [gerbiljames](https://github.com/gerbiljames) for help with structuring the client and world.

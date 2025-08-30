@@ -17,11 +17,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * An option to add the S.S. Ticket to the item pool.
 * An option to set the completion goal of the regional Pokédex.
 * An option to allow access to Sunyshore City early.
+* An option to add the Storage Key to the item pool.
+* An option to add the Marsh Pass to the item pool.
+* An option to add the Bag to the item pool.
+* An option to customize the requirements for the Maniac Tunnel.
 ### Fixed
 * Incorrect rules on Route 208 hidden Star Piece.
 * The secret entrance to Wayward Cave no longer optionally requires flash.
 * The Archipelago Unit Test suite now runs.
-* The Pokédex is no longer accessible until the player receives a starter Pokémon.
+* The Pokédex and Bag are no longer accessible until the player receives a starter Pokémon.
 * Issue where items for other Platinum worlds are also given to the local world.
 * Old Charm Location in Route 210 now requires SecretPotion in logic.
 * Super Repel on Route 210 South now logically requires the Bicycle.

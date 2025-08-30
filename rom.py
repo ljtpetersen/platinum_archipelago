@@ -249,6 +249,8 @@ def generate_output(world: "PokemonPlatinumWorld", output_directory: str, patch:
     add_opt_byte("marsh_pass")
     add_opt_byte("remote_items")
     add_opt_byte("early_sunyshore")
+    add_opt_byte("unown_option")
+    add_opt_byte("early_sunyshore")
 
     if len(ap_bin) % 2 == 1:
         ap_bin += b'\x00'
