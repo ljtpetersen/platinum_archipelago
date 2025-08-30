@@ -172,7 +172,7 @@ locs.galactic_hq_3f_tm21 = "galactic_key"
 locs.route_214_rare_candy = "surf"
 exits.route_214.spring_path = "event_distortion_world"
 exits.sendoff_spring.turnback_cave_entrance = "defog_if_opt"
-exits.valor_lakefront.route_222 = "event_distortion_world"
+exits.valor_lakefront.route_222 = "event_distortion_world if !early_sunyshore"
 exits.valor_lakefront.lake_valor = "event_distortion_world"
 
 locs.valor_lakefront_secretpotion = "event_fen_badge"

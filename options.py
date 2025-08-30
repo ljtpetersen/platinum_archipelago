@@ -237,6 +237,13 @@ class AddMarshPass(Toggle):
     """
     display_name = "Add Marsh Pass"
 
+class SunyshoreEarly(Toggle):
+    """
+    With this option enabled, access to Sunyshore City via Valor Lakefront is no longer blocked
+    until the Distortion World has been cleared.
+    """
+    display_name = "Early Sunyshore"
+
 @dataclass
 class PokemonPlatinumOptions(PerGameCommonOptions):
     hms: RandomizeHms
@@ -259,6 +266,7 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
     parcel_coupons_route_203: RequireParcelCouponsCheckRoute203
     fps60: FPS60
     regional_dex_goal: NationalDexNumMons
+    early_sunyshore: SunyshoreEarly
 
     game_options: GameOptions
     master_repel: AddMasterRepel

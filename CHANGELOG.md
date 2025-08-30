@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * Pal Pad Location in Pokémon Center Basement.
 * An option to add the S.S. Ticket to the item pool.
 * An option to set the completion goal of the regional Pokédex.
+* An option to allow access to Sunyshore City early.
 ### Fixed
 * Incorrect rules on Route 208 hidden Star Piece.
 * The secret entrance to Wayward Cave no longer optionally requires flash.
