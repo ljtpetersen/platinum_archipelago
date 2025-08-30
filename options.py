@@ -224,7 +224,7 @@ class NationalDexNumMons(Range):
     Pokédex. (This is when you can receive the National Dex from Oak)
     """
     display_name = "National Dex Num Mons"
-    range_start = 60
+    range_start = 1
     # range end will be expanded as more encounters are added.
     range_end = 80
     default = 60

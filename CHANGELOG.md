@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## 0.?.? - TBD
+## 0.1.0 - TBD
 ### Added
 * An option to show/hide unrandomized progression items in the chat.
 * A remote items option.
@@ -25,6 +25,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * Old Charm Location in Route 210 now requires SecretPotion in logic.
 * Super Repel on Route 210 South now logically requires the Bicycle.
 * TM27 from Rowan will now be detected even if it was given when the client was not connected.
+* Experience gained via Exp. Share is not affected by experience multiplier.
+* Floaroma Town now also exits to Route 204 North.
 ### Changed
 * Access to Pokémon Center Basements in Jubilife and Sandgem are no longer blocked before defeating Roark.
 * The S.S. Spiral can now be used if the player has defeated Cynthia, *or* of they have the S.S. Ticket.

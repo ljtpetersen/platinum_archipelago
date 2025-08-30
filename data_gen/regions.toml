@@ -2424,6 +2424,7 @@ locs = ["canalave_city_southeast_house_tm48"]
 exits = [
     "floaroma_town_southeast_house",
     "floaroma_town_mart",
+    "route_204_north",
     "route_205_south",
     "floaroma_town_pokecenter_1f",
     "floaroma_meadow_south",
