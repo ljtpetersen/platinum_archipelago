@@ -1723,6 +1723,34 @@ exits = [
 ]
 events = ["event_solaceon_ruins"]
 header = "solaceon_ruins_room_1"
+locs = [
+    "uunown_a",
+    "uunown_b",
+    "uunown_c",
+    "uunown_d",
+    "uunown_e",
+    "uunown_f",
+    "uunown_g",
+    "uunown_h",
+    "uunown_i",
+    "uunown_j",
+    "uunown_k",
+    "uunown_l",
+    "uunown_m",
+    "uunown_n",
+    "uunown_o",
+    "uunown_p",
+    "uunown_q",
+    "uunown_r",
+    "uunown_s",
+    "uunown_t",
+    "uunown_u",
+    "uunown_v",
+    "uunown_w",
+    "uunown_x",
+    "uunown_y",
+    "uunown_z",
+]
 
 [hearthome_city_mart]
 exits = [
@@ -2836,6 +2864,7 @@ exits = [
     "maniac_tunnel",
 ]
 header = "solaceon_ruins_maniac_tunnel_room"
+locs = ["uunown_ex", "uunown_qu"]
 
 [pokemon_mansion_maids_room]
 exits = [

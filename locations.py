@@ -9,7 +9,7 @@ from dataclasses import dataclass
 from typing import Dict, TYPE_CHECKING
 
 from .data import items as itemdata, locations as locationdata, regions as regiondata
-from .options import PokemonPlatinumOptions, RandomizeKeyItems
+from .options import PokemonPlatinumOptions, RandomizeKeyItems, UnownsOption
 
 if TYPE_CHECKING:
     from . import PokemonPlatinumWorld
@@ -19,6 +19,7 @@ raw_id_to_const_name = { loc.get_raw_id():name for name, loc in locationdata.loc
 @dataclass(frozen=True)
 class LocationType:
     is_enabled: Callable[[PokemonPlatinumOptions], bool]
+    should_be_added: Callable[[PokemonPlatinumOptions], bool] = lambda _ : True
 
 location_types: Mapping[str, LocationType] = {
     "overworld": LocationType(is_enabled = lambda opts : opts.overworlds.value == 1),
@@ -33,6 +34,10 @@ location_types: Mapping[str, LocationType] = {
     "running_shoes": LocationType(is_enabled = lambda opts : opts.running_shoes.value == 1),
     "bicycle": LocationType(is_enabled = lambda opts : opts.bicycle.value == 1),
     "pokedex": LocationType(is_enabled = lambda opts : opts.pokedex.value == 1),
+    "uunown": LocationType(
+        is_enabled = lambda opts : opts.hiddens.value == 1 and opts.unown_option.value == UnownsOption.option_item,
+        should_be_added = lambda opts : opts.unown_option == UnownsOption.option_item
+    )
 }
 
 def get_parent_region(label: str, world: "PokemonPlatinumWorld") -> str | None:
@@ -41,7 +46,8 @@ def get_parent_region(label: str, world: "PokemonPlatinumWorld") -> str | None:
 
 def is_location_enabled(label: str, world: "PokemonPlatinumWorld"):
     const_name = raw_id_to_const_name[world.location_name_to_id[label]]
-    return location_types[locationdata.locations[const_name].type].is_enabled(world.options) or const_name in world.required_locations
+    lt = location_types[locationdata.locations[const_name].type]
+    return (lt.is_enabled(world.options) or const_name in world.required_locations) and lt.should_be_added(world.options)
 
 def create_location_label_to_code_map() -> Dict[str, int]:
     return {v.label:v.get_raw_id() for v in locationdata.locations.values()}
@@ -77,8 +83,10 @@ def create_locations(world: "PokemonPlatinumWorld", regions: Mapping[str, Region
         show_unrandomized_progression_items |= remote_items
         for name in region_data.locs:
             loc = locationdata.locations[name]
-            is_enabled = location_types[loc.type].is_enabled(world.options)
-            if not (is_enabled or name in world.required_locations or remote_items):
+            lt = location_types[loc.type]
+            is_enabled = lt.is_enabled(world.options)
+            if not (is_enabled or name in world.required_locations or show_unrandomized_progression_items) \
+                or not lt.should_be_added(world.options):
                 continue
             item = itemdata.items[loc.original_item]
             if is_enabled or show_unrandomized_progression_items:

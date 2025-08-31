@@ -100,7 +100,11 @@ class ExpMultiplier(Range):
     default = 1
 
 class BlindTrainers(Toggle):
-    """Set whether trainers will be blind."""
+    """
+    Set whether trainers will be blind.
+
+    This option can also be modified in the in-game options menu.
+    """
     display_name = "Blind Trainers"
 
 class GameOptions(OptionDict):
@@ -119,6 +123,9 @@ class GameOptions(OptionDict):
     default_player_name: player_name/custom/random/vanilla - Sets the default player name. with player_name, tries to use the AP player name.
     default_rival_name: random/custom/player_name/vanilla - Sets the default rival name. with random, picks from one of the players in the AP.
     default_gender: vanilla/male/female/random - Sets the default gender.
+
+    The text_speed, sound, battle_scene, battle_style, button_mode, text_frame, and received_items_notification
+    options can additionally be modifier in the in-game options menu.
 
     for the player and rival names, the following characters are accepted:
     all alphanumeric characters (A-Z, a-z, 0-9),
@@ -208,6 +215,8 @@ class RemoteItems(Toggle):
 class FPS60(Toggle):
     """
     Whether the 60 FPS patch should be applied.
+
+    This option can also be modified in the in-game options menu.
     """
     display_name = "60 FPS"
 
@@ -279,6 +288,14 @@ class PastoriaBarriers(Toggle):
     """
     display_name = "Pastoria Barriers"
 
+class HMCutIns(Toggle):
+    """
+    Whether HM Cut-Ins should be played.
+
+    This option can also be modified in the in-game options menu.
+    """
+    display_name = "HM Cut-Ins"
+
 @dataclass
 class PokemonPlatinumOptions(PerGameCommonOptions):
     hms: RandomizeHms
@@ -299,18 +316,19 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
     dowsing_machine_logic: DowsingMachineLogic
     north_sinnoh_fly: RequireFlyForNorthSinnoh
     parcel_coupons_route_203: RequireParcelCouponsCheckRoute203
-    fps60: FPS60
     regional_dex_goal: NationalDexNumMons
     early_sunyshore: SunyshoreEarly
     pastoria_barriers: PastoriaBarriers
 
     game_options: GameOptions
+    blind_trainers: BlindTrainers
+    hm_cut_ins: HMCutIns
+    fps60: FPS60
 
     master_repel: AddMasterRepel
     s_s_ticket: AddSSTicket
     marsh_pass: AddMarshPass
     exp_multiplier: ExpMultiplier
-    blind_trainers: BlindTrainers
     storage_key: AddStorageKey
     bag: AddBag
     unown_option: UnownsOption
@@ -329,4 +347,8 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
                 raise OptionError(f"cannot enable Pastoria barriers if Surf requires the Fen Badge and badges are not randomized.")
             if not (self.hms or self.key_items.are_most_randomized()):
                 raise OptionError(f"cannot enable Pastoria barriers if both HMs and Key Items are not randomized.")
+        if not (self.overworlds or self.hiddens or self.npc_gifts or self.key_items.value > 0 or self.poketch_apps):
+            raise OptionError(f"at least one of overworlds, hiddens, npc_gifts, key_items, or poketch apps must be enabled")
+        if self.bag and self.dowsing_machine_logic and not (self.overworlds or self.npc_gifts or self.rods or self.running_shoes or self.pokedex or self.key_items.value > 0):
+            raise OptionError(f"if the bag is enabled, then at least one of overworlds, npc_gifts, rods, running_shoes, pokedex, key_items must be enabled")
 

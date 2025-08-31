@@ -1,8 +1,3 @@
-# data_gen/locations.toml
-#
-# Copyright (C) 2025 James Petersen <m@jamespetersen.ca>
-# Licensed under MIT. See LICENSE
-
 [great_marsh_3_great_ball]
 original_item = "great_ball"
 type = "overworld"
@@ -439,7 +434,7 @@ id = 214
 original_item = "lunar_wing"
 type = "key_item"
 table = "overworld"
-check = 0xB78
+check = 2936
 label = "Fullmoon Island - Overworld (Lunar Wing)"
 id = 92
 
@@ -4559,7 +4554,7 @@ id = 98
 original_item = "coal_badge"
 type = "badge"
 table = "base"
-check = 0x75
+check = 117
 label = "Oreburgh City Gym - Badge (From Roark)"
 id = 103
 
@@ -4567,7 +4562,7 @@ id = 103
 original_item = "tm76"
 type = "npc_gift"
 table = "base"
-check = 0x75
+check = 117
 label = "Oreburgh City Gym - TM75 (From Roark)"
 id = 1
 
@@ -4575,7 +4570,7 @@ id = 1
 original_item = "forest_badge"
 type = "badge"
 table = "base"
-check = 0x74
+check = 116
 label = "Oreburgh City Gym - Badge (From Gardenia)"
 id = 2
 
@@ -4583,7 +4578,7 @@ id = 2
 original_item = "tm86"
 type = "npc_gift"
 table = "base"
-check = 0x74
+check = 116
 label = "Eterna City Gym - TM86 (From Gardenia)"
 id = 3
 
@@ -4591,7 +4586,7 @@ id = 3
 original_item = "cobble_badge"
 type = "badge"
 table = "base"
-check = 0x9D
+check = 157
 label = "Veilstone City Gym - Badge (From Maylene)"
 id = 4
 
@@ -4599,7 +4594,7 @@ id = 4
 original_item = "tm60"
 type = "npc_gift"
 table = "base"
-check = 0x9D
+check = 157
 label = "Veilstone City Gym - TM60 (From Maylene)"
 id = 5
 
@@ -4607,7 +4602,7 @@ id = 5
 original_item = "fen_badge"
 type = "badge"
 table = "base"
-check = 0x9C
+check = 156
 label = "Pastoria City Gym - Badge (From Crasher Wake)"
 id = 6
 
@@ -4615,7 +4610,7 @@ id = 6
 original_item = "tm55"
 type = "npc_gift"
 table = "base"
-check = 0x9C
+check = 156
 label = "Pastoria City Gym - TM55 (From Crasher Wake)"
 id = 7
 
@@ -4623,7 +4618,7 @@ id = 7
 original_item = "relic_badge"
 type = "badge"
 table = "base"
-check = 0x7D
+check = 125
 label = "Hearthome City Gym - Badge (From Fantina)"
 id = 8
 
@@ -4631,7 +4626,7 @@ id = 8
 original_item = "tm65"
 type = "npc_gift"
 table = "base"
-check = 0x7D
+check = 125
 label = "Hearthome City Gym - TM65 (From Fantina)"
 id = 9
 
@@ -4639,7 +4634,7 @@ id = 9
 original_item = "mine_badge"
 type = "badge"
 table = "base"
-check = 0x92
+check = 146
 label = "Canalave City Gym - Badge (From Byron)"
 id = 10
 
@@ -4647,7 +4642,7 @@ id = 10
 original_item = "tm91"
 type = "npc_gift"
 table = "base"
-check = 0x92
+check = 146
 label = "Canalave City Gym - TM91 (From Byron)"
 id = 11
 
@@ -4655,7 +4650,7 @@ id = 11
 original_item = "icicle_badge"
 type = "badge"
 table = "base"
-check = 0x9E
+check = 158
 label = "Snowpoint City Gym - Badge (From Candice)"
 id = 12
 
@@ -4663,7 +4658,7 @@ id = 12
 original_item = "tm72"
 type = "npc_gift"
 table = "base"
-check = 0x9E
+check = 158
 label = "Snowpoint City Gym - TM72 (From Candice)"
 id = 13
 
@@ -4671,7 +4666,7 @@ id = 13
 original_item = "beacon_badge"
 type = "badge"
 table = "base"
-check = 0xB6
+check = 182
 label = "Sunyshore City Gym - Badge (From Volkner)"
 id = 14
 
@@ -4679,7 +4674,7 @@ id = 14
 original_item = "tm57"
 type = "npc_gift"
 table = "base"
-check = 0xB6
+check = 182
 label = "Sunyshore City Gym - TM57 (From Volkner)"
 id = 15
 
@@ -4687,15 +4682,19 @@ id = 15
 original_item = "hm01"
 type = "hm"
 table = "base"
-check = { id = 0x407A, value = 2, op = "ge" }
 label = "Eterna City - HM01 (From Cynthia)"
 id = 16
+
+[eterna_city_hm01.check]
+id = 16506
+value = 2
+op = "ge"
 
 [oreburgh_gate_1f_hm06]
 original_item = "hm06"
 type = "hm"
 table = "base"
-check = 0x93
+check = 147
 label = "Oreburgh Gate - HM06 (From Hiker)"
 id = 17
 
@@ -4711,7 +4710,7 @@ id = 18
 original_item = "hm04"
 type = "hm"
 table = "base"
-check = 0x214
+check = 532
 label = "Iron Island - HM04 (From Riley)"
 id = 19
 
@@ -4719,7 +4718,7 @@ id = 19
 original_item = "hm07"
 type = "hm"
 table = "base"
-check = 0x9A
+check = 154
 label = "Sunyshore City - HM07 (From Jasmine)"
 id = 20
 
@@ -4727,15 +4726,19 @@ id = 20
 original_item = "dowsingmachine"
 type = "poketchapp"
 table = "base"
-check = { id = 0x408C, value = 1, op = "ge" }
 label = "Route 207 - Dowsing Machine (From Counterpart)"
 id = 21
+
+[route_207_dowsingmachine.check]
+id = 16524
+value = 1
+op = "ge"
 
 [route_218_gate_to_jubilife_city_old_rod]
 original_item = "old_rod"
 type = "rod"
 table = "base"
-check = 0x84
+check = 132
 label = "Jubilife City Gate to Route 218 - Old Rod (From Fisherman)"
 id = 22
 
@@ -4743,7 +4746,7 @@ id = 22
 original_item = "good_rod"
 type = "rod"
 table = "base"
-check = 0xA2
+check = 162
 label = "Route 209 - Good Rod (From Fisherman)"
 id = 23
 
@@ -4751,7 +4754,7 @@ id = 23
 original_item = "super_rod"
 type = "rod"
 table = "base"
-check = 0x6B
+check = 107
 label = "Fight Area - Super Rod (From Fisherman)"
 id = 24
 
@@ -4759,15 +4762,19 @@ id = 24
 original_item = "running_shoes"
 type = "running_shoes"
 table = "base"
-check = { id = 0x40A4, value = 4, op = "ge" }
 label = "Twinleaf Town - Running Shoes (From Mom)"
 id = 25
+
+[twinleaf_town_player_house_1f_running_shoes.check]
+id = 16548
+value = 4
+op = "ge"
 
 [twinleaf_town_player_house_1f_journal]
 original_item = "journal"
 type = "key_item"
 table = "base"
-check = 0x8F
+check = 143
 label = "Twinleaf Town - Journal (From Mom)"
 id = 26
 
@@ -4775,7 +4782,7 @@ id = 26
 original_item = "parcel"
 type = "key_item"
 table = "base"
-check = 0x8F
+check = 143
 label = "Twinleaf Town - Parcel (From Rival's Mom)"
 id = 27
 
@@ -4783,7 +4790,7 @@ id = 27
 original_item = "potion"
 type = "npc_gift"
 table = "base"
-check = 0x6C
+check = 108
 label = "Route 201 - Potion (From Clerk)"
 id = 28
 
@@ -4791,7 +4798,7 @@ id = 28
 original_item = "pokedex"
 type = "pokedex"
 table = "base"
-check = 0x90
+check = 144
 label = "Pokemon Research Lab - Pokédex (From Rowan)"
 id = 29
 
@@ -4799,7 +4806,7 @@ id = 29
 original_item = "pokedex"
 type = "pokedex"
 table = "base"
-check = 0xB62
+check = 2914
 label = "Pokemon Research Lab - National Pokédex (From Oak)"
 id = 30
 
@@ -4807,7 +4814,7 @@ id = 30
 original_item = "poke_radar"
 type = "key_item"
 table = "base"
-check = 0xB62
+check = 2914
 label = "Pokemon Research Lab - Poké Radar (From Rowan)"
 id = 31
 
@@ -4815,15 +4822,19 @@ id = 31
 original_item = "tm27"
 type = "npc_gift"
 table = "base"
-check = { id = 0x4071, value = 2, op = "ge" }
 label = "Sandgem Town - TM27 (From Rowan)"
 id = 32
+
+[sandgem_town_tm27.check]
+id = 16497
+value = 2
+op = "ge"
 
 [pal_park_lobby_kitchentimer]
 original_item = "kitchentimer"
 type = "poketchapp"
 table = "base"
-check = 0xB63
+check = 2915
 label = "Pal Park Lobby - Kitchen Timer App"
 id = 33
 
@@ -4831,7 +4842,7 @@ id = 33
 original_item = "colorchanger"
 type = "poketchapp"
 table = "base"
-check = 0xB64
+check = 2916
 label = "Pal Park Lobby - Color Changer App"
 id = 34
 
@@ -4839,15 +4850,18 @@ id = 34
 original_item = "radarchaincounter"
 type = "poketchapp"
 table = "base"
-check = { id = 0x40C6, value = 1 }
 label = "Pal Park Lobby - Trainer Counter App"
 id = 35
+
+[pal_park_lobby_counter.check]
+id = 16582
+value = 1
 
 [route_202_poke_ball_x5]
 original_item = "poke_ball_x5"
 type = "npc_gift"
 table = "base"
-check = 0x188
+check = 392
 label = "Route 202 - Poké Ball x5 (From Dawn)"
 id = 36
 
@@ -4855,15 +4869,19 @@ id = 36
 original_item = "vs_recorder"
 type = "key_item"
 table = "base"
-check = { id = 0x4077, value = 1, op = "ge" }
 label = "Jubilife City - Vs. Recorder (From Looker)"
 id = 37
+
+[jubilife_city_vs_recorder.check]
+id = 16503
+value = 1
+op = "ge"
 
 [trainers_school_town_map]
 original_item = "town_map"
 type = "key_item"
 table = "base"
-check = 0x1F4
+check = 500
 label = "Trainers' School - Town Map (From Parcel)"
 id = 38
 
@@ -4871,7 +4889,7 @@ id = 38
 original_item = "potion"
 type = "npc_gift"
 table = "base"
-check = 0x112
+check = 274
 label = "Trainers' School - Potion (From Schoolkid)"
 id = 39
 
@@ -4879,7 +4897,7 @@ id = 39
 original_item = "coupon_1"
 type = "all_key_item"
 table = "base"
-check = 0xED
+check = 237
 label = "Jubilife City - Coupon 1 (From Poketch Campaign Clown)"
 id = 40
 
@@ -4887,7 +4905,7 @@ id = 40
 original_item = "coupon_2"
 type = "all_key_item"
 table = "base"
-check = 0xEE
+check = 238
 label = "Jubilife City - Coupon 2 (From Poketch Campaign Clown)"
 id = 41
 
@@ -4895,7 +4913,7 @@ id = 41
 original_item = "coupon_3"
 type = "all_key_item"
 table = "base"
-check = 0xEF
+check = 239
 label = "Jubilife City - Coupon 3 (From Poketch Campaign Clown)"
 id = 42
 
@@ -4903,7 +4921,7 @@ id = 42
 original_item = "poketch"
 type = "poketchapp"
 table = "base"
-check = 0xB7C
+check = 2940
 label = "Jubilife City - Poketch"
 id = 43
 
@@ -4911,7 +4929,7 @@ id = 43
 original_item = "calculator"
 type = "poketchapp"
 table = "base"
-check = 0xB7C
+check = 2940
 label = "Jubilife City - Calculator App"
 id = 44
 
@@ -4919,7 +4937,7 @@ id = 44
 original_item = "pedometer"
 type = "poketchapp"
 table = "base"
-check = 0xB7C
+check = 2940
 label = "Jubilife City - Pedometer App"
 id = 45
 
@@ -4927,7 +4945,7 @@ id = 45
 original_item = "partystatus"
 type = "poketchapp"
 table = "base"
-check = 0xB7C
+check = 2940
 label = "Jubilife City - Party Status App"
 id = 46
 
@@ -4935,7 +4953,7 @@ id = 46
 original_item = "bicycle"
 type = "bicycle"
 table = "base"
-check = 0x82
+check = 130
 label = "Cycle Shop - Bicycle"
 id = 47
 
@@ -4943,7 +4961,7 @@ id = 47
 original_item = "dusk_ball"
 type = "npc_gift"
 table = "base"
-check = 0xC0
+check = 192
 label = "Oreburgh City - Dusk Ball (Gift in Northwest House)"
 id = 48
 
@@ -4951,7 +4969,7 @@ id = 48
 original_item = "heal_ball"
 type = "npc_gift"
 table = "base"
-check = 0xC1
+check = 193
 label = "Oreburgh City - Heal Ball (Gift in North House)"
 id = 49
 
@@ -4959,7 +4977,7 @@ id = 49
 original_item = "great_ball"
 type = "npc_gift"
 table = "base"
-check = 0x10A
+check = 266
 label = "Oreburgh City - Great Ball (Gift in East House)"
 id = 50
 
@@ -4967,7 +4985,7 @@ id = 50
 original_item = "super_potion"
 type = "npc_gift"
 table = "base"
-check = 0x109
+check = 265
 label = "Oreburgh City - Super Potion (Gift from Worker by Mines)"
 id = 51
 
@@ -4975,7 +4993,7 @@ id = 51
 original_item = "quick_claw"
 type = "npc_gift"
 table = "base"
-check = 0xBF
+check = 191
 label = "Jubilife City Condominiums - Quick Claw"
 id = 52
 
@@ -4983,7 +5001,7 @@ id = 52
 original_item = "fashion_case"
 type = "key_item"
 table = "base"
-check = 0xF2
+check = 242
 label = "Jubilife City - Fashion Case (From Reporter after Defeating Grunts)"
 id = 53
 
@@ -4991,7 +5009,7 @@ id = 53
 original_item = "tm78"
 type = "npc_gift"
 table = "base"
-check = 0xC5
+check = 197
 label = "Route 204 North - TM78 (Gift)"
 id = 54
 
@@ -4999,7 +5017,7 @@ id = 54
 original_item = "works_key"
 type = "key_item"
 table = "base"
-check = 0x9F
+check = 159
 label = "Floaroma Meadow - Works Key"
 id = 55
 
@@ -5007,7 +5025,7 @@ id = 55
 original_item = "honey_x10"
 type = "npc_gift"
 table = "base"
-check = 0x9F
+check = 159
 label = "Floaroma Meadow - Honey x10"
 id = 56
 
@@ -5015,7 +5033,7 @@ id = 56
 original_item = "tm88"
 type = "npc_gift"
 table = "base"
-check = 0x83
+check = 131
 label = "Floaroma Town - TM88 (Middle House)"
 id = 57
 
@@ -5023,7 +5041,7 @@ id = 57
 original_item = "sprayduck"
 type = "key_item"
 table = "base"
-check = 0x80
+check = 128
 label = "Floaroma Town Flower Shop - Sprayduck"
 id = 58
 
@@ -5031,7 +5049,7 @@ id = 58
 original_item = "star_piece"
 type = "npc_gift"
 table = "base"
-check = 0x138
+check = 312
 label = "Fuego Ironworks - Star Piece (From Mr. Fuego)"
 id = 59
 
@@ -5039,7 +5057,7 @@ id = 59
 original_item = "soothe_bell"
 type = "npc_gift"
 table = "base"
-check = 0xE3
+check = 227
 label = "Eterna Forest - Soothe Bell (From Cheryl)"
 id = 60
 
@@ -5047,7 +5065,7 @@ id = 60
 original_item = "friendshipchecker"
 type = "poketchapp"
 table = "base"
-check = 0xB66
+check = 2918
 label = "Eterna City Pokémon Center - Friendship Checker App"
 id = 61
 
@@ -5055,7 +5073,7 @@ id = 61
 original_item = "explorer_kit"
 type = "key_item"
 table = "base"
-check = 0x79
+check = 121
 label = "Eterna City Underground Man House - Explorer Kit"
 id = 62
 
@@ -5063,7 +5081,7 @@ id = 62
 original_item = "upgrade"
 type = "npc_gift"
 table = "base"
-check = 0x119
+check = 281
 label = "Eterna City - Up-Grade (From Oak)"
 id = 63
 
@@ -5071,7 +5089,7 @@ id = 63
 original_item = "exp_share"
 type = "npc_gift"
 table = "base"
-check = 0x10B
+check = 267
 label = "Eterna City - Exp. Share (From Rowan's Assistant)"
 id = 64
 
@@ -5079,15 +5097,19 @@ id = 64
 original_item = "vs_seeker"
 type = "npc_gift"
 table = "base"
-check = { id = 0x408C, value = 1, op = "ge" }
 label = "Route 207 - Vs. Seeker (From Counterpart)"
 id = 65
+
+[route_207_vs_seeker.check]
+id = 16524
+value = 1
+op = "ge"
 
 [mt_coronet_2f_black_flute]
 original_item = "black_flute"
 type = "npc_gift"
 table = "base"
-check = 0x160
+check = 352
 label = "Mt. Coronet 2F - Black Flute (From Looker)"
 id = 66
 
@@ -5095,7 +5117,7 @@ id = 66
 original_item = "odd_keystone"
 type = "npc_gift"
 table = "base"
-check = 0x13F
+check = 319
 label = "Route 208 - Odd Keystone (From Black Belt)"
 id = 67
 
@@ -5103,7 +5125,7 @@ id = 67
 original_item = "berrysearcher"
 type = "poketchapp"
 table = "base"
-check = 0xB6B
+check = 2923
 label = "Route 208 House - Berry Searcher App"
 id = 68
 
@@ -5111,7 +5133,7 @@ id = 68
 original_item = "poffin_case"
 type = "key_item"
 table = "base"
-check = 0x8D
+check = 141
 label = "Hearthome City - Poffin Case (In Pokémon Fan Club)"
 id = 69
 
@@ -5119,13 +5141,13 @@ id = 69
 original_item = "shell_bell"
 type = "npc_gift"
 table = "base"
-check = 0x8C
+check = 140
 label = "Hearthome City - Shell Bell (In Southeast House)"
 id = 70
 
 [route_209_lost_tower_5f_cleanse_tag]
 id = 71
-check = 0x116
+check = 278
 original_item = "cleanse_tag"
 type = "npc_gift"
 table = "base"
@@ -5133,7 +5155,7 @@ label = "Route 209 Lost Tower - Cleanse Tag (From NPC At Top)"
 
 [route_209_lost_tower_5f_spell_tag]
 id = 72
-check = 0xA1
+check = 161
 original_item = "spell_tag"
 type = "npc_gift"
 table = "base"
@@ -5141,7 +5163,7 @@ label = "Route 209 Lost Tower - Spell Tag (From NPC At Top)"
 
 [solaceon_town_pokemonhistory]
 id = 73
-check = 0xB6C
+check = 2924
 original_item = "pokemonhistory"
 type = "poketchapp"
 table = "base"
@@ -5149,7 +5171,7 @@ label = "Solaceon Town - Pokémon History App"
 
 [pokemon_day_care_daycarechecker]
 id = 74
-check = 0xB6D
+check = 2925
 original_item = "daycarechecker"
 type = "poketchapp"
 table = "base"
@@ -5157,7 +5179,7 @@ label = "Pokémon Day-Care - Day-Care Checker App"
 
 [solaceon_ruins_room_2_green_shard]
 id = 75
-check = 0xD2
+check = 210
 original_item = "green_shard"
 type = "npc_gift"
 table = "base"
@@ -5165,7 +5187,7 @@ label = "Solaceon Ruins - Green Shard (From NPC)"
 
 [solaceon_town_east_house_seal_case]
 id = 76
-check = 0x117
+check = 279
 original_item = "seal_case"
 type = "key_item"
 table = "base"
@@ -5173,7 +5195,7 @@ label = "Solaceon Town - Seal Case"
 
 [valor_lakefront_secretpotion]
 id = 77
-check = 0xB7
+check = 183
 original_item = "secretpotion"
 type = "key_item"
 table = "base"
@@ -5181,7 +5203,7 @@ label = "Valor Lakefront - SecretPotion (From Cynthia)"
 
 [route_210_south_tm51]
 id = 78
-check = 0xC7
+check = 199
 original_item = "tm51"
 type = "npc_gift"
 table = "base"
@@ -5189,7 +5211,7 @@ label = "Route 210 - TM51"
 
 [route_210_south_old_charm]
 id = 79
-check = 0x107
+check = 263
 original_item = "old_charm"
 type = "key_item"
 table = "base"
@@ -5197,7 +5219,7 @@ label = "Route 210 - Old Charm (From Cynthia)"
 
 [route_211_east_tm77]
 id = 80
-check = 0xC6
+check = 198
 original_item = "tm77"
 type = "npc_gift"
 table = "base"
@@ -5205,7 +5227,7 @@ label = "Route 211 East - TM77"
 
 [celestic_town_southwest_house_analogwatch]
 id = 81
-check = 0xB6E
+check = 2926
 original_item = "analogwatch"
 type = "poketchapp"
 table = "base"
@@ -5213,7 +5235,7 @@ label = "Celestic Town - Analog Watch App"
 
 [route_215_tm66]
 id = 82
-check = 0xCD
+check = 205
 original_item = "tm66"
 type = "npc_gift"
 table = "base"
@@ -5221,7 +5243,7 @@ label = "Route 215 - TM66 (From Black Belt)"
 
 [veilstone_city_tm63]
 id = 83
-check = 0xCC
+check = 204
 original_item = "tm63"
 type = "npc_gift"
 table = "base"
@@ -5229,7 +5251,7 @@ label = "Veilstone City - TM63 (From Roughneck)"
 
 [veilstone_city_southeast_house_coin_case]
 id = 84
-check = 0xBC
+check = 188
 original_item = "coin_case"
 type = "key_item"
 table = "base"
@@ -5237,15 +5259,18 @@ label = "Veilstone City - Coin Case"
 
 [galactic_hq_master_ball]
 id = 85
-check = { id = 0x40D6, value = 1 }
 original_item = "master_ball"
 type = "npc_gift"
 table = "base"
 label = "Veilstone Galactic HQ - Master Ball (From Cyrus)"
 
+[galactic_hq_master_ball.check]
+id = 16598
+value = 1
+
 [valor_lakefront_white_flute]
 id = 86
-check = 0x13A
+check = 314
 original_item = "white_flute"
 type = "npc_gift"
 table = "base"
@@ -5253,7 +5278,7 @@ label = "Valor Lakefront - White Flute (After Returning Suite Key)"
 
 [grand_lake_route_213_northeast_house_cointoss]
 id = 87
-check = 0xB6F
+check = 2927
 original_item = "cointoss"
 type = "poketchapp"
 table = "base"
@@ -5261,7 +5286,7 @@ label = "Route 213 - Coin Toss App"
 
 [grand_lake_route_213_northwest_house_tm92]
 id = 88
-check = 0xCA
+check = 202
 original_item = "tm92"
 type = "npc_gift"
 table = "base"
@@ -5269,7 +5294,7 @@ label = "Route 213 - TM92 (From Clown)"
 
 [pastoria_city_observatory_gate_1f_matchupchecker]
 id = 89
-check = 0xA3
+check = 163
 original_item = "matchupchecker"
 type = "poketchapp"
 table = "base"
@@ -5277,7 +5302,7 @@ label = "Great Marsh - Matchup Checker App"
 
 [pokemon_mansion_maids_room_soothe_bell]
 id = 90
-check = 0x139
+check = 313
 original_item = "soothe_bell"
 type = "npc_gift"
 table = "base"
@@ -5285,7 +5310,7 @@ label = "Pokémon Mansion - Soothe Bell (From Maid)"
 
 [canalave_city_southeast_house_tm48]
 id = 91
-check = 0xC9
+check = 201
 original_item = "tm48"
 type = "npc_gift"
 table = "base"
@@ -5293,7 +5318,7 @@ label = "Canalave City - TM48"
 
 [iron_island_house_metal_coat]
 id = 92
-check = 0x11D
+check = 285
 original_item = "metal_coat"
 type = "npc_gift"
 table = "base"
@@ -5301,7 +5326,7 @@ label = "Iron Island - Metal Coat (From Byron)"
 
 [route_217_west_house_icicle_plate]
 id = 93
-check = 0xDE
+check = 222
 original_item = "icicle_plate"
 type = "npc_gift"
 table = "base"
@@ -5309,7 +5334,7 @@ label = "Route 217 - Icicle Plate (From Hiker After Sharing HM08)"
 
 [route_217_northeast_house_spell_tag]
 id = 94
-check = 0x13B
+check = 315
 original_item = "spell_tag"
 type = "npc_gift"
 table = "base"
@@ -5333,7 +5358,7 @@ label = "Mt. Coronet - Hidden (Star Piece) 2"
 
 [route_222_tm56]
 id = 95
-check = 0xCE
+check = 206
 original_item = "tm56"
 type = "npc_gift"
 table = "base"
@@ -5341,7 +5366,7 @@ label = "Route 222 - TM56 (From Rich Boy)"
 
 [sunyshore_city_east_house_roulette]
 id = 96
-check = 0xB71
+check = 2929
 original_item = "roulette"
 type = "poketchapp"
 table = "base"
@@ -5349,7 +5374,7 @@ label = "Sunyshore City - Roulette App"
 
 [sunyshore_city_east_house_dotart]
 id = 97
-check = 0xB72
+check = 2930
 original_item = "dotart"
 type = "poketchapp"
 table = "base"
@@ -5357,7 +5382,7 @@ label = "Sunyshore City - Dot Art App"
 
 [sunyshore_city_east_house_calendar]
 id = 98
-check = 0xB73
+check = 2931
 original_item = "calendar"
 type = "poketchapp"
 table = "base"
@@ -5365,7 +5390,7 @@ label = "Sunyshore City - Calendar App"
 
 [poketch_co_1f_memopad]
 id = 99
-check = 0xB74
+check = 2932
 original_item = "memopad"
 type = "poketchapp"
 table = "base"
@@ -5373,7 +5398,7 @@ label = "Pokétch Company - Memo Pad App"
 
 [poketch_co_1f_markingmap]
 id = 100
-check = 0xB75
+check = 2933
 original_item = "markingmap"
 type = "poketchapp"
 table = "base"
@@ -5381,7 +5406,7 @@ label = "Pokétch Company - Marking Map App"
 
 [poketch_co_1f_linksearcher]
 id = 101
-check = 0xB76
+check = 2934
 original_item = "linksearcher"
 type = "poketchapp"
 table = "base"
@@ -5389,7 +5414,7 @@ label = "Pokétch Company - Link Searcher App"
 
 [poketch_co_1f_movetester]
 id = 102
-check = 0xB77
+check = 2935
 original_item = "movetester"
 type = "poketchapp"
 table = "base"
@@ -5397,7 +5422,7 @@ label = "Pokétch Company - Move Tester App"
 
 [eterna_city_condominiums_2f_tm67]
 id = 104
-check = 0xC2
+check = 194
 original_item = "tm67"
 type = "npc_gift"
 table = "base"
@@ -5405,7 +5430,7 @@ label = "Eterna City Condominiums - TM67"
 
 [route_218_gate_to_canalave_city_pokedex_forms]
 id = 105
-check = 0x21C
+check = 540
 original_item = "pokedex"
 type = "pokedex"
 table = "base"
@@ -5413,7 +5438,7 @@ label = "Route 218 Gate to Canalave - Pokédex Forms"
 
 [veilstone_store_2f_counter]
 id = 106
-check = 0xB7D
+check = 2941
 original_item = "counter"
 type = "poketchapp"
 table = "base"
@@ -5421,7 +5446,7 @@ label = "Veilstone Department Store - Counter App"
 
 [veilstone_store_5f_sticky_barb]
 id = 107
-check = 0x105
+check = 261
 original_item = "sticky_barb"
 type = "npc_gift"
 table = "base"
@@ -5429,8 +5454,235 @@ label = "Veilstone Department Store - Sticky Barb"
 
 [pokecenter_b1f_pal_pad]
 id = 108
-check = { id = 0x40D4, value = 1 }
 original_item = "pal_pad"
 type = "key_item"
 table = "base"
 label = "Pokémon Center Basement - Pal Pad"
+
+[pokecenter_b1f_pal_pad.check]
+id = 16596
+value = 1
+
+[uunown_a]
+id = 284
+check = 2943
+original_item = "uunown"
+type = "uunown"
+table = "hidden"
+label = "Solaceon Ruins - Unown File A"
+
+[uunown_b]
+id = 285
+check = 2944
+original_item = "uunown"
+type = "uunown"
+table = "hidden"
+label = "Solaceon Ruins - Unown File B"
+
+[uunown_c]
+id = 286
+check = 2945
+original_item = "uunown"
+type = "uunown"
+table = "hidden"
+label = "Solaceon Ruins - Unown File C"
+
+[uunown_d]
+id = 287
+check = 2946
+original_item = "uunown"
+type = "uunown"
+table = "hidden"
+label = "Solaceon Ruins - Unown File D"
+
+[uunown_e]
+id = 288
+check = 2947
+original_item = "uunown"
+type = "uunown"
+table = "hidden"
+label = "Solaceon Ruins - Unown File E"
+
+[uunown_f]
+id = 289
+check = 2948
+original_item = "uunown"
+type = "uunown"
+table = "hidden"
+label = "Solaceon Ruins - Unown File F"
+
+[uunown_g]
+id = 290
+check = 2949
+original_item = "uunown"
+type = "uunown"
+table = "hidden"
+label = "Solaceon Ruins - Unown File G"
+
+[uunown_h]
+id = 291
+check = 2950
+original_item = "uunown"
+type = "uunown"
+table = "hidden"
+label = "Solaceon Ruins - Unown File H"
+
+[uunown_i]
+id = 292
+check = 2951
+original_item = "uunown"
+type = "uunown"
+table = "hidden"
+label = "Solaceon Ruins - Unown File I"
+
+[uunown_j]
+id = 293
+check = 2952
+original_item = "uunown"
+type = "uunown"
+table = "hidden"
+label = "Solaceon Ruins - Unown File J"
+
+[uunown_k]
+id = 294
+check = 2953
+original_item = "uunown"
+type = "uunown"
+table = "hidden"
+label = "Solaceon Ruins - Unown File K"
+
+[uunown_l]
+id = 295
+check = 2954
+original_item = "uunown"
+type = "uunown"
+table = "hidden"
+label = "Solaceon Ruins - Unown File L"
+
+[uunown_m]
+id = 296
+check = 2955
+original_item = "uunown"
+type = "uunown"
+table = "hidden"
+label = "Solaceon Ruins - Unown File M"
+
+[uunown_n]
+id = 297
+check = 2956
+original_item = "uunown"
+type = "uunown"
+table = "hidden"
+label = "Solaceon Ruins - Unown File N"
+
+[uunown_o]
+id = 298
+check = 2957
+original_item = "uunown"
+type = "uunown"
+table = "hidden"
+label = "Solaceon Ruins - Unown File O"
+
+[uunown_p]
+id = 299
+check = 2958
+original_item = "uunown"
+type = "uunown"
+table = "hidden"
+label = "Solaceon Ruins - Unown File P"
+
+[uunown_q]
+id = 300
+check = 2959
+original_item = "uunown"
+type = "uunown"
+table = "hidden"
+label = "Solaceon Ruins - Unown File Q"
+
+[uunown_r]
+id = 301
+check = 2960
+original_item = "uunown"
+type = "uunown"
+table = "hidden"
+label = "Solaceon Ruins - Unown File R"
+
+[uunown_s]
+id = 302
+check = 2961
+original_item = "uunown"
+type = "uunown"
+table = "hidden"
+label = "Solaceon Ruins - Unown File S"
+
+[uunown_t]
+id = 303
+check = 2962
+original_item = "uunown"
+type = "uunown"
+table = "hidden"
+label = "Solaceon Ruins - Unown File T"
+
+[uunown_u]
+id = 304
+check = 2963
+original_item = "uunown"
+type = "uunown"
+table = "hidden"
+label = "Solaceon Ruins - Unown File U"
+
+[uunown_v]
+id = 305
+check = 2964
+original_item = "uunown"
+type = "uunown"
+table = "hidden"
+label = "Solaceon Ruins - Unown File V"
+
+[uunown_w]
+id = 306
+check = 2965
+original_item = "uunown"
+type = "uunown"
+table = "hidden"
+label = "Solaceon Ruins - Unown File W"
+
+[uunown_x]
+id = 307
+check = 2966
+original_item = "uunown"
+type = "uunown"
+table = "hidden"
+label = "Solaceon Ruins - Unown File X"
+
+[uunown_y]
+id = 308
+check = 2967
+original_item = "uunown"
+type = "uunown"
+table = "hidden"
+label = "Solaceon Ruins - Unown File Y"
+
+[uunown_z]
+id = 309
+check = 2968
+original_item = "uunown"
+type = "uunown"
+table = "hidden"
+label = "Solaceon Ruins - Unown File Z"
+
+[uunown_ex]
+id = 310
+check = 2969
+original_item = "uunown"
+type = "uunown"
+table = "hidden"
+label = "Solaceon Ruins - Unown File !"
+
+[uunown_qu]
+id = 311
+check = 2970
+original_item = "uunown"
+type = "uunown"
+table = "hidden"
+label = "Solaceon Ruins - Unown File ?"

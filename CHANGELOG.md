@@ -21,6 +21,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * An option to add the Marsh Pass to the item pool.
 * An option to add the Bag to the item pool.
 * An option to customize the requirements for the Maniac Tunnel.
+* Certain options can now also be adjusted in-game.
 ### Fixed
 * Incorrect rules on Route 208 hidden Star Piece.
 * The secret entrance to Wayward Cave no longer optionally requires flash.
@@ -32,6 +33,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * TM27 from Rowan will now be detected even if it was given when the client was not connected.
 * Experience gained via Exp. Share is not affected by experience multiplier.
 * Floaroma Town now also exits to Route 204 North.
+* Old Château can no longer be accessed while partnered with Cheryl.
 ### Changed
 * Access to Pokémon Center Basements in Jubilife and Sandgem are no longer blocked before defeating Roark.
 * The S.S. Spiral can now be used if the player has defeated Cynthia, *or* of they have the S.S. Ticket.

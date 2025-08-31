@@ -217,15 +217,6 @@ def generate_output(world: "PokemonPlatinumWorld", output_directory: str, patch:
         ap_bin += world.random.randint(0, 19).to_bytes(length=1, byteorder='little')
     else:
         raise ValueError(f"invalid text frame: \"{text_frame}\"")
-    match game_opts.received_items_notification:
-        case "nothing":
-            ap_bin += b'\x00'
-        case "message":
-            ap_bin += b'\x03'
-        case "jingle":
-            ap_bin += b'\x04'
-        case _:
-            raise ValueError(f"invalid received items notification: \"{game_opts.received_items_notification}\"")
 
     if world.options.hm_badge_requirement.value == 1:
         hm_accum = 0
@@ -242,15 +233,26 @@ def generate_output(world: "PokemonPlatinumWorld", output_directory: str, patch:
         ap_bin += getattr(world.options, name).value.to_bytes(length=1, byteorder='little')
 
     add_opt_byte("exp_multiplier")
-    add_opt_byte("blind_trainers")
     add_opt_byte("parcel_coupons_route_203")
-    add_opt_byte("fps60")
     add_opt_byte("regional_dex_goal")
     add_opt_byte("marsh_pass")
     add_opt_byte("remote_items")
     add_opt_byte("early_sunyshore")
     add_opt_byte("unown_option")
     add_opt_byte("early_sunyshore")
+
+    match game_opts.received_items_notification:
+        case "nothing":
+            ap_bin += b'\x00'
+        case "message":
+            ap_bin += b'\x03'
+        case "jingle":
+            ap_bin += b'\x04'
+        case _:
+            raise ValueError(f"invalid received items notification: \"{game_opts.received_items_notification}\"")
+    add_opt_byte("blind_trainers")
+    add_opt_byte("fps60")
+    add_opt_byte("hm_cut_ins")
 
     if len(ap_bin) % 2 == 1:
         ap_bin += b'\x00'

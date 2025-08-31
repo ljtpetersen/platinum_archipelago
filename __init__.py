@@ -87,8 +87,6 @@ class PokemonPlatinumWorld(World):
             add_items.append("bag")
         else:
             self.multiworld.push_precollected(self.create_item(itemdata.items["bag"].label))
-        if self.options.unown_option == UnownsOption.option_item:
-            add_items += ["uunown"] * 28
 
         itempool = []
         for loc in item_locations:

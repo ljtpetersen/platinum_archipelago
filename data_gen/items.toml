@@ -2991,7 +2991,7 @@ group = "key_items"
 classification = "progression"
 
 [uunown]
-label = "Unown Form"
+label = "Unown File"
 id = 470
 clas = "bagitem"
 group = "key_items"
