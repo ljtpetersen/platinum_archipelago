@@ -38,6 +38,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * Access to Pokémon Center Basements in Jubilife and Sandgem are no longer blocked before defeating Roark.
 * The S.S. Spiral can now be used if the player has defeated Cynthia, *or* of they have the S.S. Ticket.
 * Items which are added by options, but for which no location can be found for, are now added to the starting inventory. (precollected)
+* The intro is now abridge.
 
 ## [0.0.2] - 2025-08-28
 ### Added
