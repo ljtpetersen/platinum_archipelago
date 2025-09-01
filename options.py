@@ -296,6 +296,14 @@ class HMCutIns(Toggle):
     """
     display_name = "HM Cut-Ins"
 
+class BuckPos(Toggle):
+    """
+    Whether Buck should be moved to the end of Stark Mountain.
+
+    This option can also be modified in the in-game options menu.
+    """
+    display_name = "Buck Position"
+
 @dataclass
 class PokemonPlatinumOptions(PerGameCommonOptions):
     hms: RandomizeHms
@@ -324,6 +332,7 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
     blind_trainers: BlindTrainers
     hm_cut_ins: HMCutIns
     fps60: FPS60
+    buck_pos: BuckPos
 
     master_repel: AddMasterRepel
     s_s_ticket: AddSSTicket

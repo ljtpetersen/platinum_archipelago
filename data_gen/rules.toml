@@ -7,7 +7,7 @@ loc_types.hidden = "dowsingmachine_if_opt"
 
 enc_types.surf = "surf"
 enc_types.good_rod = "good_rod & bag"
-#enc_types.super_rod = "super_rod & bag"
+enc_types.super_rod = "super_rod & bag"
 enc_types.old_rod = "old_rod & bag"
 
 common.national_dex = "pokedex * 3"
@@ -61,7 +61,7 @@ locs.ravaged_path_luck_incense = "rock_smash & surf"
 exits.ravaged_path.route_204_north = "rock_smash"
 encs.ravaged_path.old_rod = "rock_smash"
 encs.ravaged_path.good_rod = "rock_smash"
-#encs.ravaged_path.super_rod = "rock_smash"
+encs.ravaged_path.super_rod = "rock_smash"
 encs.ravaged_path.surf = "rock_smash"
 
 locs.route_204_north_tm78 = "cut"
@@ -305,3 +305,58 @@ exits.route_212_north_top.route_212_north = "surf if pastoria_barriers"
 exits.route_212_north.route_212_north_top = "surf if pastoria_barriers"
 exits.route_214_top.route_214 = "surf if pastoria_barriers"
 exits.route_214.route_214_top = "surf if pastoria_barriers"
+
+exits.fight_area.route_225_gate_to_fight_area = "national_dex"
+exits.fight_area.route_230 = "national_dex"
+locs.fight_area_super_rod = "national_dex"
+
+encs.route_230.land = "surf"
+locs.route_230_rare_candy = "rock_smash & surf"
+locs.route_230_water_stone = "rock_smash & surf"
+locs.route_230_blue_shard = "rock_smash & surf"
+locs.route_230_ultra_ball = "rock_smash & surf"
+
+locs.route_229_reaper_cloth = "cut"
+locs.route_229_protein = "cut"
+locs.route_229_thunderstone = "cut & surf"
+
+locs.resort_area_nugget = "surf"
+
+exits.route_230.route_229 = "surf"
+exits.route_230.fight_area = "national_dex & surf"
+
+locs.route_228_protector = "bicycle | fly"
+locs.route_228_shed_shell = "rock_smash"
+locs.route_228_shiny_stone = "bicycle"
+locs.route_228_calcium = "bicycle"
+locs.route_228_pp_max = "bicycle"
+exits.route_228.route_228_rock_peak_ruins = "bicycle | fly"
+
+exits.route_226_east.route_226_mid = "surf & rock_climb"
+exits.route_226_mid.route_226_east = "surf"
+exits.route_226_west.route_226_mid = "rock_climb"
+locs.route_227_rare_candy = "surf"
+locs.route_226_heart_scale = "surf"
+
+locs.survival_area_red_shard = "rock_climb"
+
+locs.route_225_razor_fang = "rock_climb"
+locs.route_225_rare_candy = "cut"
+locs.route_225_lax_incense = "cut"
+locs.route_225_dubious_disc = "surf"
+locs.route_225_dawn_stone = "rock_climb"
+
+exits.route_227_lower.route_227 = "bicycle"
+locs.route_227_max_repel = "rock_climb"
+locs.route_227_charcoal = "rock_climb"
+
+locs.stark_mountain_outside_life_orb = "rock_climb"
+exits.stark_mountain_room_1_entrance.stark_mountain_room_1 = "strength"
+locs.stark_mountain_room_1_full_restore = "rock_smash"
+locs.stark_mountain_room_1_star_piece = "rock_smash"
+exits.stark_mountain_room_1.stark_mountain_room_2 = "rock_smash"
+
+locs.stark_mountain_room_2_ultra_ball = "rock_climb"
+locs.stark_mountain_room_2_ultra_ball_0 = "rock_climb"
+locs.stark_mountain_room_2_max_elixir = "rock_climb"
+locs.stark_mountain_room_2_nugget = "rock_climb"

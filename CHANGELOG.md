@@ -22,6 +22,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * An option to add the Bag to the item pool.
 * An option to customize the requirements for the Maniac Tunnel.
 * Certain options can now also be adjusted in-game.
+* Post-game locations.
+* An option to move Buck to the back of Stark Mountain.
 ### Fixed
 * Incorrect rules on Route 208 hidden Star Piece.
 * The secret entrance to Wayward Cave no longer optionally requires flash.
@@ -36,6 +38,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * Old Château can no longer be accessed while partnered with Cheryl.
 * Grunts blocking Mt. Coronet Basement are now properly removed.
 * Logic error regarding order of access of lakes after Canalave event.
+* Entering Route 228 crashes the game.
 ### Changed
 * Access to Pokémon Center Basements in Jubilife and Sandgem are no longer blocked before defeating Roark.
 * The S.S. Spiral can now be used if the player has defeated Cynthia, *or* of they have the S.S. Ticket.

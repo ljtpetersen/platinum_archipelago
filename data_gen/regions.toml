@@ -19,7 +19,6 @@ exits = [
     "survival_area",
     "route_225_gate_to_fight_area",
     "route_225_house",
-    "fight_area",
 ]
 header = "route_225"
 locs = [
@@ -184,7 +183,7 @@ header = "pokemon_league_south_pokecenter_1f"
 exits = [
     "survival_area_south_house",
     "route_225",
-    "route_226",
+    "route_226_west",
     "survival_area_north_house",
     "survival_area_pokecenter_1f",
     "survival_area_mart",
@@ -204,6 +203,7 @@ exits = [
 ]
 header = "survival_area_south_house"
 group = "fight_area"
+locs = ["survival_area_south_house_tm42"]
 
 [survival_area_north_house]
 exits = [
@@ -225,6 +225,7 @@ exits = [
 ]
 header = "route_225_house"
 group = "fight_area"
+locs = ["route_225_house_fresh_water"]
 
 [survival_area_mart]
 exits = [
@@ -321,30 +322,50 @@ locs = [
     "great_marsh_2_toxic_plate",
 ]
 
-[route_226]
+[route_226_east]
 exits = [
     "route_228_gate_to_route_226",
-    "route_228",
-    "route_227",
+    "route_227_lower",
     "route_226_house",
-    "survival_area",
+    "route_226_mid",
 ]
+header = "route_226"
+locs = [
+    "route_227_rare_candy",
+    "route_226_heart_scale",
+]
+group = "fight_area"
+
+[route_226_mid]
+exits = ["route_226_east", "route_226_west"]
 header = "route_226"
 locs = [
     "route_226_tm53",
     "route_226_carbos",
     "route_226_lagging_tail",
-    "route_226_heart_scale",
     "route_226_tinymushroom",
     "route_226_big_mushroom",
     "route_226_pp_max",
 ]
 group = "fight_area"
 
+[route_226_west]
+exits = [
+    "survival_area",
+    "route_226_mid",
+]
+header = "route_226"
+group = "fight_area"
+accessible_encounters = ["land"]
+
+[route_227_lower]
+header = "route_227"
+accessible_encounters = ["land"]
+exits = ["route_227", "route_226_east"]
+
 [route_227]
 exits = [
-    "route_228",
-    "route_226",
+    "route_227_lower",
     "route_227_house",
     "stark_mountain_outside",
 ]
@@ -355,7 +376,6 @@ locs = [
     "route_227_yellow_shard",
     "route_227_star_piece",
     "route_227_max_repel",
-    "route_227_rare_candy",
 ]
 group = "fight_area"
 
@@ -368,7 +388,7 @@ group = "fight_area"
 
 [route_226_house]
 exits = [
-    "route_226",
+    "route_226_west",
 ]
 header = "route_226_house"
 group = "fight_area"
@@ -376,14 +396,10 @@ group = "fight_area"
 [route_228]
 exits = [
     "route_230",
-    "route_227",
-    "route_226",
     "route_228_gate_to_route_226",
     "route_228_south_house",
     "route_228_north_house",
     "route_228_rock_peak_ruins",
-    "route_229",
-    "rock_peak_ruins",
 ]
 header = "route_228"
 locs = [
@@ -410,7 +426,8 @@ group = "fight_area"
 
 [route_230]
 exits = [
-    "route_228",
+    "route_229",
+    "fight_area",
 ]
 header = "route_230"
 locs = [
@@ -599,7 +616,7 @@ header = "sandgem_town_mart"
 [route_228_gate_to_route_226]
 exits = [
     "route_228",
-    "route_226",
+    "route_226_east",
 ]
 header = "route_228_gate_to_route_226"
 group = "fight_area"
@@ -607,6 +624,7 @@ group = "fight_area"
 [route_229]
 exits = [
     "resort_area",
+    "route_230",
     "route_228",
 ]
 header = "route_229"
@@ -615,6 +633,8 @@ locs = [
     "route_229_full_restore",
     "route_229_protein",
     "route_229_thunderstone",
+    "route_229_nugget",
+    "route_229_nugget_0",
 ]
 group = "fight_area"
 
@@ -735,12 +755,12 @@ header = "twinleaf_town_southwest_house"
 [fight_area]
 exits = [
     "route_225_gate_to_fight_area",
-    "route_225",
     "fight_area_middle_house",
     "fight_area_mart",
     "fight_area_pokecenter_1f",
     "battle_frontier_gate_to_fight_area",
     "fight_area_south_house",
+    "route_230"
 ]
 locs = ["fight_area_super_rod"]
 header = "fight_area"
@@ -759,6 +779,7 @@ exits = [
 ]
 header = "fight_area_mart"
 group = "fight_area"
+locs = ["fight_area_mart_scope_lens"]
 
 [fight_area_south_house]
 exits = [
@@ -1089,8 +1110,8 @@ events = ["event_met_oak_pal_park"]
 
 [stark_mountain_outside]
 exits = [
-    "stark_mountain_room_1",
-    "route_226",
+    "stark_mountain_room_1_entrance",
+    "route_227",
 ]
 header = "stark_mountain_outside"
 locs = [
@@ -1278,10 +1299,14 @@ exits = [
 ]
 header = "route_209_gate_to_hearthome_city"
 
+[stark_mountain_room_1_entrance]
+exits = ["stark_mountain_outside", "stark_mountain_room_1"]
+header = "stark_mountain_room_1"
+
 [stark_mountain_room_1]
 exits = [
     "stark_mountain_room_2",
-    "stark_mountain_outside",
+    "stark_mountain_room_1_entrance",
 ]
 header = "stark_mountain_room_1"
 locs = [
@@ -1937,13 +1962,6 @@ locs = [
     "route_223_heart_scale",
     "route_223_heart_scale_0",
 ]
-
-[rock_peak_ruins]
-exits = [
-    "route_228",
-]
-header = "rock_peak_ruins"
-group = "fight_area"
 
 [battle_tower]
 exits = [

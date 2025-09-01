@@ -23,7 +23,7 @@ class RegionType:
 
 region_groups: Mapping[str, RegionType] = {
     "generic": RegionType(is_enabled = lambda _ : True),
-    "fight_area": RegionType(is_enabled = lambda _ : False),
+    "fight_area": RegionType(is_enabled = lambda _ : True),
 }
 
 def is_region_enabled(region: str | None, opts: PokemonPlatinumOptions) -> bool:
@@ -49,9 +49,6 @@ def create_regions(world: "PokemonPlatinumWorld") -> Mapping[str, Region]:
         encs = encounters[wild_region_data.header]
         for type in encounter_types:
             if type not in wild_region_data.accessible_encounters:
-                continue
-            if type == "super_rod":
-                # TODO: Remove when stark mountain finished (stopgap because super rod not in pool)
                 continue
             e = getattr(encs, type)
             if not e:

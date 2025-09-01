@@ -5686,3 +5686,43 @@ original_item = "uunown"
 type = "uunown"
 table = "hidden"
 label = "Solaceon Ruins - Unown File ?"
+
+[fight_area_mart_scope_lens]
+id = 109
+check = 0xD5
+original_item = "scope_lens"
+type = "npc_gift"
+table = "base"
+label = "Fight Area - Scope Lens (From old lady in mart)"
+
+[route_229_nugget]
+id = 110
+check = 0xDA
+original_item = "nugget"
+type = "npc_gift"
+table = "base"
+label = "Fight Area - Nugget (From man in middle of route)"
+
+[route_229_nugget_0]
+id = 111
+check = 0xDA
+original_item = "nugget"
+type = "npc_gift"
+table = "base"
+label = "Fight Area - Nugget 1 (From man in middle of route)"
+
+[survival_area_south_house_tm42]
+id = 112
+check = 0xCB
+original_item = "tm42"
+type = "npc_gift"
+table = "base"
+label = "Survival Area - TM42 (From man in South house)"
+
+[route_225_house_fresh_water]
+id = 113
+check = 0xD9
+original_item = "fresh_water"
+type = "npc_gift"
+table = "base"
+label = "Route 225 - Fresh Water (From man in house)"
