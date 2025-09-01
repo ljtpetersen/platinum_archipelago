@@ -1359,6 +1359,7 @@ header = "lake_verity"
 locs = [
     "lake_verity_tm38",
 ]
+events = ["event_lake_verity_defeat_mars"]
 
 [footstep_house]
 exits = [
@@ -3231,6 +3232,7 @@ header = "lake_valor_drained"
 locs = [
     "lake_valor_drained_hp_up",
 ]
+events = ["event_lake_valor_defeat_saturn"]
 
 [valor_cavern]
 exits = [

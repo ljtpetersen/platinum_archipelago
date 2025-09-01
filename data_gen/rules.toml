@@ -21,8 +21,8 @@ locs.lake_verity_tm38 = "surf"
 
 events.event_lake_explosion = "hm04 & event_mine_badge"
 exits.valor_lakefront.lake_valor_drained = "event_lake_explosion"
-exits.verity_lakefront.lake_verity = "event_lake_explosion"
-exits.acuity_lakefront.lake_acuity = "event_lake_explosion & rock_climb"
+exits.verity_lakefront.lake_verity = "event_lake_valor_defeat_saturn"
+exits.acuity_lakefront.lake_acuity = "event_lake_verity_defeat_mars & rock_climb"
 
 locs.sandgem_town_pokemon_research_lab_pokedex_2 = "regional_mons(opt:regional_dex_goal)"
 locs.sandgem_town_pokemon_research_lab_poke_radar = "regional_mons(opt:regional_dex_goal)"

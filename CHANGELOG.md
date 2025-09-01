@@ -35,6 +35,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * Floaroma Town now also exits to Route 204 North.
 * Old Château can no longer be accessed while partnered with Cheryl.
 * Grunts blocking Mt. Coronet Basement are now properly removed.
+* Logic error regarding order of access of lakes after Canalave event.
 ### Changed
 * Access to Pokémon Center Basements in Jubilife and Sandgem are no longer blocked before defeating Roark.
 * The S.S. Spiral can now be used if the player has defeated Cynthia, *or* of they have the S.S. Ticket.
