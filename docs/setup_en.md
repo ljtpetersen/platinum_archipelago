@@ -3,8 +3,8 @@
 ## Required Software
 
 - [Archipelago](https://github.com/ArchipelagoMW/Archipelago/releases)
-- A US Pokemon Platinum Rev 0 or Rev 1 ROM. The Archipelago community cannot provide this.
-- [BizHawk](https://tasvideos.org/BizHawk/ReleaseHistory) 2.10 or later
+- A US Pokémon Platinum Rev. 0 or Rev. 1 ROM. The Archipelago community cannot provide this.
+- [BizHawk](https://tasvideos.org/BizHawk/ReleaseHistory) version 2.10 or later
 
 ### Configuring BizHawk
 
@@ -23,8 +23,8 @@ tabbed out of EmuHawk.
 ## Generating and Patching a Game
 
 1. Add `pokemon_platinum.apworld` to your `custom_worlds` folder in your Archipelago install. It should not be in
-   `lib\worlds`.
-2. Create your options file (YAML). You can make one by choosing Generate Templates
+   `lib/worlds`.
+2. Create your options file (YAML). You can make one by choosing `Generate Templates`
    from the Archipelago Launcher. From there, you can edit the `.yaml` in any text editor.
 3. Follow the general Archipelago instructions
    for [generating a game on your local installation](https://archipelago.gg/tutorial/Archipelago/setup/en#on-your-local-installation).
