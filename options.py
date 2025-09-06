@@ -127,7 +127,8 @@ class GameOptions(OptionDict):
     The text_speed, sound, battle_scene, battle_style, button_mode, text_frame, and received_items_notification
     options can additionally be modifier in the in-game options menu.
 
-    for the player and rival names, the following characters are accepted:
+    for the player and rival names, the maximum length is 7 characters, and
+    the following characters are accepted:
     all alphanumeric characters (A-Z, a-z, 0-9),
     and the following symbols: , . ' - : ; ! ? " ( ) ~ @ # % + * / =,
     and as spaces.
@@ -160,6 +161,9 @@ class GameOptions(OptionDict):
       {LAUGH} is a laughing face
       {UPSET} is an upset face
       {FROWN} is a frowning face
+
+    If the player or rival names do not satisfy these constraints, the game will use its original
+    behaviour, where the player or rival names are entered during the starting cutscene.
     """
     display_name = "Game Options"
     default = {

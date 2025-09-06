@@ -39,6 +39,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * Grunts blocking Mt. Coronet Basement are now properly removed.
 * Logic error regarding order of access of lakes after Canalave event.
 * Entering Route 228 crashes the game.
+* Issue with Pokédex Location in Pokémon Research Lab.
 ### Changed
 * Access to Pokémon Center Basements in Jubilife and Sandgem are no longer blocked before defeating Roark.
 * The S.S. Spiral can now be used if the player has defeated Cynthia, *or* of they have the S.S. Ticket.
