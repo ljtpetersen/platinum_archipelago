@@ -75,7 +75,7 @@ class VarsFlags:
             return False
 
     def get_once_flag(self, flag_id: int) -> bool:
-        if flag_id > 0 and flag_id // 8 < len(self.once_loc_flags):
+        if flag_id // 8 < len(self.once_loc_flags):
             return self.once_loc_flags[flag_id // 8] & (1 << (flag_id & 7)) != 0
         else:
             return False

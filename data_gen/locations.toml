@@ -4578,7 +4578,7 @@ original_item = "tm76"
 type = "npc_gift"
 table = "base"
 check = 117
-label = "Oreburgh City Gym - TM75 (From Roark)"
+label = "Oreburgh City Gym - TM76 (From Roark)"
 id = 1
 
 [eterna_city_gym_forest_badge]
@@ -5896,3 +5896,12 @@ original_item = [
 type = "npc_gift"
 table = "once"
 label = "Route 208 - Random Berry"
+
+[celestic_town_pokecenter_1f_great_ball]
+id = 14
+check.id = 14
+check.once = true
+original_item = "great_ball"
+type = "npc_gift"
+table = "once"
+label = "Celestic Town - Great Ball (From Man in Pokémon Center)"

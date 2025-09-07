@@ -281,7 +281,7 @@ class UnownsOption(Choice):
     option_vanilla = 0
     option_item = 1
     option_none = 2
-    default = 0
+    default = 1
 
 class AddBag(Toggle):
     """
@@ -311,6 +311,17 @@ class BuckPos(Toggle):
     This option can also be modified in the in-game options menu.
     """
     display_name = "Buck Position"
+
+class HBSpeed(Range):
+    """
+    The speed multiplier of the health bar.
+
+    This option can also be modified in the in-game options menu.
+    """
+    display_name = "Healthbar Speed"
+    range_start = 1
+    range_end = 16
+    default = 1
 
 @dataclass
 class PokemonPlatinumOptions(PerGameCommonOptions):
@@ -342,6 +353,7 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
     hm_cut_ins: HMCutIns
     fps60: FPS60
     buck_pos: BuckPos
+    hb_speed: HBSpeed
 
     master_repel: AddMasterRepel
     s_s_ticket: AddSSTicket

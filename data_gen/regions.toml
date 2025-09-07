@@ -526,6 +526,7 @@ exits = [
     "celestic_town",
 ]
 header = "celestic_town_pokecenter_1f"
+locs = ["celestic_town_pokecenter_1f_great_ball"]
 
 [celestic_town_pokecenter_b1f]
 exits = [
@@ -2797,6 +2798,7 @@ locs = [
     "amity_square_tm43",
     "amity_square_spooky_plate",
     "amity_square_amulet_coin",
+    "amity_square_gift",
 ]
 
 [game_corner]

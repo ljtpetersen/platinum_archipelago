@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## 0.1.0 - TBD
+## [0.1.0] - 2025-09-07
 ### Added
 * An option to show/hide unrandomized progression items in the chat.
 * A remote items option.
@@ -26,6 +26,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * An option to move Buck to the back of Stark Mountain.
 * Accessory items and locations.
 * Some repeatable locations.
+* An option to speed up the healthbar scrolling.
 ### Fixed
 * Incorrect rules on Route 208 hidden Star Piece.
 * The secret entrance to Wayward Cave no longer optionally requires flash.
@@ -46,7 +47,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * Access to Pokémon Center Basements in Jubilife and Sandgem are no longer blocked before defeating Roark.
 * The S.S. Spiral can now be used if the player has defeated Cynthia, *or* of they have the S.S. Ticket.
 * Items which are added by options, but for which no location can be found for, are now added to the starting inventory. (precollected)
-* The intro is now abridge.
+* The intro is now abridged.
 
 ## [0.0.2] - 2025-08-28
 ### Added
@@ -71,5 +72,6 @@ skip over the forms, and the second one would give the National Pokédex.
 ## [0.0.1] - 2025-08-26
 The first release of this project.
 
+[0.1.0]: https://github.com/ljtpetersen/platinum_archipelago/compare/v0.1.0...v0.0.2
 [0.0.2]: https://github.com/ljtpetersen/platinum_archipelago/compare/v0.0.2...v0.0.1
 [0.0.1]: https://github.com/ljtpetersen/platinum_archipelago/releases/tag/v0.0.1
