@@ -885,6 +885,7 @@ header = "pastoria_city"
 locs = [
     "pastoria_city_mystic_water",
     "pastoria_city_zinc",
+    "pastoria_city_piplup_mask",
 ]
 
 [pastoria_city_pokecenter_1f]
@@ -911,6 +912,10 @@ header = "iron_island"
 locs = [
     "iron_island_star_piece",
     "iron_island_hm04",
+    "iron_island_b2f_left_room_star_piece",
+    "iron_island_b2f_left_room_star_piece_0",
+    "iron_island_b1f_right_room_star_piece",
+    "iron_island_b2f_right_room_star_piece",
 ]
 
 [iron_island_b3f]
@@ -1290,7 +1295,7 @@ exits = [
     "route_208",
 ]
 header = "route_208_house"
-locs = ["route_208_house_berrysearcher"]
+locs = ["route_208_house_berrysearcher", "route_208_house_berry"]
 
 [route_209_gate_to_hearthome_city]
 exits = [
@@ -1729,6 +1734,7 @@ exits = [
     "jubilife_tv_elevator",
 ]
 header = "jubilife_tv_2f"
+locs = ["jubilife_tv_2f_chimchar_mask"]
 
 [jubilife_tv_3f]
 exits = [
@@ -2926,6 +2932,7 @@ exits = [
     "veilstone_city",
 ]
 header = "veilstone_store_1f"
+locs = ["veilstone_store_1f_turtwig_mask"]
 
 [veilstone_store_2f]
 exits = [
@@ -3008,7 +3015,7 @@ header = "trophy_garden"
 exits = [
     "floaroma_town",
 ]
-locs = ["flower_shop_sprayduck"]
+locs = ["flower_shop_sprayduck", "flower_shop_berry"]
 header = "flower_shop"
 
 [route_207_south]
@@ -3199,6 +3206,7 @@ exits = [
     "cycling_road",
 ]
 header = "route_206_cycling_road_south_gate"
+locs = ["route_206_cycling_road_south_gate_flag"]
 
 [restaurant]
 exits = [
@@ -3268,6 +3276,7 @@ header = "eterna_forest_outside"
 locs = [
     "eterna_forest_outside_tm82",
     "eterna_forest_outside_silverpowder",
+    "eterna_forest_outside_big_tree",
 ]
 
 [pokemon_mansion_office]
@@ -3476,6 +3485,7 @@ exits = [
     "contest_hall_stage_no_contest",
 ]
 header = "contest_hall_lobby"
+locs = ["contest_hall_lobby_glitter_powder"]
 
 [contest_hall_stage_no_contest]
 exits = [
@@ -4387,6 +4397,7 @@ exits = [
     "veilstone_city",
 ]
 header = "veilstone_city_southwest_house"
+locs = ["veilstone_city_southwest_house_accessory"]
 
 [oreburgh_city_pokecenter_2f]
 exits = [

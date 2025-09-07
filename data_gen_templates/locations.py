@@ -3,7 +3,7 @@
 # Copyright (C) 2025 James Petersen <m@jamespetersen.ca>
 # Licensed under MIT. See LICENSE
 
-from collections.abc import Callable, Mapping, Set
+from collections.abc import Callable, Mapping, Sequence, Set
 from dataclasses import dataclass
 from enum import IntEnum
 import operator
@@ -29,11 +29,16 @@ class FlagCheck(LocationCheck):
     invert: bool = False
 
 @dataclass(frozen=True)
+class OnceCheck(LocationCheck):
+    id: int
+    invert: bool = False
+
+@dataclass(frozen=True)
 class LocationData:
     label: str
     table: LocationTable
     id: int
-    original_item: str
+    original_item: str | Sequence[str]
     type: str
     check: LocationCheck
     parent_region: str | None = None

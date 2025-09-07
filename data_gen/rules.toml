@@ -51,6 +51,7 @@ locs.oreburgh_city_north_house_2f_heal_ball = "mon_geodude"
 exits.route_207_south.route_207 = "bicycle"
 
 locs.jubilife_city_fashion_case = "event_coal_badge"
+exits.jubilife_city.jubilife_tv_1f = "event_coal_badge"
 
 locs.route_204_south_sea_incense = "surf"
 locs.route_204_south_hp_up = "surf"

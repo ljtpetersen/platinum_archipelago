@@ -146,10 +146,10 @@ class ItemConditions:
         for k in self.base.keys() - items:
             del self.base[k]
 
-    def cond_to_string(self, loc: str, item: str) -> Sequence[str]:
-        if item not in self.base:
+    def cond_to_string(self, loc: str, item: str | Sequence[str]) -> Sequence[str]:
+        if not isinstance(item, str) or item not in self.base:
             return []
-        cond = self.base[item]
+        cond = self.base[item] # type: ignore
         if cond is not None:
             return [f"if {Condition(cond)}:\n", f"    self.loc_rules.add(\"{loc}\")\n"]
         else:

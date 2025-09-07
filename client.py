@@ -9,6 +9,7 @@ from NetUtils import ClientStatus
 from typing import TYPE_CHECKING, Tuple
 
 import Utils
+from worlds.pokemon_platinum.data_gen_templates.locations import OnceCheck
 
 from .data.locations import FlagCheck, LocationCheck, locations, VarCheck
 from .locations import raw_id_to_const_name
@@ -35,6 +36,8 @@ class VersionData:
     flags_offset_in_vars_flags: int
     ap_save_offset: int
     recv_item_count_offset_in_ap_save: int
+    once_loc_flags_offset_in_ap_save: int
+    once_loc_flags_count: int
 
 AP_VERSION_DATA: Mapping[int, VersionData] = {
     0: VersionData(
@@ -47,6 +50,8 @@ AP_VERSION_DATA: Mapping[int, VersionData] = {
         flags_offset_in_vars_flags=0x240,
         ap_save_offset=0xCF60,
         recv_item_count_offset_in_ap_save=0,
+        once_loc_flags_offset_in_ap_save=10,
+        once_loc_flags_count=16,
     ),
 }
 
@@ -54,6 +59,7 @@ AP_VERSION_DATA: Mapping[int, VersionData] = {
 class VarsFlags:
     flags: bytes
     vars: bytes
+    once_loc_flags: bytes
 
     def is_checked(self, check: LocationCheck) -> bool:
         if isinstance(check, FlagCheck):
@@ -64,6 +70,14 @@ class VarsFlags:
                 return check.op(var, check.value)
             else:
                 return False
+        elif isinstance(check, OnceCheck):
+            return self.get_once_flag(check.id) ^ check.invert
+        else:
+            return False
+
+    def get_once_flag(self, flag_id: int) -> bool:
+        if flag_id > 0 and flag_id // 8 < len(self.once_loc_flags):
+            return self.once_loc_flags[flag_id // 8] & (1 << (flag_id & 7)) != 0
         else:
             return False
 
@@ -217,6 +231,7 @@ class PokemonPlatinumClient(BizHawkClient):
                 ctx.bizhawk_ctx,
                 [
                     (savedata_ptr + version_data.vars_flags_offset_in_save, version_data.vars_flags_size, "ARM9 System Bus"),
+                    (savedata_ptr + version_data.ap_save_offset + version_data.once_loc_flags_offset_in_ap_save, version_data.once_loc_flags_count // 8, "ARM9 System Bus"),
                 ],
                 [guards["AP STRUCT VALID"], guards["SAVEDATA PTR"]],
             )
@@ -225,7 +240,8 @@ class PokemonPlatinumClient(BizHawkClient):
             vars_flags_bytes = read_result[0]
             vars_bytes = vars_flags_bytes[version_data.vars_offset_in_vars_flags:version_data.flags_offset_in_vars_flags]
             flags_bytes = vars_flags_bytes[version_data.flags_offset_in_vars_flags:]
-            vars_flags = VarsFlags(flags=flags_bytes, vars=vars_bytes)
+
+            vars_flags = VarsFlags(flags=flags_bytes, vars=vars_bytes, once_loc_flags=read_result[1])
 
             local_checked_locations = set()
             game_clear = vars_flags.is_checked(self.goal_flag) # type: ignore

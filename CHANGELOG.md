@@ -24,6 +24,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * Certain options can now also be adjusted in-game.
 * Post-game locations.
 * An option to move Buck to the back of Stark Mountain.
+* Accessory items and locations.
+* Some repeatable locations.
 ### Fixed
 * Incorrect rules on Route 208 hidden Star Piece.
 * The secret entrance to Wayward Cave no longer optionally requires flash.

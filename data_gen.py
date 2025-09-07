@@ -13,6 +13,7 @@ import tomllib
 from data_gen_rules import ItemConditions, RuleWithOpts, parse_rule
 import re
 import os
+import datetime
 
 def default_accessible_encounters() -> Sequence[str]:
     return ["land", "surf", "old_rod", "good_rod", "super_rod"]
@@ -77,9 +78,17 @@ class Check:
     value: int | None = None
     op: str = "eq"
     invert: bool = False
+    once: bool = False
 
     def __str__(self) -> str:
-        if self.value is None:
+        if self.once:
+            assert self.value is None, f"once check has value"
+            ret = f"OnceCheck(id=0x{self.id:X}"
+            if self.invert:
+                ret += ", invert=True"
+            ret += ")"
+            return ret
+        elif self.value is None:
             ret = f"FlagCheck(id=0x{self.id:X}"
             if self.invert:
                 ret += ", invert=True"
@@ -94,7 +103,7 @@ class Check:
 
 @dataclass(frozen=True)
 class Location:
-    original_item: str
+    original_item: str | Sequence[str]
     type: str
     table: str
     label: str
@@ -105,7 +114,10 @@ class Location:
         ret = f"LocationData(label=\"{self.label}\", "
         ret += f"table=LocationTable.{self.table.upper()}, "
         ret += f"id=0x{self.id:X}, "
-        ret += f"original_item=\"{self.original_item}\", "
+        if isinstance(self.original_item, str):
+            ret += f"original_item=\"{self.original_item}\", "
+        else:
+            ret += "original_item=[{}], ".format(", ".join(map(lambda s : f"\"{s}\"", self.original_item)))
         ret += f"type=\"{self.type}\", "
         if parent_region is not None:
             ret += f"parent_region=\"{parent_region}\", "
@@ -269,7 +281,12 @@ class ParserState:
                     assert spec in self.species, f"{spec} is a species"
         location_labels = set()
         for loc in self.locations.values():
-            assert loc.original_item in self.items, f"{loc.original_item} is an item"
+            if isinstance(loc.original_item, str):
+                assert loc.original_item in self.items, f"{loc.original_item} is an item"
+            else:
+                assert loc.original_item, f"{loc} has an original item"
+                for original_item in loc.original_item:
+                    assert original_item in self.items, f"{original_item} is an item"
             assert loc.table in self.rom_interface.loc_table, f"{loc.table} is a location table"
             assert loc.label not in location_labels, f"{loc.label} is a unique location label"
             location_labels.add(loc.label)
@@ -453,7 +470,7 @@ class ParserState:
         return {}
 
 def fill_template(name: str, values: Mapping[str, Sequence[str]]) -> None:
-    output = "# THIS IS AN AUTO-GENERATED FILE. DO NOT MODIFY.\n"
+    output = f"# THIS IS AN AUTO-GENERATED FILE. DO NOT MODIFY.\n"
     with open(f"data_gen_templates/{name}.py", "r", encoding="utf-8") as template:
         for line in template:
             if line.strip().endswith("# TEMPLATE: DELETE"):

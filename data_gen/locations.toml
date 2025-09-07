@@ -1,3 +1,8 @@
+# data_gen/locations.toml
+#
+# Copyright (C) 2025 James Petersen <m@jamespetersen.ca>
+# Licensed under MIT. See LICENSE
+
 [great_marsh_3_great_ball]
 original_item = "great_ball"
 type = "overworld"
@@ -977,18 +982,20 @@ id = 56
 [iron_island_b2f_left_room_star_piece]
 original_item = "star_piece"
 type = "hidden"
-table = "hidden"
-check = 784
+table = "once"
+check.id = 4
+check.once = true 
 label = "Iron Island - Hidden (Star Piece) 1"
-id = 54
+id = 4
 
 [iron_island_b2f_left_room_star_piece_0]
 original_item = "star_piece"
 type = "hidden"
-table = "hidden"
-check = 785
+table = "once"
+check.id = 5
+check.once = true
 label = "Iron Island - Hidden (Star Piece) 2"
-id = 55
+id = 5
 
 [iron_island_b1f_right_room_max_repel]
 original_item = "max_repel"
@@ -1017,10 +1024,11 @@ id = 289
 [iron_island_b1f_right_room_star_piece]
 original_item = "star_piece"
 type = "hidden"
-table = "hidden"
-check = 782
+table = "once"
+check.id = 6
+check.once = true
 label = "Iron Island - Hidden (Star Piece) 3"
-id = 52
+id = 6
 
 [iron_island_b2f_right_room_elixir]
 original_item = "elixir"
@@ -1041,10 +1049,11 @@ id = 139
 [iron_island_b2f_right_room_star_piece]
 original_item = "star_piece"
 type = "hidden"
-table = "hidden"
-check = 783
+table = "once"
+check.id = 7
+check.once = true
 label = "Iron Island - Hidden (Star Piece) 4"
-id = 53
+id = 7
 
 [route_213_tm40]
 original_item = "tm40"
@@ -2905,26 +2914,29 @@ id = 285
 [floaroma_meadow_honey]
 original_item = "honey"
 type = "hidden"
-table = "hidden"
-check = 788
+table = "once"
+check.id = 8
+check.once = true
 label = "Floaroma Meadow - Hidden (Honey)"
-id = 58
+id = 8
 
 [floaroma_meadow_honey_0]
 original_item = "honey"
 type = "hidden"
-table = "hidden"
-check = 789
+table = "once"
+check.id = 9
+check.once = true
 label = "Floaroma Meadow - Hidden (Honey) 1"
-id = 59
+id = 9
 
 [floaroma_meadow_honey_1]
 original_item = "honey"
 type = "hidden"
-table = "hidden"
-check = 950
+table = "once"
+check.id = 10
+check.once = true
 label = "Floaroma Meadow - Hidden (Honey) 2"
-id = 220
+id = 10
 
 [floaroma_meadow_max_revive]
 original_item = "max_revive"
@@ -2945,18 +2957,20 @@ id = 226
 [floaroma_meadow_honey_2]
 original_item = "honey"
 type = "hidden"
-table = "hidden"
-check = 949
+table = "once"
+check.id = 11
+check.once = true
 label = "Floaroma Meadow - Hidden (Honey) 3"
-id = 219
+id = 11
 
 [floaroma_meadow_honey_3]
 original_item = "honey"
 type = "hidden"
-table = "hidden"
-check = 952
+table = "once"
+check.id = 12
+check.once = true
 label = "Floaroma Meadow - Hidden (Honey) 4"
-id = 222
+id = 12
 
 [floaroma_meadow_hyper_potion]
 original_item = "hyper_potion"
@@ -2985,10 +2999,11 @@ id = 225
 [floaroma_meadow_honey_4]
 original_item = "honey"
 type = "hidden"
-table = "hidden"
-check = 951
+table = "once"
+check.id = 13
+check.once = true
 label = "Floaroma Meadow - Hidden (Honey) 5"
-id = 221
+id = 13
 
 [amity_square_tm45]
 original_item = "tm45"
@@ -5726,3 +5741,158 @@ original_item = "fresh_water"
 type = "npc_gift"
 table = "base"
 label = "Route 225 - Fresh Water (From man in house)"
+
+[route_206_cycling_road_south_gate_flag]
+id = 114
+check = 0x12B
+original_item = "flag"
+type = "accessory"
+table = "base"
+label = "Cycling Road South Gate - Flag"
+
+[jubilife_tv_2f_chimchar_mask]
+id = 115
+check = 0x13D
+original_item = "chimchar_mask"
+type = "accessory"
+table = "base"
+label = "Jubilife TV - Chimchar Mask"
+
+[pastoria_city_piplup_mask]
+id = 116
+check = 0x128
+original_item = "piplup_mask"
+type = "accessory"
+table = "base"
+label = "Pastoria City - Piplup Mask"
+
+[veilstone_store_1f_turtwig_mask]
+id = 117
+check = 0x129
+original_item = "turtwig_mask"
+type = "accessory"
+table = "base"
+label = "Veilstone Department Store - Turtwig Mask"
+
+[veilstone_city_southwest_house_accessory]
+id = 0
+check.id = 0
+check.once = true
+original_item = [
+    "pretty_dewdrop",
+    "snow_crystal",
+    "sparks",
+    "shimmering_fire",
+    "mystic_fire",
+    "determination",
+    "peculiar_spoon",
+    "puffy_smoke",
+    "poison_extract",
+    "wealthy_coin",
+    "eerie_thing",
+    "spring",
+    "seashell",
+    "humming_note",
+    "shiny_powder",
+    "glitter_powder",
+]
+table = "once"
+type = "accessory"
+label = "Veilstone City - Random Accessory"
+
+[contest_hall_lobby_glitter_powder]
+id = 118
+check = { id = 0x40F7, value = 1 }
+original_item = "glitter_powder"
+type = "accessory"
+table = "base"
+label = "Hearthome City Contest Hall - Glitter Powder"
+
+[amity_square_gift]
+id = 1
+check.id = 1
+check.once = true
+original_item = [
+    "magost_berry",
+    "cornn_berry",
+    "rabuta_berry",
+    "nomel_berry",
+    "spelon_berry",
+    "pamtre_berry",
+    "watmel_berry",
+    "durin_berry",
+    "belue_berry",
+    "mini_pebble",
+    "glitter_boulder",
+    "black_pebble",
+    "big_scale",
+    "big_leaf",
+    "thick_mushroom",
+    "stump",
+]
+type = "npc_gift"
+table = "once"
+label = "Amity Square - Random Berry or Accessory"
+
+[eterna_forest_outside_big_tree]
+id = 119
+check = 0x12A
+original_item = "big_tree"
+type = "accessory"
+table = "base"
+label = "Eterna Forest Outside - Big Tree"
+
+[flower_shop_berry]
+id = 2
+check.id = 2
+check.once = true
+original_item = [
+    "cheri_berry",
+    "chesto_berry",
+    "pecha_berry",
+    "rawst_berry",
+    "aspear_berry",
+]
+type = "npc_gift"
+table = "once"
+label = "Floaroma Town Flower Shop - Random Berry"
+
+[route_208_house_berry]
+id = 3
+check.id = 3
+check.once = true
+original_item = [
+    "cheri_berry",
+    "chesto_berry",
+    "pecha_berry",
+    "rawst_berry",
+    "aspear_berry",
+    "leppa_berry",
+    "oran_berry",
+    "persim_berry",
+    "lum_berry",
+    "sitrus_berry",
+    "figy_berry",
+    "wiki_berry",
+    "mago_berry",
+    "aguav_berry",
+    "iapapa_berry",
+    "razz_berry",
+    "bluk_berry",
+    "nanab_berry",
+    "wepear_berry",
+    "pinap_berry",
+    "pomeg_berry",
+    "kelpsy_berry",
+    "qualot_berry",
+    "hondew_berry",
+    "grepa_berry",
+    "tamato_berry",
+    "cornn_berry",
+    "magost_berry",
+    "rabuta_berry",
+    "nomel_berry",
+]
+type = "npc_gift"
+table = "once"
+label = "Route 208 - Random Berry"

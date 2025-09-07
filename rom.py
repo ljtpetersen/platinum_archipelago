@@ -284,7 +284,11 @@ def generate_output(world: "PokemonPlatinumWorld", output_directory: str, patch:
 
     for location in locations.values():
         if location.label not in filled_locations:
-            put_in_table(location.table, location.id, items[location.original_item].get_raw_id())
+            if isinstance(location.original_item, str):
+                original_item = location.original_item
+            else:
+                original_item = world.random.choice(location.original_item)
+            put_in_table(location.table, location.id, items[original_item].get_raw_id())
 
     ap_bin += len(tables).to_bytes(length=4, byteorder='little')
     for table in sorted(tables.keys()):

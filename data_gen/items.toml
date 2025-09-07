@@ -3003,3 +3003,603 @@ id = 4
 clas = "special"
 group = "bag"
 classification = "progression"
+
+[white_fluff]
+label = "White Fluff"
+id = 0
+clas = "accessory"
+group = "accessory"
+
+[yellow_fluff]
+label = "Yellow Fluff"
+id = 1
+clas = "accessory"
+group = "accessory"
+
+[pink_fluff]
+label = "Pink Fluff"
+id = 2
+clas = "accessory"
+group = "accessory"
+
+[brown_fluff]
+label = "Brown Fluff"
+id = 3
+clas = "accessory"
+group = "accessory"
+
+[black_fluff]
+label = "Black Fluff"
+id = 4
+clas = "accessory"
+group = "accessory"
+
+[orange_fluff]
+label = "Orange Fluff"
+id = 5
+clas = "accessory"
+group = "accessory"
+
+[round_pebble]
+label = "Round Pebble"
+id = 6
+clas = "accessory"
+group = "accessory"
+
+[glitter_boulder]
+label = "Glitter Boulder"
+id = 7
+clas = "accessory"
+group = "accessory"
+
+[snaggy_pebble]
+label = "Snaggy Pebble"
+id = 8
+clas = "accessory"
+group = "accessory"
+
+[jagged_boulder]
+label = "Jagged Boulder"
+id = 9
+clas = "accessory"
+group = "accessory"
+
+[black_pebble]
+label = "Black Pebble"
+id = 10
+clas = "accessory"
+group = "accessory"
+
+[mini_pebble]
+label = "Mini Pebble"
+id = 11
+clas = "accessory"
+group = "accessory"
+
+[pink_scale]
+label = "Pink Scale"
+id = 12
+clas = "accessory"
+group = "accessory"
+
+[blue_scale]
+label = "Blue Scale"
+id = 13
+clas = "accessory"
+group = "accessory"
+
+[green_scale]
+label = "Green Scale"
+id = 14
+clas = "accessory"
+group = "accessory"
+
+[purple_scale]
+label = "Purple Scale"
+id = 15
+clas = "accessory"
+group = "accessory"
+
+[big_scale]
+label = "Big Scale"
+id = 16
+clas = "accessory"
+group = "accessory"
+
+[narrow_scale]
+label = "Narrow Scale"
+id = 17
+clas = "accessory"
+group = "accessory"
+
+[blue_feather]
+label = "Blue Feather"
+id = 18
+clas = "accessory"
+group = "accessory"
+
+[red_feather]
+label = "Red Feather"
+id = 19
+clas = "accessory"
+group = "accessory"
+
+[yellow_feather]
+label = "Yellow Feather"
+id = 20
+clas = "accessory"
+group = "accessory"
+
+[white_feather]
+label = "White Feather"
+id = 21
+clas = "accessory"
+group = "accessory"
+
+[black_moustache]
+label = "Black Moustache"
+id = 22
+clas = "accessory"
+group = "accessory"
+
+[white_moustache]
+label = "White Moustache"
+id = 23
+clas = "accessory"
+group = "accessory"
+
+[black_beard]
+label = "Black Beard"
+id = 24
+clas = "accessory"
+group = "accessory"
+
+[white_beard]
+label = "White Beard"
+id = 25
+clas = "accessory"
+group = "accessory"
+
+[small_leaf]
+label = "Small Leaf"
+id = 26
+clas = "accessory"
+group = "accessory"
+
+[big_leaf]
+label = "Big Leaf"
+id = 27
+clas = "accessory"
+group = "accessory"
+
+[narrow_leaf]
+label = "Narrow Leaf"
+id = 28
+clas = "accessory"
+group = "accessory"
+
+[shed_claw]
+label = "Shed Claw"
+id = 29
+clas = "accessory"
+group = "accessory"
+
+[shed_hown]
+label = "Shed Horn"
+id = 30
+clas = "accessory"
+group = "accessory"
+
+[thin_mushroom]
+label = "Thin Mushroom"
+id = 31
+clas = "accessory"
+group = "accessory"
+
+[thick_mushroom]
+label = "Thick Mushroom"
+id = 32
+clas = "accessory"
+group = "accessory"
+
+[stump]
+label = "Stump"
+id = 33
+clas = "accessory"
+group = "accessory"
+
+[pretty_dewdrop]
+label = "Pretty Dewdrop"
+id = 34
+clas = "accessory"
+group = "accessory"
+
+[snow_crystal]
+label = "Snow Crystal"
+id = 35
+clas = "accessory"
+group = "accessory"
+
+[sparks]
+label = "Sparks"
+id = 36
+clas = "accessory"
+group = "accessory"
+
+[shimmering_fire]
+label = "Shimmering Fire"
+id = 37
+clas = "accessory"
+group = "accessory"
+
+[mystic_fire]
+label = "Mystic Fire"
+id = 38
+clas = "accessory"
+group = "accessory"
+
+[determination]
+label = "Determination"
+id = 39
+clas = "accessory"
+group = "accessory"
+
+[peculiar_spoon]
+label = "Peculiar Spoon"
+id = 40
+clas = "accessory"
+group = "accessory"
+
+[puffy_smoke]
+label = "Puffy Smoke"
+id = 41
+clas = "accessory"
+group = "accessory"
+
+[poison_extract]
+label = "Poison Extract"
+id = 42
+clas = "accessory"
+group = "accessory"
+
+[wealthy_coin]
+label = "Wealthy Coin"
+id = 43
+clas = "accessory"
+group = "accessory"
+
+[eerie_thing]
+label = "Eerie Thing"
+id = 44
+clas = "accessory"
+group = "accessory"
+
+[spring]
+label = "Spring"
+id = 45
+clas = "accessory"
+group = "accessory"
+
+[seashell]
+label = "Seashell"
+id = 46
+clas = "accessory"
+group = "accessory"
+
+[humming_note]
+label = "Humming Note"
+id = 47
+clas = "accessory"
+group = "accessory"
+
+[shiny_powder]
+label = "Shiny Powder"
+id = 48
+clas = "accessory"
+group = "accessory"
+
+[glitter_powder]
+label = "Glitter Powder"
+id = 49
+clas = "accessory"
+group = "accessory"
+
+[red_flower]
+label = "Red Flower"
+id = 50
+clas = "accessory"
+group = "accessory"
+
+[pink_flower]
+label = "Pink Flower"
+id = 51
+clas = "accessory"
+group = "accessory"
+
+[white_flower]
+label = "White Flower"
+id = 52
+clas = "accessory"
+group = "accessory"
+
+[blue_flower]
+label = "Blue Flower"
+id = 53
+clas = "accessory"
+group = "accessory"
+
+[orange_flower]
+label = "Orange Flower"
+id = 54
+clas = "accessory"
+group = "accessory"
+
+[yellow_flower]
+label = "Yellow Flower"
+id = 55
+clas = "accessory"
+group = "accessory"
+
+[googly_specs]
+label = "Googly Specs"
+id = 56
+clas = "accessory"
+group = "accessory"
+
+[black_specs]
+label = "Black Specs"
+id = 57
+clas = "accessory"
+group = "accessory"
+
+[gorgeous_specs]
+label = "Gorgeous Specs"
+id = 58
+clas = "accessory"
+group = "accessory"
+
+[sweet_candy]
+label = "Sweet Candy"
+id = 59
+clas = "accessory"
+group = "accessory"
+
+[confetti]
+label = "Confetti"
+id = 60
+clas = "accessory"
+group = "accessory"
+
+[colored_parasol]
+label = "Colored Parasol"
+id = 61
+clas = "accessory"
+group = "accessory"
+
+[old_umbrella]
+label = "Old Umbrella"
+id = 62
+clas = "accessory"
+group = "accessory"
+
+[spotlight]
+label = "Spotlight"
+id = 63
+clas = "accessory"
+group = "accessory"
+
+[cape]
+label = "Cape"
+id = 64
+clas = "accessory"
+group = "accessory"
+
+[standing_mike]
+label = "Standing Mike"
+id = 65
+clas = "accessory"
+group = "accessory"
+
+[surfboard]
+label = "Surfboard"
+id = 66
+clas = "accessory"
+group = "accessory"
+
+[carpet]
+label = "Carpet"
+id = 67
+clas = "accessory"
+group = "accessory"
+
+[retro_pipe]
+label = "Retro Pipe"
+id = 68
+clas = "accessory"
+group = "accessory"
+
+[fluffy_bed]
+label = "Fluffy Bed"
+id = 69
+clas = "accessory"
+group = "accessory"
+
+[mirror_ball]
+label = "Mirror Ball"
+id = 70
+clas = "accessory"
+group = "accessory"
+
+[photo_board]
+label = "Photo Board"
+id = 71
+clas = "accessory"
+group = "accessory"
+
+[pink_barrette]
+label = "Pink Barrette"
+id = 72
+clas = "accessory"
+group = "accessory"
+
+[red_barrette]
+label = "Red Barrette"
+id = 73
+clas = "accessory"
+group = "accessory"
+
+[blue_barrette]
+label = "Blue Barrette"
+id = 74
+clas = "accessory"
+group = "accessory"
+
+[yellow_barrette]
+label = "Yellow Barrette"
+id = 75
+clas = "accessory"
+group = "accessory"
+
+[green_barrette]
+label = "Green Barrette"
+id = 76
+clas = "accessory"
+group = "accessory"
+
+[pink_balloon]
+label = "Pink Balloon"
+id = 77
+clas = "accessory"
+group = "accessory"
+
+[red_balloons]
+label = "Red Balloons"
+id = 78
+clas = "accessory"
+group = "accessory"
+
+[blue_balloons]
+label = "Blue Balloons"
+id = 79
+clas = "accessory"
+group = "accessory"
+
+[yellow_balloons]
+label = "Yellow Balloon"
+id = 80
+clas = "accessory"
+group = "accessory"
+
+[green_balloons]
+label = "Green Balloons"
+id = 81
+clas = "accessory"
+group = "accessory"
+
+[lace_headdress]
+label = "Lace Headdress"
+id = 82
+clas = "accessory"
+group = "accessory"
+
+[top_hat]
+label = "Top Hat"
+id = 83
+clas = "accessory"
+group = "accessory"
+
+[silk_veil]
+label = "Silk Veil"
+id = 84
+clas = "accessory"
+group = "accessory"
+
+[heroic_headband]
+label = "Heroic Headband"
+id = 85
+clas = "accessory"
+group = "accessory"
+
+[professor_hat]
+label = "Professor Hat"
+id = 86
+clas = "accessory"
+group = "accessory"
+
+[flower_stage]
+label = "Flower Stage"
+id = 87
+clas = "accessory"
+group = "accessory"
+
+[gold_pedestal]
+label = "Gold Pedestal"
+id = 88
+clas = "accessory"
+group = "accessory"
+
+[glass_stage]
+label = "Glass Stage"
+id = 89
+clas = "accessory"
+group = "accessory"
+
+[award_podium]
+label = "Award Podium"
+id = 90
+clas = "accessory"
+group = "accessory"
+
+[cube_stage]
+label = "Cube Stage"
+id = 91
+clas = "accessory"
+group = "accessory"
+
+[turtwig_mask]
+label = "TURTWIG Mask"
+id = 92
+clas = "accessory"
+group = "accessory"
+
+[chimchar_mask]
+label = "CHIMCHAR Mask"
+id = 93
+clas = "accessory"
+group = "accessory"
+
+[piplup_mask]
+label = "PIPLUP Mask"
+id = 94
+clas = "accessory"
+group = "accessory"
+
+[big_tree]
+label = "Big Tree"
+id = 95
+clas = "accessory"
+group = "accessory"
+
+[flag]
+label = "Flag"
+id = 96
+clas = "accessory"
+group = "accessory"
+
+[crown]
+label = "Crown"
+id = 97
+clas = "accessory"
+group = "accessory"
+
+[tiara]
+label = "Tiara"
+id = 98
+clas = "accessory"
+group = "accessory"
+
+[comet]
+label = "Comet"
+id = 99
+clas = "accessory"
+group = "accessory"

@@ -58,6 +58,10 @@ class RandomizePokedex(Toggle):
     """Add the Pokedex to the pool. Note: this also adds the national dex to the pool."""
     display_name = "Randomize Pokedex"
 
+class RandomizeAccessories(Toggle):
+    """Adds fashion accessories to the item pool."""
+    display_name = "Randomize Accessories"
+
 class HmBadgeRequirements(DefaultOnToggle):
     """Require the corresponding badge to use an HM outside of battle."""
     display_name = "Require Badges for HMs"
@@ -321,6 +325,7 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
     running_shoes: RandomizeRunningShoes
     bicycle: RandomizeBicycle
     pokedex: RandomizePokedex
+    accessories: RandomizeAccessories
 
     hm_badge_requirement: HmBadgeRequirements
     remove_badge_requirements: RemoveBadgeRequirement

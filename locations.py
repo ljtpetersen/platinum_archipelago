@@ -37,7 +37,8 @@ location_types: Mapping[str, LocationType] = {
     "uunown": LocationType(
         is_enabled = lambda opts : opts.hiddens.value == 1 and opts.unown_option.value == UnownsOption.option_item,
         should_be_added = lambda opts : opts.unown_option == UnownsOption.option_item
-    )
+    ),
+    "accessory": LocationType(is_enabled = lambda opts : opts.accessories.value == 1),
 }
 
 def get_parent_region(label: str, world: "PokemonPlatinumWorld") -> str | None:
@@ -88,7 +89,11 @@ def create_locations(world: "PokemonPlatinumWorld", regions: Mapping[str, Region
             if not (is_enabled or name in world.required_locations or show_unrandomized_progression_items) \
                 or not lt.should_be_added(world.options):
                 continue
-            item = itemdata.items[loc.original_item]
+            if isinstance(loc.original_item, str):
+                original_item = loc.original_item
+            else:
+                original_item = world.random.choice(loc.original_item)
+            item = itemdata.items[original_item]
             if is_enabled or show_unrandomized_progression_items:
                 address = loc.get_raw_id()
             else:

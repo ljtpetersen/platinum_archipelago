@@ -6,6 +6,7 @@
 loc_table.base = 0
 loc_table.overworld = 1
 loc_table.hidden = 2
+loc_table.once = 3
 
 item_clas.bagitem = 0
 item_clas.multibagitem0 = 1
@@ -14,7 +15,7 @@ item_clas.multibagitem2 = 3
 item_clas.specialbagitem = 4
 item_clas.poketchapp = 5
 item_clas.badge = 6
-item_clas.fashion = 7
+item_clas.accessory = 7
 item_clas.special = 0xE
 
 hm.cut = "hm01"
