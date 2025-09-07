@@ -9,9 +9,8 @@ from NetUtils import ClientStatus
 from typing import TYPE_CHECKING, Tuple
 
 import Utils
-from worlds.pokemon_platinum.data_gen_templates.locations import OnceCheck
 
-from .data.locations import FlagCheck, LocationCheck, locations, VarCheck
+from .data.locations import FlagCheck, LocationCheck, locations, VarCheck, OnceCheck
 from .locations import raw_id_to_const_name
 from .options import Goal, RemoteItems
 
