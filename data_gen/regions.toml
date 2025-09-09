@@ -3263,10 +3263,7 @@ locs = [
 events = ["event_lake_valor_defeat_saturn"]
 
 [valor_cavern]
-exits = [
-    "lake_valor_drained",
-    "lake_valor",
-]
+exits = []
 header = "valor_cavern"
 
 [eterna_forest_outside]
