@@ -4,6 +4,7 @@
 # Licensed under MIT. See LICENSE
 
 loc_types.hidden = "dowsingmachine_if_opt"
+loc_types.uunown = "dowsingmachine_if_opt"
 
 enc_types.surf = "surf"
 enc_types.good_rod = "good_rod & bag"
