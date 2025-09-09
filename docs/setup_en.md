@@ -3,7 +3,7 @@
 ## Required Software
 
 - [Archipelago](https://github.com/ArchipelagoMW/Archipelago/releases)
-- A US Pokémon Platinum Rev. 0 or Rev. 1 ROM. The Archipelago community cannot provide this.
+- A US Pokémon Platinum Rev. 0 or Rev. 1 ROM. The Archipelago community cannot provide this.
 - [BizHawk](https://tasvideos.org/BizHawk/ReleaseHistory) version 2.10 or later
 
 ### Configuring BizHawk
