@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.3] - 2025-09-10
+### Fixed
+* The value of the `pastoria_barriers` option is now correctly written to the ROM.
+* The person at the entrance to the Hearthome City Gym now correctly checks that you have
+defeated the gym leader for their dialogue, rather than if you have the badge requirements to use
+the corresponding HM.
+
 ## [0.1.2] - 2025-09-09
 ### Fixed
 * Unrandomized non-progression items are no longer added if remote items are disabled.

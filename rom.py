@@ -239,7 +239,7 @@ def generate_output(world: "PokemonPlatinumWorld", output_directory: str, patch:
     add_opt_byte("remote_items")
     add_opt_byte("early_sunyshore")
     add_opt_byte("unown_option")
-    add_opt_byte("early_sunyshore")
+    add_opt_byte("pastoria_barriers")
 
     match game_opts.received_items_notification:
         case "nothing":
