@@ -45,10 +45,10 @@ def get_parent_region(label: str, world: "PokemonPlatinumWorld") -> str | None:
     const_name = raw_id_to_const_name[world.location_name_to_id[label]]
     return locationdata.locations[const_name].parent_region
 
-def is_location_enabled(label: str, world: "PokemonPlatinumWorld"):
+def is_location_in_world(label: str, world: "PokemonPlatinumWorld"):
     const_name = raw_id_to_const_name[world.location_name_to_id[label]]
     lt = location_types[locationdata.locations[const_name].type]
-    return (lt.is_enabled(world.options) or const_name in world.required_locations) and lt.should_be_added(world.options)
+    return (lt.is_enabled(world.options) or const_name in world.required_locations or world.options.remote_items) and lt.should_be_added(world.options)
 
 def create_location_label_to_code_map() -> Dict[str, int]:
     return {v.label:v.get_raw_id() for v in locationdata.locations.values()}
@@ -86,8 +86,7 @@ def create_locations(world: "PokemonPlatinumWorld", regions: Mapping[str, Region
             loc = locationdata.locations[name]
             lt = location_types[loc.type]
             is_enabled = lt.is_enabled(world.options)
-            if not (is_enabled or name in world.required_locations or show_unrandomized_progression_items) \
-                or not lt.should_be_added(world.options):
+            if not is_location_in_world(loc.label, world):
                 continue
             if isinstance(loc.original_item, str):
                 original_item = loc.original_item

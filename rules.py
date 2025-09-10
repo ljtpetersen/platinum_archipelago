@@ -8,7 +8,7 @@ from typing import TYPE_CHECKING
 from worlds.generic.Rules import add_rule, set_rule
 
 from .data import encounters as encounterdata, Hm, items as itemdata, regions as regiondata, rules as ruledata
-from .locations import is_location_enabled, get_parent_region
+from .locations import is_location_in_world, get_parent_region
 from .regions import is_event_region_enabled, is_region_enabled
 
 if TYPE_CHECKING:
@@ -21,7 +21,7 @@ def is_location_present(label: str, world: "PokemonPlatinumWorld") -> bool:
     if label.startswith("event_") and is_event_region_enabled(label, world.options):
         return True
     parent_region = get_parent_region(label, world)
-    return is_region_enabled(parent_region, world.options) and is_location_enabled(label, world)
+    return is_region_enabled(parent_region, world.options) and is_location_in_world(label, world)
 
 def set_rules(world: "PokemonPlatinumWorld") -> None:
     common_rules = {}
