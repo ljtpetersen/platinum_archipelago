@@ -362,3 +362,5 @@ locs.stark_mountain_room_2_ultra_ball = "rock_climb"
 locs.stark_mountain_room_2_ultra_ball_0 = "rock_climb"
 locs.stark_mountain_room_2_max_elixir = "rock_climb"
 locs.stark_mountain_room_2_nugget = "rock_climb"
+
+exits.sunyshore_city.sunyshore_city_east_house = "rock_climb"
