@@ -288,7 +288,6 @@ locs.route_223_heart_scale_0 = "surf"
 exits.route_223.pokemon_league_south_south = "surf"
 exits.pokemon_league_south_south.pokemon_league_south = "surf & waterfall"
 
-# we have all of the hms once we reach victory road, so we only need to add rules for the bicycle
 locs.victory_road_2f_tm71 = "bicycle"
 locs.victory_road_2f_full_restore = "bicycle"
 locs.victory_road_2f_max_elixir = "bicycle"
@@ -301,6 +300,7 @@ exits.victory_road_1f_entrance.victory_road_2f_entrance = "rock_climb"
 exits.victory_road_2f_entrance.victory_road_2f = "rock_smash & strength"
 
 exits.pastoria_city_observatory_gate_1f.virt_great_marsh = "marsh_pass if marsh_pass"
+locs.pastoria_city_observatory_gate_1f_matchupchecker = "marsh_pass if marsh_pass"
 locs.route_210_south_old_charm = "secretpotion"
 
 exits.route_212_north_top.route_212_north = "surf if pastoria_barriers"

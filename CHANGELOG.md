@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * The Pokétch App locations in Sunyshore City now have the correct rules.
 * The Super Repel on Route 210 now has the correct rules. (Thanks to [gerbiljames](https://github.com/gerbiljames))
 * The "Use Another Repel" dialogue is fixed.
+* The Matchup Checker App now has the correct rules.
 
 ## [0.1.3] - 2025-09-10
 ### Fixed
