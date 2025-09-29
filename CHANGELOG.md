@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * The Super Repel on Route 210 now has the correct rules. (Thanks to [gerbiljames](https://github.com/gerbiljames))
 * The "Use Another Repel" dialogue is fixed.
 * The Matchup Checker App now has the correct rules.
+* South Pokémon League Pokémon Center no longer connects to North Pokémon League.
 
 ## [0.1.3] - 2025-09-10
 ### Fixed

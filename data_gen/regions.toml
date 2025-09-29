@@ -174,7 +174,7 @@ locs = [
 [pokemon_league_south_pokecenter_1f]
 exits = [
     "pokemon_league_south_pokecenter_b1f",
-    "pokemon_league",
+    "pokemon_league_south",
     "pokemon_league_south_pokecenter_2f",
 ]
 header = "pokemon_league_south_pokecenter_1f"
