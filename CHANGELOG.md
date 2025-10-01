@@ -13,6 +13,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * The Matchup Checker App now has the correct rules.
 * Issues when obtaining the Lunar Wing early.
 * South Pokémon League Pokémon Center no longer connects to North Pokémon League.
+### Changed
+* Location names are better. (Thanks to [ZobeePlays](https://github.com/ZobeePlays) and [Useless](https://github.com/UselessWater3))
 
 ## [0.1.3] - 2025-09-10
 ### Fixed
