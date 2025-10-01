@@ -5,9 +5,8 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [0.1.4] - 2025-09-11
+## [0.1.5] - 2025-10-01
 ### Fixed
-* The Pokétch App locations in Sunyshore City now have the correct rules.
 * The Super Repel on Route 210 now has the correct rules. (Thanks to [gerbiljames](https://github.com/gerbiljames))
 * The "Use Another Repel" dialogue is fixed.
 * The Matchup Checker App now has the correct rules.
@@ -15,6 +14,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * South Pokémon League Pokémon Center no longer connects to North Pokémon League.
 ### Changed
 * Location names are better. (Thanks to [ZobeePlays](https://github.com/ZobeePlays) and [Useless](https://github.com/UselessWater3))
+
+## [0.1.4] - 2025-09-11
+### Fixed
+* The Pokétch App locations in Sunyshore City now have the correct rules.
 
 ## [0.1.3] - 2025-09-10
 ### Fixed
@@ -102,6 +105,7 @@ skip over the forms, and the second one would give the National Pokédex.
 ## [0.0.1] - 2025-08-26
 The first release of this project.
 
+[0.1.4]: https://github.com/ljtpetersen/platinum_archipelago/compare/v0.1.5...v0.1.4
 [0.1.4]: https://github.com/ljtpetersen/platinum_archipelago/compare/v0.1.4...v0.1.3
 [0.1.3]: https://github.com/ljtpetersen/platinum_archipelago/compare/v0.1.3...v0.1.2
 [0.1.2]: https://github.com/ljtpetersen/platinum_archipelago/compare/v0.1.2...v0.1.1
