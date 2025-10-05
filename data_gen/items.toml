@@ -3603,3 +3603,34 @@ label = "Comet"
 id = 99
 clas = "accessory"
 group = "accessory"
+
+[sapphire_cartridge]
+label = "Sapphire Cartridge"
+id = 5
+clas = "special"
+group = "gbacart"
+
+[ruby_cartridge]
+label = "Ruby Cartridge"
+id = 6
+clas = "special"
+group = "gbacart"
+
+[emerald_cartridge]
+label = "Emerald Cartridge"
+id = 7
+clas = "special"
+group = "gbacart"
+
+[firered_cartridge]
+label = "Fire Red Cartridge"
+id = 8
+clas = "special"
+group = "gbacart"
+
+[leafgreen_cartridge]
+label = "Leaf Green Cartridge"
+id = 9
+clas = "special"
+group = "gbacart"
+
