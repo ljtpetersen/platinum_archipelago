@@ -5957,3 +5957,19 @@ type = "cartridge"
 table = "base"
 label = "Jubilife City - Leaf Green Cartridge from DS Kid"
 check = 0xB9E
+
+[jubilife_city_sapphire_cartridge]
+id = 122
+original_item = "sapphire_cartridge"
+type = "cartridge"
+table = "base"
+label = "Jubilife City - Sapphire Cartridge from Schoolboy in Southwest Corner"
+check = 0xB9F
+
+[valley_windworks_building_ruby_cartridge]
+id = 123
+original_item = "ruby_cartridge"
+type = "cartridge"
+table = "base"
+label = "Valley Windworks - Ruby Cartridge from Scientist After Defeating Mars"
+check = { id = 0x4089, value = 2 }

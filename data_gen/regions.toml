@@ -1587,6 +1587,7 @@ locs = [
     "jubilife_city_fashion_case",
     "jubilife_city_firered_cartridge",
     "jubilife_city_leafgreen_cartridge",
+    "jubilife_city_sapphire_cartridge",
 ]
 
 [jubilife_city_unknown_house_4]
@@ -2276,6 +2277,7 @@ locs = [
 exits = [
     "valley_windworks_outside",
 ]
+locs = ["valley_windworks_building_ruby_cartridge"]
 header = "valley_windworks_building"
 
 [route_205_north]

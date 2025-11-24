@@ -69,6 +69,7 @@ encs.ravaged_path.surf = "rock_smash"
 locs.route_204_north_tm78 = "cut"
 
 exits.floaroma_town.route_205_south = "works_key | surf"
+exits.valley_windworks_outside.valley_windworks_building = "works_key"
 exits.route_205_south.fuego_ironworks_outside = "surf"
 locs.valley_windworks_outside_tm24 = "surf"
 locs.valley_windworks_outside_electirizer = "surf"
@@ -364,3 +365,5 @@ locs.stark_mountain_room_2_max_elixir = "rock_climb"
 locs.stark_mountain_room_2_nugget = "rock_climb"
 
 exits.sunyshore_city.sunyshore_city_east_house = "rock_climb"
+
+locs.jubilife_city_sapphire_cartridge = "badges(1)"
