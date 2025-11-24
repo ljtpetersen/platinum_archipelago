@@ -5933,3 +5933,11 @@ label = "Celestic Town - Gift from Man in Pokémon Center"
 [celestic_town_pokecenter_1f_great_ball.check]
 id = 14
 once = true
+
+[twinleaf_town_player_house_2f_bag]
+id = 328
+table = "overworld"
+type = "bag"
+check = 0xB9C
+label = "Twinleaf Town - Bag in Player's Bedroom"
+original_item = "bag"

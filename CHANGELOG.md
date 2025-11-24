@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [0.2.0] - TBD
 ### Added
 * Universal tracker YAML-less support.
+* A location for the bag item.
 ### Fixed
 * Non-determinism of generation.
 * Elite Four rematch is triggered only if the game has been completed and stark mountain has been cleared.

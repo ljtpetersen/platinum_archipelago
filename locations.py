@@ -39,6 +39,7 @@ location_types: Mapping[str, LocationType] = {
         should_be_added = lambda opts : opts.unown_option == UnownsOption.option_item
     ),
     "accessory": LocationType(is_enabled = lambda opts : opts.accessories.value == 1),
+    "bag": LocationType(is_enabled = lambda opts : opts.bag.value == 1),
 }
 
 def get_parent_region(label: str, world: "PokemonPlatinumWorld") -> str | None:

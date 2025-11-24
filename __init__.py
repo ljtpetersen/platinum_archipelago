@@ -89,10 +89,6 @@ class PokemonPlatinumWorld(World):
         for item in ["master_repel", "s_s_ticket", "marsh_pass", "storage_key"]:
             if getattr(self.options, item).value == 1:
                 add_items.append(item)
-        if self.options.bag.value == 1:
-            add_items.append("bag")
-        else:
-            self.multiworld.push_precollected(self.create_item(itemdata.items["bag"].label))
 
         itempool = []
         for loc in item_locations:
