@@ -1111,6 +1111,7 @@ locs = [
     #"pal_park_lobby_kitchentimer",
     #"pal_park_lobby_colorchanger",
     "pal_park_lobby_counter",
+    "pal_park_lobby_emerald_cartridge",
 ]
 header = "pal_park_lobby"
 events = ["event_met_oak_pal_park"]

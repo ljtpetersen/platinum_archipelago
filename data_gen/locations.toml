@@ -5973,3 +5973,11 @@ type = "cartridge"
 table = "base"
 label = "Valley Windworks - Ruby Cartridge from Scientist After Defeating Mars"
 check = { id = 0x4089, value = 2 }
+
+[pal_park_lobby_emerald_cartridge]
+id = 124
+check = 0xBA0
+type = "cartridge"
+table = "base"
+label = "Pal Park - Emerald Cartridge from Guy"
+original_item = "emerald_cartridge"
