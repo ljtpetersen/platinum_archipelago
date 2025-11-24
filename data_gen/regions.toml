@@ -1585,6 +1585,8 @@ locs = [
     "jubilife_city_pedometer",
     "jubilife_city_partystatus",
     "jubilife_city_fashion_case",
+    "jubilife_city_firered_cartridge",
+    "jubilife_city_leafgreen_cartridge",
 ]
 
 [jubilife_city_unknown_house_4]

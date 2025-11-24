@@ -63,6 +63,10 @@ class RandomizeAccessories(Toggle):
     """Adds fashion accessories to the item pool."""
     display_name = "Randomize Accessories"
 
+class RandomizeCartridges(Toggle):
+    """Adds the GBA cartridges to the item pool."""
+    display_name = "Randomize Cartridges"
+
 class HmBadgeRequirements(DefaultOnToggle):
     """Require the corresponding badge to use an HM outside of battle."""
     display_name = "Require Badges for HMs"
@@ -337,6 +341,7 @@ logic_dependent_options: Sequence[str] = [
     "bicycle",
     "pokedex",
     "accessories",
+    "cartridges",
     "hm_badge_requirement",
     "remove_badge_requirements",
     "visibility_hm_logic",
@@ -371,6 +376,7 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
     bicycle: RandomizeBicycle
     pokedex: RandomizePokedex
     accessories: RandomizeAccessories
+    cartridges: RandomizeCartridges
 
     hm_badge_requirement: HmBadgeRequirements
     remove_badge_requirements: RemoveBadgeRequirement

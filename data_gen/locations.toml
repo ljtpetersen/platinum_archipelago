@@ -5941,3 +5941,19 @@ type = "bag"
 check = 0xB9C
 label = "Twinleaf Town - Bag in Player's Bedroom"
 original_item = "bag"
+
+[jubilife_city_firered_cartridge]
+id = 120
+original_item = "firered_cartridge"
+type = "cartridge"
+table = "base"
+label = "Jubilife City - Fire Red Cartridge from DS Kid"
+check = 0xB9D
+
+[jubilife_city_leafgreen_cartridge]
+id = 121
+original_item = "leafgreen_cartridge"
+type = "cartridge"
+table = "base"
+label = "Jubilife City - Leaf Green Cartridge from DS Kid"
+check = 0xB9E
