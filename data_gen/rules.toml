@@ -139,7 +139,7 @@ locs.route_209_lost_tower_5f_cleanse_tag = "defog"
 locs.route_209_lost_tower_5f_spell_tag = "defog"
 
 locs.solaceon_town_pokemonhistory = "regional_mons(50)"
-exits.maniac_tunnel.solaceon_ruins_maniac_tunnel_room = "event_solaceon_ruins if unown_option == option_vanilla else uunown * 26 if unown_option == option_item"
+exits.maniac_tunnel.solaceon_ruins_maniac_tunnel_room = "uunown * 26 if unown_option == option_item else event_solaceon_ruins if unown_option == option_vanilla"
 locs.solaceon_ruins_room_2_green_shard = "hm05"
 
 exits.route_210_south.route_210_south_upper = "secretpotion"

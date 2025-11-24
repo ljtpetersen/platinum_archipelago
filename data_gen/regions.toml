@@ -286,6 +286,7 @@ locs = [
 exits = [
     "twinleaf_town_player_house_1f",
 ]
+locs = ["twinleaf_town_player_house_2f_bag"]
 header = "twinleaf_town_player_house_2f"
 
 [victory_road_b1f]
