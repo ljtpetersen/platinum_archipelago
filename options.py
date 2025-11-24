@@ -3,6 +3,7 @@
 # Copyright (C) 2025 James Petersen <m@jamespetersen.ca>
 # Licensed under MIT. See LICENSE
 
+from collections.abc import Mapping, MutableMapping, Sequence
 from dataclasses import dataclass
 from typing import Any
 from Options import Choice, DefaultOnToggle, OptionDict, OptionError, OptionSet, PerGameCommonOptions, Range, Toggle
@@ -323,6 +324,39 @@ class HBSpeed(Range):
     range_end = 16
     default = 1
 
+logic_dependent_options: Sequence[str] = [
+    "hms",
+    "badges",
+    "overworlds",
+    "hiddens",
+    "npc_gifts",
+    "key_items",
+    "rods",
+    "poketch_apps",
+    "running_shoes",
+    "bicycle",
+    "pokedex",
+    "accessories",
+    "hm_badge_requirement",
+    "remove_badge_requirements",
+    "visibility_hm_logic",
+    "dowsing_machine_logic",
+    "north_sinnoh_fly",
+    "parcel_coupons_route_203",
+    "regional_dex_goal",
+    "early_sunyshore",
+    "pastoria_barriers",
+    "master_repel",
+    "s_s_ticket",
+    "marsh_pass",
+    "exp_multiplier",
+    "storage_key",
+    "bag",
+    "unown_option",
+    "show_unrandomized_progression_items",
+    "goal",
+]
+
 @dataclass
 class PokemonPlatinumOptions(PerGameCommonOptions):
     hms: RandomizeHms
@@ -382,3 +416,10 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
         if self.bag and self.dowsing_machine_logic and not (self.overworlds or self.npc_gifts or self.rods or self.running_shoes or self.pokedex or self.key_items.value > 0):
             raise OptionError(f"if the bag is enabled, then at least one of overworlds, npc_gifts, rods, running_shoes, pokedex, key_items must be enabled")
 
+
+    def save_options(self) -> MutableMapping[str, Any]:
+        return self.as_dict(*logic_dependent_options)
+
+    def load_options(self, slot_data: Mapping[str, Any]) -> None:
+        for key in logic_dependent_options:
+            getattr(self, key).value = slot_data[key]

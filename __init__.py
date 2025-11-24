@@ -60,6 +60,12 @@ class PokemonPlatinumWorld(World):
     required_locations: RequiredLocations
 
     def generate_early(self) -> None:
+        if hasattr(self.multiworld, "generation_is_fake") \
+            and hasattr(self.multiworld, "re_gen_passthrough") \
+            and "Pokemon Platinum" in self.multiworld.re_gen_passthrough: # type: ignore
+            slot_data: Mapping[str, Any] = self.multiworld.re_gen_passthrough["Pokemon Platinum"] # type: ignore
+            self.options.load_options(slot_data)
+
         self.required_locations = RequiredLocations(self.options)
         self.options.validate()
 
@@ -131,5 +137,12 @@ class PokemonPlatinumWorld(World):
             self.player)
 
     def fill_slot_data(self) -> Mapping[str, Any]:
-        ret = self.options.as_dict("goal", "remote_items")
+        ret = self.options.save_options()
+        ret["remote_items"] = self.options.remote_items.value
         return ret
+
+    @staticmethod
+    def interpret_slot_data(slot_data: Mapping[str, Any]) -> Mapping[str, Any]:
+        return slot_data
+
+    ut_can_gen_without_yaml = True
