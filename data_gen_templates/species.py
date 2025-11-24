@@ -3,7 +3,7 @@
 # Copyright (C) 2025 James Petersen <m@jamespetersen.ca>
 # Licensed under MIT. See LICENSE
 
-from collections.abc import Mapping, Set
+from collections.abc import Mapping, Sequence, Set
 from dataclasses import dataclass
 from . import Hm
 
@@ -21,6 +21,6 @@ species: Mapping[str, SpeciesData] = {
     # TEMPLATE: SPECIES
 }
 
-regional_mons: Set[str] = frozenset({
+regional_mons: Sequence[str] = [
     # TEMPLATE: REGIONAL_SPECIES
-})
+]

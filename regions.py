@@ -11,7 +11,7 @@ from typing import Tuple, TYPE_CHECKING
 from worlds.pokemon_platinum.options import PokemonPlatinumOptions
 
 from .data import regions as regiondata
-from .data.encounters import encounter_types, encounters
+from .data.encounters import encounter_types_seq, encounters
 from .locations import PokemonPlatinumLocation
 
 if TYPE_CHECKING:
@@ -47,7 +47,7 @@ def create_regions(world: "PokemonPlatinumWorld") -> Mapping[str, Region]:
         if header not in encounters:
             return
         encs = encounters[wild_region_data.header]
-        for type in encounter_types:
+        for type in encounter_types_seq:
             if type not in wild_region_data.accessible_encounters:
                 continue
             e = getattr(encs, type)

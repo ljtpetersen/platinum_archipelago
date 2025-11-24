@@ -25,6 +25,9 @@ def get_toml(name: str) -> Mapping[str, Any]:
 def convert_frozenset(seq: Sequence[str]) -> str:
     return "frozenset({{{}}})".format(", ".join(map(lambda s : f'"{s}"', seq)))
 
+def convert_list(seq: Sequence[str]) -> str:
+    return "[{}]".format(", ".join(map(lambda s : f'"{s}"', seq)))
+
 def convert_item_groups(group: str, items: Set[str]) -> Sequence[str]:
     ret = [f"{group}: {{\n"]
     ret += [f"    {item},\n" for item in items]
@@ -45,7 +48,13 @@ class Region:
 
     def __str__(self) -> str:
         ret = f"RegionData(header=\"{self.header}\""
-        centre = ", ".join([f"{name}={convert_frozenset(val)}"
+        convs = {
+            "exits": convert_list,
+            "events": convert_list,
+            "accessible_encounters": convert_frozenset,
+            "locs": convert_list,
+        }
+        centre = ", ".join([f"{name}={convs[name](val)}"
             for name, val in map(lambda name : (name, getattr(self, name)),
                                   ["exits", "locs", "events", "accessible_encounters"])
             if val])
@@ -65,7 +74,7 @@ class Encounters:
     super_rod: Sequence[str] = field(default_factory=list)
 
     def __str__(self) -> str:
-        centre = ", ".join([f"{type}={convert_frozenset(encs)}"
+        centre = ", ".join([f"{type}={convert_list(encs)}"
             for type, encs in map(lambda type : (type, getattr(self, type)),
                                   ["land", "surf", "old_rod", "good_rod", "super_rod"])
             if encs])

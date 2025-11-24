@@ -291,6 +291,10 @@ def generate_output(world: "PokemonPlatinumWorld", output_directory: str, patch:
                 original_item = world.random.choice(location.original_item)
             put_in_table(location.table, location.id, items[original_item].get_raw_id())
 
+    for i in range(max(tables.keys())):
+        if i not in tables:
+            tables[i] = bytearray()
+
     ap_bin += len(tables).to_bytes(length=4, byteorder='little')
     for table in sorted(tables.keys()):
         data = tables[table]
