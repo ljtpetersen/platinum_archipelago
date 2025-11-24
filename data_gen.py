@@ -7,7 +7,7 @@
 
 
 from dataclasses import dataclass, field
-from collections.abc import Callable, Mapping, MutableMapping, Set, Sequence
+from collections.abc import Callable, Mapping, MutableMapping, MutableSequence, Set, Sequence
 from typing import Any
 import tomllib
 from data_gen_rules import ItemConditions, RuleWithOpts, parse_rule
@@ -391,7 +391,26 @@ class ParserState:
             for k, v in self.rom_interface.loc_table.items()]
         ret["LOCATIONS"] = [f"\"{k}\": {v.to_string(location_region_map.get(k))},\n" for k, v in self.locations.items()]
         rule_items = self.get_rule_items()
-        ret["REQUIRED_LOCATIONS"] = [l for k, v in self.locations.items() for l in rule_items.cond_to_string(k, v.original_item)]
+        req_locs: Mapping[str, MutableSequence[str]] = {}
+        for k, v in self.locations.items():
+            cond = rule_items.get_cond_str(v.original_item)
+            if cond is not None:
+                req_locs.setdefault(cond, []).append(k)
+        req_locs_strs = []
+        for cond, locs in req_locs.items():
+            if cond == "True":
+                pfx = ""
+            else:
+                pfx = "    "
+                req_locs_strs.append(f"if {cond}:\n")
+            if len(locs) == 1:
+                req_locs_strs.append(f'{pfx}self.loc_rules.add("{locs[0]}")')
+            else:
+                req_locs_strs.append(f'{pfx}self.loc_rules |= {{\n')
+                for k in locs:
+                    req_locs_strs.append(f'{pfx}    "{k}",\n')
+                req_locs_strs.append(f'{pfx}}}\n')
+        ret["REQUIRED_LOCATIONS"] = req_locs_strs
 
         return ret
 

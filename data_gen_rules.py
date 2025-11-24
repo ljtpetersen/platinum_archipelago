@@ -146,14 +146,14 @@ class ItemConditions:
         for k in self.base.keys() - items:
             del self.base[k]
 
-    def cond_to_string(self, loc: str, item: str | Sequence[str]) -> Sequence[str]:
+    def get_cond_str(self, item: str | Sequence[str]) -> str | None:
         if not isinstance(item, str) or item not in self.base:
-            return []
+            return None
         cond = self.base[item] # type: ignore
         if cond is not None:
-            return [f"if {Condition(cond)}:\n", f"    self.loc_rules.add(\"{loc}\")\n"]
+            return str(Condition(cond))
         else:
-            return [f"self.loc_rules.add(\"{loc}\")\n"]
+            return "True"
 
 @dataclass(frozen=True)
 class FuncCall:
