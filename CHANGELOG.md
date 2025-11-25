@@ -8,10 +8,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [0.2.0] - TBD
 ### Added
 * Universal tracker YAML-less support.
-* A location for the bag item.
+* A location for the bag item. (untested)
+* Locations for the GBA cartridge items. (untested)
+* A linking cable item. (untested)
 ### Fixed
 * Non-determinism of generation.
-* Elite Four rematch is triggered only if the game has been completed and stark mountain has been cleared.
+* Elite Four rematch is triggered only if the game has been completed and stark mountain has been cleared. (untested)
 
 ## [0.1.5] - 2025-10-01
 ### Fixed

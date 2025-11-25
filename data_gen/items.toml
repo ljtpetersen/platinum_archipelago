@@ -3634,3 +3634,9 @@ id = 9
 clas = "special"
 group = "gbacart"
 
+[linking_cable]
+label = "Linking Cable"
+id = 471
+clas = "bagitem"
+group = "key_items"
+classification = "progression"
