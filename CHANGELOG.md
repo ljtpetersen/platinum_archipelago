@@ -8,9 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [0.2.0] - TBD
 ### Added
 * Universal tracker YAML-less support.
-* A location for the bag item. (untested)
-* GBA cartridge items and locations for them. (untested)
-* A linking cable item. (untested)
+* A location for the bag item.
+* GBA cartridge items and locations for them.
+* A linking cable item.
 ### Fixed
 * Non-determinism of generation.
 * Elite Four rematch is triggered only if the game has been completed and stark mountain has been cleared. (untested)
@@ -115,7 +115,7 @@ skip over the forms, and the second one would give the National Pokédex.
 ## [0.0.1] - 2025-08-26
 The first release of this project.
 
-[0.1.4]: https://github.com/ljtpetersen/platinum_archipelago/compare/v0.1.5...v0.1.4
+[0.1.5]: https://github.com/ljtpetersen/platinum_archipelago/compare/v0.1.5...v0.1.4
 [0.1.4]: https://github.com/ljtpetersen/platinum_archipelago/compare/v0.1.4...v0.1.3
 [0.1.3]: https://github.com/ljtpetersen/platinum_archipelago/compare/v0.1.3...v0.1.2
 [0.1.2]: https://github.com/ljtpetersen/platinum_archipelago/compare/v0.1.2...v0.1.1
