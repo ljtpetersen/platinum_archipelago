@@ -254,7 +254,6 @@ def generate_output(world: "PokemonPlatinumWorld", output_directory: str, patch:
     add_opt_byte("fps60")
     add_opt_byte("hm_cut_ins")
     add_opt_byte("buck_pos")
-    add_opt_byte("bag")
     ap_bin += (world.options.hb_speed.value - 1).to_bytes(length=1, byteorder='little')
 
     if len(ap_bin) % 2 == 1:
