@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 * Universal tracker YAML-less support.
 * A location for the bag item. (untested)
-* Locations for the GBA cartridge items. (untested)
+* GBA cartridge items and locations for them. (untested)
 * A linking cable item. (untested)
 ### Fixed
 * Non-determinism of generation.
