@@ -16,6 +16,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * Elite Four rematch is triggered only if the game has been completed and stark mountain has been cleared. (untested)
 * The bag now shows the amount of collected unown file items. (untested)
 
+## [0.1.6] - 2025-12-28
+### Fixed
+* Logic error for two locations in Route 212.
+
 ## [0.1.5] - 2025-10-01
 ### Fixed
 * The Super Repel on Route 210 now has the correct rules. (Thanks to [gerbiljames](https://github.com/gerbiljames))
@@ -116,6 +120,7 @@ skip over the forms, and the second one would give the National Pokédex.
 ## [0.0.1] - 2025-08-26
 The first release of this project.
 
+[0.1.5]: https://github.com/ljtpetersen/platinum_archipelago/compare/v0.1.6...v0.1.5
 [0.1.5]: https://github.com/ljtpetersen/platinum_archipelago/compare/v0.1.5...v0.1.4
 [0.1.4]: https://github.com/ljtpetersen/platinum_archipelago/compare/v0.1.4...v0.1.3
 [0.1.3]: https://github.com/ljtpetersen/platinum_archipelago/compare/v0.1.3...v0.1.2
