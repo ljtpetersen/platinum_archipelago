@@ -5,15 +5,17 @@
 
 import bsdiff4
 from collections import Counter
+from hashlib import md5
 import os
 import pkgutil
-from typing import Any, Dict, TYPE_CHECKING
 from settings import get_settings
+from typing import Any, Dict, TYPE_CHECKING
 from worlds.Files import APAutoPatchInterface
 import zipfile
 
 from worlds.pokemon_platinum.options import GameOptions
 
+from .apnds.rom import Rom
 from .data.charmap import charmap
 from .data.locations import locations, LocationTable
 from .data.items import items
@@ -47,25 +49,21 @@ class PokemonPlatinumPatch(APAutoPatchInterface):
     def patch(self, target: str) -> None:
         self.read()
         data = PokemonPlatinumPatch.get_source_data_with_cache()
-        rom_version = data[0x01E]
-        if rom_version == 0:
+        sum = md5(data).hexdigest()
+        if sum == PLATINUM_1_0_US_HASH:
             patch_name = "base_patch_us_rev0.bsdiff4"
-        else:
+        elif sum == PLATINUM_1_1_US_HASH:
             patch_name = "base_patch_us_rev1.bsdiff4"
-        data = bytearray(bsdiff4.patch(data, self.get_file(patch_name)))
+        else:
+            raise ValueError("ROM is not an accepted Pokémon Platinum copy. Only the US Rev. 0 and Rev. 1 ROMs are accepted")
 
-        ap_bin_start = data.find(b'AP BIN FILLER ' * 5)
-        ap_bin_end = data.find(b'\0', ap_bin_start)
-        ap_bin_len = ap_bin_end - ap_bin_start + 1
-        print(f"s: {ap_bin_start}, e: {ap_bin_end}, l: {ap_bin_len}")
+        rom = Rom.from_bytes(bsdiff4.patch(data, self.get_file(patch_name)))
 
         ap_bin = self.get_file("ap.bin")
-        if len(ap_bin) > ap_bin_len:
-            raise IndexError(f"ap.bin length is too long to fit in ROM. ap.bin: {len(ap_bin)}, capacity: {ap_bin_len}")
-        data[ap_bin_start:ap_bin_start + len(ap_bin)] = ap_bin
+        rom.files["/ap.bin"] = ap_bin
 
         with open(target, 'wb') as f:
-            f.write(data)
+            f.write(rom.to_bytes())
 
     def __init__(self, *args: Any, **kwargs: Any):
         super().__init__(*args, **kwargs)

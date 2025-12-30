@@ -41,7 +41,7 @@ DATA_GEN_OUT := data/__init__.py \
        data/rules.py \
        data/species.py
 
-APNDS_VERSION=0.1
+APNDS_VERSION=0.1.1
 
 PATCHES := $(ROMS:%=patches/base_patch_%.bsdiff4)
 
