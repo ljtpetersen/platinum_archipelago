@@ -40,10 +40,8 @@ DATA_GEN_OUT := data/__init__.py \
        data/regions.py \
        data/rules.py \
        data/species.py
-APNDS_FILES := apnds/apnds/__init__.py \
-	apnds/apnds/lz.py \
-	apnds/apnds/narc.py \
-	apnds/apnds/rom.py
+
+APNDS_VERSION=0.1
 
 PATCHES := $(ROMS:%=patches/base_patch_%.bsdiff4)
 
@@ -57,24 +55,27 @@ data_gen: $(DATA)
 	@echo DATA GEN
 	$Q./data_gen.py
 
-apnds:
-	@echo CLONE apnds
-	git clone https://github.com/ljtpetersen/apnds.git apnds
-
-update_apnds: apnds
-	@echo UPDATE apnds
-	$Qcd apnds && git pull origin master >/dev/null 2>&1 && git checkout latest >/dev/null 2>&1
+update_apnds:
+	@if [ -d "apnds" ] && [ -f "apnds/version" ] && [ "`cat apnds/version`" = "$(APNDS_VERSION)" ]; then \
+	    :; \
+	else \
+	    echo UDPATE APNDS; \
+	    curl -LSso apnds.tar.gz https://github.com/ljtpetersen/apnds/releases/download/v$(APNDS_VERSION)/apnds.tar.gz && \
+	    rm -rf apnds && \
+	    tar xzf apnds.tar.gz && \
+	    rm apnds.tar.gz && \
+	    echo $(APNDS_VERSION) >apnds/version; \
+	fi
 
 pokemon_platinum.apworld: data_gen $(SOURCES) update_apnds $(PATCHES)
 	@echo MAKE APWORLD
 	$Qrm -f $@
-	$Qmkdir -p pokemon_platinum/docs pokemon_platinum/data pokemon_platinum/patches pokemon_platinum/apnds/apnds
+	$Qmkdir -p pokemon_platinum/docs pokemon_platinum/data pokemon_platinum/patches
 	$Qcp $(DATA_GEN_OUT) pokemon_platinum/data
 	$Qcp $(DOCS) pokemon_platinum/docs
 	$Qcp $(PATCHES) pokemon_platinum/patches
 	$Qcp $(SOURCES) pokemon_platinum/
-	$Qcp apnds/LICENSE pokemon_platinum/apnds/LICENSE
-	$Qcp $(APNDS_FILES) pokemon_platinum/apnds/apnds
+	$Qcp -r apnds pokemon_platinum
 	$Qzip -r $@ pokemon_platinum
 	$Qrm -r pokemon_platinum
 	
