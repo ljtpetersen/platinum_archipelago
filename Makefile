@@ -1,5 +1,5 @@
 
-.PHONY: data_gen
+.PHONY: data_gen update_apnds
 
 Q ?= @
 
@@ -40,6 +40,10 @@ DATA_GEN_OUT := data/__init__.py \
        data/regions.py \
        data/rules.py \
        data/species.py
+APNDS_FILES := apnds/apnds/__init__.py \
+	apnds/apnds/lz.py \
+	apnds/apnds/narc.py \
+	apnds/apnds/rom.py
 
 PATCHES := $(ROMS:%=patches/base_patch_%.bsdiff4)
 
@@ -53,14 +57,24 @@ data_gen: $(DATA)
 	@echo DATA GEN
 	$Q./data_gen.py
 
-pokemon_platinum.apworld: data_gen $(SOURCES) $(PATCHES)
+apnds:
+	@echo CLONE apnds
+	git clone https://github.com/ljtpetersen/apnds.git apnds
+
+update_apnds: apnds
+	@echo UPDATE apnds
+	$Qcd apnds && git pull origin master >/dev/null 2>&1 && git checkout latest >/dev/null 2>&1
+
+pokemon_platinum.apworld: data_gen $(SOURCES) update_apnds $(PATCHES)
 	@echo MAKE APWORLD
 	$Qrm -f $@
-	$Qmkdir -p pokemon_platinum/docs pokemon_platinum/data pokemon_platinum/patches
+	$Qmkdir -p pokemon_platinum/docs pokemon_platinum/data pokemon_platinum/patches pokemon_platinum/apnds/apnds
 	$Qcp $(DATA_GEN_OUT) pokemon_platinum/data
 	$Qcp $(DOCS) pokemon_platinum/docs
 	$Qcp $(PATCHES) pokemon_platinum/patches
 	$Qcp $(SOURCES) pokemon_platinum/
+	$Qcp apnds/LICENSE pokemon_platinum/apnds/LICENSE
+	$Qcp $(APNDS_FILES) pokemon_platinum/apnds/apnds
 	$Qzip -r $@ pokemon_platinum
 	$Qrm -r pokemon_platinum
 	
