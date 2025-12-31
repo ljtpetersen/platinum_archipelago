@@ -3,20 +3,22 @@
 # Copyright (C) 2025 James Petersen <m@jamespetersen.ca>
 # Licensed under MIT. See LICENSE
 
+from collections.abc import MutableSequence, MutableSet
 import bsdiff4
 from collections import Counter
 from hashlib import md5
 import os
 import pkgutil
 from settings import get_settings
-from typing import Any, Dict, TYPE_CHECKING
+import struct
+from typing import Any, Dict, TYPE_CHECKING, Tuple
 from worlds.Files import APAutoPatchInterface
 import zipfile
 
 from worlds.pokemon_platinum.options import GameOptions
 
 from .apnds.rom import Rom
-from .data.charmap import charmap
+from .data.charmap import encode_string
 from .data.locations import locations, LocationTable
 from .data.items import items
 
@@ -91,65 +93,31 @@ class PokemonPlatinumPatch(APAutoPatchInterface):
     def get_file(self, file: str) -> bytes:
         if file not in self.files:
             self.read()
-        print(self.files.keys())
         return self.files[file]
 
     def write_file(self, file_name: str, file: bytes) -> None:
         self.files[file_name] = file
 
-def encode_name(name: str) -> bytes | None:
-    ret = bytes()
-    state = "normal"
-    buf = ""
-    for c in name:
-        match state:
-            case "normal":
-                if c == '\\':
-                    state = "escape"
-                elif c == '{':
-                    state = "bracket"
-                    buf = ""
-                elif c in charmap:
-                    ret += charmap[c].to_bytes(length=2, byteorder='little')
-                else:
-                    return None
-            case "escape":
-                if "\\" + c in charmap:
-                    ret += charmap["\\" + c].to_bytes(length=2, byteorder='little')
-                    state = "normal"
-                else:
-                    return None
-            case "bracket":
-                if c == '}':
-                    if buf in charmap:
-                        ret += charmap[buf].to_bytes(length=2, byteorder='little')
-                    else:
-                        return None
-                    state = "normal"
-                else:
-                    buf += c
-        if len(ret) >= 15:
-            return None
-    return ret + b'\xFF' * (16 - len(ret))
-
 def process_name(name: str, world: "PokemonPlatinumWorld") -> bytes:
-    if name == "vanilla":
-        return b'\xFF' * 16
-    if name == "random":
-        other_players = [world.multiworld.get_file_safe_player_name(id) for id in world.multiworld.player_name if id != world.player] # type: ignore
-        world.random.shuffle(other_players)
-        # if no player name matches, then return vanilla
-        for name in other_players:
-            ret = encode_name(name)
-            if ret:
-                return ret
-        return b'\xFF' * 16
-    if name == "player_name":
-        ret = encode_name(world.multiworld.get_file_safe_player_name(world.player))
-    else:
-        ret = encode_name(name)
-    if ret is not None:
-        return ret
+    match name:
+        case "vanilla":
+            return b'\xFF' * 16
+        case "random":
+            other_players = [world.multiworld.get_file_safe_player_name(id) for id in world.multiworld.player_name if id != world.player] # type: ignore
+            world.random.shuffle(other_players)
+            # if no player name matches, then return vanilla
+            for name in other_players:
+                ret = encode_string(name)
+                if ret is not None:
+                    break
+            else:
+                return b'\xFF' * 16
+        case "player_name":
+            ret = encode_string(world.multiworld.get_file_safe_player_name(world.player))
+        case _:
+            ret = encode_string(name)
+    if ret is not None and len(ret) <= 14:
+        return ret + b'\xFF' * (16 - len(ret))
     else:
         return b'\xFF' * 16
 
@@ -257,7 +225,7 @@ def generate_output(world: "PokemonPlatinumWorld", output_directory: str, patch:
     if len(ap_bin) % 2 == 1:
         ap_bin += b'\x00'
 
-    tables: dict[LocationTable, bytearray] = {}
+    tables: dict[int, bytearray] = {}
 
     def put_in_table(table: LocationTable, id: int, item_id: int):
         if table not in tables:
@@ -269,6 +237,12 @@ def generate_output(world: "PokemonPlatinumWorld", output_directory: str, patch:
 
     filled_locations = set()
 
+    dest_names: MutableSequence[str] = []
+    dest_names_set: MutableSet[str] = set()
+    foreign_item_names: MutableSequence[str] = []
+    foreign_item_names_set: MutableSet[str] = set()
+    foreign_items: MutableSequence[Tuple[str, str]] = []
+
     for location in world.multiworld.get_locations(world.player):
         if location.address is None or location.item is None or location.item.code is None:
             continue
@@ -278,7 +252,16 @@ def generate_output(world: "PokemonPlatinumWorld", output_directory: str, patch:
         if location.item.player == world.player:
             item_id = location.item.code
         else:
-            item_id = 0xE000
+            dest_name = world.multiworld.player_name[location.item.player]
+            if dest_name not in dest_names_set:
+                dest_names.append(dest_name)
+                dest_names_set.add(dest_name)
+            item_name = location.item.name
+            if item_name not in foreign_item_names_set:
+                foreign_item_names.append(item_name)
+                foreign_item_names_set.add(item_name)
+            item_id = 0xD000 | len(foreign_items)
+            foreign_items.append((item_name, dest_name))
         put_in_table(table, id, item_id)
 
     for location in locations.values():
@@ -304,6 +287,50 @@ def generate_output(world: "PokemonPlatinumWorld", output_directory: str, patch:
     entries = [code.to_bytes(length=2, byteorder='little') + count.to_bytes(length=2, byteorder='little') for code, count in start_inventory.items()]
     ap_bin += len(entries).to_bytes(length=4, byteorder='little')
     ap_bin += b''.join(entries)
+
+    foreign_name_map = {}
+    dest_name_map = {}
+    cur_name_off = 0
+    len_cutoff = 94
+
+    cur_dict = dest_name_map
+    def name_to_strbuf(name: str) -> bytes:
+        nonlocal cur_name_off
+        cur_dict[name] = cur_name_off
+        ret: bytes = encode_string(name, '?', len_cutoff) # type: ignore
+        sz = len(ret) // 2
+        ret = struct.pack("<2HI", sz, sz, 0xB6F8D2EC) + ret + b'\xFF\xFF'
+        if len(ret) % 4 != 0:
+            ret += b'\xFF\xFF'
+        cur_name_off += len(ret)
+        return ret
+
+
+    dest_name_data = b''.join(name_to_strbuf(name) for name in dest_names)
+
+    len_cutoff = 207
+    cur_dict = foreign_name_map
+
+    foreign_name_data = b''.join(name_to_strbuf(name) for name in foreign_item_names)
+
+    import json
+
+    with open(world.player_name + "_dest_names.json", "w") as f:
+        json.dump(dest_name_map, f)
+
+    with open(world.player_name + "_foreign_names.json", "w") as f:
+        json.dump(foreign_name_map, f)
+
+    with open(world.player_name + "names.bin", "wb") as f:
+        f.write(dest_name_data + foreign_name_data)
+
+    def name_idx_to_bytes(idx: Tuple[str, str]) -> bytes:
+        return struct.pack("<HH", foreign_name_map[idx[0]], dest_name_map[idx[1]])
+
+    ap_bin += len(foreign_items).to_bytes(4, 'little')
+    ap_bin += b''.join(name_idx_to_bytes(idx) for idx in foreign_items)
+    ap_bin += (len(dest_name_data) + len(foreign_name_data)).to_bytes(4, 'little')
+    ap_bin += dest_name_data + foreign_name_data
 
     patch.write_file("ap.bin", ap_bin)
 

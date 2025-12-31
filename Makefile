@@ -40,8 +40,12 @@ DATA_GEN_OUT := data/__init__.py \
        data/regions.py \
        data/rules.py \
        data/species.py
-
-APNDS_VERSION=0.1.1
+APNDS_VERSION := 0.1.2
+APNDS_FILES := apnds/LICENSE \
+	apnds/__init__.py \
+	apnds/lz.py \
+	apnds/narc.py \
+	apnds/rom.py
 
 PATCHES := $(ROMS:%=patches/base_patch_%.bsdiff4)
 
@@ -70,12 +74,12 @@ update_apnds:
 pokemon_platinum.apworld: data_gen $(SOURCES) update_apnds $(PATCHES)
 	@echo MAKE APWORLD
 	$Qrm -f $@
-	$Qmkdir -p pokemon_platinum/docs pokemon_platinum/data pokemon_platinum/patches
+	$Qmkdir -p pokemon_platinum/docs pokemon_platinum/data pokemon_platinum/patches pokemon_platinum/apnds
 	$Qcp $(DATA_GEN_OUT) pokemon_platinum/data
 	$Qcp $(DOCS) pokemon_platinum/docs
 	$Qcp $(PATCHES) pokemon_platinum/patches
 	$Qcp $(SOURCES) pokemon_platinum/
-	$Qcp -r apnds pokemon_platinum
+	$Qcp $(APNDS_FILES) pokemon_platinum/apnds
 	$Qzip -r $@ pokemon_platinum
 	$Qrm -r pokemon_platinum
 	

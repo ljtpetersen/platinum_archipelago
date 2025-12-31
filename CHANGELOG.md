@@ -11,6 +11,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * A location for the bag item.
 * GBA cartridge items and locations for them.
 * A linking cable item.
+* TMs for Rollout, Ancient Power, Double Hit, and Mimic (untested)
+* AP items now display their name and destination when picked up.
 ### Fixed
 * Non-determinism of generation.
 * Elite Four rematch is triggered only if the game has been completed and stark mountain has been cleared. (untested)

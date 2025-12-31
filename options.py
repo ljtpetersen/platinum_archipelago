@@ -140,36 +140,7 @@ class GameOptions(OptionDict):
     the following characters are accepted:
     all alphanumeric characters (A-Z, a-z, 0-9),
     and the following symbols: , . ' - : ; ! ? " ( ) ~ @ # % + * / =,
-    and as spaces.
-    as well, there are some special sequences.
-      {"} is an opening double-quotation mark
-      {'} is an opening single-quotation mark
-      {.} is a centred dot (centred vertically)
-      {Z} are two superimposed Zs (as in sleep)
-      ^ is an upwards arrow
-      {v} is a downwards arrow
-      {MALE} is the male sign
-      {FEMALE} is the female sign
-      {...} are ellipsis
-      {O.} is a circle with a dot inside it. {.O} also works
-      {CIRCLE} is a circle
-      {SQUARE} is a square
-      {TRIANGLE} is a triangle
-      {DIAMOND} is a diamond (hollow)
-      {SPADE} is a spade
-      {CLUB} is a club
-      {HEART} is a heart
-      {SUIT DIAMOND} is a diamond (filled)
-      {STAR} is a star
-      {NOTE} is a music note (1/8)
-      {SUN} is a sun
-      {CLOUD} is a cloud
-      {UMBRELLA} is an umbrella
-      {SILHOUETTE} is a really bad looking silhouette
-      {SMILE} is a smiling face
-      {LAUGH} is a laughing face
-      {UPSET} is an upset face
-      {FROWN} is a frowning face
+    and as spaces. Additionally, some special characters, for example most accented vowels, are accepted.
 
     If the player or rival names do not satisfy these constraints, the game will use its original
     behaviour, where the player or rival names are entered during the starting cutscene.

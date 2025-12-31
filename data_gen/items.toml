@@ -3645,3 +3645,28 @@ id = 471
 clas = "bagitem"
 group = "key_items"
 classification = "progression"
+
+[tm93]
+label = "TM93"
+id = 472
+clas = "bagitem"
+group = "tmhms"
+
+[tm94]
+label = "TM94"
+id = 473
+clas = "bagitem"
+group = "tmhms"
+
+[tm95]
+label = "TM95"
+id = 474
+clas = "bagitem"
+group = "tmhms"
+
+[tm96]
+label = "TM96"
+id = 475
+clas = "bagitem"
+group = "tmhms"
+
