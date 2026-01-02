@@ -370,5 +370,5 @@ locs.jubilife_city_sapphire_cartridge = "badges(1)"
 
 locs.twinleaf_town_player_house_1f_ss_ticket = "event_beat_cynthia"
 
-locs.celestic_town_black_glasses = "daytime"
-locs.celestic_town_wise_glasses = "nighttime"
+locs.celestic_town_black_glasses = "daytime & poketch"
+locs.celestic_town_wise_glasses = "nighttime & poketch"
