@@ -86,7 +86,7 @@ class PokemonPlatinumWorld(World):
             locations)
 
         add_items: list[str] = []
-        for item in ["master_repel", "s_s_ticket", "marsh_pass", "storage_key"]:
+        for item in ["master_repel", "storage_key"]:
             if getattr(self.options, item).value == 1:
                 add_items.append(item)
 
@@ -95,7 +95,7 @@ class PokemonPlatinumWorld(World):
             item_id: int = loc.default_item_id # type: ignore
             if item_id > 0 and get_item_classification(item_id) != ItemClassification.filler:
                 itempool.append(self.create_item_by_code(item_id))
-            elif add_items:
+            elif len(add_items) > 0:
                 itempool.append(self.create_item(itemdata.items[add_items.pop()].label))
             else:
                 itempool.append(self.create_item_by_code(item_id))

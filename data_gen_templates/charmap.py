@@ -3,8 +3,6 @@
 # Copyright (C) 2025 James Petersen <m@jamespetersen.ca>
 # Licensed under MIT. See LICENSE
 
-from typing import Tuple
-
 charmap: dict[str, int] = {
     "←": 283,
     "↑": 284,
@@ -134,3 +132,14 @@ def encode_string(val: str, unknown_filler: str | None = None, max_len: int | No
     return out_bytes
 
 _init()
+
+def main():
+    from sys import argv
+    def compute_width(s: str) -> int:
+        return sum(widths[charmap[c] - 1] for c in s)
+    if len(argv) > 1:
+        print("width of string is", compute_width(argv[-1]))
+        print("note: maximum width of message is 212")
+
+if __name__ == "__main__":
+    main()

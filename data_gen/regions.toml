@@ -723,6 +723,7 @@ locs = [
     "twinleaf_town_player_house_1f_running_shoes",
     "twinleaf_town_player_house_1f_journal",
     "twinleaf_town_player_house_1f_parcel",
+    "twinleaf_town_player_house_1f_ss_ticket",
 ]
 header = "twinleaf_town_player_house_1f"
 
@@ -888,6 +889,7 @@ locs = [
     "pastoria_city_mystic_water",
     "pastoria_city_zinc",
     "pastoria_city_piplup_mask",
+    "pastoria_city_marsh_pass",
 ]
 
 [pastoria_city_pokecenter_1f]

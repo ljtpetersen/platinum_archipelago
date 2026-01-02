@@ -208,6 +208,9 @@ class AddSSTicket(Toggle):
     """
     Add the S.S. Ticket to the item pool.
     The S.S. ticket can be used to travel to the fight area before defeating Cynthia.
+    Note: the S.S. Ticket is required to access the fight area, but
+    if it is not randomized, it is given by the player's mom
+    after defeating Cynthia.
     """
     display_name = "Add S.S. Ticket"
 

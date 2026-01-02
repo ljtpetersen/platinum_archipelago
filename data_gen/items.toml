@@ -3670,3 +3670,16 @@ id = 475
 clas = "bagitem"
 group = "tmhms"
 
+[daytime]
+label = "Daytime"
+id = 10
+clas = "special"
+group = "timeitem"
+classification = "progression"
+
+[nighttime]
+label = "Nighttime"
+id = 11
+clas = "special"
+group = "timeitem"
+classification = "progression"

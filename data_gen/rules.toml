@@ -261,7 +261,7 @@ locs.route_217_west_house_icicle_plate = "hm08"
 locs.acuity_lakefront_reaper_cloth = "rock_climb"
 exits.acuity_lakefront.lake_acuity_low_water = "rock_climb"
 
-exits.snowpoint_city.fight_area = "event_beat_cynthia | s_s_ticket"
+exits.snowpoint_city.fight_area = "s_s_ticket"
 exits.snowpoint_city.snowpoint_temple_1f = "national_dex & event_beat_cynthia"
 locs.snowpoint_temple_b4f_full_heal = "strength"
 
@@ -367,3 +367,5 @@ locs.stark_mountain_room_2_nugget = "rock_climb"
 exits.sunyshore_city.sunyshore_city_east_house = "rock_climb"
 
 locs.jubilife_city_sapphire_cartridge = "badges(1)"
+
+locs.twinleaf_town_player_house_1f_ss_ticket = "event_beat_cynthia"

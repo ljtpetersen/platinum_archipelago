@@ -5981,3 +5981,19 @@ type = "cartridge"
 table = "base"
 label = "Pal Park - Emerald Cartridge from Guy"
 original_item = "emerald_cartridge"
+
+[twinleaf_town_player_house_1f_ss_ticket]
+id = 125
+check = 0xBA1
+type = "s_s_ticket"
+table = "base"
+label = "Twinleaf Town - S.S. Ticket from Mom (After Defeating Champion)"
+original_item = "s_s_ticket"
+
+[pastoria_city_marsh_pass]
+id = 126
+check = { id = 0x407C, value = 4 }
+type = "marsh_pass"
+table = "base"
+label = "Pastoria City - Marsh Pass from Wake (After Defeating Gym)"
+original_item = "marsh_pass"
