@@ -5997,3 +5997,43 @@ type = "marsh_pass"
 table = "base"
 label = "Pastoria City - Marsh Pass from Wake (After Defeating Gym)"
 original_item = "marsh_pass"
+
+[celestic_town_choice_specs]
+id = 127
+check = 0x134
+type = "npc_gift"
+table = "base"
+label = "Celestic Town - Choice Specs from Man in Shop (Morning)"
+original_item = "choice_specs"
+
+[celestic_town_black_glasses]
+id = 128
+check = 0x134
+type = "npc_gift"
+table = "base"
+label = "Celestic Town - Black Glasses from Man in Shop (Day)"
+original_item = "blackglasses"
+
+[celestic_town_wise_glasses]
+id = 129
+check = 0x134
+type = "npc_gift"
+table = "base"
+label = "Celestic Town - Black Glasses from Man in Shop (Night)"
+original_item = "wise_glasses"
+
+[vista_lighthouse_daytime]
+id = 329
+check = 0xBA2
+type = "overworld"
+table = "overworld"
+label = "Sunyshore City - Daytime in Lighthouse"
+original_item = "daytime"
+
+[spear_pillar_nighttime]
+id = 330
+check = 0xBA3
+type = "overworld"
+table = "overworld"
+label = "Spear Pillar - Nighttime"
+original_item = "nighttime"

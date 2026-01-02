@@ -15,7 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * AP items now display their name and destination when picked up.
 * A location for the S.S. Ticket.
 * A location for the Marsh Pass.
-* Daytime and nighttime items (which currently do nothing and have no location)
+* Daytime and nighttime items (which currently have no sprites and probably cause the game to crash when the poketch is opened)
 ### Fixed
 * Non-determinism of generation.
 * Elite Four rematch is triggered only if the game has been completed and stark mountain has been cleared. (untested)

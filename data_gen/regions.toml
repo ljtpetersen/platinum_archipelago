@@ -454,6 +454,9 @@ header = "celestic_town"
 locs = [
     "celestic_town_dragon_fang",
     "celestic_town_kings_rock",
+    "celestic_town_choice_specs",
+    "celestic_town_black_glasses",
+    "celestic_town_wise_glasses",
 ]
 
 [celestic_town_northeast_house]
@@ -1938,6 +1941,7 @@ locs = [
     "sunyshore_city_carbos",
     "sunyshore_city_zap_plate",
     "sunyshore_city_hm07",
+    "vista_lighthouse_daytime",
 ]
 
 [vista_lighthouse_elevator]
@@ -4241,6 +4245,7 @@ exits = [
     "distortion_world"
 ]
 header = "spear_pillar"
+locs = ["spear_pillar_nighttime"]
 
 [old_chateau_back_middle_east_room]
 exits = [
