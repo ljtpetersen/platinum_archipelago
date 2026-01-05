@@ -302,6 +302,17 @@ class HBSpeed(Range):
     range_end = 16
     default = 1
 
+class NormalizeEncounters(DefaultOnToggle):
+    """
+    In the vanilla game, encounter slots have varying probabilities, from 20% down to 1%.
+    This option will normalize these, so they all have the same probability. The normalized
+    probabilities are 1/12 for each slot in the land table, and 1/5 for each slot in the water
+    and rod tables.
+
+    This option is modifiable in the in-game options menu.
+    """
+    display_name = "Normalize Encounters"
+
 logic_dependent_options: Sequence[str] = [
     "hms",
     "badges",
@@ -368,6 +379,7 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
     fps60: FPS60
     buck_pos: BuckPos
     hb_speed: HBSpeed
+    normalize_encounters: NormalizeEncounters
 
     master_repel: AddMasterRepel
     s_s_ticket: AddSSTicket
