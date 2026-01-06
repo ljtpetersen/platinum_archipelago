@@ -7,6 +7,7 @@ loc_table.base = 0
 loc_table.overworld = 1
 loc_table.hidden = 2
 loc_table.once = 3
+loc_table.dex = 4
 
 item_clas.bagitem = 0
 item_clas.multibagitem0 = 1

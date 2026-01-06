@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * A location for the Marsh Pass.
 * Daytime and nighttime items.
 * An option to normalize encounter slot probabilities.
+* ROM support for dexsanity. (AP world side is still missing)
 ### Fixed
 * Non-determinism of generation.
 * Elite Four rematch is triggered only if the game has been completed and stark mountain has been cleared. (untested)

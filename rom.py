@@ -206,6 +206,7 @@ def generate_output(world: "PokemonPlatinumWorld", output_directory: str, patch:
     add_opt_byte("early_sunyshore")
     add_opt_byte("unown_option")
     add_opt_byte("pastoria_barriers")
+    ap_bin += b'\0' # where dexsanity goes when dexsanity happens
 
     match game_opts.received_items_notification:
         case "nothing":
