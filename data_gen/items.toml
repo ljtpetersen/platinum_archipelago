@@ -8,7 +8,6 @@ label = "Master Ball"
 id = 1
 clas = "bagitem"
 group = "balls"
-classification = "useful"
 
 [ultra_ball]
 label = "Ultra Ball"
@@ -141,21 +140,18 @@ label = "Full Restore"
 id = 23
 clas = "bagitem"
 group = "medicine"
-classification = "useful"
 
 [max_potion]
 label = "Max Potion"
 id = 24
 clas = "bagitem"
 group = "medicine"
-classification = "useful"
 
 [hyper_potion]
 label = "Hyper Potion"
 id = 25
 clas = "bagitem"
 group = "medicine"
-classification = "useful"
 
 [super_potion]
 label = "Super Potion"
@@ -168,7 +164,6 @@ label = "Full Heal"
 id = 27
 clas = "bagitem"
 group = "medicine"
-classification = "useful"
 
 [revive]
 label = "Revive"
@@ -181,7 +176,6 @@ label = "Max Revive"
 id = 29
 clas = "bagitem"
 group = "medicine"
-classification = "useful"
 
 [fresh_water]
 label = "Fresh Water"
@@ -230,28 +224,24 @@ label = "Revival Herb"
 id = 37
 clas = "bagitem"
 group = "medicine"
-classification = "useful"
 
 [ether]
 label = "Ether"
 id = 38
 clas = "bagitem"
 group = "medicine"
-classification = "useful"
 
 [max_ether]
 label = "Max Ether"
 id = 39
 clas = "bagitem"
 group = "medicine"
-classification = "useful"
 
 [elixir]
 label = "Elixir"
 id = 40
 clas = "bagitem"
 group = "medicine"
-classification = "useful"
 
 [max_elixir]
 label = "Max Elixir"
@@ -283,63 +273,54 @@ label = "HP Up"
 id = 45
 clas = "bagitem"
 group = "medicine"
-classification = "useful"
 
 [protein]
 label = "Protein"
 id = 46
 clas = "bagitem"
 group = "medicine"
-classification = "useful"
 
 [iron]
 label = "Iron"
 id = 47
 clas = "bagitem"
 group = "medicine"
-classification = "useful"
 
 [carbos]
 label = "Carbos"
 id = 48
 clas = "bagitem"
 group = "medicine"
-classification = "useful"
 
 [calcium]
 label = "Calcium"
 id = 49
 clas = "bagitem"
 group = "medicine"
-classification = "useful"
 
 [rare_candy]
 label = "Rare Candy"
 id = 50
 clas = "bagitem"
 group = "medicine"
-classification = "useful"
 
 [pp_up]
 label = "PP Up"
 id = 51
 clas = "bagitem"
 group = "medicine"
-classification = "useful"
 
 [zinc]
 label = "Zinc"
 id = 52
 clas = "bagitem"
 group = "medicine"
-classification = "useful"
 
 [pp_max]
 label = "PP Max"
 id = 53
 clas = "bagitem"
 group = "medicine"
-classification = "useful"
 
 [old_gateau]
 label = "Old Gateau"
@@ -1860,414 +1841,483 @@ label = "TM01"
 id = 328
 clas = "bagitem"
 group = "tmhms"
+classification = "useful"
 
 [tm02]
 label = "TM02"
 id = 329
 clas = "bagitem"
 group = "tmhms"
+classification = "useful"
 
 [tm03]
 label = "TM03"
 id = 330
 clas = "bagitem"
 group = "tmhms"
+classification = "useful"
 
 [tm04]
 label = "TM04"
 id = 331
 clas = "bagitem"
 group = "tmhms"
+classification = "useful"
 
 [tm05]
 label = "TM05"
 id = 332
 clas = "bagitem"
 group = "tmhms"
+classification = "useful"
 
 [tm06]
 label = "TM06"
 id = 333
 clas = "bagitem"
 group = "tmhms"
+classification = "useful"
 
 [tm07]
 label = "TM07"
 id = 334
 clas = "bagitem"
 group = "tmhms"
+classification = "useful"
 
 [tm08]
 label = "TM08"
 id = 335
 clas = "bagitem"
 group = "tmhms"
+classification = "useful"
 
 [tm09]
 label = "TM09"
 id = 336
 clas = "bagitem"
 group = "tmhms"
+classification = "useful"
 
 [tm10]
 label = "TM10"
 id = 337
 clas = "bagitem"
 group = "tmhms"
+classification = "useful"
 
 [tm11]
 label = "TM11"
 id = 338
 clas = "bagitem"
 group = "tmhms"
+classification = "useful"
 
 [tm12]
 label = "TM12"
 id = 339
 clas = "bagitem"
 group = "tmhms"
+classification = "useful"
 
 [tm13]
 label = "TM13"
 id = 340
 clas = "bagitem"
 group = "tmhms"
+classification = "useful"
 
 [tm14]
 label = "TM14"
 id = 341
 clas = "bagitem"
 group = "tmhms"
+classification = "useful"
 
 [tm15]
 label = "TM15"
 id = 342
 clas = "bagitem"
 group = "tmhms"
+classification = "useful"
 
 [tm16]
 label = "TM16"
 id = 343
 clas = "bagitem"
 group = "tmhms"
+classification = "useful"
 
 [tm17]
 label = "TM17"
 id = 344
 clas = "bagitem"
 group = "tmhms"
+classification = "useful"
 
 [tm18]
 label = "TM18"
 id = 345
 clas = "bagitem"
 group = "tmhms"
+classification = "useful"
 
 [tm19]
 label = "TM19"
 id = 346
 clas = "bagitem"
 group = "tmhms"
+classification = "useful"
 
 [tm20]
 label = "TM20"
 id = 347
 clas = "bagitem"
 group = "tmhms"
+classification = "useful"
 
 [tm21]
 label = "TM21"
 id = 348
 clas = "bagitem"
 group = "tmhms"
+classification = "useful"
 
 [tm22]
 label = "TM22"
 id = 349
 clas = "bagitem"
 group = "tmhms"
+classification = "useful"
 
 [tm23]
 label = "TM23"
 id = 350
 clas = "bagitem"
 group = "tmhms"
+classification = "useful"
 
 [tm24]
 label = "TM24"
 id = 351
 clas = "bagitem"
 group = "tmhms"
+classification = "useful"
 
 [tm25]
 label = "TM25"
 id = 352
 clas = "bagitem"
 group = "tmhms"
+classification = "useful"
 
 [tm26]
 label = "TM26"
 id = 353
 clas = "bagitem"
 group = "tmhms"
+classification = "useful"
 
 [tm27]
 label = "TM27"
 id = 354
 clas = "bagitem"
 group = "tmhms"
+classification = "useful"
 
 [tm28]
 label = "TM28 Dig"
 id = 355
 clas = "bagitem"
 group = "tmhms"
+classification = "useful"
 
 [tm29]
 label = "TM29"
 id = 356
 clas = "bagitem"
 group = "tmhms"
+classification = "useful"
 
 [tm30]
 label = "TM30"
 id = 357
 clas = "bagitem"
 group = "tmhms"
+classification = "useful"
 
 [tm31]
 label = "TM31"
 id = 358
 clas = "bagitem"
 group = "tmhms"
+classification = "useful"
 
 [tm32]
 label = "TM32"
 id = 359
 clas = "bagitem"
 group = "tmhms"
+classification = "useful"
 
 [tm33]
 label = "TM33"
 id = 360
 clas = "bagitem"
 group = "tmhms"
+classification = "useful"
 
 [tm34]
 label = "TM34"
 id = 361
 clas = "bagitem"
 group = "tmhms"
+classification = "useful"
 
 [tm35]
 label = "TM35"
 id = 362
 clas = "bagitem"
 group = "tmhms"
+classification = "useful"
 
 [tm36]
 label = "TM36"
 id = 363
 clas = "bagitem"
 group = "tmhms"
+classification = "useful"
 
 [tm37]
 label = "TM37"
 id = 364
 clas = "bagitem"
 group = "tmhms"
+classification = "useful"
 
 [tm38]
 label = "TM38"
 id = 365
 clas = "bagitem"
 group = "tmhms"
+classification = "useful"
 
 [tm39]
 label = "TM39"
 id = 366
 clas = "bagitem"
 group = "tmhms"
+classification = "useful"
 
 [tm40]
 label = "TM40"
 id = 367
 clas = "bagitem"
 group = "tmhms"
+classification = "useful"
 
 [tm41]
 label = "TM41"
 id = 368
 clas = "bagitem"
 group = "tmhms"
+classification = "useful"
 
 [tm42]
 label = "TM42"
 id = 369
 clas = "bagitem"
 group = "tmhms"
+classification = "useful"
 
 [tm43]
 label = "TM43"
 id = 370
 clas = "bagitem"
 group = "tmhms"
+classification = "useful"
 
 [tm44]
 label = "TM44"
 id = 371
 clas = "bagitem"
 group = "tmhms"
+classification = "useful"
 
 [tm45]
 label = "TM45"
 id = 372
 clas = "bagitem"
 group = "tmhms"
+classification = "useful"
 
 [tm46]
 label = "TM46"
 id = 373
 clas = "bagitem"
 group = "tmhms"
+classification = "useful"
 
 [tm47]
 label = "TM47"
 id = 374
 clas = "bagitem"
 group = "tmhms"
+classification = "useful"
 
 [tm48]
 label = "TM48"
 id = 375
 clas = "bagitem"
 group = "tmhms"
+classification = "useful"
 
 [tm49]
 label = "TM49"
 id = 376
 clas = "bagitem"
 group = "tmhms"
+classification = "useful"
 
 [tm50]
 label = "TM50"
 id = 377
 clas = "bagitem"
 group = "tmhms"
+classification = "useful"
 
 [tm51]
 label = "TM51"
 id = 378
 clas = "bagitem"
 group = "tmhms"
+classification = "useful"
 
 [tm52]
 label = "TM52"
 id = 379
 clas = "bagitem"
 group = "tmhms"
+classification = "useful"
 
 [tm53]
 label = "TM53"
 id = 380
 clas = "bagitem"
 group = "tmhms"
+classification = "useful"
 
 [tm54]
 label = "TM54"
 id = 381
 clas = "bagitem"
 group = "tmhms"
+classification = "useful"
 
 [tm55]
 label = "TM55"
 id = 382
 clas = "bagitem"
 group = "tmhms"
+classification = "useful"
 
 [tm56]
 label = "TM56"
 id = 383
 clas = "bagitem"
 group = "tmhms"
+classification = "useful"
 
 [tm57]
 label = "TM57"
 id = 384
 clas = "bagitem"
 group = "tmhms"
+classification = "useful"
 
 [tm58]
 label = "TM58"
 id = 385
 clas = "bagitem"
 group = "tmhms"
+classification = "useful"
 
 [tm59]
 label = "TM59"
 id = 386
 clas = "bagitem"
 group = "tmhms"
+classification = "useful"
 
 [tm60]
 label = "TM60"
 id = 387
 clas = "bagitem"
 group = "tmhms"
+classification = "useful"
 
 [tm61]
 label = "TM61"
 id = 388
 clas = "bagitem"
 group = "tmhms"
+classification = "useful"
 
 [tm62]
 label = "TM62"
 id = 389
 clas = "bagitem"
 group = "tmhms"
+classification = "useful"
 
 [tm63]
 label = "TM63"
 id = 390
 clas = "bagitem"
 group = "tmhms"
+classification = "useful"
 
 [tm64]
 label = "TM64"
 id = 391
 clas = "bagitem"
 group = "tmhms"
+classification = "useful"
 
 [tm65]
 label = "TM65"
 id = 392
 clas = "bagitem"
 group = "tmhms"
+classification = "useful"
 
 [tm66]
 label = "TM66"
 id = 393
 clas = "bagitem"
 group = "tmhms"
+classification = "useful"
 
 [tm67]
 label = "TM67"
 id = 394
 clas = "bagitem"
 group = "tmhms"
+classification = "useful"
 
 [tm68]
 label = "TM68"
 id = 395
 clas = "bagitem"
 group = "tmhms"
+classification = "useful"
 
 [tm69]
 label = "TM69"
 id = 396
 clas = "bagitem"
 group = "tmhms"
+classification = "useful"
 
 [tm70]
 label = "TM70 Flash"
@@ -2281,132 +2331,154 @@ label = "TM71"
 id = 398
 clas = "bagitem"
 group = "tmhms"
+classification = "useful"
 
 [tm72]
 label = "TM72"
 id = 399
 clas = "bagitem"
 group = "tmhms"
+classification = "useful"
 
 [tm73]
 label = "TM73"
 id = 400
 clas = "bagitem"
 group = "tmhms"
+classification = "useful"
 
 [tm74]
 label = "TM74"
 id = 401
 clas = "bagitem"
 group = "tmhms"
+classification = "useful"
 
 [tm75]
 label = "TM75"
 id = 402
 clas = "bagitem"
 group = "tmhms"
+classification = "useful"
 
 [tm76]
 label = "TM76"
 id = 403
 clas = "bagitem"
 group = "tmhms"
+classification = "useful"
 
 [tm77]
 label = "TM77"
 id = 404
 clas = "bagitem"
 group = "tmhms"
+classification = "useful"
 
 [tm78]
 label = "TM78"
 id = 405
 clas = "bagitem"
 group = "tmhms"
+classification = "useful"
 
 [tm79]
 label = "TM79"
 id = 406
 clas = "bagitem"
 group = "tmhms"
+classification = "useful"
 
 [tm80]
 label = "TM80"
 id = 407
 clas = "bagitem"
 group = "tmhms"
+classification = "useful"
 
 [tm81]
 label = "TM81"
 id = 408
 clas = "bagitem"
 group = "tmhms"
+classification = "useful"
 
 [tm82]
 label = "TM82"
 id = 409
 clas = "bagitem"
 group = "tmhms"
+classification = "useful"
 
 [tm83]
 label = "TM83"
 id = 410
 clas = "bagitem"
 group = "tmhms"
+classification = "useful"
 
 [tm84]
 label = "TM84"
 id = 411
 clas = "bagitem"
 group = "tmhms"
+classification = "useful"
 
 [tm85]
 label = "TM85"
 id = 412
 clas = "bagitem"
 group = "tmhms"
+classification = "useful"
 
 [tm86]
 label = "TM86"
 id = 413
 clas = "bagitem"
 group = "tmhms"
+classification = "useful"
 
 [tm87]
 label = "TM87"
 id = 414
 clas = "bagitem"
 group = "tmhms"
+classification = "useful"
 
 [tm88]
 label = "TM88"
 id = 415
 clas = "bagitem"
 group = "tmhms"
+classification = "useful"
 
 [tm89]
 label = "TM89"
 id = 416
 clas = "bagitem"
 group = "tmhms"
+classification = "useful"
 
 [tm90]
 label = "TM90"
 id = 417
 clas = "bagitem"
 group = "tmhms"
+classification = "useful"
 
 [tm91]
 label = "TM91"
 id = 418
 clas = "bagitem"
 group = "tmhms"
+classification = "useful"
 
 [tm92]
 label = "TM92"
 id = 419
 clas = "bagitem"
 group = "tmhms"
+classification = "useful"
 
 [hm01]
 label = "HM01 Cut"
