@@ -22,6 +22,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * Non-determinism of generation.
 * Elite Four rematch is triggered only if the game has been completed and stark mountain has been cleared. (untested)
 * The bag now shows the amount of collected unown file items. (untested)
+* Logic error for Looker Gift in Mt. Coronet 2F.
 
 ## [0.1.6] - 2025-12-28
 ### Fixed
