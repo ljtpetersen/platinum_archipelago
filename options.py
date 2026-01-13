@@ -122,7 +122,7 @@ class GameOptions(OptionDict):
 
     Allowed options and values, with default first:
 
-    text_speed: mid/slow/fast - Sets the text speed
+    text_speed: mid/slow/fast/inst - Sets the text speed
     sound: stereo/mono - Sets the shound mode
     battle_scene: on/off - Sets whether the battle animations are shown
     battle_style: shift/set - Sets whether pokemon can be changed when the opponent's pokemon faints

@@ -13,12 +13,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * A linking cable item.
 * TMs for Rollout, Ancient Power, Double Hit, and Mimic (untested)
 * AP items now display their name and destination when picked up.
-* A location for the S.S. Ticket.
-* A location for the Marsh Pass.
-* Daytime and nighttime items.
+* A location for the S.S. Ticket (untested).
+* A location for the Marsh Pass (untested).
+* Daytime and nighttime items (untested).
 * An option to normalize encounter slot probabilities.
 * ROM support for dexsanity. (AP world side is still missing)
 * ROM support for trainersanity. (AP world side is still missing)
+* Instant text speed (untested).
 ### Fixed
 * Non-determinism of generation.
 * Elite Four rematch is triggered only if the game has been completed and stark mountain has been cleared. (untested)
