@@ -18,10 +18,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * Daytime and nighttime items.
 * An option to normalize encounter slot probabilities.
 * ROM support for dexsanity. (AP world side is still missing)
+* ROM support for trainersanity. (AP world side is still missing)
 ### Fixed
 * Non-determinism of generation.
 * Elite Four rematch is triggered only if the game has been completed and stark mountain has been cleared. (untested)
 * The bag now shows the amount of collected unown file items. (untested)
+* Logic error for Looker gift and hidden item in Mt. Coronet 2F.
 * Team Galactic Grunts now disappear if you defeat mars before hitting the Route 205 South trigger.
 
 ## [0.1.6] - 2025-12-28
@@ -128,7 +130,7 @@ skip over the forms, and the second one would give the National Pokédex.
 ## [0.0.1] - 2025-08-26
 The first release of this project.
 
-[0.1.5]: https://github.com/ljtpetersen/platinum_archipelago/compare/v0.1.6...v0.1.5
+[0.1.6]: https://github.com/ljtpetersen/platinum_archipelago/compare/v0.1.6...v0.1.5
 [0.1.5]: https://github.com/ljtpetersen/platinum_archipelago/compare/v0.1.5...v0.1.4
 [0.1.4]: https://github.com/ljtpetersen/platinum_archipelago/compare/v0.1.4...v0.1.3
 [0.1.3]: https://github.com/ljtpetersen/platinum_archipelago/compare/v0.1.3...v0.1.2

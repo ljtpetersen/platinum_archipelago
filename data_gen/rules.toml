@@ -251,6 +251,8 @@ locs.mt_coronet_4f_rooms_1_and_2_adamant_orb = "surf & waterfall"
 locs.mt_coronet_4f_rooms_1_and_2_lustrous_orb = "surf & waterfall"
 locs.mt_coronet_4f_rooms_1_and_2_stone_plate = "surf & waterfall"
 exits.mt_coronet_2f_left.mt_coronet_3f = "event_galactic_hq_defeat_cyrus"
+locs.mt_coronet_2f_black_flute = "event_galactic_hq_defeat_cyrus"
+locs.mt_coronet_2f_star_piece = "event_galactic_hq_defeat_cyrus"
 
 locs.route_216_tm13 = "rock_climb"
 locs.route_216_max_potion = "rock_climb"
