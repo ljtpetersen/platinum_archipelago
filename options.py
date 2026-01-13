@@ -6,7 +6,7 @@
 from collections.abc import Mapping, MutableMapping, Sequence
 from dataclasses import dataclass
 from typing import Any
-from Options import Choice, DefaultOnToggle, OptionDict, OptionError, OptionSet, PerGameCommonOptions, Range, Toggle
+from Options import Choice, DeathLink, DefaultOnToggle, OptionDict, OptionError, OptionSet, PerGameCommonOptions, Range, Toggle
 
 class RandomizeHms(DefaultOnToggle):
     """Adds the HMs to the pool."""
@@ -347,6 +347,9 @@ logic_dependent_options: Sequence[str] = [
     "goal",
 ]
 
+class PokemonPlatinumDeathLink(DeathLink):
+    __doc__ = DeathLink.__doc__ + "\n\n    In Pokémon Platinum, blacking out sends a death and receiving a death causes you to black out.\n"
+
 @dataclass
 class PokemonPlatinumOptions(PerGameCommonOptions):
     hms: RandomizeHms
@@ -380,6 +383,8 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
     buck_pos: BuckPos
     hb_speed: HBSpeed
     normalize_encounters: NormalizeEncounters
+
+    death_link: PokemonPlatinumDeathLink
 
     master_repel: AddMasterRepel
     s_s_ticket: AddSSTicket

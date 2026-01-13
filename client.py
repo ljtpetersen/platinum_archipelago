@@ -49,7 +49,7 @@ AP_VERSION_DATA: Mapping[int, VersionData] = {
         flags_offset_in_vars_flags=0x240,
         ap_save_offset=0xCF60,
         recv_item_count_offset_in_ap_save=0,
-        once_loc_flags_offset_in_ap_save=10,
+        once_loc_flags_offset_in_ap_save=8,
         once_loc_flags_count=16,
     ),
 }
