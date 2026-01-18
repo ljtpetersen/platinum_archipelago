@@ -680,7 +680,7 @@ group = "items"
 [oval_stone]
 label = "Oval Stone"
 id = 110
-clas = "bagitem"
+clas = "specialbagitem"
 group = "items"
 
 [odd_keystone]
@@ -1215,7 +1215,7 @@ group = "items"
 [kings_rock]
 label = "King’s Rock"
 id = 221
-clas = "bagitem"
+clas = "specialbagitem"
 group = "items"
 
 [silverpowder]
@@ -1246,13 +1246,13 @@ group = "items"
 [deepseatooth]
 label = "DeepSeaTooth"
 id = 226
-clas = "bagitem"
+clas = "specialbagitem"
 group = "items"
 
 [deepseascale]
 label = "DeepSeaScale"
 id = 227
-clas = "bagitem"
+clas = "specialbagitem"
 group = "items"
 
 [smoke_ball]
@@ -1288,7 +1288,7 @@ group = "items"
 [metal_coat]
 label = "Metal Coat"
 id = 233
-clas = "bagitem"
+clas = "specialbagitem"
 group = "items"
 
 [leftovers]
@@ -1300,7 +1300,7 @@ group = "items"
 [dragon_scale]
 label = "Dragon Scale"
 id = 235
-clas = "bagitem"
+clas = "specialbagitem"
 group = "items"
 
 [light_ball]
@@ -1402,7 +1402,7 @@ group = "items"
 [upgrade]
 label = "Up-Grade"
 id = 252
-clas = "bagitem"
+clas = "specialbagitem"
 group = "items"
 
 [shell_bell]
@@ -1816,43 +1816,43 @@ group = "items"
 [protector]
 label = "Protector"
 id = 321
-clas = "bagitem"
+clas = "specialbagitem"
 group = "items"
 
 [electirizer]
 label = "Electirizer"
 id = 322
-clas = "bagitem"
+clas = "specialbagitem"
 group = "items"
 
 [magmarizer]
 label = "Magmarizer"
 id = 323
-clas = "bagitem"
+clas = "specialbagitem"
 group = "items"
 
 [dubious_disc]
 label = "Dubious Disc"
 id = 324
-clas = "bagitem"
+clas = "specialbagitem"
 group = "items"
 
 [reaper_cloth]
 label = "Reaper Cloth"
 id = 325
-clas = "bagitem"
+clas = "specialbagitem"
 group = "items"
 
 [razor_claw]
 label = "Razor Claw"
 id = 326
-clas = "bagitem"
+clas = "specialbagitem"
 group = "items"
 
 [razor_fang]
 label = "Razor Fang"
 id = 327
-clas = "bagitem"
+clas = "specialbagitem"
 group = "items"
 
 [tm01]
@@ -2272,7 +2272,7 @@ group = "tmhms"
 [tm70]
 label = "TM70 Flash"
 id = 397
-clas = "bagitem"
+clas = "specialbagitem"
 group = "tmhms"
 classification = "progression"
 
@@ -3639,8 +3639,8 @@ clas = "special"
 group = "gbacart"
 classification = "progression"
 
-[linking_cable]
-label = "Linking Cable"
+[linking_cord]
+label = "Linking Cord"
 id = 471
 clas = "bagitem"
 group = "key_items"
@@ -3649,26 +3649,30 @@ classification = "progression"
 [tm93]
 label = "TM93"
 id = 472
-clas = "bagitem"
+clas = "specialbagitem"
 group = "tmhms"
+classification = "progression"
 
 [tm94]
 label = "TM94"
 id = 473
-clas = "bagitem"
+clas = "specialbagitem"
 group = "tmhms"
+classification = "progression"
 
 [tm95]
 label = "TM95"
 id = 474
-clas = "bagitem"
+clas = "specialbagitem"
 group = "tmhms"
+classification = "progression"
 
 [tm96]
 label = "TM96"
 id = 475
-clas = "bagitem"
+clas = "specialbagitem"
 group = "tmhms"
+classification = "progression"
 
 [daytime]
 label = "Daytime"

@@ -24,8 +24,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * ROM support for starter randomization. (AP world side is still missing)
 * Hold A to advance option.
 * ROM support for randomizing the species that Rowan shows during the intro. (AP world side is still missing)
+* A clerk in the fourth floor of the Veilstone Department Store, who sells non-reusable evolution items after they have been previously obtained. He also sells TM70 Flash. (untested)
 ### Changed
 * In-game game options option is now validated before generation.
+* Some evolution stones have been key-itemified, and are no longer consumed when used.
 ### Fixed
 * Non-determinism of generation.
 * Elite Four rematch is triggered only if the game has been completed and stark mountain has been cleared. (untested)

@@ -6070,10 +6070,10 @@ table = "overworld"
 label = "Eterna Forest - TM95 (By Mossy Rock)"
 original_item = "tm95"
 
-[galactic_hq_b1f_linking_cable]
+[galactic_hq_b1f_linking_cord]
 id = 335
 check = 0xBA8
 type = "overworld"
 table = "overworld"
-label = "Galactic HQ - Linking Cable (In First Basement)"
-original_item = "linking_cable"
+label = "Galactic HQ - Linking Cord (In First Basement)"
+original_item = "linking_cord"
