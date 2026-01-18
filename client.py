@@ -6,7 +6,8 @@
 from collections.abc import Mapping, Set
 from dataclasses import dataclass
 from NetUtils import ClientStatus
-from typing import TYPE_CHECKING, Tuple
+from Options import Toggle
+from typing import Optional, TYPE_CHECKING, Tuple
 
 import Utils
 
@@ -21,7 +22,7 @@ if TYPE_CHECKING:
     from worlds._bizhawk.context import BizHawkClientContext
 
 AP_STRUCT_PTR_ADDRESS = 0x023DFFFC
-AP_SUPPORTED_VERSIONS = {0}
+AP_SUPPORTED_VERSIONS = {1}
 AP_MAGIC = b' AP '
 
 @dataclass(frozen=True)
@@ -37,9 +38,11 @@ class VersionData:
     recv_item_count_offset_in_ap_save: int
     once_loc_flags_offset_in_ap_save: int
     once_loc_flags_count: int
+    deathlink_tx_offset: int
+    num_blacked_out_offset_in_ap_save: int
 
 AP_VERSION_DATA: Mapping[int, VersionData] = {
-    0: VersionData(
+    1: VersionData(
         savedata_ptr_offset=16,
         champion_flag=2404,
         recv_item_id_offset=20,
@@ -51,6 +54,8 @@ AP_VERSION_DATA: Mapping[int, VersionData] = {
         recv_item_count_offset_in_ap_save=0,
         once_loc_flags_offset_in_ap_save=8,
         once_loc_flags_count=16,
+        deathlink_tx_offset=22,
+        num_blacked_out_offset_in_ap_save=4,
     ),
 }
 
@@ -101,10 +106,17 @@ class PokemonPlatinumClient(BizHawkClient):
     local_checked_locations: Set[int]
     expected_header: bytes
 
+    death_counter: Optional[int]
+    previous_death_link: float
+    ignore_next_death_link: bool
+
     def initialize_client(self):
         self.goal_flag = None
         self.local_checked_locations = set()
         self.expected_header = AP_MAGIC * 3 + self.rom_version.to_bytes(length=4, byteorder='little')
+        self.death_counter = None
+        self.previous_death_link = 0
+        self.ignore_next_death_link = False
 
     async def validate_rom(self, ctx: "BizHawkClientContext") -> bool:
         from CommonClient import logger
@@ -200,9 +212,10 @@ class PokemonPlatinumClient(BizHawkClient):
 
             guards["SAVEDATA PTR"] = (self.ap_struct_address + version_data.savedata_ptr_offset, read_result[0], "ARM9 System Bus")
 
+            await self.handle_death_link(ctx, guards, version_data)
+
             savedata_ptr = int.from_bytes(guards["SAVEDATA PTR"][1], byteorder='little')
 
-            guards["READY TO RECV"] = (self.ap_struct_address + version_data.recv_item_id_offset, b'\xFF\xFF', "ARM9 System Bus")
             read_result = await bizhawk.guarded_read(
                 ctx.bizhawk_ctx,
                 [
@@ -219,12 +232,18 @@ class PokemonPlatinumClient(BizHawkClient):
             recv_item_id = int.from_bytes(read_result[1], byteorder='little')
             if recv_item_id == 0xFFFF and recv_item_count < len(ctx.items_received):
                 next_item = ctx.items_received[recv_item_count].item
-                await bizhawk.write(
+                if await bizhawk.guarded_write(
                     ctx.bizhawk_ctx,
                     [
                         (self.ap_struct_address + version_data.recv_item_id_offset, next_item.to_bytes(length=2, byteorder='little'), "ARM9 System Bus"),
+                    ],
+                    [
+                        guards["AP STRUCT VALID"],
+                        guards["SAVEDATA PTR"],
+                        (self.ap_struct_address + version_data.recv_item_id_offset, b'\xFF\xFF', "ARM9 System Bus"),
                     ]
-                )
+                ):
+                    return
 
             read_result = await bizhawk.guarded_read(
                 ctx.bizhawk_ctx,
@@ -262,3 +281,44 @@ class PokemonPlatinumClient(BizHawkClient):
                 }])
         except bizhawk.RequestFailedError:
             pass
+
+    async def handle_death_link(self, ctx: "BizHawkClientContext", guards: Mapping[str, Tuple[int, bytes, str]], version_data: VersionData) -> None:
+        if ctx.slot_data.get("death_link", Toggle.option_false) != Toggle.option_true: # type: ignore
+            return
+
+        if "DeathLink" not in ctx.tags:
+            await ctx.update_death_link(True)
+            self.previous_death_link = ctx.last_death_link
+
+        if self.previous_death_link != ctx.last_death_link:
+            self.previous_death_link = ctx.last_death_link
+            if self.ignore_next_death_link:
+                self.ignore_next_death_link = False
+            else:
+                if await bizhawk.guarded_write(
+                    ctx.bizhawk_ctx,
+                    [(self.ap_struct_address + version_data.deathlink_tx_offset, b'\x01', "ARM9 System Bus")],
+                    [guards["AP STRUCT VALID"]],
+                ):
+                    return
+
+        savedata_ptr = int.from_bytes(guards["SAVEDATA PTR"][1], byteorder='little')
+        res = await bizhawk.guarded_read(
+            ctx.bizhawk_ctx,
+            [
+                (savedata_ptr + version_data.ap_save_offset + version_data.num_blacked_out_offset_in_ap_save, 4, "ARM9 System Bus"),
+            ],
+            [guards["AP STRUCT VALID"], guards["SAVEDATA PTR"]]
+        )
+        if res is None:
+            return
+
+        num_blacked_out = int.from_bytes(res[0], 'little')
+        if self.death_counter is None:
+            self.death_counter = num_blacked_out
+        elif num_blacked_out > self.death_counter:
+            await ctx.send_death(f"{ctx.player_names[ctx.slot]} is out of usable POKéMON! " # type: ignore
+                                 f"{ctx.player_names[ctx.slot]} blacked out!") # type: ignore
+            self.ignore_next_death_link = True
+            self.death_counter = num_blacked_out
+

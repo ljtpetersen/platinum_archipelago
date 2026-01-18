@@ -313,7 +313,7 @@ class NormalizeEncounters(DefaultOnToggle):
     """
     display_name = "Normalize Encounters"
 
-logic_dependent_options: Sequence[str] = [
+slot_data_options: Sequence[str] = [
     "hms",
     "badges",
     "overworlds",
@@ -345,6 +345,7 @@ logic_dependent_options: Sequence[str] = [
     "unown_option",
     "show_unrandomized_progression_items",
     "goal",
+    "death_link",
 ]
 
 class PokemonPlatinumDeathLink(DeathLink):
@@ -415,8 +416,8 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
 
 
     def save_options(self) -> MutableMapping[str, Any]:
-        return self.as_dict(*logic_dependent_options)
+        return self.as_dict(*slot_data_options)
 
     def load_options(self, slot_data: Mapping[str, Any]) -> None:
-        for key in logic_dependent_options:
+        for key in slot_data_options:
             getattr(self, key).value = slot_data[key]
