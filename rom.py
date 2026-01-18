@@ -212,7 +212,9 @@ def generate_output(world: "PokemonPlatinumWorld", output_directory: str, patch:
     add_opt_byte("pastoria_barriers")
     ap_bin += b'\0' # where dexsanity goes when dexsanity happens
     ap_bin += b'\0' # where trainersanity goes when trainersanity happens
-    ap_bin += b'\0' # where death link goes when death link happens
+    add_opt_byte("death_link")
+    add_opt_byte("cartridges")
+    add_opt_byte("time_items")
 
     match game_opts.received_items_notification:
         case "nothing":
@@ -324,15 +326,6 @@ def generate_output(world: "PokemonPlatinumWorld", output_directory: str, patch:
     foreign_name_data = b''.join(name_to_strbuf(name) for name in foreign_item_names)
 
     import json
-
-    with open(world.player_name + "_dest_names.json", "w") as f:
-        json.dump(dest_name_map, f)
-
-    with open(world.player_name + "_foreign_names.json", "w") as f:
-        json.dump(foreign_name_map, f)
-
-    with open(world.player_name + "names.bin", "wb") as f:
-        f.write(dest_name_data + foreign_name_data)
 
     def name_idx_to_bytes(idx: Tuple[str, str]) -> bytes:
         return struct.pack("<HH", foreign_name_map[idx[0]], dest_name_map[idx[1]])

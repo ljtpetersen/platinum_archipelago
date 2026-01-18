@@ -15,7 +15,7 @@ from .data import items as itemdata
 from .data.locations import RequiredLocations
 from .items import create_item_label_to_code_map, get_item_classification, PokemonPlatinumItem, get_item_groups
 from .locations import PokemonPlatinumLocation, create_location_label_to_code_map, create_locations
-from .options import PokemonPlatinumOptions, UnownsOption
+from .options import PokemonPlatinumOptions, RandomizeCartridges, RandomizeTimeItems, UnownsOption
 from .regions import create_regions
 from .rom import generate_output, PokemonPlatinumPatch
 from .rules import set_rules
@@ -103,6 +103,13 @@ class PokemonPlatinumWorld(World):
         self.multiworld.itempool += itempool
         for item in add_items:
             self.multiworld.push_precollected(self.create_item(itemdata.items[item].label))
+        if self.options.cartridges == RandomizeCartridges.option_no_location:
+            for cart in sorted(self.item_name_groups["GBA Cartridges"]):
+                self.multiworld.push_precollected(self.create_item(cart))
+
+        if self.options.time_items == RandomizeTimeItems.option_no_location:
+            for item in sorted(self.item_name_groups["Time Items"]):
+                self.multiworld.push_precollected(self.create_item(item))
 
     def create_item(self, name: str) -> PokemonPlatinumItem:
         return self.create_item_by_code(self.item_name_to_id[name])

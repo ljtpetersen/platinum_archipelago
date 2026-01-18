@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 * Universal tracker YAML-less support.
 * A location for the bag item.
-* GBA cartridge items and locations for them.
+* GBA cartridge items and locations for them. (option to remove location untested, ruby cartridge location untested)
 * A linking cable item and a location for it. (location untested)
 * TMs for Rollout, Ancient Power, Double Hit, and Mimic, and corresponding locations for them. (locations untested)
 * AP items now display their name and destination when picked up.
@@ -29,7 +29,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * In-game game options option is now validated before generation.
 * Some evolution stones have been key-itemified, and are no longer consumed when used.
 ### Fixed
-* Non-determinism of generation.
+* Non-determinism of generation. (hopefully)
 * Elite Four rematch is triggered only if the game has been completed and stark mountain has been cleared. (untested)
 * The bag now shows the amount of collected unown file items. (untested)
 * Logic error for Looker gift and hidden item in Mt. Coronet 2F.

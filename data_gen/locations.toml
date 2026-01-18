@@ -6025,7 +6025,7 @@ original_item = "wise_glasses"
 [vista_lighthouse_daytime]
 id = 329
 check = 0xBA2
-type = "overworld"
+type = "time_item"
 table = "overworld"
 label = "Sunyshore City - Daytime in Lighthouse"
 original_item = "daytime"
@@ -6033,7 +6033,7 @@ original_item = "daytime"
 [spear_pillar_nighttime]
 id = 330
 check = 0xBA3
-type = "overworld"
+type = "time_item"
 table = "overworld"
 label = "Spear Pillar - Nighttime"
 original_item = "nighttime"
@@ -6073,7 +6073,7 @@ original_item = "tm95"
 [galactic_hq_b1f_linking_cord]
 id = 335
 check = 0xBA8
-type = "overworld"
+type = "key_item"
 table = "overworld"
 label = "Galactic HQ - Linking Cord (In First Basement)"
 original_item = "linking_cord"

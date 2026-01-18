@@ -63,9 +63,21 @@ class RandomizeAccessories(Toggle):
     """Adds fashion accessories to the item pool."""
     display_name = "Randomize Accessories"
 
-class RandomizeCartridges(Toggle):
-    """Adds the GBA cartridges to the item pool."""
+class RandomizeCartridges(Choice):
+    """Adds the GBA cartridges to the item pool. The no location option removes the location and adds the cartridges to the starting inventory."""
     display_name = "Randomize Cartridges"
+    default = 1
+    option_true = 1
+    option_false = 0
+    option_no_location = 2
+
+class RandomizeTimeItems(Choice):
+    """Adds the time items to the item pool. The no location option removes the location and adds the time items to the starting inventory."""
+    display_name = "Randomize Time Items"
+    default = 1
+    option_true = 1
+    option_false = 0
+    option_no_location = 2
 
 class HmBadgeRequirements(DefaultOnToggle):
     """Require the corresponding badge to use an HM outside of battle."""
@@ -382,6 +394,7 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
     pokedex: RandomizePokedex
     accessories: RandomizeAccessories
     cartridges: RandomizeCartridges
+    time_items: RandomizeTimeItems
 
     hm_badge_requirement: HmBadgeRequirements
     remove_badge_requirements: RemoveBadgeRequirement
