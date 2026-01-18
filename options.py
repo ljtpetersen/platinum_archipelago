@@ -432,6 +432,26 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
         if self.bag and self.dowsing_machine_logic and not (self.overworlds or self.npc_gifts or self.rods or self.running_shoes or self.pokedex or self.key_items.value > 0):
             raise OptionError(f"if the bag is enabled, then at least one of overworlds, npc_gifts, rods, running_shoes, pokedex, key_items must be enabled")
 
+        # validate game options
+        game_opts = self.game_options
+        if game_opts.default_gender not in {"male", "female", "random", "vanilla"}:
+            raise OptionError(f"invalid default gender: \"{game_opts.default_gender}\"")
+        if game_opts.text_speed not in {"fast", "slow", "mid"}:
+            raise OptionError(f"invalid text speed: \"{game_opts.text_speed}")
+        if game_opts.sound not in {"mono", "stereo"}:
+            raise OptionError(f"invalid sound: \"{game_opts.sound}\"")
+        if game_opts.battle_scene not in {False, "off", True, "on"}:
+            raise OptionError(f"invalid battle scene: \"{game_opts.battle_scene}\"")
+        if game_opts.battle_style not in {"set", "shift"}:
+            raise OptionError(f"invalid battle style: \"{game_opts.battle_style}\"")
+        if game_opts.button_mode not in {"start=x", "l=a", "normal"}:
+            raise OptionError(f"invalid button mode: \"{game_opts.button_mode}\"")
+        text_frame = game_opts.text_frame
+        if game_opts.text_frame not in set(range(1, 21)) | {"random"}:
+            raise OptionError(f"invalid text frame: \"{text_frame}\"")
+        if game_opts.received_items_notification not in {"nothing", "message", "jingle"}:
+            raise OptionError(f"invalid received items notification: \"{game_opts.received_items_notification}\"")
+
 
     def save_options(self) -> MutableMapping[str, Any]:
         return self.as_dict(*slot_data_options)

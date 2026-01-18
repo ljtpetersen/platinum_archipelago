@@ -154,8 +154,12 @@ def generate_output(world: "PokemonPlatinumWorld", output_directory: str, patch:
         case _:
             raise ValueError(f"invalid sound: \"{game_opts.sound}\"")
     match game_opts.battle_scene:
+        case False:
+            ap_bin += b'\x01'
         case "off":
             ap_bin += b'\x01'
+        case True:
+            ap_bin += b'\x00'
         case "on":
             ap_bin += b'\x00'
         case _:
