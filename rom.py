@@ -338,6 +338,8 @@ def generate_output(world: "PokemonPlatinumWorld", output_directory: str, patch:
     ap_bin += (len(dest_name_data) + len(foreign_name_data)).to_bytes(4, 'little')
     ap_bin += dest_name_data + foreign_name_data
 
+    ap_bin += b''.join(id.to_bytes(2, 'little') for id in [387, 390, 393]) # where starters go when starter randomization happens
+
     patch.write_file("ap.bin", ap_bin)
 
     out_file_name = world.multiworld.get_out_file_name_base(world.player)

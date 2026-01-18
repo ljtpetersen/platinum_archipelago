@@ -21,6 +21,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * ROM support for trainersanity. (AP world side is still missing)
 * Instant text speed (untested).
 * Death Link support (untested).
+* ROM support for starter randomization. (AP world side is still missing)
 ### Fixed
 * Non-determinism of generation.
 * Elite Four rematch is triggered only if the game has been completed and stark mountain has been cleared. (untested)
