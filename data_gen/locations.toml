@@ -6037,3 +6037,43 @@ type = "overworld"
 table = "overworld"
 label = "Spear Pillar - Nighttime"
 original_item = "nighttime"
+
+[snowpoint_temple_b3f_tm94]
+id = 331
+check = 0xBA4
+type = "overworld"
+table = "overworld"
+label = "Snowpoint Temple - TM94 (Overworld Item)"
+original_item = "tm94"
+
+[fuego_ironworks_building_tm93]
+id = 332
+check = 0xBA5
+type = "overworld"
+table = "overworld"
+label = "Fuego Ironworks - TM93 (Overworld Item)"
+original_item = "tm93"
+
+[old_chateau_side_rooms_tm96]
+id = 333
+check = 0xBA6
+type = "overworld"
+table = "overworld"
+label = "Old Chateau - TM96 (In Right Side Room)"
+original_item = "tm96"
+
+[eterna_forest_tm95]
+id = 334
+check = 0xBA7
+type = "overworld"
+table = "overworld"
+label = "Eterna Forest - TM95 (By Mossy Rock)"
+original_item = "tm95"
+
+[galactic_hq_b1f_linking_cable]
+id = 335
+check = 0xBA8
+type = "overworld"
+table = "overworld"
+label = "Galactic HQ - Linking Cable (In First Basement)"
+original_item = "linking_cable"

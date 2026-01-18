@@ -10,8 +10,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * Universal tracker YAML-less support.
 * A location for the bag item.
 * GBA cartridge items and locations for them.
-* A linking cable item.
-* TMs for Rollout, Ancient Power, Double Hit, and Mimic.
+* A linking cable item and a location for it. (location untested)
+* TMs for Rollout, Ancient Power, Double Hit, and Mimic, and corresponding locations for them. (locations untested)
 * AP items now display their name and destination when picked up.
 * A location for the S.S. Ticket (untested).
 * A location for the Marsh Pass (untested).
