@@ -321,6 +321,14 @@ class InstantText(Toggle):
     """
     display_name = "Instant Text"
 
+class HoldAToAdvance(Toggle):
+    """
+    You no longer need to press A to advance text, holding it will suffice. (Same for B)
+
+    This option is modifiable in the in-game options menu.
+    """
+    display_name = "Hold A to Advance"
+
 slot_data_options: Sequence[str] = [
     "hms",
     "badges",
@@ -393,6 +401,7 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
     hb_speed: HBSpeed
     normalize_encounters: NormalizeEncounters
     instant_text: InstantText
+    hold_a_to_advance: HoldAToAdvance
 
     death_link: PokemonPlatinumDeathLink
 

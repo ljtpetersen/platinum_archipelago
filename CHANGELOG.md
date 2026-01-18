@@ -11,17 +11,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * A location for the bag item.
 * GBA cartridge items and locations for them.
 * A linking cable item.
-* TMs for Rollout, Ancient Power, Double Hit, and Mimic (untested)
+* TMs for Rollout, Ancient Power, Double Hit, and Mimic.
 * AP items now display their name and destination when picked up.
 * A location for the S.S. Ticket (untested).
 * A location for the Marsh Pass (untested).
 * Daytime and nighttime items (untested).
 * An option to normalize encounter slot probabilities.
-* ROM support for dexsanity. (AP world side is still missing)
-* ROM support for trainersanity. (AP world side is still missing)
-* Instant text speed.
+* ROM support for dexsanity. (AP world side is still missing, untested)
+* ROM support for trainersanity. (AP world side is still missing, untested)
+* Instant text speed option.
 * Death Link support (untested).
 * ROM support for starter randomization. (AP world side is still missing)
+* Hold A to advance option.
+* ROM support for randomizing the species that Rowan shows during the intro. (AP world side is still missing)
 ### Fixed
 * Non-determinism of generation.
 * Elite Four rematch is triggered only if the game has been completed and stark mountain has been cleared. (untested)
