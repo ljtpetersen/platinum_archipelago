@@ -122,7 +122,7 @@ class GameOptions(OptionDict):
 
     Allowed options and values, with default first:
 
-    text_speed: mid/slow/fast/inst - Sets the text speed
+    text_speed: mid/slow/fast - Sets the text speed
     sound: stereo/mono - Sets the shound mode
     battle_scene: on/off - Sets whether the battle animations are shown
     battle_style: shift/set - Sets whether pokemon can be changed when the opponent's pokemon faints
@@ -313,6 +313,14 @@ class NormalizeEncounters(DefaultOnToggle):
     """
     display_name = "Normalize Encounters"
 
+class InstantText(Toggle):
+    """
+    Have text scroll instantly.
+
+    This option is modifiable in the in-game options menu.
+    """
+    display_name = "Instant Text"
+
 slot_data_options: Sequence[str] = [
     "hms",
     "badges",
@@ -384,6 +392,7 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
     buck_pos: BuckPos
     hb_speed: HBSpeed
     normalize_encounters: NormalizeEncounters
+    instant_text: InstantText
 
     death_link: PokemonPlatinumDeathLink
 

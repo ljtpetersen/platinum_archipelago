@@ -138,8 +138,6 @@ def generate_output(world: "PokemonPlatinumWorld", output_directory: str, patch:
         case _:
             raise ValueError(f"invalid default gender: \"{game_opts.default_gender}\"")
     match game_opts.text_speed:
-        case "inst":
-            ap_bin += b'\x03'
         case "fast":
             ap_bin += b'\x02'
         case "slow":
@@ -227,6 +225,7 @@ def generate_output(world: "PokemonPlatinumWorld", output_directory: str, patch:
     add_opt_byte("buck_pos")
     ap_bin += (world.options.hb_speed.value - 1).to_bytes(length=1, byteorder='little')
     add_opt_byte("normalize_encounters")
+    add_opt_byte("instant_text")
 
     if len(ap_bin) % 2 == 1:
         ap_bin += b'\x00'

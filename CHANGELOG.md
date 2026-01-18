@@ -19,7 +19,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * An option to normalize encounter slot probabilities.
 * ROM support for dexsanity. (AP world side is still missing)
 * ROM support for trainersanity. (AP world side is still missing)
-* Instant text speed (untested).
+* Instant text speed.
 * Death Link support (untested).
 * ROM support for starter randomization. (AP world side is still missing)
 ### Fixed
