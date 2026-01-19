@@ -20,13 +20,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * ROM support for dexsanity. (AP world side is still missing, untested)
 * ROM support for trainersanity. (AP world side is still missing, untested)
 * Instant text speed option.
-* Death Link support (untested).
+* Death Link support (moderately tested).
 * ROM support for starter randomization. (AP world side is still missing)
 * Hold A to advance option.
 * ROM support for randomizing the species that Rowan shows during the intro. (AP world side is still missing)
 * A clerk in the fourth floor of the Veilstone Department Store, who sells non-reusable evolution items after they have been previously obtained. He also sells TM70 Flash. (untested)
-* An option for reusable TMs. (untested)
-* An option to have a 100% catch rate. (untested)
+* An option for reusable TMs.
+* An option to have a 100% catch rate. (moderately tested)
 ### Changed
 * In-game game options option is now validated before generation.
 * Some evolution stones have been key-itemified, and are no longer consumed when used.
@@ -36,6 +36,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * The bag now shows the amount of collected unown file items. (untested)
 * Logic error for Looker gift and hidden item in Mt. Coronet 2F.
 * Team Galactic Grunts now disappear if you defeat mars before hitting the Route 205 South trigger.
+* Correct Rev. 0 ROM is now being used for diffs.
 
 ## [0.1.6] - 2025-12-28
 ### Fixed

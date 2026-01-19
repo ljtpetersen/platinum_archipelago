@@ -144,6 +144,7 @@ class Item:
     group: str
     classification: str = "filler"
     count: int | None = None
+    data_id: int | None = None
 
     def __str__(self) -> str:
         ret = f"ItemData(label=\"{self.label}\", "
@@ -153,6 +154,8 @@ class Item:
             ret += f", count={self.count}"
         if self.classification != "filler":
             ret += f", classification=ItemClassification.{self.classification}"
+        if self.data_id is not None:
+            ret += f", data_id={self.data_id}"
         ret += ")"
         return ret
 

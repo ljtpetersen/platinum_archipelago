@@ -24,6 +24,7 @@ from ..apnds.rom import Rom
 from ..data.charmap import encode_string
 from ..data.locations import locations, LocationTable
 from ..data.items import items
+from ..items import raw_id_to_const_name
 
 if TYPE_CHECKING:
     from .. import PokemonPlatinumWorld
@@ -354,7 +355,7 @@ def generate_output(world: "PokemonPlatinumWorld", output_directory: str, patch:
     item_patches = {}
     if world.options.reusable_tms.value == 1:
         for lbl in world.item_name_groups["TMs and HMs"]:
-            id = world.item_name_to_id[lbl] & 0xFFF
+            id = items[raw_id_to_const_name[world.item_name_to_id[lbl]]].data_id
             seq = item_patches.get(id, [])
             seq.append([ItemDataField.PREVENT_TOSS.value, 1])
             item_patches[id] = seq

@@ -19,6 +19,7 @@ class ItemData:
 
     def __getitem__(self, field: ItemDataField | Tuple[int, int]) -> int:
         # we hate bitfield
+        # this function may or may not work.
         if isinstance(field, ItemDataField):
             l, u = field.value
         else:
@@ -36,23 +37,27 @@ class ItemData:
         return ret
 
     def __setitem__(self, field: ItemDataField | Tuple[int, int], value: int) -> None:
+        # this function may or may not work.
         if isinstance(field, ItemDataField):
             l, u = field.value
         else:
             l, u = field
-        self.data[l // 8] = self.data[l // 8] & (1 << (l & 7)) | ((value & ((1 << min(8 - (l & 7), u - l)) - 1)) << (l & 7))
+        if l // 8 == u // 8:
+            self.data[l // 8] = self.data[l // 8] & (((1 << (l & 7)) - 1) | (((1 << (8 - (u & 7))) - 1) << (u & 7))) | ((value & ((1 << (u - l)) - 1)) << (l & 7))
+            return
+        self.data[l // 8] = self.data[l // 8] & ((1 << (l & 7)) - 1) | ((value & ((1 << (8 - (l & 7))) - 1)) << (l & 7))
         value >>= l & 7
         lb = l // 8 + 1
         ub = u // 8
         if ub - lb >= 1:
             self.data[lb:ub] = (value & ((1 << ((ub - lb) * 8)) - 1)).to_bytes(ub - lb, 'little')
             value >>= (ub - lb) * 8
-        if ub >= lb:
-            self.data[ub] = self.data[ub] & (((1 << (8 - (u & 7))) - 1) << (u & 7)) | value & ((1 << (u & 7)) - 1)
+        self.data[ub] = self.data[ub] & (((1 << (8 - (u & 7))) - 1) << (u & 7)) | value & ((1 << (u & 7)) - 1)
 
-def patch_items(pl_item_data: bytes, patch_info: Mapping[int, Sequence[Tuple[ItemDataField, int]]]) -> bytes:
+def patch_items(pl_item_data: bytes, patch_info: Mapping[str, Sequence[Tuple[ItemDataField, int]]]) -> bytes:
     narc = Narc.from_bytes(pl_item_data)
     for id, patches in patch_info.items():
+        id = int(id)
         item_data = ItemData(bytearray(narc.files[id]))
         for field, val in patches:
             item_data[field] = val

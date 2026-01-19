@@ -55,7 +55,7 @@ AP_VERSION_DATA: Mapping[int, VersionData] = {
         once_loc_flags_offset_in_ap_save=8,
         once_loc_flags_count=16,
         deathlink_tx_offset=22,
-        num_blacked_out_offset_in_ap_save=4,
+        num_blacked_out_offset_in_ap_save=12,
     ),
 }
 

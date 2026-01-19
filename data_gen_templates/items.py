@@ -21,6 +21,7 @@ class ItemData:
     clas: ItemClass
     count: int = 1
     classification: ItemClassification = ItemClassification.filler
+    data_id: int | None = None
 
     def get_raw_id(self) -> int:
         clas = self.clas
