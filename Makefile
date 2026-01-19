@@ -74,5 +74,5 @@ update_apnds:
 
 pokemon_platinum.apworld: data_gen $(SOURCES) update_apnds $(PATCHES)
 	@echo MAKE APWORLD
-	$Qcd ../..; python Launcher.py "Build APWorlds" "Pokemon Platinum"
+	$Qcd ../..; python Launcher.py "Build APWorlds" "Pokemon Platinum" >/dev/null 2>&1
 	$Qcp ../../build/apworlds/pokemon_platinum.apworld .
