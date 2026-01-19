@@ -26,7 +26,7 @@ jobs:
 
       - name: Copy apworld
         shell: bash
-        run: cp archipelago/build/apworlds/pokemon_platinum.apworld .
+        run: cp archipelago/worlds/pokemon_platinum/pokemon_platinum.apworld .
 
       - name: Clean up Archipelago clone
         shell: bash
