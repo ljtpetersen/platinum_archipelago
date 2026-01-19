@@ -74,14 +74,4 @@ update_apnds:
 
 pokemon_platinum.apworld: data_gen $(SOURCES) update_apnds $(PATCHES)
 	@echo MAKE APWORLD
-	$Qrm -f $@
-	$Qmkdir -p pokemon_platinum/docs pokemon_platinum/data pokemon_platinum/patches pokemon_platinum/apnds pokemon_platinum/rom
-	$Qcp $(ROM_SOURCES) pokemon_platinum/rom
-	$Qcp $(DATA_GEN_OUT) pokemon_platinum/data
-	$Qcp $(DOCS) pokemon_platinum/docs
-	$Qcp $(PATCHES) pokemon_platinum/patches
-	$Qcp $(SOURCES) pokemon_platinum/
-	$Qcp $(APNDS_FILES) pokemon_platinum/apnds
-	$Qzip -r $@ pokemon_platinum
-	$Qrm -r pokemon_platinum
-	
+	$Qcd ../..; python Launcher.py "Build APWorlds" "Pokemon Platinum" >/dev/null 2>&1
