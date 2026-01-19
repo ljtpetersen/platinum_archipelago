@@ -345,6 +345,14 @@ class ReusableTms(Toggle):
     """TMs are reusable."""
     display_name = "Reusable TMs"
 
+class AlwaysCatch(Toggle):
+    """
+    Have a 100% chance of catching any encounter.
+
+    This option is modifiable in the in-game options menu.
+    """
+    display_name = "Always Catch"
+
 slot_data_options: Sequence[str] = [
     "hms",
     "badges",
@@ -422,6 +430,7 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
     normalize_encounters: NormalizeEncounters
     instant_text: InstantText
     hold_a_to_advance: HoldAToAdvance
+    always_catch: AlwaysCatch
 
     death_link: PokemonPlatinumDeathLink
 
