@@ -1,4 +1,4 @@
-# rom.py
+# rom/__init__.py
 #
 # Copyright (C) 2025 James Petersen <m@jamespetersen.ca>
 # Licensed under MIT. See LICENSE
@@ -7,6 +7,7 @@ from collections.abc import MutableSequence, MutableSet
 import bsdiff4
 from collections import Counter
 from hashlib import md5
+import json
 import os
 import pkgutil
 from settings import get_settings
@@ -17,13 +18,15 @@ import zipfile
 
 from worlds.pokemon_platinum.options import GameOptions
 
-from .apnds.rom import Rom
-from .data.charmap import encode_string
-from .data.locations import locations, LocationTable
-from .data.items import items
+from .itemdata import patch_items, ItemDataField
+
+from ..apnds.rom import Rom
+from ..data.charmap import encode_string
+from ..data.locations import locations, LocationTable
+from ..data.items import items
 
 if TYPE_CHECKING:
-    from . import PokemonPlatinumWorld
+    from .. import PokemonPlatinumWorld
 
 PLATINUM_1_0_US_HASH = "d66ad7a2a0068b5d46e0781ca4953ae9"
 PLATINUM_1_1_US_HASH = "ab828b0d13f09469a71460a34d0de51b"
@@ -63,6 +66,10 @@ class PokemonPlatinumPatch(APAutoPatchInterface):
 
         ap_bin = self.get_file("ap.bin")
         rom.files["/ap.bin"] = ap_bin
+
+        if "item_patches.json" in self.files:
+            item_patches = json.loads(self.get_file("item_patches.json"))
+            rom.files["/itemtool/itemdata/pl_item_data.narc"] = patch_items(rom.files["/itemtool/itemdata/pl_item_data.narc"], item_patches)
 
         with open(target, 'wb') as f:
             f.write(rom.to_bytes())
@@ -215,6 +222,7 @@ def generate_output(world: "PokemonPlatinumWorld", output_directory: str, patch:
     add_opt_byte("death_link")
     add_opt_byte("cartridges")
     add_opt_byte("time_items")
+    add_opt_byte("reusable_tms")
 
     match game_opts.received_items_notification:
         case "nothing":
@@ -325,8 +333,6 @@ def generate_output(world: "PokemonPlatinumWorld", output_directory: str, patch:
 
     foreign_name_data = b''.join(name_to_strbuf(name) for name in foreign_item_names)
 
-    import json
-
     def name_idx_to_bytes(idx: Tuple[str, str]) -> bytes:
         return struct.pack("<HH", foreign_name_map[idx[0]], dest_name_map[idx[1]])
 
@@ -343,6 +349,17 @@ def generate_output(world: "PokemonPlatinumWorld", output_directory: str, patch:
     ap_bin += buneary_spec.to_bytes(2, 'little')
 
     patch.write_file("ap.bin", ap_bin)
+
+    item_patches = {}
+    if world.options.reusable_tms.value == 1:
+        for lbl in world.item_name_groups["TMs and HMs"]:
+            id = world.item_name_to_id[lbl] & 0xFFF
+            seq = item_patches.get(id, [])
+            seq.append([ItemDataField.PREVENT_TOSS.value, 1])
+            item_patches[id] = seq
+
+    if len(item_patches) > 0:
+        patch.write_file("item_patches.json", json.dumps(item_patches).encode('utf-8'))
 
     out_file_name = world.multiworld.get_out_file_name_base(world.player)
     patch.write(os.path.join(output_directory, f"{out_file_name}{patch.patch_file_ending}"))

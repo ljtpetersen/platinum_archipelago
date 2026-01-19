@@ -10,9 +10,10 @@ SOURCES := __init__.py \
 	 locations.py \
 	 options.py \
 	 regions.py \
-	 rom.py \
 	 rules.py \
 	 LICENSE
+ROM_SOURCES := rom/__init__.py \
+	rom/itemdata.py
 DOCS := docs/setup_en.md \
 	 docs/en_Pokemon\ Platinum.md
 DATA := data_gen/encounters.toml \
@@ -74,7 +75,8 @@ update_apnds:
 pokemon_platinum.apworld: data_gen $(SOURCES) update_apnds $(PATCHES)
 	@echo MAKE APWORLD
 	$Qrm -f $@
-	$Qmkdir -p pokemon_platinum/docs pokemon_platinum/data pokemon_platinum/patches pokemon_platinum/apnds
+	$Qmkdir -p pokemon_platinum/docs pokemon_platinum/data pokemon_platinum/patches pokemon_platinum/apnds pokemon_platinum/rom
+	$Qcp $(ROM_SOURCES) pokemon_platinum/rom
 	$Qcp $(DATA_GEN_OUT) pokemon_platinum/data
 	$Qcp $(DOCS) pokemon_platinum/docs
 	$Qcp $(PATCHES) pokemon_platinum/patches

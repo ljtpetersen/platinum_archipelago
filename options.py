@@ -341,6 +341,10 @@ class HoldAToAdvance(Toggle):
     """
     display_name = "Hold A to Advance"
 
+class ReusableTms(Toggle):
+    """TMs are reusable."""
+    display_name = "Reusable TMs"
+
 slot_data_options: Sequence[str] = [
     "hms",
     "badges",
@@ -374,6 +378,8 @@ slot_data_options: Sequence[str] = [
     "show_unrandomized_progression_items",
     "goal",
     "death_link",
+    "time_items",
+    "reusable_tms",
 ]
 
 class PokemonPlatinumDeathLink(DeathLink):
@@ -405,6 +411,7 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
     regional_dex_goal: NationalDexNumMons
     early_sunyshore: SunyshoreEarly
     pastoria_barriers: PastoriaBarriers
+    reusable_tms: ReusableTms
 
     game_options: GameOptions
     blind_trainers: BlindTrainers
