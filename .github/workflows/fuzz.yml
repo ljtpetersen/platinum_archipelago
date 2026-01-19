@@ -21,8 +21,13 @@ jobs:
 
       - name: Make apworld
         shell: bash
-        working-directory: archipelago/worlds/pokemon_platinum
-        run: make Q= pokemon_platinum.apworld
+        run: |
+          cd archipelago/
+          uv venv
+          uv pip install pyparsing
+          cd worlds/pokemon_platinum
+          make pokemon_platinum.apworld
+
 
       - name: Copy apworld
         shell: bash

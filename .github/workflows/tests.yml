@@ -12,7 +12,7 @@ jobs:
     steps:
       - uses: Eijebong/ap-actions/setup-ap@main
         with:
-          version: '0.6.3'
+          version: '0.6.5'
           python-version: '3.13'
 
       - uses: actions/checkout@master
@@ -21,8 +21,12 @@ jobs:
 
       - name: Make apworld
         shell: bash
-        working-directory: archipelago/worlds/pokemon_platinum
-        run: make pokemon_platinum.apworld
+        run: |
+          cd archipelago/
+          uv venv
+          uv pip install pyparsing
+          cd worlds/pokemon_platinum
+          make pokemon_platinum.apworld
 
       - name: Copy apworld
         shell: bash
@@ -35,6 +39,6 @@ jobs:
       - uses: Eijebong/ap-actions/ap-tests@main
         with:
           apworld-path: pokemon_platinum.apworld
-          ap-version: '0.6.3'
+          ap-version: '0.6.5'
           python-version: '3.13'
           checkout: false
