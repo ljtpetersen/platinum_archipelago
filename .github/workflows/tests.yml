@@ -27,6 +27,8 @@ jobs:
           uv pip install pyparsing
           cd worlds/pokemon_platinum
           make pokemon_platinum.apworld
+          cd ..
+          zip pokemon_platinum/pokemon_platinum.apworld pokemon_platinum/archipelago.json
 
       - name: Copy apworld
         shell: bash
