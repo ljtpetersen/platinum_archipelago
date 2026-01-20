@@ -38,6 +38,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * Team Galactic Grunts now disappear if you defeat mars before hitting the Route 205 South trigger.
 * Correct Rev. 0 ROM is now being used for diffs.
 * APWorld building is now compatible with Archipelago 7.
+* Incorrect rules for Mt. Coronet B1F Green Shard & Wayward Cave or Route 207 Red Shard.
 
 ## [0.1.6] - 2025-12-28
 ### Fixed
