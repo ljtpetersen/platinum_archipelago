@@ -28,7 +28,6 @@ jobs:
           cd worlds/pokemon_platinum
           make pokemon_platinum.apworld
 
-
       - name: Copy apworld
         shell: bash
         run: cp archipelago/worlds/pokemon_platinum/pokemon_platinum.apworld .
