@@ -54,13 +54,13 @@ class ItemData:
             value >>= (ub - lb) * 8
         self.data[ub] = self.data[ub] & (((1 << (8 - (u & 7))) - 1) << (u & 7)) | value & ((1 << (u & 7)) - 1)
 
-def patch_items(pl_item_data: bytes, patch_info: Mapping[str, Sequence[Tuple[ItemDataField, int]]]) -> bytes:
+def patch_items(pl_item_data: bytes, patch_info: Mapping[str, Sequence[Tuple[str, int]]]) -> bytes:
     narc = Narc.from_bytes(pl_item_data)
     for id, patches in patch_info.items():
         id = int(id)
         item_data = ItemData(bytearray(narc.files[id]))
         for field, val in patches:
-            item_data[field] = val
+            item_data[getattr(ItemDataField, field)] = val
         narc.files[id] = bytes(item_data.data)
     return narc.to_bytes()
 

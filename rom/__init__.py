@@ -6,7 +6,6 @@
 from collections.abc import MutableSequence, MutableSet
 import bsdiff4
 from collections import Counter
-from hashlib import md5
 import json
 import os
 import pkgutil
@@ -35,7 +34,7 @@ PLATINUM_1_1_US_HASH = "ab828b0d13f09469a71460a34d0de51b"
 class PokemonPlatinumPatch(APAutoPatchInterface):
     game = "Pokemon Platinum"
     patch_file_ending = ".applatinum"
-    hashes: list[str | bytes] = []
+    hashes: list[str | bytes] = [PLATINUM_1_0_US_HASH, PLATINUM_1_1_US_HASH]
     source_data: bytes
     files: Dict[str, bytes]
     result_file_ending = ".nds"
@@ -55,10 +54,10 @@ class PokemonPlatinumPatch(APAutoPatchInterface):
     def patch(self, target: str) -> None:
         self.read()
         data = PokemonPlatinumPatch.get_source_data_with_cache()
-        sum = md5(data).hexdigest()
-        if sum == PLATINUM_1_0_US_HASH:
+        rom_version = data[0x1E]
+        if rom_version == 0:
             patch_name = "base_patch_us_rev0.bsdiff4"
-        elif sum == PLATINUM_1_1_US_HASH:
+        elif rom_version == 1:
             patch_name = "base_patch_us_rev1.bsdiff4"
         else:
             raise ValueError("ROM is not an accepted Pokémon Platinum copy. Only the US Rev. 0 and Rev. 1 ROMs are accepted")
@@ -357,7 +356,7 @@ def generate_output(world: "PokemonPlatinumWorld", output_directory: str, patch:
         for lbl in world.item_name_groups["TMs and HMs"]:
             id = items[raw_id_to_const_name[world.item_name_to_id[lbl]]].data_id
             seq = item_patches.get(id, [])
-            seq.append([ItemDataField.PREVENT_TOSS.value, 1])
+            seq.append(["PREVENT_TOSS", 1])
             item_patches[id] = seq
 
     if len(item_patches) > 0:
