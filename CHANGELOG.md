@@ -27,12 +27,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * A clerk in the fourth floor of the Veilstone Department Store, who sells non-reusable evolution items after they have been previously obtained. He also sells TM70 Flash. (untested)
 * An option for reusable TMs.
 * An option to have a 100% catch rate. (moderately tested)
+* Cheats in the client.
 ### Changed
 * In-game game options option is now validated before generation.
 * Some evolution stones have been key-itemified, and are no longer consumed when used.
 ### Fixed
 * Non-determinism of generation. (hopefully)
-* Elite Four rematch is triggered only if the game has been completed and stark mountain has been cleared. (untested)
+* Elite Four rematch is triggered only if the game has been completed and stark mountain has been cleared.
 * The bag now shows the amount of collected unown file items. (untested)
 * Logic error for Looker gift and hidden item in Mt. Coronet 2F.
 * Team Galactic Grunts now disappear if you defeat mars before hitting the Route 205 South trigger.
