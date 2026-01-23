@@ -1,5 +1,5 @@
 
-.PHONY: data_gen update_apnds
+.PHONY: data_gen update_apnds patches
 
 Q ?= @
 
@@ -71,6 +71,9 @@ update_apnds:
 	    rm apnds.tar.gz && \
 	    echo $(APNDS_VERSION) >apnds/version; \
 	fi
+
+patches: $(PATCHES)
+	@:
 
 pokemon_platinum.apworld: data_gen $(SOURCES) update_apnds $(PATCHES)
 	@echo MAKE APWORLD
