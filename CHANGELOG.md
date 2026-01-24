@@ -28,12 +28,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * An option for reusable TMs.
 * An option to have a 100% catch rate.
 * Cheats in the client.
-* Honey trees no longer have a 6 hour delay for encounters. Honey trees no longer have bad odds when using the same tree twice in a row.
-* The trophy garden can now be quickly reset.
 * Swarms can now be attracted by berries.
 ### Changed
 * In-game game options option is now validated before generation.
 * Some evolution stones have been key-itemified, and are no longer consumed when used.
+* Honey trees no longer have a 6 hour delay for encounters. Honey trees no longer have bad odds when using the same tree twice in a row.
+* The trophy garden can now be quickly reset.
 ### Fixed
 * Non-determinism of generation. (hopefully)
 * Elite Four rematch is triggered only if the game has been completed and stark mountain has been cleared.
