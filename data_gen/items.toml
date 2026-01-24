@@ -4147,9 +4147,11 @@ label = "Honey Tree Upgrade"
 id = 12
 clas = "special"
 classification = "progression"
+group = "dowsing_machine_upgrade"
 
 [feebas_upgrade]
 label = "Feebas Upgrade"
 id = 13
 clas = "special"
 classification = "progression"
+group = "dowsing_machine_upgrade"
