@@ -25,8 +25,8 @@ exits.valor_lakefront.lake_valor_drained = "event_lake_explosion"
 exits.verity_lakefront.lake_verity = "event_lake_valor_defeat_saturn"
 exits.acuity_lakefront.lake_acuity = "event_lake_verity_defeat_mars & rock_climb"
 
-locs.sandgem_town_pokemon_research_lab_pokedex_2 = "regional_mons(opt:regional_dex_goal)"
-locs.sandgem_town_pokemon_research_lab_poke_radar = "regional_mons(opt:regional_dex_goal)"
+locs.sandgem_town_pokemon_research_lab_pokedex_2 = "pokedex & regional_mons(opt:regional_dex_goal)"
+locs.sandgem_town_pokemon_research_lab_poke_radar = "pokedex & regional_mons(opt:regional_dex_goal)"
 
 exits.route_219.route_220 = "surf"
 exits.route_221.pal_park_lobby = "national_dex"
@@ -86,7 +86,7 @@ locs.eterna_city_tm46 = "cut"
 locs.cycle_shop_bicycle = "event_eterna_defeat_team_galactic"
 locs.eterna_city_moon_stone = "surf"
 locs.eterna_city_south_house_upgrade = "event_met_oak_pal_park"
-locs.route_206_cycling_road_north_gate_exp_share = "mons(35)"
+locs.route_206_cycling_road_north_gate_exp_share = "pokedex & mons(35)"
 
 locs.route_211_west_tm12 = "rock_smash"
 
@@ -140,7 +140,7 @@ exits.route_209_lost_tower_2f.route_209_lost_tower_3f = "defog_if_opt"
 locs.route_209_lost_tower_5f_cleanse_tag = "defog"
 locs.route_209_lost_tower_5f_spell_tag = "defog"
 
-locs.solaceon_town_pokemonhistory = "regional_mons(50)"
+locs.solaceon_town_pokemonhistory = "pokedex & regional_mons(50)"
 exits.maniac_tunnel.solaceon_ruins_maniac_tunnel_room = "uunown * 26 if unown_option == option_item else event_solaceon_ruins if unown_option == option_vanilla"
 locs.solaceon_ruins_room_2_green_shard = "hm05"
 
