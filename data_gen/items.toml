@@ -796,9 +796,10 @@ data_id = 110
 [odd_keystone]
 label = "Odd Keystone"
 id = 111
-clas = "bagitem"
+clas = "specialbagitem"
 group = "items"
 data_id = 111
+classification = "progression"
 
 [griseous_orb]
 label = "Griseous Orb"
