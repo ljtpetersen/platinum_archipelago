@@ -223,9 +223,9 @@ def generate_output(world: "PokemonPlatinumWorld", output_directory: str, patch:
     add_opt_byte("cartridges")
     add_opt_byte("time_items")
     add_opt_byte("reusable_tms")
-
     # where munchlax trees go when munchlax trees happens
     ap_bin += struct.pack("<4B", *world.random.choices(list(range(21)), k=4))
+    add_opt_byte("start_with_swarms")
 
     match game_opts.received_items_notification:
         case "nothing":

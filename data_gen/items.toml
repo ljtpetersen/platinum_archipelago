@@ -3026,7 +3026,7 @@ data_id = 426
 [poffin_case]
 label = "Poffin Case"
 id = 449
-clas = "bagitem"
+clas = "specialbagitem"
 group = "key_items"
 data_id = 427
 
@@ -4140,4 +4140,16 @@ label = "Nighttime"
 id = 11
 clas = "special"
 group = "timeitem"
+classification = "progression"
+
+[honey_tree_upgrade]
+label = "Honey Tree Upgrade"
+id = 12
+clas = "special"
+classification = "progression"
+
+[feebas_upgrade]
+label = "Feebas Upgrade"
+id = 13
+clas = "special"
 classification = "progression"

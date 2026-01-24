@@ -353,6 +353,14 @@ class AlwaysCatch(Toggle):
     """
     display_name = "Always Catch"
 
+class StartWithSwarms(DefaultOnToggle):
+    """
+    Start the game with swarms enabled.
+    Note: swarms will only be enabled after you obtain the poffin case,
+    which is when you can control their locations.
+    """
+    display_name = "Start With Swarms"
+
 slot_data_options: Sequence[str] = [
     "hms",
     "badges",
@@ -388,6 +396,7 @@ slot_data_options: Sequence[str] = [
     "death_link",
     "time_items",
     "reusable_tms",
+    "start_with_swarms"
 ]
 
 class PokemonPlatinumDeathLink(DeathLink):
@@ -420,6 +429,7 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
     early_sunyshore: SunyshoreEarly
     pastoria_barriers: PastoriaBarriers
     reusable_tms: ReusableTms
+    start_with_swarms: StartWithSwarms
 
     game_options: GameOptions
     blind_trainers: BlindTrainers

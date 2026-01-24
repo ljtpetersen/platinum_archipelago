@@ -9,9 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 * Universal tracker YAML-less support. (to be rewritten)
 * A location for the bag item.
-* GBA cartridge items and locations for them. (option to remove location untested, ruby cartridge location untested)
+* GBA cartridge items and locations for them. (option to remove location untested)
 * A linking cable item and a location for it. (location untested)
-* TMs for Rollout, Ancient Power, Double Hit, and Mimic, and corresponding locations for them. (locations untested)
+* TMs for Rollout, Ancient Power, Double Hit, and Mimic, and corresponding locations for them. (Ancient Power location untested)
 * AP items now display their name and destination when picked up.
 * A location for the S.S. Ticket (untested).
 * A location for the Marsh Pass (untested).
@@ -24,11 +24,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * ROM support for starter randomization. (AP world side is still missing)
 * Hold A to advance option.
 * ROM support for randomizing the species that Rowan shows during the intro. (AP world side is still missing)
-* A clerk in the fourth floor of the Veilstone Department Store, who sells non-reusable evolution items after they have been previously obtained. He also sells TM70 Flash. (untested)
+* A clerk in the fourth floor of the Veilstone Department Store, who sells non-reusable evolution items after they have been previously obtained. He also sells TM70 Flash.
 * An option for reusable TMs.
-* An option to have a 100% catch rate. (moderately tested)
+* An option to have a 100% catch rate.
 * Cheats in the client.
-* Honey trees no longer have a 6 hour delay for encounters. Honey trees no longer have bad odds when using the same tree twice in a row,
+* Honey trees no longer have a 6 hour delay for encounters. Honey trees no longer have bad odds when using the same tree twice in a row.
+* The trophy garden can now be quickly reset.
+* Swarms can now be attracted by berries.
 ### Changed
 * In-game game options option is now validated before generation.
 * Some evolution stones have been key-itemified, and are no longer consumed when used.
