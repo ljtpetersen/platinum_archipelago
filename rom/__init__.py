@@ -226,6 +226,8 @@ def generate_output(world: "PokemonPlatinumWorld", output_directory: str, patch:
     # where munchlax trees go when munchlax trees happens
     ap_bin += struct.pack("<4B", *world.random.choices(list(range(21)), k=4))
     add_opt_byte("start_with_swarms")
+    add_opt_byte("can_reset_legendaries_in_ap_helper")
+    add_opt_byte("evo_items_shop_in_ap_helper")
 
     match game_opts.received_items_notification:
         case "nothing":
@@ -245,8 +247,6 @@ def generate_output(world: "PokemonPlatinumWorld", output_directory: str, patch:
     add_opt_byte("instant_text")
     add_opt_byte("hold_a_to_advance")
     add_opt_byte("always_catch")
-    add_opt_byte("can_reset_legendaries_in_ap_helper")
-    add_opt_byte("evo_items_shop_in_ap_helper")
 
     if len(ap_bin) % 2 == 1:
         ap_bin += b'\x00'
