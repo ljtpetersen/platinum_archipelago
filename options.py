@@ -361,6 +361,14 @@ class StartWithSwarms(DefaultOnToggle):
     """
     display_name = "Start With Swarms"
 
+class CanResetLegendariesInAPHelper(DefaultOnToggle):
+    """Can reset roamers with the AP Helper. (Present in the 2nd floor of any Pokémon Centre)"""
+    display_name = "Can Reset Roamers in AP Helper"
+
+class EvoItemsShopInAPHelper(Toggle):
+    """Evolution items shop is available with the AP Helper. (Present in the 2nd floor of any Pokémon Centre)"""
+    display_name = "Evolution Item Shop in AP Helper"
+
 slot_data_options: Sequence[str] = [
     "hms",
     "badges",
@@ -396,7 +404,9 @@ slot_data_options: Sequence[str] = [
     "death_link",
     "time_items",
     "reusable_tms",
-    "start_with_swarms"
+    "start_with_swarms",
+    "can_reset_legendaries_in_ap_helper",
+    "evo_items_shop_in_ap_helper"
 ]
 
 class PokemonPlatinumDeathLink(DeathLink):
@@ -430,6 +440,8 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
     pastoria_barriers: PastoriaBarriers
     reusable_tms: ReusableTms
     start_with_swarms: StartWithSwarms
+    can_reset_legendaries_in_ap_helper: CanResetLegendariesInAPHelper
+    evo_items_shop_in_ap_helper: EvoItemsShopInAPHelper
 
     game_options: GameOptions
     blind_trainers: BlindTrainers

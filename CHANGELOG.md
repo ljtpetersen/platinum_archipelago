@@ -29,6 +29,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * An option to have a 100% catch rate.
 * Cheats in the client.
 * Swarms can now be attracted by berries.
+* AP Helper NPC to 2nd floors of all Pokémon Centres.
 ### Changed
 * In-game game options option is now validated before generation.
 * Some evolution stones have been key-itemified, and are no longer consumed when used.

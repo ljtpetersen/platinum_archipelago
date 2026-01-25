@@ -245,6 +245,8 @@ def generate_output(world: "PokemonPlatinumWorld", output_directory: str, patch:
     add_opt_byte("instant_text")
     add_opt_byte("hold_a_to_advance")
     add_opt_byte("always_catch")
+    add_opt_byte("can_reset_legendaries_in_ap_helper")
+    add_opt_byte("evo_items_shop_in_ap_helper")
 
     if len(ap_bin) % 2 == 1:
         ap_bin += b'\x00'
@@ -351,6 +353,7 @@ def generate_output(world: "PokemonPlatinumWorld", output_directory: str, patch:
     if world.random.randint(0,8191) == 0:
         buneary_spec |= 0x8000
     ap_bin += buneary_spec.to_bytes(2, 'little')
+    ap_bin += b''.join(id.to_bytes(2, 'little') for id in [481, 488, 491, 146, 145, 144]) # where roamers go when roamer randomization happens
 
     patch.write_file("ap.bin", ap_bin)
 
