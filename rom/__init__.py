@@ -247,6 +247,7 @@ def generate_output(world: "PokemonPlatinumWorld", output_directory: str, patch:
     add_opt_byte("instant_text")
     add_opt_byte("hold_a_to_advance")
     add_opt_byte("always_catch")
+    add_opt_byte("guaranteed_escape")
 
     if len(ap_bin) % 2 == 1:
         ap_bin += b'\x00'

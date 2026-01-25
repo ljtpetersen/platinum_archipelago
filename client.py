@@ -117,6 +117,7 @@ class PokemonPlatinumClient(BizHawkClient):
     ignore_next_death_link: bool
 
     cheat_bits: int
+    added_cheat_command: bool
 
     def initialize_client(self):
         self.goal_flag = None
@@ -126,6 +127,7 @@ class PokemonPlatinumClient(BizHawkClient):
         self.previous_death_link = 0
         self.ignore_next_death_link = False
         self.cheat_bits = 0
+        self.added_cheat_command = False
 
     async def validate_rom(self, ctx: "BizHawkClientContext") -> bool:
         from CommonClient import logger
@@ -171,8 +173,6 @@ class PokemonPlatinumClient(BizHawkClient):
         self.want_slot_data = True
         self.watcher_timeout = 0.125
 
-        ctx.command_processor.commands["cheat"] = cmd_cheat
-
         self.initialize_client()
 
         return True
@@ -197,6 +197,10 @@ class PokemonPlatinumClient(BizHawkClient):
         if self.ap_struct_address == 0:
             await self.get_struct_addr(ctx)
             return
+
+        if ctx.slot_data["cheats_enabled"] == 1 and not self.added_cheat_command:
+            self.added_cheat_command = True
+            ctx.command_processor.commands["cheat"] = cmd_cheat
 
         if ctx.slot_data["goal"] == Goal.option_champion:
             self.goal_flag = FlagCheck(id=version_data.champion_flag)

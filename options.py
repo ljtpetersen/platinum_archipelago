@@ -369,6 +369,18 @@ class EvoItemsShopInAPHelper(Toggle):
     """Evolution items shop is available with the AP Helper. (Present in the 2nd floor of any Pokémon Centre)"""
     display_name = "Evolution Item Shop in AP Helper"
 
+class CheatsEnabled(Toggle):
+    """Client cheats are enabled."""
+    display_name = "Cheats Enabled"
+
+class GuaranteedEscape(Toggle):
+    """
+    You will always be able to escape from wild encounters.
+
+    This option is modifiable in the in-game options menu.
+    """
+    display_name = "Guaranteed Escape."
+
 slot_data_options: Sequence[str] = [
     "hms",
     "badges",
@@ -406,7 +418,8 @@ slot_data_options: Sequence[str] = [
     "reusable_tms",
     "start_with_swarms",
     "can_reset_legendaries_in_ap_helper",
-    "evo_items_shop_in_ap_helper"
+    "evo_items_shop_in_ap_helper",
+    "cheats_enabled",
 ]
 
 class PokemonPlatinumDeathLink(DeathLink):
@@ -453,8 +466,11 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
     instant_text: InstantText
     hold_a_to_advance: HoldAToAdvance
     always_catch: AlwaysCatch
+    guaranteed_escape: GuaranteedEscape
 
     death_link: PokemonPlatinumDeathLink
+
+    cheats_enabled: CheatsEnabled
 
     master_repel: AddMasterRepel
     s_s_ticket: AddSSTicket
