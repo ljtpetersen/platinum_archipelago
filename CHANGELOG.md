@@ -35,6 +35,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * Honey trees no longer have a 6 hour delay for encounters. Honey trees no longer have bad odds when using the same tree twice in a row.
 * The trophy garden can now be quickly reset.
 * Locations that check for number of seen species now require the Pokédex.
+* Poké Radar no longer needs to recharge.
 ### Fixed
 * Non-determinism of generation. (hopefully)
 * Elite Four rematch is triggered only if the game has been completed and stark mountain has been cleared.
