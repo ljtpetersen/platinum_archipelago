@@ -4155,3 +4155,11 @@ id = 13
 clas = "special"
 classification = "progression"
 group = "dowsing_machine_upgrade"
+
+[tm_user]
+# Placeholder label
+label = "TM User"
+id = 478
+clas = "bagitem"
+classification = "progression"
+group = "tm_user"

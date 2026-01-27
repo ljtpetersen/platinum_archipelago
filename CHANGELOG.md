@@ -30,7 +30,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * Cheats in the client.
 * Swarms can now be attracted by berries.
 * AP Helper NPC to 2nd floors of all Pokémon Centres.
-* Add Dowsing Machine Upgrades to identify munchlax honey trees and feebas fishing tiles. (Sprites missing, untested)
+* Dowsing Machine Upgrades to identify munchlax honey trees and feebas fishing tiles. (sprites missing)
+* An item to allow use of field moves without a party member knowing them. (sprites missing)
 ### Changed
 * In-game game options option is now validated before generation.
 * Some evolution stones have been key-itemified, and are no longer consumed when used.

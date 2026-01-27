@@ -228,6 +228,8 @@ def generate_output(world: "PokemonPlatinumWorld", output_directory: str, patch:
     add_opt_byte("start_with_swarms")
     add_opt_byte("can_reset_legendaries_in_ap_helper")
     add_opt_byte("evo_items_shop_in_ap_helper")
+    # where tm user mode goes.
+    ap_bin += b'\x01'
 
     match game_opts.received_items_notification:
         case "nothing":
