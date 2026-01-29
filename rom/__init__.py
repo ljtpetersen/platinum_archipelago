@@ -250,6 +250,7 @@ def generate_output(world: "PokemonPlatinumWorld", output_directory: str, patch:
     add_opt_byte("hold_a_to_advance")
     add_opt_byte("always_catch")
     add_opt_byte("guaranteed_escape")
+    add_opt_byte("talk_trainers_without_fight")
 
     if len(ap_bin) % 2 == 1:
         ap_bin += b'\x00'

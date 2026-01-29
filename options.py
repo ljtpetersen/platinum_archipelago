@@ -381,6 +381,16 @@ class GuaranteedEscape(Toggle):
     """
     display_name = "Guaranteed Escape."
 
+class TalkTrainersWithoutFight(Toggle):
+    """
+    You can talk to trainers without having to fight them.
+    This only applies when you talk to them, not if they spot you.
+    Note: them spotting you can be disabled by the blind trainers option.
+
+    This option is modifiable in the in-game options menu.
+    """
+    display_name = "Talk to Trainers without Fighting Them"
+
 slot_data_options: Sequence[str] = [
     "hms",
     "badges",
@@ -467,6 +477,7 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
     hold_a_to_advance: HoldAToAdvance
     always_catch: AlwaysCatch
     guaranteed_escape: GuaranteedEscape
+    talk_trainers_without_fight: TalkTrainersWithoutFight
 
     death_link: PokemonPlatinumDeathLink
 
