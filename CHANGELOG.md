@@ -32,6 +32,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * AP Helper NPC to 2nd floors of all Pokémon Centres.
 * Dowsing Machine Upgrades to identify munchlax honey trees and feebas fishing tiles. (sprites missing)
 * An item to allow use of field moves without a party member knowing them. (sprites missing)
+* An option to just talk to trainers. (useful for trainersanity)
 ### Changed
 * In-game game options option is now validated before generation.
 * Some evolution stones have been key-itemified, and are no longer consumed when used.
