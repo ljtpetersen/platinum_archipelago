@@ -37,6 +37,7 @@ class VersionData:
     recv_item_count_offset_in_ap_save: int
     once_loc_flags_offset_in_ap_save: int
     once_loc_flags_count: int
+    current_map_id_offset: int
 
 AP_VERSION_DATA: Mapping[int, VersionData] = {
     0: VersionData(
@@ -51,6 +52,7 @@ AP_VERSION_DATA: Mapping[int, VersionData] = {
         recv_item_count_offset_in_ap_save=0,
         once_loc_flags_offset_in_ap_save=10,
         once_loc_flags_count=16,
+        current_map_id_offset=22,
     ),
 }
 
@@ -100,11 +102,13 @@ class PokemonPlatinumClient(BizHawkClient):
     goal_flag: FlagCheck | None
     local_checked_locations: Set[int]
     expected_header: bytes
+    current_map: int
 
     def initialize_client(self):
         self.goal_flag = None
         self.local_checked_locations = set()
         self.expected_header = AP_MAGIC * 3 + self.rom_version.to_bytes(length=4, byteorder='little')
+        self.current_map = 0
 
     async def validate_rom(self, ctx: "BizHawkClientContext") -> bool:
         from CommonClient import logger
@@ -260,5 +264,23 @@ class PokemonPlatinumClient(BizHawkClient):
                     "cmd": "StatusUpdate",
                     "status": ClientStatus.CLIENT_GOAL,
                 }])
+
+            read_result = await bizhawk.guarded_read(
+                ctx.bizhawk_ctx,
+                [
+                    (self.ap_struct_address + version_data.current_map_id_offset, 2, "ARM9 System Bus"),
+                ],
+                [guards["AP STRUCT VALID"]]
+            )
+            if read_result is None:
+                return
+
+            current_map = int.from_bytes(read_result[0], 'little')
+            if current_map != self.current_map:
+                self.current_map = current_map
+                message = [{"cmd": "Bounce", "slots": [ctx.slot],
+                           "data": {"mapNumber": current_map}}]
+                await ctx.send_msgs(message)
+
         except bizhawk.RequestFailedError:
             pass
