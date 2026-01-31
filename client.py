@@ -11,6 +11,7 @@ from typing import TYPE_CHECKING, Tuple
 import Utils
 
 from .data.locations import FlagCheck, LocationCheck, locations, VarCheck, OnceCheck
+from .data.event_checks import event_checks
 from .locations import raw_id_to_const_name
 from .options import Goal, RemoteItems
 
@@ -23,11 +24,30 @@ if TYPE_CHECKING:
 AP_STRUCT_PTR_ADDRESS = 0x023DFFFC
 AP_SUPPORTED_VERSIONS = {0}
 AP_MAGIC = b' AP '
+TRACKED_EVENTS = [
+    "fen_badge",
+    "met_oak_pal_park",
+    "lake_verity_defeat_mars",
+    "lake_explosion",
+    "forest_badge",
+    "cobble_badge",
+    "galactic_hq_defeat_cyrus",
+    "lake_valor_defeat_saturn",
+    "lake_acuity_meet_jupiter",
+    "icicle_badge",
+    "eterna_defeat_team_galactic",
+    "relic_badge",
+    "coal_badge",
+    "beacon_badge",
+    "mine_badge",
+    "beat_cynthia",
+    "distortion_world",
+    "valley_windworks_defeat_team_galactic",
+]
 
 @dataclass(frozen=True)
 class VersionData:
     savedata_ptr_offset: int
-    champion_flag: int
     recv_item_id_offset: int
     vars_flags_offset_in_save: int
     vars_offset_in_vars_flags: int
@@ -42,7 +62,6 @@ class VersionData:
 AP_VERSION_DATA: Mapping[int, VersionData] = {
     0: VersionData(
         savedata_ptr_offset=16,
-        champion_flag=2404,
         recv_item_id_offset=20,
         vars_flags_offset_in_save=0xDC0,
         vars_offset_in_vars_flags=0,
@@ -99,16 +118,18 @@ class PokemonPlatinumClient(BizHawkClient):
     patch_suffix = ".applatinum"
     ap_struct_address: int = 0
     rom_version: int = 0
-    goal_flag: FlagCheck | None
+    goal_flag: LocationCheck | None
     local_checked_locations: Set[int]
     expected_header: bytes
     current_map: int
+    local_tracked_events: int
 
     def initialize_client(self):
         self.goal_flag = None
         self.local_checked_locations = set()
         self.expected_header = AP_MAGIC * 3 + self.rom_version.to_bytes(length=4, byteorder='little')
         self.current_map = 0
+        self.local_tracked_events = 0
 
     async def validate_rom(self, ctx: "BizHawkClientContext") -> bool:
         from CommonClient import logger
@@ -172,7 +193,7 @@ class PokemonPlatinumClient(BizHawkClient):
             return
 
         if ctx.slot_data["goal"] == Goal.option_champion:
-            self.goal_flag = FlagCheck(id=version_data.champion_flag)
+            self.goal_flag = event_checks["beat_cynthia"]
 
         if ctx.slot_data["remote_items"] == RemoteItems.option_true and not ctx.items_handling & 0b010: # type: ignore
             ctx.items_handling = 0b011
@@ -248,15 +269,30 @@ class PokemonPlatinumClient(BizHawkClient):
 
             local_checked_locations = set()
             game_clear = vars_flags.is_checked(self.goal_flag) # type: ignore
+            local_tracked_events = 0
 
             for k, loc in map(lambda k : (k, locations[raw_id_to_const_name[k]]), ctx.missing_locations):
                 if vars_flags.is_checked(loc.check):
                     local_checked_locations.add(k)
 
+            for k, event in enumerate(TRACKED_EVENTS):
+                if vars_flags.is_checked(event_checks[event]):
+                    local_tracked_events |= 1 << k
+
             if local_checked_locations != self.local_checked_locations:
                 await ctx.check_locations(local_checked_locations)
 
                 self.local_checked_locations = local_checked_locations
+
+            if local_tracked_events != self.local_tracked_events:
+                await ctx.send_msgs([{
+                    "cmd": "Set",
+                    "key": f"pokemon_platinum_tracked_events_{ctx.team}_{ctx.slot}",
+                    "default": 0,
+                    "want_reply": False,
+                    "operations": [{"operation": "or", "value": local_tracked_events}],
+                }])
+                self.local_tracked_events = local_tracked_events
 
             if not ctx.finished_game and game_clear:
                 ctx.finished_game = True

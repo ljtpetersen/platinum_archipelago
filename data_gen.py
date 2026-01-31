@@ -206,6 +206,7 @@ class ParserState:
     locations: Mapping[str, Location]
     species: Mapping[str, Species]
     items: Mapping[str, Item]
+    event_checks: Mapping[str, Check]
     rom_interface: RomInterface
     rules: Rules
 
@@ -229,6 +230,15 @@ class ParserState:
                 val["check"] = Check(**check)
             return val
         self.locations = {k:Location(**convert_inner_check(v)) for k, v in get_toml("locations").items()}
+
+    def parse_event_checks(self):
+        def check_val(v: int | Mapping[str, Any]) -> Check:
+            if isinstance(v, int):
+                return Check(v)
+            else:
+                return Check(**v)
+
+        self.event_checks = {k:check_val(v) for k, v in get_toml("event_checks").items()}
 
     def parse_rom_interface(self):
         self.rom_interface = RomInterface(**get_toml("rom_interface"))
@@ -386,6 +396,13 @@ class ParserState:
 
         return ret
 
+    def generate_event_checks(self) -> Mapping[str, Sequence[str]]:
+        ret = {}
+
+        ret["EVENT_CHECKS"] = [f"\"{k}\": {v},\n" for k, v in self.event_checks.items()]
+
+        return ret
+
     def get_item_set(self) -> Set[str]:
         return self.items.keys() | {event for region in self.regions.values() for event in region.events} | {f"mon_{spec}" for spec in self.species}
 
@@ -501,7 +518,17 @@ def main():
     state = ParserState()
     state.validate()
 
-    to_generate = ["items", "locations", "rules", "__init__", "species", "encounters", "regions", "charmap"]
+    to_generate = [
+        "items",
+        "locations",
+        "rules",
+        "__init__",
+        "species",
+        "encounters",
+        "regions",
+        "charmap",
+        "event_checks",
+    ]
     for name in to_generate:
         fill_template(name, getattr(state, "generate_" + name)())
 
