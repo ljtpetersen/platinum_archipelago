@@ -23,7 +23,7 @@ clas = "bagitem"
 group = "balls"
 
 [poke_ball]
-label = "Poké Ball"
+label = "Poke Ball"
 id = 4
 clas = "bagitem"
 group = "balls"
@@ -396,7 +396,7 @@ clas = "bagitem"
 group = "battle_items"
 
 [poke_doll]
-label = "Poké Doll"
+label = "Poke Doll"
 id = 63
 clas = "bagitem"
 group = "battle_items"
@@ -1213,7 +1213,7 @@ clas = "bagitem"
 group = "items"
 
 [kings_rock]
-label = "King’s Rock"
+label = "King's Rock"
 id = 221
 clas = "bagitem"
 group = "items"
@@ -2483,7 +2483,7 @@ clas = "bagitem"
 group = "key_items"
 
 [poke_radar]
-label = "Poké Radar"
+label = "Poke Radar"
 id = 431
 clas = "bagitem"
 group = "key_items"
@@ -2617,7 +2617,7 @@ group = "key_items"
 classification = "progression"
 
 [oaks_letter]
-label = "Oak’s Letter"
+label = "Oak's Letter"
 id = 452
 clas = "bagitem"
 group = "key_items"
@@ -2751,7 +2751,7 @@ clas = "poketchapp"
 group = "poketch_apps"
 
 [partystatus]
-label = "POKéMON LIST"
+label = "POKeMON LIST"
 id = 4
 clas = "poketchapp"
 group = "poketch_apps"
@@ -2782,7 +2782,7 @@ clas = "poketchapp"
 group = "poketch_apps"
 
 [pokemonhistory]
-label = "POKéMON HISTORY"
+label = "POKeMON HISTORY"
 id = 9
 clas = "poketchapp"
 group = "poketch_apps"
@@ -2941,21 +2941,21 @@ group = "runningshoes"
 classification = "useful"
 
 [pokedex]
-label = "Upgradable Pokédex"
+label = "Upgradable Pokedex"
 id = 2
 clas = "special"
 group = "pokedex"
 classification = "progression"
 
 [poke_ball_x5]
-label = "Poké Ball x5"
+label = "Poke Ball x5"
 id = 4
 clas = "bagitem"
 group = "balls"
 count = 5
 
 [poketch]
-label = "Pokétch"
+label = "Poketch"
 id = 3
 clas = "special"
 group = "poketch_apps"
