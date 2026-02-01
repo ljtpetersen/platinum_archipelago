@@ -205,7 +205,7 @@ class PokemonPlatinumClient(BizHawkClient):
         if ctx.slot_data["goal"] == Goal.option_champion:
             self.goal_flag = FlagCheck(id=version_data.champion_flag)
 
-        if "remote_items" in ctx.slot_data and ctx.slot_data["remote_items"] == RemoteItems.option_true and not ctx.items_handling & 0b010: # type: ignore
+        if "remote_items" in ctx.slot_data and ctx.slot_data["remote_items"] != RemoteItems.option_off and not ctx.items_handling & 0b010: # type: ignore
             ctx.items_handling = 0b011
             Utils.async_start(ctx.send_msgs([{
                 "cmd": "ConnectUpdate",

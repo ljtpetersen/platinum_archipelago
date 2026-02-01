@@ -40,6 +40,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * The trophy garden can now be quickly reset.
 * Locations that check for number of seen species now require the Pokédex.
 * Poké Radar no longer needs to recharge.
+* Remote items now have more options regarding which items are remote. (untested)
+* There is no longer an option to show unrandomized progression items.
 ### Fixed
 * Non-determinism of generation. (hopefully)
 * Elite Four rematch is triggered only if the game has been completed and stark mountain has been cleared.

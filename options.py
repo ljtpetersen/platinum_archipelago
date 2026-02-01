@@ -190,23 +190,25 @@ class RequireParcelCouponsCheckRoute203(DefaultOnToggle):
     """
     display_name = "Require Parcel and Coupons for Route 203 from Jubilife"
 
-class ShowUnrandomizedProgressionItems(DefaultOnToggle):
-    """
-    Whether unrandomized progression items should be sent to the server and
-    displayed in the chat. This also means that trackers will consider it a location
-    to be checked. If this is off, trackers may assume that it is obtained when
-    accessible.
-    """
-    display_name = "Show Unrandomized Progression Items"
-
-class RemoteItems(Toggle):
+class RemoteItems(Choice):
     """
     Whether local items should be given in-game, or sent by the server.
     This overrides the show randomized progression items option: all items are shown.
     It is highly recommended to use nothing for received items notification, otherwise
     you will be notified twice for each item.
+
+    Choices:
+    - off: no items are remote.
+    - only_randomized: only randomized items are remote.
+    - only_randomized_or_progression: only randomized items or progression items are remote.
+    - all: all (randomizable) items are remote.
     """
     display_name = "Remote Items"
+    default = 0
+    option_off = 0
+    option_only_randomized = 1
+    option_only_randomized_or_progression = 2
+    option_all = 3
 
 class FPS60(Toggle):
     """
@@ -421,7 +423,6 @@ slot_data_options: Sequence[str] = [
     "storage_key",
     "bag",
     "unown_option",
-    "show_unrandomized_progression_items",
     "goal",
     "death_link",
     "time_items",
@@ -491,7 +492,6 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
     bag: AddBag
     unown_option: UnownsOption
 
-    show_unrandomized_progression_items: ShowUnrandomizedProgressionItems
     remote_items: RemoteItems
 
     goal: Goal

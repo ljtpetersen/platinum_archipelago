@@ -256,14 +256,23 @@ def generate_output(world: "PokemonPlatinumWorld", output_directory: str, patch:
         ap_bin += b'\x00'
 
     tables: dict[int, bytearray] = {}
+    remote_items: bool = world.options.remote_items.value != 0
+    remote_item_bitfields: dict[int, bytearray] = {}
 
-    def put_in_table(table: LocationTable, id: int, item_id: int):
+    def put_in_table(table: LocationTable, id: int, item_id: int, is_randomized: bool):
         if table not in tables:
             tables[table] = bytearray()
         l = len(tables[table])
         if id >= l // 2:
             tables[table] = tables[table] + b'\x00\xF0' * (id - l // 2 + 1)
         tables[table][2*id:2*(id+1)] = item_id.to_bytes(length=2, byteorder='little')
+        if remote_items:
+            if table not in remote_item_bitfields:
+                remote_item_bitfields[table] = bytearray()
+            l = len(remote_item_bitfields[table])
+            if id // 8 >= l:
+                remote_item_bitfields[table] += b'\x00' * (id // 8 - l + 1)
+                remote_item_bitfields[table][id // 8] |= (1 if is_randomized else 0) << (id & 7)
 
     filled_locations = set()
 
@@ -292,7 +301,7 @@ def generate_output(world: "PokemonPlatinumWorld", output_directory: str, patch:
                 foreign_item_names_set.add(item_name)
             item_id = 0xD000 | len(foreign_items)
             foreign_items.append((item_name, dest_name))
-        put_in_table(table, id, item_id)
+        put_in_table(table, id, item_id, True)
 
     for location in locations.values():
         if location.label not in filled_locations:
@@ -300,17 +309,21 @@ def generate_output(world: "PokemonPlatinumWorld", output_directory: str, patch:
                 original_item = location.original_item
             else:
                 original_item = world.random.choice(location.original_item)
-            put_in_table(location.table, location.id, items[original_item].get_raw_id())
+            put_in_table(location.table, location.id, items[original_item].get_raw_id(), False)
 
     for i in range(max(tables.keys())):
         if i not in tables:
             tables[i] = bytearray()
+            if remote_items:
+                remote_item_bitfields[i] = bytearray()
 
     ap_bin += len(tables).to_bytes(length=4, byteorder='little')
     for table in sorted(tables.keys()):
         data = tables[table]
         ap_bin += (len(data) // 2).to_bytes(length=4, byteorder='little')
         ap_bin += data
+        if remote_items:
+            ap_bin += remote_item_bitfields[table]
 
     precollected = world.multiworld.precollected_items[world.player]
     start_inventory: Counter[int] = Counter(map(lambda item : item.code, precollected)) # type: ignore

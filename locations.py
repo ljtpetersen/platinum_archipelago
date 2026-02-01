@@ -3,13 +3,13 @@
 # Copyright (C) 2025 James Petersen <m@jamespetersen.ca>
 # Licensed under MIT. See LICENSE
 
-from BaseClasses import Location, Region
+from BaseClasses import ItemClassification, Location, Region
 from collections.abc import Callable, Mapping
 from dataclasses import dataclass
 from typing import Dict, TYPE_CHECKING
 
 from .data import items as itemdata, locations as locationdata, regions as regiondata
-from .options import PokemonPlatinumOptions, RandomizeKeyItems, UnownsOption
+from .options import PokemonPlatinumOptions, RandomizeKeyItems, RemoteItems, UnownsOption
 
 if TYPE_CHECKING:
     from . import PokemonPlatinumWorld
@@ -59,10 +59,26 @@ def get_parent_region(label: str, world: "PokemonPlatinumWorld") -> str | None:
     const_name = raw_id_to_const_name[world.location_name_to_id[label]]
     return locationdata.locations[const_name].parent_region
 
-def is_location_in_world(label: str, world: "PokemonPlatinumWorld"):
+def remote_items_should_add(const_name: str, world: "PokemonPlatinumWorld") -> bool:
+    if world.options.remote_items == RemoteItems.option_all:
+        return True
+    elif world.options.remote_items == RemoteItems.option_only_randomized_or_progression:
+        orig_item = locationdata.locations[const_name].original_item
+        if not isinstance(orig_item, str):
+            return False
+        if itemdata.items[orig_item].classification == ItemClassification.progression:
+            return True
+    else:
+        return False
+
+def is_location_in_world(label: str, world: "PokemonPlatinumWorld") -> bool:
     const_name = raw_id_to_const_name[world.location_name_to_id[label]]
     lt = location_types[locationdata.locations[const_name].type]
-    return (lt.is_enabled(world.options) or const_name in world.required_locations or world.options.remote_items) and lt.should_be_added(world.options)
+    if not lt.should_be_added(world.options):
+        return False
+    if lt.is_enabled(world.options) or const_name in world.required_locations:
+        return True
+    return remote_items_should_add(const_name, world)
 
 def create_location_label_to_code_map() -> Dict[str, int]:
     return {v.label:v.get_raw_id() for v in locationdata.locations.values()}
@@ -93,9 +109,7 @@ def create_locations(world: "PokemonPlatinumWorld", regions: Mapping[str, Region
         if region_name not in regions:
             continue
         region = regions[region_name]
-        show_unrandomized_progression_items = world.options.show_unrandomized_progression_items.value == 1
         remote_items = world.options.remote_items.value == 1
-        show_unrandomized_progression_items |= remote_items
         for name in region_data.locs:
             loc = locationdata.locations[name]
             lt = location_types[loc.type]
@@ -107,7 +121,8 @@ def create_locations(world: "PokemonPlatinumWorld", regions: Mapping[str, Region
             else:
                 original_item = world.random.choice(loc.original_item)
             item = itemdata.items[original_item]
-            if is_enabled or show_unrandomized_progression_items:
+            isnt_event = remote_items_should_add(name, world)
+            if is_enabled or isnt_event:
                 address = loc.get_raw_id()
             else:
                 address = None
@@ -120,7 +135,7 @@ def create_locations(world: "PokemonPlatinumWorld", regions: Mapping[str, Region
                 default_item_id=item.get_raw_id(),
                 is_enabled=is_enabled)
             if not is_enabled:
-                if show_unrandomized_progression_items:
+                if isnt_event:
                     ap_item = world.create_item(item.label)
                 else:
                     ap_item = world.create_event(item.label)
