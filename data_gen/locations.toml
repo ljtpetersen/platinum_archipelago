@@ -4345,7 +4345,7 @@ original_item = "great_ball"
 type = "hidden"
 table = "hidden"
 check = 733
-label = "Route 211 - Hidden Item in Grass"
+label = "Route 211 West - Hidden Item in Grass"
 id = 3
 
 [oreburgh_city_dire_hit]
