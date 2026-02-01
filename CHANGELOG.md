@@ -42,6 +42,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * Poké Radar no longer needs to recharge.
 * Remote items now have more options regarding which items are remote. (untested)
 * There is no longer an option to show unrandomized progression items.
+* The Great Marsh binoculars now reset the special encounters in the Great Marsh when they are checked.
 ### Fixed
 * Non-determinism of generation. (hopefully)
 * Elite Four rematch is triggered only if the game has been completed and stark mountain has been cleared.
