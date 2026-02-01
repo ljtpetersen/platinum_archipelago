@@ -4617,7 +4617,7 @@ original_item = "cobble_badge"
 type = "badge"
 table = "base"
 check = 157
-label = "Veilstone Gym - Cobble Badge from Maylene"
+label = "Veilstone City Gym - Cobble Badge from Maylene"
 id = 4
 
 [veilstone_city_gym_tm60]
@@ -4625,7 +4625,7 @@ original_item = "tm60"
 type = "npc_gift"
 table = "base"
 check = 157
-label = "Veilstone Gym - TM60 from Maylene"
+label = "Veilstone City Gym - TM60 from Maylene"
 id = 5
 
 [pastoria_city_gym_fen_badge]
@@ -4633,7 +4633,7 @@ original_item = "fen_badge"
 type = "badge"
 table = "base"
 check = 156
-label = "Pastoria Gym - Fen Badge from Crasher Wake"
+label = "Pastoria City Gym - Fen Badge from Crasher Wake"
 id = 6
 
 [pastoria_city_gym_tm55]
@@ -4641,7 +4641,7 @@ original_item = "tm55"
 type = "npc_gift"
 table = "base"
 check = 156
-label = "Pastoria Gym - TM55 from Crasher Wake"
+label = "Pastoria City Gym - TM55 from Crasher Wake"
 id = 7
 
 [hearthome_city_gym_leader_room_relic_badge]
@@ -4665,7 +4665,7 @@ original_item = "mine_badge"
 type = "badge"
 table = "base"
 check = 146
-label = "Canalave Gym - Mine Badge from Byron"
+label = "Canalave City Gym - Mine Badge from Byron"
 id = 10
 
 [canalave_city_gym_tm91]
@@ -4673,7 +4673,7 @@ original_item = "tm91"
 type = "npc_gift"
 table = "base"
 check = 146
-label = "Canalave Gym - TM91 from Byron"
+label = "Canalave City Gym - TM91 from Byron"
 id = 11
 
 [snowpoint_city_gym_icicle_badge]
@@ -4681,7 +4681,7 @@ original_item = "icicle_badge"
 type = "badge"
 table = "base"
 check = 158
-label = "Snowpoint Gym - Icicle Badge from Candice"
+label = "Snowpoint City Gym - Icicle Badge from Candice"
 id = 12
 
 [snowpoint_city_gym_tm72]
@@ -4689,7 +4689,7 @@ original_item = "tm72"
 type = "npc_gift"
 table = "base"
 check = 158
-label = "Snowpoint Gym - TM72 from Candice"
+label = "Snowpoint City Gym - TM72 from Candice"
 id = 13
 
 [sunyshore_city_gym_room_3_beacon_badge]
@@ -4697,7 +4697,7 @@ original_item = "beacon_badge"
 type = "badge"
 table = "base"
 check = 182
-label = "Sunyshore Gym - Beacon Badge from Volkner"
+label = "Sunyshore City Gym - Beacon Badge from Volkner"
 id = 14
 
 [sunyshore_city_gym_room_3_tm57]
@@ -4705,7 +4705,7 @@ original_item = "tm57"
 type = "npc_gift"
 table = "base"
 check = 182
-label = "Sunyshore Gym - TM57 from Volkner"
+label = "Sunyshore City Gym - TM57 from Volkner"
 id = 15
 
 [eterna_city_hm01]
