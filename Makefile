@@ -22,6 +22,7 @@ DATA := data_gen/encounters.toml \
        data_gen/rom_interface.toml \
        data_gen/rules.toml \
        data_gen/species.toml \
+       data_gen/event_checks.toml \
        data_gen_templates/__init__.py \
        data_gen_templates/charmap.py \
        data_gen_templates/encounters.py \
@@ -30,6 +31,7 @@ DATA := data_gen/encounters.toml \
        data_gen_templates/regions.py \
        data_gen_templates/rules.py \
        data_gen_templates/species.py \
+       data_gen_templates/event_checks.py \
        data_gen.py \
        data_gen_rules.py
 DATA_GEN_OUT := data/__init__.py \
@@ -39,6 +41,7 @@ DATA_GEN_OUT := data/__init__.py \
        data/locations.py \
        data/regions.py \
        data/rules.py \
+       data/event_checks.py \
        data/species.py
 
 PATCHES := $(ROMS:%=patches/base_patch_%.bsdiff4)

@@ -1,0 +1,23 @@
+# data_gen/event_checks.toml
+#
+# Copyright (C) 2026 James Petersen <m@jamespetersen.ca>
+# Licensed under MIT. See LICENSE
+
+fen_badge = 0x9C
+met_oak_pal_park = { id = 578, invert = true }
+lake_verity_defeat_mars = 186
+lake_explosion = 0xB9C
+forest_badge = 0x74
+cobble_badge = 0x9D
+galactic_hq_defeat_cyrus = 0x235
+lake_valor_defeat_saturn = 350
+lake_acuity_meet_jupiter = 0x1B9
+icicle_badge = 0x9E
+eterna_defeat_team_galactic = 0x1FD
+relic_badge = 0x7D
+coal_badge = 0x75
+beacon_badge = 0xB6
+mine_badge = 0x92
+beat_cynthia = 2404
+distortion_world = 0x28F
+valley_windworks_defeat_team_galactic = 0x1A5
