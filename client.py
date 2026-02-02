@@ -6,6 +6,7 @@
 from collections.abc import Mapping, Set
 from dataclasses import dataclass
 from NetUtils import ClientStatus
+from struct import unpack
 from typing import TYPE_CHECKING, Tuple
 
 import Utils
@@ -58,6 +59,7 @@ class VersionData:
     once_loc_flags_offset_in_ap_save: int
     once_loc_flags_count: int
     current_map_id_offset: int
+    current_pos_offset: int
 
 AP_VERSION_DATA: Mapping[int, VersionData] = {
     0: VersionData(
@@ -72,6 +74,7 @@ AP_VERSION_DATA: Mapping[int, VersionData] = {
         once_loc_flags_offset_in_ap_save=10,
         once_loc_flags_count=16,
         current_map_id_offset=22,
+        current_pos_offset=24,
     ),
 }
 
@@ -122,6 +125,8 @@ class PokemonPlatinumClient(BizHawkClient):
     local_checked_locations: Set[int]
     expected_header: bytes
     current_map: int
+    current_x: int
+    current_z: int
     local_tracked_events: int
 
     def initialize_client(self):
@@ -129,6 +134,8 @@ class PokemonPlatinumClient(BizHawkClient):
         self.local_checked_locations = set()
         self.expected_header = AP_MAGIC * 3 + self.rom_version.to_bytes(length=4, byteorder='little')
         self.current_map = 0
+        self.current_x = -1
+        self.current_z = -1
         self.local_tracked_events = 0
 
     async def validate_rom(self, ctx: "BizHawkClientContext") -> bool:
@@ -305,6 +312,7 @@ class PokemonPlatinumClient(BizHawkClient):
                 ctx.bizhawk_ctx,
                 [
                     (self.ap_struct_address + version_data.current_map_id_offset, 2, "ARM9 System Bus"),
+                    (self.ap_struct_address + version_data.current_pos_offset, 8, "ARM9 System Bus"),
                 ],
                 [guards["AP STRUCT VALID"]]
             )
@@ -312,10 +320,17 @@ class PokemonPlatinumClient(BizHawkClient):
                 return
 
             current_map = int.from_bytes(read_result[0], 'little')
-            if current_map != self.current_map:
+            current_x, current_z = unpack("<2I", read_result[1])
+            if current_map != self.current_map or current_x != self.current_x or current_z != self.current_z:
                 self.current_map = current_map
+                self.current_x = current_x
+                self.current_z = current_z
                 message = [{"cmd": "Bounce", "slots": [ctx.slot],
-                           "data": {"mapNumber": current_map}}]
+                           "data": {
+                               "mapNumber": current_map,
+                               "matrixX": current_x,
+                               "matrixZ": current_z,
+                           }}]
                 await ctx.send_msgs(message)
 
         except bizhawk.RequestFailedError:
