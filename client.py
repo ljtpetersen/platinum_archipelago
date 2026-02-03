@@ -6,7 +6,7 @@
 from collections.abc import Mapping, Set
 from dataclasses import dataclass
 from NetUtils import ClientStatus
-from struct import unpack
+from struct import unpack_from
 from typing import TYPE_CHECKING, Tuple
 
 import Utils
@@ -58,8 +58,7 @@ class VersionData:
     recv_item_count_offset_in_ap_save: int
     once_loc_flags_offset_in_ap_save: int
     once_loc_flags_count: int
-    current_map_id_offset: int
-    current_pos_offset: int
+    player_pos_offset: int
 
 AP_VERSION_DATA: Mapping[int, VersionData] = {
     0: VersionData(
@@ -73,8 +72,7 @@ AP_VERSION_DATA: Mapping[int, VersionData] = {
         recv_item_count_offset_in_ap_save=0,
         once_loc_flags_offset_in_ap_save=10,
         once_loc_flags_count=16,
-        current_map_id_offset=22,
-        current_pos_offset=24,
+        player_pos_offset=24,
     ),
 }
 
@@ -311,17 +309,15 @@ class PokemonPlatinumClient(BizHawkClient):
             read_result = await bizhawk.guarded_read(
                 ctx.bizhawk_ctx,
                 [
-                    (self.ap_struct_address + version_data.current_map_id_offset, 2, "ARM9 System Bus"),
-                    (self.ap_struct_address + version_data.current_pos_offset, 8, "ARM9 System Bus"),
+                    (self.ap_struct_address + version_data.player_pos_offset, 12, "ARM9 System Bus"),
                 ],
                 [guards["AP STRUCT VALID"]]
             )
             if read_result is None:
                 return
 
-            current_map = int.from_bytes(read_result[0], 'little')
-            current_x, current_z = unpack("<2I", read_result[1])
-            if current_map != self.current_map or current_x != self.current_x or current_z != self.current_z:
+            current_x, current_z, current_map, pos_lock = unpack_from("<2IHB", read_result[1])
+            if pos_lock == 0 and (current_map != self.current_map or current_x != self.current_x or current_z != self.current_z):
                 self.current_map = current_map
                 self.current_x = current_x
                 self.current_z = current_z
