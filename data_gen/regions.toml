@@ -3011,7 +3011,6 @@ header = "route_206"
 exits = [
     "route_206_cycling_road_south_gate",
     "route_206_upper",
-    "route_206_cycling_road_north_gate",
     "route_207",
 ]
 accessible_encounters = []
