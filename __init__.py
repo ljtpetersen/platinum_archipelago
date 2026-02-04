@@ -131,5 +131,6 @@ class PokemonPlatinumWorld(World):
             self.player)
 
     def fill_slot_data(self) -> Mapping[str, Any]:
-        ret = self.options.as_dict("goal", "remote_items")
+        ret = self.options.save_options()
+        ret["remote_items"] = self.options.remote_items.value
         return ret
