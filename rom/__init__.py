@@ -342,7 +342,7 @@ def generate_output(world: "PokemonPlatinumWorld", output_directory: str, patch:
         cur_dict[name] = cur_name_off
         ret: bytes = encode_string(name, '?', len_cutoff) # type: ignore
         sz = len(ret) // 2
-        ret = struct.pack("<2HI", sz, sz, 0xB6F8D2EC) + ret + b'\xFF\xFF'
+        ret = b''.join((struct.pack("<2HI", sz, sz, 0xB6F8D2EC), ret, b'\xFF\xFF'))
         if len(ret) % 4 != 0:
             ret += b'\xFF\xFF'
         cur_name_off += len(ret)
