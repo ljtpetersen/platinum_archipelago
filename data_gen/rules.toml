@@ -198,6 +198,7 @@ locs.route_213_tm05 = "rock_climb"
 locs.route_213_tm40 = "rock_smash"
 
 locs.pastoria_city_mystic_water = "surf"
+exits.pastoria_city.pastoria_city_gym = "event_cobble_badge"
 
 locs.route_212_south_tm84 = "surf"
 locs.route_212_south_max_ether = "surf"
