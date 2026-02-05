@@ -53,6 +53,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * APWorld building is now compatible with Archipelago 7.
 * Incorrect rules for Mt. Coronet B1F Green Shard & Wayward Cave or Route 207 Red Shard.
 * Triggering the second Galactic warehouse scene before defeating Maylene and doing the first scene is no longer possible.
+* Victory Road room after defeating Cynthia now requires Defog logically.
 
 ## [0.1.6] - 2025-12-28
 ### Fixed

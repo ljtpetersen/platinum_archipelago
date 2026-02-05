@@ -270,7 +270,7 @@ exits.snowpoint_city.fight_area = "s_s_ticket"
 exits.snowpoint_city.snowpoint_temple_1f = "national_dex & event_beat_cynthia"
 locs.snowpoint_temple_b4f_full_heal = "strength"
 
-exits.victory_road_1f.victory_road_1f_room_1 = "event_beat_cynthia & national_dex"
+exits.victory_road_1f.victory_road_1f_room_1 = "event_beat_cynthia & national_dex & defog_if_opt"
 
 locs.route_222_full_restore_0 = "rock_smash | surf"
 locs.route_222_carbos = "cut"
