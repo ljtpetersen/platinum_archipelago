@@ -316,7 +316,7 @@ class PokemonPlatinumClient(BizHawkClient):
             if read_result is None:
                 return
 
-            current_x, current_z, current_map, pos_lock = unpack_from("<2IHB", read_result[1])
+            current_x, current_z, current_map, pos_lock = unpack_from("<2IHB", read_result[0])
             if pos_lock == 0 and (current_map != self.current_map or current_x != self.current_x or current_z != self.current_z):
                 self.current_map = current_map
                 self.current_x = current_x
