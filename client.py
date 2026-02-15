@@ -308,13 +308,14 @@ class PokemonPlatinumClient(BizHawkClient):
                 self.local_tracked_events = local_tracked_events
 
             if local_tracked_unrandomized_prog_locs != self.local_tracked_unrandomized_prog_locs:
-                await ctx.send_msgs([{
-                    "cmd": "Set",
-                    "key": f"pokemon_platinum_tracked_unrandomized_required_locations_{ctx.team}_{ctx.slot}",
-                    "default": 0,
-                    "want_reply": False,
-                    "operations": [{"operation": "or", "value": local_tracked_unrandomized_prog_locs}],
-                }])
+                for chunk in range((len(TRACKED_UNRANDOMIZED_REQUIRED_LOCATIONS) + 31) >> 5):
+                    await ctx.send_msgs([{
+                        "cmd": "Set",
+                        "key": f"pokemon_platinum_tracked_unrandomized_required_locations_{ctx.team}_{ctx.slot}_{chunk}",
+                        "default": 0,
+                        "want_reply": False,
+                        "operations": [{"operation": "or", "value": (local_tracked_unrandomized_prog_locs >> (chunk * 32)) & 31}],
+                    }])
                 self.local_tracked_unrandomized_prog_locs = local_tracked_unrandomized_prog_locs
 
             if not ctx.finished_game and game_clear:
