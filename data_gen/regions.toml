@@ -3166,6 +3166,7 @@ locs = [
     "mt_coronet_outside_north_moon_stone",
     "mt_coronet_outside_north_energy_root",
     "mt_coronet_outside_north_revival_herb",
+    "mt_coronet_outside_north_star_piece",
 ]
 
 [floaroma_town_southeast_house]
