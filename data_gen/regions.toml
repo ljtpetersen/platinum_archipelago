@@ -3099,7 +3099,7 @@ locs = [
 exits = ["mt_coronet_outside_south"]
 header = "mt_coronet_outside_north"
 locs = [
-    "mt_coronet_outside_north_star_piece_0",
+    "mt_coronet_outside_north_star_piece",
     "mt_coronet_outside_south_energy_root",
 ]
 
@@ -3166,7 +3166,7 @@ locs = [
     "mt_coronet_outside_north_moon_stone",
     "mt_coronet_outside_north_energy_root",
     "mt_coronet_outside_north_revival_herb",
-    "mt_coronet_outside_north_star_piece",
+    "mt_coronet_outside_north_star_piece_0",
 ]
 
 [floaroma_town_southeast_house]
