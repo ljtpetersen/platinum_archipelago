@@ -1,6 +1,6 @@
 # options.py
 #
-# Copyright (C) 2025 James Petersen <m@jamespetersen.ca>
+# Copyright (C) 2025-2026 James Petersen <m@jamespetersen.ca>
 # Licensed under MIT. See LICENSE
 
 from collections.abc import MutableMapping, Sequence

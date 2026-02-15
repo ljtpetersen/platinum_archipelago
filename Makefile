@@ -1,3 +1,7 @@
+# Makefile
+# 
+# Copyright (C) 2025-2026 James Petersen <m@jamespetersen.ca>
+# Licensed under MIT. See LICENSE
 
 .PHONY: data_gen
 

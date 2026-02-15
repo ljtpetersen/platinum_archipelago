@@ -1,4 +1,4 @@
-# data_gen_templates/locations.py
+# data_gen_templates/event_checks.py
 #
 # Copyright (C) 2026 James Petersen <m@jamespetersen.ca>
 # Licensed under MIT. See LICENSE
