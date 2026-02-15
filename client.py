@@ -314,7 +314,7 @@ class PokemonPlatinumClient(BizHawkClient):
                         "key": f"pokemon_platinum_tracked_unrandomized_required_locations_{ctx.team}_{ctx.slot}_{chunk}",
                         "default": 0,
                         "want_reply": False,
-                        "operations": [{"operation": "or", "value": (local_tracked_unrandomized_prog_locs >> (chunk * 32)) & 31}],
+                        "operations": [{"operation": "or", "value": (local_tracked_unrandomized_prog_locs >> (chunk * 32)) & 0xFFFFFFFF}],
                     }])
                 self.local_tracked_unrandomized_prog_locs = local_tracked_unrandomized_prog_locs
 
