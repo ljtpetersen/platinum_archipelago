@@ -1,12 +1,29 @@
 # options.py
 #
-# Copyright (C) 2025 James Petersen <m@jamespetersen.ca>
+# Copyright (C) 2025-2026 James Petersen <m@jamespetersen.ca>
 # Licensed under MIT. See LICENSE
 
-from collections.abc import Mapping, MutableMapping, Sequence
+from collections.abc import Mapping, MutableMapping, Sequence, Set
 from dataclasses import dataclass
 from typing import Any
-from Options import Choice, DeathLink, DefaultOnToggle, OptionDict, OptionError, OptionSet, PerGameCommonOptions, Range, Toggle
+from Options import Choice, DeathLink, DefaultOnToggle, NamedRange, OptionDict, OptionError, OptionSet, PerGameCommonOptions, Range, Toggle
+
+from .data import special_encounters
+from .data.species import species, regional_mons
+from .data.regions import regions
+from .data.trainers import trainer_party_supporting_starters, trainers, trainer_requires_national_dex
+from .data.encounters import encounters, encounter_type_pairs, national_dex_requiring_encs
+
+class SpeciesBlacklist(OptionSet):
+    cached_blacklist: Set[str] | None = None
+
+    def blacklist(self) -> Set[str]:
+        if self.cached_blacklist is None:
+            if "LEGENDARIES" in self:
+                self.cached_blacklist = (frozenset(self.value) - {"LEGENDARIES"}) | set(regional_mons)
+            else:
+                self.cached_blacklist = frozenset(self.value)
+        return self.cached_blacklist
 
 class RandomizeHms(DefaultOnToggle):
     """Adds the HMs to the pool."""
@@ -40,7 +57,7 @@ class RandomizeKeyItems(Choice):
         return self.value >= self.option_most
 
 class RandomizeRods(DefaultOnToggle):
-    """Adds rods to the pool. Currently, the Super Rod is unavailable, as it is post-game."""
+    """Adds rods to the pool."""
     display_name = "Randomize Rods"
 
 class RandomizePoketchApps(DefaultOnToggle):
@@ -236,7 +253,7 @@ class NationalDexNumMons(Range):
     display_name = "National Dex Num Mons"
     range_start = 1
     # range end will be expanded as more encounters are added.
-    range_end = 80
+    range_end = 210
     default = 60
 
 class AddMarshPass(Toggle):
@@ -367,7 +384,7 @@ class CanResetLegendariesInAPHelper(DefaultOnToggle):
     """Can reset roamers with the AP Helper. (Present in the 2nd floor of any Pokémon Centre)"""
     display_name = "Can Reset Roamers in AP Helper"
 
-class EvoItemsShopInAPHelper(Toggle):
+class EvoItemsShopInAPHelper(DefaultOnToggle):
     """Evolution items shop is available with the AP Helper. (Present in the 2nd floor of any Pokémon Centre)"""
     display_name = "Evolution Item Shop in AP Helper"
 
@@ -393,6 +410,166 @@ class TalkTrainersWithoutFight(Toggle):
     """
     display_name = "Talk to Trainers without Fighting Them"
 
+class RandomizeEncounters(Toggle):
+    """Randomize encountered Pokémon. This does not affect static legendaries, like Giratina."""
+    display_name = "Randomize Encounters"
+
+
+class InLogicEncounters(OptionSet):
+    """
+    Which methods/variations of encounters are in logic.
+    """
+    display_name = "In Logic Encounters"
+    default = {"surf", "old_rod", "good_rod", "super_rod", "poke_radar", "ruby", "sapphire", "night", "emerald", "firered", "leafgreen", "day", "swarms", "great_marsh_observatory", "great_marsh_observatory_national_dex", "regular_honey_tree", "munchlax_honey_tree", "feebas_fishing", "trophy_garden", "odd_keystone", "roamers"}
+    valid_keys = ["surf", "old_rod", "good_rod", "super_rod", "poke_radar", "ruby", "sapphire", "night", "emerald", "firered", "leafgreen", "day", "swarms", "great_marsh_observatory", "great_marsh_observatory_national_dex", "regular_honey_tree", "munchlax_honey_tree", "feebas_fishing", "trophy_garden", "odd_keystone", "roamers"]
+
+class EncounterSpeciesBlacklist(SpeciesBlacklist):
+    """
+    Specify the banned encounter species.
+    The whitelist has precedence over this.
+    This has no effect if starters are not randomized.
+
+    The species names should be entered entirely in lowercase.
+    Spaces should be replaced by underscores. For example,
+    Mr. Mime would be mr_mime.
+
+    LEGENDARIES, all uppercase, will be interpreted as banning all legendary
+    species.
+
+    Currently, this cannot include kecleon, geodude, or munchlax.
+    """
+    valid_keys = list(species.keys() - {"kecleon", "geodude", "munchlax"})
+
+class RandomizeTrainerParties(Toggle):
+    """Randomize trainer party members."""
+    display_name = "Randomize Trainer Parties"
+
+class TrainerPartyBlacklist(SpeciesBlacklist):
+    """
+    Specify the banned trainer party species.
+    The whitelist has precedence over this.
+    This has no effect if starters are not randomized.
+
+    The species names should be entered entirely in lowercase.
+    Spaces should be replaced by underscores. For example,
+    Mr. Mime would be mr_mime.
+
+    LEGENDARIES, all uppercase, will be interpreted as banning all legendary
+    species.
+    """
+    valid_keys = list(species)
+
+
+class RandomizeStarters(Toggle):
+    """Randomize starter Pokémon."""
+    display_name = "Randomize Starters"
+
+class RequireTwoLevelEvolutionStarters(Toggle):
+    """If the starters are randomized, require that they all be two-level-evolution species."""
+    display_name = "Require Two Level Evolution Starters"
+
+class StarterWhitelist(OptionSet):
+    """
+    Specify the possible starters that can be randomized.
+    This has precedence over the blacklist and the require two-level-evolution
+    species.
+    This has no effect if starters are not randomized.
+
+    The species names should be entered entirely in lowercase.
+    Spaces should be replaced by underscores. For example,
+    Mr. Mime would be mr_mime.
+    """
+    display_name = "Starter Whitelist"
+    valid_keys = list(species)
+
+class StarterBlacklist(SpeciesBlacklist):
+    """
+    Specify the banned starters.
+    The whitelist has precedence over this.
+    This has no effect if starters are not randomized.
+
+    The species names should be entered entirely in lowercase.
+    Spaces should be replaced by underscores. For example,
+    Mr. Mime would be mr_mime.
+
+    LEGENDARIES, all uppercase, will be interpreted as banning all legendary
+    species.
+    """
+    display_name = "Starter Blacklist"
+    valid_keys = list(species) + ["LEGENDARIES"]
+
+class RandomizeBunearyInIntro(DefaultOnToggle):
+    """Randomize the species of the Pokémon that is shown in the intro."""
+    display_name = "Randomize Intro Pokémon"
+
+class Trainersanity(Toggle):
+    """
+    Each trainer adds a location to the game. These locations are
+    filled with nuggets by default.
+    """
+    display_name = "Trainersanity"
+
+class DexsanityCount(NamedRange):
+    """
+    How many dexsanity locations there will be.
+    """
+    display_name = "Dexsanity Count"
+    default = 0
+    range_start = 0
+    range_end = 493
+    special_range_names = {
+        "none": default,
+        "full": range_end,
+    }
+
+class DexsanityMode(Choice):
+    """
+    The dexsanity mode.
+
+    Options:
+    - noreq: no items are required to trigger dexsanity locations.
+    - req: the Pokedex (or National Dex for non-regional species) is required
+           to trigger dexsanity locations.
+    - req_noprompt: same as req, but when you initially get the Pokedex
+                    or National Dex, do not prompt for each already seen
+                    dexsanity species.
+    """
+    display_name = "Dexsanity Mode"
+    default = 1
+    option_noreq = 1
+    option_req = 2
+    option_req_noprompt = 3
+
+class RandomizeRoamers(Toggle):
+    """
+    Randomize roaming Pokemon.
+    """
+    display_name = "Randomize Roamers"
+
+class RoamerBlacklist(SpeciesBlacklist):
+    """
+    Specify the banned roaming Pokemon species.
+    The whitelist has precedence over this.
+    This has no effect if starters are not randomized.
+
+    The species names should be entered entirely in lowercase.
+    Spaces should be replaced by underscores. For example,
+    Mr. Mime would be mr_mime.
+
+    LEGENDARIES, all uppercase, will be interpreted as banning all legendary
+    species.
+    """
+    valid_keys = list(species.keys())
+    display_name = "Roamer Blacklist"
+
+class InLogicEvolutionMethods(OptionSet):
+    """
+    Evolution methods that are in logic.
+    """
+    display_name = "In-Logic Evolution Methods"
+    default = {"level", "level_atk_gt_def", "level_atk_eq_def", "level_atk_lt_def", "level_pid_low", "level_pid_high", "level_ninjask", "level_shedinja", "level_male", "level_female", "trade_with_held_item", "use_item", "use_item_male", "use_item_female", "level_with_held_item_day", "level_with_held_item_night", "level_happiness", "level_happiness_day", "level_happiness_night", "trade", "level_beauty", "level_magnetic_field", "level_moss_rock", "level_ice_rock", "level_know_move", "level_species_in_party" }
+    valid_keys = {"level", "level_atk_gt_def", "level_atk_eq_def", "level_atk_lt_def", "level_pid_low", "level_pid_high", "level_ninjask", "level_shedinja", "level_male", "level_female", "trade_with_held_item", "use_item", "use_item_male", "use_item_female", "level_with_held_item_day", "level_with_held_item_night", "level_happiness", "level_happiness_day", "level_happiness_night", "trade", "level_beauty", "level_magnetic_field", "level_moss_rock", "level_ice_rock", "level_know_move", "level_species_in_party" }
+
 slot_data_options: Sequence[str] = [
     "hms",
     "badges",
@@ -407,6 +584,8 @@ slot_data_options: Sequence[str] = [
     "pokedex",
     "accessories",
     "cartridges",
+    "time_items",
+
     "hm_badge_requirement",
     "remove_badge_requirements",
     "visibility_hm_logic",
@@ -416,25 +595,50 @@ slot_data_options: Sequence[str] = [
     "regional_dex_goal",
     "early_sunyshore",
     "pastoria_barriers",
-    "master_repel",
-    "s_s_ticket",
-    "marsh_pass",
-    "exp_multiplier",
-    "storage_key",
-    "bag",
-    "unown_option",
-    "goal",
-    "death_link",
-    "time_items",
     "reusable_tms",
     "start_with_swarms",
     "can_reset_legendaries_in_ap_helper",
     "evo_items_shop_in_ap_helper",
+
+    "randomize_starters",
+    "require_two_level_evolution_starters",
+    "starter_whitelist",
+    "starter_blacklist",
+    "randomize_intro_mon",
+
+    "randomize_encounters",
+    "in_logic_encounters",
+    "encounter_species_blacklist",
+    "dexsanity_count",
+    "dexsanity_mode",
+    "in_logic_evolution_methods",
+
+    "randomize_roamers",
+    "roamer_blacklist",
+    "roamer_blacklist",
+
+    "trainersanity",
+    "randomize_trainer_parties",
+    "trainer_party_blacklist",
+
+    "death_link",
+
     "cheats_enabled",
+
+    "master_repel",
+    "s_s_ticket",
+    "marsh_pass",
+    "storage_key",
+    "bag",
+    "unown_option",
+
+    "remote_items",
+
+    "goal",
 ]
 
 class PokemonPlatinumDeathLink(DeathLink):
-    __doc__ = DeathLink.__doc__ + "\n\n    In Pokémon Platinum, blacking out sends a death and receiving a death causes you to black out.\n"
+    __doc__ = DeathLink.__doc__ + "\n\n    In Pokémon Platinum, blacking out sends a death and receiving a death causes you to black out.\n" # type: ignore
 
 @dataclass
 class PokemonPlatinumOptions(PerGameCommonOptions):
@@ -467,6 +671,26 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
     can_reset_legendaries_in_ap_helper: CanResetLegendariesInAPHelper
     evo_items_shop_in_ap_helper: EvoItemsShopInAPHelper
 
+    randomize_starters: RandomizeStarters
+    require_two_level_evolution_starters: RequireTwoLevelEvolutionStarters
+    starter_whitelist: StarterWhitelist
+    starter_blacklist: StarterBlacklist
+    randomize_intro_mon: RandomizeBunearyInIntro
+
+    randomize_encounters: RandomizeEncounters
+    in_logic_encounters: InLogicEncounters
+    encounter_species_blacklist: EncounterSpeciesBlacklist
+    dexsanity_count: DexsanityCount
+    dexsanity_mode: DexsanityMode
+    in_logic_evolution_methods: InLogicEvolutionMethods
+
+    randomize_roamers: RandomizeRoamers
+    roamer_blacklist: RoamerBlacklist
+
+    trainersanity: Trainersanity
+    randomize_trainer_parties: RandomizeTrainerParties
+    trainer_party_blacklist: TrainerPartyBlacklist
+
     game_options: GameOptions
     blind_trainers: BlindTrainers
     hm_cut_ins: HMCutIns
@@ -479,6 +703,7 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
     always_catch: AlwaysCatch
     guaranteed_escape: GuaranteedEscape
     talk_trainers_without_fight: TalkTrainersWithoutFight
+    exp_multiplier: ExpMultiplier
 
     death_link: PokemonPlatinumDeathLink
 
@@ -487,7 +712,6 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
     master_repel: AddMasterRepel
     s_s_ticket: AddSSTicket
     marsh_pass: AddMarshPass
-    exp_multiplier: ExpMultiplier
     storage_key: AddStorageKey
     bag: AddBag
     unown_option: UnownsOption
@@ -530,6 +754,143 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
         if game_opts.received_items_notification not in {"nothing", "message", "jingle"}:
             raise OptionError(f"invalid received items notification: \"{game_opts.received_items_notification}\"")
 
+        if not self.randomize_encounters and not {"great_marsh_observatory_national_dex", "munchlax_honey_tree"} <= self.in_logic_encounters.value:
+            raise OptionError("if encounters are not randomized, then great_marsh_observatory_national_dex and munchlax_honey_tree must both be in logic")
+        rm_set = frozenset(regional_mons)
+        if self.randomize_encounters and self.randomize_trainer_parties and len(rm_set - (self.encounter_species_blacklist.blacklist() & self.trainer_party_blacklist.blacklist())) < max(50, self.regional_dex_goal.value):
+            raise OptionError(f"encounter species blacklist and trainer party blacklist are too restrictive: can't get enough regional species.")
+        elif self.randomize_encounters:
+            if not self.pokedex:
+                in_logic_trainer_mons = {p.species
+                    for rd in regions.values()
+                    for trainer in rd.trainers
+                    if not trainer_requires_national_dex(trainer)
+                    for p in trainer_party_supporting_starters(trainer)
+                    if p.species in rm_set
+                }
+                if len(rm_set - self.encounter_species_blacklist.blacklist() - in_logic_trainer_mons) <  self.regional_dex_goal.value - len(in_logic_trainer_mons):
+                    raise OptionError(f"encounter species blacklist is too restrictive: can't get enough regional species.")
+            in_logic_trainer_mons = {p.species
+                for rd in regions.values()
+                for trainer in rd.trainers
+                for p in trainer_party_supporting_starters(trainer)
+                if p.species in rm_set
+            }
+            if len(rm_set - self.encounter_species_blacklist.blacklist() - in_logic_trainer_mons) < max(50, self.regional_dex_goal.value) - len(in_logic_trainer_mons):
+                raise OptionError(f"encounter species blacklist is too restrictive: can't get enough regional species.")
+        elif self.randomize_trainer_parties:
+            if not self.pokedex:
+                acc_suc = set() if self.start_with_swarms else {"swarms"}
+                in_logic_encounter_mons = {slot.species
+                    for rd in regions.values()
+                    if rd.header in encounters and rd.header not in national_dex_requiring_encs \
+                    for type, table in encounter_type_pairs
+                    if type != "water" or table in self.in_logic_encounters
+                    for i, slot in enumerate(getattr(encounters[rd.header], table))
+                    if not slot.accessibility or (set(slot.accessibility) - acc_suc) & self.in_logic_encounters.value
+                    if slot.species in rm_set
+                } | {spec
+                    for nm in ["regular_honey_tree", "munchlax_honey_tree", "trophy_garden", "great_marsh_observatory", "great_marsh_observatory_national_dex", "feebas_fishing", "odd_keystone"]
+                    if nm in self.in_logic_encounters and nm not in special_encounters.requiring_national_dex
+                    for spec in getattr(special_encounters, nm)
+                    if spec in rm_set
+                }
+                if len(rm_set - self.trainer_party_blacklist.blacklist() - in_logic_encounter_mons) < self.regional_dex_goal.value - len(in_logic_encounter_mons):
+                    raise OptionError(f"trainer party blacklist is too restrictive: can't get enough regional species.")
+            in_logic_encounter_mons = {slot.species
+                for rd in regions.values()
+                if rd.header in encounters \
+                for type, table in encounter_type_pairs
+                if type != "water" or table in self.in_logic_encounters
+                for i, slot in enumerate(getattr(encounters[rd.header], table))
+                if not slot.accessibility or set(slot.accessibility) & self.in_logic_encounters.value
+                if slot.species in rm_set
+            } | {spec
+                for nm in ["regular_honey_tree", "munchlax_honey_tree", "trophy_garden", "great_marsh_observatory", "great_marsh_observatory_national_dex", "feebas_fishing", "odd_keystone"]
+                if nm in self.in_logic_encounters
+                for spec in getattr(special_encounters, nm)
+                if spec in rm_set
+            }
+            if len(rm_set - self.trainer_party_blacklist.blacklist() - in_logic_encounter_mons) < max(50, self.regional_dex_goal.value) - len(in_logic_encounter_mons):
+                raise OptionError(f"trainer party blacklist is too restrictive: can't get enough regional species.")
+        else:
+            if not self.pokedex:
+                acc_suc = set() if self.start_with_swarms else {"swarms"}
+                in_logic_encounter_mons = {slot.species
+                    for rd in regions.values()
+                    if rd.header in encounters and rd.header not in national_dex_requiring_encs \
+                    for type, table in encounter_type_pairs
+                    if type != "water" or table in self.in_logic_encounters
+                    for slot in getattr(encounters[rd.header], table)
+                    if not slot.accessibility or (set(slot.accessibility) - acc_suc) & self.in_logic_encounters.value
+                    if slot.species in rm_set
+                }
+                in_logic_trainer_mons = {p.species
+                    for rd in regions.values()
+                    for trainer in rd.trainers
+                    if not trainer_requires_national_dex(trainer)
+                    for p in trainer_party_supporting_starters(trainer)
+                    if p.species in rm_set
+                }
+                if len(in_logic_encounter_mons | in_logic_trainer_mons) < self.regional_dex_goal.value:
+                    raise OptionError(f"regional dex goal is too high. not enough encounters to fill it")
+            in_logic_encounter_mons = {slot.species
+                for rd in regions.values()
+                if rd.header in encounters \
+                for type, table in encounter_type_pairs
+                if type != "water" or table in self.in_logic_encounters
+                for slot in getattr(encounters[rd.header], table)
+                if not slot.accessibility or set(slot.accessibility) & self.in_logic_encounters.value
+                if slot.species in rm_set
+            }
+            in_logic_trainer_mons = {p.species
+                for rd in regions.values()
+                for trainer in rd.trainers
+                for p in trainer_party_supporting_starters(trainer)
+                if p.species in rm_set
+            }
+            if len(in_logic_encounter_mons | in_logic_trainer_mons) < max(50, self.regional_dex_goal.value):
+                raise OptionError(f"regional dex goal is too high. not enough encounters to fill it")
+        if self.dexsanity_count:
+            if self.randomize_encounters:
+                slots = len({(rd.header, table, i)
+                    for _, rd in regions.items()
+                    if rd.header in encounters \
+                        and (self.unown_option != UnownsOption.option_vanilla or not rd.header.startswith("solaceon_ruins"))
+                    for type, table in encounter_type_pairs
+                    if type != "water" or table in self.in_logic_encounters
+                    for i, slot in enumerate(getattr(encounters[rd.header], table))
+                    if not slot.accessibility or set(slot.accessibility) & self.in_logic_encounters.value
+                })
+                speenc_slots = len({(nm, i)
+                    for nm in ["regular_honey_tree", "munchlax_honey_tree", "trophy_garden", "great_marsh_observatory", "great_marsh_observatory_national_dex", "feebas_fishing", "odd_keystone"]
+                    if nm in self.in_logic_encounters
+                    for i in range(len(getattr(special_encounters, nm)))
+                })
+                if min(slots + speenc_slots, len(species) - len(self.encounter_species_blacklist.blacklist())) < self.dexsanity_count:
+                    raise OptionError("dexsanity count larger than number of in-logic encounter slots")
+            else:
+                in_logic_encounter_mons = {slot.species
+                    for rd in regions.values()
+                    if rd.header in encounters \
+                    for type, table in encounter_type_pairs
+                    if type != "water" or table in self.in_logic_encounters
+                    for i, slot in enumerate(getattr(encounters[rd.header], table))
+                    if not slot.accessibility or set(slot.accessibility) & self.in_logic_encounters.value
+                } | {spec
+                    for nm in ["regular_honey_tree", "munchlax_honey_tree", "trophy_garden", "great_marsh_observatory", "great_marsh_observatory_national_dex", "feebas_fishing", "odd_keystone"]
+                    for spec in getattr(special_encounters, nm)
+                }
+                if len(in_logic_encounter_mons) < self.dexsanity_count:
+                    raise OptionError("dexsanity count larger than in-logic species count")
+        if self.randomize_roamers and len(species.keys() - self.roamer_blacklist.blacklist()) < 5:
+            raise OptionError(f"roamer blacklist too restrictive")
+
+        if self.randomize_starters:
+            if 0 < len(self.starter_whitelist.value) < 3:
+                raise OptionError(f"starter whitelist must contain at least three values")
+            elif len(self.starter_whitelist.value) == 0 and len(species.keys() - self.starter_blacklist.blacklist()) < 3:
+                raise OptionError(f"starter blacklist too restrictive")
 
     def save_options(self) -> MutableMapping[str, Any]:
         return self.as_dict(*slot_data_options)

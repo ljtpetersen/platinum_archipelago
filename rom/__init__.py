@@ -1,9 +1,9 @@
 # rom/__init__.py
 #
-# Copyright (C) 2025 James Petersen <m@jamespetersen.ca>
+# Copyright (C) 2025-2026 James Petersen <m@jamespetersen.ca>
 # Licensed under MIT. See LICENSE
 
-from collections.abc import MutableSequence, MutableSet
+from collections.abc import Mapping, MutableMapping, MutableSequence, MutableSet, Sequence
 import bsdiff4
 from collections import Counter
 import json
@@ -15,15 +15,24 @@ from typing import Any, Dict, TYPE_CHECKING, Tuple
 from worlds.Files import APAutoPatchInterface
 import zipfile
 
-from worlds.pokemon_platinum.options import GameOptions
 
-from .itemdata import patch_items, ItemDataField
+from .itemdata import patch_items
+from .encounterdata import patch_encounters, patch_speencs
+from .speciesdata import patch_species
+from .trainerdata import patch_trainer_parties
 
 from ..apnds.rom import Rom
+from ..species import evolutions
+from ..data import special_encounters
 from ..data.charmap import encode_string
 from ..data.locations import locations, LocationTable
 from ..data.items import items
+from ..data.species import species
+from ..data.encounters import encounters, encounter_type_pairs, EncounterSlot
+from ..data.trainers import trainer_party_supporting_starters, trainers
+from ..data.moves import move_ids
 from ..items import raw_id_to_const_name
+from ..options import GameOptions
 
 if TYPE_CHECKING:
     from .. import PokemonPlatinumWorld
@@ -52,17 +61,24 @@ class PokemonPlatinumPatch(APAutoPatchInterface):
         return PokemonPlatinumPatch.source_data
 
     def patch(self, target: str) -> None:
+        from os import environ
         self.read()
-        data = PokemonPlatinumPatch.get_source_data_with_cache()
-        rom_version = data[0x1E]
-        if rom_version == 0:
-            patch_name = "base_patch_us_rev0.bsdiff4"
-        elif rom_version == 1:
-            patch_name = "base_patch_us_rev1.bsdiff4"
+        if "PLATINUM_AP_ROM_PATH" in environ:
+            with open(environ["PLATINUM_AP_ROM_PATH"], "rb") as f:
+                rom_bytes = f.read()
+            print("overwriting patched platinum rom.")
         else:
-            raise ValueError("ROM is not an accepted Pokémon Platinum copy. Only the US Rev. 0 and Rev. 1 ROMs are accepted")
+            data = PokemonPlatinumPatch.get_source_data_with_cache()
+            rom_version = data[0x1E]
+            if rom_version == 0:
+                patch_name = "base_patch_us_rev0.bsdiff4"
+            elif rom_version == 1:
+                patch_name = "base_patch_us_rev1.bsdiff4"
+            else:
+                raise ValueError("ROM is not an accepted Pokémon Platinum copy. Only the US Rev. 0 and Rev. 1 ROMs are accepted")
+            rom_bytes = bsdiff4.patch(data, self.get_file(patch_name))
 
-        rom = Rom.from_bytes(bsdiff4.patch(data, self.get_file(patch_name)))
+        rom = Rom.from_bytes(rom_bytes)
 
         ap_bin = self.get_file("ap.bin")
         rom.files["/ap.bin"] = ap_bin
@@ -70,6 +86,18 @@ class PokemonPlatinumPatch(APAutoPatchInterface):
         if "item_patches.json" in self.files:
             item_patches = json.loads(self.get_file("item_patches.json"))
             rom.files["/itemtool/itemdata/pl_item_data.narc"] = patch_items(rom.files["/itemtool/itemdata/pl_item_data.narc"], item_patches)
+        if "encounter_patches.json" in self.files:
+            encounter_patches = json.loads(self.get_file("encounter_patches.json"))
+            rom.files["/fielddata/encountdata/pl_enc_data.narc"] = patch_encounters(rom.files["/fielddata/encountdata/pl_enc_data.narc"], encounter_patches)
+        if "speenc_patches.json" in self.files:
+            speenc_patches = json.loads(self.get_file("speenc_patches.json"))
+            rom.files["/arc/encdata_ex.narc"] = patch_speencs(rom.files["/arc/encdata_ex.narc"], speenc_patches)
+        if "trainer_party_patches.json" in self.files:
+            trainer_party_patches = json.loads(self.get_file("trainer_party_patches.json"))
+            rom.files["/poketool/trainer/trpoke.narc"] = patch_trainer_parties(rom.files["/poketool/trainer/trdata.narc"], rom.files["/poketool/trainer/trpoke.narc"], trainer_party_patches)
+        if "species_patches.json" in self.files:
+            species_patches = json.loads(self.get_file("species_patches.json"))
+            rom.files["/poketool/personal/personal.narc"] = patch_species(rom.files["/poketool/personal/personal.narc"], species_patches)
 
         with open(target, 'wb') as f:
             f.write(rom.to_bytes())
@@ -217,14 +245,13 @@ def generate_output(world: "PokemonPlatinumWorld", output_directory: str, patch:
     add_opt_byte("early_sunyshore")
     add_opt_byte("unown_option")
     add_opt_byte("pastoria_barriers")
-    ap_bin += b'\0' # where dexsanity goes when dexsanity happens
-    ap_bin += b'\0' # where trainersanity goes when trainersanity happens
+    ap_bin += (world.options.dexsanity_mode.value if world.options.dexsanity_count.value > 0 else 0).to_bytes(1, 'little')
+    add_opt_byte("trainersanity")
     add_opt_byte("death_link")
     add_opt_byte("cartridges")
     add_opt_byte("time_items")
     add_opt_byte("reusable_tms")
-    # where munchlax trees go when munchlax trees happens
-    ap_bin += struct.pack("<4B", *world.random.choices(list(range(21)), k=4))
+    ap_bin += struct.pack("<4B", *world.generated_munchlax_trees)
     add_opt_byte("start_with_swarms")
     add_opt_byte("can_reset_legendaries_in_ap_helper")
     add_opt_byte("evo_items_shop_in_ap_helper")
@@ -260,19 +287,15 @@ def generate_output(world: "PokemonPlatinumWorld", output_directory: str, patch:
     remote_item_bitfields: dict[int, bytearray] = {}
 
     def put_in_table(table: LocationTable, id: int, item_id: int, is_randomized: bool):
-        if table not in tables:
-            tables[table] = bytearray()
-        l = len(tables[table])
+        l = len(tables.setdefault(table, bytearray()))
         if id >= l // 2:
             tables[table] = tables[table] + b'\x00\xF0' * (id - l // 2 + 1)
         tables[table][2*id:2*(id+1)] = item_id.to_bytes(length=2, byteorder='little')
         if remote_items:
-            if table not in remote_item_bitfields:
-                remote_item_bitfields[table] = bytearray()
-            l = len(remote_item_bitfields[table])
+            l = len(remote_item_bitfields.setdefault(table, bytearray()))
             if id // 8 >= l:
-                remote_item_bitfields[table] += b'\x00' * (id // 8 - l + 1)
-                remote_item_bitfields[table][id // 8] |= (1 if is_randomized else 0) << (id & 7)
+                remote_item_bitfields[table] += bytearray(id // 8 - l + 1)
+            remote_item_bitfields[table][id // 8] |= (1 if is_randomized else 0) << (id & 7)
 
     filled_locations = set()
 
@@ -299,6 +322,7 @@ def generate_output(world: "PokemonPlatinumWorld", output_directory: str, patch:
             if item_name not in foreign_item_names_set:
                 foreign_item_names.append(item_name)
                 foreign_item_names_set.add(item_name)
+            assert len(foreign_items) < 0x1000, "foreign items overflow item id"
             item_id = 0xD000 | len(foreign_items)
             foreign_items.append((item_name, dest_name))
         put_in_table(table, id, item_id, True)
@@ -324,6 +348,7 @@ def generate_output(world: "PokemonPlatinumWorld", output_directory: str, patch:
         ap_bin += data
         if remote_items:
             ap_bin += remote_item_bitfields[table]
+            assert len(remote_item_bitfields[table]) == ((len(data) // 2) + 7) // 8, f"remote items bitfield length matches table, {len(remote_item_bitfields)}, {len(data)}"
 
     precollected = world.multiworld.precollected_items[world.player]
     start_inventory: Counter[int] = Counter(map(lambda item : item.code, precollected)) # type: ignore
@@ -357,20 +382,22 @@ def generate_output(world: "PokemonPlatinumWorld", output_directory: str, patch:
     foreign_name_data = b''.join(name_to_strbuf(name) for name in foreign_item_names)
 
     def name_idx_to_bytes(idx: Tuple[str, str]) -> bytes:
-        return struct.pack("<HH", foreign_name_map[idx[0]], dest_name_map[idx[1]])
+        return struct.pack("<II", foreign_name_map[idx[0]], dest_name_map[idx[1]])
 
     ap_bin += len(foreign_items).to_bytes(4, 'little')
     ap_bin += b''.join(name_idx_to_bytes(idx) for idx in foreign_items)
     ap_bin += (len(dest_name_data) + len(foreign_name_data)).to_bytes(4, 'little')
     ap_bin += dest_name_data + foreign_name_data
 
-    ap_bin += b''.join(id.to_bytes(2, 'little') for id in [387, 390, 393]) # where starters go when starter randomization happens
+    ap_bin += b''.join(species[spec].id.to_bytes(2, 'little') for spec in world.generated_starters)
     # the buneary that is shown by rowan in the intro
-    buneary_spec = 427
+    buneary_spec = species[world.generated_buneary].id
     if world.random.randint(0,8191) == 0:
         buneary_spec |= 0x8000
     ap_bin += buneary_spec.to_bytes(2, 'little')
-    ap_bin += b''.join(id.to_bytes(2, 'little') for id in [481, 488, 491, 146, 145, 144]) # where roamers go when roamer randomization happens
+    roamers_ids = [species[spec].id for spec in world.generated_roamers]
+    roamers_adj = roamers_ids[:2] + [491] + roamers_ids[2:]
+    ap_bin += b''.join(id.to_bytes(2, 'little') for id in roamers_adj)
 
     patch.write_file("ap.bin", ap_bin)
 
@@ -378,12 +405,153 @@ def generate_output(world: "PokemonPlatinumWorld", output_directory: str, patch:
     if world.options.reusable_tms.value == 1:
         for lbl in world.item_name_groups["TMs and HMs"]:
             id = items[raw_id_to_const_name[world.item_name_to_id[lbl]]].data_id
-            seq = item_patches.get(id, [])
-            seq.append(["PREVENT_TOSS", 1])
-            item_patches[id] = seq
+            item_patches.setdefault(id, []).append(["PREVENT_TOSS", 1])
 
     if len(item_patches) > 0:
         patch.write_file("item_patches.json", json.dumps(item_patches).encode('utf-8'))
+
+    # structure: enc id -> table -> array of pairs (old species, new species)
+    encounter_patches: MutableMapping[int, MutableMapping[str, MutableSequence[Tuple[int, int]]]] = {}
+    # structure: spe enc id -> array of pairs (old species, new species)
+    speenc_patches: MutableMapping[int, Sequence[Tuple[int, int]]] = {}
+    bl = world.options.encounter_species_blacklist.blacklist()
+    enc_pool = [mon for mon in species if mon not in bl]
+    if world.options.randomize_encounters:
+        for header, encs in encounters.items():
+            tbls = encounter_patches.setdefault(encs.id, {})
+            for (_, table) in encounter_type_pairs:
+                e: Sequence[EncounterSlot] = getattr(encs, table)
+                if not e:
+                    continue
+                table_map = tbls.setdefault(table, [])
+                for i, slot in enumerate(e):
+                    if (header, table, i) in world.generated_encounters:
+                        new_spec = world.generated_encounters[(header, table, i)]
+                    else:
+                        new_spec = world.random.choice(enc_pool)
+                    table_map.append((species[slot.species].id, species[new_spec].id))
+        for ids, speenc in [
+            ([0], "feebas_fishing"),
+            ([2, 3, 5, 6], "regular_honey_tree"),
+            ([4, 7], "munchlax_honey_tree"),
+            ([8], "trophy_garden"),
+            ([9], "great_marsh_observatory_national_dex"),
+            ([10], "great_marsh_observatory"),
+        ]:
+            e2: Sequence[str] = getattr(special_encounters, speenc)
+            spec_map = []
+            for i, spec in enumerate(e2):
+                if (speenc, i) in world.generated_speencs:
+                    new_spec = world.generated_speencs[(speenc, i)]
+                else:
+                    new_spec = world.random.choice(enc_pool)
+                spec_map.append((species[spec].id, species[new_spec].id))
+            for id in ids:
+                speenc_patches[id] = spec_map
+    if len(encounter_patches) > 0:
+        patch.write_file("encounter_patches.json", json.dumps(encounter_patches).encode('utf-8'))
+    if len(speenc_patches) > 0:
+        patch.write_file("speenc_patches.json", json.dumps(speenc_patches).encode('utf-8'))
+
+    # structure: trainer id -> array of party members
+    # party member: mapping str -> val, level is int, species is int (id), moves is sequence int (move ids)
+    trainer_party_patches = {}
+    bl = world.options.trainer_party_blacklist.blacklist()
+    trp_pool = [mon for mon in species if mon not in bl]
+    if world.options.randomize_trainer_parties:
+        common_st_map: MutableMapping[str, MutableMapping[str, str]] = {}
+        starter_idx_map: Mapping[str, int] = {
+            "turtwig": 0,
+            "chimchar": 1,
+            "piplup": 2,
+            "grotle": 0,
+            "monferno": 1,
+            "prinplup": 2,
+            "torterra": 0,
+            "infernape": 1,
+            "empoleon": 2,
+        }
+        starter_evos: Sequence[Sequence[str]] = []
+        for st in world.generated_starters:
+            chain = [st]
+            while True:
+                if st not in evolutions:
+                    break
+                st = world.random.choice(evolutions[st])
+                chain.append(st)
+            starter_evos.append(chain)
+        for name, trainer in trainers.items():
+            if name.startswith("rival") or name.startswith("lucas") or name.startswith("dawn"):
+                for starter in starter_idx_map:
+                    if name.endswith(starter):
+                        name_ns = name[:-len(starter) - 1]
+                        break
+                else:
+                    assert False, f"trainer {name} does not end with starter"
+                new_party = []
+                tps = {v.species:i for i, v in enumerate(trainer_party_supporting_starters(name_ns))}
+                common_map = common_st_map.setdefault(name_ns, {})
+                for p in trainer.party:
+                    if p.species in tps and (name_ns, tps[p.species]) in world.generated_trainer_parties:
+                        new_spec = world.generated_trainer_parties[(name_ns, tps[p.species])]
+                    elif p.species in starter_idx_map:
+                        chain = starter_evos[starter_idx_map[p.species]]
+                        level_for_nonlevel = 20
+                        for i, mon in enumerate(chain):
+                            pevo = species[mon].pre_evolution
+                            if pevo is not None:
+                                if pevo.level is not None:
+                                    if pevo.level > p.level:
+                                        break
+                                else:
+                                    if level_for_nonlevel > p.level:
+                                        break
+                                    else:
+                                        level_for_nonlevel += 20
+                        else:
+                            i = len(chain)
+                        new_spec = chain[max(0, i - 1)]
+                    elif p.species in common_map:
+                        new_spec = common_map[p.species]
+                    else:
+                        new_spec = world.random.choice(trp_pool)
+                        common_map[p.species] = new_spec
+                    np: Mapping[str, int | Sequence[int]] = {}
+                    np["level"] = p.level
+                    np["species"] = species[new_spec].id
+                    if p.num_moves == 0:
+                        np["moves"] = []
+                    else:
+                        move_pool = sorted(set(species[new_spec].other_learnset) | {move for level, move in species[new_spec].level_learnset if level <= p.level})
+                        np["moves"] = [move_ids[move] for move in world.random.sample(move_pool, k=min(len(move_pool), p.num_moves))]
+                    new_party.append(np)
+                trainer_party_patches[trainer.id] = new_party
+            else:
+                new_party = []
+                for i, p in enumerate(trainer.party):
+                    if (name, i) in world.generated_trainer_parties:
+                        new_spec = world.generated_trainer_parties[(name, i)]
+                    else:
+                        new_spec = world.random.choice(trp_pool)
+                    np: Mapping[str, int | Sequence[int]] = {}
+                    np["level"] = p.level
+                    np["species"] = species[new_spec].id
+                    if p.num_moves == 0:
+                        np["moves"] = []
+                    else:
+                        move_pool = sorted(set(species[new_spec].other_learnset) | {move for level, move in species[new_spec].level_learnset if level <= p.level})
+                        np["moves"] = [move_ids[move] for move in world.random.sample(move_pool, k=min(len(move_pool), p.num_moves))]
+                    new_party.append(np)
+                trainer_party_patches[trainer.id] = new_party
+    if len(trainer_party_patches) > 0:
+        patch.write_file("trainer_party_patches.json", json.dumps(trainer_party_patches).encode('utf-8'))
+
+    species_patches = {}
+    for mon, seq in world.added_hm_compatibility.items():
+        patches: MutableMapping[str, Any] = species_patches.setdefault(species[mon].id, {})
+        patches.setdefault("add_tmhm_compat", []).extend(hm.tmhm_id() for hm in seq)
+    if len(species_patches) > 0:
+        patch.write_file("species_patches.json", json.dumps(species_patches).encode('utf-8'))
 
     out_file_name = world.multiworld.get_out_file_name_base(world.player)
     patch.write(os.path.join(output_directory, f"{out_file_name}{patch.patch_file_ending}"))

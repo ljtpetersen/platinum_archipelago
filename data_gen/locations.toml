@@ -1,3 +1,8 @@
+# data_gen/locations.toml
+#
+# Copyright (C) 2025-2026 James Petersen <m@jamespetersen.ca>
+# Licensed under MIT. See LICENSE
+
 [great_marsh_3_great_ball]
 original_item = "great_ball"
 type = "overworld"
@@ -203,7 +208,7 @@ original_item = "sky_plate"
 type = "hidden"
 table = "hidden"
 check = 850
-label = "Pokémon League - Hidden Item Below SW Poké Ball Statue"
+label = "Pokemon League - Hidden Item Below SW Poke Ball Statue"
 id = 120
 
 [victory_road_2f_tm79]
@@ -395,7 +400,7 @@ original_item = "rare_candy"
 type = "overworld"
 table = "overworld"
 check = 1329
-label = "Survival Area - Item Behind Poké Mart"
+label = "Survival Area - Item Behind Poke Mart"
 id = 314
 
 [survival_area_red_shard]
@@ -2215,7 +2220,7 @@ original_item = "x_attack"
 type = "overworld"
 table = "overworld"
 check = 1273
-label = "Jubilife Trainers’ School - Item in Trainers' School"
+label = "Jubilife Trainers' School - Item in Trainers' School"
 id = 258
 
 [ravaged_path_tm39]
@@ -3169,7 +3174,7 @@ original_item = "luxury_ball"
 type = "overworld"
 table = "overworld"
 check = 1072
-label = "Pokémon Mansion - Item in West Bedroom"
+label = "Pokemon Mansion - Item in West Bedroom"
 id = 58
 
 [pokemon_mansion_maids_room_protein]
@@ -3177,7 +3182,7 @@ original_item = "protein"
 type = "hidden"
 table = "hidden"
 check = 893
-label = "Pokémon Mansion - Hidden Item in East Bedroom Trash"
+label = "Pokemon Mansion - Hidden Item in East Bedroom Trash"
 id = 163
 
 [route_206_poison_barb]
@@ -3569,7 +3574,7 @@ original_item = "tm87"
 type = "overworld"
 table = "overworld"
 check = 1071
-label = "Pokémon Mansion - Item in Mr. Backlot's Office"
+label = "Pokemon Mansion - Item in Mr. Backlot's Office"
 id = 57
 
 [mt_coronet_1f_tunnel_room_green_shard]
@@ -4345,7 +4350,7 @@ original_item = "great_ball"
 type = "hidden"
 table = "hidden"
 check = 733
-label = "Route 211 - Hidden Item in Grass"
+label = "Route 211 West - Hidden Item in Grass"
 id = 3
 
 [oreburgh_city_dire_hit]
@@ -4617,7 +4622,7 @@ original_item = "cobble_badge"
 type = "badge"
 table = "base"
 check = 157
-label = "Veilstone Gym - Cobble Badge from Maylene"
+label = "Veilstone City Gym - Cobble Badge from Maylene"
 id = 4
 
 [veilstone_city_gym_tm60]
@@ -4625,7 +4630,7 @@ original_item = "tm60"
 type = "npc_gift"
 table = "base"
 check = 157
-label = "Veilstone Gym - TM60 from Maylene"
+label = "Veilstone City Gym - TM60 from Maylene"
 id = 5
 
 [pastoria_city_gym_fen_badge]
@@ -4633,7 +4638,7 @@ original_item = "fen_badge"
 type = "badge"
 table = "base"
 check = 156
-label = "Pastoria Gym - Fen Badge from Crasher Wake"
+label = "Pastoria City Gym - Fen Badge from Crasher Wake"
 id = 6
 
 [pastoria_city_gym_tm55]
@@ -4641,7 +4646,7 @@ original_item = "tm55"
 type = "npc_gift"
 table = "base"
 check = 156
-label = "Pastoria Gym - TM55 from Crasher Wake"
+label = "Pastoria City Gym - TM55 from Crasher Wake"
 id = 7
 
 [hearthome_city_gym_leader_room_relic_badge]
@@ -4665,7 +4670,7 @@ original_item = "mine_badge"
 type = "badge"
 table = "base"
 check = 146
-label = "Canalave Gym - Mine Badge from Byron"
+label = "Canalave City Gym - Mine Badge from Byron"
 id = 10
 
 [canalave_city_gym_tm91]
@@ -4673,7 +4678,7 @@ original_item = "tm91"
 type = "npc_gift"
 table = "base"
 check = 146
-label = "Canalave Gym - TM91 from Byron"
+label = "Canalave City Gym - TM91 from Byron"
 id = 11
 
 [snowpoint_city_gym_icicle_badge]
@@ -4681,7 +4686,7 @@ original_item = "icicle_badge"
 type = "badge"
 table = "base"
 check = 158
-label = "Snowpoint Gym - Icicle Badge from Candice"
+label = "Snowpoint City Gym - Icicle Badge from Candice"
 id = 12
 
 [snowpoint_city_gym_tm72]
@@ -4689,7 +4694,7 @@ original_item = "tm72"
 type = "npc_gift"
 table = "base"
 check = 158
-label = "Snowpoint Gym - TM72 from Candice"
+label = "Snowpoint City Gym - TM72 from Candice"
 id = 13
 
 [sunyshore_city_gym_room_3_beacon_badge]
@@ -4697,7 +4702,7 @@ original_item = "beacon_badge"
 type = "badge"
 table = "base"
 check = 182
-label = "Sunyshore Gym - Beacon Badge from Volkner"
+label = "Sunyshore City Gym - Beacon Badge from Volkner"
 id = 14
 
 [sunyshore_city_gym_room_3_tm57]
@@ -4705,7 +4710,7 @@ original_item = "tm57"
 type = "npc_gift"
 table = "base"
 check = 182
-label = "Sunyshore Gym - TM57 from Volkner"
+label = "Sunyshore City Gym - TM57 from Volkner"
 id = 15
 
 [eterna_city_hm01]
@@ -4837,7 +4842,7 @@ original_item = "pokedex"
 type = "pokedex"
 table = "base"
 check = 2914
-label = "Sandgem Town Pokemon Research Lab - National Pokédex from Prof Oak"
+label = "Sandgem Town Pokemon Research Lab - National Pokedex from Prof Oak"
 id = 30
 
 [sandgem_town_pokemon_research_lab_poke_radar]
@@ -4845,7 +4850,7 @@ original_item = "poke_radar"
 type = "key_item"
 table = "base"
 check = 2914
-label = "Sandgem Town Pokemon Research Lab - Poké Radar from Rowan"
+label = "Sandgem Town Pokemon Research Lab - Poke Radar from Rowan"
 id = 31
 
 [sandgem_town_tm27]
@@ -4892,7 +4897,7 @@ original_item = "poke_ball_x5"
 type = "npc_gift"
 table = "base"
 check = 392
-label = "Route 202 - Poké Balls from Lucas or Dawn"
+label = "Route 202 - Poke Balls from Lucas or Dawn"
 id = 36
 
 [jubilife_city_vs_recorder]
@@ -5096,7 +5101,7 @@ original_item = "friendshipchecker"
 type = "poketchapp"
 table = "base"
 check = 2918
-label = "Eterna City Pokémon Center - Friendship Checker App from Woman"
+label = "Eterna City Pokemon Center - Friendship Checker App from Woman"
 id = 61
 
 [eterna_city_underground_man_house_explorer_kit]
@@ -5197,7 +5202,7 @@ check = 2924
 original_item = "pokemonhistory"
 type = "poketchapp"
 table = "base"
-label = "Solaceon Town - Pokémon History App from Ruin Maniac"
+label = "Solaceon Town - Pokemon History App from Ruin Maniac"
 
 [pokemon_day_care_daycarechecker]
 id = 74
@@ -5205,7 +5210,7 @@ check = 2925
 original_item = "daycarechecker"
 type = "poketchapp"
 table = "base"
-label = "Solaceon Town - Day Care Checker App from Man After Leaving a Pokémon"
+label = "Solaceon Town - Day Care Checker App from Man After Leaving a Pokemon"
 
 [solaceon_ruins_room_2_green_shard]
 id = 75
@@ -5336,7 +5341,7 @@ check = 313
 original_item = "soothe_bell"
 type = "npc_gift"
 table = "base"
-label = "Pokémon Mansion - Soothe Bell from Maid in Center Bedroom"
+label = "Pokemon Mansion - Soothe Bell from Maid in Center Bedroom"
 
 [canalave_city_southeast_house_tm48]
 id = 91
@@ -5424,7 +5429,7 @@ check = 2932
 original_item = "memopad"
 type = "poketchapp"
 table = "base"
-label = "Pokétch Company - Memo Pad App"
+label = "Poketch Company - Memo Pad App"
 
 [poketch_co_1f_markingmap]
 id = 100
@@ -5432,7 +5437,7 @@ check = 2933
 original_item = "markingmap"
 type = "poketchapp"
 table = "base"
-label = "Pokétch Company - Marking Map App"
+label = "Poketch Company - Marking Map App"
 
 [poketch_co_1f_linksearcher]
 id = 101
@@ -5440,7 +5445,7 @@ check = 2934
 original_item = "linksearcher"
 type = "poketchapp"
 table = "base"
-label = "Pokétch Company - Link Searcher App"
+label = "Poketch Company - Link Searcher App"
 
 [poketch_co_1f_movetester]
 id = 102
@@ -5448,7 +5453,7 @@ check = 2935
 original_item = "movetester"
 type = "poketchapp"
 table = "base"
-label = "Pokétch Company - Move Tester App"
+label = "Poketch Company - Move Tester App"
 
 [eterna_city_condominiums_2f_tm67]
 id = 104
@@ -5487,7 +5492,7 @@ id = 108
 original_item = "pal_pad"
 type = "key_item"
 table = "base"
-label = "Pokémon Center Basement - Pal Pad"
+label = "Pokemon Center Basement - Pal Pad"
 
 [pokecenter_b1f_pal_pad.check]
 id = 16596
@@ -5723,7 +5728,7 @@ check = 213
 original_item = "scope_lens"
 type = "npc_gift"
 table = "base"
-label = "Fight Area - Gift from Woman in Poké Mart"
+label = "Fight Area - Gift from Woman in Poke Mart"
 
 [route_229_nugget]
 id = 110
@@ -5928,7 +5933,7 @@ id = 14
 original_item = "great_ball"
 type = "npc_gift"
 table = "once"
-label = "Celestic Town - Gift from Man in Pokémon Center"
+label = "Celestic Town - Gift from Man in Pokemon Center"
 
 [celestic_town_pokecenter_1f_great_ball.check]
 id = 14

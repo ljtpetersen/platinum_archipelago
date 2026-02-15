@@ -1,6 +1,6 @@
 # data_gen/items.toml
 #
-# Copyright (C) 2025 James Petersen <m@jamespetersen.ca>
+# Copyright (C) 2025-2026 James Petersen <m@jamespetersen.ca>
 # Licensed under MIT. See LICENSE
 
 [master_ball]
@@ -26,7 +26,7 @@ group = "balls"
 data_id = 3
 
 [poke_ball]
-label = "Poké Ball"
+label = "Poke Ball"
 id = 4
 clas = "bagitem"
 group = "balls"
@@ -458,7 +458,7 @@ group = "battle_items"
 data_id = 62
 
 [poke_doll]
-label = "Poké Doll"
+label = "Poke Doll"
 id = 63
 clas = "bagitem"
 group = "battle_items"
@@ -582,6 +582,7 @@ id = 80
 clas = "bagitem"
 group = "items"
 data_id = 80
+classification = "progression"
 
 [moon_stone]
 label = "Moon Stone"
@@ -589,6 +590,7 @@ id = 81
 clas = "bagitem"
 group = "items"
 data_id = 81
+classification = "progression"
 
 [fire_stone]
 label = "Fire Stone"
@@ -596,6 +598,7 @@ id = 82
 clas = "bagitem"
 group = "items"
 data_id = 82
+classification = "progression"
 
 [thunderstone]
 label = "Thunderstone"
@@ -603,6 +606,7 @@ id = 83
 clas = "bagitem"
 group = "items"
 data_id = 83
+classification = "progression"
 
 [water_stone]
 label = "Water Stone"
@@ -610,6 +614,7 @@ id = 84
 clas = "bagitem"
 group = "items"
 data_id = 84
+classification = "progression"
 
 [leaf_stone]
 label = "Leaf Stone"
@@ -617,6 +622,7 @@ id = 85
 clas = "bagitem"
 group = "items"
 data_id = 85
+classification = "progression"
 
 [tinymushroom]
 label = "TinyMushroom"
@@ -771,6 +777,7 @@ id = 107
 clas = "bagitem"
 group = "items"
 data_id = 107
+classification = "progression"
 
 [dusk_stone]
 label = "Dusk Stone"
@@ -778,6 +785,7 @@ id = 108
 clas = "bagitem"
 group = "items"
 data_id = 108
+classification = "progression"
 
 [dawn_stone]
 label = "Dawn Stone"
@@ -785,6 +793,7 @@ id = 109
 clas = "bagitem"
 group = "items"
 data_id = 109
+classification = "progression"
 
 [oval_stone]
 label = "Oval Stone"
@@ -792,6 +801,7 @@ id = 110
 clas = "specialbagitem"
 group = "items"
 data_id = 110
+classification = "progression"
 
 [odd_keystone]
 label = "Odd Keystone"
@@ -1412,11 +1422,12 @@ group = "items"
 data_id = 198
 
 [kings_rock]
-label = "King’s Rock"
+label = "King's Rock"
 id = 221
 clas = "specialbagitem"
 group = "items"
 data_id = 199
+classification = "progression"
 
 [silverpowder]
 label = "SilverPowder"
@@ -1453,6 +1464,7 @@ id = 226
 clas = "specialbagitem"
 group = "items"
 data_id = 204
+classification = "progression"
 
 [deepseascale]
 label = "DeepSeaScale"
@@ -1460,6 +1472,7 @@ id = 227
 clas = "specialbagitem"
 group = "items"
 data_id = 205
+classification = "progression"
 
 [smoke_ball]
 label = "Smoke Ball"
@@ -1502,6 +1515,7 @@ id = 233
 clas = "specialbagitem"
 group = "items"
 data_id = 211
+classification = "progression"
 
 [leftovers]
 label = "Leftovers"
@@ -1516,6 +1530,7 @@ id = 235
 clas = "specialbagitem"
 group = "items"
 data_id = 213
+classification = "progression"
 
 [light_ball]
 label = "Light Ball"
@@ -1635,6 +1650,7 @@ id = 252
 clas = "specialbagitem"
 group = "items"
 data_id = 230
+classification = "progression"
 
 [shell_bell]
 label = "Shell Bell"
@@ -2118,6 +2134,7 @@ id = 321
 clas = "specialbagitem"
 group = "items"
 data_id = 299
+classification = "progression"
 
 [electirizer]
 label = "Electirizer"
@@ -2125,6 +2142,7 @@ id = 322
 clas = "specialbagitem"
 group = "items"
 data_id = 300
+classification = "progression"
 
 [magmarizer]
 label = "Magmarizer"
@@ -2132,6 +2150,7 @@ id = 323
 clas = "specialbagitem"
 group = "items"
 data_id = 301
+classification = "progression"
 
 [dubious_disc]
 label = "Dubious Disc"
@@ -2139,6 +2158,7 @@ id = 324
 clas = "specialbagitem"
 group = "items"
 data_id = 302
+classification = "progression"
 
 [reaper_cloth]
 label = "Reaper Cloth"
@@ -2146,6 +2166,7 @@ id = 325
 clas = "specialbagitem"
 group = "items"
 data_id = 303
+classification = "progression"
 
 [razor_claw]
 label = "Razor Claw"
@@ -2153,6 +2174,7 @@ id = 326
 clas = "specialbagitem"
 group = "items"
 data_id = 304
+classification = "progression"
 
 [razor_fang]
 label = "Razor Fang"
@@ -2160,6 +2182,7 @@ id = 327
 clas = "specialbagitem"
 group = "items"
 data_id = 305
+classification = "progression"
 
 [tm01]
 label = "TM01"
@@ -2892,11 +2915,12 @@ group = "key_items"
 data_id = 408
 
 [poke_radar]
-label = "Poké Radar"
+label = "Poke Radar"
 id = 431
 clas = "bagitem"
 group = "key_items"
 data_id = 409
+classification = "progression"
 
 [point_card]
 label = "Point Card"
@@ -3029,6 +3053,7 @@ id = 449
 clas = "specialbagitem"
 group = "key_items"
 data_id = 427
+classification = "progression"
 
 [bicycle]
 label = "Bicycle"
@@ -3047,7 +3072,7 @@ classification = "progression"
 data_id = 429
 
 [oaks_letter]
-label = "Oak’s Letter"
+label = "Oak's Letter"
 id = 452
 clas = "bagitem"
 group = "key_items"
@@ -3197,7 +3222,7 @@ clas = "poketchapp"
 group = "poketch_apps"
 
 [partystatus]
-label = "POKéMON LIST"
+label = "POKeMON LIST"
 id = 4
 clas = "poketchapp"
 group = "poketch_apps"
@@ -3228,7 +3253,7 @@ clas = "poketchapp"
 group = "poketch_apps"
 
 [pokemonhistory]
-label = "POKéMON HISTORY"
+label = "POKeMON HISTORY"
 id = 9
 clas = "poketchapp"
 group = "poketch_apps"
@@ -3250,6 +3275,7 @@ label = "MARKING MAP"
 id = 12
 clas = "poketchapp"
 group = "poketch_apps"
+classification = "progression"
 
 [linksearcher]
 label = "LINK SEARCHER"
@@ -3387,21 +3413,21 @@ group = "runningshoes"
 classification = "useful"
 
 [pokedex]
-label = "Upgradable Pokédex"
+label = "Upgradable Pokedex"
 id = 2
 clas = "special"
 group = "pokedex"
 classification = "progression"
 
 [poke_ball_x5]
-label = "Poké Ball x5"
+label = "Poke Ball x5"
 id = 4
 clas = "bagitem"
 group = "balls"
 count = 5
 
 [poketch]
-label = "Pokétch"
+label = "Poketch"
 id = 3
 clas = "special"
 group = "poketch_apps"

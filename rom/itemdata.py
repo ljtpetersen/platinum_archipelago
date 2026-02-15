@@ -1,3 +1,7 @@
+# rom/itemdata.py
+#
+# Copyright (C) 2026 James Petersen <m@jamespetersen.ca>
+# Licensed under MIT. See LICENSE
 
 from collections.abc import Iterable, Mapping, Sequence
 from dataclasses import dataclass

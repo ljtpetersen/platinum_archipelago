@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.2.0] - TBD
 ### Added
-* Universal tracker YAML-less support. (to be rewritten)
+* Universal tracker YAML-less support.
 * A location for the bag item.
 * GBA cartridge items and locations for them. (option to remove location untested)
 * A linking cable item and a location for it. (location untested)
@@ -17,14 +17,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * A location for the Marsh Pass (untested).
 * Daytime and nighttime items (untested).
 * An option to normalize encounter slot probabilities.
-* ROM support for dexsanity. (AP world side is still missing, untested)
-* ROM support for trainersanity. (AP world side is still missing, untested)
+* Dexsanity support, including partial. (mostly tested)
+* Trainersanity support. (mostly tested)
 * Instant text speed option.
 * Death Link support (moderately tested).
-* ROM support for starter randomization. (AP world side is still missing)
+* Starter randomization. (mostly tested)
+* Encounter randomization, including special encounters. (special encounters, water, rods untested)
+* Trainer party randomization. (somewhat tested)
 * Hold A to advance option.
-* ROM support for randomizing the species that Rowan shows during the intro. (AP world side is still missing)
-* A clerk in the fourth floor of the Veilstone Department Store, who sells non-reusable evolution items after they have been previously obtained. He also sells TM70 Flash.
+* Randomizing the species that Rowan shows during the intro.
+* A clerk in the fourth floor of the Veilstone Department Store, who sells non-reusable evolution items after they have been previously obtained.
+He also sells TM70 Flash.
 * An option for reusable TMs.
 * An option to have a 100% catch rate.
 * Cheats in the client.

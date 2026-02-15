@@ -1,14 +1,16 @@
 # data_gen_templates/locations.py
 #
-# Copyright (C) 2025 James Petersen <m@jamespetersen.ca>
+# Copyright (C) 2025-2026 James Petersen <m@jamespetersen.ca>
 # Licensed under MIT. See LICENSE
 
 from collections.abc import Callable, Mapping, Sequence, Set
 from dataclasses import dataclass
 from enum import IntEnum
 import operator
+from typing import TYPE_CHECKING
 
-from worlds.pokemon_platinum.options import PokemonPlatinumOptions
+if TYPE_CHECKING:
+    from ..options import PokemonPlatinumOptions
 
 class LocationTable(IntEnum):
     # TEMPLATE: LOCATION_TABLES
@@ -51,10 +53,10 @@ locations: Mapping[str, LocationData] = {
 }
 
 class RequiredLocations:
-    opts: PokemonPlatinumOptions
+    opts: "PokemonPlatinumOptions"
     loc_rules: Set[str]
 
-    def __init__(self, opts: PokemonPlatinumOptions):
+    def __init__(self, opts: "PokemonPlatinumOptions"):
         self.opts = opts
         self.loc_rules = set()
         # TEMPLATE: REQUIRED_LOCATIONS
@@ -62,3 +64,8 @@ class RequiredLocations:
     def __contains__(self, loc: str) -> bool:
         return loc in self.loc_rules
 
+
+maximal_required_locations: Set[str] = {
+    # TEMPLATE: MAXIMAL_REQUIRED_LOCATIONS
+    "" # TEMPLATE: DELETE
+}

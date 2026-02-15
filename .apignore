@@ -1,3 +1,8 @@
+# .apignore
+#
+# Copyright (C) 2026 James Petersen <m@jamespetersen.ca>
+# Licensed under MIT. See LICENSE
+
 **
 !/__init__.py
 !/client.py
@@ -6,39 +11,55 @@
 !/options.py
 !/regions.py
 !/rules.py
+!/species.py
 !/LICENSE
 !/rom/__init__.py
+!/rom/encounterdata.py
 !/rom/itemdata.py
+!/rom/speciesdata.py
+!/rom/trainerdata.py
 !/docs/setup_en.md
 !/docs/en_Pokemon\ Platinum.md
 !/data/__init__.py
 !/data/charmap.py
 !/data/encounters.py
+!/data/event_checks.py
 !/data/items.py
 !/data/locations.py
+!/data/moves.py
 !/data/regions.py
 !/data/rules.py
+!/data/special_encounters.py
 !/data/species.py
+!/data/trainers.py
 !/apnds/LICENSE
 !/apnds/__init__.py
 !/apnds/lz.py
 !/apnds/narc.py
 !/apnds/rom.py
 /data_gen/encounters.toml
+/data_gen/event_checks.toml
 /data_gen/items.toml
 /data_gen/locations.toml
+/data_gen/moves.toml
 /data_gen/regions.toml
 /data_gen/rom_interface.toml
 /data_gen/rules.toml
+/data_gen/special_encounters.toml
 /data_gen/species.toml
+/data_gen/trainers.toml
 /data_gen_templates/__init__.py
 /data_gen_templates/charmap.py
 /data_gen_templates/encounters.py
+/data_gen_templates/event_checks.py
 /data_gen_templates/items.py
 /data_gen_templates/locations.py
+/data_gen_templates/moves.py
 /data_gen_templates/regions.py
 /data_gen_templates/rules.py
+/data_gen_templates/special_encounters.py
 /data_gen_templates/species.py
+/data_gen_templates/trainers.py
 /data_gen.py
 /data_gen_rules.py
 /pokemon_platinum.apworld

@@ -1,6 +1,6 @@
 # client.py
 #
-# Copyright (C) 2025 James Petersen <m@jamespetersen.ca>
+# Copyright (C) 2025-2026 James Petersen <m@jamespetersen.ca>
 # Licensed under MIT. See LICENSE
 
 from collections.abc import Mapping, Set
@@ -8,11 +8,15 @@ from dataclasses import dataclass
 from enum import IntEnum
 from NetUtils import ClientStatus
 from Options import Toggle
+from struct import unpack_from
 from typing import Optional, TYPE_CHECKING, Tuple
 
 import Utils
 
-from .data.locations import FlagCheck, LocationCheck, locations, VarCheck, OnceCheck
+from .data.locations import FlagCheck, LocationCheck, LocationTable, locations, VarCheck, OnceCheck, maximal_required_locations
+from .data.trainers import trainers, trainer_id_to_trainer_const_name, TrainerCheck
+from .data.species import regional_mons, species_id_to_const_name
+from .data.event_checks import event_checks
 from .locations import raw_id_to_const_name
 from .options import Goal, RemoteItems
 
@@ -25,6 +29,28 @@ if TYPE_CHECKING:
 AP_STRUCT_PTR_ADDRESS = 0x023DFFFC
 AP_SUPPORTED_VERSIONS = {1}
 AP_MAGIC = b' AP '
+
+TRACKED_EVENTS = [
+    "fen_badge",
+    "met_oak_pal_park",
+    "lake_verity_defeat_mars",
+    "lake_explosion",
+    "forest_badge",
+    "cobble_badge",
+    "galactic_hq_defeat_cyrus",
+    "lake_valor_defeat_saturn",
+    "lake_acuity_meet_jupiter",
+    "icicle_badge",
+    "eterna_defeat_team_galactic",
+    "relic_badge",
+    "coal_badge",
+    "beacon_badge",
+    "mine_badge",
+    "beat_cynthia",
+    "distortion_world",
+    "valley_windworks_defeat_team_galactic",
+]
+TRACKED_UNRANDOMIZED_REQUIRED_LOCATIONS = sorted(maximal_required_locations)
 
 class CheatBits(IntEnum):
     UNLOCK_ALL_FLY_REGIONS = 1
@@ -45,6 +71,11 @@ class VersionData:
     deathlink_tx_offset: int
     num_blacked_out_offset_in_ap_save: int
     cheat_offset: int
+    pokedex_offset_in_save: int
+    pokedex_size: int
+    trainersanity_flags_offset_in_ap_save: int
+    trainersanity_flags_count: int
+    player_pos_offset: int
 
 AP_VERSION_DATA: Mapping[int, VersionData] = {
     1: VersionData(
@@ -62,6 +93,11 @@ AP_VERSION_DATA: Mapping[int, VersionData] = {
         deathlink_tx_offset=22,
         num_blacked_out_offset_in_ap_save=12,
         cheat_offset=24,
+        pokedex_offset_in_save=0x1370,
+        pokedex_size=804,
+        trainersanity_flags_offset_in_ap_save=16,
+        trainersanity_flags_count=927,
+        player_pos_offset=28,
     ),
 }
 
@@ -70,6 +106,7 @@ class VarsFlags:
     flags: bytes
     vars: bytes
     once_loc_flags: bytes
+    trainersanity_flags: bytes
 
     def is_checked(self, check: LocationCheck) -> bool:
         if isinstance(check, FlagCheck):
@@ -82,6 +119,14 @@ class VarsFlags:
                 return False
         elif isinstance(check, OnceCheck):
             return self.get_once_flag(check.id) ^ check.invert
+        elif isinstance(check, TrainerCheck):
+            return self.get_trainersanity_flag(check.id)
+        else:
+            return False
+
+    def get_trainersanity_flag(self, flag_id: int) -> bool:
+        if flag_id // 8 < len(self.trainersanity_flags):
+            return self.trainersanity_flags[flag_id // 8] & (1 << (flag_id & 7)) != 0
         else:
             return False
 
@@ -102,13 +147,38 @@ class VarsFlags:
             var_id -= 0x4000
             return int.from_bytes(self.vars[2 * var_id:2 * (var_id + 1)], byteorder='little')
 
+@dataclass(frozen=True)
+class Pokedex:
+    data: bytes
+
+    def has_caught_dexsanity(self, id: int, req: bool) -> bool:
+        if req:
+            if not self.has_regular():
+                return False
+            if not self.has_national() and species_id_to_const_name[id] not in regional_mons:
+                return False
+        id -= 1
+        return self.has_caught(id)
+
+    def has_caught(self, id: int):
+        return (self.data[4 + (id >> 3)] & (1 << (id & 7))) != 0
+
+    def has_seen(self, id: int):
+        return (self.data[68 + (id >> 3)] & (1 << (id & 7))) != 0
+
+    def has_regular(self) -> bool:
+        return self.data[794] != 0
+
+    def has_national(self) -> bool:
+        return self.data[795] != 0
+
 class PokemonPlatinumClient(BizHawkClient):
     game = "Pokemon Platinum"
     system = "NDS"
     patch_suffix = ".applatinum"
     ap_struct_address: int = 0
     rom_version: int = 0
-    goal_flag: FlagCheck | None
+    goal_check: LocationCheck | None
     local_checked_locations: Set[int]
     expected_header: bytes
 
@@ -119,6 +189,17 @@ class PokemonPlatinumClient(BizHawkClient):
     cheat_bits: int
     added_cheat_command: bool
 
+    current_map: int
+    current_x: int
+    current_z: int
+    local_tracked_events: int
+    local_tracked_unrandomized_prog_locs: int
+    local_seen_pokemon: set[int]
+    local_caught_pokemon: set[int]
+    remote_seen_pokemon: set[int]
+    remote_caught_pokemon: set[int]
+    notify_setup_complete: bool
+
     def initialize_client(self):
         self.goal_flag = None
         self.local_checked_locations = set()
@@ -128,6 +209,17 @@ class PokemonPlatinumClient(BizHawkClient):
         self.ignore_next_death_link = False
         self.cheat_bits = 0
         self.added_cheat_command = False
+
+        self.current_map = 0
+        self.current_x = -1
+        self.current_z = -1
+        self.local_tracked_events = 0
+        self.local_tracked_unrandomized_prog_locs = 0
+        self.local_seen_pokemon = set()
+        self.local_caught_pokemon = set()
+        self.remote_seen_pokemon = set()
+        self.remote_caught_pokemon = set()
+        self.notify_setup_complete = False
 
     async def validate_rom(self, ctx: "BizHawkClientContext") -> bool:
         from CommonClient import logger
@@ -192,6 +284,14 @@ class PokemonPlatinumClient(BizHawkClient):
         if ctx.server is None or ctx.server.socket.closed or ctx.slot_data is None:
             return
 
+        pokedex_seen_key = f"pokemon_platinum_seen_pokemon_{ctx.team}_{ctx.slot}"
+        pokedex_caught_key = f"pokemon_platinum_caught_pokemon_{ctx.team}_{ctx.slot}"
+
+        if not self.notify_setup_complete:
+            if ctx.items_handling & 0b010:
+                ctx.set_notify(pokedex_caught_key, pokedex_seen_key)
+            self.notify_setup_complete = True
+
         version_data = AP_VERSION_DATA[self.rom_version]
 
         if self.ap_struct_address == 0:
@@ -203,7 +303,7 @@ class PokemonPlatinumClient(BizHawkClient):
             ctx.command_processor.commands["cheat"] = cmd_cheat
 
         if ctx.slot_data["goal"] == Goal.option_champion:
-            self.goal_flag = FlagCheck(id=version_data.champion_flag)
+            self.goal_flag = event_checks["beat_cynthia"]
 
         if "remote_items" in ctx.slot_data and ctx.slot_data["remote_items"] != RemoteItems.option_off and not ctx.items_handling & 0b010: # type: ignore
             ctx.items_handling = 0b011
@@ -275,7 +375,9 @@ class PokemonPlatinumClient(BizHawkClient):
                 ctx.bizhawk_ctx,
                 [
                     (savedata_ptr + version_data.vars_flags_offset_in_save, version_data.vars_flags_size, "ARM9 System Bus"),
-                    (savedata_ptr + version_data.ap_save_offset + version_data.once_loc_flags_offset_in_ap_save, version_data.once_loc_flags_count // 8, "ARM9 System Bus"),
+                    (savedata_ptr + version_data.ap_save_offset + version_data.once_loc_flags_offset_in_ap_save, (version_data.once_loc_flags_count + 7) // 8, "ARM9 System Bus"),
+                    (savedata_ptr + version_data.pokedex_offset_in_save, version_data.pokedex_size, "ARM9 System Bus"),
+                    (savedata_ptr + version_data.ap_save_offset + version_data.trainersanity_flags_offset_in_ap_save, (version_data.trainersanity_flags_count + 7) // 8, "ARM9 System Bus"),
                 ],
                 [guards["AP STRUCT VALID"], guards["SAVEDATA PTR"]],
             )
@@ -285,19 +387,104 @@ class PokemonPlatinumClient(BizHawkClient):
             vars_bytes = vars_flags_bytes[version_data.vars_offset_in_vars_flags:version_data.flags_offset_in_vars_flags]
             flags_bytes = vars_flags_bytes[version_data.flags_offset_in_vars_flags:]
 
-            vars_flags = VarsFlags(flags=flags_bytes, vars=vars_bytes, once_loc_flags=read_result[1])
+            vars_flags = VarsFlags(flags=flags_bytes, vars=vars_bytes, once_loc_flags=read_result[1], trainersanity_flags=read_result[3])
+            pokedex = Pokedex(data=read_result[2])
 
             local_checked_locations = set()
             game_clear = vars_flags.is_checked(self.goal_flag) # type: ignore
+            local_tracked_events = 0
+            local_tracked_unrandomized_prog_locs = 0
+            remote_seen_pokemon = ctx.stored_data.get(pokedex_seen_key)
+            local_seen_pokemon = set(remote_seen_pokemon) if remote_seen_pokemon else set()
+            remote_caught_pokemon = ctx.stored_data.get(pokedex_caught_key)
+            local_caught_pokemon = set(remote_caught_pokemon) if remote_caught_pokemon else set()
 
-            for k, loc in map(lambda k : (k, locations[raw_id_to_const_name[k]]), ctx.missing_locations):
-                if vars_flags.is_checked(loc.check):
-                    local_checked_locations.add(k)
+            for k in ctx.missing_locations:
+                if k >> 16 == LocationTable.DEX:
+                    if pokedex.has_caught_dexsanity(k & 0xFFFF, ctx.slot_data["dexsanity_mode"] >= 2):
+                        local_checked_locations.add(k)
+                elif k >> 16 == LocationTable.TRAINERS:
+                    trainer = trainers[trainer_id_to_trainer_const_name[k & 0xFFFF]]
+                    if vars_flags.is_checked(trainer.get_check()):
+                        local_checked_locations.add(k)
+                else:
+                    loc = locations[raw_id_to_const_name[k]]
+                    if vars_flags.is_checked(loc.check):
+                        local_checked_locations.add(k)
+
+            for k, event in enumerate(TRACKED_EVENTS):
+                if vars_flags.is_checked(event_checks[event]):
+                    local_tracked_events |= 1 << k
+
+            for k, loc in enumerate(TRACKED_UNRANDOMIZED_REQUIRED_LOCATIONS):
+                if vars_flags.is_checked(locations[loc].check):
+                    local_tracked_unrandomized_prog_locs |= 1 << k
+
+            local_seen_pokemon.update(
+                i
+                for i in range(1, 494)
+                if pokedex.has_seen(i)
+            )
+
+            local_caught_pokemon.update(
+                i
+                for i in range(1, 494)
+                if pokedex.has_caught(i)
+            )
 
             if local_checked_locations != self.local_checked_locations:
                 await ctx.check_locations(local_checked_locations)
 
                 self.local_checked_locations = local_checked_locations
+
+
+            packages = []
+
+            if local_seen_pokemon != self.local_seen_pokemon:
+                packages.append({
+                    "cmd": "Set",
+                    "key": pokedex_seen_key,
+                    "default": [],
+                    "want_reply": ctx.items_handling & 0b010,
+                    "operations": [{"operations": "update" if ctx.items_handling & 0b010 else "replace", "value": list(local_seen_pokemon)}]
+                })
+
+            if local_caught_pokemon != self.local_caught_pokemon:
+                packages.append({
+                    "cmd": "Set",
+                    "key": pokedex_caught_key,
+                    "default": [],
+                    "want_reply": ctx.items_handling & 0b010,
+                    "operations": [{"operations": "update" if ctx.items_handling & 0b010 else "replace", "value": list(local_caught_pokemon)}]
+                })
+
+            if packages:
+                await ctx.send_msgs(packages)
+
+                self.local_seen_pokemon = local_seen_pokemon
+                self.local_caught_pokemon = local_caught_pokemon
+
+            if local_tracked_events != self.local_tracked_events:
+                await ctx.send_msgs([{
+                    "cmd": "Set",
+                    "key": f"pokemon_platinum_tracked_events_{ctx.team}_{ctx.slot}",
+                    "default": 0,
+                    "want_reply": False,
+                    "operations": [{"operation": "or", "value": local_tracked_events}]
+                }])
+                self.local_tracked_events = local_tracked_events
+
+            if local_tracked_unrandomized_prog_locs != self.local_tracked_unrandomized_prog_locs:
+                for chunk in range((len(TRACKED_UNRANDOMIZED_REQUIRED_LOCATIONS) + 31) // 32):
+                    await ctx.send_msgs([{
+                        "cmd": "Set",
+                        "key": f"pokemon_platinum_tracked_unrandomized_required_locations_{ctx.team}_{ctx.slot}_{chunk}",
+                        "default": 0,
+                        "want_reply": False,
+                        "operations": [{"operation": "or", "value": (local_tracked_events >> (chunk * 32)) & 0xFFFFFFFF}]
+                    }])
+                self.local_tracked_unrandomized_prog_locs = local_tracked_unrandomized_prog_locs
+
 
             if not ctx.finished_game and game_clear:
                 ctx.finished_game = True
@@ -305,6 +492,50 @@ class PokemonPlatinumClient(BizHawkClient):
                     "cmd": "StatusUpdate",
                     "status": ClientStatus.CLIENT_GOAL,
                 }])
+
+            read_result = await bizhawk.guarded_read(
+                ctx.bizhawk_ctx,
+                [
+                    (self.ap_struct_address + version_data.player_pos_offset, 12, "ARM9 System Bus"),
+                ],
+                [guards["AP STRUCT VALID"]]
+            )
+
+            if read_result is None:
+                return
+
+            current_x, current_z, current_map, pos_lock = unpack_from("<2IHB", read_result[0])
+            if pos_lock == 0 and (current_map != self.current_map or current_x != self.current_x or current_z != self.current_z):
+                self.current_map = current_map
+                self.current_x = current_x
+                self.current_z = current_z
+                message = [{"cmd": "Bounce", "slots": [ctx.slot],
+                           "data": {
+                               "mapNumber": current_map,
+                               "matrixX": current_x,
+                               "matrixZ": current_z,
+                           }}]
+                await ctx.send_msgs(message)
+
+            if ctx.items_handling & 0b010:
+                caught_bytes = bytearray(pokedex.data[4:68])
+                seen_bytes = bytearray(pokedex.data[68:132])
+
+                for i in range(1, 494):
+                    bitmask = 1 << ((i - 1) & 7)
+                    byteidx = (i - 1) >> 3
+                    if i in local_seen_pokemon:
+                        seen_bytes[byteidx] |= bitmask
+                    if i in local_caught_pokemon:
+                        caught_bytes[byteidx] |= bitmask
+
+                await bizhawk.guarded_write(
+                    ctx.bizhawk_ctx,
+                    [
+                        (savedata_ptr + version_data.pokedex_offset_in_save + 4, bytes(caught_bytes + seen_bytes), "ARM9 System Bus")
+                    ],
+                    [guards["AP STRUCT VALID"], guards["SAVEDATA PTR"]]
+                )
         except bizhawk.RequestFailedError:
             pass
 
@@ -370,6 +601,23 @@ class PokemonPlatinumClient(BizHawkClient):
             [(self.ap_struct_address + version_data.cheat_offset, old_bits.to_bytes(4, 'little'), "ARM9 System Bus")],
             [guards["AP STRUCT VALID"]]
         )
+
+    def on_package(self, ctx: "BizHawkClientContext", cmd: str, args: dict) -> None:
+        super().on_package(ctx, cmd, args)
+
+        if cmd == "Retrieved":
+            if ctx.items_handling & 0b010:
+                if f"pokemon_platinum_caught_pokemon_{ctx.team}_{ctx.slot}" in args["keys"]:
+                    remote_caught_pokemon = args["keys"][f"pokemon_platinum_caught_pokemon_{ctx.team}_{ctx.slot}"]
+                    self.remote_caught_pokemon = set(remote_caught_pokemon) if remote_caught_pokemon else set()
+                if f"pokemon_platinum_seen_pokemon_{ctx.team}_{ctx.slot}" in args["keys"]:
+                    remote_seen_pokemon = args["keys"][f"pokemon_platinum_seen_pokemon_{ctx.team}_{ctx.slot}"]
+                    self.remote_seen_pokemon = set(remote_seen_pokemon) if remote_seen_pokemon else set()
+        elif cmd == "SetReply":
+            if args["key"] == f"pokemon_platinum_caught_pokemon_{ctx.team}_{ctx.slot}":
+                self.remote_caught_pokemon = set(args["value"])
+            elif args["key"] == f"pokemon_platinum_seen_pokemon_{ctx.team}_{ctx.slot}":
+                self.remote_seen_pokemon = set(args["value"])
 
 def cmd_cheat(self: "BizHawkClientCommandProcessor", name: str | None = None) -> None:
     """Activate a Pokémon Platinum Cheat. Enter the command without any arguments to list all cheats."""

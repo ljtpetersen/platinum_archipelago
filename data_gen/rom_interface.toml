@@ -1,6 +1,6 @@
 # data_gen/rom_interface.toml
 #
-# Copyright (C) 2025 James Petersen <m@jamespetersen.ca>
+# Copyright (C) 2025-2026 James Petersen <m@jamespetersen.ca>
 # Licensed under MIT. See LICENSE
 
 loc_table.base = 0
@@ -39,7 +39,15 @@ hm_badge.rock_smash = "coal_badge"
 hm_badge.waterfall = "beacon_badge"
 hm_badge.rock_climb = "icicle_badge"
 
-req_items = ["dowsingmachine", "poketch"]
+hm_tmhm_id.cut = 92
+hm_tmhm_id.fly = 93
+hm_tmhm_id.surf = 94
+hm_tmhm_id.strength = 95
+hm_tmhm_id.defog = 96
+hm_tmhm_id.rock_smash = 97
+hm_tmhm_id.waterfall = 98
+hm_tmhm_id.rock_climb = 99
+hm_tmhm_id.flash = 69
 
 item_group.items = "Items"
 item_group.key_items = "Key Items"
@@ -54,3 +62,208 @@ item_group.poketch_apps = "Pokétch and Apps"
 item_group.battle_items = "Battle Items"
 item_group.gbacart = "GBA Cartridges"
 item_group.timeitem = "Time Items"
+
+reusable_evo_items = [
+    "shiny_stone",
+    "thunderstone",
+    "moon_stone",
+    "leaf_stone",
+    "dusk_stone",
+    "sun_stone",
+    "fire_stone",
+    "water_stone",
+    "dawn_stone",
+    "linking_cord",
+]
+
+nonreusable_evo_items = [
+    "protector",
+    "reaper_cloth",
+    "deepseascale",
+    "dragon_scale",
+    "magmarizer",
+    "deepseatooth",
+    "metal_coat",
+    "razor_claw",
+    "razor_fang",
+    "upgrade",
+    "electirizer",
+    "kings_rock",
+"dubious_disc",
+    "oval_stone",
+]
+
+tm_of_move.rollout = "tm93"
+tm_of_move.ancient_power = "tm94"
+tm_of_move.double_hit = "tm95"
+tm_of_move.mimic = "tm96"
+
+map_header_labels.canalave_city = "Canalave City"
+map_header_labels.eterna_city = "Eterna City"
+map_header_labels.pastoria_city = "Pastoria City"
+map_header_labels.sunyshore_city = "Sunyshore City"
+map_header_labels.pokemon_league = "Pokemon League"
+map_header_labels.oreburgh_mine_b1f = "Oreburgh Mine"
+map_header_labels.oreburgh_mine_b2f = "Oreburgh Mine Basement"
+map_header_labels.valley_windworks_outside = "Valley Windworks"
+map_header_labels.eterna_forest = "Eterna Forest"
+map_header_labels.fuego_ironworks_outside = "Fuego Ironworks"
+map_header_labels.mt_coronet_1f_south = "Mt. Coronet South"
+map_header_labels.mt_coronet_2f = "Mt. Coronet 2nd Floor"
+map_header_labels.mt_coronet_3f = "Mt. Coronet 3rd Floor"
+map_header_labels.mt_coronet_outside_north = "Mt. Coronet Outside (North)"
+map_header_labels.mt_coronet_outside_south = "Mt. Coronet Outside (South)"
+map_header_labels.mt_coronet_4f_rooms_1_and_2 = "Mt. Coronet 4th Floor First Part"
+map_header_labels.mt_coronet_4f_room_3 = "Mt. Coronet 4th Floor Second Part"
+map_header_labels.mt_coronet_5f = "Mt. Coronet 5th Floor"
+map_header_labels.mt_coronet_6f = "Mt. Coronet 6th Floor"
+map_header_labels.mt_coronet_1f_tunnel_room = "Mt. Coronet Tunnel up to Northern Part"
+map_header_labels.mt_coronet_1f_north_room_2 = "Mt. Coronet Northernmost Room"
+map_header_labels.mt_coronet_1f_north_room_1 = "Mt. Coronet North"
+map_header_labels.mt_coronet_b1f = "Mt. Coronet Basement"
+map_header_labels.solaceon_ruins_maniac_tunnel_room = "Solaceon Ruins Maniac Tunnel Room"
+map_header_labels.solaceon_ruins_room_2_northeast_dead_end = "Solaceon Ruins Norheast Dead-end of 2nd Room"
+map_header_labels.solaceon_ruins_room_1_northwest_dead_end = "Solaceon Ruins Northwest Dead-end of 1st Room"
+map_header_labels.solaceon_ruins_room_2 = "Solaceon Ruins 2nd Room"
+map_header_labels.solaceon_ruins_room_1_southeast_dead_end = "Solaceon Ruins Southeast Dead-end of 1st Room"
+map_header_labels.solaceon_ruins_room_3 = "Solaceon Ruins 3rd Room"
+map_header_labels.solaceon_ruins_room_2_southeast_dead_end = "Solaceon Ruins Southeast Dead-end of 2nd Room"
+map_header_labels.solaceon_ruins_room_6_southeast_dead_end = "Solaceon Ruins Southeast Dead-end of 6th Room"
+map_header_labels.solaceon_ruins_room_5_southwest_dead_end = "Solaceon Ruins Southwest Dead-end of 5th Room"
+map_header_labels.solaceon_ruins_room_3_northwest_dead_end = "Solaceon Ruins Northwest Dead-end of 3rd Room"
+map_header_labels.solaceon_ruins_room_3_southwest_dead_end = "Solaceon Ruins Southwest Dead-end of 3rd Room"
+map_header_labels.solaceon_ruins_room_4 = "Solaceon Ruins 4th Room"
+map_header_labels.solaceon_ruins_room_6 = "Solaceon Ruins 6th Room"
+map_header_labels.solaceon_ruins_room_5 = "Solaceon Ruins 5th Room"
+map_header_labels.solaceon_ruins_room_7 = "Solaceon Ruins 7th Room"
+map_header_labels.solaceon_ruins_room_4_southeast_dead_end = "Solaceon Ruins Southeast Dead-end of 4th Room"
+map_header_labels.solaceon_ruins_room_6_northwest_dead_end = "Solaceon Ruins Northwest Dead-end of 6th Room"
+map_header_labels.victory_road_1f = "Victory Road 1st Floor"
+map_header_labels.victory_road_2f = "Victory Road 2nd Floor"
+map_header_labels.victory_road_b1f = "Victory Road Basement"
+map_header_labels.victory_road_1f_room_1 = "Victory Road Post-game Area 1"
+map_header_labels.victory_road_1f_room_2 = "Victory Road Post-game Area 2"
+map_header_labels.victory_road_1f_room_3 = "Victory Road Post-game Area 3"
+map_header_labels.ravaged_path = "Ravaged Path"
+map_header_labels.oreburgh_gate_1f = "Oreburgh Gate"
+map_header_labels.oreburgh_gate_b1f = "Oreburgh Gate Basement"
+map_header_labels.stark_mountain_outside = "Stark Mountain Outside"
+map_header_labels.stark_mountain_room_1 = "Stark Mountain 1st Room"
+map_header_labels.stark_mountain_room_2 = "Stark Mountain 2nd Room"
+map_header_labels.sendoff_spring = "Sendoff Spring"
+map_header_labels.snowpoint_temple_1f = "Snowpoint Temple 1st Floor"
+map_header_labels.snowpoint_temple_b1f = "Snowpoint Temple 1st Basement"
+map_header_labels.snowpoint_temple_b2f = "Snowpoint Temple 2nd Basement"
+map_header_labels.snowpoint_temple_b3f = "Snowpoint Temple 3rd Basement"
+map_header_labels.snowpoint_temple_b4f = "Snowpoint Temple 4th Basement"
+map_header_labels.snowpoint_temple_b5f = "Snowpoint Temple 5th Basement"
+map_header_labels.wayward_cave_1f = "Wayward Cave"
+map_header_labels.wayward_cave_b1f = "Wayward Cave Basement"
+map_header_labels.trophy_garden = "Trophy Garden"
+map_header_labels.iron_island = "Iron Island Outside"
+map_header_labels.iron_island_1f = "Iron Island 1st Floor"
+map_header_labels.iron_island_b1f_left_room = "Iron Island 1st Basement Left"
+map_header_labels.iron_island_b1f_right_room = "Iron Island 1st Basement Right"
+map_header_labels.iron_island_b2f_right_room = "Iron Island 2nd Basement Right"
+map_header_labels.iron_island_b2f_left_room = "Iron Island 2nd Basement Left"
+map_header_labels.iron_island_b3f = "Iron Island 3rd Basement"
+map_header_labels.old_chateau = "Old Chateau"
+map_header_labels.old_chateau_dining_area = "Old Chateau Dining Area"
+map_header_labels.old_chateau_side_rooms = "Old Chateau Side Rooms"
+map_header_labels.old_chateau_corridor = "Old Chateau Corridor"
+map_header_labels.old_chateau_back_west_room = "Old Chateau Back West Room"
+map_header_labels.old_chateau_back_middle_west_room = "Old Chateau Back Middle West Room"
+map_header_labels.old_chateau_back_middle_room = "Old Chateau Back Middle Room"
+map_header_labels.old_chateau_middle_east_room = "Old Chateau Middle East Room"
+map_header_labels.old_chateau_back_middle_east_room = "Old Chateau Back Middle East Room"
+map_header_labels.old_chateau_back_east_room = "Old Chateau Back East Room"
+map_header_labels.lake_verity = "Lake Verity"
+map_header_labels.lake_valor = "Lake Valor"
+map_header_labels.lake_acuity = "Lake Acuity"
+map_header_labels.valor_lakefront = "Valor Lakefront"
+map_header_labels.acuity_lakefront = "Acuity Lakefront"
+map_header_labels.route_201 = "Route 201"
+map_header_labels.route_202 = "Route 202"
+map_header_labels.route_203 = "Route 203"
+map_header_labels.route_204_south = "Route 204 South"
+map_header_labels.route_204_north = "Route 204 North"
+map_header_labels.route_205_south = "Route 205 South"
+map_header_labels.route_205_north = "Route 205 North"
+map_header_labels.route_206 = "Route 206"
+map_header_labels.route_207 = "Route 207"
+map_header_labels.route_208 = "Route 208"
+map_header_labels.route_209 = "Route 209"
+map_header_labels.route_209_lost_tower_1f = "Lost Tower 1st Floor"
+map_header_labels.route_209_lost_tower_2f = "Lost Tower 2nd Floor"
+map_header_labels.route_209_lost_tower_3f = "Lost Tower 3rd Floor"
+map_header_labels.route_209_lost_tower_4f = "Lost Tower 4th Floor"
+map_header_labels.route_209_lost_tower_5f = "Lost Tower 5th Floor"
+map_header_labels.route_210_south = "Route 210 South"
+map_header_labels.route_210_north = "Route 210 North"
+map_header_labels.route_211_west = "Route 211 West"
+map_header_labels.route_211_east = "Route 211 East"
+map_header_labels.route_212_north = "Route 212 North"
+map_header_labels.route_212_south = "Route 212 South"
+map_header_labels.route_213 = "Route 213"
+map_header_labels.route_214 = "Route 214"
+map_header_labels.route_215 = "Route 215"
+map_header_labels.route_216 = "Route 216"
+map_header_labels.route_217 = "Route 217"
+map_header_labels.route_218 = "Route 218"
+map_header_labels.route_219 = "Route 219"
+map_header_labels.route_221 = "Route 221"
+map_header_labels.route_222 = "Route 222"
+map_header_labels.route_224 = "Route 224"
+map_header_labels.route_225 = "Route 225"
+map_header_labels.route_227 = "Route 227"
+map_header_labels.route_228 = "Route 228"
+map_header_labels.route_229 = "Route 229"
+map_header_labels.twinleaf_town = "Twinleaf Town"
+map_header_labels.celestic_town = "Celestic Town"
+map_header_labels.resort_area = "Resort Area"
+map_header_labels.route_220 = "Route 220"
+map_header_labels.route_223 = "Route 223"
+map_header_labels.route_226 = "Route 226"
+map_header_labels.route_230 = "Route 230"
+map_header_labels.great_marsh_1 = "Great Marsh 1st Area"
+map_header_labels.great_marsh_2 = "Great Marsh 2nd Area"
+map_header_labels.great_marsh_3 = "Great Marsh 3rd Area"
+map_header_labels.great_marsh_4 = "Great Marsh 4th Area"
+map_header_labels.great_marsh_5 = "Great Marsh 5th Area"
+map_header_labels.great_marsh_6 = "Great Marsh 6th Area"
+map_header_labels.maniac_tunnel = "Maniac Tunnel"
+map_header_labels.solaceon_ruins_room_5_southeast_deadend = "Solaceon Ruins Southeast Dead-end of 5th Room"
+map_header_labels.eterna_forest_outside = "Eterna Forest Outside"
+map_header_labels.floaroma_meadow = "Floaroma Meadow"
+
+aux_reqd_items = [
+    "tm93",
+    "tm94",
+    "tm95",
+    "tm96",
+    "linking_cord",
+]
+
+national_dex_requiring_encs = [
+    "snowpoint_temple_1f",
+    "snowpoint_temple_b1f",
+    "snowpoint_temple_b2f",
+    "snowpoint_temple_b3f",
+    "snowpoint_temple_b4f",
+    "snowpoint_temple_b5f",
+    "victory_road_1f_room_1",
+    "victory_road_1f_room_2",
+    "victory_road_1f_room_3",
+    "victory_road_1f_room_3",
+    "route_224",
+    "route_225",
+    "route_226",
+    "route_227",
+    "route_228",
+    "route_229",
+    "route_230",
+    "resort_area",
+    "stark_mountain_outside",
+    "stark_mountain_room_1",
+    "stark_mountain_room_2",
+]

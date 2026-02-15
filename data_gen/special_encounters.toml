@@ -1,0 +1,73 @@
+# data_gen/special_encounters.toml
+#
+# Copyright (C) 2026 James Petersen <m@jamespetersen.ca>
+# Licensed under MIT. See LICENSE
+
+regular_honey_tree_encounters = [
+    "combee",
+    "wurmple",
+    "burmy",
+    "cherubi",
+    "aipom",
+    "heracross",
+]
+
+munchlax_honey_tree_encounters = [
+    "munchlax",
+]
+
+trophy_garden_daily_encounters = [
+    "eevee",
+    "bonsly",
+    "happiny",
+    "meowth",
+    "cleffa",
+    "clefairy",
+    "igglybuff",
+    "plusle",
+    "jigglypuff",
+    "ditto",
+    "castform",
+    "minun",
+    "mime_jr",
+    "marill",
+    "chansey",
+    "azurill",
+]
+
+great_marsh_observatory_encounters = [
+    "carnivine",
+    "skorupi",
+    "croagunk",
+    "quagsire",
+    "yanma",
+    "tropius",
+    "tangela",
+    "wooper",
+]
+
+national_dex_great_marsh_observatory_encounters = [
+    "toxicroak",
+    "kecleon",
+    "drapion",
+    "kangaskhan",
+    "paras",
+    "exeggcute",
+    "shroomish",
+    "gulpin",
+]
+
+mt_coronet_b1f_elusive_fishing_encounters = [
+    "feebas",
+]
+
+roamers = [
+    "mesprit",
+    "cresselia",
+    "darkrai",
+    "moltres",
+    "zapdos",
+    "articuno"
+]
+
+odd_keystone = ["spiritomb"]

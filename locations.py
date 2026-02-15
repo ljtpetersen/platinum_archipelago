@@ -1,6 +1,6 @@
 # locations.py
 #
-# Copyright (C) 2025 James Petersen <m@jamespetersen.ca>
+# Copyright (C) 2025-2026 James Petersen <m@jamespetersen.ca>
 # Licensed under MIT. See LICENSE
 
 from BaseClasses import ItemClassification, Location, Region
@@ -8,7 +8,7 @@ from collections.abc import Callable, Mapping
 from dataclasses import dataclass
 from typing import Dict, TYPE_CHECKING
 
-from .data import items as itemdata, locations as locationdata, regions as regiondata
+from .data import items as itemdata, locations as locationdata, regions as regiondata, trainers as trainerdata, species as speciesdata
 from .options import PokemonPlatinumOptions, RandomizeKeyItems, RemoteItems, UnownsOption
 
 if TYPE_CHECKING:
@@ -68,8 +68,7 @@ def remote_items_should_add(const_name: str, world: "PokemonPlatinumWorld") -> b
             return False
         if itemdata.items[orig_item].classification == ItemClassification.progression:
             return True
-    else:
-        return False
+    return False
 
 def is_location_in_world(label: str, world: "PokemonPlatinumWorld") -> bool:
     const_name = raw_id_to_const_name[world.location_name_to_id[label]]
@@ -81,7 +80,11 @@ def is_location_in_world(label: str, world: "PokemonPlatinumWorld") -> bool:
     return remote_items_should_add(const_name, world)
 
 def create_location_label_to_code_map() -> Dict[str, int]:
-    return {v.label:v.get_raw_id() for v in locationdata.locations.values()}
+    id_map = {}
+    id_map.update({v.label:v.get_raw_id() for v in locationdata.locations.values()})
+    id_map.update({"Trainersanity - " + v.label:v.get_raw_id() for v in trainerdata.trainers.values()})
+    id_map.update({"Dexsanity - " + v.label:v.id | (locationdata.LocationTable.DEX << 16) for v in speciesdata.species.values()})
+    return id_map
 
 class PokemonPlatinumLocation(Location):
     game: str = "Pokemon Platinum"
@@ -109,7 +112,6 @@ def create_locations(world: "PokemonPlatinumWorld", regions: Mapping[str, Region
         if region_name not in regions:
             continue
         region = regions[region_name]
-        remote_items = world.options.remote_items.value == 1
         for name in region_data.locs:
             loc = locationdata.locations[name]
             lt = location_types[loc.type]
@@ -142,3 +144,39 @@ def create_locations(world: "PokemonPlatinumWorld", regions: Mapping[str, Region
                 plat_loc.place_locked_item(ap_item)
                 plat_loc.show_in_spoiler = False
             region.locations.append(plat_loc)
+        if world.options.trainersanity:
+            for name in region_data.trainers:
+                if name.startswith("rival_"):
+                    name += "_turtwig"
+                tr = trainerdata.trainers[name]
+                original_item = world.random.choice(["star_piece", "nugget"])
+                item = itemdata.items[original_item]
+                address = tr.get_raw_id()
+                plat_loc = PokemonPlatinumLocation(
+                    world.player,
+                    "Trainesanity - " + tr.label,
+                    "trainersanity",
+                    address=address,
+                    parent=region,
+                    default_item_id=item.get_raw_id(),
+                    is_enabled=True)
+                region.locations.append(plat_loc)
+
+    rgms = set(speciesdata.regional_mons)
+    balls = sorted(world.item_name_groups["Balls"])
+    dex_reg = regions["virt_dex"]
+    national_dex_reg = regions["virt_national_dex"]
+    for spec in world.dexsanity_specs:
+        if spec in rgms:
+            region = dex_reg
+        else:
+            region = national_dex_reg
+        plat_loc = PokemonPlatinumLocation(
+            world.player,
+            "Dexsanity - " + speciesdata.species[spec].label,
+            "dexsanity",
+            address=speciesdata.species[spec].id | (locationdata.LocationTable.DEX << 16),
+            parent=region,
+            default_item_id=world.item_name_to_id[world.random.choice(balls)],
+            is_enabled=True)
+        region.locations.append(plat_loc)

@@ -30,6 +30,8 @@ for each item that should be marked as useful, add the line `classification = "u
 
 ## Credits
 * Thanks to [Linneus](https://github.com/Linneus) for map changes and help with scripts/events/rules,
-as well as for creating item icons.
-* Thanks to [gerbiljames](https://github.com/gerbiljames) for help with structuring the client and world.
+  as well as for creating item icons and other awesome art.
+* Thanks to [gerbiljames](https://github.com/gerbiljames) for help with structuring the client and world and miscellaneous
+  tech support.
 * Thanks to [ZobeePlays](https://github.com/ZobeePlays) and [Useless](https://github.com/UselessWater3) for location names.
+* Thanks to [Seafo](https://github.com/Seatori) for help with getting the rules for the trainers.

@@ -1,9 +1,9 @@
 # data_gen_rules.py
 #
-# Copyright (C) 2025 James Petersen <m@jamespetersen.ca>
+# Copyright (C) 2025-2026 James Petersen <m@jamespetersen.ca>
 # Licensed under MIT. See LICENSE
 
-from collections.abc import Callable, MutableMapping, MutableSequence, MutableSet, Sequence, Set
+from collections.abc import Callable, MutableMapping, MutableSequence, Sequence, Set
 from dataclasses import dataclass
 from enum import StrEnum
 from typing import Tuple, Union
@@ -151,7 +151,7 @@ class ItemConditions:
             return None
         cond = self.base[item] # type: ignore
         if cond is not None:
-            return str(Condition(cond))
+            return str(Condition(cond, RuleOp.OR))
         else:
             return "True"
 

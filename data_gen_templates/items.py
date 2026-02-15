@@ -1,6 +1,6 @@
 # data_gen_templates/items.py
 #
-# Copyright (C) 2025 James Petersen <m@jamespetersen.ca>
+# Copyright (C) 2025-2026 James Petersen <m@jamespetersen.ca>
 # Licensed under MIT. See LICENSE
 
 from BaseClasses import ItemClassification
@@ -38,4 +38,9 @@ items: Mapping[str, ItemData] = {
 
 item_groups: Dict[str, Set[str]] = {
     # TEMPLATE: ITEM_GROUPS
+}
+
+reusable_evo_items: Set[str] = {
+    # TEMPLATE: REUSABLE_EVO_ITEMS
+    "" # TEMPLATE: DELETE
 }

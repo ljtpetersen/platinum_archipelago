@@ -1,6 +1,6 @@
 # data_gen/regions.toml
 #
-# Copyright (C) 2025 James Petersen <m@jamespetersen.ca>
+# Copyright (C) 2025-2026 James Petersen <m@jamespetersen.ca>
 # Licensed under MIT. See LICENSE
 
 [great_marsh_3]
@@ -36,6 +36,16 @@ locs = [
     "route_225_ultra_ball",
 ]
 group = "fight_area"
+trainers = [
+    "ace_trainer_rodolfo",
+    "ranger_ashlee",
+    "bird_keeper_audrey",
+    "psychic_daisy",
+    "dragon_tamer_geoffrey",
+    "ace_trainer_deanna",
+    "ranger_dwayne",
+    "ace_trainer_quinn",
+]
 
 [route_225_gate_to_fight_area]
 exits = [
@@ -68,6 +78,11 @@ locs = [
     "victory_road_1f_max_repel",
     "victory_road_1f_nugget",
 ]
+trainers = [
+    "psychic_bryce",
+    "bird_keeper_hana",
+    "ace_trainer_mariah",
+]
 
 [victory_road_2f_entrance]
 exits = [
@@ -92,11 +107,21 @@ locs = [
     "victory_road_1f_ultra_ball",
     "victory_road_1f_max_revive",
 ]
+trainers = [
+    "black_belt_miles",
+    "veteran_edgar",
+    "dragon_tamer_clinton",
+]
 
 [pokemon_league_south_south]
-exits = ["pokemon_league_south", "route_223"]
+exits = [
+    "pokemon_league_south",
+    "route_223",
+]
 header = "pokemon_league"
-accessible_encounters = ["surf"]
+accessible_encounters = [
+    "water",
+]
 
 [pokemon_league_south]
 exits = [
@@ -130,6 +155,12 @@ locs = [
     "victory_road_2f_full_restore_0",
     "victory_road_2f_rare_candy",
 ]
+trainers = [
+    "ace_trainer_omar",
+    "ace_trainer_sydney",
+    "veteran_clayton",
+    "double_team_al_and_kay",
+]
 
 [route_224]
 exits = [
@@ -151,6 +182,16 @@ locs = [
     "route_224_pearl_0",
     "route_224_zinc",
     "route_224_ultra_ball_0",
+]
+trainers = [
+    "ace_trainer_ruben",
+    "psychic_maxwell",
+    "black_belt_carl",
+    "veteran_armando",
+    "psychic_brittney",
+    "ace_trainer_jamie",
+    "ruin_maniac_larry",
+    "dragon_tamer_hayden",
 ]
 
 [victory_road_1f_room_1]
@@ -196,6 +237,9 @@ locs = [
     "survival_area_pp_up",
 ]
 group = "fight_area"
+trainers = [
+    "rival_survival_area_1",
+]
 
 [survival_area_south_house]
 exits = [
@@ -203,7 +247,9 @@ exits = [
 ]
 header = "survival_area_south_house"
 group = "fight_area"
-locs = ["survival_area_south_house_tm42"]
+locs = [
+    "survival_area_south_house_tm42",
+]
 
 [survival_area_north_house]
 exits = [
@@ -225,7 +271,9 @@ exits = [
 ]
 header = "route_225_house"
 group = "fight_area"
-locs = ["route_225_house_fresh_water"]
+locs = [
+    "route_225_house_fresh_water",
+]
 
 [survival_area_mart]
 exits = [
@@ -242,6 +290,9 @@ exits = [
     "pokemon_league_north_pokecenter_b1f",
 ]
 header = "pokemon_league_north_pokecenter_1f"
+trainers = [
+    "rival_pokemon_league",
+]
 
 [pokemon_league_north_pokecenter_2f]
 exits = [
@@ -272,6 +323,7 @@ exits = [
     "fullmoon_island_forest",
 ]
 header = "fullmoon_island"
+events = ["event_roamer_1"]
 
 [fullmoon_island_forest]
 exits = [
@@ -285,8 +337,14 @@ locs = [
 [twinleaf_town_player_house_2f]
 exits = [
     "twinleaf_town_player_house_1f",
+    "virt_roamers",
+    "virt_dex",
+    "virt_national_dex",
+    "virt_specs",
 ]
-locs = ["twinleaf_town_player_house_2f_bag"]
+locs = [
+    "twinleaf_town_player_house_2f_bag",
+]
 header = "twinleaf_town_player_house_2f"
 
 [victory_road_b1f]
@@ -301,9 +359,14 @@ locs = [
     "victory_road_b1f_heart_scale",
     "victory_road_b1f_max_elixir",
 ]
+trainers = [
+    "double_team_jo_and_pat",
+    "dragon_tamer_ondrej",
+    "psychic_valencia",
+    "ace_trainer_henry",
+]
 
 [union_room]
-exits = []
 header = "union_room"
 
 [sandgem_town_pokecenter_2f]
@@ -336,9 +399,16 @@ locs = [
     "route_226_heart_scale",
 ]
 group = "fight_area"
+trainers = [
+    "swimmer_lydia",
+    "swimmer_wade",
+]
 
 [route_226_mid]
-exits = ["route_226_east", "route_226_west"]
+exits = [
+    "route_226_east",
+    "route_226_west",
+]
 header = "route_226"
 locs = [
     "route_226_tm53",
@@ -349,6 +419,11 @@ locs = [
     "route_226_pp_max",
 ]
 group = "fight_area"
+trainers = [
+    "ace_trainer_graham",
+    "bird_keeper_geneva",
+    "dragon_tamer_stanley",
+]
 
 [route_226_west]
 exits = [
@@ -357,12 +432,24 @@ exits = [
 ]
 header = "route_226"
 group = "fight_area"
-accessible_encounters = ["land"]
+accessible_encounters = [
+    "land",
+]
 
 [route_227_lower]
 header = "route_227"
-accessible_encounters = ["land"]
-exits = ["route_227", "route_226_east"]
+accessible_encounters = [
+    "land",
+]
+exits = [
+    "route_227",
+    "route_226_east",
+]
+trainers = [
+    "ace_trainer_saul",
+    "ranger_felicia",
+    "ace_trainer_mikayla",
+]
 
 [route_227]
 exits = [
@@ -379,6 +466,9 @@ locs = [
     "route_227_max_repel",
 ]
 group = "fight_area"
+trainers = [
+    "black_belt_griffin",
+]
 
 [route_227_house]
 exits = [
@@ -417,6 +507,16 @@ locs = [
     "route_228_pp_max",
 ]
 group = "fight_area"
+trainers = [
+    "ace_trainer_jose",
+    "ace_trainer_moira",
+    "ranger_kyler",
+    "ranger_krista",
+    "dragon_tamer_keegan",
+    "psychic_corbin",
+    "ace_trainer_meagan",
+    "black_belt_davon",
+]
 
 [route_228_north_house]
 exits = [
@@ -438,6 +538,14 @@ locs = [
     "route_230_water_stone",
 ]
 group = "fight_area"
+trainers = [
+    "swimmer_glenn",
+    "swimmer_joanna",
+    "swimmer_kurt",
+    "swimmer_sophia",
+    "swimmer_sam",
+    "swimmer_mallory",
+]
 
 [celestic_town]
 exits = [
@@ -458,6 +566,9 @@ locs = [
     "celestic_town_black_glasses",
     "celestic_town_wise_glasses",
 ]
+trainers = [
+    "galactic_grunt_celestic_town",
+]
 
 [celestic_town_northeast_house]
 exits = [
@@ -475,8 +586,13 @@ header = "celestic_town_northwest_house"
 exits = [
     "celestic_town",
 ]
-locs = ["celestic_town_cave_hm03"]
+locs = [
+    "celestic_town_cave_hm03",
+]
 header = "celestic_town_cave"
+trainers = [
+    "galactic_boss_cyrus_celestic_town_ruins",
+]
 
 [celestic_town_north_house]
 exits = [
@@ -501,6 +617,22 @@ locs = [
     "victory_road_1f_room_2_rare_candy",
     "victory_road_1f_room_2_ultra_ball_0",
 ]
+trainers = [
+    "ace_trainer_micah",
+    "ace_trainer_brandi",
+    "psychic_desiree",
+    "psychic_landon",
+    "black_belt_eddie",
+    "veteran_terrell",
+    "ace_trainer_arthur",
+    "ace_trainer_clarice",
+    "psychic_deandre",
+    "psychic_kendra",
+    "bird_keeper_autumn",
+    "dragon_tamer_joe",
+    "black_belt_willie",
+    "veteran_brenden",
+]
 
 [pokemon_league_north_pokecenter_b1f]
 exits = [
@@ -513,7 +645,9 @@ header = "pokemon_league_north_pokecenter_b1f"
 exits = [
     "celestic_town",
 ]
-locs = ["celestic_town_southwest_house_analogwatch"]
+locs = [
+    "celestic_town_southwest_house_analogwatch",
+]
 header = "celestic_town_southwest_house"
 
 [pokemon_league_south_pokecenter_b1f]
@@ -530,7 +664,9 @@ exits = [
     "celestic_town",
 ]
 header = "celestic_town_pokecenter_1f"
-locs = ["celestic_town_pokecenter_1f_great_ball"]
+locs = [
+    "celestic_town_pokecenter_1f_great_ball",
+]
 
 [celestic_town_pokecenter_b1f]
 exits = [
@@ -590,7 +726,9 @@ exits = [
     "route_202",
     "route_219",
 ]
-locs = ["sandgem_town_tm27"]
+locs = [
+    "sandgem_town_tm27",
+]
 header = "sandgem_town"
 
 [sandgem_town_house]
@@ -642,6 +780,12 @@ locs = [
     "route_229_nugget_0",
 ]
 group = "fight_area"
+trainers = [
+    "ranger_deshawn",
+    "ace_trainer_felix",
+    "ace_trainer_dana",
+    "ace_trainer_sandra",
+]
 
 [resort_area]
 exits = [
@@ -674,7 +818,6 @@ header = "villa"
 group = "fight_area"
 
 [resort_area_ribbon_syndicate_elevator]
-exits = []
 header = "resort_area_ribbon_syndicate_elevator"
 group = "fight_area"
 
@@ -749,8 +892,13 @@ exits = [
     "sandgem_town",
     "verity_lakefront",
 ]
-locs = ["route_201_potion"]
+locs = [
+    "route_201_potion",
+]
 header = "route_201"
+trainers = [
+    "rival_route_201",
+]
 
 [twinleaf_town_southwest_house]
 exits = [
@@ -766,11 +914,17 @@ exits = [
     "fight_area_pokecenter_1f",
     "battle_frontier_gate_to_fight_area",
     "fight_area_south_house",
-    "route_230"
+    "route_230",
 ]
-locs = ["fight_area_super_rod"]
+locs = [
+    "fight_area_super_rod",
+]
 header = "fight_area"
 group = "fight_area"
+trainers = [
+    "leader_volkner_fight_area",
+    "elite_four_flint_fight_area",
+]
 
 [fight_area_middle_house]
 exits = [
@@ -785,7 +939,9 @@ exits = [
 ]
 header = "fight_area_mart"
 group = "fight_area"
-locs = ["fight_area_mart_scope_lens"]
+locs = [
+    "fight_area_mart_scope_lens",
+]
 
 [fight_area_south_house]
 exits = [
@@ -838,8 +994,14 @@ exits = [
     "great_marsh_4",
     "great_marsh_5",
     "great_marsh_6",
+    "virt_great_marsh_national_dex"
 ]
 header = "virt"
+special_encounters = "great_marsh_observatory"
+
+[virt_great_marsh_national_dex]
+header = "virt"
+special_encounters = "great_marsh_observatory_national_dex"
 
 [pastoria_city_observatory_gate_1f]
 exits = [
@@ -848,7 +1010,9 @@ exits = [
     "virt_great_marsh",
 ]
 header = "pastoria_city_observatory_gate_1f"
-locs = ["pastoria_city_observatory_gate_1f_matchupchecker"]
+locs = [
+    "pastoria_city_observatory_gate_1f_matchupchecker",
+]
 
 [pastoria_city_observatory_gate_2f]
 exits = [
@@ -871,7 +1035,8 @@ locs = [
 exits = [
     "verity_lakefront",
 ]
-header = "lake_verity_low_water"
+header = "lake_verity"
+accessible_encounters = ["land"]
 
 [pastoria_city]
 exits = [
@@ -893,6 +1058,9 @@ locs = [
     "pastoria_city_zinc",
     "pastoria_city_piplup_mask",
     "pastoria_city_marsh_pass",
+]
+trainers = [
+    "rival_pastoria_city",
 ]
 
 [pastoria_city_pokecenter_1f]
@@ -952,6 +1120,18 @@ locs = [
     "iron_island_b2f_left_room_magnet",
     "iron_island_b2f_left_room_iron_plate",
 ]
+trainers = [
+    "hiker_damon",
+    "hiker_maurice",
+    "black_belt_kendal",
+    "battle_girl_tyler",
+    "worker_brendon",
+    "worker_quentin",
+    "ace_trainer_jonah",
+    "ace_trainer_brenda",
+    "galactic_grunt_iron_island_1",
+    "galactic_grunt_iron_island_2",
+]
 
 [iron_island_b1f_right_room]
 exits = [
@@ -964,6 +1144,9 @@ locs = [
     "iron_island_b1f_right_room_max_repel",
     "iron_island_b1f_right_room_escape_rope",
     "iron_island_b1f_right_room_revive",
+]
+trainers = [
+    "picnicker_summer",
 ]
 
 [pastoria_city_southwest_house]
@@ -981,6 +1164,10 @@ locs = [
     "iron_island_b2f_right_room_elixir",
     "iron_island_b2f_right_room_tm23",
 ]
+trainers = [
+    "worker_noel",
+    "worker_braden",
+]
 
 [pastoria_city_northeast_house]
 exits = [
@@ -995,6 +1182,10 @@ exits = [
 ]
 header = "victory_road_1f_room_3"
 
+[route_213_honey_tree]
+header = "route_213"
+honey_tree_idx = 11
+
 [route_213]
 exits = [
     "route_213_gate_to_pastoria_city",
@@ -1004,6 +1195,7 @@ exits = [
     "grand_lake_route_213_lobby",
     "footstep_house",
     "grand_lake_route_213_northeast_house",
+    "route_213_honey_tree",
 ]
 header = "route_213"
 locs = [
@@ -1027,6 +1219,17 @@ locs = [
     "route_213_suite_key",
     "route_213_pearl_2",
 ]
+trainers = [
+    "swimmer_sheltin",
+    "swimmer_evan",
+    "swimmer_mary",
+    "swimmer_haley",
+    "tuber_jared",
+    "tuber_chelsea",
+    "beauty_cyndy",
+    "fisherman_kenneth",
+    "sailor_paul",
+]
 
 [grand_lake_route_213_east_house]
 exits = [
@@ -1044,12 +1247,23 @@ header = "grand_lake_route_213_lobby"
 exits = [
     "pastoria_city",
 ]
-events = ["event_fen_badge"]
+events = [
+    "event_fen_badge",
+]
 locs = [
     "pastoria_city_gym_fen_badge",
     "pastoria_city_gym_tm55",
 ]
 header = "pastoria_city_gym"
+trainers = [
+    "tuber_jacky",
+    "sailor_damian",
+    "tuber_caitlyn",
+    "sailor_samson",
+    "fisherman_erick",
+    "fisherman_walter",
+    "leader_wake",
+]
 
 [twinleaf_town_rival_house_1f]
 exits = [
@@ -1073,20 +1287,28 @@ header = "route_219"
 locs = [
     "route_219_antidote",
 ]
+trainers = [
+    "tuber_trenton",
+    "tuber_mariel",
+]
 
 [grand_lake_route_213_northwest_house]
 exits = [
     "route_213",
 ]
 header = "grand_lake_route_213_northwest_house"
-locs = ["grand_lake_route_213_northwest_house_tm92"]
+locs = [
+    "grand_lake_route_213_northwest_house_tm92",
+]
 
 [iron_island_house]
 exits = [
     "iron_island",
 ]
 header = "iron_island_house"
-locs = ["iron_island_house_metal_coat"]
+locs = [
+    "iron_island_house_metal_coat",
+]
 
 [route_221]
 exits = [
@@ -1106,6 +1328,15 @@ locs = [
     "route_221_carbos",
     "route_221_max_revive",
 ]
+trainers = [
+    "swimmer_dillon",
+    "swimmer_vanessa",
+    "fisherman_cory",
+    "collector_ivan",
+    "ace_trainer_jake",
+    "ace_trainer_shannon",
+]
+honey_tree_idx = 15
 
 [pal_park_lobby]
 exits = [
@@ -1113,13 +1344,13 @@ exits = [
     "pal_park",
 ]
 locs = [
-    #"pal_park_lobby_kitchentimer",
-    #"pal_park_lobby_colorchanger",
     "pal_park_lobby_counter",
     "pal_park_lobby_emerald_cartridge",
 ]
 header = "pal_park_lobby"
-events = ["event_met_oak_pal_park"]
+events = [
+    "event_met_oak_pal_park",
+]
 
 [stark_mountain_outside]
 exits = [
@@ -1132,6 +1363,9 @@ locs = [
     "stark_mountain_outside_max_elixir",
 ]
 group = "fight_area"
+trainers = [
+    "dragon_tamer_darien",
+]
 
 [pal_park]
 exits = [
@@ -1161,6 +1395,9 @@ header = "iron_island_b1f_left_room"
 locs = [
     "iron_island_b1f_left_room_protector",
     "iron_island_b1f_left_room_yellow_shard",
+]
+trainers = [
+    "camper_lawrence",
 ]
 
 [pastoria_city_north_house]
@@ -1212,6 +1449,21 @@ locs = [
     "route_212_south_ultra_ball",
     "route_212_south_big_mushroom",
 ]
+trainers = [
+    "fisherman_juan",
+    "fisherman_josh",
+    "fisherman_travis",
+    "ranger_taylor",
+    "ranger_allison",
+    "ranger_jeffrey",
+    "policeman_danny",
+    "scientist_stefano",
+    "collector_dean",
+    "scientist_shaun",
+    "parasol_lady_alexa",
+    "parasol_lady_sabrina",
+]
+honey_tree_idx = 10
 
 [route_212_north_top]
 exits = [
@@ -1219,7 +1471,13 @@ exits = [
     "route_212_gate_to_hearthome_city",
 ]
 header = "route_212_north"
-accessible_encounters = ["old_rod", "good_rod", "super_rod"]
+accessible_encounters = [
+    "water",
+]
+trainers = [
+    "policeman_bobby",
+]
+honey_tree_idx = 9
 
 [route_212_north]
 exits = [
@@ -1238,6 +1496,15 @@ locs = [
     "route_212_north_ultra_ball",
     "route_212_north_pearl",
 ]
+trainers = [
+    "rich_boy_jason",
+    "lady_melissa",
+    "gentleman_jeremy",
+    "socialite_reina",
+    "policeman_alex",
+    "policeman_dylan",
+    "policeman_caleb",
+]
 
 [route_208]
 exits = [
@@ -1254,6 +1521,16 @@ locs = [
     "route_208_tinymushroom",
     "route_208_odd_keystone",
 ]
+trainers = [
+    "hiker_robert",
+    "hiker_alexander",
+    "hiker_jonathan",
+    "black_belt_kyle",
+    "fisherman_cody",
+    "aroma_lady_hannah",
+    "artist_william",
+]
+honey_tree_idx = 4
 
 [route_212_gate_to_hearthome_city]
 exits = [
@@ -1303,7 +1580,10 @@ exits = [
     "route_208",
 ]
 header = "route_208_house"
-locs = ["route_208_house_berrysearcher", "route_208_house_berry"]
+locs = [
+    "route_208_house_berrysearcher",
+    "route_208_house_berry",
+]
 
 [route_209_gate_to_hearthome_city]
 exits = [
@@ -1313,7 +1593,10 @@ exits = [
 header = "route_209_gate_to_hearthome_city"
 
 [stark_mountain_room_1_entrance]
-exits = ["stark_mountain_outside", "stark_mountain_room_1"]
+exits = [
+    "stark_mountain_outside",
+    "stark_mountain_room_1",
+]
 header = "stark_mountain_room_1"
 
 [stark_mountain_room_1]
@@ -1330,6 +1613,10 @@ locs = [
     "stark_mountain_room_1_star_piece",
 ]
 group = "fight_area"
+trainers = [
+    "commander_mars_stark_mountain",
+    "commander_jupiter_stark_mountain",
+]
 
 [battle_frontier_gate_to_fight_area]
 exits = [
@@ -1397,7 +1684,16 @@ header = "lake_verity"
 locs = [
     "lake_verity_tm38",
 ]
-events = ["event_lake_verity_defeat_mars"]
+events = [
+    "event_lake_verity_defeat_mars",
+]
+trainers = [
+    "galactic_grunt_lake_verity_1",
+    "galactic_grunt_lake_verity_3",
+    "galactic_grunt_lake_verity_2",
+    "galactic_grunt_lake_verity_4",
+    "commander_mars_lake_verity",
+]
 
 [footstep_house]
 exits = [
@@ -1425,6 +1721,15 @@ locs = [
     "route_220_big_pearl",
     "route_220_zinc",
 ]
+trainers = [
+    "swimmer_erik",
+    "swimmer_vincent",
+    "swimmer_jessica",
+    "swimmer_erica",
+    "swimmer_adrian",
+    "swimmer_katelyn",
+    "swimmer_claire",
+]
 
 [foreign_building]
 exits = [
@@ -1440,7 +1745,9 @@ exits = [
 header = "hearthome_city_northeast_house_1f"
 
 [hearthome_city_northeast_house_2f]
-exits = ["hearthome_city_northeast_house_1f"]
+exits = [
+    "hearthome_city_northeast_house_1f",
+]
 header = "hearthome_city_northeast_house_2f"
 
 [route_202]
@@ -1453,6 +1760,11 @@ locs = [
     "route_202_potion",
     "route_202_stardust",
     "route_202_poke_ball_x5",
+]
+trainers = [
+    "youngster_tristan",
+    "lass_natalie",
+    "youngster_logan",
 ]
 
 [hearthome_city_pokecenter_1f]
@@ -1496,6 +1808,7 @@ exits = [
     "lake_verity",
 ]
 header = "verity_cavern"
+events = ["event_roamer_0"]
 
 [hearthome_city_southeast_house_1f]
 exits = [
@@ -1505,9 +1818,17 @@ exits = [
 header = "hearthome_city_southeast_house_1f"
 
 [hearthome_city_southeast_house_2f]
-exits = ["hearthome_city_southeast_house_1f"]
+exits = [
+    "hearthome_city_southeast_house_1f",
+]
 header = "hearthome_city_southeast_house_2f"
-locs = ["hearthome_city_southeast_house_2f_shell_bell"]
+locs = [
+    "hearthome_city_southeast_house_2f_shell_bell",
+]
+
+[route_209_odd_keystone]
+header = "virt"
+special_encounters = "odd_keystone"
 
 [route_209]
 exits = [
@@ -1515,6 +1836,7 @@ exits = [
     "route_209_lost_tower_1f",
     "hearthome_city",
     "route_209_gate_to_hearthome_city",
+    "route_209_odd_keystone",
 ]
 header = "route_209"
 locs = [
@@ -1530,6 +1852,18 @@ locs = [
     "route_209_super_repel",
     "route_209_good_rod",
 ]
+trainers = [
+    "breeder_albert",
+    "breeder_jennifer",
+    "cowgirl_shelley",
+    "jogger_richard",
+    "jogger_raul",
+    "poke_kid_danielle",
+    "twins_emma_and_lil",
+    "young_couple_ty_and_sue",
+    "rival_route_209",
+]
+honey_tree_idx = 5
 
 [route_209_lost_tower_1f]
 exits = [
@@ -1595,6 +1929,10 @@ locs = [
     "jubilife_city_leafgreen_cartridge",
     "jubilife_city_sapphire_cartridge",
 ]
+trainers = [
+    "galactic_grunt_jubilife_city_1",
+    "galactic_grunt_jubilife_city_2",
+]
 
 [jubilife_city_unknown_house_4]
 exits = [
@@ -1623,8 +1961,12 @@ locs = [
 ]
 
 [solaceon_town_ledge]
-locs = ["solaceon_town_rare_candy"]
-exits = ["solaceon_ruins_maniac_tunnel_room"]
+locs = [
+    "solaceon_town_rare_candy",
+]
+exits = [
+    "solaceon_ruins_maniac_tunnel_room",
+]
 header = "virt"
 
 [route_210_south]
@@ -1640,6 +1982,15 @@ locs = [
     "route_210_south_rare_candy",
     "route_210_south_tm51",
 ]
+trainers = [
+    "twins_teri_and_tia",
+    "jogger_wyatt",
+    "breeder_kahlil",
+    "breeder_amber",
+    "belle_and_pa_ava_and_matt",
+    "rancher_marco",
+]
+honey_tree_idx = 6
 
 [route_209_lost_tower_2f]
 exits = [
@@ -1650,6 +2001,9 @@ header = "route_209_lost_tower_2f"
 locs = [
     "route_209_lost_tower_2f_oval_stone",
     "route_209_lost_tower_2f_honey_x3",
+]
+trainers = [
+    "youngster_oliver",
 ]
 
 [route_204_south]
@@ -1663,9 +2017,17 @@ locs = [
     "route_204_south_hp_up",
     "route_204_south_parlyz_heal",
 ]
+trainers = [
+    "lass_sarah",
+    "lass_samantha",
+    "youngster_tyler",
+]
 
 [route_210_south_upper]
-exits = ["route_210_north", "route_210_south"]
+exits = [
+    "route_210_north",
+    "route_210_south",
+]
 header = "route_210_south"
 locs = [
     "route_210_south_max_repel",
@@ -1676,6 +2038,11 @@ locs = [
     "route_210_south_ultra_ball_0",
     "route_210_south_nest_ball",
     "route_210_south_old_charm",
+]
+trainers = [
+    "ninja_boy_fabian",
+    "ninja_boy_brennan",
+    "ninja_boy_bruce",
 ]
 
 [route_210_north]
@@ -1694,6 +2061,19 @@ locs = [
     "route_210_north_shiny_stone",
     "route_210_north_meadow_plate",
 ]
+trainers = [
+    "ace_trainer_ernest",
+    "ace_trainer_alyssa",
+    "ninja_boy_joel",
+    "ninja_boy_nathan",
+    "ninja_boy_davido",
+    "dragon_tamer_patrick",
+    "bird_keeper_brianna",
+    "double_team_zac_and_jen",
+    "veteran_brian",
+    "black_belt_adam",
+]
+honey_tree_idx = 7
 
 [route_210_grandma_wilma_house]
 exits = [
@@ -1710,6 +2090,10 @@ header = "route_209_lost_tower_3f"
 locs = [
     "route_209_lost_tower_3f_revive",
 ]
+trainers = [
+    "pokefan_leonard",
+    "roughneck_kirby",
+]
 
 [solaceon_town_northeast_house]
 exits = [
@@ -1717,16 +2101,27 @@ exits = [
 ]
 header = "solaceon_town_northeast_house"
 
+[route_218_honey_tree]
+header = "route_218"
+honey_tree_idx = 14
+
 [route_218]
 exits = [
     "route_218_gate_to_jubilife_city",
     "route_218_gate_to_canalave_city",
+    "route_218_honey_tree",
 ]
 header = "route_218"
 locs = [
     "route_218_rare_candy",
     "route_218_hyper_potion",
     "route_218_x_accuracy",
+]
+trainers = [
+    "guitarist_tony",
+    "sailor_skyler",
+    "fisherman_miguel",
+    "fisherman_luc",
 ]
 
 [jubilife_tv_1f]
@@ -1745,7 +2140,9 @@ exits = [
     "jubilife_tv_elevator",
 ]
 header = "jubilife_tv_2f"
-locs = ["jubilife_tv_2f_chimchar_mask"]
+locs = [
+    "jubilife_tv_2f_chimchar_mask",
+]
 
 [jubilife_tv_3f]
 exits = [
@@ -1764,7 +2161,9 @@ exits = [
     "solaceon_ruins_room_1_northwest_dead_end",
     "solaceon_ruins_room_1_southeast_dead_end",
 ]
-events = ["event_solaceon_ruins"]
+events = [
+    "event_solaceon_ruins",
+]
 header = "solaceon_ruins_room_1"
 locs = [
     "uunown_a",
@@ -1826,20 +2225,30 @@ locs = [
     "route_209_lost_tower_4f_tm27",
     "route_209_lost_tower_4f_great_ball",
 ]
+trainers = [
+    "pokefan_rebekah",
+    "young_couple_mike_and_nat",
+    "belle_and_pa_beth_and_bob",
+]
 
 [route_209_lost_tower_5f]
 exits = [
     "route_209_lost_tower_4f",
 ]
 header = "route_209_lost_tower_5f"
-locs = ["route_209_lost_tower_5f_cleanse_tag", "route_209_lost_tower_5f_spell_tag"]
+locs = [
+    "route_209_lost_tower_5f_cleanse_tag",
+    "route_209_lost_tower_5f_spell_tag",
+]
 
 [pokemon_day_care]
 exits = [
     "solaceon_town",
 ]
 header = "pokemon_day_care"
-locs = ["pokemon_day_care_daycarechecker"]
+locs = [
+    "pokemon_day_care_daycarechecker",
+]
 
 [solaceon_town_north_house]
 exits = [
@@ -1863,7 +2272,6 @@ exits = [
 header = "solaceon_town_pokecenter_2f"
 
 [jubilife_tv_elevator]
-exits = []
 header = "jubilife_tv_elevator"
 
 [cafe]
@@ -1871,6 +2279,11 @@ exits = [
     "route_210_south",
 ]
 header = "cafe"
+trainers = [
+    "collector_fernando",
+    "collector_edwin",
+    "waitress_kati",
+]
 
 [sandgem_town_pokemon_research_lab]
 exits = [
@@ -1904,8 +2317,22 @@ locs = [
     "route_222_pearl",
     "route_222_heart_scale",
     "route_222_heart_scale_0",
-    "route_222_tm56"
+    "route_222_tm56",
 ]
+trainers = [
+    "fisherman_brett",
+    "fisherman_alec",
+    "fisherman_george",
+    "fisherman_cole",
+    "beauty_nicola",
+    "tuber_conner",
+    "rich_boy_trey",
+    "sailor_luther",
+    "policeman_thomas",
+    "tuber_holly",
+    "sailor_marc",
+]
+honey_tree_idx = 16
 
 [route_222_east_house]
 exits = [
@@ -1918,6 +2345,9 @@ exits = [
     "route_222",
 ]
 header = "route_222_west_house"
+trainers = [
+    "poke_kid_janet",
+]
 
 [sunyshore_city]
 exits = [
@@ -1945,7 +2375,6 @@ locs = [
 ]
 
 [vista_lighthouse_elevator]
-exits = []
 header = "vista_lighthouse_elevator"
 
 [sunyshore_city_northwest_house]
@@ -1979,6 +2408,21 @@ locs = [
     "route_223_rare_candy",
     "route_223_heart_scale",
     "route_223_heart_scale_0",
+]
+trainers = [
+    "swimmer_wesley",
+    "swimmer_ricardo",
+    "swimmer_francisco",
+    "swimmer_colton",
+    "swimmer_troy",
+    "swimmer_oscar",
+    "swimmer_miranda",
+    "swimmer_aubree",
+    "swimmer_paige",
+    "swimmer_crystal",
+    "swimmer_cassandra",
+    "swimmer_gabrielle",
+    "sailor_zachariah",
 ]
 
 [battle_tower]
@@ -2040,6 +2484,10 @@ locs = [
     "trainers_school_town_map",
     "trainers_school_potion",
 ]
+trainers = [
+    "school_kid_harrison",
+    "school_kid_christine",
+]
 
 [ravaged_path]
 exits = [
@@ -2066,6 +2514,11 @@ locs = [
     "route_204_north_awakening",
     "route_204_north_tm78",
 ]
+trainers = [
+    "bug_catcher_brandon",
+    "aroma_lady_taylor",
+    "twins_liv_and_liz",
+]
 
 [route_218_gate_to_canalave_city]
 exits = [
@@ -2073,7 +2526,9 @@ exits = [
     "route_218",
 ]
 header = "route_218_gate_to_canalave_city"
-locs = ["route_218_gate_to_canalave_city_pokedex_forms"]
+locs = [
+    "route_218_gate_to_canalave_city_pokedex_forms",
+]
 
 [sunyshore_city_northeast_house]
 exits = [
@@ -2123,6 +2578,9 @@ header = "canalave_city"
 locs = [
     "canalave_city_tm89",
     "canalave_city_big_pearl",
+]
+trainers = [
+    "rival_canalave_city",
 ]
 
 [canalave_city_mart]
@@ -2174,7 +2632,9 @@ header = "canalave_library_2f"
 exits = [
     "canalave_library_2f",
 ]
-events = ["event_lake_explosion"]
+events = [
+    "event_lake_explosion",
+]
 header = "canalave_library_3f"
 
 [route_205_south]
@@ -2193,6 +2653,17 @@ locs = [
     "route_205_south_repel",
     "route_205_south_stardust",
 ]
+trainers = [
+    "hiker_daniel",
+    "aroma_lady_elizabeth",
+    "camper_jacob",
+    "picnicker_siena",
+    "hiker_nicholas",
+    "battle_girl_kelsey",
+    "picnicker_karina",
+    "camper_zackary",
+]
+honey_tree_idx = 0
 
 [valley_windworks_outside]
 exits = [
@@ -2206,6 +2677,10 @@ locs = [
     "valley_windworks_outside_electirizer",
     "valley_windworks_outside_max_elixir",
 ]
+trainers = [
+    "galactic_grunt_valley_windworks_1",
+]
+honey_tree_idx = 17
 
 [route_205_house]
 exits = [
@@ -2231,6 +2706,17 @@ locs = [
     "eterna_forest_soothe_bell",
     "eterna_forest_tm95",
 ]
+trainers = [
+    "bug_catcher_jack",
+    "bug_catcher_phillip",
+    "psychic_kody",
+    "psychic_lindsey",
+    "lass_briana",
+    "bug_catcher_donald",
+    "psychic_elijah",
+    "psychic_rachael",
+]
+events = ["event_moss_rock"]
 
 [fuego_ironworks_outside]
 exits = [
@@ -2243,6 +2729,7 @@ locs = [
     "fuego_ironworks_outside_ultra_ball",
     "fuego_ironworks_outside_big_mushroom",
 ]
+honey_tree_idx = 19
 
 [fuego_ironworks_building]
 exits = [
@@ -2262,6 +2749,11 @@ locs = [
     "fuego_ironworks_building_star_piece",
     "fuego_ironworks_building_star_piece_0",
     "fuego_ironworks_building_protein",
+]
+trainers = [
+    "worker_dillan",
+    "worker_holden",
+    "worker_conrad",
 ]
 
 [old_chateau]
@@ -2287,8 +2779,15 @@ locs = [
 exits = [
     "valley_windworks_outside",
 ]
-locs = ["valley_windworks_building_ruby_cartridge"]
+locs = [
+    "valley_windworks_building_ruby_cartridge",
+]
 header = "valley_windworks_building"
+trainers = [
+    "galactic_grunt_valley_windworks_2",
+    "galactic_grunt_valley_windworks_3",
+    "commander_mars_valley_windworks",
+]
 
 [route_205_north]
 exits = [
@@ -2300,6 +2799,12 @@ header = "route_205_north"
 locs = [
     "route_205_north_guard_spec",
 ]
+trainers = [
+    "fisherman_andrew",
+    "fisherman_joseph",
+    "fisherman_zachary",
+]
+honey_tree_idx = 1
 
 [eterna_city]
 exits = [
@@ -2344,18 +2849,28 @@ exits = [
     "eterna_city",
 ]
 header = "eterna_city_underground_man_house"
-locs = ["eterna_city_underground_man_house_explorer_kit"]
+locs = [
+    "eterna_city_underground_man_house_explorer_kit",
+]
 
 [eterna_city_gym]
 exits = [
     "eterna_city",
 ]
-events = ["event_forest_badge"]
+events = [
+    "event_forest_badge",
+]
 locs = [
     "eterna_city_gym_forest_badge",
     "eterna_city_gym_tm86",
 ]
 header = "eterna_city_gym"
+trainers = [
+    "leader_gardenia",
+    "lass_caroline",
+    "aroma_lady_jenna",
+    "aroma_lady_angela",
+]
 
 [jubilife_city_south_house_1f]
 exits = [
@@ -2399,7 +2914,9 @@ exits = [
     "eterna_city_pokecenter_2f",
 ]
 header = "eterna_city_pokecenter_1f"
-locs = ["eterna_city_pokecenter_1f_friendshipchecker"]
+locs = [
+    "eterna_city_pokecenter_1f_friendshipchecker",
+]
 
 [eterna_city_pokecenter_b1f]
 exits = [
@@ -2475,6 +2992,24 @@ locs = [
     "stark_mountain_room_2_fire_stone",
 ]
 group = "fight_area"
+trainers = [
+    "ace_trainer_keenan",
+    "ace_trainer_kassandra",
+    "ace_trainer_skylar",
+    "ace_trainer_natasha",
+    "psychic_chelsey",
+    "psychic_sterling",
+    "bird_keeper_krystal",
+    "black_belt_ray",
+    "ace_trainer_stefan",
+    "ace_trainer_jasmin",
+    "dragon_tamer_drake",
+    "black_belt_jarrett",
+    "ace_trainer_abel",
+    "ace_trainer_monique",
+    "veteran_harlan",
+    "dragon_tamer_kenny",
+]
 
 [stark_mountain_room_3]
 exits = [
@@ -2482,6 +3017,7 @@ exits = [
 ]
 header = "stark_mountain_room_3"
 group = "fight_area"
+events = ["event_stark_mountain_arrest_team_galactic"]
 
 [route_221_house]
 exits = [
@@ -2494,7 +3030,9 @@ exits = [
     "canalave_city",
 ]
 header = "canalave_city_southeast_house"
-locs = ["canalave_city_southeast_house_tm48"]
+locs = [
+    "canalave_city_southeast_house_tm48",
+]
 
 [floaroma_town]
 exits = [
@@ -2514,7 +3052,9 @@ header = "floaroma_town"
 exits = [
     "floaroma_town",
 ]
-locs = ["floaroma_town_middle_house_tm88"]
+locs = [
+    "floaroma_town_middle_house_tm88",
+]
 header = "floaroma_town_middle_house"
 
 [jubilife_tv_2f_gallery]
@@ -2543,6 +3083,9 @@ locs = [
     "valor_lakefront_big_mushroom",
     "valor_lakefront_secretpotion",
 ]
+trainers = [
+    "galactic_grunt_valor_lakefront",
+]
 
 [grand_lake_valor_lakefront_east_house]
 exits = [
@@ -2561,7 +3104,9 @@ exits = [
     "solaceon_ruins_room_2_northeast_dead_end",
 ]
 header = "solaceon_ruins_room_2"
-locs = ["solaceon_ruins_room_2_green_shard"]
+locs = [
+    "solaceon_ruins_room_2_green_shard",
+]
 
 [route_214]
 exits = [
@@ -2581,6 +3126,18 @@ locs = [
     "route_214_big_mushroom",
     "route_214_razor_fang",
 ]
+trainers = [
+    "pi_carlos",
+    "collector_douglas",
+    "collector_brady",
+    "ruin_maniac_bryan",
+    "ruin_maniac_ronald",
+    "collector_jamal",
+    "beauty_devon",
+    "psychic_mitchell",
+    "psychic_abigail",
+]
+honey_tree_idx = 12
 
 [solaceon_ruins_room_3]
 exits = [
@@ -2590,6 +3147,9 @@ exits = [
     "solaceon_ruins_room_3_northwest_dead_end",
 ]
 header = "solaceon_ruins_room_3"
+trainers = [
+    "ruin_maniac_karl",
+]
 
 [eterna_city_mart]
 exits = [
@@ -2608,7 +3168,9 @@ exits = [
     "route_214",
     "solaceon_ruins_maniac_tunnel_room",
 ]
-locs = ["maniac_tunnel_tm28"]
+locs = [
+    "maniac_tunnel_tm28",
+]
 header = "maniac_tunnel"
 
 [canalave_city_sailor_eldritch_house]
@@ -2644,6 +3206,10 @@ locs = [
     "veilstone_city_tm63",
     "galactic_hq_1f_pp_up",
 ]
+trainers = [
+    "galactic_grunt_veilstone_city_1",
+    "galactic_grunt_veilstone_city_2",
+]
 
 [eterna_city_condominiums_2f]
 exits = [
@@ -2668,7 +3234,9 @@ exits = [
     "veilstone_city",
 ]
 header = "veilstone_city_southeast_house"
-locs = ["veilstone_city_southeast_house_coin_case"]
+locs = [
+    "veilstone_city_southeast_house_coin_case",
+]
 
 [veilstone_city_northeast_house]
 exits = [
@@ -2700,26 +3268,39 @@ header = "turnback_cave_entrance"
 exits = [
     "veilstone_city",
 ]
-events = ["event_cobble_badge"]
+events = [
+    "event_cobble_badge",
+]
 locs = [
     "veilstone_city_gym_cobble_badge",
     "veilstone_city_gym_tm60",
 ]
 header = "veilstone_city_gym"
+trainers = [
+    "black_belt_colby",
+    "black_belt_darren",
+    "black_belt_jeffery",
+    "black_belt_rafael",
+    "leader_maylene",
+]
 
 [route_218_gate_to_jubilife_city]
 exits = [
     "jubilife_city",
     "route_218",
 ]
-locs = ["route_218_gate_to_jubilife_city_old_rod"]
+locs = [
+    "route_218_gate_to_jubilife_city_old_rod",
+]
 header = "route_218_gate_to_jubilife_city"
 
 [solaceon_town_east_house]
 exits = [
     "solaceon_town",
 ]
-locs = ["solaceon_town_east_house_seal_case"]
+locs = [
+    "solaceon_town_east_house_seal_case",
+]
 header = "solaceon_town_east_house"
 
 [old_chateau_dining_area]
@@ -2749,6 +3330,7 @@ locs = [
     "floaroma_meadow_honey_x10",
 ]
 header = "floaroma_meadow"
+honey_tree_idx = 20
 
 [floaroma_meadow]
 exits = [
@@ -2773,6 +3355,11 @@ locs = [
     "floaroma_meadow_full_heal",
     "floaroma_meadow_honey_4",
 ]
+trainers = [
+    "galactic_grunt_floaroma_meadow_1",
+    "galactic_grunt_floaroma_meadow_2",
+]
+events = ["event_floaroma_meadow"]
 
 [floaroma_meadow_house]
 exits = [
@@ -2785,7 +3372,9 @@ exits = [
     "jubilife_city",
     "jubilife_city_condominiums_2f",
 ]
-locs = ["jubilife_city_condominiums_1f_quick_claw"]
+locs = [
+    "jubilife_city_condominiums_1f_quick_claw",
+]
 header = "jubilife_city_condominiums_1f"
 
 [jubilife_city_condominiums_2f]
@@ -2823,7 +3412,9 @@ exits = [
 header = "game_corner"
 
 [galactic_hq_wo_key]
-exits = ["veilstone_city_galactic_warehouse"]
+exits = [
+    "veilstone_city_galactic_warehouse",
+]
 header = "virt"
 locs = [
     "veilstone_city_galactic_warehouse_dusk_stone",
@@ -2836,9 +3427,19 @@ locs = [
     "galactic_hq_3f_tm21",
     "galactic_hq_b1f_linking_cord",
 ]
+trainers = [
+    "scientist_fredrick",
+    "galactic_grunt_galactic_hq_b2f_1",
+    "galactic_grunt_galactic_hq_b2f_2",
+    "galactic_grunt_galactic_hq_2f_1",
+    "galactic_grunt_galactic_hq_1f",
+    "galactic_grunt_galactic_hq_3f_1",
+]
 
 [galactic_hq_w_key]
-exits = ["veilstone_city"]
+exits = [
+    "veilstone_city",
+]
 header = "virt"
 locs = [
     "galactic_hq_4f_razor_claw",
@@ -2851,9 +3452,20 @@ locs = [
     "galactic_hq_2f_poke_doll",
     "galactic_hq_2f_max_potion",
     "galactic_hq_laboratory_full_restore",
-    "galactic_hq_master_ball"
+    "galactic_hq_master_ball",
 ]
-events = ["event_galactic_hq_defeat_cyrus"]
+events = [
+    "event_galactic_hq_defeat_cyrus",
+]
+trainers = [
+    "galactic_boss_cyrus_galactic_hq",
+    "commander_saturn_galactic_hq",
+    "galactic_grunt_galactic_hq_2f_2",
+    "galactic_grunt_galactic_hq_2f_3",
+    "scientist_darrius",
+    "galactic_grunt_galactic_hq_3f_3",
+    "galactic_grunt_galactic_hq_3f_4",
+]
 
 [jubilife_city_condominiums_4f]
 exits = [
@@ -2879,12 +3491,27 @@ exits = [
     "cycling_road",
 ]
 header = "route_206_cycling_road_north_gate"
-locs = ["route_206_cycling_road_north_gate_exp_share"]
+locs = [
+    "route_206_cycling_road_north_gate_exp_share",
+]
 
 [cycling_road]
-exits = ["route_206_cycling_road_north_gate", "route_206_cycling_road_south_gate"]
+exits = [
+    "route_206_cycling_road_north_gate",
+    "route_206_cycling_road_south_gate",
+]
 header = "route_206"
 accessible_encounters = []
+trainers = [
+    "cyclist_axel",
+    "cyclist_megan",
+    "cyclist_james",
+    "cyclist_nicole",
+    "cyclist_john",
+    "cyclist_kayla",
+    "cyclist_ryan",
+    "cyclist_rachel",
+]
 
 [grand_lake_valor_lakefront_west_house]
 exits = [
@@ -2907,7 +3534,10 @@ exits = [
     "maniac_tunnel",
 ]
 header = "solaceon_ruins_maniac_tunnel_room"
-locs = ["uunown_ex", "uunown_qu"]
+locs = [
+    "uunown_ex",
+    "uunown_qu",
+]
 
 [pokemon_mansion_maids_room]
 exits = [
@@ -2933,7 +3563,9 @@ exits = [
     "route_214",
 ]
 header = "route_214"
-accessible_encounters = ["good_rod", "old_rod", "super_rod"]
+accessible_encounters = [
+    "water",
+]
 
 [veilstone_city_pokecenter_2f]
 exits = [
@@ -2950,7 +3582,10 @@ exits = [
     "veilstone_city",
 ]
 header = "veilstone_store_1f"
-locs = ["veilstone_store_1f_turtwig_mask"]
+locs = [
+    "veilstone_store_1f_turtwig_mask",
+]
+events = ["event_veilstone_store"]
 
 [veilstone_store_2f]
 exits = [
@@ -2959,7 +3594,9 @@ exits = [
     "veilstone_store_3f",
 ]
 header = "veilstone_store_2f"
-locs = ["veilstone_store_2f_counter"]
+locs = [
+    "veilstone_store_2f_counter",
+]
 
 [veilstone_store_3f]
 exits = [
@@ -2983,7 +3620,9 @@ exits = [
     "veilstone_store_4f",
 ]
 header = "veilstone_store_5f"
-locs = ["veilstone_store_5f_sticky_barb"]
+locs = [
+    "veilstone_store_5f_sticky_barb",
+]
 
 [veilstone_city_northwest_house]
 exits = [
@@ -3006,6 +3645,10 @@ locs = [
     "route_206_tinymushroom",
 ]
 header = "route_206"
+trainers = [
+    "hiker_theodore",
+]
+honey_tree_idx = 2
 
 [route_206]
 exits = [
@@ -3025,14 +3668,22 @@ header = "jubilife_city_unknown_house_3"
 [trophy_garden]
 exits = [
     "pokemon_mansion",
+    "trophy_garden_national_dex",
 ]
 header = "trophy_garden"
+
+[trophy_garden_national_dex]
+header = "virt"
+special_encounters = "trophy_garden"
 
 [flower_shop]
 exits = [
     "floaroma_town",
 ]
-locs = ["flower_shop_sprayduck", "flower_shop_berry"]
+locs = [
+    "flower_shop_sprayduck",
+    "flower_shop_berry",
+]
 header = "flower_shop"
 
 [route_207_south]
@@ -3073,6 +3724,15 @@ locs = [
     "route_207_dowsingmachine",
     "route_207_vs_seeker",
 ]
+trainers = [
+    "camper_anthony",
+    "picnicker_lauren",
+    "youngster_austin",
+    "hiker_justin",
+    "hiker_kevin",
+    "battle_girl_helen",
+]
+honey_tree_idx = 3
 
 [mt_coronet_2f_right]
 exits = [
@@ -3109,12 +3769,18 @@ header = "mt_coronet_3f"
 locs = [
     "mt_coronet_3f_max_repel",
 ]
+trainers = [
+    "galactic_grunt_mt_coronet_3f_2",
+    "galactic_grunt_mt_coronet_3f_1",
+]
 
 [mt_coronet_outside_north_plat]
-exits = ["mt_coronet_outside_south"]
+exits = [
+    "mt_coronet_outside_south",
+]
 header = "mt_coronet_outside_north"
 locs = [
-    "mt_coronet_outside_north_star_piece_0",
+    "mt_coronet_outside_north_star_piece",
     "mt_coronet_outside_south_energy_root",
 ]
 
@@ -3167,6 +3833,10 @@ locs = [
     "mt_coronet_4f_rooms_1_and_2_max_revive",
     "mt_coronet_4f_rooms_1_and_2_ultra_ball",
 ]
+trainers = [
+    "galactic_grunt_mt_coronet_4f_2",
+    "galactic_grunt_mt_coronet_4f_1",
+]
 
 [mt_coronet_outside_north]
 exits = [
@@ -3181,6 +3851,7 @@ locs = [
     "mt_coronet_outside_north_moon_stone",
     "mt_coronet_outside_north_energy_root",
     "mt_coronet_outside_north_revival_herb",
+    "mt_coronet_outside_north_star_piece_0",
 ]
 
 [floaroma_town_southeast_house]
@@ -3190,7 +3861,6 @@ exits = [
 header = "floaroma_town_southeast_house"
 
 [veilstone_store_elevator]
-exits = []
 header = "veilstone_store_elevator"
 
 [canalave_city_harbor_inn]
@@ -3223,7 +3893,9 @@ exits = [
     "cycling_road",
 ]
 header = "route_206_cycling_road_south_gate"
-locs = ["route_206_cycling_road_south_gate_flag"]
+locs = [
+    "route_206_cycling_road_south_gate_flag",
+]
 
 [restaurant]
 exits = [
@@ -3275,11 +3947,20 @@ header = "lake_valor_drained"
 locs = [
     "lake_valor_drained_hp_up",
 ]
-events = ["event_lake_valor_defeat_saturn"]
+events = [
+    "event_lake_valor_defeat_saturn",
+]
+trainers = [
+    "galactic_grunt_lake_valor_1",
+    "galactic_grunt_lake_valor_3",
+    "galactic_grunt_lake_valor_2",
+]
 
 [valor_cavern]
-exits = []
 header = "valor_cavern"
+trainers = [
+    "commander_saturn_valor_cavern",
+]
 
 [eterna_forest_outside]
 exits = [
@@ -3292,6 +3973,7 @@ locs = [
     "eterna_forest_outside_silverpowder",
     "eterna_forest_outside_big_tree",
 ]
+honey_tree_idx = 18
 
 [pokemon_mansion_office]
 exits = [
@@ -3317,7 +3999,7 @@ locs = [
 [mt_coronet_1f_tunnel_room]
 exits = [
     "mt_coronet_outside_north",
-    "mt_coronet_1f_tunnel_room_base"
+    "mt_coronet_1f_tunnel_room_base",
 ]
 header = "mt_coronet_1f_tunnel_room"
 locs = [
@@ -3325,16 +4007,28 @@ locs = [
     "mt_coronet_1f_tunnel_room_rare_candy",
     "mt_coronet_1f_tunnel_room_green_shard_0",
 ]
+trainers = [
+    "galactic_grunt_mt_coronet_tunnel_room_1",
+    "galactic_grunt_mt_coronet_tunnel_room_2",
+    "galactic_grunt_mt_coronet_tunnel_room_3",
+]
 
 [mt_coronet_1f_north_room_1_left]
-exits = ["route_211_west", "mt_coronet_1f_north_room_1_middle"]
+exits = [
+    "route_211_west",
+    "mt_coronet_1f_north_room_1_middle",
+    "virt_mt_coronet",
+]
 header = "mt_coronet_1f_north_room_1"
 locs = [
     "mt_coronet_1f_north_room_1_energypowder",
 ]
 
 [mt_coronet_1f_north_room_1_middle]
-exits = ["mt_coronet_1f_north_room_1_left", "mt_coronet_1f_north_room_1_right"]
+exits = [
+    "mt_coronet_1f_north_room_1_left",
+    "mt_coronet_1f_north_room_1_right",
+]
 header = "mt_coronet_1f_north_room_1"
 locs = [
     "mt_coronet_1f_north_room_1_tm69",
@@ -3347,6 +4041,7 @@ exits = [
     "mt_coronet_1f_north_room_1_middle",
     "mt_coronet_1f_north_room_1_top",
     "route_211_east",
+    "virt_mt_coronet",
 ]
 header = "mt_coronet_1f_north_room_1"
 locs = [
@@ -3366,17 +4061,25 @@ locs = [
 ]
 
 [mt_coronet_1f_north_room_1_bottom]
-exits = ["mt_coronet_1f_north_room_1_right", "mt_coronet_1f_tunnel_room_base"]
+exits = [
+    "mt_coronet_1f_north_room_1_right",
+    "mt_coronet_1f_tunnel_room_base",
+]
 header = "mt_coronet_1f_north_room_1"
 locs = [
     "mt_coronet_1f_north_room_1_nugget",
     "mt_coronet_1f_north_room_1_tm02",
 ]
 
+[mt_coronet_b1f_feebas]
+header = "virt"
+special_encounters = "feebas_fishing"
+
 [mt_coronet_b1f]
 exits = [
     "mt_coronet_1f_north_room_1_top",
     "mt_coronet_1f_north_room_2",
+    "mt_coronet_b1f_feebas"
 ]
 header = "mt_coronet_b1f"
 locs = [
@@ -3398,6 +4101,7 @@ exits = [
     "mt_coronet_iceberg_ruins",
     "mt_coronet_b1f",
     "iceberg_ruins",
+    "virt_mt_coronet",
 ]
 header = "mt_coronet_1f_north_room_2"
 locs = [
@@ -3420,6 +4124,17 @@ locs = [
     "route_216_revive",
     "route_216_pp_up",
 ]
+trainers = [
+    "ace_trainer_blake",
+    "ace_trainer_laura",
+    "black_belt_philip",
+    "skier_bradley",
+    "ace_trainer_garrett",
+    "ace_trainer_maria",
+    "skier_kaitlyn",
+    "skier_edward",
+    "skier_andrea",
+]
 
 [route_211_east]
 exits = [
@@ -3433,6 +4148,13 @@ locs = [
     "route_211_east_calcium",
     "route_211_east_tm77",
 ]
+trainers = [
+    "bird_keeper_katherine",
+    "ninja_boy_nick",
+    "black_belt_sean",
+    "ruin_maniac_harry",
+]
+honey_tree_idx = 8
 
 [mt_coronet_iceberg_ruins]
 exits = [
@@ -3470,13 +4192,27 @@ locs = [
     "route_217_full_heal",
     "route_217_nugget",
 ]
+trainers = [
+    "skier_shawn",
+    "skier_lexie",
+    "skier_bjorn",
+    "skier_madison",
+    "ninja_boy_matthew",
+    "ninja_boy_ethan",
+    "black_belt_luke",
+    "ace_trainer_dalton",
+    "ace_trainer_olivia",
+]
+events = ["event_ice_rock"]
 
 [route_217_west_house]
 exits = [
     "route_217",
 ]
 header = "route_217_west_house"
-locs = ["route_217_west_house_icicle_plate"]
+locs = [
+    "route_217_west_house_icicle_plate",
+]
 
 [canalave_city_pokecenter_1f]
 exits = [
@@ -3499,7 +4235,9 @@ exits = [
     "contest_hall_stage_no_contest",
 ]
 header = "contest_hall_lobby"
-locs = ["contest_hall_lobby_glitter_powder"]
+locs = [
+    "contest_hall_lobby_glitter_powder",
+]
 
 [contest_hall_stage_no_contest]
 exits = [
@@ -3524,7 +4262,9 @@ exits = [
     "route_217",
 ]
 header = "route_217_northeast_house"
-locs = ["route_217_northeast_house_spell_tag"]
+locs = [
+    "route_217_northeast_house_spell_tag",
+]
 
 [acuity_lakefront]
 exits = [
@@ -3548,7 +4288,9 @@ header = "lake_acuity"
 locs = [
     "lake_acuity_tm14",
 ]
-events = ["event_lake_acuity_meet_jupiter"]
+events = [
+    "event_lake_acuity_meet_jupiter",
+]
 
 [lake_acuity_low_water]
 exits = [
@@ -3632,12 +4374,23 @@ locs = [
 exits = [
     "snowpoint_city",
 ]
-events = ["event_icicle_badge"]
+events = [
+    "event_icicle_badge",
+]
 locs = [
     "snowpoint_city_gym_icicle_badge",
     "snowpoint_city_gym_tm72",
 ]
 header = "snowpoint_city_gym"
+trainers = [
+    "ace_trainer_anton",
+    "ace_trainer_savannah",
+    "ace_trainer_alicia",
+    "ace_trainer_isaiah",
+    "ace_trainer_brenna",
+    "ace_trainer_sergio",
+    "leader_candice",
+]
 
 [snowpoint_temple_b3f]
 exits = [
@@ -3710,6 +4463,17 @@ locs = [
     "route_215_iron",
     "route_215_tm66",
 ]
+trainers = [
+    "black_belt_derek",
+    "black_belt_gregory",
+    "black_belt_nathaniel",
+    "jogger_scott",
+    "ruin_maniac_calvin",
+    "ace_trainer_dennis",
+    "ace_trainer_maya",
+    "jogger_craig",
+]
+honey_tree_idx = 13
 
 [team_galactic_eterna_building_1f]
 exits = [
@@ -3718,6 +4482,10 @@ exits = [
     "team_galactic_eterna_building_2f",
 ]
 header = "team_galactic_eterna_building_1f"
+trainers = [
+    "galactic_grunt_team_galactic_eterna_building_1f_1",
+    "galactic_grunt_team_galactic_eterna_building_1f_2",
+]
 
 [rotoms_room]
 exits = [
@@ -3734,6 +4502,10 @@ header = "team_galactic_eterna_building_2f"
 locs = [
     "team_galactic_eterna_building_2f_x_speed",
 ]
+trainers = [
+    "galactic_grunt_team_galactic_eterna_building_2f_2",
+    "galactic_grunt_team_galactic_eterna_building_2f_1",
+]
 
 [team_galactic_eterna_building_3f]
 exits = [
@@ -3743,6 +4515,10 @@ exits = [
 header = "team_galactic_eterna_building_3f"
 locs = [
     "team_galactic_eterna_building_3f_x_special",
+]
+trainers = [
+    "galactic_grunt_team_galactic_eterna_building_3f",
+    "scientist_travon",
 ]
 
 [team_galactic_eterna_building_4f]
@@ -3755,7 +4531,12 @@ locs = [
     "team_galactic_eterna_building_4f_blue_shard",
     "team_galactic_eterna_building_4f_upgrade",
 ]
-events = ["event_eterna_defeat_team_galactic"]
+events = [
+    "event_eterna_defeat_team_galactic",
+]
+trainers = [
+    "commander_jupiter_team_galactic_eterna_building",
+]
 
 [route_215_gate_to_veilstone_city]
 exits = [
@@ -3780,9 +4561,24 @@ locs = [
     "wayward_cave_1f_super_potion",
     "wayward_cave_1f_blue_shard",
 ]
+trainers = [
+    "camper_diego",
+    "picnicker_tori",
+    "lass_cassidy",
+    "youngster_wayne",
+    "hiker_reginald",
+    "collector_terry",
+    "picnicker_ana",
+    "camper_parker",
+    "ruin_maniac_gerald",
+    "hiker_lorenzo",
+]
 
 [wayward_cave_1f_secret]
-exits = ["route_206_upper", "wayward_cave_b1f"]
+exits = [
+    "route_206_upper",
+    "wayward_cave_b1f",
+]
 header = "wayward_cave_1f"
 
 [wayward_cave_b1f]
@@ -3860,6 +4656,11 @@ locs = [
     "route_211_west_tm12",
     "route_211_west_great_ball",
 ]
+trainers = [
+    "bird_keeper_alexandra",
+    "hiker_louis",
+    "ninja_boy_zach",
+]
 
 [jubilife_city_southwest_house_1f]
 exits = [
@@ -3886,12 +4687,17 @@ exits = [
     "hearthome_city_gym_entrance_room",
     "hearthome_city_gym_trainer_room_2",
 ]
-events = ["event_relic_badge"]
+events = [
+    "event_relic_badge",
+]
 locs = [
     "hearthome_city_gym_leader_room_relic_badge",
     "hearthome_city_gym_leader_room_tm65",
 ]
 header = "hearthome_city_gym_leader_room"
+trainers = [
+    "leader_fantina",
+]
 
 [twinleaf_town_northeast_house]
 exits = [
@@ -3905,6 +4711,12 @@ exits = [
     "hearthome_city_gym_trainer_room_1",
 ]
 header = "hearthome_city_gym_trainer_room_2"
+trainers = [
+    "school_kid_mackenzie",
+    "ace_trainer_allen",
+    "school_kid_chance",
+    "ace_trainer_catherine",
+]
 
 [acuity_cavern]
 exits = [
@@ -3953,12 +4765,19 @@ locs = [
 exits = [
     "oreburgh_city",
 ]
-events = ["event_coal_badge"]
+events = [
+    "event_coal_badge",
+]
 locs = [
     "oreburgh_city_gym_coal_badge",
     "oreburgh_city_gym_tm76",
 ]
 header = "oreburgh_city_gym"
+trainers = [
+    "youngster_jonathon",
+    "youngster_darius",
+    "leader_roark",
+]
 
 [oreburgh_city_pokecenter_1f]
 exits = [
@@ -3981,6 +4800,10 @@ exits = [
     "hearthome_city_gym_entrance_room",
 ]
 header = "hearthome_city_gym_trainer_room_1"
+trainers = [
+    "youngster_donny",
+    "lass_molly",
+]
 
 [oreburgh_city_north_house_1f]
 exits = [
@@ -3994,7 +4817,9 @@ exits = [
     "oreburgh_city_north_house_1f",
     "oreburgh_city_north_house_3f",
 ]
-locs = ["oreburgh_city_north_house_2f_heal_ball"]
+locs = [
+    "oreburgh_city_north_house_2f_heal_ball",
+]
 header = "oreburgh_city_north_house_2f"
 
 [oreburgh_city_north_house_3f]
@@ -4009,7 +4834,9 @@ exits = [
     "oreburgh_city_east_house_2f",
     "oreburgh_city",
 ]
-locs = ["oreburgh_city_east_house_2f_great_ball"]
+locs = [
+    "oreburgh_city_east_house_2f_great_ball",
+]
 header = "oreburgh_city_east_house_1f"
 
 [oreburgh_city_north_house_4f]
@@ -4042,7 +4869,9 @@ exits = [
     "oreburgh_city_northwest_house_3f",
     "oreburgh_city_northwest_house_1f",
 ]
-locs = ["oreburgh_city_northwest_house_2f_dusk_ball"]
+locs = [
+    "oreburgh_city_northwest_house_2f_dusk_ball",
+]
 header = "oreburgh_city_northwest_house_2f"
 
 [oreburgh_city_northwest_house_3f]
@@ -4090,6 +4919,10 @@ locs = [
     "oreburgh_mine_b2f_escape_rope",
     "oreburgh_mine_b2f_potion",
 ]
+trainers = [
+    "worker_colin",
+    "worker_mason",
+]
 
 [oreburgh_city_west_house]
 exits = [
@@ -4103,8 +4936,14 @@ exits = [
     "oreburgh_gate_b1f",
     "route_203",
 ]
-locs = ["oreburgh_gate_1f_hm06"]
+locs = [
+    "oreburgh_gate_1f_hm06",
+]
 header = "oreburgh_gate_1f"
+trainers = [
+    "picnicker_diana",
+    "camper_curtis",
+]
 
 [oreburgh_gate_b1f]
 exits = [
@@ -4117,6 +4956,9 @@ locs = [
     "oreburgh_gate_b1f_tm31",
     "oreburgh_gate_b1f_tm70",
     "oreburgh_gate_b1f_big_pearl",
+]
+trainers = [
+    "veteran_grant",
 ]
 
 [veilstone_city_galactic_warehouse]
@@ -4152,7 +4994,9 @@ header = "solaceon_town_mart"
 exits = [
     "eterna_city",
 ]
-locs = ["cycle_shop_bicycle"]
+locs = [
+    "cycle_shop_bicycle",
+]
 header = "cycle_shop"
 
 [hearthome_city_pokemon_fan_club]
@@ -4160,7 +5004,9 @@ exits = [
     "hearthome_city",
 ]
 header = "hearthome_city_pokemon_fan_club"
-locs = ["hearthome_city_pokemon_fan_club_poffin_case"]
+locs = [
+    "hearthome_city_pokemon_fan_club_poffin_case",
+]
 
 [oreburgh_city_south_house]
 exits = [
@@ -4174,6 +5020,9 @@ exits = [
     "sunyshore_city_gym_room_2",
 ]
 header = "sunyshore_city_gym_room_1"
+trainers = [
+    "school_kid_tiera",
+]
 
 [sunyshore_city_gym_room_2]
 exits = [
@@ -4181,17 +5030,31 @@ exits = [
     "sunyshore_city_gym_room_3",
 ]
 header = "sunyshore_city_gym_room_2"
+trainers = [
+    "school_kid_forrest",
+    "guitarist_jerry",
+    "poke_kid_meghan",
+]
 
 [sunyshore_city_gym_room_3]
 exits = [
     "sunyshore_city_gym_room_2",
 ]
-events = ["event_beacon_badge"]
+events = [
+    "event_beacon_badge",
+]
 locs = [
     "sunyshore_city_gym_room_3_beacon_badge",
     "sunyshore_city_gym_room_3_tm57",
 ]
 header = "sunyshore_city_gym_room_3"
+trainers = [
+    "ace_trainer_destiny",
+    "guitarist_preston",
+    "guitarist_lonnie",
+    "ace_trainer_zachery",
+    "leader_volkner",
+]
 
 [solaceon_ruins_room_4]
 exits = [
@@ -4235,6 +5098,10 @@ locs = [
     "mt_coronet_5f_full_restore",
     "mt_coronet_5f_rare_candy",
 ]
+trainers = [
+    "galactic_grunt_mt_coronet_5f_2",
+    "galactic_grunt_mt_coronet_5f_1",
+]
 
 [mt_coronet_6f]
 exits = [
@@ -4242,14 +5109,25 @@ exits = [
     "spear_pillar",
 ]
 header = "mt_coronet_6f"
+trainers = [
+    "galactic_grunt_mt_coronet_6f",
+]
 
 [spear_pillar]
 exits = [
     "mt_coronet_6f",
-    "distortion_world"
+    "distortion_world",
 ]
 header = "spear_pillar"
-locs = ["spear_pillar_nighttime"]
+locs = [
+    "spear_pillar_nighttime",
+]
+trainers = [
+    "galactic_grunt_spear_pillar_1",
+    "galactic_grunt_spear_pillar_2",
+    "commander_mars_spear_pillar",
+    "commander_jupiter_spear_pillar",
+]
 
 [old_chateau_back_middle_east_room]
 exits = [
@@ -4284,6 +5162,14 @@ locs = [
     "route_203_poke_ball",
     "route_203_x_defense",
 ]
+trainers = [
+    "youngster_sebastian",
+    "youngster_michael",
+    "lass_kaitlin",
+    "youngster_dallas",
+    "lass_madeline",
+    "rival_route_203",
+]
 
 [canalave_city_pokecenter_2f]
 exits = [
@@ -4298,6 +5184,10 @@ exits = [
     "pokemon_league_elevator_to_aaron_room",
 ]
 header = "pokemon_league_aaron_room"
+trainers = [
+    "elite_four_aaron",
+    "elite_four_aaron_rematch",
+]
 
 [pokemon_league_elevator_to_bertha_room]
 exits = [
@@ -4312,6 +5202,10 @@ exits = [
     "pokemon_league_elevator_to_flint_room",
 ]
 header = "pokemon_league_bertha_room"
+trainers = [
+    "elite_four_bertha",
+    "elite_four_bertha_rematch",
+]
 
 [oreburgh_city_middle_house]
 exits = [
@@ -4324,6 +5218,7 @@ exits = [
     "route_208",
     "mt_coronet_2f_right",
     "route_207",
+    "virt_mt_coronet",
 ]
 header = "mt_coronet_1f_south"
 locs = [
@@ -4338,12 +5233,24 @@ locs = [
 exits = [
     "canalave_city",
 ]
-events = ["event_mine_badge"]
+events = [
+    "event_mine_badge",
+]
 locs = [
     "canalave_city_gym_mine_badge",
     "canalave_city_gym_tm91",
 ]
 header = "canalave_city_gym"
+trainers = [
+    "black_belt_david",
+    "worker_jackson",
+    "worker_gary",
+    "black_belt_ricky",
+    "ace_trainer_cesar",
+    "worker_gerardo",
+    "ace_trainer_breanna",
+    "leader_byron",
+]
 
 [floaroma_town_pokecenter_1f]
 exits = [
@@ -4372,7 +5279,14 @@ exits = [
     "eterna_city",
 ]
 header = "eterna_city_south_house"
-locs = ["eterna_city_south_house_upgrade"]
+locs = [
+    "eterna_city_south_house_upgrade",
+]
+events = [
+    "event_roamer_3",
+    "event_roamer_4",
+    "event_roamer_5",
+]
 
 [eterna_city_condominiums_3f]
 exits = [
@@ -4413,7 +5327,9 @@ exits = [
     "veilstone_city",
 ]
 header = "veilstone_city_southwest_house"
-locs = ["veilstone_city_southwest_house_accessory"]
+locs = [
+    "veilstone_city_southwest_house_accessory",
+]
 
 [oreburgh_city_pokecenter_2f]
 exits = [
@@ -4453,6 +5369,10 @@ exits = [
     "pokemon_league_elevator_to_lucian_room",
 ]
 header = "pokemon_league_flint_room"
+trainers = [
+    "elite_four_flint",
+    "elite_four_flint_rematch",
+]
 
 [pokemon_league_elevator_to_lucian_room]
 exits = [
@@ -4467,6 +5387,10 @@ exits = [
     "pokemon_league_elevator_to_lucian_room",
 ]
 header = "pokemon_league_lucian_room"
+trainers = [
+    "elite_four_lucian",
+    "elite_four_lucian_rematch",
+]
 
 [pokemon_league_elevator_to_champion_room]
 exits = [
@@ -4481,6 +5405,10 @@ exits = [
     "pokemon_league_elevator_to_hall_of_fame",
 ]
 header = "pokemon_league_champion_room"
+trainers = [
+    "champion_cynthia",
+    "champion_cynthia_rematch",
+]
 
 [pokemon_league_elevator_to_hall_of_fame]
 exits = [
@@ -4493,7 +5421,9 @@ header = "pokemon_league_elevator_to_hall_of_fame"
 exits = [
     "pokemon_league_elevator_to_hall_of_fame",
 ]
-events = ["event_beat_cynthia"]
+events = [
+    "event_beat_cynthia",
+]
 header = "pokemon_league_hall_of_fame"
 
 [jubilife_city_pokecenter_2f]
@@ -4510,16 +5440,41 @@ exits = [
 header = "snowpoint_city_east_house"
 
 [virt_wayward_cave_1f_red_shard]
-locs = ["wayward_cave_1f_red_shard"]
+locs = [
+    "wayward_cave_1f_red_shard",
+]
 header = "virt"
-exits = []
 
 [distortion_world]
-exits = ["sendoff_spring"]
+exits = [
+    "sendoff_spring",
+]
 header = "virt"
-events = ["event_distortion_world"]
+events = [
+    "event_distortion_world",
+]
+trainers = [
+    "galactic_boss_cyrus_distortion_world",
+]
 
 [virt_pal_pad]
-exits = []
 header = "virt"
-locs = ["pokecenter_b1f_pal_pad"]
+locs = [
+    "pokecenter_b1f_pal_pad",
+]
+
+[virt_roamers]
+header = "virt"
+
+[virt_dex]
+header = "virt"
+
+[virt_national_dex]
+header = "virt"
+
+[virt_specs]
+header = "virt"
+
+[virt_mt_coronet]
+header = "virt"
+events = ["event_magnetic_field"]

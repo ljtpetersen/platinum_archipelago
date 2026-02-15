@@ -1,1914 +1,5913 @@
 # data_gen/encounters.toml
 #
-# Copyright (C) 2025 James Petersen <m@jamespetersen.ca>
+# Copyright (C) 2025-2026 James Petersen <m@jamespetersen.ca>
 # Licensed under MIT. See LICENSE
-
-[great_marsh_3]
-land = [
-    "yanma",
-    "tangela",
-    "wooper",
-    "bibarel",
-    "quagsire",
-]
-surf = [
-    "quagsire",
-    "wooper",
-]
-old_rod = [
-    "magikarp",
-]
-good_rod = [
-    "barboach",
-    "magikarp",
-]
-super_rod = [
-    "whiscash",
-    "gyarados",
-    "carvanha",
-]
-
-[route_225]
-land = [
-    "raticate",
-    "graveler",
-    "spearow",
-    "rattata",
-    "machoke",
-    "fearow",
-]
-surf = [
-    "golduck",
-    "psyduck",
-]
-old_rod = [
-    "magikarp",
-]
-good_rod = [
-    "barboach",
-    "magikarp",
-]
-super_rod = [
-    "whiscash",
-    "gyarados",
-]
-
-[great_marsh_4]
-land = [
-    "yanma",
-    "tangela",
-    "wooper",
-    "bibarel",
-    "quagsire",
-]
-surf = [
-    "quagsire",
-    "wooper",
-]
-old_rod = [
-    "magikarp",
-]
-good_rod = [
-    "barboach",
-    "magikarp",
-]
-super_rod = [
-    "whiscash",
-    "gyarados",
-    "carvanha",
-]
-
-[victory_road_1f]
-land = [
-    "onix",
-    "gabite",
-    "graveler",
-    "rhydon",
-    "rhyhorn",
-    "golbat",
-    "steelix",
-]
-
-[pokemon_league]
-surf = [
-    "pelipper",
-    "tentacruel",
-    "wingull",
-]
-old_rod = [
-    "magikarp",
-]
-good_rod = [
-    "remoraid",
-    "magikarp",
-]
-super_rod = [
-    "gyarados",
-    "luvdisc",
-    "octillery",
-]
-
-[victory_road_2f]
-land = [
-    "onix",
-    "gabite",
-    "magneton",
-    "graveler",
-    "golbat",
-    "steelix",
-]
-
-[route_224]
-land = [
-    "roselia",
-    "weepinbell",
-    "floatzel",
-    "gastrodon",
-    "beautifly",
-    "dustox",
-    "gloom",
-    "pelipper",
-    "bellsprout",
-]
-surf = [
-    "pelipper",
-    "tentacruel",
-    "gastrodon",
-]
-old_rod = [
-    "magikarp",
-]
-good_rod = [
-    "remoraid",
-    "magikarp",
-]
-super_rod = [
-    "gyarados",
-    "luvdisc",
-    "octillery",
-]
-
-[victory_road_1f_room_1]
-land = [
-    "onix",
-    "gabite",
-    "floatzel",
-    "graveler",
-    "golbat",
-    "steelix",
-]
-
-[great_marsh_1]
-land = [
-    "yanma",
-    "tangela",
-    "wooper",
-    "bibarel",
-    "quagsire",
-    "tropius",
-]
-surf = [
-    "quagsire",
-    "wooper",
-]
-old_rod = [
-    "magikarp",
-]
-good_rod = [
-    "barboach",
-    "magikarp",
-]
-super_rod = [
-    "whiscash",
-    "gyarados",
-    "carvanha",
-]
-
-[great_marsh_5]
-land = [
-    "yanma",
-    "tangela",
-    "wooper",
-    "bibarel",
-    "quagsire",
-]
-surf = [
-    "quagsire",
-    "wooper",
-]
-old_rod = [
-    "magikarp",
-]
-good_rod = [
-    "barboach",
-    "magikarp",
-]
-super_rod = [
-    "whiscash",
-    "gyarados",
-    "carvanha",
-]
-
-[victory_road_b1f]
-land = [
-    "onix",
-    "gabite",
-    "floatzel",
-    "azumarill",
-    "graveler",
-    "golbat",
-    "steelix",
-]
-surf = [
-    "golbat",
-    "floatzel",
-]
-old_rod = [
-    "magikarp",
-]
-good_rod = [
-    "magikarp",
-]
-super_rod = [
-    "gyarados",
-]
-
-[great_marsh_2]
-land = [
-    "yanma",
-    "tangela",
-    "wooper",
-    "bibarel",
-    "quagsire",
-    "tropius",
-]
-surf = [
-    "quagsire",
-    "wooper",
-]
-old_rod = [
-    "magikarp",
-]
-good_rod = [
-    "barboach",
-    "magikarp",
-]
-super_rod = [
-    "whiscash",
-    "gyarados",
-    "carvanha",
-]
-
-[route_226]
-land = [
-    "raticate",
-    "wingull",
-    "graveler",
-    "rattata",
-    "machoke",
-    "fearow",
-]
-surf = [
-    "pelipper",
-    "tentacruel",
-    "wingull",
-]
-old_rod = [
-    "magikarp",
-]
-good_rod = [
-    "horsea",
-    "magikarp",
-]
-super_rod = [
-    "relicanth",
-    "gyarados",
-    "seadra",
-]
-
-[route_227]
-land = [
-    "numel",
-    "graveler",
-    "rhydon",
-    "rhyhorn",
-    "weezing",
-    "fearow",
-    "skarmory",
-    "camerupt",
-]
-surf = [
-    "poliwag",
-    "poliwhirl",
-]
-old_rod = [
-    "magikarp",
-]
-good_rod = [
-    "barboach",
-    "magikarp",
-]
-super_rod = [
-    "whiscash",
-    "gyarados",
-]
-
-[route_228]
-land = [
-    "dugtrio",
-    "cacturne",
-    "hippowdon",
-    "rhydon",
-    "diglett",
-    "cacnea",
-]
-surf = [
-    "poliwag",
-    "poliwhirl",
-]
-old_rod = [
-    "magikarp",
-]
-good_rod = [
-    "whiscash",
-    "barboach",
-    "magikarp",
-]
-super_rod = [
-    "whiscash",
-    "gyarados",
-]
-
-[route_230]
-land = [
-    "roselia",
-    "weepinbell",
-    "floatzel",
-    "wingull",
-    "gloom",
-    "pelipper",
-    "bellsprout",
-]
-surf = [
-    "pelipper",
-    "tentacruel",
-    "sealeo",
-]
-old_rod = [
-    "magikarp",
-]
-good_rod = [
-    "remoraid",
-    "magikarp",
-]
-super_rod = [
-    "wailmer",
-    "gyarados",
-    "wailord",
-    "octillery",
-]
-
-[celestic_town]
-surf = [
-    "golduck",
-    "psyduck",
-]
-old_rod = [
-    "magikarp",
-]
-good_rod = [
-    "goldeen",
-    "magikarp",
-]
-super_rod = [
-    "seaking",
-    "gyarados",
-    "crawdaunt",
-    "corphish",
-]
-
-[victory_road_1f_room_2]
-land = [
-    "gabite",
-    "floatzel",
-    "azumarill",
-    "graveler",
-    "dewgong",
-    "golbat",
-]
-surf = [
-    "lapras",
-    "dewgong",
-    "floatzel",
-]
-old_rod = [
-    "magikarp",
-]
-good_rod = [
-    "magikarp",
-]
-super_rod = [
-    "gyarados",
-]
-
-[route_229]
-land = [
-    "roselia",
-    "pidgey",
-    "volbeat",
-    "illumise",
-    "beautifly",
-    "dustox",
-    "ledian",
-]
-surf = [
-    "masquerain",
-    "surskit",
-]
-old_rod = [
-    "magikarp",
-]
-good_rod = [
-    "goldeen",
-    "magikarp",
-]
-super_rod = [
-    "seaking",
-    "gyarados",
-]
-
-[resort_area]
-surf = [
-    "golduck",
-    "psyduck",
-]
-old_rod = [
-    "magikarp",
-]
-good_rod = [
-    "magikarp",
-]
-super_rod = [
-    "magikarp",
-]
-
-[twinleaf_town]
-surf = [
-    "golduck",
-    "psyduck",
-]
-old_rod = [
-    "magikarp",
-]
-good_rod = [
-    "goldeen",
-    "magikarp",
-]
-super_rod = [
-    "seaking",
-    "gyarados",
-]
-
-[route_201]
-land = [
-    "kricketot",
-    "starly",
-    "bidoof",
-]
-
-[great_marsh_6]
-land = [
-    "yanma",
-    "tangela",
-    "wooper",
-    "bibarel",
-    "quagsire",
-]
-surf = [
-    "quagsire",
-    "wooper",
-]
-old_rod = [
-    "magikarp",
-]
-good_rod = [
-    "barboach",
-    "magikarp",
-]
-super_rod = [
-    "whiscash",
-    "gyarados",
-    "carvanha",
-]
-
-[lake_verity_low_water]
-land = [
-    "starly",
-    "bidoof",
-]
-
-[pastoria_city]
-surf = [
-    "shellos",
-    "gastrodon",
-    "wingull",
-    "tentacool",
-    "tentacruel",
-]
-old_rod = [
-    "magikarp",
-]
-good_rod = [
-    "remoraid",
-    "magikarp",
-]
-super_rod = [
-    "gyarados",
-    "octillery",
-]
-
-[iron_island]
-surf = [
-    "pelipper",
-    "tentacool",
-    "wingull",
-    "tentacruel",
-]
-old_rod = [
-    "magikarp",
-]
-good_rod = [
-    "finneon",
-    "magikarp",
-]
-super_rod = [
-    "gyarados",
-    "lumineon",
-    "qwilfish",
-]
-
-[iron_island_b3f]
-land = [
-    "golbat",
-    "graveler",
-    "steelix",
-]
-
-[iron_island_b2f_left_room]
-land = [
-    "golbat",
-    "onix",
-    "graveler",
-    "steelix",
-]
-
-[iron_island_b1f_right_room]
-land = [
-    "golbat",
-    "onix",
-    "graveler",
-]
-
-[iron_island_b2f_right_room]
-land = [
-    "golbat",
-    "onix",
-    "graveler",
-    "steelix",
-]
-
-[victory_road_1f_room_3]
-land = [
-    "onix",
-    "gabite",
-    "floatzel",
-    "graveler",
-    "golbat",
-    "steelix",
-]
-
-[route_213]
-land = [
-    "buizel",
-    "wingull",
-    "shellos",
-    "chatot",
-]
-surf = [
-    "shellos",
-    "wingull",
-    "gastrodon",
-    "tentacool",
-    "tentacruel",
-]
-old_rod = [
-    "magikarp",
-]
-good_rod = [
-    "remoraid",
-    "magikarp",
-]
-super_rod = [
-    "gyarados",
-    "octillery",
-]
-
-[route_219]
-surf = [
-    "pelipper",
-    "tentacool",
-    "wingull",
-    "tentacruel",
-]
-old_rod = [
-    "magikarp",
-]
-good_rod = [
-    "finneon",
-    "magikarp",
-    "lumineon",
-]
-super_rod = [
-    "gyarados",
-    "lumineon",
-]
-
-[route_221]
-land = [
-    "girafarig",
-    "roselia",
-    "sudowoodo",
-    "floatzel",
-]
-surf = [
-    "pelipper",
-    "tentacool",
-    "wingull",
-    "tentacruel",
-]
-old_rod = [
-    "magikarp",
-]
-good_rod = [
-    "finneon",
-    "magikarp",
-    "lumineon",
-]
-super_rod = [
-    "gyarados",
-    "lumineon",
-]
-
-[stark_mountain_outside]
-land = [
-    "numel",
-    "graveler",
-    "rhydon",
-    "rhyhorn",
-    "weezing",
-    "fearow",
-    "skarmory",
-    "camerupt",
-]
-
-[iron_island_1f]
-land = [
-    "onix",
-    "graveler",
-    "zubat",
-    "geodude",
-    "golbat",
-]
-
-[iron_island_b1f_left_room]
-land = [
-    "golbat",
-    "onix",
-    "graveler",
-]
-
-[route_212_south]
-land = [
-    "croagunk",
-    "buizel",
-    "quagsire",
-    "shellos",
-]
-surf = [
-    "tentacool",
-    "gastrodon",
-    "shellos",
-    "tentacruel",
-]
-old_rod = [
-    "magikarp",
-]
-good_rod = [
-    "remoraid",
-    "magikarp",
-]
-super_rod = [
-    "gyarados",
-    "octillery",
-]
-
-[route_212_north]
-land = [
-    "marill",
-    "roselia",
-    "staravia",
-    "kirlia",
-]
-surf = [
-    "golduck",
-    "psyduck",
-]
-old_rod = [
-    "magikarp",
-]
-good_rod = [
-    "goldeen",
-    "magikarp",
-]
-super_rod = [
-    "seaking",
-    "gyarados",
-]
-
-[route_208]
-land = [
-    "budew",
-    "roselia",
-    "bibarel",
-    "bidoof",
-    "ralts",
-]
-surf = [
-    "golduck",
-    "psyduck",
-]
-old_rod = [
-    "magikarp",
-]
-good_rod = [
-    "goldeen",
-    "magikarp",
-]
-super_rod = [
-    "seaking",
-    "gyarados",
-]
-
-[stark_mountain_room_1]
-land = [
-    "graveler",
-    "rhydon",
-    "rhyhorn",
-    "weezing",
-    "golbat",
-    "magcargo",
-    "slugma",
-]
-
-[lake_verity]
-land = [
-    "starly",
-    "bidoof",
-]
-surf = [
-    "golduck",
-    "psyduck",
-]
-old_rod = [
-    "magikarp",
-]
-good_rod = [
-    "seaking",
-    "goldeen",
-    "magikarp",
-]
-super_rod = [
-    "seaking",
-    "gyarados",
-]
-
-[route_220]
-surf = [
-    "pelipper",
-    "tentacool",
-    "wingull",
-    "tentacruel",
-]
-old_rod = [
-    "magikarp",
-]
-good_rod = [
-    "finneon",
-    "magikarp",
-    "lumineon",
-]
-super_rod = [
-    "chinchou",
-    "gyarados",
-    "lumineon",
-]
-
-[route_202]
-land = [
-    "shinx",
-    "kricketot",
-    "starly",
-    "bidoof",
-]
-
-[route_209]
-land = [
-    "staravia",
-    "roselia",
-    "bibarel",
-    "chansey",
-    "ralts",
-]
-surf = [
-    "golduck",
-    "psyduck",
-]
-old_rod = [
-    "magikarp",
-]
-good_rod = [
-    "goldeen",
-    "magikarp",
-]
-super_rod = [
-    "seaking",
-    "gyarados",
-]
-
-[route_209_lost_tower_1f]
-land = [
-    "zubat",
-    "gastly",
-]
-
-[route_210_south]
-land = [
-    "staravia",
-    "roselia",
-    "ponyta",
-    "chansey",
-    "geodude",
-    "scyther",
-]
-
-[route_209_lost_tower_2f]
-land = [
-    "zubat",
-    "gastly",
-]
-
-[route_204_south]
-land = [
-    "budew",
-    "kricketot",
-    "shinx",
-    "wurmple",
-    "starly",
-    "bidoof",
-]
-surf = [
-    "golduck",
-    "psyduck",
-]
-old_rod = [
-    "magikarp",
-]
-good_rod = [
-    "goldeen",
-    "magikarp",
-]
-super_rod = [
-    "seaking",
-    "gyarados",
-]
-
-[route_210_north]
-land = [
-    "meditite",
-    "bibarel",
-    "swablu",
-    "scyther",
-    "machoke",
-    "machop",
-]
-surf = [
-    "golduck",
-    "psyduck",
-]
-old_rod = [
-    "magikarp",
-]
-good_rod = [
-    "whiscash",
-    "barboach",
-    "magikarp",
-]
-super_rod = [
-    "whiscash",
-    "gyarados",
-]
-
-[route_209_lost_tower_3f]
-land = [
-    "zubat",
-    "golbat",
-    "gastly",
-]
-
-[route_218]
-land = [
-    "mr_mime",
-    "gastrodon",
-    "chatot",
-    "floatzel",
-]
-surf = [
-    "tentacool",
-    "gastrodon",
-    "shellos",
-    "tentacruel",
-]
-old_rod = [
-    "magikarp",
-]
-good_rod = [
-    "finneon",
-    "magikarp",
-]
-super_rod = [
-    "gyarados",
-    "lumineon",
-]
-
-[solaceon_ruins_room_1_southeast_dead_end]
-land = [
-    "unown",
-]
-
-[solaceon_ruins_room_1_northwest_dead_end]
-land = [
-    "unown",
-]
-
-[route_209_lost_tower_4f]
-land = [
-    "zubat",
-    "golbat",
-    "gastly",
-]
-
-[route_209_lost_tower_5f]
-land = [
-    "zubat",
-    "golbat",
-    "gastly",
-]
-
-[route_222]
-land = [
-    "chatot",
-    "floatzel",
-    "electabuzz",
-    "magnemite",
-    "wingull",
-    "magneton",
-    "pelipper",
-    "luxio",
-]
-surf = [
-    "pelipper",
-    "tentacool",
-    "wingull",
-    "tentacruel",
-]
-old_rod = [
-    "magikarp",
-]
-good_rod = [
-    "remoraid",
-    "magikarp",
-]
-super_rod = [
-    "gyarados",
-    "octillery",
-]
-
-[sunyshore_city]
-surf = [
-    "pelipper",
-    "tentacool",
-    "wingull",
-    "tentacruel",
-]
-old_rod = [
-    "magikarp",
-]
-good_rod = [
-    "remoraid",
-    "magikarp",
-]
-super_rod = [
-    "staryu",
-    "gyarados",
-    "octillery",
-]
-
-[route_223]
-surf = [
-    "pelipper",
-    "tentacruel",
-    "mantyke",
-]
-old_rod = [
-    "magikarp",
-]
-good_rod = [
-    "remoraid",
-    "octillery",
-    "magikarp",
-]
-super_rod = [
-    "wailmer",
-    "gyarados",
-    "wailord",
-    "octillery",
-]
-
-[ravaged_path]
-land = [
-    "zubat",
-    "psyduck",
-]
-surf = [
-    "zubat",
-    "golbat",
-    "golduck",
-    "psyduck",
-]
-old_rod = [
-    "magikarp",
-]
-good_rod = [
-    "barboach",
-    "magikarp",
-]
-super_rod = [
-    "whiscash",
-    "gyarados",
-]
-
-[route_204_north]
-land = [
-    "budew",
-    "kricketot",
-    "shinx",
-    "wurmple",
-    "starly",
-    "bidoof",
-]
-surf = [
-    "golduck",
-    "psyduck",
-]
-old_rod = [
-    "magikarp",
-]
-good_rod = [
-    "goldeen",
-    "magikarp",
-]
-super_rod = [
-    "seaking",
-    "gyarados",
-]
 
 [canalave_city]
 surf = [
-    "tentacool",
-    "gastrodon",
-    "shellos",
-    "tentacruel",
-]
-old_rod = [
-    "magikarp",
+    { species = "tentacool", level_lower = 20, level_upper = 30 },
+    { species = "shellos", level_lower = 20, level_upper = 30 },
+    { species = "tentacruel", level_lower = 20, level_upper = 40 },
+    { species = "gastrodon", level_lower = 20, level_upper = 40 },
 ]
 good_rod = [
-    "finneon",
-    "magikarp",
-]
-super_rod = [
-    "staryu",
-    "gyarados",
-    "lumineon",
-]
-
-[route_205_south]
-land = [
-    "pachirisu",
-    "buizel",
-    "shellos",
-    "bidoof",
-]
-surf = [
-    "tentacool",
-    "gastrodon",
-    "shellos",
-    "tentacruel",
+    { species = "magikarp", level_lower = 10, level_upper = 25 },
+    { species = "finneon", level_lower = 10, level_upper = 25 },
 ]
 old_rod = [
-    "magikarp",
-]
-good_rod = [
-    "finneon",
-    "magikarp",
+    { species = "magikarp", level_lower = 3, level_upper = 15 },
 ]
 super_rod = [
-    "gyarados",
-    "shellder",
-    "lumineon",
+    { species = "gyarados", level_lower = 30, level_upper = 55 },
+    { species = "lumineon", level_lower = 30, level_upper = 55 },
+    { species = "staryu", level_lower = 20, level_upper = 50 },
 ]
-
-[valley_windworks_outside]
-land = [
-    "pachirisu",
-    "buizel",
-    "shinx",
-    "shellos",
-]
-surf = [
-    "tentacool",
-    "gastrodon",
-    "shellos",
-    "tentacruel",
-]
-old_rod = [
-    "magikarp",
-]
-good_rod = [
-    "finneon",
-    "magikarp",
-]
-super_rod = [
-    "gyarados",
-    "shellder",
-    "lumineon",
-]
-
-[eterna_forest]
-land = [
-    "budew",
-    "gastly",
-    "kricketot",
-    "wurmple",
-    "cascoon",
-    "beautifly",
-    "dustox",
-    "bidoof",
-    "silcoon",
-    "buneary",
-]
-
-[fuego_ironworks_outside]
-land = [
-    "magmar",
-    "gastrodon",
-    "magnemite",
-    "floatzel",
-]
-surf = [
-    "tentacool",
-    "gastrodon",
-    "shellos",
-    "tentacruel",
-]
-old_rod = [
-    "magikarp",
-]
-good_rod = [
-    "finneon",
-    "magikarp",
-]
-super_rod = [
-    "gyarados",
-    "shellder",
-    "lumineon",
-]
-
-[old_chateau]
-land = [
-    "gastly",
-]
-
-[old_chateau_side_rooms]
-land = [
-    "gastly",
-]
-
-[route_205_north]
-land = [
-    "budew",
-    "kricketot",
-    "wurmple",
-    "cascoon",
-    "beautifly",
-    "dustox",
-    "bidoof",
-    "silcoon",
-]
-surf = [
-    "golduck",
-    "psyduck",
-]
-old_rod = [
-    "magikarp",
-]
-good_rod = [
-    "barboach",
-    "magikarp",
-]
-super_rod = [
-    "whiscash",
-    "gyarados",
-]
+id = 0
 
 [eterna_city]
 surf = [
-    "golduck",
-    "psyduck",
-]
-old_rod = [
-    "magikarp",
+    { species = "psyduck", level_lower = 20, level_upper = 30 },
+    { species = "golduck", level_lower = 20, level_upper = 40 },
 ]
 good_rod = [
-    "barboach",
-    "magikarp",
+    { species = "magikarp", level_lower = 10, level_upper = 25 },
+    { species = "barboach", level_lower = 10, level_upper = 25 },
+]
+old_rod = [
+    { species = "magikarp", level_lower = 3, level_upper = 15 },
 ]
 super_rod = [
-    "whiscash",
-    "gyarados",
+    { species = "gyarados", level_lower = 30, level_upper = 55 },
+    { species = "whiscash", level_lower = 30, level_upper = 55 },
 ]
+id = 1
 
-[old_chateau_corridor]
-land = [
-    "gastly",
-]
-
-[old_chateau_back_east_room]
-land = [
-    "gastly",
-]
-
-[old_chateau_back_west_room]
-land = [
-    "gastly",
-]
-
-[stark_mountain_room_2]
-land = [
-    "graveler",
-    "rhydon",
-    "weezing",
-    "koffing",
-    "golbat",
-    "magcargo",
-    "slugma",
-]
-
-[valor_lakefront]
-land = [
-    "staravia",
-    "kricketune",
-    "girafarig",
-    "bibarel",
-    "houndour",
-]
-
-[solaceon_ruins_room_2]
-land = [
-    "unown",
-]
-
-[route_214]
-land = [
-    "geodude",
-    "rhyhorn",
-    "graveler",
-    "houndour",
-]
+[pastoria_city]
 surf = [
-    "golduck",
-    "psyduck",
-]
-old_rod = [
-    "magikarp",
+    { species = "tentacool", level_lower = 20, level_upper = 30 },
+    { species = "shellos", level_lower = 20, level_upper = 30 },
+    { species = "tentacruel", level_lower = 20, level_upper = 40 },
+    { species = "wingull", level_lower = 20, level_upper = 30 },
+    { species = "gastrodon", level_lower = 20, level_upper = 40 },
 ]
 good_rod = [
-    "goldeen",
-    "magikarp",
+    { species = "magikarp", level_lower = 10, level_upper = 25 },
+    { species = "remoraid", level_lower = 10, level_upper = 25 },
+]
+old_rod = [
+    { species = "magikarp", level_lower = 3, level_upper = 15 },
 ]
 super_rod = [
-    "seaking",
-    "gyarados",
+    { species = "gyarados", level_lower = 30, level_upper = 55 },
+    { species = "octillery", level_lower = 30, level_upper = 55 },
 ]
+id = 2
 
-[ruin_maniac_cave_short]
-land = [
-    "hippopotas",
-    "geodude",
-]
-
-[solaceon_ruins_room_3]
-land = [
-    "unown",
-]
-
-[solaceon_ruins_room_3_northwest_dead_end]
-land = [
-    "unown",
-]
-
-[ruin_maniac_cave_long]
-land = [
-    "hippopotas",
-    "geodude",
-]
-
-[maniac_tunnel]
-land = [
-    "hippopotas",
-    "geodude",
-]
-
-[sendoff_spring]
-land = [
-    "staravia",
-    "dusclops",
-    "graveler",
-    "chingling",
-    "bibarel",
-]
+[sunyshore_city]
 surf = [
-    "golduck",
-]
-old_rod = [
-    "magikarp",
+    { species = "tentacool", level_lower = 30, level_upper = 40 },
+    { species = "wingull", level_lower = 30, level_upper = 40 },
+    { species = "tentacruel", level_lower = 30, level_upper = 50 },
+    { species = "pelipper", level_lower = 30, level_upper = 50 },
 ]
 good_rod = [
-    "goldeen",
-    "magikarp",
+    { species = "magikarp", level_lower = 10, level_upper = 25 },
+    { species = "remoraid", level_lower = 10, level_upper = 25 },
+]
+old_rod = [
+    { species = "magikarp", level_lower = 3, level_upper = 15 },
 ]
 super_rod = [
-    "seaking",
-    "gyarados",
+    { species = "gyarados", level_lower = 30, level_upper = 55 },
+    { species = "octillery", level_lower = 30, level_upper = 55 },
+    { species = "staryu", level_lower = 20, level_upper = 50 },
 ]
+id = 3
 
-[old_chateau_dining_area]
-land = [
-    "gastly",
-]
-
-[old_chateau_back_middle_west_room]
-land = [
-    "gastly",
-]
-
-[old_chateau_back_middle_room]
-land = [
-    "gastly",
-]
-
-[solaceon_ruins_maniac_tunnel_room]
-land = [
-    "unown",
-]
-
-[route_206]
-land = [
-    "ponyta",
-    "gligar",
-    "kricketune",
-    "geodude",
-    "machop",
-]
-
-[trophy_garden]
-land = [
-    "staravia",
-    "roselia",
-    "pikachu",
-    "kricketune",
-    "pichu",
-]
-
-[route_207]
-land = [
-    "geodude",
-    "ponyta",
-    "machop",
-    "kricketot",
-]
-
-[mt_coronet_2f]
-land = [
-    "medicham",
-    "nosepass",
-    "graveler",
-    "machoke",
-    "chingling",
-    "clefairy",
-    "bronzong",
-    "golbat",
-]
-
-[mt_coronet_3f]
-land = [
-    "medicham",
-    "nosepass",
-    "graveler",
-    "machoke",
-    "chingling",
-    "clefairy",
-    "bronzong",
-    "golbat",
-]
-
-[mt_coronet_outside_south]
-land = [
-    "medicham",
-    "snover",
-    "absol",
-    "nosepass",
-    "abomasnow",
-    "chingling",
-    "machoke",
-]
-
-[mt_coronet_4f_rooms_1_and_2]
-land = [
-    "medicham",
-    "nosepass",
-    "graveler",
-    "machoke",
-    "chingling",
-    "clefairy",
-    "bronzong",
-    "golbat",
-]
+[pokemon_league]
 surf = [
-    "zubat",
-    "golbat",
-]
-old_rod = [
-    "magikarp",
+    { species = "wingull", level_lower = 30, level_upper = 40 },
+    { species = "pelipper", level_lower = 30, level_upper = 50 },
+    { species = "tentacruel", level_lower = 30, level_upper = 50 },
 ]
 good_rod = [
-    "barboach",
-    "magikarp",
-]
-super_rod = [
-    "whiscash",
-    "gyarados",
-    "dratini",
-    "dragonair",
-]
-
-[mt_coronet_outside_north]
-land = [
-    "medicham",
-    "snover",
-    "absol",
-    "nosepass",
-    "abomasnow",
-    "chingling",
-    "machoke",
-]
-
-[solaceon_ruins_room_2_northeast_dead_end]
-land = [
-    "unown",
-]
-
-[mt_coronet_1f_tunnel_room]
-land = [
-    "medicham",
-    "nosepass",
-    "graveler",
-    "machoke",
-    "chingling",
-    "clefairy",
-    "golbat",
-]
-
-[mt_coronet_1f_north_room_1]
-land = [
-    "meditite",
-    "cleffa",
-    "nosepass",
-    "chingling",
-    "zubat",
-    "geodude",
-    "bronzor",
-    "machop",
-]
-
-[mt_coronet_b1f]
-land = [
-    "meditite",
-    "nosepass",
-    "graveler",
-    "machoke",
-    "chingling",
-    "clefairy",
-    "golbat",
-    "bronzor",
-]
-surf = [
-    "zubat",
-    "golbat",
+    { species = "magikarp", level_lower = 10, level_upper = 25 },
+    { species = "remoraid", level_lower = 10, level_upper = 25 },
 ]
 old_rod = [
-    "magikarp",
-]
-good_rod = [
-    "barboach",
-    "magikarp",
+    { species = "magikarp", level_lower = 3, level_upper = 15 },
 ]
 super_rod = [
-    "whiscash",
-    "gyarados",
+    { species = "gyarados", level_lower = 30, level_upper = 55 },
+    { species = "octillery", level_lower = 30, level_upper = 55 },
+    { species = "luvdisc", level_lower = 20, level_upper = 30 },
 ]
-
-[mt_coronet_1f_north_room_2]
-land = [
-    "meditite",
-    "nosepass",
-    "graveler",
-    "machoke",
-    "chingling",
-    "clefairy",
-    "golbat",
-    "bronzor",
-]
-
-[route_216]
-land = [
-    "meditite",
-    "sneasel",
-    "snover",
-    "graveler",
-]
-
-[route_211_east]
-land = [
-    "meditite",
-    "graveler",
-    "chingling",
-    "machoke",
-    "bronzor",
-]
-
-[route_217]
-land = [
-    "sneasel",
-    "snover",
-    "swinub",
-]
-
-[acuity_lakefront]
-land = [
-    "sneasel",
-    "snover",
-    "swinub",
-]
-
-[lake_acuity]
-land = [
-    "sneasel",
-    "snover",
-    "psyduck",
-    "bibarel",
-    "golduck",
-]
-surf = [
-    "golduck",
-    "psyduck",
-]
-old_rod = [
-    "magikarp",
-]
-good_rod = [
-    "seaking",
-    "goldeen",
-    "magikarp",
-]
-super_rod = [
-    "seaking",
-    "gyarados",
-]
-
-[snowpoint_temple_1f]
-land = [
-    "sneasel",
-    "golbat",
-    "smoochum",
-]
-
-[snowpoint_temple_b1f]
-land = [
-    "golbat",
-    "sneasel",
-    "jynx",
-]
-
-[snowpoint_temple_b2f]
-land = [
-    "golbat",
-    "sneasel",
-    "jynx",
-]
-
-[mt_coronet_4f_room_3]
-land = [
-    "medicham",
-    "nosepass",
-    "graveler",
-    "machoke",
-    "chingling",
-    "clefairy",
-    "bronzong",
-    "chimecho",
-    "golbat",
-]
-
-[snowpoint_temple_b3f]
-land = [
-    "golbat",
-    "sneasel",
-    "jynx",
-]
-
-[snowpoint_temple_b4f]
-land = [
-    "golbat",
-    "sneasel",
-    "jynx",
-]
-
-[snowpoint_temple_b5f]
-land = [
-    "golbat",
-    "sneasel",
-    "jynx",
-]
-
-[solaceon_ruins_room_2_southeast_dead_end]
-land = [
-    "unown",
-]
-
-[route_215]
-land = [
-    "staravia",
-    "kadabra",
-    "marill",
-    "scyther",
-    "abra",
-    "lickitung",
-]
-
-[wayward_cave_1f]
-land = [
-    "zubat",
-    "onix",
-    "geodude",
-    "bronzor",
-]
-
-[wayward_cave_b1f]
-land = [
-    "onix",
-    "zubat",
-    "gible",
-    "geodude",
-    "bronzor",
-]
-
-[solaceon_ruins_room_3_southwest_dead_end]
-land = [
-    "unown",
-]
-
-[lake_valor]
-land = [
-    "bibarel",
-    "golduck",
-    "staravia",
-    "psyduck",
-]
-surf = [
-    "golduck",
-    "psyduck",
-]
-old_rod = [
-    "magikarp",
-]
-good_rod = [
-    "seaking",
-    "goldeen",
-    "magikarp",
-]
-super_rod = [
-    "seaking",
-    "gyarados",
-]
-
-[route_211_west]
-land = [
-    "meditite",
-    "chingling",
-    "bidoof",
-    "bronzor",
-    "machop",
-]
+id = 4
 
 [oreburgh_mine_b1f]
 land = [
-    "zubat",
-    "onix",
-    "geodude",
+    { species = "geodude", level_lower = 4, level_upper = 8 },
+    { species = "zubat", level_lower = 5, level_upper = 7 },
+    { species = "onix", level_lower = 8, level_upper = 8 },
 ]
+id = 5
 
 [oreburgh_mine_b2f]
 land = [
-    "zubat",
-    "onix",
-    "geodude",
+    { species = "geodude", level_lower = 5, level_upper = 9 },
+    { species = "zubat", level_lower = 6, level_upper = 8 },
+    { species = "onix", level_lower = 9, level_upper = 9 },
 ]
+id = 6
 
-[oreburgh_gate_1f]
-land = [
-    "zubat",
-    "geodude",
-    "psyduck",
-]
-
-[oreburgh_gate_b1f]
-land = [
-    "zubat",
-    "golbat",
-    "geodude",
-    "psyduck",
-]
+[valley_windworks_outside]
 surf = [
-    "zubat",
-    "golbat",
-    "golduck",
-    "psyduck",
-]
-old_rod = [
-    "magikarp",
+    { species = "shellos", level_lower = 20, level_upper = 30 },
+    { species = "tentacool", level_lower = 20, level_upper = 30 },
+    { species = "gastrodon", level_lower = 20, level_upper = 40 },
+    { species = "tentacruel", level_lower = 20, level_upper = 40 },
 ]
 good_rod = [
-    "barboach",
-    "magikarp",
-]
-super_rod = [
-    "whiscash",
-    "gyarados",
-]
-
-[solaceon_ruins_room_4]
-land = [
-    "unown",
-]
-
-[solaceon_ruins_room_5]
-land = [
-    "unown",
-]
-
-[solaceon_ruins_room_5_southeast_deadend]
-land = [
-    "unown",
-]
-
-[solaceon_ruins_room_5_southwest_dead_end]
-land = [
-    "unown",
-]
-
-[mt_coronet_5f]
-land = [
-    "medicham",
-    "nosepass",
-    "graveler",
-    "machoke",
-    "chingling",
-    "clefairy",
-    "bronzong",
-    "chimecho",
-    "golbat",
-]
-
-[mt_coronet_6f]
-land = [
-    "medicham",
-    "nosepass",
-    "graveler",
-    "machoke",
-    "clefairy",
-    "bronzong",
-    "chimecho",
-    "golbat",
-]
-
-[old_chateau_back_middle_east_room]
-land = [
-    "gastly",
-]
-
-[route_203]
-land = [
-    "kricketot",
-    "shinx",
-    "starly",
-    "bidoof",
-    "abra",
-]
-surf = [
-    "golduck",
-    "psyduck",
+    { species = "magikarp", level_lower = 10, level_upper = 25 },
+    { species = "finneon", level_lower = 10, level_upper = 25 },
 ]
 old_rod = [
-    "magikarp",
-]
-good_rod = [
-    "goldeen",
-    "magikarp",
+    { species = "magikarp", level_lower = 3, level_upper = 15 },
 ]
 super_rod = [
-    "seaking",
-    "gyarados",
+    { species = "gyarados", level_lower = 30, level_upper = 55 },
+    { species = "lumineon", level_lower = 30, level_upper = 55 },
+    { species = "shellder", level_lower = 20, level_upper = 50 },
+]
+id = 7
+
+[[valley_windworks_outside.land]]
+species = "shellos"
+level_lower = 10
+level_upper = 12
+
+[[valley_windworks_outside.land]]
+species = "shinx"
+level_lower = 10
+level_upper = 10
+
+[[valley_windworks_outside.land]]
+species = "buizel"
+level_lower = 9
+level_upper = 11
+
+[[valley_windworks_outside.land]]
+species = "pachirisu"
+level_lower = 11
+level_upper = 11
+
+[[valley_windworks_outside.land]]
+species = "electrike"
+level_lower = 9
+level_upper = 10
+accessibility = [
+    "swarms",
+]
+
+[[valley_windworks_outside.land]]
+species = "mareep"
+level_lower = 10
+level_upper = 12
+accessibility = [
+    "radar",
+]
+
+[eterna_forest]
+id = 8
+
+[[eterna_forest.land]]
+species = "buneary"
+level_lower = 13
+level_upper = 13
+
+[[eterna_forest.land]]
+species = "budew"
+level_lower = 11
+level_upper = 12
+
+[[eterna_forest.land]]
+species = "wurmple"
+level_lower = 10
+level_upper = 10
+
+[[eterna_forest.land]]
+species = "kricketot"
+level_lower = 10
+level_upper = 12
+
+[[eterna_forest.land]]
+species = "bidoof"
+level_lower = 12
+level_upper = 12
+
+[[eterna_forest.land]]
+species = "silcoon"
+level_lower = 12
+level_upper = 12
+
+[[eterna_forest.land]]
+species = "cascoon"
+level_lower = 12
+level_upper = 12
+
+[[eterna_forest.land]]
+species = "gastly"
+level_lower = 13
+level_upper = 13
+
+[[eterna_forest.land]]
+species = "beautifly"
+level_lower = 14
+level_upper = 14
+
+[[eterna_forest.land]]
+species = "dustox"
+level_lower = 14
+level_upper = 14
+
+[[eterna_forest.land]]
+species = "slakoth"
+level_lower = 10
+level_upper = 11
+accessibility = [
+    "swarms",
+]
+
+[[eterna_forest.land]]
+species = "hoothoot"
+level_lower = 12
+level_upper = 12
+accessibility = [
+    "night",
+]
+
+[[eterna_forest.land]]
+species = "seedot"
+level_lower = 13
+level_upper = 13
+accessibility = [
+    "ruby",
+]
+
+[[eterna_forest.land]]
+species = "pineco"
+level_lower = 13
+level_upper = 13
+accessibility = [
+    "emerald",
+]
+
+[[eterna_forest.land]]
+species = "caterpie"
+level_lower = 13
+level_upper = 13
+accessibility = [
+    "firered",
+]
+
+[[eterna_forest.land]]
+species = "metapod"
+level_lower = 13
+level_upper = 13
+accessibility = [
+    "firered",
+]
+
+[[eterna_forest.land]]
+species = "weedle"
+level_lower = 13
+level_upper = 13
+accessibility = [
+    "leafgreen",
+]
+
+[[eterna_forest.land]]
+species = "kakuna"
+level_lower = 13
+level_upper = 13
+accessibility = [
+    "leafgreen",
+]
+
+[[eterna_forest.land]]
+species = "nincada"
+level_lower = 11
+level_upper = 14
+accessibility = [
+    "radar",
+]
+
+[fuego_ironworks_outside]
+surf = [
+    { species = "tentacool", level_lower = 20, level_upper = 30 },
+    { species = "shellos", level_lower = 20, level_upper = 30 },
+    { species = "tentacruel", level_lower = 20, level_upper = 40 },
+    { species = "gastrodon", level_lower = 20, level_upper = 40 },
+]
+good_rod = [
+    { species = "magikarp", level_lower = 10, level_upper = 25 },
+    { species = "finneon", level_lower = 10, level_upper = 25 },
+]
+old_rod = [
+    { species = "magikarp", level_lower = 3, level_upper = 15 },
+]
+super_rod = [
+    { species = "gyarados", level_lower = 30, level_upper = 55 },
+    { species = "lumineon", level_lower = 30, level_upper = 55 },
+    { species = "shellder", level_lower = 20, level_upper = 50 },
+]
+id = 9
+
+[[fuego_ironworks_outside.land]]
+species = "magmar"
+level_lower = 28
+level_upper = 29
+
+[[fuego_ironworks_outside.land]]
+species = "magnemite"
+level_lower = 29
+level_upper = 30
+
+[[fuego_ironworks_outside.land]]
+species = "floatzel"
+level_lower = 29
+level_upper = 31
+
+[[fuego_ironworks_outside.land]]
+species = "gastrodon"
+level_lower = 29
+level_upper = 31
+
+[[fuego_ironworks_outside.land]]
+species = "aron"
+level_lower = 30
+level_upper = 31
+accessibility = [
+    "radar",
 ]
 
 [mt_coronet_1f_south]
 land = [
-    "meditite",
-    "nosepass",
-    "chingling",
-    "zubat",
-    "clefairy",
-    "geodude",
-    "bronzor",
-    "machop",
+    { species = "bronzor", level_lower = 18, level_upper = 18 },
+    { species = "geodude", level_lower = 17, level_upper = 19 },
+    { species = "meditite", level_lower = 18, level_upper = 20 },
+    { species = "clefairy", level_lower = 17, level_upper = 17 },
+    { species = "machop", level_lower = 20, level_upper = 20 },
+    { species = "chingling", level_lower = 19, level_upper = 19 },
+    { species = "nosepass", level_lower = 18, level_upper = 18 },
+    { species = "zubat", level_lower = 18, level_upper = 19 },
 ]
 surf = [
-    "zubat",
-    "golbat",
-]
-old_rod = [
-    "magikarp",
+    { species = "zubat", level_lower = 20, level_upper = 30 },
+    { species = "golbat", level_lower = 20, level_upper = 40 },
 ]
 good_rod = [
-    "barboach",
-    "magikarp",
+    { species = "magikarp", level_lower = 10, level_upper = 25 },
+    { species = "barboach", level_lower = 10, level_upper = 25 },
+]
+old_rod = [
+    { species = "magikarp", level_lower = 3, level_upper = 15 },
 ]
 super_rod = [
-    "whiscash",
-    "gyarados",
+    { species = "gyarados", level_lower = 20, level_upper = 55 },
+    { species = "whiscash", level_lower = 30, level_upper = 55 },
+]
+id = 10
+
+[mt_coronet_2f]
+id = 11
+
+[[mt_coronet_2f.land]]
+species = "bronzong"
+level_lower = 37
+level_upper = 37
+
+[[mt_coronet_2f.land]]
+species = "graveler"
+level_lower = 36
+level_upper = 38
+
+[[mt_coronet_2f.land]]
+species = "medicham"
+level_lower = 37
+level_upper = 39
+
+[[mt_coronet_2f.land]]
+species = "clefairy"
+level_lower = 36
+level_upper = 36
+
+[[mt_coronet_2f.land]]
+species = "machoke"
+level_lower = 39
+level_upper = 39
+
+[[mt_coronet_2f.land]]
+species = "chingling"
+level_lower = 38
+level_upper = 38
+
+[[mt_coronet_2f.land]]
+species = "nosepass"
+level_lower = 37
+level_upper = 37
+
+[[mt_coronet_2f.land]]
+species = "golbat"
+level_lower = 37
+level_upper = 38
+
+[[mt_coronet_2f.land]]
+species = "solrock"
+level_lower = 38
+level_upper = 38
+accessibility = [
+    "ruby",
 ]
 
-[solaceon_ruins_room_6]
-land = [
-    "unown",
+[[mt_coronet_2f.land]]
+species = "lunatone"
+level_lower = 38
+level_upper = 38
+accessibility = [
+    "sapphire",
 ]
 
-[solaceon_ruins_room_6_northwest_dead_end]
-land = [
-    "unown",
+[mt_coronet_3f]
+id = 12
+
+[[mt_coronet_3f.land]]
+species = "bronzong"
+level_lower = 37
+level_upper = 37
+
+[[mt_coronet_3f.land]]
+species = "graveler"
+level_lower = 36
+level_upper = 38
+
+[[mt_coronet_3f.land]]
+species = "medicham"
+level_lower = 37
+level_upper = 39
+
+[[mt_coronet_3f.land]]
+species = "clefairy"
+level_lower = 36
+level_upper = 36
+
+[[mt_coronet_3f.land]]
+species = "machoke"
+level_lower = 39
+level_upper = 39
+
+[[mt_coronet_3f.land]]
+species = "chingling"
+level_lower = 38
+level_upper = 38
+
+[[mt_coronet_3f.land]]
+species = "nosepass"
+level_lower = 37
+level_upper = 37
+
+[[mt_coronet_3f.land]]
+species = "golbat"
+level_lower = 37
+level_upper = 38
+
+[[mt_coronet_3f.land]]
+species = "solrock"
+level_lower = 38
+level_upper = 38
+accessibility = [
+    "ruby",
 ]
+
+[[mt_coronet_3f.land]]
+species = "lunatone"
+level_lower = 38
+level_upper = 38
+accessibility = [
+    "sapphire",
+]
+
+[mt_coronet_outside_north]
+id = 13
+
+[[mt_coronet_outside_north.land]]
+species = "snover"
+level_lower = 36
+level_upper = 36
+
+[[mt_coronet_outside_north.land]]
+species = "abomasnow"
+level_lower = 38
+level_upper = 39
+
+[[mt_coronet_outside_north.land]]
+species = "medicham"
+level_lower = 38
+level_upper = 40
+
+[[mt_coronet_outside_north.land]]
+species = "machoke"
+level_lower = 40
+level_upper = 40
+
+[[mt_coronet_outside_north.land]]
+species = "chingling"
+level_lower = 39
+level_upper = 39
+
+[[mt_coronet_outside_north.land]]
+species = "nosepass"
+level_lower = 38
+level_upper = 38
+
+[[mt_coronet_outside_north.land]]
+species = "absol"
+level_lower = 38
+level_upper = 40
+
+[[mt_coronet_outside_north.land]]
+species = "golbat"
+level_lower = 38
+level_upper = 38
+accessibility = [
+    "night",
+]
+
+[[mt_coronet_outside_north.land]]
+species = "noctowl"
+level_lower = 39
+level_upper = 39
+accessibility = [
+    "night",
+]
+
+[[mt_coronet_outside_north.land]]
+species = "solrock"
+level_lower = 38
+level_upper = 39
+accessibility = [
+    "ruby",
+]
+
+[[mt_coronet_outside_north.land]]
+species = "lunatone"
+level_lower = 38
+level_upper = 39
+accessibility = [
+    "sapphire",
+]
+
+[[mt_coronet_outside_north.land]]
+species = "loudred"
+level_lower = 39
+level_upper = 40
+accessibility = [
+    "radar",
+]
+
+[mt_coronet_outside_south]
+id = 14
+
+[[mt_coronet_outside_south.land]]
+species = "snover"
+level_lower = 36
+level_upper = 36
+
+[[mt_coronet_outside_south.land]]
+species = "abomasnow"
+level_lower = 38
+level_upper = 39
+
+[[mt_coronet_outside_south.land]]
+species = "medicham"
+level_lower = 38
+level_upper = 40
+
+[[mt_coronet_outside_south.land]]
+species = "machoke"
+level_lower = 40
+level_upper = 40
+
+[[mt_coronet_outside_south.land]]
+species = "chingling"
+level_lower = 39
+level_upper = 39
+
+[[mt_coronet_outside_south.land]]
+species = "nosepass"
+level_lower = 38
+level_upper = 38
+
+[[mt_coronet_outside_south.land]]
+species = "absol"
+level_lower = 38
+level_upper = 40
+
+[[mt_coronet_outside_south.land]]
+species = "golbat"
+level_lower = 38
+level_upper = 38
+accessibility = [
+    "night",
+]
+
+[[mt_coronet_outside_south.land]]
+species = "noctowl"
+level_lower = 39
+level_upper = 39
+accessibility = [
+    "night",
+]
+
+[[mt_coronet_outside_south.land]]
+species = "solrock"
+level_lower = 38
+level_upper = 39
+accessibility = [
+    "ruby",
+]
+
+[[mt_coronet_outside_south.land]]
+species = "lunatone"
+level_lower = 38
+level_upper = 39
+accessibility = [
+    "sapphire",
+]
+
+[[mt_coronet_outside_south.land]]
+species = "loudred"
+level_lower = 39
+level_upper = 40
+accessibility = [
+    "radar",
+]
+
+[mt_coronet_4f_rooms_1_and_2]
+surf = [
+    { species = "zubat", level_lower = 20, level_upper = 30 },
+    { species = "golbat", level_lower = 20, level_upper = 40 },
+]
+good_rod = [
+    { species = "magikarp", level_lower = 10, level_upper = 25 },
+    { species = "barboach", level_lower = 10, level_upper = 25 },
+]
+old_rod = [
+    { species = "magikarp", level_lower = 3, level_upper = 15 },
+]
+super_rod = [
+    { species = "gyarados", level_lower = 30, level_upper = 55 },
+    { species = "dratini", level_lower = 15, level_upper = 25 },
+    { species = "whiscash", level_lower = 20, level_upper = 50 },
+    { species = "dragonair", level_lower = 20, level_upper = 55 },
+]
+id = 15
+
+[[mt_coronet_4f_rooms_1_and_2.land]]
+species = "bronzong"
+level_lower = 37
+level_upper = 37
+
+[[mt_coronet_4f_rooms_1_and_2.land]]
+species = "graveler"
+level_lower = 36
+level_upper = 38
+
+[[mt_coronet_4f_rooms_1_and_2.land]]
+species = "medicham"
+level_lower = 37
+level_upper = 39
+
+[[mt_coronet_4f_rooms_1_and_2.land]]
+species = "clefairy"
+level_lower = 36
+level_upper = 36
+
+[[mt_coronet_4f_rooms_1_and_2.land]]
+species = "machoke"
+level_lower = 39
+level_upper = 39
+
+[[mt_coronet_4f_rooms_1_and_2.land]]
+species = "chingling"
+level_lower = 38
+level_upper = 38
+
+[[mt_coronet_4f_rooms_1_and_2.land]]
+species = "nosepass"
+level_lower = 37
+level_upper = 37
+
+[[mt_coronet_4f_rooms_1_and_2.land]]
+species = "golbat"
+level_lower = 37
+level_upper = 38
+
+[[mt_coronet_4f_rooms_1_and_2.land]]
+species = "solrock"
+level_lower = 38
+level_upper = 38
+accessibility = [
+    "ruby",
+]
+
+[[mt_coronet_4f_rooms_1_and_2.land]]
+species = "lunatone"
+level_lower = 38
+level_upper = 38
+accessibility = [
+    "sapphire",
+]
+
+[mt_coronet_4f_room_3]
+id = 16
+
+[[mt_coronet_4f_room_3.land]]
+species = "bronzong"
+level_lower = 37
+level_upper = 37
+
+[[mt_coronet_4f_room_3.land]]
+species = "graveler"
+level_lower = 36
+level_upper = 38
+
+[[mt_coronet_4f_room_3.land]]
+species = "medicham"
+level_lower = 37
+level_upper = 39
+
+[[mt_coronet_4f_room_3.land]]
+species = "clefairy"
+level_lower = 36
+level_upper = 36
+
+[[mt_coronet_4f_room_3.land]]
+species = "machoke"
+level_lower = 39
+level_upper = 39
+
+[[mt_coronet_4f_room_3.land]]
+species = "chingling"
+level_lower = 38
+level_upper = 38
+
+[[mt_coronet_4f_room_3.land]]
+species = "nosepass"
+level_lower = 37
+level_upper = 37
+
+[[mt_coronet_4f_room_3.land]]
+species = "golbat"
+level_lower = 37
+level_upper = 38
+
+[[mt_coronet_4f_room_3.land]]
+species = "chimecho"
+level_lower = 39
+level_upper = 39
+
+[[mt_coronet_4f_room_3.land]]
+species = "solrock"
+level_lower = 38
+level_upper = 38
+accessibility = [
+    "ruby",
+]
+
+[[mt_coronet_4f_room_3.land]]
+species = "lunatone"
+level_lower = 38
+level_upper = 38
+accessibility = [
+    "sapphire",
+]
+
+[mt_coronet_5f]
+id = 17
+
+[[mt_coronet_5f.land]]
+species = "bronzong"
+level_lower = 37
+level_upper = 37
+
+[[mt_coronet_5f.land]]
+species = "graveler"
+level_lower = 36
+level_upper = 38
+
+[[mt_coronet_5f.land]]
+species = "medicham"
+level_lower = 37
+level_upper = 39
+
+[[mt_coronet_5f.land]]
+species = "clefairy"
+level_lower = 36
+level_upper = 36
+
+[[mt_coronet_5f.land]]
+species = "machoke"
+level_lower = 39
+level_upper = 39
+
+[[mt_coronet_5f.land]]
+species = "chingling"
+level_lower = 36
+level_upper = 36
+
+[[mt_coronet_5f.land]]
+species = "nosepass"
+level_lower = 37
+level_upper = 37
+
+[[mt_coronet_5f.land]]
+species = "golbat"
+level_lower = 37
+level_upper = 38
+
+[[mt_coronet_5f.land]]
+species = "chimecho"
+level_lower = 39
+level_upper = 40
+
+[[mt_coronet_5f.land]]
+species = "solrock"
+level_lower = 38
+level_upper = 39
+accessibility = [
+    "ruby",
+]
+
+[[mt_coronet_5f.land]]
+species = "lunatone"
+level_lower = 38
+level_upper = 39
+accessibility = [
+    "sapphire",
+]
+
+[mt_coronet_6f]
+id = 18
+
+[[mt_coronet_6f.land]]
+species = "bronzong"
+level_lower = 37
+level_upper = 37
+
+[[mt_coronet_6f.land]]
+species = "graveler"
+level_lower = 36
+level_upper = 38
+
+[[mt_coronet_6f.land]]
+species = "medicham"
+level_lower = 37
+level_upper = 39
+
+[[mt_coronet_6f.land]]
+species = "clefairy"
+level_lower = 36
+level_upper = 36
+
+[[mt_coronet_6f.land]]
+species = "machoke"
+level_lower = 39
+level_upper = 39
+
+[[mt_coronet_6f.land]]
+species = "chimecho"
+level_lower = 40
+level_upper = 41
+
+[[mt_coronet_6f.land]]
+species = "nosepass"
+level_lower = 37
+level_upper = 37
+
+[[mt_coronet_6f.land]]
+species = "golbat"
+level_lower = 37
+level_upper = 38
+
+[[mt_coronet_6f.land]]
+species = "solrock"
+level_lower = 38
+level_upper = 40
+accessibility = [
+    "ruby",
+]
+
+[[mt_coronet_6f.land]]
+species = "lunatone"
+level_lower = 38
+level_upper = 40
+accessibility = [
+    "sapphire",
+]
+
+[mt_coronet_1f_tunnel_room]
+id = 19
+
+[[mt_coronet_1f_tunnel_room.land]]
+species = "graveler"
+level_lower = 36
+level_upper = 38
+
+[[mt_coronet_1f_tunnel_room.land]]
+species = "medicham"
+level_lower = 37
+level_upper = 39
+
+[[mt_coronet_1f_tunnel_room.land]]
+species = "clefairy"
+level_lower = 36
+level_upper = 36
+
+[[mt_coronet_1f_tunnel_room.land]]
+species = "machoke"
+level_lower = 39
+level_upper = 39
+
+[[mt_coronet_1f_tunnel_room.land]]
+species = "chingling"
+level_lower = 38
+level_upper = 38
+
+[[mt_coronet_1f_tunnel_room.land]]
+species = "nosepass"
+level_lower = 37
+level_upper = 37
+
+[[mt_coronet_1f_tunnel_room.land]]
+species = "golbat"
+level_lower = 37
+level_upper = 38
+
+[[mt_coronet_1f_tunnel_room.land]]
+species = "solrock"
+level_lower = 38
+level_upper = 38
+accessibility = [
+    "ruby",
+]
+
+[[mt_coronet_1f_tunnel_room.land]]
+species = "lunatone"
+level_lower = 38
+level_upper = 38
+accessibility = [
+    "sapphire",
+]
+
+[mt_coronet_1f_north_room_2]
+land = [
+    { species = "bronzor", level_lower = 33, level_upper = 33 },
+    { species = "graveler", level_lower = 32, level_upper = 34 },
+    { species = "meditite", level_lower = 33, level_upper = 35 },
+    { species = "clefairy", level_lower = 32, level_upper = 32 },
+    { species = "machoke", level_lower = 35, level_upper = 35 },
+    { species = "chingling", level_lower = 34, level_upper = 34 },
+    { species = "nosepass", level_lower = 33, level_upper = 33 },
+    { species = "golbat", level_lower = 33, level_upper = 34 },
+]
+id = 20
+
+[mt_coronet_1f_north_room_1]
+land = [
+    { species = "bronzor", level_lower = 14, level_upper = 14 },
+    { species = "geodude", level_lower = 13, level_upper = 15 },
+    { species = "meditite", level_lower = 14, level_upper = 16 },
+    { species = "cleffa", level_lower = 13, level_upper = 13 },
+    { species = "machop", level_lower = 16, level_upper = 16 },
+    { species = "chingling", level_lower = 15, level_upper = 15 },
+    { species = "nosepass", level_lower = 14, level_upper = 14 },
+    { species = "zubat", level_lower = 14, level_upper = 15 },
+]
+id = 21
+
+[mt_coronet_b1f]
+land = [
+    { species = "bronzor", level_lower = 33, level_upper = 33 },
+    { species = "graveler", level_lower = 32, level_upper = 34 },
+    { species = "meditite", level_lower = 33, level_upper = 35 },
+    { species = "clefairy", level_lower = 32, level_upper = 32 },
+    { species = "machoke", level_lower = 35, level_upper = 35 },
+    { species = "chingling", level_lower = 34, level_upper = 34 },
+    { species = "nosepass", level_lower = 33, level_upper = 33 },
+    { species = "golbat", level_lower = 33, level_upper = 34 },
+]
+surf = [
+    { species = "zubat", level_lower = 20, level_upper = 30 },
+    { species = "golbat", level_lower = 20, level_upper = 40 },
+]
+good_rod = [
+    { species = "magikarp", level_lower = 10, level_upper = 25 },
+    { species = "barboach", level_lower = 10, level_upper = 25 },
+]
+old_rod = [
+    { species = "magikarp", level_lower = 3, level_upper = 15 },
+]
+super_rod = [
+    { species = "gyarados", level_lower = 30, level_upper = 55 },
+    { species = "whiscash", level_lower = 30, level_upper = 55 },
+]
+id = 22
+
+[solaceon_ruins_maniac_tunnel_room]
+land = [
+    { species = "unown", level_lower = 20, level_upper = 30 },
+]
+id = 29
+
+[solaceon_ruins_room_2_northeast_dead_end]
+land = [
+    { species = "unown", level_lower = 20, level_upper = 30 },
+]
+id = 30
+
+[solaceon_ruins_room_1_northwest_dead_end]
+land = [
+    { species = "unown", level_lower = 20, level_upper = 30 },
+]
+id = 31
+
+[solaceon_ruins_room_2]
+land = [
+    { species = "unown", level_lower = 20, level_upper = 30 },
+]
+id = 32
+
+[solaceon_ruins_room_1_southeast_dead_end]
+land = [
+    { species = "unown", level_lower = 20, level_upper = 30 },
+]
+id = 33
+
+[solaceon_ruins_room_3]
+land = [
+    { species = "unown", level_lower = 20, level_upper = 30 },
+]
+id = 34
+
+[solaceon_ruins_room_2_southeast_dead_end]
+land = [
+    { species = "unown", level_lower = 20, level_upper = 30 },
+]
+id = 35
 
 [solaceon_ruins_room_6_southeast_dead_end]
 land = [
-    "unown",
+    { species = "unown", level_lower = 20, level_upper = 30 },
 ]
+id = 36
+
+[solaceon_ruins_room_5_southwest_dead_end]
+land = [
+    { species = "unown", level_lower = 20, level_upper = 30 },
+]
+id = 37
+
+[solaceon_ruins_room_3_northwest_dead_end]
+land = [
+    { species = "unown", level_lower = 20, level_upper = 30 },
+]
+id = 38
+
+[solaceon_ruins_room_3_southwest_dead_end]
+land = [
+    { species = "unown", level_lower = 20, level_upper = 30 },
+]
+id = 39
+
+[solaceon_ruins_room_4]
+land = [
+    { species = "unown", level_lower = 20, level_upper = 30 },
+]
+id = 40
+
+[solaceon_ruins_room_6]
+land = [
+    { species = "unown", level_lower = 20, level_upper = 30 },
+]
+id = 41
+
+[solaceon_ruins_room_5]
+land = [
+    { species = "unown", level_lower = 20, level_upper = 30 },
+]
+id = 42
 
 [solaceon_ruins_room_7]
 land = [
-    "unown",
+    { species = "unown", level_lower = 20, level_upper = 30 },
 ]
+id = 43
 
 [solaceon_ruins_room_4_southeast_dead_end]
 land = [
-    "unown",
+    { species = "unown", level_lower = 20, level_upper = 30 },
+]
+id = 44
+
+[solaceon_ruins_room_6_northwest_dead_end]
+land = [
+    { species = "unown", level_lower = 20, level_upper = 30 },
+]
+id = 45
+
+[victory_road_1f]
+land = [
+    { species = "graveler", level_lower = 40, level_upper = 42 },
+    { species = "rhyhorn", level_lower = 41, level_upper = 41 },
+    { species = "onix", level_lower = 41, level_upper = 42 },
+    { species = "rhydon", level_lower = 41, level_upper = 43 },
+    { species = "golbat", level_lower = 42, level_upper = 43 },
+    { species = "steelix", level_lower = 42, level_upper = 42 },
+    { species = "gabite", level_lower = 41, level_upper = 41 },
+]
+id = 47
+
+[victory_road_2f]
+land = [
+    { species = "magneton", level_lower = 41, level_upper = 43 },
+    { species = "steelix", level_lower = 42, level_upper = 44 },
+    { species = "graveler", level_lower = 41, level_upper = 43 },
+    { species = "golbat", level_lower = 41, level_upper = 44 },
+    { species = "onix", level_lower = 42, level_upper = 42 },
+    { species = "gabite", level_lower = 43, level_upper = 43 },
+]
+id = 48
+
+[victory_road_b1f]
+land = [
+    { species = "floatzel", level_lower = 42, level_upper = 44 },
+    { species = "azumarill", level_lower = 41, level_upper = 43 },
+    { species = "graveler", level_lower = 41, level_upper = 43 },
+    { species = "onix", level_lower = 42, level_upper = 42 },
+    { species = "golbat", level_lower = 41, level_upper = 44 },
+    { species = "steelix", level_lower = 44, level_upper = 44 },
+    { species = "gabite", level_lower = 43, level_upper = 43 },
+]
+surf = [
+    { species = "floatzel", level_lower = 30, level_upper = 50 },
+    { species = "golbat", level_lower = 30, level_upper = 50 },
+]
+good_rod = [
+    { species = "magikarp", level_lower = 10, level_upper = 25 },
+]
+old_rod = [
+    { species = "magikarp", level_lower = 3, level_upper = 15 },
+]
+super_rod = [
+    { species = "gyarados", level_lower = 30, level_upper = 55 },
+]
+id = 49
+
+[victory_road_1f_room_2]
+land = [
+    { species = "floatzel", level_lower = 48, level_upper = 50 },
+    { species = "azumarill", level_lower = 47, level_upper = 49 },
+    { species = "graveler", level_lower = 47, level_upper = 49 },
+    { species = "dewgong", level_lower = 48, level_upper = 50 },
+    { species = "golbat", level_lower = 47, level_upper = 50 },
+    { species = "gabite", level_lower = 49, level_upper = 49 },
+]
+surf = [
+    { species = "floatzel", level_lower = 35, level_upper = 55 },
+    { species = "dewgong", level_lower = 35, level_upper = 55 },
+    { species = "lapras", level_lower = 35, level_upper = 55 },
+]
+good_rod = [
+    { species = "magikarp", level_lower = 10, level_upper = 25 },
+]
+old_rod = [
+    { species = "magikarp", level_lower = 3, level_upper = 15 },
+]
+super_rod = [
+    { species = "gyarados", level_lower = 30, level_upper = 55 },
+]
+id = 50
+
+[victory_road_1f_room_1]
+land = [
+    { species = "graveler", level_lower = 47, level_upper = 49 },
+    { species = "floatzel", level_lower = 47, level_upper = 49 },
+    { species = "onix", level_lower = 48, level_upper = 50 },
+    { species = "golbat", level_lower = 49, level_upper = 50 },
+    { species = "steelix", level_lower = 50, level_upper = 50 },
+    { species = "gabite", level_lower = 50, level_upper = 50 },
+]
+id = 51
+
+[victory_road_1f_room_3]
+land = [
+    { species = "graveler", level_lower = 47, level_upper = 49 },
+    { species = "floatzel", level_lower = 47, level_upper = 49 },
+    { species = "onix", level_lower = 48, level_upper = 50 },
+    { species = "golbat", level_lower = 49, level_upper = 49 },
+    { species = "steelix", level_lower = 50, level_upper = 50 },
+    { species = "gabite", level_lower = 50, level_upper = 50 },
+]
+id = 52
+
+[ravaged_path]
+land = [
+    { species = "zubat", level_lower = 3, level_upper = 6 },
+    { species = "psyduck", level_lower = 4, level_upper = 6 },
+]
+surf = [
+    { species = "psyduck", level_lower = 20, level_upper = 30 },
+    { species = "zubat", level_lower = 20, level_upper = 30 },
+    { species = "golduck", level_lower = 20, level_upper = 40 },
+    { species = "golbat", level_lower = 20, level_upper = 40 },
+]
+good_rod = [
+    { species = "magikarp", level_lower = 10, level_upper = 25 },
+    { species = "barboach", level_lower = 10, level_upper = 25 },
+]
+old_rod = [
+    { species = "magikarp", level_lower = 3, level_upper = 15 },
+]
+super_rod = [
+    { species = "gyarados", level_lower = 30, level_upper = 55 },
+    { species = "whiscash", level_lower = 30, level_upper = 55 },
+]
+id = 53
+
+[oreburgh_gate_1f]
+land = [
+    { species = "zubat", level_lower = 5, level_upper = 8 },
+    { species = "psyduck", level_lower = 5, level_upper = 7 },
+    { species = "geodude", level_lower = 5, level_upper = 7 },
+]
+id = 54
+
+[oreburgh_gate_b1f]
+land = [
+    { species = "zubat", level_lower = 6, level_upper = 9 },
+    { species = "psyduck", level_lower = 8, level_upper = 10 },
+    { species = "geodude", level_lower = 6, level_upper = 8 },
+    { species = "golbat", level_lower = 10, level_upper = 10 },
+]
+surf = [
+    { species = "psyduck", level_lower = 20, level_upper = 30 },
+    { species = "zubat", level_lower = 20, level_upper = 30 },
+    { species = "golduck", level_lower = 20, level_upper = 40 },
+    { species = "golbat", level_lower = 20, level_upper = 40 },
+]
+good_rod = [
+    { species = "magikarp", level_lower = 10, level_upper = 25 },
+    { species = "barboach", level_lower = 10, level_upper = 25 },
+]
+old_rod = [
+    { species = "magikarp", level_lower = 3, level_upper = 15 },
+]
+super_rod = [
+    { species = "gyarados", level_lower = 30, level_upper = 55 },
+    { species = "whiscash", level_lower = 30, level_upper = 55 },
+]
+id = 55
+
+[stark_mountain_outside]
+id = 56
+
+[[stark_mountain_outside.land]]
+species = "camerupt"
+level_lower = 53
+level_upper = 53
+
+[[stark_mountain_outside.land]]
+species = "rhydon"
+level_lower = 54
+level_upper = 54
+
+[[stark_mountain_outside.land]]
+species = "fearow"
+level_lower = 51
+level_upper = 53
+
+[[stark_mountain_outside.land]]
+species = "graveler"
+level_lower = 51
+level_upper = 53
+
+[[stark_mountain_outside.land]]
+species = "weezing"
+level_lower = 52
+level_upper = 52
+
+[[stark_mountain_outside.land]]
+species = "skarmory"
+level_lower = 53
+level_upper = 53
+
+[[stark_mountain_outside.land]]
+species = "numel"
+level_lower = 51
+level_upper = 51
+
+[[stark_mountain_outside.land]]
+species = "rhyhorn"
+level_lower = 52
+level_upper = 52
+
+[[stark_mountain_outside.land]]
+species = "golbat"
+level_lower = 51
+level_upper = 51
+accessibility = [
+    "night",
+]
+
+[[stark_mountain_outside.land]]
+species = "torkoal"
+level_lower = 51
+level_upper = 53
+accessibility = [
+    "radar",
+]
+
+[stark_mountain_room_1]
+land = [
+    { species = "magcargo", level_lower = 54, level_upper = 54 },
+    { species = "rhydon", level_lower = 54, level_upper = 54 },
+    { species = "golbat", level_lower = 52, level_upper = 52 },
+    { species = "graveler", level_lower = 51, level_upper = 53 },
+    { species = "weezing", level_lower = 51, level_upper = 53 },
+    { species = "slugma", level_lower = 52, level_upper = 52 },
+    { species = "rhyhorn", level_lower = 52, level_upper = 52 },
+]
+id = 57
+
+[stark_mountain_room_2]
+land = [
+    { species = "magcargo", level_lower = 53, level_upper = 55 },
+    { species = "golbat", level_lower = 53, level_upper = 53 },
+    { species = "graveler", level_lower = 52, level_upper = 54 },
+    { species = "rhydon", level_lower = 55, level_upper = 55 },
+    { species = "weezing", level_lower = 52, level_upper = 54 },
+    { species = "slugma", level_lower = 53, level_upper = 53 },
+    { species = "koffing", level_lower = 53, level_upper = 53 },
+]
+id = 58
+
+[sendoff_spring]
+surf = [
+    { species = "golduck", level_lower = 20, level_upper = 40 },
+]
+good_rod = [
+    { species = "magikarp", level_lower = 10, level_upper = 25 },
+    { species = "goldeen", level_lower = 10, level_upper = 25 },
+]
+old_rod = [
+    { species = "magikarp", level_lower = 3, level_upper = 15 },
+]
+super_rod = [
+    { species = "gyarados", level_lower = 30, level_upper = 55 },
+    { species = "seaking", level_lower = 30, level_upper = 55 },
+]
+id = 59
+
+[[sendoff_spring.land]]
+species = "graveler"
+level_lower = 37
+level_upper = 39
+
+[[sendoff_spring.land]]
+species = "bibarel"
+level_lower = 37
+level_upper = 38
+
+[[sendoff_spring.land]]
+species = "staravia"
+level_lower = 38
+level_upper = 40
+
+[[sendoff_spring.land]]
+species = "chingling"
+level_lower = 39
+level_upper = 39
+
+[[sendoff_spring.land]]
+species = "dusclops"
+level_lower = 39
+level_upper = 40
+
+[[sendoff_spring.land]]
+species = "golbat"
+level_lower = 38
+level_upper = 38
+accessibility = [
+    "night",
+]
+
+[[sendoff_spring.land]]
+species = "solrock"
+level_lower = 39
+level_upper = 40
+accessibility = [
+    "ruby",
+]
+
+[[sendoff_spring.land]]
+species = "lunatone"
+level_lower = 39
+level_upper = 40
+accessibility = [
+    "sapphire",
+]
+
+[turnback_cave_pillar_1_room_1]
+id = 63
+
+[[turnback_cave_pillar_1_room_1.land]]
+species = "gastly"
+level_lower = 15
+level_upper = 17
+
+[[turnback_cave_pillar_1_room_1.land]]
+species = "bronzor"
+level_lower = 15
+level_upper = 15
+
+[[turnback_cave_pillar_1_room_1.land]]
+species = "golbat"
+level_lower = 17
+level_upper = 18
+
+[[turnback_cave_pillar_1_room_1.land]]
+species = "chingling"
+level_lower = 18
+level_upper = 18
+
+[[turnback_cave_pillar_1_room_1.land]]
+species = "duskull"
+level_lower = 18
+level_upper = 18
+
+[[turnback_cave_pillar_1_room_1.land]]
+species = "dusclops"
+level_lower = 16
+level_upper = 18
+accessibility = [
+    "night",
+    "emerald",
+    "firered",
+    "leafgreen",
+    "radar",
+]
+
+[[turnback_cave_pillar_1_room_1.land]]
+species = "solrock"
+level_lower = 18
+level_upper = 18
+accessibility = [
+    "ruby",
+]
+
+[[turnback_cave_pillar_1_room_1.land]]
+species = "lunatone"
+level_lower = 18
+level_upper = 18
+accessibility = [
+    "sapphire",
+]
+
+[turnback_cave_pillar_1_room_2]
+id = 64
+
+[[turnback_cave_pillar_1_room_2.land]]
+species = "gastly"
+level_lower = 15
+level_upper = 17
+
+[[turnback_cave_pillar_1_room_2.land]]
+species = "bronzor"
+level_lower = 15
+level_upper = 15
+
+[[turnback_cave_pillar_1_room_2.land]]
+species = "golbat"
+level_lower = 17
+level_upper = 18
+
+[[turnback_cave_pillar_1_room_2.land]]
+species = "chingling"
+level_lower = 18
+level_upper = 18
+
+[[turnback_cave_pillar_1_room_2.land]]
+species = "duskull"
+level_lower = 18
+level_upper = 18
+
+[[turnback_cave_pillar_1_room_2.land]]
+species = "dusclops"
+level_lower = 16
+level_upper = 18
+accessibility = [
+    "night",
+    "emerald",
+    "firered",
+    "leafgreen",
+    "radar",
+]
+
+[[turnback_cave_pillar_1_room_2.land]]
+species = "solrock"
+level_lower = 18
+level_upper = 18
+accessibility = [
+    "ruby",
+]
+
+[[turnback_cave_pillar_1_room_2.land]]
+species = "lunatone"
+level_lower = 18
+level_upper = 18
+accessibility = [
+    "sapphire",
+]
+
+[turnback_cave_pillar_1_room_3]
+id = 65
+
+[[turnback_cave_pillar_1_room_3.land]]
+species = "gastly"
+level_lower = 15
+level_upper = 17
+
+[[turnback_cave_pillar_1_room_3.land]]
+species = "bronzor"
+level_lower = 15
+level_upper = 15
+
+[[turnback_cave_pillar_1_room_3.land]]
+species = "golbat"
+level_lower = 17
+level_upper = 18
+
+[[turnback_cave_pillar_1_room_3.land]]
+species = "chingling"
+level_lower = 18
+level_upper = 18
+
+[[turnback_cave_pillar_1_room_3.land]]
+species = "duskull"
+level_lower = 18
+level_upper = 18
+
+[[turnback_cave_pillar_1_room_3.land]]
+species = "dusclops"
+level_lower = 16
+level_upper = 18
+accessibility = [
+    "night",
+    "emerald",
+    "firered",
+    "leafgreen",
+    "radar",
+]
+
+[[turnback_cave_pillar_1_room_3.land]]
+species = "solrock"
+level_lower = 18
+level_upper = 18
+accessibility = [
+    "ruby",
+]
+
+[[turnback_cave_pillar_1_room_3.land]]
+species = "lunatone"
+level_lower = 18
+level_upper = 18
+accessibility = [
+    "sapphire",
+]
+
+[snowpoint_temple_1f]
+land = [
+    { species = "golbat", level_lower = 47, level_upper = 50 },
+    { species = "sneasel", level_lower = 49, level_upper = 49 },
+    { species = "smoochum", level_lower = 49, level_upper = 49 },
+]
+id = 106
+
+[snowpoint_temple_b1f]
+land = [
+    { species = "golbat", level_lower = 47, level_upper = 50 },
+    { species = "sneasel", level_lower = 49, level_upper = 49 },
+    { species = "jynx", level_lower = 49, level_upper = 49 },
+]
+id = 107
+
+[snowpoint_temple_b2f]
+land = [
+    { species = "golbat", level_lower = 47, level_upper = 50 },
+    { species = "sneasel", level_lower = 50, level_upper = 50 },
+    { species = "jynx", level_lower = 50, level_upper = 50 },
+]
+id = 108
+
+[snowpoint_temple_b3f]
+land = [
+    { species = "golbat", level_lower = 47, level_upper = 50 },
+    { species = "sneasel", level_lower = 50, level_upper = 50 },
+    { species = "jynx", level_lower = 50, level_upper = 50 },
+]
+id = 109
+
+[snowpoint_temple_b4f]
+land = [
+    { species = "golbat", level_lower = 47, level_upper = 50 },
+    { species = "sneasel", level_lower = 51, level_upper = 51 },
+    { species = "jynx", level_lower = 51, level_upper = 51 },
+]
+id = 110
+
+[snowpoint_temple_b5f]
+land = [
+    { species = "golbat", level_lower = 47, level_upper = 50 },
+    { species = "sneasel", level_lower = 51, level_upper = 51 },
+    { species = "jynx", level_lower = 51, level_upper = 51 },
+]
+id = 111
+
+[wayward_cave_1f]
+id = 112
+
+[[wayward_cave_1f.land]]
+species = "bronzor"
+level_lower = 18
+level_upper = 20
+
+[[wayward_cave_1f.land]]
+species = "geodude"
+level_lower = 17
+level_upper = 20
+
+[[wayward_cave_1f.land]]
+species = "zubat"
+level_lower = 17
+level_upper = 19
+
+[[wayward_cave_1f.land]]
+species = "onix"
+level_lower = 18
+level_upper = 20
+
+[[wayward_cave_1f.land]]
+species = "sandshrew"
+level_lower = 17
+level_upper = 18
+accessibility = [
+    "leafgreen",
+]
+
+[wayward_cave_b1f]
+id = 113
+
+[[wayward_cave_b1f.land]]
+species = "bronzor"
+level_lower = 18
+level_upper = 20
+
+[[wayward_cave_b1f.land]]
+species = "geodude"
+level_lower = 18
+level_upper = 20
+
+[[wayward_cave_b1f.land]]
+species = "gible"
+level_lower = 17
+level_upper = 20
+
+[[wayward_cave_b1f.land]]
+species = "zubat"
+level_lower = 19
+level_upper = 19
+
+[[wayward_cave_b1f.land]]
+species = "onix"
+level_lower = 18
+level_upper = 20
+
+[[wayward_cave_b1f.land]]
+species = "sandshrew"
+level_lower = 18
+level_upper = 20
+accessibility = [
+    "leafgreen",
+]
+
+[ruin_maniac_cave_short]
+land = [
+    { species = "geodude", level_lower = 21, level_upper = 23 },
+    { species = "hippopotas", level_lower = 22, level_upper = 24 },
+]
+id = 114
+
+[trophy_garden]
+land = [
+    { species = "pichu", level_lower = 21, level_upper = 22 },
+    { species = "roselia", level_lower = 22, level_upper = 23 },
+    { species = "staravia", level_lower = 22, level_upper = 24 },
+    { species = "kricketune", level_lower = 22, level_upper = 23 },
+    { species = "pikachu", level_lower = 24, level_upper = 24 },
+]
+id = 117
+
+[iron_island]
+surf = [
+    { species = "wingull", level_lower = 20, level_upper = 30 },
+    { species = "tentacool", level_lower = 20, level_upper = 30 },
+    { species = "pelipper", level_lower = 20, level_upper = 40 },
+    { species = "tentacruel", level_lower = 20, level_upper = 40 },
+]
+good_rod = [
+    { species = "magikarp", level_lower = 10, level_upper = 25 },
+    { species = "finneon", level_lower = 10, level_upper = 25 },
+]
+old_rod = [
+    { species = "magikarp", level_lower = 3, level_upper = 15 },
+]
+super_rod = [
+    { species = "gyarados", level_lower = 30, level_upper = 55 },
+    { species = "lumineon", level_lower = 30, level_upper = 55 },
+    { species = "qwilfish", level_lower = 20, level_upper = 50 },
+]
+id = 118
+
+[iron_island_1f]
+land = [
+    { species = "geodude", level_lower = 30, level_upper = 32 },
+    { species = "graveler", level_lower = 31, level_upper = 33 },
+    { species = "zubat", level_lower = 30, level_upper = 30 },
+    { species = "golbat", level_lower = 32, level_upper = 32 },
+    { species = "onix", level_lower = 33, level_upper = 33 },
+]
+id = 119
+
+[iron_island_b1f_left_room]
+id = 120
+
+[[iron_island_b1f_left_room.land]]
+species = "graveler"
+level_lower = 30
+level_upper = 33
+
+[[iron_island_b1f_left_room.land]]
+species = "golbat"
+level_lower = 30
+level_upper = 32
+
+[[iron_island_b1f_left_room.land]]
+species = "onix"
+level_lower = 33
+level_upper = 33
+
+[[iron_island_b1f_left_room.land]]
+species = "mawile"
+level_lower = 30
+level_upper = 31
+accessibility = [
+    "ruby",
+]
+
+[[iron_island_b1f_left_room.land]]
+species = "sableye"
+level_lower = 30
+level_upper = 31
+accessibility = [
+    "sapphire",
+]
+
+[iron_island_b1f_right_room]
+id = 121
+
+[[iron_island_b1f_right_room.land]]
+species = "graveler"
+level_lower = 30
+level_upper = 33
+
+[[iron_island_b1f_right_room.land]]
+species = "golbat"
+level_lower = 30
+level_upper = 32
+
+[[iron_island_b1f_right_room.land]]
+species = "onix"
+level_lower = 33
+level_upper = 33
+
+[[iron_island_b1f_right_room.land]]
+species = "mawile"
+level_lower = 30
+level_upper = 31
+accessibility = [
+    "ruby",
+]
+
+[[iron_island_b1f_right_room.land]]
+species = "sableye"
+level_lower = 30
+level_upper = 31
+accessibility = [
+    "sapphire",
+]
+
+[iron_island_b2f_right_room]
+id = 122
+
+[[iron_island_b2f_right_room.land]]
+species = "onix"
+level_lower = 32
+level_upper = 32
+
+[[iron_island_b2f_right_room.land]]
+species = "graveler"
+level_lower = 31
+level_upper = 34
+
+[[iron_island_b2f_right_room.land]]
+species = "golbat"
+level_lower = 31
+level_upper = 33
+
+[[iron_island_b2f_right_room.land]]
+species = "steelix"
+level_lower = 35
+level_upper = 35
+
+[[iron_island_b2f_right_room.land]]
+species = "mawile"
+level_lower = 31
+level_upper = 32
+accessibility = [
+    "ruby",
+]
+
+[[iron_island_b2f_right_room.land]]
+species = "sableye"
+level_lower = 31
+level_upper = 32
+accessibility = [
+    "sapphire",
+]
+
+[iron_island_b2f_left_room]
+id = 123
+
+[[iron_island_b2f_left_room.land]]
+species = "onix"
+level_lower = 32
+level_upper = 32
+
+[[iron_island_b2f_left_room.land]]
+species = "graveler"
+level_lower = 31
+level_upper = 34
+
+[[iron_island_b2f_left_room.land]]
+species = "golbat"
+level_lower = 31
+level_upper = 33
+
+[[iron_island_b2f_left_room.land]]
+species = "steelix"
+level_lower = 35
+level_upper = 35
+
+[[iron_island_b2f_left_room.land]]
+species = "mawile"
+level_lower = 31
+level_upper = 32
+accessibility = [
+    "ruby",
+]
+
+[[iron_island_b2f_left_room.land]]
+species = "sableye"
+level_lower = 31
+level_upper = 32
+accessibility = [
+    "sapphire",
+]
+
+[iron_island_b3f]
+id = 124
+
+[[iron_island_b3f.land]]
+species = "steelix"
+level_lower = 35
+level_upper = 35
+
+[[iron_island_b3f.land]]
+species = "graveler"
+level_lower = 31
+level_upper = 34
+
+[[iron_island_b3f.land]]
+species = "golbat"
+level_lower = 31
+level_upper = 33
+
+[[iron_island_b3f.land]]
+species = "onix"
+level_lower = 32
+level_upper = 32
+accessibility = [
+    "swarms",
+]
+
+[[iron_island_b3f.land]]
+species = "mawile"
+level_lower = 31
+level_upper = 32
+accessibility = [
+    "ruby",
+]
+
+[[iron_island_b3f.land]]
+species = "sableye"
+level_lower = 31
+level_upper = 32
+accessibility = [
+    "sapphire",
+]
+
+[old_chateau]
+land = [
+    { species = "gastly", level_lower = 14, level_upper = 17 },
+]
+id = 125
+
+[old_chateau_dining_area]
+land = [
+    { species = "gastly", level_lower = 14, level_upper = 17 },
+]
+id = 126
+
+[old_chateau_side_rooms]
+land = [
+    { species = "gastly", level_lower = 14, level_upper = 17 },
+]
+id = 127
+
+[old_chateau_corridor]
+land = [
+    { species = "gastly", level_lower = 14, level_upper = 17 },
+]
+id = 128
+
+[old_chateau_back_west_room]
+land = [
+    { species = "gastly", level_lower = 14, level_upper = 17 },
+]
+id = 129
+
+[old_chateau_back_middle_west_room]
+land = [
+    { species = "gastly", level_lower = 14, level_upper = 17 },
+]
+id = 130
+
+[old_chateau_back_middle_room]
+land = [
+    { species = "gastly", level_lower = 14, level_upper = 17 },
+]
+id = 131
+
+[old_chateau_back_middle_east_room]
+id = 132
+
+[[old_chateau_back_middle_east_room.land]]
+species = "gastly"
+level_lower = 14
+level_upper = 17
+
+[[old_chateau_back_middle_east_room.land]]
+species = "gengar"
+level_lower = 17
+level_upper = 17
+accessibility = [
+    "ruby",
+    "sapphire",
+    "emerald",
+    "firered",
+    "leafgreen",
+]
+
+[old_chateau_back_east_room]
+land = [
+    { species = "gastly", level_lower = 14, level_upper = 17 },
+]
+id = 133
+
+[lake_verity_low_water]
+surf = [
+    { species = "psyduck", level_lower = 20, level_upper = 30 },
+    { species = "golduck", level_lower = 20, level_upper = 40 },
+]
+good_rod = [
+    { species = "magikarp", level_lower = 10, level_upper = 25 },
+    { species = "goldeen", level_lower = 15, level_upper = 20 },
+    { species = "seaking", level_lower = 25, level_upper = 35 },
+]
+old_rod = [
+    { species = "magikarp", level_lower = 3, level_upper = 15 },
+]
+super_rod = [
+    { species = "gyarados", level_lower = 30, level_upper = 55 },
+    { species = "seaking", level_lower = 30, level_upper = 55 },
+]
+id = 134
+
+[[lake_verity_low_water.land]]
+species = "starly"
+level_lower = 2
+level_upper = 4
+
+[[lake_verity_low_water.land]]
+species = "bidoof"
+level_lower = 2
+level_upper = 4
+
+[[lake_verity_low_water.land]]
+species = "solrock"
+level_lower = 4
+level_upper = 4
+accessibility = [
+    "ruby",
+]
+
+[[lake_verity_low_water.land]]
+species = "lunatone"
+level_lower = 4
+level_upper = 4
+accessibility = [
+    "sapphire",
+]
+
+[[lake_verity_low_water.land]]
+species = "wobbuffet"
+level_lower = 3
+level_upper = 4
+accessibility = [
+    "radar",
+]
+
+[lake_verity]
+surf = [
+    { species = "psyduck", level_lower = 20, level_upper = 30 },
+    { species = "golduck", level_lower = 20, level_upper = 40 },
+]
+good_rod = [
+    { species = "magikarp", level_lower = 10, level_upper = 25 },
+    { species = "goldeen", level_lower = 15, level_upper = 20 },
+    { species = "seaking", level_lower = 25, level_upper = 35 },
+]
+old_rod = [
+    { species = "magikarp", level_lower = 3, level_upper = 15 },
+]
+super_rod = [
+    { species = "gyarados", level_lower = 30, level_upper = 55 },
+    { species = "seaking", level_lower = 30, level_upper = 55 },
+]
+id = 135
+
+[[lake_verity.land]]
+species = "starly"
+level_lower = 2
+level_upper = 4
+
+[[lake_verity.land]]
+species = "bidoof"
+level_lower = 2
+level_upper = 4
+
+[[lake_verity.land]]
+species = "solrock"
+level_lower = 4
+level_upper = 4
+accessibility = [
+    "ruby",
+]
+
+[[lake_verity.land]]
+species = "lunatone"
+level_lower = 4
+level_upper = 4
+accessibility = [
+    "sapphire",
+]
+
+[[lake_verity.land]]
+species = "wobbuffet"
+level_lower = 3
+level_upper = 4
+accessibility = [
+    "radar",
+]
+
+[lake_valor]
+surf = [
+    { species = "psyduck", level_lower = 20, level_upper = 30 },
+    { species = "golduck", level_lower = 20, level_upper = 40 },
+]
+good_rod = [
+    { species = "magikarp", level_lower = 10, level_upper = 25 },
+    { species = "goldeen", level_lower = 15, level_upper = 20 },
+    { species = "seaking", level_lower = 25, level_upper = 35 },
+]
+old_rod = [
+    { species = "magikarp", level_lower = 3, level_upper = 15 },
+]
+super_rod = [
+    { species = "gyarados", level_lower = 30, level_upper = 55 },
+    { species = "seaking", level_lower = 30, level_upper = 55 },
+]
+id = 136
+
+[[lake_valor.land]]
+species = "staravia"
+level_lower = 38
+level_upper = 40
+
+[[lake_valor.land]]
+species = "bibarel"
+level_lower = 39
+level_upper = 41
+
+[[lake_valor.land]]
+species = "golduck"
+level_lower = 41
+level_upper = 41
+
+[[lake_valor.land]]
+species = "psyduck"
+level_lower = 39
+level_upper = 39
+
+[[lake_valor.land]]
+species = "solrock"
+level_lower = 40
+level_upper = 41
+accessibility = [
+    "ruby",
+]
+
+[[lake_valor.land]]
+species = "lunatone"
+level_lower = 40
+level_upper = 41
+accessibility = [
+    "sapphire",
+]
+
+[[lake_valor.land]]
+species = "wobbuffet"
+level_lower = 38
+level_upper = 41
+accessibility = [
+    "radar",
+]
+
+[lake_acuity]
+surf = [
+    { species = "psyduck", level_lower = 20, level_upper = 30 },
+    { species = "golduck", level_lower = 20, level_upper = 40 },
+]
+good_rod = [
+    { species = "magikarp", level_lower = 10, level_upper = 25 },
+    { species = "goldeen", level_lower = 15, level_upper = 20 },
+    { species = "seaking", level_lower = 25, level_upper = 35 },
+]
+old_rod = [
+    { species = "magikarp", level_lower = 3, level_upper = 15 },
+]
+super_rod = [
+    { species = "gyarados", level_lower = 30, level_upper = 55 },
+    { species = "seaking", level_lower = 30, level_upper = 55 },
+]
+id = 137
+
+[[lake_acuity.land]]
+species = "snover"
+level_lower = 38
+level_upper = 41
+
+[[lake_acuity.land]]
+species = "bibarel"
+level_lower = 39
+level_upper = 40
+
+[[lake_acuity.land]]
+species = "golduck"
+level_lower = 39
+level_upper = 40
+
+[[lake_acuity.land]]
+species = "sneasel"
+level_lower = 41
+level_upper = 41
+
+[[lake_acuity.land]]
+species = "psyduck"
+level_lower = 38
+level_upper = 38
+
+[[lake_acuity.land]]
+species = "snorunt"
+level_lower = 39
+level_upper = 40
+accessibility = [
+    "night",
+]
+
+[[lake_acuity.land]]
+species = "solrock"
+level_lower = 40
+level_upper = 41
+accessibility = [
+    "ruby",
+]
+
+[[lake_acuity.land]]
+species = "lunatone"
+level_lower = 40
+level_upper = 41
+accessibility = [
+    "sapphire",
+]
+
+[[lake_acuity.land]]
+species = "teddiursa"
+level_lower = 40
+level_upper = 41
+accessibility = [
+    "emerald",
+]
+
+[valor_lakefront]
+id = 138
+
+[[valor_lakefront.land]]
+species = "girafarig"
+level_lower = 26
+level_upper = 28
+
+[[valor_lakefront.land]]
+species = "bibarel"
+level_lower = 25
+level_upper = 27
+
+[[valor_lakefront.land]]
+species = "staravia"
+level_lower = 26
+level_upper = 28
+
+[[valor_lakefront.land]]
+species = "kricketune"
+level_lower = 26
+level_upper = 27
+
+[[valor_lakefront.land]]
+species = "houndour"
+level_lower = 27
+level_upper = 28
+
+[[valor_lakefront.land]]
+species = "nidorino"
+level_lower = 27
+level_upper = 28
+accessibility = [
+    "radar",
+]
+
+[[valor_lakefront.land]]
+species = "nidorina"
+level_lower = 27
+level_upper = 28
+accessibility = [
+    "radar",
+]
+
+[acuity_lakefront]
+id = 139
+
+[[acuity_lakefront.land]]
+species = "snover"
+level_lower = 32
+level_upper = 35
+
+[[acuity_lakefront.land]]
+species = "swinub"
+level_lower = 32
+level_upper = 34
+
+[[acuity_lakefront.land]]
+species = "sneasel"
+level_lower = 33
+level_upper = 35
+
+[[acuity_lakefront.land]]
+species = "snorunt"
+level_lower = 32
+level_upper = 33
+accessibility = [
+    "night",
+]
+
+[[acuity_lakefront.land]]
+species = "ursaring"
+level_lower = 35
+level_upper = 35
+accessibility = [
+    "emerald",
+]
+
+[route_201]
+id = 140
+
+[[route_201.land]]
+species = "starly"
+level_lower = 2
+level_upper = 3
+
+[[route_201.land]]
+species = "bidoof"
+level_lower = 2
+level_upper = 3
+
+[[route_201.land]]
+species = "kricketot"
+level_lower = 3
+level_upper = 3
+
+[[route_201.land]]
+species = "doduo"
+level_lower = 2
+level_upper = 2
+accessibility = [
+    "swarms",
+]
+
+[[route_201.land]]
+species = "growlithe"
+level_lower = 2
+level_upper = 2
+accessibility = [
+    "firered",
+]
+
+[[route_201.land]]
+species = "nidoran_m"
+level_lower = 2
+level_upper = 3
+accessibility = [
+    "radar",
+]
+
+[[route_201.land]]
+species = "nidoran_f"
+level_lower = 2
+level_upper = 3
+accessibility = [
+    "radar",
+]
+
+[route_202]
+id = 141
+
+[[route_202.land]]
+species = "shinx"
+level_lower = 4
+level_upper = 4
+
+[[route_202.land]]
+species = "bidoof"
+level_lower = 2
+level_upper = 3
+
+[[route_202.land]]
+species = "starly"
+level_lower = 2
+level_upper = 4
+
+[[route_202.land]]
+species = "kricketot"
+level_lower = 3
+level_upper = 4
+
+[[route_202.land]]
+species = "zigzagoon"
+level_lower = 3
+level_upper = 3
+accessibility = [
+    "swarms",
+]
+
+[[route_202.land]]
+species = "growlithe"
+level_lower = 2
+level_upper = 2
+accessibility = [
+    "firered",
+]
+
+[[route_202.land]]
+species = "sentret"
+level_lower = 2
+level_upper = 4
+accessibility = [
+    "radar",
+]
+
+[route_203]
+surf = [
+    { species = "psyduck", level_lower = 20, level_upper = 30 },
+    { species = "golduck", level_lower = 20, level_upper = 40 },
+]
+good_rod = [
+    { species = "magikarp", level_lower = 10, level_upper = 25 },
+    { species = "goldeen", level_lower = 10, level_upper = 25 },
+]
+old_rod = [
+    { species = "magikarp", level_lower = 3, level_upper = 15 },
+]
+super_rod = [
+    { species = "gyarados", level_lower = 30, level_upper = 55 },
+    { species = "seaking", level_lower = 30, level_upper = 55 },
+]
+id = 142
+
+[[route_203.land]]
+species = "starly"
+level_lower = 5
+level_upper = 7
+
+[[route_203.land]]
+species = "shinx"
+level_lower = 5
+level_upper = 5
+
+[[route_203.land]]
+species = "kricketot"
+level_lower = 4
+level_upper = 5
+
+[[route_203.land]]
+species = "bidoof"
+level_lower = 4
+level_upper = 7
+
+[[route_203.land]]
+species = "abra"
+level_lower = 4
+level_upper = 5
+
+[[route_203.land]]
+species = "cubone"
+level_lower = 4
+level_upper = 4
+accessibility = [
+    "swarms",
+]
+
+[[route_203.land]]
+species = "zubat"
+level_lower = 4
+level_upper = 4
+accessibility = [
+    "night",
+]
+
+[[route_203.land]]
+species = "seedot"
+level_lower = 6
+level_upper = 6
+accessibility = [
+    "ruby",
+]
+
+[[route_203.land]]
+species = "lotad"
+level_lower = 6
+level_upper = 6
+accessibility = [
+    "sapphire",
+]
+
+[[route_203.land]]
+species = "pineco"
+level_lower = 6
+level_upper = 6
+accessibility = [
+    "emerald",
+]
+
+[route_204_south]
+surf = [
+    { species = "psyduck", level_lower = 20, level_upper = 30 },
+    { species = "golduck", level_lower = 20, level_upper = 40 },
+]
+good_rod = [
+    { species = "magikarp", level_lower = 10, level_upper = 25 },
+    { species = "goldeen", level_lower = 10, level_upper = 25 },
+]
+old_rod = [
+    { species = "magikarp", level_lower = 3, level_upper = 15 },
+]
+super_rod = [
+    { species = "gyarados", level_lower = 30, level_upper = 55 },
+    { species = "seaking", level_lower = 30, level_upper = 55 },
+]
+id = 143
+
+[[route_204_south.land]]
+species = "starly"
+level_lower = 4
+level_upper = 6
+
+[[route_204_south.land]]
+species = "bidoof"
+level_lower = 4
+level_upper = 6
+
+[[route_204_south.land]]
+species = "wurmple"
+level_lower = 4
+level_upper = 4
+
+[[route_204_south.land]]
+species = "kricketot"
+level_lower = 3
+level_upper = 4
+
+[[route_204_south.land]]
+species = "budew"
+level_lower = 3
+level_upper = 5
+
+[[route_204_south.land]]
+species = "shinx"
+level_lower = 4
+level_upper = 5
+
+[[route_204_south.land]]
+species = "zubat"
+level_lower = 3
+level_upper = 3
+accessibility = [
+    "night",
+]
+
+[[route_204_south.land]]
+species = "seedot"
+level_lower = 5
+level_upper = 5
+accessibility = [
+    "ruby",
+]
+
+[[route_204_south.land]]
+species = "lotad"
+level_lower = 5
+level_upper = 5
+accessibility = [
+    "sapphire",
+]
+
+[[route_204_south.land]]
+species = "pineco"
+level_lower = 5
+level_upper = 5
+accessibility = [
+    "emerald",
+]
+
+[[route_204_south.land]]
+species = "caterpie"
+level_lower = 5
+level_upper = 5
+accessibility = [
+    "firered",
+]
+
+[[route_204_south.land]]
+species = "weedle"
+level_lower = 5
+level_upper = 5
+accessibility = [
+    "leafgreen",
+]
+
+[route_204_north]
+surf = [
+    { species = "psyduck", level_lower = 20, level_upper = 30 },
+    { species = "golduck", level_lower = 20, level_upper = 40 },
+]
+good_rod = [
+    { species = "magikarp", level_lower = 10, level_upper = 25 },
+    { species = "goldeen", level_lower = 10, level_upper = 25 },
+]
+old_rod = [
+    { species = "magikarp", level_lower = 3, level_upper = 15 },
+]
+super_rod = [
+    { species = "gyarados", level_lower = 30, level_upper = 55 },
+    { species = "seaking", level_lower = 30, level_upper = 55 },
+]
+id = 144
+
+[[route_204_north.land]]
+species = "starly"
+level_lower = 9
+level_upper = 11
+
+[[route_204_north.land]]
+species = "bidoof"
+level_lower = 9
+level_upper = 11
+
+[[route_204_north.land]]
+species = "wurmple"
+level_lower = 9
+level_upper = 9
+
+[[route_204_north.land]]
+species = "kricketot"
+level_lower = 8
+level_upper = 9
+
+[[route_204_north.land]]
+species = "budew"
+level_lower = 8
+level_upper = 10
+
+[[route_204_north.land]]
+species = "shinx"
+level_lower = 10
+level_upper = 10
+
+[[route_204_north.land]]
+species = "zubat"
+level_lower = 8
+level_upper = 8
+accessibility = [
+    "night",
+]
+
+[[route_204_north.land]]
+species = "seedot"
+level_lower = 10
+level_upper = 10
+accessibility = [
+    "ruby",
+]
+
+[[route_204_north.land]]
+species = "lotad"
+level_lower = 10
+level_upper = 10
+accessibility = [
+    "sapphire",
+]
+
+[[route_204_north.land]]
+species = "pineco"
+level_lower = 10
+level_upper = 10
+accessibility = [
+    "emerald",
+]
+
+[[route_204_north.land]]
+species = "caterpie"
+level_lower = 10
+level_upper = 10
+accessibility = [
+    "firered",
+]
+
+[[route_204_north.land]]
+species = "weedle"
+level_lower = 10
+level_upper = 10
+accessibility = [
+    "leafgreen",
+]
+
+[[route_204_north.land]]
+species = "sunkern"
+level_lower = 9
+level_upper = 11
+accessibility = [
+    "radar",
+]
+
+[route_205_south]
+surf = [
+    { species = "shellos", level_lower = 20, level_upper = 30 },
+    { species = "tentacool", level_lower = 20, level_upper = 30 },
+    { species = "gastrodon", level_lower = 20, level_upper = 40 },
+    { species = "tentacruel", level_lower = 20, level_upper = 40 },
+]
+good_rod = [
+    { species = "magikarp", level_lower = 10, level_upper = 25 },
+    { species = "finneon", level_lower = 10, level_upper = 25 },
+]
+old_rod = [
+    { species = "magikarp", level_lower = 3, level_upper = 15 },
+]
+super_rod = [
+    { species = "gyarados", level_lower = 30, level_upper = 55 },
+    { species = "lumineon", level_lower = 30, level_upper = 55 },
+    { species = "shellder", level_lower = 20, level_upper = 50 },
+]
+id = 145
+
+[[route_205_south.land]]
+species = "shellos"
+level_lower = 9
+level_upper = 12
+
+[[route_205_south.land]]
+species = "buizel"
+level_lower = 10
+level_upper = 11
+
+[[route_205_south.land]]
+species = "bidoof"
+level_lower = 10
+level_upper = 10
+
+[[route_205_south.land]]
+species = "pachirisu"
+level_lower = 11
+level_upper = 11
+
+[[route_205_south.land]]
+species = "hoppip"
+level_lower = 10
+level_upper = 12
+accessibility = [
+    "radar",
+]
+
+[route_205_north]
+surf = [
+    { species = "psyduck", level_lower = 20, level_upper = 30 },
+    { species = "golduck", level_lower = 20, level_upper = 40 },
+]
+good_rod = [
+    { species = "magikarp", level_lower = 10, level_upper = 25 },
+    { species = "barboach", level_lower = 10, level_upper = 25 },
+]
+old_rod = [
+    { species = "magikarp", level_lower = 3, level_upper = 15 },
+]
+super_rod = [
+    { species = "gyarados", level_lower = 30, level_upper = 55 },
+    { species = "whiscash", level_lower = 30, level_upper = 55 },
+]
+id = 146
+
+[[route_205_north.land]]
+species = "bidoof"
+level_lower = 12
+level_upper = 14
+
+[[route_205_north.land]]
+species = "budew"
+level_lower = 12
+level_upper = 14
+
+[[route_205_north.land]]
+species = "wurmple"
+level_lower = 13
+level_upper = 13
+
+[[route_205_north.land]]
+species = "kricketot"
+level_lower = 12
+level_upper = 13
+
+[[route_205_north.land]]
+species = "silcoon"
+level_lower = 14
+level_upper = 14
+
+[[route_205_north.land]]
+species = "cascoon"
+level_lower = 14
+level_upper = 14
+
+[[route_205_north.land]]
+species = "beautifly"
+level_lower = 15
+level_upper = 15
+
+[[route_205_north.land]]
+species = "dustox"
+level_lower = 15
+level_upper = 15
+
+[[route_205_north.land]]
+species = "hoothoot"
+level_lower = 12
+level_upper = 12
+accessibility = [
+    "night",
+]
+
+[[route_205_north.land]]
+species = "lotad"
+level_lower = 13
+level_upper = 14
+accessibility = [
+    "sapphire",
+]
+
+[[route_205_north.land]]
+species = "slowpoke"
+level_lower = 14
+level_upper = 15
+accessibility = [
+    "radar",
+]
+
+[route_206]
+id = 147
+
+[[route_206.land]]
+species = "ponyta"
+level_lower = 16
+level_upper = 17
+
+[[route_206.land]]
+species = "geodude"
+level_lower = 18
+level_upper = 18
+
+[[route_206.land]]
+species = "gligar"
+level_lower = 16
+level_upper = 18
+
+[[route_206.land]]
+species = "kricketune"
+level_lower = 17
+level_upper = 18
+
+[[route_206.land]]
+species = "machop"
+level_lower = 19
+level_upper = 19
+
+[[route_206.land]]
+species = "larvitar"
+level_lower = 16
+level_upper = 16
+accessibility = [
+    "swarms",
+]
+
+[[route_206.land]]
+species = "zubat"
+level_lower = 17
+level_upper = 17
+accessibility = [
+    "night",
+]
+
+[[route_206.land]]
+species = "baltoy"
+level_lower = 16
+level_upper = 19
+accessibility = [
+    "radar",
+]
+
+[route_207]
+id = 148
+
+[[route_207.land]]
+species = "machop"
+level_lower = 5
+level_upper = 8
+
+[[route_207.land]]
+species = "geodude"
+level_lower = 7
+level_upper = 7
+
+[[route_207.land]]
+species = "ponyta"
+level_lower = 6
+level_upper = 7
+
+[[route_207.land]]
+species = "kricketot"
+level_lower = 5
+level_upper = 6
+
+[[route_207.land]]
+species = "phanpy"
+level_lower = 5
+level_upper = 7
+accessibility = [
+    "swarms",
+]
+
+[[route_207.land]]
+species = "zubat"
+level_lower = 5
+level_upper = 5
+accessibility = [
+    "night",
+]
+
+[[route_207.land]]
+species = "stantler"
+level_lower = 5
+level_upper = 7
+accessibility = [
+    "radar",
+]
+
+[route_208]
+surf = [
+    { species = "psyduck", level_lower = 20, level_upper = 20 },
+    { species = "golduck", level_lower = 20, level_upper = 40 },
+]
+good_rod = [
+    { species = "magikarp", level_lower = 10, level_upper = 25 },
+    { species = "goldeen", level_lower = 10, level_upper = 25 },
+]
+old_rod = [
+    { species = "magikarp", level_lower = 3, level_upper = 15 },
+]
+super_rod = [
+    { species = "gyarados", level_lower = 30, level_upper = 55 },
+    { species = "seaking", level_lower = 30, level_upper = 55 },
+]
+id = 149
+
+[[route_208.land]]
+species = "budew"
+level_lower = 19
+level_upper = 19
+
+[[route_208.land]]
+species = "bidoof"
+level_lower = 18
+level_upper = 18
+
+[[route_208.land]]
+species = "ralts"
+level_lower = 17
+level_upper = 18
+
+[[route_208.land]]
+species = "roselia"
+level_lower = 20
+level_upper = 20
+
+[[route_208.land]]
+species = "bibarel"
+level_lower = 20
+level_upper = 20
+
+[[route_208.land]]
+species = "dunsparce"
+level_lower = 18
+level_upper = 18
+accessibility = [
+    "swarms",
+]
+
+[[route_208.land]]
+species = "zubat"
+level_lower = 19
+level_upper = 19
+accessibility = [
+    "night",
+]
+
+[[route_208.land]]
+species = "zangoose"
+level_lower = 20
+level_upper = 20
+accessibility = [
+    "ruby",
+]
+
+[[route_208.land]]
+species = "seviper"
+level_lower = 20
+level_upper = 20
+accessibility = [
+    "sapphire",
+]
+
+[[route_208.land]]
+species = "smeargle"
+level_lower = 18
+level_upper = 20
+accessibility = [
+    "radar",
+]
+
+[route_209]
+surf = [
+    { species = "psyduck", level_lower = 20, level_upper = 30 },
+    { species = "golduck", level_lower = 20, level_upper = 40 },
+]
+good_rod = [
+    { species = "magikarp", level_lower = 10, level_upper = 25 },
+    { species = "goldeen", level_lower = 10, level_upper = 25 },
+]
+old_rod = [
+    { species = "magikarp", level_lower = 3, level_upper = 15 },
+]
+super_rod = [
+    { species = "gyarados", level_lower = 30, level_upper = 55 },
+    { species = "seaking", level_lower = 30, level_upper = 55 },
+]
+id = 150
+
+[[route_209.land]]
+species = "roselia"
+level_lower = 20
+level_upper = 20
+
+[[route_209.land]]
+species = "bibarel"
+level_lower = 19
+level_upper = 19
+
+[[route_209.land]]
+species = "staravia"
+level_lower = 18
+level_upper = 19
+
+[[route_209.land]]
+species = "ralts"
+level_lower = 17
+level_upper = 19
+
+[[route_209.land]]
+species = "chansey"
+level_lower = 17
+level_upper = 19
+
+[[route_209.land]]
+species = "snubbull"
+level_lower = 18
+level_upper = 19
+accessibility = [
+    "swarms",
+]
+
+[[route_209.land]]
+species = "zubat"
+level_lower = 19
+level_upper = 19
+accessibility = [
+    "night",
+]
+
+[[route_209.land]]
+species = "duskull"
+level_lower = 17
+level_upper = 17
+accessibility = [
+    "night",
+]
+
+[[route_209.land]]
+species = "vulpix"
+level_lower = 17
+level_upper = 19
+accessibility = [
+    "leafgreen",
+]
+
+[[route_209.land]]
+species = "kirlia"
+level_lower = 18
+level_upper = 19
+accessibility = [
+    "radar",
+]
+
+[route_209_lost_tower_1f]
+id = 151
+
+[[route_209_lost_tower_1f.land]]
+species = "gastly"
+level_lower = 17
+level_upper = 20
+
+[[route_209_lost_tower_1f.land]]
+species = "zubat"
+level_lower = 17
+level_upper = 19
+
+[[route_209_lost_tower_1f.land]]
+species = "duskull"
+level_lower = 17
+level_upper = 19
+accessibility = [
+    "night",
+]
+
+[route_209_lost_tower_2f]
+id = 152
+
+[[route_209_lost_tower_2f.land]]
+species = "gastly"
+level_lower = 17
+level_upper = 20
+
+[[route_209_lost_tower_2f.land]]
+species = "zubat"
+level_lower = 17
+level_upper = 19
+
+[[route_209_lost_tower_2f.land]]
+species = "duskull"
+level_lower = 17
+level_upper = 19
+accessibility = [
+    "night",
+]
+
+[route_209_lost_tower_3f]
+id = 153
+
+[[route_209_lost_tower_3f.land]]
+species = "gastly"
+level_lower = 18
+level_upper = 21
+
+[[route_209_lost_tower_3f.land]]
+species = "zubat"
+level_lower = 18
+level_upper = 20
+
+[[route_209_lost_tower_3f.land]]
+species = "golbat"
+level_lower = 21
+level_upper = 21
+
+[[route_209_lost_tower_3f.land]]
+species = "duskull"
+level_lower = 18
+level_upper = 20
+accessibility = [
+    "night",
+]
+
+[route_209_lost_tower_4f]
+id = 154
+
+[[route_209_lost_tower_4f.land]]
+species = "gastly"
+level_lower = 18
+level_upper = 21
+
+[[route_209_lost_tower_4f.land]]
+species = "zubat"
+level_lower = 18
+level_upper = 20
+
+[[route_209_lost_tower_4f.land]]
+species = "golbat"
+level_lower = 21
+level_upper = 21
+
+[[route_209_lost_tower_4f.land]]
+species = "duskull"
+level_lower = 18
+level_upper = 20
+accessibility = [
+    "night",
+]
+
+[route_209_lost_tower_5f]
+id = 155
+
+[[route_209_lost_tower_5f.land]]
+species = "gastly"
+level_lower = 19
+level_upper = 22
+
+[[route_209_lost_tower_5f.land]]
+species = "zubat"
+level_lower = 19
+level_upper = 21
+
+[[route_209_lost_tower_5f.land]]
+species = "golbat"
+level_lower = 22
+level_upper = 22
+
+[[route_209_lost_tower_5f.land]]
+species = "duskull"
+level_lower = 19
+level_upper = 21
+accessibility = [
+    "night",
+]
+
+[route_210_south]
+id = 156
+
+[[route_210_south.land]]
+species = "staravia"
+level_lower = 19
+level_upper = 19
+
+[[route_210_south.land]]
+species = "geodude"
+level_lower = 18
+level_upper = 18
+
+[[route_210_south.land]]
+species = "scyther"
+level_lower = 19
+level_upper = 19
+
+[[route_210_south.land]]
+species = "ponyta"
+level_lower = 20
+level_upper = 21
+
+[[route_210_south.land]]
+species = "roselia"
+level_lower = 21
+level_upper = 21
+
+[[route_210_south.land]]
+species = "chansey"
+level_lower = 19
+level_upper = 21
+
+[[route_210_south.land]]
+species = "noctowl"
+level_lower = 21
+level_upper = 21
+accessibility = [
+    "night",
+]
+
+[[route_210_south.land]]
+species = "hoothoot"
+level_lower = 20
+level_upper = 20
+accessibility = [
+    "night",
+]
+
+[[route_210_south.land]]
+species = "seedot"
+level_lower = 21
+level_upper = 21
+accessibility = [
+    "ruby",
+]
+
+[[route_210_south.land]]
+species = "nuzleaf"
+level_lower = 19
+level_upper = 19
+accessibility = [
+    "ruby",
+]
+
+[[route_210_south.land]]
+species = "pineco"
+level_lower = 19
+level_upper = 21
+accessibility = [
+    "emerald",
+]
+
+[[route_210_south.land]]
+species = "miltank"
+level_lower = 20
+level_upper = 21
+accessibility = [
+    "radar",
+]
+
+[[route_210_south.land]]
+species = "tauros"
+level_lower = 19
+level_upper = 21
+accessibility = [
+    "radar",
+]
+
+[route_210_north]
+surf = [
+    { species = "psyduck", level_lower = 20, level_upper = 30 },
+    { species = "golduck", level_lower = 20, level_upper = 40 },
+]
+good_rod = [
+    { species = "magikarp", level_lower = 10, level_upper = 25 },
+    { species = "barboach", level_lower = 15, level_upper = 20 },
+    { species = "whiscash", level_lower = 25, level_upper = 35 },
+]
+old_rod = [
+    { species = "magikarp", level_lower = 3, level_upper = 15 },
+]
+super_rod = [
+    { species = "gyarados", level_lower = 30, level_upper = 55 },
+    { species = "whiscash", level_lower = 30, level_upper = 55 },
+]
+id = 157
+
+[[route_210_north.land]]
+species = "swablu"
+level_lower = 27
+level_upper = 27
+
+[[route_210_north.land]]
+species = "bibarel"
+level_lower = 28
+level_upper = 28
+
+[[route_210_north.land]]
+species = "scyther"
+level_lower = 29
+level_upper = 29
+
+[[route_210_north.land]]
+species = "meditite"
+level_lower = 27
+level_upper = 29
+
+[[route_210_north.land]]
+species = "machop"
+level_lower = 29
+level_upper = 29
+
+[[route_210_north.land]]
+species = "machoke"
+level_lower = 30
+level_upper = 30
+
+[[route_210_north.land]]
+species = "noctowl"
+level_lower = 27
+level_upper = 27
+accessibility = [
+    "night",
+]
+
+[[route_210_north.land]]
+species = "hoothoot"
+level_lower = 27
+level_upper = 27
+accessibility = [
+    "night",
+]
+
+[[route_210_north.land]]
+species = "zangoose"
+level_lower = 29
+level_upper = 30
+accessibility = [
+    "ruby",
+]
+
+[[route_210_north.land]]
+species = "seviper"
+level_lower = 29
+level_upper = 30
+accessibility = [
+    "sapphire",
+]
+
+[[route_210_north.land]]
+species = "bagon"
+level_lower = 28
+level_upper = 30
+accessibility = [
+    "radar",
+]
+
+[route_211_west]
+id = 158
+
+[[route_211_west.land]]
+species = "meditite"
+level_lower = 13
+level_upper = 15
+
+[[route_211_west.land]]
+species = "bidoof"
+level_lower = 14
+level_upper = 14
+
+[[route_211_west.land]]
+species = "chingling"
+level_lower = 16
+level_upper = 16
+
+[[route_211_west.land]]
+species = "machop"
+level_lower = 15
+level_upper = 15
+
+[[route_211_west.land]]
+species = "bronzor"
+level_lower = 16
+level_upper = 16
+
+[[route_211_west.land]]
+species = "zubat"
+level_lower = 14
+level_upper = 14
+accessibility = [
+    "night",
+]
+
+[[route_211_west.land]]
+species = "hoothoot"
+level_lower = 15
+level_upper = 15
+accessibility = [
+    "night",
+]
+
+[[route_211_west.land]]
+species = "teddiursa"
+level_lower = 15
+level_upper = 16
+accessibility = [
+    "emerald",
+]
+
+[[route_211_west.land]]
+species = "tyrogue"
+level_lower = 14
+level_upper = 16
+accessibility = [
+    "radar",
+]
+
+[route_211_east]
+id = 159
+
+[[route_211_east.land]]
+species = "meditite"
+level_lower = 27
+level_upper = 29
+
+[[route_211_east.land]]
+species = "graveler"
+level_lower = 28
+level_upper = 28
+
+[[route_211_east.land]]
+species = "chingling"
+level_lower = 28
+level_upper = 30
+
+[[route_211_east.land]]
+species = "machoke"
+level_lower = 29
+level_upper = 30
+
+[[route_211_east.land]]
+species = "bronzor"
+level_lower = 29
+level_upper = 29
+
+[[route_211_east.land]]
+species = "zubat"
+level_lower = 28
+level_upper = 28
+accessibility = [
+    "night",
+]
+
+[[route_211_east.land]]
+species = "noctowl"
+level_lower = 29
+level_upper = 29
+accessibility = [
+    "night",
+]
+
+[route_212_north]
+surf = [
+    { species = "psyduck", level_lower = 20, level_upper = 30 },
+    { species = "golduck", level_lower = 20, level_upper = 40 },
+]
+good_rod = [
+    { species = "magikarp", level_lower = 10, level_upper = 25 },
+    { species = "goldeen", level_lower = 10, level_upper = 25 },
+]
+old_rod = [
+    { species = "magikarp", level_lower = 3, level_upper = 15 },
+]
+super_rod = [
+    { species = "gyarados", level_lower = 30, level_upper = 55 },
+    { species = "seaking", level_lower = 30, level_upper = 55 },
+]
+id = 160
+
+[[route_212_north.land]]
+species = "roselia"
+level_lower = 23
+level_upper = 24
+
+[[route_212_north.land]]
+species = "marill"
+level_lower = 21
+level_upper = 23
+
+[[route_212_north.land]]
+species = "staravia"
+level_lower = 21
+level_upper = 23
+
+[[route_212_north.land]]
+species = "kirlia"
+level_lower = 24
+level_upper = 24
+
+[[route_212_north.land]]
+species = "ralts"
+level_lower = 22
+level_upper = 22
+accessibility = [
+    "day",
+]
+
+[[route_212_north.land]]
+species = "smeargle"
+level_lower = 21
+level_upper = 24
+accessibility = [
+    "radar",
+]
+
+[route_212_south]
+surf = [
+    { species = "shellos", level_lower = 20, level_upper = 30 },
+    { species = "tentacool", level_lower = 20, level_upper = 30 },
+    { species = "gastrodon", level_lower = 20, level_upper = 40 },
+    { species = "tentacruel", level_lower = 20, level_upper = 40 },
+]
+good_rod = [
+    { species = "magikarp", level_lower = 10, level_upper = 25 },
+    { species = "remoraid", level_lower = 10, level_upper = 25 },
+]
+old_rod = [
+    { species = "magikarp", level_lower = 3, level_upper = 15 },
+]
+super_rod = [
+    { species = "gyarados", level_lower = 30, level_upper = 55 },
+    { species = "octillery", level_lower = 30, level_upper = 55 },
+]
+id = 161
+
+[[route_212_south.land]]
+species = "shellos"
+level_lower = 23
+level_upper = 26
+
+[[route_212_south.land]]
+species = "quagsire"
+level_lower = 24
+level_upper = 26
+
+[[route_212_south.land]]
+species = "buizel"
+level_lower = 23
+level_upper = 25
+
+[[route_212_south.land]]
+species = "croagunk"
+level_lower = 25
+level_upper = 25
+
+[[route_212_south.land]]
+species = "lombre"
+level_lower = 23
+level_upper = 23
+accessibility = [
+    "sapphire",
+]
+
+[[route_212_south.land]]
+species = "lotad"
+level_lower = 26
+level_upper = 26
+accessibility = [
+    "sapphire",
+]
+
+[[route_212_south.land]]
+species = "ekans"
+level_lower = 23
+level_upper = 26
+accessibility = [
+    "firered",
+]
+
+[[route_212_south.land]]
+species = "grimer"
+level_lower = 23
+level_upper = 26
+accessibility = [
+    "radar",
+]
+
+[route_213]
+surf = [
+    { species = "tentacool", level_lower = 20, level_upper = 30 },
+    { species = "wingull", level_lower = 20, level_upper = 30 },
+    { species = "tentacruel", level_lower = 20, level_upper = 40 },
+    { species = "shellos", level_lower = 20, level_upper = 30 },
+    { species = "gastrodon", level_lower = 20, level_upper = 40 },
+]
+good_rod = [
+    { species = "magikarp", level_lower = 10, level_upper = 25 },
+    { species = "remoraid", level_lower = 10, level_upper = 25 },
+]
+old_rod = [
+    { species = "magikarp", level_lower = 3, level_upper = 15 },
+]
+super_rod = [
+    { species = "gyarados", level_lower = 30, level_upper = 55 },
+    { species = "octillery", level_lower = 30, level_upper = 55 },
+]
+id = 162
+
+[[route_213.land]]
+species = "shellos"
+level_lower = 23
+level_upper = 26
+
+[[route_213.land]]
+species = "buizel"
+level_lower = 23
+level_upper = 25
+
+[[route_213.land]]
+species = "chatot"
+level_lower = 23
+level_upper = 25
+
+[[route_213.land]]
+species = "wingull"
+level_lower = 26
+level_upper = 26
+
+[[route_213.land]]
+species = "swellow"
+level_lower = 25
+level_upper = 26
+accessibility = [
+    "radar",
+]
+
+[route_214]
+surf = [
+    { species = "psyduck", level_lower = 20, level_upper = 30 },
+    { species = "golduck", level_lower = 20, level_upper = 40 },
+]
+good_rod = [
+    { species = "magikarp", level_lower = 10, level_upper = 25 },
+    { species = "goldeen", level_lower = 10, level_upper = 25 },
+]
+old_rod = [
+    { species = "magikarp", level_lower = 3, level_upper = 15 },
+]
+super_rod = [
+    { species = "gyarados", level_lower = 30, level_upper = 55 },
+    { species = "seaking", level_lower = 30, level_upper = 55 },
+]
+id = 163
+
+[[route_214.land]]
+species = "graveler"
+level_lower = 22
+level_upper = 24
+
+[[route_214.land]]
+species = "geodude"
+level_lower = 21
+level_upper = 21
+
+[[route_214.land]]
+species = "rhyhorn"
+level_lower = 22
+level_upper = 24
+
+[[route_214.land]]
+species = "houndour"
+level_lower = 22
+level_upper = 24
+
+[[route_214.land]]
+species = "spoink"
+level_lower = 21
+level_upper = 23
+accessibility = [
+    "swarms",
+]
+
+[[route_214.land]]
+species = "zubat"
+level_lower = 22
+level_upper = 22
+accessibility = [
+    "night",
+]
+
+[[route_214.land]]
+species = "vulpix"
+level_lower = 24
+level_upper = 24
+accessibility = [
+    "leafgreen",
+]
+
+[[route_214.land]]
+species = "poochyena"
+level_lower = 23
+level_upper = 24
+accessibility = [
+    "radar",
+]
+
+[route_215]
+id = 164
+
+[[route_215.land]]
+species = "staravia"
+level_lower = 21
+level_upper = 22
+
+[[route_215.land]]
+species = "marill"
+level_lower = 21
+level_upper = 22
+
+[[route_215.land]]
+species = "scyther"
+level_lower = 20
+level_upper = 20
+
+[[route_215.land]]
+species = "lickitung"
+level_lower = 20
+level_upper = 20
+
+[[route_215.land]]
+species = "abra"
+level_lower = 19
+level_upper = 19
+
+[[route_215.land]]
+species = "kadabra"
+level_lower = 22
+level_upper = 22
+
+[[route_215.land]]
+species = "drowzee"
+level_lower = 19
+level_upper = 20
+accessibility = [
+    "swarms",
+]
+
+[route_216]
+id = 165
+
+[[route_216.land]]
+species = "snover"
+level_lower = 32
+level_upper = 35
+
+[[route_216.land]]
+species = "sneasel"
+level_lower = 33
+level_upper = 35
+
+[[route_216.land]]
+species = "meditite"
+level_lower = 32
+level_upper = 33
+
+[[route_216.land]]
+species = "graveler"
+level_lower = 35
+level_upper = 35
+
+[[route_216.land]]
+species = "zubat"
+level_lower = 32
+level_upper = 32
+accessibility = [
+    "night",
+]
+
+[[route_216.land]]
+species = "snorunt"
+level_lower = 33
+level_upper = 33
+accessibility = [
+    "night",
+]
+
+[[route_216.land]]
+species = "ursaring"
+level_lower = 35
+level_upper = 35
+accessibility = [
+    "emerald",
+]
+
+[route_217]
+id = 166
+
+[[route_217.land]]
+species = "snover"
+level_lower = 33
+level_upper = 35
+
+[[route_217.land]]
+species = "swinub"
+level_lower = 32
+level_upper = 32
+
+[[route_217.land]]
+species = "sneasel"
+level_lower = 33
+level_upper = 35
+
+[[route_217.land]]
+species = "delibird"
+level_lower = 32
+level_upper = 33
+accessibility = [
+    "swarms",
+]
+
+[[route_217.land]]
+species = "snorunt"
+level_lower = 33
+level_upper = 33
+accessibility = [
+    "night",
+]
+
+[[route_217.land]]
+species = "ursaring"
+level_lower = 35
+level_upper = 35
+accessibility = [
+    "emerald",
+]
+
+[[route_217.land]]
+species = "piloswine"
+level_lower = 34
+level_upper = 35
+accessibility = [
+    "radar",
+]
+
+[route_218]
+surf = [
+    { species = "tentacool", level_lower = 20, level_upper = 30 },
+    { species = "shellos", level_lower = 20, level_upper = 30 },
+    { species = "tentacruel", level_lower = 20, level_upper = 40 },
+    { species = "gastrodon", level_lower = 20, level_upper = 40 },
+]
+good_rod = [
+    { species = "magikarp", level_lower = 10, level_upper = 25 },
+    { species = "finneon", level_lower = 10, level_upper = 25 },
+]
+old_rod = [
+    { species = "magikarp", level_lower = 3, level_upper = 15 },
+]
+super_rod = [
+    { species = "gyarados", level_lower = 30, level_upper = 55 },
+    { species = "lumineon", level_lower = 30, level_upper = 55 },
+]
+id = 167
+
+[[route_218.land]]
+species = "gastrodon"
+level_lower = 28
+level_upper = 30
+
+[[route_218.land]]
+species = "floatzel"
+level_lower = 30
+level_upper = 31
+
+[[route_218.land]]
+species = "chatot"
+level_lower = 28
+level_upper = 30
+
+[[route_218.land]]
+species = "mr_mime"
+level_lower = 29
+level_upper = 31
+
+[[route_218.land]]
+species = "voltorb"
+level_lower = 28
+level_upper = 29
+accessibility = [
+    "swarms",
+]
+
+[route_219]
+surf = [
+    { species = "tentacool", level_lower = 20, level_upper = 30 },
+    { species = "wingull", level_lower = 20, level_upper = 30 },
+    { species = "tentacruel", level_lower = 20, level_upper = 40 },
+    { species = "pelipper", level_lower = 20, level_upper = 40 },
+]
+good_rod = [
+    { species = "magikarp", level_lower = 10, level_upper = 25 },
+    { species = "finneon", level_lower = 15, level_upper = 20 },
+    { species = "lumineon", level_lower = 25, level_upper = 35 },
+]
+old_rod = [
+    { species = "magikarp", level_lower = 3, level_upper = 15 },
+]
+super_rod = [
+    { species = "gyarados", level_lower = 30, level_upper = 55 },
+    { species = "lumineon", level_lower = 30, level_upper = 55 },
+]
+id = 168
+
+[route_221]
+surf = [
+    { species = "tentacool", level_lower = 20, level_upper = 30 },
+    { species = "wingull", level_lower = 20, level_upper = 30 },
+    { species = "tentacruel", level_lower = 20, level_upper = 40 },
+    { species = "pelipper", level_lower = 20, level_upper = 40 },
+]
+good_rod = [
+    { species = "magikarp", level_lower = 10, level_upper = 25 },
+    { species = "finneon", level_lower = 15, level_upper = 20 },
+    { species = "lumineon", level_lower = 25, level_upper = 35 },
+]
+old_rod = [
+    { species = "magikarp", level_lower = 3, level_upper = 15 },
+]
+super_rod = [
+    { species = "gyarados", level_lower = 30, level_upper = 55 },
+    { species = "lumineon", level_lower = 30, level_upper = 55 },
+]
+id = 169
+
+[[route_221.land]]
+species = "floatzel"
+level_lower = 28
+level_upper = 31
+
+[[route_221.land]]
+species = "girafarig"
+level_lower = 30
+level_upper = 30
+
+[[route_221.land]]
+species = "roselia"
+level_lower = 28
+level_upper = 30
+
+[[route_221.land]]
+species = "sudowoodo"
+level_lower = 29
+level_upper = 29
+
+[[route_221.land]]
+species = "farfetchd"
+level_lower = 28
+level_upper = 29
+accessibility = [
+    "swarms",
+]
+
+[[route_221.land]]
+species = "nidorino"
+level_lower = 31
+level_upper = 31
+accessibility = [
+    "radar",
+]
+
+[[route_221.land]]
+species = "nidorina"
+level_lower = 30
+level_upper = 30
+accessibility = [
+    "radar",
+]
+
+[route_222]
+surf = [
+    { species = "tentacool", level_lower = 30, level_upper = 40 },
+    { species = "wingull", level_lower = 30, level_upper = 40 },
+    { species = "tentacruel", level_lower = 30, level_upper = 50 },
+    { species = "pelipper", level_lower = 30, level_upper = 50 },
+]
+good_rod = [
+    { species = "magikarp", level_lower = 10, level_upper = 25 },
+    { species = "remoraid", level_lower = 10, level_upper = 25 },
+]
+old_rod = [
+    { species = "magikarp", level_lower = 3, level_upper = 15 },
+]
+super_rod = [
+    { species = "gyarados", level_lower = 30, level_upper = 55 },
+    { species = "octillery", level_lower = 30, level_upper = 55 },
+]
+id = 170
+
+[[route_222.land]]
+species = "electabuzz"
+level_lower = 41
+level_upper = 41
+
+[[route_222.land]]
+species = "floatzel"
+level_lower = 38
+level_upper = 41
+
+[[route_222.land]]
+species = "chatot"
+level_lower = 38
+level_upper = 38
+
+[[route_222.land]]
+species = "wingull"
+level_lower = 38
+level_upper = 38
+
+[[route_222.land]]
+species = "magnemite"
+level_lower = 39
+level_upper = 39
+
+[[route_222.land]]
+species = "luxio"
+level_lower = 40
+level_upper = 40
+
+[[route_222.land]]
+species = "pelipper"
+level_lower = 40
+level_upper = 40
+
+[[route_222.land]]
+species = "magneton"
+level_lower = 41
+level_upper = 41
+
+[[route_222.land]]
+species = "skitty"
+level_lower = 39
+level_upper = 40
+accessibility = [
+    "swarms",
+]
+
+[[route_222.land]]
+species = "flaaffy"
+level_lower = 38
+level_upper = 41
+accessibility = [
+    "radar",
+]
+
+[route_224]
+surf = [
+    { species = "pelipper", level_lower = 35, level_upper = 55 },
+    { species = "tentacruel", level_lower = 35, level_upper = 55 },
+    { species = "gastrodon", level_lower = 35, level_upper = 55 },
+]
+good_rod = [
+    { species = "magikarp", level_lower = 10, level_upper = 25 },
+    { species = "remoraid", level_lower = 10, level_upper = 25 },
+]
+old_rod = [
+    { species = "magikarp", level_lower = 3, level_upper = 15 },
+]
+super_rod = [
+    { species = "gyarados", level_lower = 30, level_upper = 55 },
+    { species = "octillery", level_lower = 30, level_upper = 55 },
+    { species = "luvdisc", level_lower = 20, level_upper = 30 },
+]
+id = 171
+
+[[route_224.land]]
+species = "floatzel"
+level_lower = 50
+level_upper = 50
+
+[[route_224.land]]
+species = "roselia"
+level_lower = 50
+level_upper = 50
+
+[[route_224.land]]
+species = "bellsprout"
+level_lower = 49
+level_upper = 49
+
+[[route_224.land]]
+species = "pelipper"
+level_lower = 51
+level_upper = 51
+
+[[route_224.land]]
+species = "gastrodon"
+level_lower = 49
+level_upper = 49
+
+[[route_224.land]]
+species = "gloom"
+level_lower = 51
+level_upper = 51
+
+[[route_224.land]]
+species = "weepinbell"
+level_lower = 51
+level_upper = 51
+
+[[route_224.land]]
+species = "beautifly"
+level_lower = 52
+level_upper = 52
+
+[[route_224.land]]
+species = "dustox"
+level_lower = 52
+level_upper = 52
+
+[[route_224.land]]
+species = "natu"
+level_lower = 50
+level_upper = 50
+accessibility = [
+    "swarms",
+]
+
+[[route_224.land]]
+species = "oddish"
+level_lower = 49
+level_upper = 49
+accessibility = [
+    "night",
+]
+
+[[route_224.land]]
+species = "shuckle"
+level_lower = 52
+level_upper = 52
+accessibility = [
+    "emerald",
+]
+
+[route_225]
+surf = [
+    { species = "golduck", level_lower = 35, level_upper = 55 },
+    { species = "psyduck", level_lower = 35, level_upper = 45 },
+]
+good_rod = [
+    { species = "magikarp", level_lower = 10, level_upper = 25 },
+    { species = "barboach", level_lower = 10, level_upper = 25 },
+]
+old_rod = [
+    { species = "magikarp", level_lower = 3, level_upper = 15 },
+]
+super_rod = [
+    { species = "gyarados", level_lower = 30, level_upper = 55 },
+    { species = "whiscash", level_lower = 30, level_upper = 55 },
+]
+id = 172
+
+[[route_225.land]]
+species = "machoke"
+level_lower = 50
+level_upper = 50
+
+[[route_225.land]]
+species = "graveler"
+level_lower = 49
+level_upper = 49
+
+[[route_225.land]]
+species = "fearow"
+level_lower = 48
+level_upper = 50
+
+[[route_225.land]]
+species = "raticate"
+level_lower = 49
+level_upper = 49
+
+[[route_225.land]]
+species = "spearow"
+level_lower = 47
+level_upper = 47
+
+[[route_225.land]]
+species = "rattata"
+level_lower = 47
+level_upper = 47
+
+[[route_225.land]]
+species = "makuhita"
+level_lower = 48
+level_upper = 49
+accessibility = [
+    "swarms",
+]
+
+[[route_225.land]]
+species = "banette"
+level_lower = 48
+level_upper = 50
+accessibility = [
+    "night",
+]
+
+[[route_225.land]]
+species = "primeape"
+level_lower = 49
+level_upper = 50
+accessibility = [
+    "radar",
+]
+
+[[route_225.land]]
+species = "mankey"
+level_lower = 47
+level_upper = 47
+accessibility = [
+    "radar",
+]
+
+[route_227]
+surf = [
+    { species = "poliwhirl", level_lower = 35, level_upper = 55 },
+    { species = "poliwag", level_lower = 35, level_upper = 45 },
+]
+good_rod = [
+    { species = "magikarp", level_lower = 10, level_upper = 25 },
+    { species = "barboach", level_lower = 10, level_upper = 25 },
+]
+old_rod = [
+    { species = "magikarp", level_lower = 3, level_upper = 15 },
+]
+super_rod = [
+    { species = "gyarados", level_lower = 30, level_upper = 55 },
+    { species = "whiscash", level_lower = 30, level_upper = 55 },
+]
+id = 173
+
+[[route_227.land]]
+species = "camerupt"
+level_lower = 53
+level_upper = 53
+
+[[route_227.land]]
+species = "rhydon"
+level_lower = 54
+level_upper = 54
+
+[[route_227.land]]
+species = "fearow"
+level_lower = 51
+level_upper = 53
+
+[[route_227.land]]
+species = "graveler"
+level_lower = 51
+level_upper = 53
+
+[[route_227.land]]
+species = "weezing"
+level_lower = 52
+level_upper = 52
+
+[[route_227.land]]
+species = "skarmory"
+level_lower = 53
+level_upper = 53
+
+[[route_227.land]]
+species = "numel"
+level_lower = 51
+level_upper = 51
+
+[[route_227.land]]
+species = "rhyhorn"
+level_lower = 52
+level_upper = 52
+
+[[route_227.land]]
+species = "spinda"
+level_lower = 53
+level_upper = 54
+accessibility = [
+    "swarms",
+]
+
+[[route_227.land]]
+species = "golbat"
+level_lower = 51
+level_upper = 51
+accessibility = [
+    "night",
+]
+
+[[route_227.land]]
+species = "torkoal"
+level_lower = 51
+level_upper = 53
+accessibility = [
+    "radar",
+]
+
+[route_228]
+surf = [
+    { species = "poliwhirl", level_lower = 35, level_upper = 55 },
+    { species = "poliwag", level_lower = 35, level_upper = 45 },
+]
+good_rod = [
+    { species = "magikarp", level_lower = 10, level_upper = 25 },
+    { species = "barboach", level_lower = 15, level_upper = 20 },
+    { species = "whiscash", level_lower = 25, level_upper = 35 },
+]
+old_rod = [
+    { species = "magikarp", level_lower = 3, level_upper = 15 },
+]
+super_rod = [
+    { species = "gyarados", level_lower = 30, level_upper = 55 },
+    { species = "whiscash", level_lower = 30, level_upper = 55 },
+]
+id = 174
+
+[[route_228.land]]
+species = "dugtrio"
+level_lower = 50
+level_upper = 50
+
+[[route_228.land]]
+species = "cacturne"
+level_lower = 50
+level_upper = 52
+
+[[route_228.land]]
+species = "hippowdon"
+level_lower = 50
+level_upper = 51
+
+[[route_228.land]]
+species = "rhydon"
+level_lower = 50
+level_upper = 52
+
+[[route_228.land]]
+species = "diglett"
+level_lower = 49
+level_upper = 49
+
+[[route_228.land]]
+species = "cacnea"
+level_lower = 50
+level_upper = 50
+
+[[route_228.land]]
+species = "beldum"
+level_lower = 51
+level_upper = 52
+accessibility = [
+    "swarms",
+]
+
+[[route_228.land]]
+species = "sandslash"
+level_lower = 49
+level_upper = 50
+accessibility = [
+    "leafgreen",
+]
+
+[route_229]
+surf = [
+    { species = "surskit", level_lower = 35, level_upper = 45 },
+    { species = "masquerain", level_lower = 35, level_upper = 55 },
+]
+good_rod = [
+    { species = "magikarp", level_lower = 10, level_upper = 25 },
+    { species = "goldeen", level_lower = 10, level_upper = 25 },
+]
+old_rod = [
+    { species = "magikarp", level_lower = 3, level_upper = 15 },
+]
+super_rod = [
+    { species = "gyarados", level_lower = 30, level_upper = 55 },
+    { species = "seaking", level_lower = 30, level_upper = 55 },
+]
+id = 175
+
+[[route_229.land]]
+species = "roselia"
+level_lower = 50
+level_upper = 50
+
+[[route_229.land]]
+species = "ledian"
+level_lower = 50
+level_upper = 50
+
+[[route_229.land]]
+species = "volbeat"
+level_lower = 49
+level_upper = 49
+
+[[route_229.land]]
+species = "illumise"
+level_lower = 49
+level_upper = 49
+
+[[route_229.land]]
+species = "pidgey"
+level_lower = 47
+level_upper = 50
+
+[[route_229.land]]
+species = "beautifly"
+level_lower = 48
+level_upper = 48
+
+[[route_229.land]]
+species = "dustox"
+level_lower = 48
+level_upper = 48
+
+[[route_229.land]]
+species = "pinsir"
+level_lower = 48
+level_upper = 49
+accessibility = [
+    "swarms",
+]
+
+[[route_229.land]]
+species = "ariados"
+level_lower = 50
+level_upper = 50
+accessibility = [
+    "night",
+]
+
+[[route_229.land]]
+species = "nuzleaf"
+level_lower = 48
+level_upper = 48
+accessibility = [
+    "ruby",
+]
+
+[[route_229.land]]
+species = "lombre"
+level_lower = 48
+level_upper = 48
+accessibility = [
+    "sapphire",
+]
+
+[[route_229.land]]
+species = "pineco"
+level_lower = 48
+level_upper = 48
+accessibility = [
+    "emerald",
+]
+
+[[route_229.land]]
+species = "venomoth"
+level_lower = 49
+level_upper = 49
+accessibility = [
+    "radar",
+]
+
+[[route_229.land]]
+species = "venonat"
+level_lower = 48
+level_upper = 48
+accessibility = [
+    "radar",
+]
+
+[twinleaf_town]
+surf = [
+    { species = "psyduck", level_lower = 20, level_upper = 30 },
+    { species = "golduck", level_lower = 20, level_upper = 40 },
+]
+good_rod = [
+    { species = "magikarp", level_lower = 10, level_upper = 25 },
+    { species = "goldeen", level_lower = 15, level_upper = 35 },
+]
+old_rod = [
+    { species = "magikarp", level_lower = 3, level_upper = 15 },
+]
+super_rod = [
+    { species = "gyarados", level_lower = 30, level_upper = 55 },
+    { species = "seaking", level_lower = 30, level_upper = 55 },
+]
+id = 176
+
+[celestic_town]
+surf = [
+    { species = "psyduck", level_lower = 20, level_upper = 30 },
+    { species = "golduck", level_lower = 20, level_upper = 40 },
+]
+good_rod = [
+    { species = "magikarp", level_lower = 10, level_upper = 25 },
+    { species = "goldeen", level_lower = 15, level_upper = 35 },
+]
+old_rod = [
+    { species = "magikarp", level_lower = 3, level_upper = 15 },
+]
+super_rod = [
+    { species = "gyarados", level_lower = 30, level_upper = 55 },
+    { species = "corphish", level_lower = 30, level_upper = 40 },
+    { species = "crawdaunt", level_lower = 40, level_upper = 55 },
+    { species = "seaking", level_lower = 40, level_upper = 55 },
+]
+id = 177
+
+[resort_area]
+surf = [
+    { species = "golduck", level_lower = 35, level_upper = 55 },
+    { species = "psyduck", level_lower = 35, level_upper = 45 },
+]
+good_rod = [
+    { species = "magikarp", level_lower = 10, level_upper = 35 },
+]
+old_rod = [
+    { species = "magikarp", level_lower = 3, level_upper = 15 },
+]
+super_rod = [
+    { species = "magikarp", level_lower = 1, level_upper = 100 },
+]
+id = 178
+
+[route_220]
+surf = [
+    { species = "tentacool", level_lower = 20, level_upper = 30 },
+    { species = "wingull", level_lower = 20, level_upper = 30 },
+    { species = "tentacruel", level_lower = 20, level_upper = 40 },
+    { species = "pelipper", level_lower = 20, level_upper = 40 },
+]
+good_rod = [
+    { species = "magikarp", level_lower = 10, level_upper = 25 },
+    { species = "finneon", level_lower = 15, level_upper = 20 },
+    { species = "lumineon", level_lower = 25, level_upper = 35 },
+]
+old_rod = [
+    { species = "magikarp", level_lower = 3, level_upper = 15 },
+]
+super_rod = [
+    { species = "gyarados", level_lower = 30, level_upper = 55 },
+    { species = "lumineon", level_lower = 30, level_upper = 55 },
+    { species = "chinchou", level_lower = 20, level_upper = 50 },
+]
+id = 179
+
+[route_223]
+surf = [
+    { species = "tentacruel", level_lower = 30, level_upper = 50 },
+    { species = "pelipper", level_lower = 30, level_upper = 50 },
+    { species = "mantyke", level_lower = 30, level_upper = 40 },
+]
+good_rod = [
+    { species = "magikarp", level_lower = 10, level_upper = 25 },
+    { species = "remoraid", level_lower = 15, level_upper = 25 },
+    { species = "octillery", level_lower = 25, level_upper = 35 },
+]
+old_rod = [
+    { species = "magikarp", level_lower = 3, level_upper = 15 },
+]
+super_rod = [
+    { species = "gyarados", level_lower = 30, level_upper = 55 },
+    { species = "wailmer", level_lower = 30, level_upper = 40 },
+    { species = "octillery", level_lower = 20, level_upper = 50 },
+    { species = "wailord", level_lower = 40, level_upper = 55 },
+]
+id = 180
+
+[route_226]
+surf = [
+    { species = "wingull", level_lower = 35, level_upper = 45 },
+    { species = "pelipper", level_lower = 35, level_upper = 55 },
+    { species = "tentacruel", level_lower = 35, level_upper = 55 },
+]
+good_rod = [
+    { species = "magikarp", level_lower = 10, level_upper = 25 },
+    { species = "horsea", level_lower = 10, level_upper = 25 },
+]
+old_rod = [
+    { species = "magikarp", level_lower = 3, level_upper = 15 },
+]
+super_rod = [
+    { species = "gyarados", level_lower = 30, level_upper = 55 },
+    { species = "seadra", level_lower = 30, level_upper = 55 },
+    { species = "relicanth", level_lower = 20, level_upper = 50 },
+]
+id = 181
+
+[[route_226.land]]
+species = "machoke"
+level_lower = 50
+level_upper = 50
+
+[[route_226.land]]
+species = "graveler"
+level_lower = 49
+level_upper = 49
+
+[[route_226.land]]
+species = "fearow"
+level_lower = 48
+level_upper = 50
+
+[[route_226.land]]
+species = "wingull"
+level_lower = 47
+level_upper = 47
+
+[[route_226.land]]
+species = "raticate"
+level_lower = 49
+level_upper = 49
+
+[[route_226.land]]
+species = "rattata"
+level_lower = 47
+level_upper = 47
+
+[[route_226.land]]
+species = "krabby"
+level_lower = 48
+level_upper = 49
+accessibility = [
+    "swarms",
+]
+
+[[route_226.land]]
+species = "banette"
+level_lower = 48
+level_upper = 50
+accessibility = [
+    "night",
+]
+
+[[route_226.land]]
+species = "primeape"
+level_lower = 49
+level_upper = 50
+accessibility = [
+    "radar",
+]
+
+[[route_226.land]]
+species = "mankey"
+level_lower = 47
+level_upper = 47
+accessibility = [
+    "radar",
+]
+
+[route_230]
+surf = [
+    { species = "sealeo", level_lower = 35, level_upper = 55 },
+    { species = "pelipper", level_lower = 35, level_upper = 55 },
+    { species = "tentacruel", level_lower = 35, level_upper = 55 },
+]
+good_rod = [
+    { species = "magikarp", level_lower = 10, level_upper = 25 },
+    { species = "remoraid", level_lower = 10, level_upper = 25 },
+]
+old_rod = [
+    { species = "magikarp", level_lower = 3, level_upper = 15 },
+]
+super_rod = [
+    { species = "gyarados", level_lower = 30, level_upper = 55 },
+    { species = "wailmer", level_lower = 30, level_upper = 40 },
+    { species = "octillery", level_lower = 20, level_upper = 50 },
+    { species = "wailord", level_lower = 40, level_upper = 55 },
+]
+id = 182
+
+[[route_230.land]]
+species = "pelipper"
+level_lower = 48
+level_upper = 50
+
+[[route_230.land]]
+species = "floatzel"
+level_lower = 50
+level_upper = 50
+
+[[route_230.land]]
+species = "bellsprout"
+level_lower = 47
+level_upper = 47
+
+[[route_230.land]]
+species = "roselia"
+level_lower = 49
+level_upper = 49
+
+[[route_230.land]]
+species = "gloom"
+level_lower = 49
+level_upper = 49
+
+[[route_230.land]]
+species = "weepinbell"
+level_lower = 49
+level_upper = 49
+
+[[route_230.land]]
+species = "wingull"
+level_lower = 48
+level_upper = 48
+
+[[route_230.land]]
+species = "corsola"
+level_lower = 48
+level_upper = 48
+accessibility = [
+    "swarms",
+]
+
+[[route_230.land]]
+species = "oddish"
+level_lower = 47
+level_upper = 47
+accessibility = [
+    "night",
+]
+
+[[route_230.land]]
+species = "togepi"
+level_lower = 48
+level_upper = 50
+accessibility = [
+    "radar",
+]
+
+[great_marsh_1]
+surf = [
+    { species = "wooper", level_lower = 20, level_upper = 30 },
+    { species = "quagsire", level_lower = 20, level_upper = 40 },
+]
+good_rod = [
+    { species = "magikarp", level_lower = 10, level_upper = 25 },
+    { species = "barboach", level_lower = 10, level_upper = 25 },
+]
+old_rod = [
+    { species = "magikarp", level_lower = 3, level_upper = 15 },
+]
+super_rod = [
+    { species = "gyarados", level_lower = 30, level_upper = 55 },
+    { species = "carvanha", level_lower = 30, level_upper = 55 },
+    { species = "whiscash", level_lower = 20, level_upper = 50 },
+]
+id = 23
+
+[[great_marsh_1.land]]
+species = "wooper"
+level_lower = 28
+level_upper = 30
+
+[[great_marsh_1.land]]
+species = "bibarel"
+level_lower = 28
+level_upper = 28
+
+[[great_marsh_1.land]]
+species = "tropius"
+level_lower = 28
+level_upper = 30
+
+[[great_marsh_1.land]]
+species = "quagsire"
+level_lower = 30
+level_upper = 30
+
+[[great_marsh_1.land]]
+species = "yanma"
+level_lower = 30
+level_upper = 31
+
+[[great_marsh_1.land]]
+species = "tangela"
+level_lower = 30
+level_upper = 31
+
+[[great_marsh_1.land]]
+species = "noctowl"
+level_lower = 28
+level_upper = 30
+accessibility = [
+    "night",
+]
+
+[[great_marsh_1.land]]
+species = "arbok"
+level_lower = 30
+level_upper = 30
+accessibility = [
+    "firered",
+]
+
+[great_marsh_2]
+surf = [
+    { species = "wooper", level_lower = 20, level_upper = 30 },
+    { species = "quagsire", level_lower = 20, level_upper = 40 },
+]
+good_rod = [
+    { species = "magikarp", level_lower = 10, level_upper = 25 },
+    { species = "barboach", level_lower = 10, level_upper = 25 },
+]
+old_rod = [
+    { species = "magikarp", level_lower = 3, level_upper = 15 },
+]
+super_rod = [
+    { species = "gyarados", level_lower = 30, level_upper = 55 },
+    { species = "carvanha", level_lower = 30, level_upper = 55 },
+    { species = "whiscash", level_lower = 20, level_upper = 50 },
+]
+id = 24
+
+[[great_marsh_2.land]]
+species = "wooper"
+level_lower = 28
+level_upper = 30
+
+[[great_marsh_2.land]]
+species = "bibarel"
+level_lower = 28
+level_upper = 28
+
+[[great_marsh_2.land]]
+species = "tropius"
+level_lower = 28
+level_upper = 30
+
+[[great_marsh_2.land]]
+species = "quagsire"
+level_lower = 30
+level_upper = 30
+
+[[great_marsh_2.land]]
+species = "yanma"
+level_lower = 30
+level_upper = 31
+
+[[great_marsh_2.land]]
+species = "tangela"
+level_lower = 30
+level_upper = 31
+
+[[great_marsh_2.land]]
+species = "noctowl"
+level_lower = 28
+level_upper = 30
+accessibility = [
+    "night",
+]
+
+[[great_marsh_2.land]]
+species = "arbok"
+level_lower = 30
+level_upper = 30
+accessibility = [
+    "firered",
+]
+
+[great_marsh_3]
+surf = [
+    { species = "wooper", level_lower = 20, level_upper = 30 },
+    { species = "quagsire", level_lower = 20, level_upper = 40 },
+]
+good_rod = [
+    { species = "magikarp", level_lower = 10, level_upper = 25 },
+    { species = "barboach", level_lower = 10, level_upper = 25 },
+]
+old_rod = [
+    { species = "magikarp", level_lower = 3, level_upper = 15 },
+]
+super_rod = [
+    { species = "gyarados", level_lower = 30, level_upper = 55 },
+    { species = "carvanha", level_lower = 30, level_upper = 55 },
+    { species = "whiscash", level_lower = 20, level_upper = 50 },
+]
+id = 25
+
+[[great_marsh_3.land]]
+species = "wooper"
+level_lower = 27
+level_upper = 29
+
+[[great_marsh_3.land]]
+species = "bibarel"
+level_lower = 27
+level_upper = 28
+
+[[great_marsh_3.land]]
+species = "tangela"
+level_lower = 27
+level_upper = 30
+
+[[great_marsh_3.land]]
+species = "quagsire"
+level_lower = 29
+level_upper = 29
+
+[[great_marsh_3.land]]
+species = "yanma"
+level_lower = 29
+level_upper = 30
+
+[[great_marsh_3.land]]
+species = "noctowl"
+level_lower = 28
+level_upper = 28
+accessibility = [
+    "night",
+]
+
+[[great_marsh_3.land]]
+species = "hoothoot"
+level_lower = 27
+level_upper = 27
+accessibility = [
+    "night",
+]
+
+[[great_marsh_3.land]]
+species = "arbok"
+level_lower = 29
+level_upper = 29
+accessibility = [
+    "firered",
+]
+
+[great_marsh_4]
+surf = [
+    { species = "wooper", level_lower = 20, level_upper = 30 },
+    { species = "quagsire", level_lower = 20, level_upper = 40 },
+]
+good_rod = [
+    { species = "magikarp", level_lower = 10, level_upper = 25 },
+    { species = "barboach", level_lower = 10, level_upper = 25 },
+]
+old_rod = [
+    { species = "magikarp", level_lower = 3, level_upper = 15 },
+]
+super_rod = [
+    { species = "gyarados", level_lower = 30, level_upper = 55 },
+    { species = "carvanha", level_lower = 30, level_upper = 55 },
+    { species = "whiscash", level_lower = 20, level_upper = 50 },
+]
+id = 26
+
+[[great_marsh_4.land]]
+species = "wooper"
+level_lower = 27
+level_upper = 29
+
+[[great_marsh_4.land]]
+species = "bibarel"
+level_lower = 27
+level_upper = 28
+
+[[great_marsh_4.land]]
+species = "tangela"
+level_lower = 27
+level_upper = 30
+
+[[great_marsh_4.land]]
+species = "quagsire"
+level_lower = 29
+level_upper = 29
+
+[[great_marsh_4.land]]
+species = "yanma"
+level_lower = 29
+level_upper = 30
+
+[[great_marsh_4.land]]
+species = "noctowl"
+level_lower = 28
+level_upper = 28
+accessibility = [
+    "night",
+]
+
+[[great_marsh_4.land]]
+species = "hoothoot"
+level_lower = 27
+level_upper = 27
+accessibility = [
+    "night",
+]
+
+[[great_marsh_4.land]]
+species = "arbok"
+level_lower = 29
+level_upper = 29
+accessibility = [
+    "firered",
+]
+
+[great_marsh_5]
+surf = [
+    { species = "wooper", level_lower = 20, level_upper = 30 },
+    { species = "quagsire", level_lower = 20, level_upper = 40 },
+]
+good_rod = [
+    { species = "magikarp", level_lower = 10, level_upper = 25 },
+    { species = "barboach", level_lower = 10, level_upper = 25 },
+]
+old_rod = [
+    { species = "magikarp", level_lower = 3, level_upper = 15 },
+]
+super_rod = [
+    { species = "gyarados", level_lower = 30, level_upper = 55 },
+    { species = "carvanha", level_lower = 30, level_upper = 55 },
+    { species = "whiscash", level_lower = 20, level_upper = 50 },
+]
+id = 27
+
+[[great_marsh_5.land]]
+species = "wooper"
+level_lower = 26
+level_upper = 28
+
+[[great_marsh_5.land]]
+species = "bibarel"
+level_lower = 26
+level_upper = 27
+
+[[great_marsh_5.land]]
+species = "yanma"
+level_lower = 26
+level_upper = 29
+
+[[great_marsh_5.land]]
+species = "quagsire"
+level_lower = 28
+level_upper = 28
+
+[[great_marsh_5.land]]
+species = "tangela"
+level_lower = 28
+level_upper = 29
+
+[[great_marsh_5.land]]
+species = "hoothoot"
+level_lower = 26
+level_upper = 27
+accessibility = [
+    "night",
+]
+
+[[great_marsh_5.land]]
+species = "arbok"
+level_lower = 28
+level_upper = 28
+accessibility = [
+    "firered",
+]
+
+[great_marsh_6]
+surf = [
+    { species = "wooper", level_lower = 20, level_upper = 30 },
+    { species = "quagsire", level_lower = 20, level_upper = 40 },
+]
+good_rod = [
+    { species = "magikarp", level_lower = 10, level_upper = 25 },
+    { species = "barboach", level_lower = 10, level_upper = 25 },
+]
+old_rod = [
+    { species = "magikarp", level_lower = 3, level_upper = 15 },
+]
+super_rod = [
+    { species = "gyarados", level_lower = 30, level_upper = 55 },
+    { species = "carvanha", level_lower = 30, level_upper = 55 },
+    { species = "whiscash", level_lower = 20, level_upper = 50 },
+]
+id = 28
+
+[[great_marsh_6.land]]
+species = "wooper"
+level_lower = 26
+level_upper = 28
+
+[[great_marsh_6.land]]
+species = "bibarel"
+level_lower = 26
+level_upper = 27
+
+[[great_marsh_6.land]]
+species = "yanma"
+level_lower = 26
+level_upper = 29
+
+[[great_marsh_6.land]]
+species = "quagsire"
+level_lower = 28
+level_upper = 28
+
+[[great_marsh_6.land]]
+species = "tangela"
+level_lower = 28
+level_upper = 29
+
+[[great_marsh_6.land]]
+species = "hoothoot"
+level_lower = 26
+level_upper = 27
+accessibility = [
+    "night",
+]
+
+[[great_marsh_6.land]]
+species = "arbok"
+level_lower = 28
+level_upper = 28
+accessibility = [
+    "firered",
+]
+
+[ruin_maniac_cave_long]
+land = [
+    { species = "geodude", level_lower = 22, level_upper = 24 },
+    { species = "hippopotas", level_lower = 23, level_upper = 25 },
+]
+id = 115
+
+[maniac_tunnel]
+land = [
+    { species = "geodude", level_lower = 23, level_upper = 25 },
+    { species = "hippopotas", level_lower = 24, level_upper = 26 },
+]
+id = 116
+
+[solaceon_ruins_room_5_southeast_deadend]
+land = [
+    { species = "unown", level_lower = 20, level_upper = 30 },
+]
+id = 46
+
+[turnback_cave_pillar_1_room_4]
+id = 66
+
+[[turnback_cave_pillar_1_room_4.land]]
+species = "gastly"
+level_lower = 15
+level_upper = 17
+
+[[turnback_cave_pillar_1_room_4.land]]
+species = "bronzor"
+level_lower = 15
+level_upper = 15
+
+[[turnback_cave_pillar_1_room_4.land]]
+species = "golbat"
+level_lower = 17
+level_upper = 18
+
+[[turnback_cave_pillar_1_room_4.land]]
+species = "chingling"
+level_lower = 18
+level_upper = 18
+
+[[turnback_cave_pillar_1_room_4.land]]
+species = "duskull"
+level_lower = 18
+level_upper = 18
+
+[[turnback_cave_pillar_1_room_4.land]]
+species = "dusclops"
+level_lower = 16
+level_upper = 18
+accessibility = [
+    "night",
+    "emerald",
+    "firered",
+    "leafgreen",
+    "radar",
+]
+
+[[turnback_cave_pillar_1_room_4.land]]
+species = "solrock"
+level_lower = 18
+level_upper = 18
+accessibility = [
+    "ruby",
+]
+
+[[turnback_cave_pillar_1_room_4.land]]
+species = "lunatone"
+level_lower = 18
+level_upper = 18
+accessibility = [
+    "sapphire",
+]
+
+[turnback_cave_pillar_1_room_5]
+id = 67
+
+[[turnback_cave_pillar_1_room_5.land]]
+species = "gastly"
+level_lower = 15
+level_upper = 17
+
+[[turnback_cave_pillar_1_room_5.land]]
+species = "bronzor"
+level_lower = 15
+level_upper = 15
+
+[[turnback_cave_pillar_1_room_5.land]]
+species = "golbat"
+level_lower = 17
+level_upper = 18
+
+[[turnback_cave_pillar_1_room_5.land]]
+species = "chingling"
+level_lower = 18
+level_upper = 18
+
+[[turnback_cave_pillar_1_room_5.land]]
+species = "duskull"
+level_lower = 18
+level_upper = 18
+
+[[turnback_cave_pillar_1_room_5.land]]
+species = "dusclops"
+level_lower = 16
+level_upper = 18
+accessibility = [
+    "night",
+    "emerald",
+    "firered",
+    "leafgreen",
+    "radar",
+]
+
+[[turnback_cave_pillar_1_room_5.land]]
+species = "solrock"
+level_lower = 18
+level_upper = 18
+accessibility = [
+    "ruby",
+]
+
+[[turnback_cave_pillar_1_room_5.land]]
+species = "lunatone"
+level_lower = 18
+level_upper = 18
+accessibility = [
+    "sapphire",
+]
+
+[turnback_cave_pillar_1_room_6]
+id = 68
+
+[[turnback_cave_pillar_1_room_6.land]]
+species = "gastly"
+level_lower = 15
+level_upper = 17
+
+[[turnback_cave_pillar_1_room_6.land]]
+species = "bronzor"
+level_lower = 15
+level_upper = 15
+
+[[turnback_cave_pillar_1_room_6.land]]
+species = "golbat"
+level_lower = 17
+level_upper = 18
+
+[[turnback_cave_pillar_1_room_6.land]]
+species = "chingling"
+level_lower = 18
+level_upper = 18
+
+[[turnback_cave_pillar_1_room_6.land]]
+species = "duskull"
+level_lower = 18
+level_upper = 18
+
+[[turnback_cave_pillar_1_room_6.land]]
+species = "dusclops"
+level_lower = 16
+level_upper = 18
+accessibility = [
+    "night",
+    "emerald",
+    "firered",
+    "leafgreen",
+    "radar",
+]
+
+[[turnback_cave_pillar_1_room_6.land]]
+species = "solrock"
+level_lower = 18
+level_upper = 18
+accessibility = [
+    "ruby",
+]
+
+[[turnback_cave_pillar_1_room_6.land]]
+species = "lunatone"
+level_lower = 18
+level_upper = 18
+accessibility = [
+    "sapphire",
+]
+
+[turnback_cave_pillar_2_room_1]
+id = 69
+
+[[turnback_cave_pillar_2_room_1.land]]
+species = "haunter"
+level_lower = 25
+level_upper = 27
+
+[[turnback_cave_pillar_2_room_1.land]]
+species = "bronzor"
+level_lower = 25
+level_upper = 25
+
+[[turnback_cave_pillar_2_room_1.land]]
+species = "golbat"
+level_lower = 25
+level_upper = 27
+
+[[turnback_cave_pillar_2_room_1.land]]
+species = "chingling"
+level_lower = 28
+level_upper = 28
+
+[[turnback_cave_pillar_2_room_1.land]]
+species = "duskull"
+level_lower = 28
+level_upper = 28
+
+[[turnback_cave_pillar_2_room_1.land]]
+species = "dusclops"
+level_lower = 26
+level_upper = 28
+
+[[turnback_cave_pillar_2_room_1.land]]
+species = "chimecho"
+level_lower = 28
+level_upper = 28
+
+[[turnback_cave_pillar_2_room_1.land]]
+species = "solrock"
+level_lower = 28
+level_upper = 28
+accessibility = [
+    "ruby",
+]
+
+[[turnback_cave_pillar_2_room_1.land]]
+species = "lunatone"
+level_lower = 28
+level_upper = 28
+accessibility = [
+    "sapphire",
+]
+
+[turnback_cave_pillar_2_room_2]
+id = 70
+
+[[turnback_cave_pillar_2_room_2.land]]
+species = "haunter"
+level_lower = 25
+level_upper = 27
+
+[[turnback_cave_pillar_2_room_2.land]]
+species = "bronzor"
+level_lower = 25
+level_upper = 25
+
+[[turnback_cave_pillar_2_room_2.land]]
+species = "golbat"
+level_lower = 27
+level_upper = 28
+
+[[turnback_cave_pillar_2_room_2.land]]
+species = "chingling"
+level_lower = 28
+level_upper = 28
+
+[[turnback_cave_pillar_2_room_2.land]]
+species = "duskull"
+level_lower = 28
+level_upper = 28
+
+[[turnback_cave_pillar_2_room_2.land]]
+species = "dusclops"
+level_lower = 26
+level_upper = 28
+
+[[turnback_cave_pillar_2_room_2.land]]
+species = "chimecho"
+level_lower = 28
+level_upper = 28
+
+[[turnback_cave_pillar_2_room_2.land]]
+species = "solrock"
+level_lower = 28
+level_upper = 28
+accessibility = [
+    "ruby",
+]
+
+[[turnback_cave_pillar_2_room_2.land]]
+species = "lunatone"
+level_lower = 28
+level_upper = 28
+accessibility = [
+    "sapphire",
+]
+
+[turnback_cave_pillar_2_room_3]
+id = 71
+
+[[turnback_cave_pillar_2_room_3.land]]
+species = "haunter"
+level_lower = 25
+level_upper = 27
+
+[[turnback_cave_pillar_2_room_3.land]]
+species = "bronzor"
+level_lower = 25
+level_upper = 25
+
+[[turnback_cave_pillar_2_room_3.land]]
+species = "golbat"
+level_lower = 27
+level_upper = 28
+
+[[turnback_cave_pillar_2_room_3.land]]
+species = "chingling"
+level_lower = 28
+level_upper = 28
+
+[[turnback_cave_pillar_2_room_3.land]]
+species = "duskull"
+level_lower = 28
+level_upper = 28
+
+[[turnback_cave_pillar_2_room_3.land]]
+species = "dusclops"
+level_lower = 26
+level_upper = 28
+
+[[turnback_cave_pillar_2_room_3.land]]
+species = "chimecho"
+level_lower = 28
+level_upper = 28
+
+[[turnback_cave_pillar_2_room_3.land]]
+species = "solrock"
+level_lower = 28
+level_upper = 28
+accessibility = [
+    "ruby",
+]
+
+[[turnback_cave_pillar_2_room_3.land]]
+species = "lunatone"
+level_lower = 28
+level_upper = 28
+accessibility = [
+    "sapphire",
+]
+
+[turnback_cave_pillar_2_room_4]
+id = 72
+
+[[turnback_cave_pillar_2_room_4.land]]
+species = "haunter"
+level_lower = 25
+level_upper = 27
+
+[[turnback_cave_pillar_2_room_4.land]]
+species = "bronzor"
+level_lower = 25
+level_upper = 25
+
+[[turnback_cave_pillar_2_room_4.land]]
+species = "golbat"
+level_lower = 27
+level_upper = 28
+
+[[turnback_cave_pillar_2_room_4.land]]
+species = "chingling"
+level_lower = 28
+level_upper = 28
+
+[[turnback_cave_pillar_2_room_4.land]]
+species = "duskull"
+level_lower = 28
+level_upper = 28
+
+[[turnback_cave_pillar_2_room_4.land]]
+species = "dusclops"
+level_lower = 26
+level_upper = 28
+
+[[turnback_cave_pillar_2_room_4.land]]
+species = "chimecho"
+level_lower = 28
+level_upper = 28
+
+[[turnback_cave_pillar_2_room_4.land]]
+species = "solrock"
+level_lower = 28
+level_upper = 28
+accessibility = [
+    "ruby",
+]
+
+[[turnback_cave_pillar_2_room_4.land]]
+species = "lunatone"
+level_lower = 28
+level_upper = 28
+accessibility = [
+    "sapphire",
+]
+
+[turnback_cave_pillar_2_room_5]
+id = 73
+
+[[turnback_cave_pillar_2_room_5.land]]
+species = "haunter"
+level_lower = 25
+level_upper = 27
+
+[[turnback_cave_pillar_2_room_5.land]]
+species = "bronzor"
+level_lower = 25
+level_upper = 25
+
+[[turnback_cave_pillar_2_room_5.land]]
+species = "golbat"
+level_lower = 27
+level_upper = 28
+
+[[turnback_cave_pillar_2_room_5.land]]
+species = "chingling"
+level_lower = 28
+level_upper = 28
+
+[[turnback_cave_pillar_2_room_5.land]]
+species = "duskull"
+level_lower = 28
+level_upper = 28
+
+[[turnback_cave_pillar_2_room_5.land]]
+species = "dusclops"
+level_lower = 26
+level_upper = 28
+
+[[turnback_cave_pillar_2_room_5.land]]
+species = "chimecho"
+level_lower = 28
+level_upper = 28
+
+[[turnback_cave_pillar_2_room_5.land]]
+species = "solrock"
+level_lower = 28
+level_upper = 28
+accessibility = [
+    "ruby",
+]
+
+[[turnback_cave_pillar_2_room_5.land]]
+species = "lunatone"
+level_lower = 28
+level_upper = 28
+accessibility = [
+    "sapphire",
+]
+
+[turnback_cave_pillar_2_room_6]
+id = 74
+
+[[turnback_cave_pillar_2_room_6.land]]
+species = "haunter"
+level_lower = 25
+level_upper = 27
+
+[[turnback_cave_pillar_2_room_6.land]]
+species = "bronzor"
+level_lower = 25
+level_upper = 25
+
+[[turnback_cave_pillar_2_room_6.land]]
+species = "golbat"
+level_lower = 27
+level_upper = 28
+
+[[turnback_cave_pillar_2_room_6.land]]
+species = "chingling"
+level_lower = 28
+level_upper = 28
+
+[[turnback_cave_pillar_2_room_6.land]]
+species = "duskull"
+level_lower = 28
+level_upper = 28
+
+[[turnback_cave_pillar_2_room_6.land]]
+species = "dusclops"
+level_lower = 26
+level_upper = 28
+
+[[turnback_cave_pillar_2_room_6.land]]
+species = "chimecho"
+level_lower = 28
+level_upper = 28
+
+[[turnback_cave_pillar_2_room_6.land]]
+species = "solrock"
+level_lower = 28
+level_upper = 28
+accessibility = [
+    "ruby",
+]
+
+[[turnback_cave_pillar_2_room_6.land]]
+species = "lunatone"
+level_lower = 28
+level_upper = 28
+accessibility = [
+    "sapphire",
+]
+
+[turnback_cave_pillar_3_room_1]
+id = 75
+
+[[turnback_cave_pillar_3_room_1.land]]
+species = "haunter"
+level_lower = 35
+level_upper = 37
+
+[[turnback_cave_pillar_3_room_1.land]]
+species = "bronzong"
+level_lower = 35
+level_upper = 35
+
+[[turnback_cave_pillar_3_room_1.land]]
+species = "golbat"
+level_lower = 37
+level_upper = 38
+
+[[turnback_cave_pillar_3_room_1.land]]
+species = "chimecho"
+level_lower = 38
+level_upper = 38
+
+[[turnback_cave_pillar_3_room_1.land]]
+species = "dusclops"
+level_lower = 36
+level_upper = 38
+
+[[turnback_cave_pillar_3_room_1.land]]
+species = "solrock"
+level_lower = 38
+level_upper = 38
+accessibility = [
+    "ruby",
+]
+
+[[turnback_cave_pillar_3_room_1.land]]
+species = "lunatone"
+level_lower = 38
+level_upper = 38
+accessibility = [
+    "sapphire",
+]
+
+[turnback_cave_pillar_3_room_2]
+id = 76
+
+[[turnback_cave_pillar_3_room_2.land]]
+species = "haunter"
+level_lower = 35
+level_upper = 37
+
+[[turnback_cave_pillar_3_room_2.land]]
+species = "bronzong"
+level_lower = 35
+level_upper = 35
+
+[[turnback_cave_pillar_3_room_2.land]]
+species = "golbat"
+level_lower = 37
+level_upper = 38
+
+[[turnback_cave_pillar_3_room_2.land]]
+species = "chimecho"
+level_lower = 38
+level_upper = 38
+
+[[turnback_cave_pillar_3_room_2.land]]
+species = "dusclops"
+level_lower = 36
+level_upper = 38
+
+[[turnback_cave_pillar_3_room_2.land]]
+species = "solrock"
+level_lower = 38
+level_upper = 38
+accessibility = [
+    "ruby",
+]
+
+[[turnback_cave_pillar_3_room_2.land]]
+species = "lunatone"
+level_lower = 38
+level_upper = 38
+accessibility = [
+    "sapphire",
+]
+
+[turnback_cave_pillar_3_room_3]
+id = 77
+
+[[turnback_cave_pillar_3_room_3.land]]
+species = "haunter"
+level_lower = 35
+level_upper = 37
+
+[[turnback_cave_pillar_3_room_3.land]]
+species = "bronzong"
+level_lower = 35
+level_upper = 35
+
+[[turnback_cave_pillar_3_room_3.land]]
+species = "golbat"
+level_lower = 37
+level_upper = 38
+
+[[turnback_cave_pillar_3_room_3.land]]
+species = "chimecho"
+level_lower = 38
+level_upper = 38
+
+[[turnback_cave_pillar_3_room_3.land]]
+species = "dusclops"
+level_lower = 36
+level_upper = 38
+
+[[turnback_cave_pillar_3_room_3.land]]
+species = "solrock"
+level_lower = 38
+level_upper = 38
+accessibility = [
+    "ruby",
+]
+
+[[turnback_cave_pillar_3_room_3.land]]
+species = "lunatone"
+level_lower = 38
+level_upper = 38
+accessibility = [
+    "sapphire",
+]
+
+[turnback_cave_pillar_3_room_4]
+id = 78
+
+[[turnback_cave_pillar_3_room_4.land]]
+species = "haunter"
+level_lower = 35
+level_upper = 37
+
+[[turnback_cave_pillar_3_room_4.land]]
+species = "bronzong"
+level_lower = 35
+level_upper = 35
+
+[[turnback_cave_pillar_3_room_4.land]]
+species = "golbat"
+level_lower = 37
+level_upper = 38
+
+[[turnback_cave_pillar_3_room_4.land]]
+species = "chimecho"
+level_lower = 38
+level_upper = 38
+
+[[turnback_cave_pillar_3_room_4.land]]
+species = "dusclops"
+level_lower = 36
+level_upper = 38
+
+[[turnback_cave_pillar_3_room_4.land]]
+species = "solrock"
+level_lower = 38
+level_upper = 38
+accessibility = [
+    "ruby",
+]
+
+[[turnback_cave_pillar_3_room_4.land]]
+species = "lunatone"
+level_lower = 38
+level_upper = 38
+accessibility = [
+    "sapphire",
+]
+
+[turnback_cave_pillar_3_room_5]
+id = 79
+
+[[turnback_cave_pillar_3_room_5.land]]
+species = "haunter"
+level_lower = 35
+level_upper = 37
+
+[[turnback_cave_pillar_3_room_5.land]]
+species = "bronzong"
+level_lower = 35
+level_upper = 35
+
+[[turnback_cave_pillar_3_room_5.land]]
+species = "golbat"
+level_lower = 37
+level_upper = 38
+
+[[turnback_cave_pillar_3_room_5.land]]
+species = "chimecho"
+level_lower = 38
+level_upper = 38
+
+[[turnback_cave_pillar_3_room_5.land]]
+species = "dusclops"
+level_lower = 36
+level_upper = 38
+
+[[turnback_cave_pillar_3_room_5.land]]
+species = "solrock"
+level_lower = 38
+level_upper = 38
+accessibility = [
+    "ruby",
+]
+
+[[turnback_cave_pillar_3_room_5.land]]
+species = "lunatone"
+level_lower = 38
+level_upper = 38
+accessibility = [
+    "sapphire",
 ]
