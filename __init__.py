@@ -133,4 +133,5 @@ class PokemonPlatinumWorld(World):
     def fill_slot_data(self) -> Mapping[str, Any]:
         ret = self.options.save_options()
         ret["remote_items"] = self.options.remote_items.value
+        ret["version"] = "0.1.7"
         return ret
