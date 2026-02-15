@@ -11,7 +11,7 @@ from typing import TYPE_CHECKING, Tuple
 
 import Utils
 
-from .data.locations import FlagCheck, LocationCheck, locations, VarCheck, OnceCheck
+from .data.locations import FlagCheck, LocationCheck, locations, VarCheck, OnceCheck, maximal_required_locations
 from .data.event_checks import event_checks
 from .locations import raw_id_to_const_name
 from .options import Goal, RemoteItems
@@ -45,6 +45,7 @@ TRACKED_EVENTS = [
     "distortion_world",
     "valley_windworks_defeat_team_galactic",
 ]
+TRACKED_UNRANDOMIZED_REQUIRED_LOCATIONS = sorted(maximal_required_locations)
 
 @dataclass(frozen=True)
 class VersionData:
@@ -126,6 +127,7 @@ class PokemonPlatinumClient(BizHawkClient):
     current_x: int
     current_z: int
     local_tracked_events: int
+    local_tracked_unrandomized_prog_locs: int
 
     def initialize_client(self):
         self.goal_flag = None
@@ -135,6 +137,7 @@ class PokemonPlatinumClient(BizHawkClient):
         self.current_x = -1
         self.current_z = -1
         self.local_tracked_events = 0
+        self.local_tracked_unrandomized_prog_locs = 0
 
     async def validate_rom(self, ctx: "BizHawkClientContext") -> bool:
         from CommonClient import logger
@@ -275,6 +278,7 @@ class PokemonPlatinumClient(BizHawkClient):
             local_checked_locations = set()
             game_clear = vars_flags.is_checked(self.goal_flag) # type: ignore
             local_tracked_events = 0
+            local_tracked_unrandomized_prog_locs = 0
 
             for k, loc in map(lambda k : (k, locations[raw_id_to_const_name[k]]), ctx.missing_locations):
                 if vars_flags.is_checked(loc.check):
@@ -283,6 +287,10 @@ class PokemonPlatinumClient(BizHawkClient):
             for k, event in enumerate(TRACKED_EVENTS):
                 if vars_flags.is_checked(event_checks[event]):
                     local_tracked_events |= 1 << k
+
+            for k, loc in enumerate(TRACKED_UNRANDOMIZED_REQUIRED_LOCATIONS):
+                if vars_flags.is_checked(locations[loc].check):
+                    local_tracked_unrandomized_prog_locs |= 1 << k
 
             if local_checked_locations != self.local_checked_locations:
                 await ctx.check_locations(local_checked_locations)
@@ -298,6 +306,16 @@ class PokemonPlatinumClient(BizHawkClient):
                     "operations": [{"operation": "or", "value": local_tracked_events}],
                 }])
                 self.local_tracked_events = local_tracked_events
+
+            if local_tracked_unrandomized_prog_locs != self.local_tracked_unrandomized_prog_locs:
+                await ctx.send_msgs([{
+                    "cmd": "Set",
+                    "key": f"pokemon_platinum_tracked_unrandomized_required_locations_{ctx.team}_{ctx.slot}",
+                    "default": 0,
+                    "want_reply": False,
+                    "operations": [{"operation": "or", "value": local_tracked_unrandomized_prog_locs}],
+                }])
+                self.local_tracked_unrandomized_prog_locs = local_tracked_unrandomized_prog_locs
 
             if not ctx.finished_game and game_clear:
                 ctx.finished_game = True

@@ -12,7 +12,7 @@ from worlds.AutoWorld import WebWorld, World
 
 from .client import PokemonPlatinumClient
 from .data import items as itemdata
-from .data.locations import RequiredLocations
+from .data.locations import RequiredLocations, locations as locationdata
 from .items import create_item_label_to_code_map, get_item_classification, PokemonPlatinumItem, get_item_groups
 from .locations import PokemonPlatinumLocation, create_location_label_to_code_map, create_locations
 from .options import PokemonPlatinumOptions, UnownsOption

@@ -393,6 +393,7 @@ class ParserState:
         ret["LOCATIONS"] = [f"\"{k}\": {v.to_string(location_region_map.get(k))},\n" for k, v in self.locations.items()]
         rule_items = self.get_rule_items()
         ret["REQUIRED_LOCATIONS"] = [l for k, v in self.locations.items() for l in rule_items.cond_to_string(k, v.original_item)]
+        ret["MAXIMAL_REQUIRED_LOCATIONS"] = [f"\"{k}\",\n" for k, v in self.locations.items() if isinstance(v.original_item, str) and v.original_item in rule_items.base]
 
         return ret
 

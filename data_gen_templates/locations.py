@@ -62,3 +62,7 @@ class RequiredLocations:
     def __contains__(self, loc: str) -> bool:
         return loc in self.loc_rules
 
+maximal_required_locations: Set[str] = {
+    # TEMPLATE: MAXIMAL_REQUIRED_LOCATIONS
+    "" # TEMPLATE: DELETE
+}
