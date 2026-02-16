@@ -50,13 +50,17 @@ He also sells TM70 Flash.
 * Non-determinism of generation. (hopefully)
 * Elite Four rematch is triggered only if the game has been completed and stark mountain has been cleared.
 * The bag now shows the amount of collected unown file items. (untested)
-* Logic error for Looker gift and hidden item in Mt. Coronet 2F.
-* Team Galactic Grunts now disappear if you defeat mars before hitting the Route 205 South trigger.
+* Team Galactic Grunts now disappear if you defeat Mars before hitting the Route 205 South trigger.
 * Correct Rev. 0 ROM is now being used for diffs.
 * APWorld building is now compatible with Archipelago 7.
-* Incorrect rules for Mt. Coronet B1F Green Shard & Wayward Cave or Route 207 Red Shard.
 * Triggering the second Galactic warehouse scene before defeating Maylene and doing the first scene is no longer possible.
 * Victory Road room after defeating Cynthia now requires Defog logically.
+
+## [0.1.7] - 2026-02-16
+### Added
+* Information reporting for trackers.
+### Fixed
+* Fix some rules in Wayward Cave and Mt. Coronet.
 
 ## [0.1.6] - 2025-12-28
 ### Fixed
@@ -162,6 +166,7 @@ skip over the forms, and the second one would give the National Pokédex.
 ## [0.0.1] - 2025-08-26
 The first release of this project.
 
+[0.1.6]: https://github.com/ljtpetersen/platinum_archipelago/compare/v0.1.7...v0.1.6
 [0.1.6]: https://github.com/ljtpetersen/platinum_archipelago/compare/v0.1.6...v0.1.5
 [0.1.5]: https://github.com/ljtpetersen/platinum_archipelago/compare/v0.1.5...v0.1.4
 [0.1.4]: https://github.com/ljtpetersen/platinum_archipelago/compare/v0.1.4...v0.1.3
