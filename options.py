@@ -867,7 +867,7 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
                     if nm in self.in_logic_encounters
                     for i in range(len(getattr(special_encounters, nm)))
                 })
-                if min(slots + speenc_slots, len(species) - len(self.encounter_species_blacklist.blacklist())) < self.dexsanity_count:
+                if min(slots + speenc_slots, len(species) - len(self.encounter_species_blacklist.blacklist())) < self.dexsanity_count + 4:
                     raise OptionError("dexsanity count larger than number of in-logic encounter slots")
             else:
                 in_logic_encounter_mons = {slot.species
@@ -897,4 +897,7 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
 
     def load_options(self, slot_data: Mapping[str, Any]) -> None:
         for key in slot_data_options:
-            getattr(self, key).value = slot_data[key]
+            if isinstance(getattr(self, key), OptionSet):
+                getattr(self, key).value = frozenset(slot_data[key])
+            else:
+                getattr(self, key).value = slot_data[key]

@@ -154,7 +154,7 @@ def create_locations(world: "PokemonPlatinumWorld", regions: Mapping[str, Region
                 address = tr.get_raw_id()
                 plat_loc = PokemonPlatinumLocation(
                     world.player,
-                    "Trainesanity - " + tr.label,
+                    "Trainersanity - " + tr.label,
                     "trainersanity",
                     address=address,
                     parent=region,

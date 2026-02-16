@@ -446,7 +446,7 @@ class PokemonPlatinumClient(BizHawkClient):
                     "key": pokedex_seen_key,
                     "default": [],
                     "want_reply": ctx.items_handling & 0b010,
-                    "operations": [{"operations": "update" if ctx.items_handling & 0b010 else "replace", "value": list(local_seen_pokemon)}]
+                    "operations": [{"operation": "update" if ctx.items_handling & 0b010 else "replace", "value": list(local_seen_pokemon)}]
                 })
 
             if local_caught_pokemon != self.local_caught_pokemon:
@@ -455,7 +455,7 @@ class PokemonPlatinumClient(BizHawkClient):
                     "key": pokedex_caught_key,
                     "default": [],
                     "want_reply": ctx.items_handling & 0b010,
-                    "operations": [{"operations": "update" if ctx.items_handling & 0b010 else "replace", "value": list(local_caught_pokemon)}]
+                    "operations": [{"operation": "update" if ctx.items_handling & 0b010 else "replace", "value": list(local_caught_pokemon)}]
                 })
 
             if packages:
