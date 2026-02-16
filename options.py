@@ -203,11 +203,11 @@ class RequireParcelCouponsCheckRoute203(DefaultOnToggle):
     """
     display_name = "Require Parcel and Coupons for Route 203 from Jubilife"
 
-class ShowUnrandomizedProgressionItems(DefaultOnToggle):
+class ShowUnrandomizedProgressionItems(Toggle):
     """
     Whether unrandomized progression items should be sent to the server and
     displayed in the chat. This also means that trackers will consider it a location
-    to be checked. If this is off, trackers may assume that it is obtained when
+    to be checked. If this is off, some trackers may assume that it is obtained when
     accessible.
     """
     display_name = "Show Unrandomized Progression Items"
