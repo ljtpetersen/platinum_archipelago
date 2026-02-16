@@ -491,6 +491,6 @@ trainers.galactic_grunt_veilstone_city_1 = "event_cobble_badge"
 trainers.galactic_grunt_veilstone_city_2 = "event_cobble_badge"
 trainers.rival_survival_area_1 = "event_stark_mountain_arrest_team_galactic"
 
-common.amity_square = "pikachu | clefairy | psyduck | turtwig | grotle | torterra | chimchar | monferno | infernape | piplup | prinplup | empoleon | pachirisu | drifloon | buneary | happiny | national_dex & (jigglypuff | torchic | shroomish | skitty)"
+common.amity_square = "mon_pikachu | mon_clefairy | mon_psyduck | mon_turtwig | mon_grotle | mon_torterra | mon_chimchar | mon_monferno | mon_infernape | mon_piplup | mon_prinplup | mon_empoleon | mon_pachirisu | mon_drifloon | mon_buneary | mon_happiny | national_dex & (mon_jigglypuff | mon_torchic | mon_shroomish | mon_skitty)"
 exits.hearthome_city_west_gate_to_amity_square.amity_square = "amity_square"
 exits.hearthome_city_east_gate_to_amity_square.amity_square = "amity_square"
