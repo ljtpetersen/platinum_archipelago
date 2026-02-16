@@ -534,7 +534,10 @@ class PokemonPlatinumClient(BizHawkClient):
                     [
                         (savedata_ptr + version_data.pokedex_offset_in_save + 4, bytes(caught_bytes + seen_bytes), "ARM9 System Bus")
                     ],
-                    [guards["AP STRUCT VALID"], guards["SAVEDATA PTR"]]
+                    [
+                        guards["AP STRUCT VALID"], guards["SAVEDATA PTR"],
+                        (savedata_ptr + version_data.pokedex_offset_in_save + 4, pokedex.data[4:132], "ARM9 System Bus"),
+                    ]
                 )
         except bizhawk.RequestFailedError:
             pass
