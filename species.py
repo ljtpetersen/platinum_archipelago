@@ -238,7 +238,7 @@ def randomize_trainer_parties_and_encounters(world: "PokemonPlatinumWorld") -> N
         poss_trp = sorted(just_trp) + both_seq[centre:]
         num_enc = world.random.randint(max(0, req_regionals - len(poss_trp)), min(len(poss_enc), req_regionals))
         num_trp = req_regionals - num_enc
-        amity_square_mon = world.random.choice([
+        amity_square_mons = {
             "pikachu",
             "clefairy",
             "jigglypuff",
@@ -259,7 +259,8 @@ def randomize_trainer_parties_and_encounters(world: "PokemonPlatinumWorld") -> N
             "drifloon",
             "buneary",
             "happiny",
-        ])
+        } - world.options.encounter_species_blacklist.blacklist()
+        amity_square_mon = world.random.choice(sorted(amity_square_mons))
         randomize_encounters(world, set(world.random.sample(poss_enc, k=num_enc)) | {"munchlax", "kecleon", "geodude", amity_square_mon})
         randomize_trainer_parties(world, set(world.random.sample(poss_trp, k=num_trp)))
     elif world.options.randomize_encounters:
@@ -286,7 +287,7 @@ def randomize_trainer_parties_and_encounters(world: "PokemonPlatinumWorld") -> N
             req_encounter_specs = set()
         else:
             req_encounter_specs = set(world.random.sample(sorted(regional_mons_set - regional_party_mons), k=df))
-        amity_square_mon = world.random.choice([
+        amity_square_mons = {
             "pikachu",
             "clefairy",
             "jigglypuff",
@@ -307,7 +308,8 @@ def randomize_trainer_parties_and_encounters(world: "PokemonPlatinumWorld") -> N
             "drifloon",
             "buneary",
             "happiny",
-        ])
+        } - world.options.encounter_species_blacklist.blacklist()
+        amity_square_mon = world.random.choice(sorted(amity_square_mons))
         randomize_encounters(world, req_encounter_specs | {"munchlax", "kecleon", "geodude", amity_square_mon})
         fill_unrandomized_trainer_parties(world)
     elif world.options.randomize_trainer_parties:

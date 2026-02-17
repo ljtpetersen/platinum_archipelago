@@ -896,9 +896,6 @@ locs = [
     "route_201_potion",
 ]
 header = "route_201"
-trainers = [
-    "rival_route_201",
-]
 
 [twinleaf_town_southwest_house]
 exits = [

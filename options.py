@@ -883,6 +883,31 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
             }
             if len(in_logic_encounter_mons | in_logic_trainer_mons) < max(50, self.regional_dex_goal.value):
                 raise OptionError(f"regional dex goal is too high. not enough encounters to fill it")
+        if self.randomize_encounters:
+            amity_square_mons = {
+                "pikachu",
+                "clefairy",
+                "jigglypuff",
+                "psyduck",
+                "torchic",
+                "shroomish",
+                "skitty",
+                "turtwig",
+                "grotle",
+                "torterra",
+                "chimchar",
+                "monferno",
+                "infernape",
+                "piplup",
+                "prinplup",
+                "empoleon",
+                "pachirisu",
+                "drifloon",
+                "buneary",
+                "happiny",
+            } - self.encounter_species_blacklist.blacklist()
+            if not amity_square_mons:
+                raise OptionError("at least one Amity Square species must be able to be encountered")
         if self.dexsanity_count:
             if self.randomize_encounters:
                 slots = len({(rd.header, table, i)
@@ -899,7 +924,7 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
                     if nm in self.in_logic_encounters
                     for i in range(len(getattr(special_encounters, nm)))
                 })
-                if min(slots + speenc_slots, len(species) - len(self.encounter_species_blacklist.blacklist())) < self.dexsanity_count + 4:
+                if min(slots + speenc_slots, len(species) - len(self.encounter_species_blacklist.blacklist())) < self.dexsanity_count:
                     raise OptionError("dexsanity count larger than number of in-logic encounter slots")
             else:
                 in_logic_encounter_mons = {slot.species
