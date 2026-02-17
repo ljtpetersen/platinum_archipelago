@@ -13,21 +13,21 @@ id = 1
 party = [
     { species = "starly", level = 5, num_moves = 0 },
 ]
-label = "Youngster Tristan"
+label = "Route 202 - Youngster Tristan"
 
 [youngster_logan]
 id = 2
 party = [
     { species = "burmy", level = 5, num_moves = 1 },
 ]
-label = "Youngster Logan"
+label = "Route 202 - Youngster Logan"
 
 [lass_natalie]
 id = 3
 party = [
     { species = "bidoof", level = 5, num_moves = 0 },
 ]
-label = "Lass Natalie"
+label = "Route 202 - Lass Natalie"
 
 [youngster_michael]
 id = 4
@@ -35,7 +35,7 @@ party = [
     { species = "kricketot", level = 7, num_moves = 0 },
     { species = "zubat", level = 6, num_moves = 0 },
 ]
-label = "Youngster Michael"
+label = "Route 203 - Youngster Michael"
 
 [dummy_005]
 id = 5
@@ -77,21 +77,21 @@ id = 10
 party = [
     { species = "magikarp", level = 8, num_moves = 0 },
 ]
-label = "Youngster Tyler"
+label = "Route 204 South - Youngster Tyler"
 
 [lass_samantha]
 id = 11
 party = [
     { species = "budew", level = 7, num_moves = 0 },
 ]
-label = "Lass Samantha"
+label = "Route 204 South - Lass Samantha"
 
 [lass_sarah]
 id = 12
 party = [
     { species = "shinx", level = 7, num_moves = 0 },
 ]
-label = "Lass Sarah"
+label = "Route 204 South - Lass Sarah"
 
 [bug_catcher_brandon]
 id = 13
@@ -99,7 +99,7 @@ party = [
     { species = "wurmple", level = 10, num_moves = 3 },
     { species = "kricketot", level = 11, num_moves = 1 },
 ]
-label = "Bug Catcher Brandon"
+label = "Route 204 North - Bug Catcher Brandon"
 
 [aroma_lady_taylor]
 id = 14
@@ -107,7 +107,7 @@ party = [
     { species = "budew", level = 9, num_moves = 0 },
     { species = "cherubi", level = 11, num_moves = 0 },
 ]
-label = "Aroma Lady Taylor"
+label = "Route 204 North - Aroma Lady Taylor"
 
 [twins_liv_and_liz]
 id = 15
@@ -115,14 +115,14 @@ party = [
     { species = "pachirisu", level = 11, num_moves = 0 },
     { species = "pachirisu", level = 11, num_moves = 0 },
 ]
-label = "Twins Liv And Liz"
+label = "Route 204 North - Twins Liv And Liz"
 
 [camper_jacob]
 id = 16
 party = [
     { species = "ponyta", level = 14, num_moves = 2 },
 ]
-label = "Camper Jacob"
+label = "Route 205 South - Camper Jacob"
 
 [picnicker_siena]
 id = 17
@@ -130,7 +130,7 @@ party = [
     { species = "bidoof", level = 12, num_moves = 0 },
     { species = "pachirisu", level = 12, num_moves = 0 },
 ]
-label = "Picnicker Siena"
+label = "Route 205 South - Picnicker Siena"
 
 [hiker_daniel]
 id = 18
@@ -139,28 +139,28 @@ party = [
     { species = "geodude", level = 11, num_moves = 0 },
     { species = "geodude", level = 12, num_moves = 0 },
 ]
-label = "Hiker Daniel"
+label = "Route 205 South - Hiker Daniel"
 
 [hiker_nicholas]
 id = 19
 party = [
     { species = "onix", level = 14, num_moves = 0 },
 ]
-label = "Hiker Nicholas"
+label = "Route 205 South - Hiker Nicholas"
 
 [battle_girl_kelsey]
 id = 20
 party = [
     { species = "machop", level = 15, num_moves = 0 },
 ]
-label = "Battle Girl Kelsey"
+label = "Route 205 South - Battle Girl Kelsey"
 
 [aroma_lady_elizabeth]
 id = 21
 party = [
     { species = "roselia", level = 14, num_moves = 2 },
 ]
-label = "Aroma Lady Elizabeth"
+label = "Route 205 South - Aroma Lady Elizabeth"
 
 [fisherman_andrew]
 id = 22
@@ -172,14 +172,14 @@ party = [
     { species = "magikarp", level = 14, num_moves = 0 },
     { species = "magikarp", level = 16, num_moves = 0 },
 ]
-label = "Fisherman Andrew"
+label = "Route 205 North - Fisherman Andrew"
 
 [fisherman_joseph]
 id = 23
 party = [
     { species = "goldeen", level = 17, num_moves = 0 },
 ]
-label = "Fisherman Joseph"
+label = "Route 205 North - Fisherman Joseph"
 
 [fisherman_zachary]
 id = 24
@@ -188,21 +188,21 @@ party = [
     { species = "goldeen", level = 16, num_moves = 0 },
     { species = "magikarp", level = 14, num_moves = 0 },
 ]
-label = "Fisherman Zachary"
+label = "Route 205 North - Fisherman Zachary"
 
 [cyclist_axel]
 id = 25
 party = [
     { species = "pikachu", level = 21, num_moves = 0 },
 ]
-label = "Cyclist Axel"
+label = "Route 206 - Cyclist Axel"
 
 [cyclist_james]
 id = 26
 party = [
     { species = "ponyta", level = 21, num_moves = 0 },
 ]
-label = "Cyclist James"
+label = "Route 206 - Cyclist James"
 
 [cyclist_john]
 id = 27
@@ -210,21 +210,21 @@ party = [
     { species = "starly", level = 18, num_moves = 0 },
     { species = "staravia", level = 20, num_moves = 0 },
 ]
-label = "Cyclist John"
+label = "Route 206 - Cyclist John"
 
 [cyclist_ryan]
 id = 28
 party = [
     { species = "shinx", level = 21, num_moves = 0 },
 ]
-label = "Cyclist Ryan"
+label = "Route 206 - Cyclist Ryan"
 
 [cyclist_megan]
 id = 29
 party = [
     { species = "staravia", level = 21, num_moves = 0 },
 ]
-label = "Cyclist Megan"
+label = "Route 206 - Cyclist Megan"
 
 [cyclist_nicole]
 id = 30
@@ -233,14 +233,14 @@ party = [
     { species = "starly", level = 18, num_moves = 0 },
     { species = "starly", level = 19, num_moves = 0 },
 ]
-label = "Cyclist Nicole"
+label = "Route 206 - Cyclist Nicole"
 
 [cyclist_kayla]
 id = 31
 party = [
     { species = "pikachu", level = 21, num_moves = 0 },
 ]
-label = "Cyclist Kayla"
+label = "Route 206 - Cyclist Kayla"
 
 [cyclist_rachel]
 id = 32
@@ -248,7 +248,7 @@ party = [
     { species = "ponyta", level = 20, num_moves = 0 },
     { species = "shinx", level = 18, num_moves = 0 },
 ]
-label = "Cyclist Rachel"
+label = "Route 206 - Cyclist Rachel"
 
 [youngster_austin]
 id = 33
@@ -257,21 +257,21 @@ party = [
     { species = "luxio", level = 18, num_moves = 0 },
     { species = "gligar", level = 21, num_moves = 0 },
 ]
-label = "Youngster Austin"
+label = "Route 207 - Youngster Austin"
 
 [camper_anthony]
 id = 34
 party = [
     { species = "chimchar", level = 22, num_moves = 0 },
 ]
-label = "Camper Anthony"
+label = "Route 207 - Camper Anthony"
 
 [picnicker_lauren]
 id = 35
 party = [
     { species = "pachirisu", level = 22, num_moves = 3 },
 ]
-label = "Picnicker Lauren"
+label = "Route 207 - Picnicker Lauren"
 
 [hiker_kevin]
 id = 36
@@ -281,7 +281,7 @@ party = [
     { species = "onix", level = 19, num_moves = 0 },
     { species = "geodude", level = 19, num_moves = 0 },
 ]
-label = "Hiker Kevin"
+label = "Route 207 - Hiker Kevin"
 
 [hiker_justin]
 id = 37
@@ -289,7 +289,7 @@ party = [
     { species = "geodude", level = 20, num_moves = 0 },
     { species = "nosepass", level = 20, num_moves = 0 },
 ]
-label = "Hiker Justin"
+label = "Route 207 - Hiker Justin"
 
 [battle_girl_helen]
 id = 38
@@ -297,14 +297,14 @@ party = [
     { species = "machop", level = 21, num_moves = 0 },
     { species = "meditite", level = 21, num_moves = 0 },
 ]
-label = "Battle Girl Helen"
+label = "Route 207 - Battle Girl Helen"
 
 [hiker_robert]
 id = 39
 party = [
     { species = "nosepass", level = 22, num_moves = 0 },
 ]
-label = "Hiker Robert"
+label = "Route 208 - Hiker Robert"
 
 [hiker_alexander]
 id = 40
@@ -312,21 +312,21 @@ party = [
     { species = "graveler", level = 38, num_moves = 0 },
     { species = "probopass", level = 40, num_moves = 0 },
 ]
-label = "Hiker Alexander"
+label = "Route 208 - Hiker Alexander"
 
 [hiker_jonathan]
 id = 41
 party = [
     { species = "onix", level = 22, num_moves = 0 },
 ]
-label = "Hiker Jonathan"
+label = "Route 208 - Hiker Jonathan"
 
 [black_belt_kyle]
 id = 42
 party = [
     { species = "machop", level = 23, num_moves = 0 },
 ]
-label = "Black Belt Kyle"
+label = "Route 208 - Black Belt Kyle"
 
 [fisherman_cody]
 id = 43
@@ -334,7 +334,7 @@ party = [
     { species = "barboach", level = 33, num_moves = 0 },
     { species = "gyarados", level = 33, num_moves = 0 },
 ]
-label = "Fisherman Cody"
+label = "Route 208 - Fisherman Cody"
 
 [aroma_lady_hannah]
 id = 44
@@ -342,7 +342,7 @@ party = [
     { species = "roselia", level = 18, num_moves = 0 },
     { species = "combee", level = 22, num_moves = 0 },
 ]
-label = "Aroma Lady Hannah"
+label = "Route 208 - Aroma Lady Hannah"
 
 [artist_william]
 id = 45
@@ -350,7 +350,7 @@ party = [
     { species = "mime_jr", level = 20, num_moves = 0 },
     { species = "bonsly", level = 20, num_moves = 0 },
 ]
-label = "Artist William"
+label = "Route 208 - Artist William"
 
 [breeder_albert]
 id = 46
@@ -360,7 +360,7 @@ party = [
     { species = "pichu", level = 20, num_moves = 0 },
     { species = "eevee", level = 20, num_moves = 0 },
 ]
-label = "Breeder Albert"
+label = "Route 209 - Breeder Albert"
 
 [breeder_jennifer]
 id = 47
@@ -370,21 +370,21 @@ party = [
     { species = "cleffa", level = 20, num_moves = 0 },
     { species = "eevee", level = 20, num_moves = 0 },
 ]
-label = "Breeder Jennifer"
+label = "Route 209 - Breeder Jennifer"
 
 [cowgirl_shelley]
 id = 48
 party = [
     { species = "ponyta", level = 23, num_moves = 0 },
 ]
-label = "Cowgirl Shelley"
+label = "Route 209 - Cowgirl Shelley"
 
 [jogger_richard]
 id = 49
 party = [
     { species = "luxio", level = 23, num_moves = 0 },
 ]
-label = "Jogger Richard"
+label = "Route 209 - Jogger Richard"
 
 [dummy_050]
 id = 50
@@ -412,7 +412,7 @@ id = 53
 party = [
     { species = "pichu", level = 22, num_moves = 0 },
 ]
-label = "Poke Kid Danielle"
+label = "Route 209 - Poke Kid Danielle"
 
 [dummy_054]
 id = 54
@@ -427,7 +427,7 @@ party = [
     { species = "buneary", level = 23, num_moves = 4 },
     { species = "buizel", level = 23, num_moves = 4 },
 ]
-label = "Young Couple Ty And Sue"
+label = "Route 209 - Young Couple Ty And Sue"
 
 [breeder_kahlil]
 id = 56
@@ -435,7 +435,7 @@ party = [
     { species = "elekid", level = 23, num_moves = 0 },
     { species = "happiny", level = 23, num_moves = 0 },
 ]
-label = "Breeder Kahlil"
+label = "Route 210 South - Breeder Kahlil"
 
 [breeder_amber]
 id = 57
@@ -443,7 +443,7 @@ party = [
     { species = "magby", level = 23, num_moves = 0 },
     { species = "togepi", level = 23, num_moves = 0 },
 ]
-label = "Breeder Amber"
+label = "Route 210 South - Breeder Amber"
 
 [dummy_058]
 id = 58
@@ -500,7 +500,7 @@ party = [
     { species = "pikachu", level = 23, num_moves = 0 },
     { species = "clefairy", level = 23, num_moves = 0 },
 ]
-label = "Twins Teri And Tia"
+label = "Route 210 South - Twins Teri And Tia"
 
 [ace_trainer_ernest]
 id = 66
@@ -509,7 +509,7 @@ party = [
     { species = "probopass", level = 31, num_moves = 4 },
     { species = "luxio", level = 34, num_moves = 4 },
 ]
-label = "Ace Trainer Ernest"
+label = "Route 210 North - Ace Trainer Ernest"
 
 [ace_trainer_alyssa]
 id = 67
@@ -518,7 +518,7 @@ party = [
     { species = "girafarig", level = 32, num_moves = 4 },
     { species = "grotle", level = 33, num_moves = 3 },
 ]
-label = "Ace Trainer Alyssa"
+label = "Route 210 North - Ace Trainer Alyssa"
 
 [veteran_brian]
 id = 68
@@ -527,14 +527,14 @@ party = [
     { species = "ponyta", level = 32, num_moves = 3 },
     { species = "buizel", level = 32, num_moves = 4 },
 ]
-label = "Veteran Brian"
+label = "Route 210 North - Veteran Brian"
 
 [black_belt_adam]
 id = 69
 party = [
     { species = "machoke", level = 34, num_moves = 0 },
 ]
-label = "Black Belt Adam"
+label = "Route 210 North - Black Belt Adam"
 
 [ninja_boy_joel]
 id = 70
@@ -544,7 +544,7 @@ party = [
     { species = "stunky", level = 29, num_moves = 0 },
     { species = "golbat", level = 29, num_moves = 0 },
 ]
-label = "Ninja Boy Joel"
+label = "Route 210 North - Ninja Boy Joel"
 
 [ninja_boy_nathan]
 id = 71
@@ -552,21 +552,21 @@ party = [
     { species = "stunky", level = 31, num_moves = 0 },
     { species = "golbat", level = 31, num_moves = 0 },
 ]
-label = "Ninja Boy Nathan"
+label = "Route 210 North - Ninja Boy Nathan"
 
 [ninja_boy_davido]
 id = 72
 party = [
     { species = "mothim", level = 33, num_moves = 0 },
 ]
-label = "Ninja Boy Davido"
+label = "Route 210 North - Ninja Boy Davido"
 
 [dragon_tamer_patrick]
 id = 73
 party = [
     { species = "gible", level = 34, num_moves = 0 },
 ]
-label = "Dragon Tamer Patrick"
+label = "Route 210 North - Dragon Tamer Patrick"
 
 [bird_keeper_brianna]
 id = 74
@@ -574,7 +574,7 @@ party = [
     { species = "hoothoot", level = 31, num_moves = 0 },
     { species = "noctowl", level = 33, num_moves = 0 },
 ]
-label = "Bird Keeper Brianna"
+label = "Route 210 North - Bird Keeper Brianna"
 
 [double_team_zac_and_jen]
 id = 75
@@ -582,7 +582,7 @@ party = [
     { species = "gyarados", level = 36, num_moves = 0 },
     { species = "raichu", level = 36, num_moves = 0 },
 ]
-label = "Double Team Zac And Jen"
+label = "Route 210 North - Double Team Zac And Jen"
 
 [bird_keeper_alexandra]
 id = 76
@@ -590,7 +590,7 @@ party = [
     { species = "starly", level = 17, num_moves = 0 },
     { species = "hoothoot", level = 17, num_moves = 0 },
 ]
-label = "Bird Keeper Alexandra"
+label = "Route 211 West - Bird Keeper Alexandra"
 
 [dummy_077]
 id = 77
@@ -606,7 +606,7 @@ party = [
     { species = "zubat", level = 14, num_moves = 0 },
     { species = "zubat", level = 14, num_moves = 0 },
 ]
-label = "Ninja Boy Zach"
+label = "Route 211 West - Ninja Boy Zach"
 
 [black_belt_sean]
 id = 79
@@ -615,7 +615,7 @@ party = [
     { species = "meditite", level = 31, num_moves = 0 },
     { species = "machoke", level = 31, num_moves = 0 },
 ]
-label = "Black Belt Sean"
+label = "Route 211 East - Black Belt Sean"
 
 [ninja_boy_nick]
 id = 80
@@ -623,42 +623,42 @@ party = [
     { species = "skorupi", level = 32, num_moves = 0 },
     { species = "croagunk", level = 30, num_moves = 0 },
 ]
-label = "Ninja Boy Nick"
+label = "Route 211 East - Ninja Boy Nick"
 
 [bird_keeper_katherine]
 id = 81
 party = [
     { species = "noctowl", level = 34, num_moves = 0 },
 ]
-label = "Bird Keeper Katherine"
+label = "Route 211 East - Bird Keeper Katherine"
 
 [rich_boy_jason]
 id = 82
 party = [
     { species = "prinplup", level = 27, num_moves = 0 },
 ]
-label = "Rich Boy Jason"
+label = "Route 212 North - Rich Boy Jason"
 
 [lady_melissa]
 id = 83
 party = [
     { species = "cherubi", level = 27, num_moves = 0 },
 ]
-label = "Lady Melissa"
+label = "Route 212 North - Lady Melissa"
 
 [gentleman_jeremy]
 id = 84
 party = [
     { species = "chatot", level = 27, num_moves = 0 },
 ]
-label = "Gentleman Jeremy"
+label = "Route 212 North - Gentleman Jeremy"
 
 [socialite_reina]
 id = 85
 party = [
     { species = "roselia", level = 27, num_moves = 0 },
 ]
-label = "Socialite Reina"
+label = "Route 212 North - Socialite Reina"
 
 [dummy_086]
 id = 86
@@ -680,7 +680,7 @@ party = [
     { species = "hoothoot", level = 24, num_moves = 0 },
     { species = "machop", level = 26, num_moves = 0 },
 ]
-label = "Policeman Bobby"
+label = "Route 212 North - Policeman Bobby"
 
 [policeman_alex]
 id = 89
@@ -688,7 +688,7 @@ party = [
     { species = "hoothoot", level = 25, num_moves = 0 },
     { species = "machop", level = 25, num_moves = 0 },
 ]
-label = "Policeman Alex"
+label = "Route 212 North - Policeman Alex"
 
 [policeman_dylan]
 id = 90
@@ -696,14 +696,14 @@ party = [
     { species = "hoothoot", level = 26, num_moves = 0 },
     { species = "machop", level = 24, num_moves = 0 },
 ]
-label = "Policeman Dylan"
+label = "Route 212 North - Policeman Dylan"
 
 [fisherman_juan]
 id = 91
 party = [
     { species = "gyarados", level = 29, num_moves = 0 },
 ]
-label = "Fisherman Juan"
+label = "Route 212 South - Fisherman Juan"
 
 [fisherman_josh]
 id = 92
@@ -711,7 +711,7 @@ party = [
     { species = "goldeen", level = 27, num_moves = 0 },
     { species = "goldeen", level = 27, num_moves = 0 },
 ]
-label = "Fisherman Josh"
+label = "Route 212 South - Fisherman Josh"
 
 [fisherman_travis]
 id = 93
@@ -721,7 +721,7 @@ party = [
     { species = "gyarados", level = 26, num_moves = 0 },
     { species = "barboach", level = 25, num_moves = 0 },
 ]
-label = "Fisherman Travis"
+label = "Route 212 South - Fisherman Travis"
 
 [ranger_taylor]
 id = 94
@@ -729,14 +729,14 @@ party = [
     { species = "carnivine", level = 28, num_moves = 0 },
     { species = "luxio", level = 30, num_moves = 0 },
 ]
-label = "Ranger Taylor"
+label = "Route 212 South - Ranger Taylor"
 
 [ranger_jeffrey]
 id = 95
 party = [
     { species = "monferno", level = 31, num_moves = 0 },
 ]
-label = "Ranger Jeffrey"
+label = "Route 212 South - Ranger Jeffrey"
 
 [ranger_allison]
 id = 96
@@ -744,7 +744,7 @@ party = [
     { species = "marill", level = 29, num_moves = 0 },
     { species = "leafeon", level = 29, num_moves = 0 },
 ]
-label = "Ranger Allison"
+label = "Route 212 South - Ranger Allison"
 
 [dummy_097]
 id = 97
@@ -765,7 +765,7 @@ id = 99
 party = [
     { species = "kadabra", level = 30, num_moves = 4 },
 ]
-label = "Scientist Stefano"
+label = "Route 212 South - Scientist Stefano"
 
 [dummy_100]
 id = 100
@@ -787,7 +787,7 @@ party = [
     { species = "hoothoot", level = 23, num_moves = 0 },
     { species = "machop", level = 27, num_moves = 0 },
 ]
-label = "Policeman Caleb"
+label = "Route 212 North - Policeman Caleb"
 
 [swimmer_sheltin]
 id = 103
@@ -796,7 +796,7 @@ party = [
     { species = "gyarados", level = 32, num_moves = 0 },
     { species = "gyarados", level = 32, num_moves = 0 },
 ]
-label = "Swimmer Sheltin"
+label = "Route 213 - Swimmer Sheltin"
 
 [swimmer_evan]
 id = 104
@@ -804,7 +804,7 @@ party = [
     { species = "golduck", level = 32, num_moves = 0 },
     { species = "golduck", level = 34, num_moves = 0 },
 ]
-label = "Swimmer Evan"
+label = "Route 213 - Swimmer Evan"
 
 [swimmer_haley]
 id = 105
@@ -812,7 +812,7 @@ party = [
     { species = "psyduck", level = 31, num_moves = 0 },
     { species = "azumarill", level = 35, num_moves = 0 },
 ]
-label = "Swimmer Haley"
+label = "Route 213 - Swimmer Haley"
 
 [swimmer_mary]
 id = 106
@@ -820,7 +820,7 @@ party = [
     { species = "finneon", level = 33, num_moves = 0 },
     { species = "pelipper", level = 33, num_moves = 0 },
 ]
-label = "Swimmer Mary"
+label = "Route 213 - Swimmer Mary"
 
 [tuber_jared]
 id = 107
@@ -829,14 +829,14 @@ party = [
     { species = "shellos", level = 25, num_moves = 0 },
     { species = "shellos", level = 26, num_moves = 0 },
 ]
-label = "Tuber Jared"
+label = "Route 213 - Tuber Jared"
 
 [tuber_chelsea]
 id = 108
 party = [
     { species = "marill", level = 28, num_moves = 0 },
 ]
-label = "Tuber Chelsea"
+label = "Route 213 - Tuber Chelsea"
 
 [dummy_109]
 id = 109
@@ -852,7 +852,7 @@ party = [
     { species = "pelipper", level = 31, num_moves = 0 },
     { species = "machoke", level = 34, num_moves = 0 },
 ]
-label = "Sailor Paul"
+label = "Route 213 - Sailor Paul"
 
 [fisherman_kenneth]
 id = 111
@@ -861,7 +861,7 @@ party = [
     { species = "remoraid", level = 25, num_moves = 0 },
     { species = "gyarados", level = 28, num_moves = 0 },
 ]
-label = "Fisherman Kenneth"
+label = "Route 213 - Fisherman Kenneth"
 
 [dummy_112]
 id = 112
@@ -877,14 +877,14 @@ party = [
     { species = "bronzor", level = 24, num_moves = 0 },
     { species = "cranidos", level = 26, num_moves = 0 },
 ]
-label = "Ruin Maniac Bryan"
+label = "Route 214 - Ruin Maniac Bryan"
 
 [ruin_maniac_ronald]
 id = 114
 party = [
     { species = "shieldon", level = 27, num_moves = 0 },
 ]
-label = "Ruin Maniac Ronald"
+label = "Route 214 - Ruin Maniac Ronald"
 
 [dummy_115]
 id = 115
@@ -920,7 +920,7 @@ party = [
     { species = "duskull", level = 26, num_moves = 0 },
     { species = "kadabra", level = 26, num_moves = 0 },
 ]
-label = "Psychic Mitchell"
+label = "Route 214 - Psychic Mitchell"
 
 [psychic_abigail]
 id = 120
@@ -929,14 +929,14 @@ party = [
     { species = "drifloon", level = 25, num_moves = 0 },
     { species = "kirlia", level = 27, num_moves = 0 },
 ]
-label = "Psychic Abigail"
+label = "Route 214 - Psychic Abigail"
 
 [pi_carlos]
 id = 121
 party = [
     { species = "goldeen", level = 30, num_moves = 2 },
 ]
-label = "Pi Carlos"
+label = "Route 214 - Pi Carlos"
 
 [dummy_122]
 id = 122
@@ -980,14 +980,14 @@ party = [
     { species = "machop", level = 23, num_moves = 0 },
     { species = "machop", level = 23, num_moves = 0 },
 ]
-label = "Black Belt Gregory"
+label = "Route 215 - Black Belt Gregory"
 
 [black_belt_derek]
 id = 128
 party = [
     { species = "croagunk", level = 26, num_moves = 0 },
 ]
-label = "Black Belt Derek"
+label = "Route 215 - Black Belt Derek"
 
 [black_belt_nathaniel]
 id = 129
@@ -996,14 +996,14 @@ party = [
     { species = "meditite", level = 24, num_moves = 0 },
     { species = "machop", level = 24, num_moves = 0 },
 ]
-label = "Black Belt Nathaniel"
+label = "Route 215 - Black Belt Nathaniel"
 
 [jogger_scott]
 id = 130
 party = [
     { species = "staravia", level = 25, num_moves = 0 },
 ]
-label = "Jogger Scott"
+label = "Route 215 - Jogger Scott"
 
 [dummy_131]
 id = 131
@@ -1018,7 +1018,7 @@ party = [
     { species = "ambipom", level = 39, num_moves = 4 },
     { species = "porygon2", level = 40, num_moves = 4 },
 ]
-label = "Ace Trainer Blake"
+label = "Route 216 - Ace Trainer Blake"
 
 [ace_trainer_garrett]
 id = 133
@@ -1027,14 +1027,14 @@ party = [
     { species = "dusclops", level = 39, num_moves = 4 },
     { species = "scyther", level = 39, num_moves = 4 },
 ]
-label = "Ace Trainer Garrett"
+label = "Route 216 - Ace Trainer Garrett"
 
 [ace_trainer_laura]
 id = 134
 party = [
     { species = "tropius", level = 42, num_moves = 4 },
 ]
-label = "Ace Trainer Laura"
+label = "Route 216 - Ace Trainer Laura"
 
 [ace_trainer_maria]
 id = 135
@@ -1043,7 +1043,7 @@ party = [
     { species = "rapidash", level = 39, num_moves = 4 },
     { species = "sudowoodo", level = 38, num_moves = 4 },
 ]
-label = "Ace Trainer Maria"
+label = "Route 216 - Ace Trainer Maria"
 
 [skier_bradley]
 id = 136
@@ -1052,14 +1052,14 @@ party = [
     { species = "swinub", level = 36, num_moves = 0 },
     { species = "snover", level = 36, num_moves = 0 },
 ]
-label = "Skier Bradley"
+label = "Route 216 - Skier Bradley"
 
 [skier_edward]
 id = 137
 party = [
     { species = "sneasel", level = 39, num_moves = 0 },
 ]
-label = "Skier Edward"
+label = "Route 216 - Skier Edward"
 
 [skier_kaitlyn]
 id = 138
@@ -1067,14 +1067,14 @@ party = [
     { species = "swinub", level = 36, num_moves = 0 },
     { species = "snover", level = 38, num_moves = 0 },
 ]
-label = "Skier Kaitlyn"
+label = "Route 216 - Skier Kaitlyn"
 
 [skier_andrea]
 id = 139
 party = [
     { species = "snover", level = 39, num_moves = 0 },
 ]
-label = "Skier Andrea"
+label = "Route 216 - Skier Andrea"
 
 [ace_trainer_dalton]
 id = 140
@@ -1082,7 +1082,7 @@ party = [
     { species = "electabuzz", level = 40, num_moves = 4 },
     { species = "magmar", level = 40, num_moves = 4 },
 ]
-label = "Ace Trainer Dalton"
+label = "Route 217 - Ace Trainer Dalton"
 
 [ace_trainer_olivia]
 id = 141
@@ -1091,7 +1091,7 @@ party = [
     { species = "seaking", level = 39, num_moves = 4 },
     { species = "buneary", level = 38, num_moves = 4 },
 ]
-label = "Ace Trainer Olivia"
+label = "Route 217 - Ace Trainer Olivia"
 
 [skier_shawn]
 id = 142
@@ -1100,7 +1100,7 @@ party = [
     { species = "snover", level = 36, num_moves = 0 },
     { species = "snover", level = 37, num_moves = 0 },
 ]
-label = "Skier Shawn"
+label = "Route 217 - Skier Shawn"
 
 [skier_bjorn]
 id = 143
@@ -1108,7 +1108,7 @@ party = [
     { species = "swinub", level = 36, num_moves = 0 },
     { species = "sneasel", level = 38, num_moves = 0 },
 ]
-label = "Skier Bjorn"
+label = "Route 217 - Skier Bjorn"
 
 [skier_lexie]
 id = 144
@@ -1116,21 +1116,21 @@ party = [
     { species = "piloswine", level = 37, num_moves = 0 },
     { species = "glaceon", level = 37, num_moves = 0 },
 ]
-label = "Skier Lexie"
+label = "Route 217 - Skier Lexie"
 
 [skier_madison]
 id = 145
 party = [
     { species = "snorunt", level = 39, num_moves = 0 },
 ]
-label = "Skier Madison"
+label = "Route 217 - Skier Madison"
 
 [ninja_boy_matthew]
 id = 146
 party = [
     { species = "golbat", level = 39, num_moves = 0 },
 ]
-label = "Ninja Boy Matthew"
+label = "Route 217 - Ninja Boy Matthew"
 
 [ninja_boy_ethan]
 id = 147
@@ -1138,7 +1138,7 @@ party = [
     { species = "skorupi", level = 37, num_moves = 0 },
     { species = "golbat", level = 37, num_moves = 0 },
 ]
-label = "Ninja Boy Ethan"
+label = "Route 217 - Ninja Boy Ethan"
 
 [black_belt_luke]
 id = 148
@@ -1147,7 +1147,7 @@ party = [
     { species = "riolu", level = 37, num_moves = 0 },
     { species = "machoke", level = 37, num_moves = 0 },
 ]
-label = "Black Belt Luke"
+label = "Route 217 - Black Belt Luke"
 
 [dummy_149]
 id = 149
@@ -1183,7 +1183,7 @@ party = [
     { species = "gyarados", level = 33, num_moves = 0 },
     { species = "gyarados", level = 33, num_moves = 0 },
 ]
-label = "Fisherman Miguel"
+label = "Route 218 - Fisherman Miguel"
 
 [fisherman_luc]
 id = 154
@@ -1194,7 +1194,7 @@ party = [
     { species = "gyarados", level = 31, num_moves = 0 },
     { species = "remoraid", level = 31, num_moves = 0 },
 ]
-label = "Fisherman Luc"
+label = "Route 218 - Fisherman Luc"
 
 [dummy_155]
 id = 155
@@ -1232,14 +1232,14 @@ party = [
     { species = "tentacool", level = 30, num_moves = 0 },
     { species = "octillery", level = 34, num_moves = 0 },
 ]
-label = "Swimmer Adrian"
+label = "Route 220 - Swimmer Adrian"
 
 [swimmer_erik]
 id = 160
 party = [
     { species = "tentacruel", level = 35, num_moves = 0 },
 ]
-label = "Swimmer Erik"
+label = "Route 220 - Swimmer Erik"
 
 [swimmer_vincent]
 id = 161
@@ -1247,7 +1247,7 @@ party = [
     { species = "pelipper", level = 33, num_moves = 0 },
     { species = "gastrodon", level = 33, num_moves = 0 },
 ]
-label = "Swimmer Vincent"
+label = "Route 220 - Swimmer Vincent"
 
 [swimmer_jessica]
 id = 162
@@ -1257,14 +1257,14 @@ party = [
     { species = "goldeen", level = 31, num_moves = 0 },
     { species = "seaking", level = 33, num_moves = 0 },
 ]
-label = "Swimmer Jessica"
+label = "Route 220 - Swimmer Jessica"
 
 [swimmer_erica]
 id = 163
 party = [
     { species = "finneon", level = 35, num_moves = 0 },
 ]
-label = "Swimmer Erica"
+label = "Route 220 - Swimmer Erica"
 
 [swimmer_katelyn]
 id = 164
@@ -1273,7 +1273,7 @@ party = [
     { species = "medicham", level = 32, num_moves = 4 },
     { species = "seaking", level = 32, num_moves = 4 },
 ]
-label = "Swimmer Katelyn"
+label = "Route 220 - Swimmer Katelyn"
 
 [dummy_165]
 id = 165
@@ -1289,14 +1289,14 @@ party = [
     { species = "remoraid", level = 33, num_moves = 0 },
     { species = "floatzel", level = 33, num_moves = 0 },
 ]
-label = "Swimmer Dillon"
+label = "Route 221 - Swimmer Dillon"
 
 [swimmer_vanessa]
 id = 167
 party = [
     { species = "golduck", level = 35, num_moves = 0 },
 ]
-label = "Swimmer Vanessa"
+label = "Route 221 - Swimmer Vanessa"
 
 [fisherman_cory]
 id = 168
@@ -1305,7 +1305,7 @@ party = [
     { species = "finneon", level = 32, num_moves = 0 },
     { species = "finneon", level = 34, num_moves = 0 },
 ]
-label = "Fisherman Cory"
+label = "Route 221 - Fisherman Cory"
 
 [dummy_169]
 id = 169
@@ -1320,7 +1320,7 @@ party = [
     { species = "staraptor", level = 35, num_moves = 4 },
     { species = "girafarig", level = 36, num_moves = 2 },
 ]
-label = "Ace Trainer Jake"
+label = "Route 221 - Ace Trainer Jake"
 
 [ace_trainer_shannon]
 id = 171
@@ -1329,7 +1329,7 @@ party = [
     { species = "azumarill", level = 34, num_moves = 3 },
     { species = "lopunny", level = 35, num_moves = 3 },
 ]
-label = "Ace Trainer Shannon"
+label = "Route 221 - Ace Trainer Shannon"
 
 [fisherman_brett]
 id = 172
@@ -1338,7 +1338,7 @@ party = [
     { species = "finneon", level = 42, num_moves = 0 },
     { species = "feebas", level = 42, num_moves = 0 },
 ]
-label = "Fisherman Brett"
+label = "Route 222 - Fisherman Brett"
 
 [fisherman_alec]
 id = 173
@@ -1346,7 +1346,7 @@ party = [
     { species = "magikarp", level = 42, num_moves = 0 },
     { species = "gyarados", level = 45, num_moves = 0 },
 ]
-label = "Fisherman Alec"
+label = "Route 222 - Fisherman Alec"
 
 [fisherman_george]
 id = 174
@@ -1356,7 +1356,7 @@ party = [
     { species = "remoraid", level = 41, num_moves = 0 },
     { species = "gyarados", level = 42, num_moves = 0 },
 ]
-label = "Fisherman George"
+label = "Route 222 - Fisherman George"
 
 [fisherman_cole]
 id = 175
@@ -1365,7 +1365,7 @@ party = [
     { species = "remoraid", level = 40, num_moves = 0 },
     { species = "gyarados", level = 43, num_moves = 0 },
 ]
-label = "Fisherman Cole"
+label = "Route 222 - Fisherman Cole"
 
 [dummy_176]
 id = 176
@@ -1402,7 +1402,7 @@ party = [
     { species = "machoke", level = 42, num_moves = 0 },
     { species = "gastrodon", level = 43, num_moves = 0 },
 ]
-label = "Sailor Luther"
+label = "Route 222 - Sailor Luther"
 
 [dummy_181]
 id = 181
@@ -1425,14 +1425,14 @@ party = [
     { species = "floatzel", level = 43, num_moves = 0 },
     { species = "tentacruel", level = 43, num_moves = 0 },
 ]
-label = "Swimmer Wesley"
+label = "Route 223 - Swimmer Wesley"
 
 [swimmer_ricardo]
 id = 184
 party = [
     { species = "tentacruel", level = 45, num_moves = 0 },
 ]
-label = "Swimmer Ricardo"
+label = "Route 223 - Swimmer Ricardo"
 
 [swimmer_francisco]
 id = 185
@@ -1440,7 +1440,7 @@ party = [
     { species = "tentacool", level = 41, num_moves = 0 },
     { species = "golduck", level = 45, num_moves = 0 },
 ]
-label = "Swimmer Francisco"
+label = "Route 223 - Swimmer Francisco"
 
 [swimmer_colton]
 id = 186
@@ -1449,14 +1449,14 @@ party = [
     { species = "octillery", level = 44, num_moves = 0 },
     { species = "pelipper", level = 44, num_moves = 0 },
 ]
-label = "Swimmer Colton"
+label = "Route 223 - Swimmer Colton"
 
 [swimmer_troy]
 id = 187
 party = [
     { species = "gyarados", level = 45, num_moves = 0 },
 ]
-label = "Swimmer Troy"
+label = "Route 223 - Swimmer Troy"
 
 [swimmer_oscar]
 id = 188
@@ -1465,14 +1465,14 @@ party = [
     { species = "remoraid", level = 42, num_moves = 0 },
     { species = "mantine", level = 43, num_moves = 0 },
 ]
-label = "Swimmer Oscar"
+label = "Route 223 - Swimmer Oscar"
 
 [swimmer_miranda]
 id = 189
 party = [
     { species = "lumineon", level = 45, num_moves = 0 },
 ]
-label = "Swimmer Miranda"
+label = "Route 223 - Swimmer Miranda"
 
 [swimmer_aubree]
 id = 190
@@ -1480,7 +1480,7 @@ party = [
     { species = "bibarel", level = 43, num_moves = 0 },
     { species = "azumarill", level = 43, num_moves = 0 },
 ]
-label = "Swimmer Aubree"
+label = "Route 223 - Swimmer Aubree"
 
 [swimmer_paige]
 id = 191
@@ -1489,7 +1489,7 @@ party = [
     { species = "wingull", level = 42, num_moves = 0 },
     { species = "golduck", level = 43, num_moves = 0 },
 ]
-label = "Swimmer Paige"
+label = "Route 223 - Swimmer Paige"
 
 [swimmer_crystal]
 id = 192
@@ -1497,7 +1497,7 @@ party = [
     { species = "wingull", level = 42, num_moves = 0 },
     { species = "seaking", level = 44, num_moves = 0 },
 ]
-label = "Swimmer Crystal"
+label = "Route 223 - Swimmer Crystal"
 
 [swimmer_cassandra]
 id = 193
@@ -1505,14 +1505,14 @@ party = [
     { species = "lumineon", level = 44, num_moves = 0 },
     { species = "pelipper", level = 42, num_moves = 0 },
 ]
-label = "Swimmer Cassandra"
+label = "Route 223 - Swimmer Cassandra"
 
 [swimmer_gabrielle]
 id = 194
 party = [
     { species = "golduck", level = 45, num_moves = 0 },
 ]
-label = "Swimmer Gabrielle"
+label = "Route 223 - Swimmer Gabrielle"
 
 [worker_colin]
 id = 195
@@ -1520,14 +1520,14 @@ party = [
     { species = "geodude", level = 6, num_moves = 0 },
     { species = "machop", level = 8, num_moves = 0 },
 ]
-label = "Worker Colin"
+label = "Oreburgh Mine B2F - Worker Colin"
 
 [worker_mason]
 id = 196
 party = [
     { species = "geodude", level = 9, num_moves = 0 },
 ]
-label = "Worker Mason"
+label = "Oreburgh Mine B2F - Worker Mason"
 
 [dummy_197]
 id = 197
@@ -1564,7 +1564,7 @@ party = [
     { species = "silcoon", level = 13, num_moves = 4 },
     { species = "beautifly", level = 15, num_moves = 4 },
 ]
-label = "Bug Catcher Jack"
+label = "Eterna Forest - Bug Catcher Jack"
 
 [bug_catcher_phillip]
 id = 202
@@ -1573,7 +1573,7 @@ party = [
     { species = "cascoon", level = 13, num_moves = 4 },
     { species = "dustox", level = 15, num_moves = 4 },
 ]
-label = "Bug Catcher Phillip"
+label = "Eterna Forest - Bug Catcher Phillip"
 
 [bug_catcher_donald]
 id = 203
@@ -1581,28 +1581,28 @@ party = [
     { species = "burmy", level = 14, num_moves = 0 },
     { species = "burmy", level = 14, num_moves = 0 },
 ]
-label = "Bug Catcher Donald"
+label = "Eterna Forest - Bug Catcher Donald"
 
 [lass_briana]
 id = 204
 party = [
     { species = "pachirisu", level = 16, num_moves = 0 },
 ]
-label = "Lass Briana"
+label = "Eterna Forest - Lass Briana"
 
 [psychic_elijah]
 id = 205
 party = [
     { species = "abra", level = 17, num_moves = 1 },
 ]
-label = "Psychic Elijah"
+label = "Eterna Forest - Psychic Elijah"
 
 [psychic_lindsey]
 id = 206
 party = [
     { species = "abra", level = 17, num_moves = 1 },
 ]
-label = "Psychic Lindsey"
+label = "Eterna Forest - Psychic Lindsey"
 
 [dummy_207]
 id = 207
@@ -1732,7 +1732,7 @@ party = [
     { species = "mothim", level = 46, num_moves = 4 },
     { species = "rampardos", level = 48, num_moves = 4 },
 ]
-label = "Ace Trainer Omar"
+label = "Victory Road 2F - Ace Trainer Omar"
 
 [ace_trainer_henry]
 id = 225
@@ -1740,7 +1740,7 @@ party = [
     { species = "rhydon", level = 47, num_moves = 4 },
     { species = "carnivine", level = 48, num_moves = 4 },
 ]
-label = "Ace Trainer Henry"
+label = "Victory Road B1F - Ace Trainer Henry"
 
 [ace_trainer_mariah]
 id = 226
@@ -1749,7 +1749,7 @@ party = [
     { species = "glalie", level = 46, num_moves = 4 },
     { species = "magnezone", level = 48, num_moves = 4 },
 ]
-label = "Ace Trainer Mariah"
+label = "Victory Road 1F - Ace Trainer Mariah"
 
 [ace_trainer_sydney]
 id = 227
@@ -1757,7 +1757,7 @@ party = [
     { species = "clefable", level = 47, num_moves = 4 },
     { species = "torterra", level = 48, num_moves = 4 },
 ]
-label = "Ace Trainer Sydney"
+label = "Victory Road 2F - Ace Trainer Sydney"
 
 [veteran_edgar]
 id = 228
@@ -1766,7 +1766,7 @@ party = [
     { species = "tangrowth", level = 46, num_moves = 4 },
     { species = "empoleon", level = 46, num_moves = 4 },
 ]
-label = "Veteran Edgar"
+label = "Victory Road 1F - Veteran Edgar"
 
 [veteran_clayton]
 id = 229
@@ -1774,7 +1774,7 @@ party = [
     { species = "staraptor", level = 47, num_moves = 4 },
     { species = "lickilicky", level = 47, num_moves = 4 },
 ]
-label = "Veteran Clayton"
+label = "Victory Road 2F - Veteran Clayton"
 
 [dragon_tamer_ondrej]
 id = 230
@@ -1782,7 +1782,7 @@ party = [
     { species = "altaria", level = 45, num_moves = 0 },
     { species = "gabite", level = 47, num_moves = 0 },
 ]
-label = "Dragon Tamer Ondrej"
+label = "Victory Road B1F - Dragon Tamer Ondrej"
 
 [dragon_tamer_clinton]
 id = 231
@@ -1791,7 +1791,7 @@ party = [
     { species = "swablu", level = 45, num_moves = 0 },
     { species = "gabite", level = 47, num_moves = 0 },
 ]
-label = "Dragon Tamer Clinton"
+label = "Victory Road 1F - Dragon Tamer Clinton"
 
 [black_belt_david]
 id = 232
@@ -1799,7 +1799,7 @@ party = [
     { species = "steelix", level = 35, num_moves = 4 },
     { species = "steelix", level = 37, num_moves = 4 },
 ]
-label = "Black Belt David"
+label = "Canalave City Gym - Black Belt David"
 
 [bird_keeper_hana]
 id = 233
@@ -1807,7 +1807,7 @@ party = [
     { species = "noctowl", level = 45, num_moves = 0 },
     { species = "togetic", level = 47, num_moves = 0 },
 ]
-label = "Bird Keeper Hana"
+label = "Victory Road 1F - Bird Keeper Hana"
 
 [psychic_bryce]
 id = 234
@@ -1816,7 +1816,7 @@ party = [
     { species = "gardevoir", level = 46, num_moves = 0 },
     { species = "gengar", level = 46, num_moves = 0 },
 ]
-label = "Psychic Bryce"
+label = "Victory Road 1F - Psychic Bryce"
 
 [psychic_valencia]
 id = 235
@@ -1825,7 +1825,7 @@ party = [
     { species = "absol", level = 45, num_moves = 0 },
     { species = "dusknoir", level = 46, num_moves = 0 },
 ]
-label = "Psychic Valencia"
+label = "Victory Road B1F - Psychic Valencia"
 
 [double_team_jo_and_pat]
 id = 236
@@ -1833,7 +1833,7 @@ party = [
     { species = "lumineon", level = 50, num_moves = 4 },
     { species = "rapidash", level = 50, num_moves = 4 },
 ]
-label = "Double Team Jo And Pat"
+label = "Victory Road B1F - Double Team Jo And Pat"
 
 [double_team_al_and_kay]
 id = 237
@@ -1841,7 +1841,7 @@ party = [
     { species = "staraptor", level = 50, num_moves = 4 },
     { species = "ambipom", level = 50, num_moves = 4 },
 ]
-label = "Double Team Al And Kay"
+label = "Victory Road 2F - Double Team Al And Kay"
 
 [dummy_238]
 id = 238
@@ -1864,7 +1864,7 @@ party = [
     { species = "staraptor", level = 34, num_moves = 4 },
     { species = "graveler", level = 34, num_moves = 4 },
 ]
-label = "Veteran Grant"
+label = "Oreburgh Gate B1F - Veteran Grant"
 
 [dummy_241]
 id = 241
@@ -1892,7 +1892,7 @@ id = 244
 party = [
     { species = "geodude", level = 11, num_moves = 2 },
 ]
-label = "Youngster Jonathon"
+label = "Oreburgh City Gym - Youngster Jonathon"
 
 [youngster_darius]
 id = 245
@@ -1900,7 +1900,7 @@ party = [
     { species = "geodude", level = 9, num_moves = 2 },
     { species = "onix", level = 9, num_moves = 3 },
 ]
-label = "Youngster Darius"
+label = "Oreburgh City Gym - Youngster Darius"
 
 [leader_roark]
 id = 246
@@ -1910,7 +1910,7 @@ party = [
     { species = "cranidos", level = 14, num_moves = 3 },
 ]
 check = 117
-label = "Leader Roark"
+label = "Oreburgh City Gym - Leader Roark"
 
 [rival_route_203_piplup]
 id = 247
@@ -1918,7 +1918,7 @@ party = [
     { species = "starly", level = 7, num_moves = 2 },
     { species = "turtwig", level = 9, num_moves = 2 },
 ]
-label = "Rival Route 203 Piplup"
+label = "Route 203 - Rival"
 
 [rival_route_203_piplup.check]
 id = 16520
@@ -1930,7 +1930,7 @@ party = [
     { species = "starly", level = 7, num_moves = 2 },
     { species = "chimchar", level = 9, num_moves = 2 },
 ]
-label = "Rival Route 203 Turtwig"
+label = "Route 203 - Rival"
 
 [rival_route_203_turtwig.check]
 id = 16520
@@ -1942,7 +1942,7 @@ party = [
     { species = "starly", level = 7, num_moves = 2 },
     { species = "piplup", level = 9, num_moves = 2 },
 ]
-label = "Rival Route 203 Chimchar"
+label = "Route 203 - Rival"
 
 [rival_route_203_chimchar.check]
 id = 16520
@@ -1956,7 +1956,7 @@ party = [
     { species = "bastiodon", level = 41, num_moves = 4 },
 ]
 check = 146
-label = "Leader Byron"
+label = "Canalave City Gym - Leader Byron"
 
 [dummy_251]
 id = 251
@@ -2000,21 +2000,21 @@ party = [
     { species = "magnemite", level = 34, num_moves = 3 },
     { species = "magnemite", level = 34, num_moves = 3 },
 ]
-label = "Worker Jackson"
+label = "Canalave City Gym - Worker Jackson"
 
 [worker_gary]
 id = 257
 party = [
     { species = "magnemite", level = 37, num_moves = 2 },
 ]
-label = "Worker Gary"
+label = "Canalave City Gym - Worker Gary"
 
 [black_belt_philip]
 id = 258
 party = [
     { species = "machoke", level = 40, num_moves = 0 },
 ]
-label = "Black Belt Philip"
+label = "Route 216 - Black Belt Philip"
 
 [aroma_lady_jenna]
 id = 259
@@ -2023,7 +2023,7 @@ party = [
     { species = "budew", level = 16, num_moves = 3 },
     { species = "budew", level = 17, num_moves = 3 },
 ]
-label = "Aroma Lady Jenna"
+label = "Eterna City Gym - Aroma Lady Jenna"
 
 [aroma_lady_jenna.check]
 id = 16558
@@ -2034,7 +2034,7 @@ id = 260
 party = [
     { species = "roselia", level = 19, num_moves = 3 },
 ]
-label = "Aroma Lady Angela"
+label = "Eterna City Gym - Aroma Lady Angela"
 
 [aroma_lady_angela.check]
 id = 16558
@@ -2049,7 +2049,7 @@ party = [
     { species = "heracross", level = 51, num_moves = 4 },
     { species = "drapion", level = 53, num_moves = 4 },
 ]
-label = "Elite Four Aaron"
+label = "Pokemon League - Elite Four Aaron"
 
 [elite_four_bertha]
 id = 262
@@ -2060,7 +2060,7 @@ party = [
     { species = "golem", level = 52, num_moves = 4 },
     { species = "rhyperior", level = 55, num_moves = 4 },
 ]
-label = "Elite Four Bertha"
+label = "Pokemon League - Elite Four Bertha"
 
 [elite_four_flint]
 id = 263
@@ -2071,7 +2071,7 @@ party = [
     { species = "infernape", level = 55, num_moves = 4 },
     { species = "magmortar", level = 57, num_moves = 4 },
 ]
-label = "Elite Four Flint"
+label = "Pokemon League - Elite Four Flint"
 
 [elite_four_lucian]
 id = 264
@@ -2082,7 +2082,7 @@ party = [
     { species = "alakazam", level = 56, num_moves = 4 },
     { species = "gallade", level = 59, num_moves = 4 },
 ]
-label = "Elite Four Lucian"
+label = "Pokemon League - Elite Four Lucian"
 
 [camper_curtis]
 id = 265
@@ -2090,7 +2090,7 @@ party = [
     { species = "starly", level = 7, num_moves = 0 },
     { species = "shinx", level = 7, num_moves = 0 },
 ]
-label = "Camper Curtis"
+label = "Oreburgh Gate 1F - Camper Curtis"
 
 [camper_drew]
 id = 266
@@ -2099,7 +2099,7 @@ party = [
     { species = "gastly", level = 27, num_moves = 3 },
     { species = "gastly", level = 27, num_moves = 3 },
 ]
-label = "Camper Drew"
+label = "Camper Drew" #???
 
 [champion_cynthia]
 id = 267
@@ -2111,7 +2111,7 @@ party = [
     { species = "milotic", level = 58, num_moves = 4 },
     { species = "garchomp", level = 62, num_moves = 4 },
 ]
-label = "Champion Cynthia"
+label = "Pokemon League - Champion Cynthia"
 
 [ace_trainer_sergio]
 id = 268
@@ -2119,14 +2119,14 @@ party = [
     { species = "snover", level = 41, num_moves = 4 },
     { species = "sneasel", level = 42, num_moves = 4 },
 ]
-label = "Ace Trainer Sergio"
+label = "Snowpoint City Gym - Ace Trainer Sergio"
 
 [ace_trainer_isaiah]
 id = 269
 party = [
     { species = "piloswine", level = 44, num_moves = 4 },
 ]
-label = "Ace Trainer Isaiah"
+label = "Snowpoint City Gym - Ace Trainer Isaiah"
 
 [ace_trainer_savannah]
 id = 270
@@ -2135,7 +2135,7 @@ party = [
     { species = "snorunt", level = 40, num_moves = 4 },
     { species = "glalie", level = 42, num_moves = 4 },
 ]
-label = "Ace Trainer Savannah"
+label = "Snowpoint City Gym - Ace Trainer Savannah"
 
 [ace_trainer_alicia]
 id = 271
@@ -2143,7 +2143,7 @@ party = [
     { species = "sneasel", level = 40, num_moves = 4 },
     { species = "sneasel", level = 43, num_moves = 4 },
 ]
-label = "Ace Trainer Alicia"
+label = "Snowpoint City Gym - Ace Trainer Alicia"
 
 [collector_douglas]
 id = 272
@@ -2152,7 +2152,7 @@ party = [
     { species = "vaporeon", level = 24, num_moves = 0 },
     { species = "flareon", level = 24, num_moves = 0 },
 ]
-label = "Collector Douglas"
+label = "Route 214 - Collector Douglas"
 
 [collector_brady]
 id = 273
@@ -2164,28 +2164,28 @@ party = [
     { species = "croagunk", level = 21, num_moves = 0 },
     { species = "tropius", level = 21, num_moves = 0 },
 ]
-label = "Collector Brady"
+label = "Route 214 - Collector Brady"
 
 [collector_ivan]
 id = 274
 party = [
     { species = "togetic", level = 35, num_moves = 0 },
 ]
-label = "Collector Ivan"
+label = "Route 221 - Collector Ivan"
 
 [collector_fernando]
 id = 275
 party = [
     { species = "heracross", level = 25, num_moves = 0 },
 ]
-label = "Collector Fernando"
+label = "Route 210 South - Collector Fernando"
 
 [collector_edwin]
 id = 276
 party = [
     { species = "munchlax", level = 25, num_moves = 0 },
 ]
-label = "Collector Edwin"
+label = "Route 210 South - Collector Edwin"
 
 [dragon_tamer_hayden]
 id = 277
@@ -2193,7 +2193,7 @@ party = [
     { species = "altaria", level = 56, num_moves = 0 },
     { species = "seadra", level = 56, num_moves = 0 },
 ]
-label = "Dragon Tamer Hayden"
+label = "Route 224 - Dragon Tamer Hayden"
 requires_national_dex = true
 
 [ace_trainer_dennis]
@@ -2203,14 +2203,14 @@ party = [
     { species = "buizel", level = 24, num_moves = 4 },
     { species = "drifblim", level = 25, num_moves = 4 },
 ]
-label = "Ace Trainer Dennis"
+label = "Route 215 - Ace Trainer Dennis"
 
 [ace_trainer_cesar]
 id = 279
 party = [
     { species = "scizor", level = 40, num_moves = 4 },
 ]
-label = "Ace Trainer Cesar"
+label = "Canalave City Gym - Ace Trainer Cesar"
 
 [ace_trainer_allen]
 id = 280
@@ -2219,7 +2219,7 @@ party = [
     { species = "gastly", level = 22, num_moves = 4 },
     { species = "haunter", level = 24, num_moves = 4 },
 ]
-label = "Ace Trainer Allen"
+label = "Hearthome City Gym - Ace Trainer Allen"
 
 [ace_trainer_zachery]
 id = 281
@@ -2227,7 +2227,7 @@ party = [
     { species = "electabuzz", level = 47, num_moves = 4 },
     { species = "magneton", level = 48, num_moves = 3 },
 ]
-label = "Ace Trainer Zachery"
+label = "Sunyshore City Gym - Ace Trainer Zachery"
 
 [ace_trainer_ruben]
 id = 282
@@ -2235,7 +2235,7 @@ party = [
     { species = "nuzleaf", level = 56, num_moves = 4 },
     { species = "gyarados", level = 57, num_moves = 4 },
 ]
-label = "Ace Trainer Ruben"
+label = "Route 224 - Ace Trainer Ruben"
 requires_national_dex = true
 
 [ace_trainer_breanna]
@@ -2245,7 +2245,7 @@ party = [
     { species = "bronzor", level = 36, num_moves = 3 },
     { species = "bronzor", level = 38, num_moves = 3 },
 ]
-label = "Ace Trainer Breanna"
+label = "Canalave City Gym - Ace Trainer Breanna"
 
 [ace_trainer_catherine]
 id = 284
@@ -2253,7 +2253,7 @@ party = [
     { species = "haunter", level = 23, num_moves = 4 },
     { species = "misdreavus", level = 24, num_moves = 4 },
 ]
-label = "Ace Trainer Catherine"
+label = "Hearthome City Gym - Ace Trainer Catherine"
 
 [ace_trainer_destiny]
 id = 285
@@ -2261,14 +2261,14 @@ party = [
     { species = "electabuzz", level = 47, num_moves = 4 },
     { species = "raichu", level = 48, num_moves = 4 },
 ]
-label = "Ace Trainer Destiny"
+label = "Sunyshore City Gym - Ace Trainer Destiny"
 
 [ace_trainer_jamie]
 id = 286
 party = [
     { species = "metagross", level = 60, num_moves = 4 },
 ]
-label = "Ace Trainer Jamie"
+label = "Route 224 - Ace Trainer Jamie"
 requires_national_dex = true
 
 [ace_trainer_maya]
@@ -2278,7 +2278,7 @@ party = [
     { species = "ralts", level = 24, num_moves = 4 },
     { species = "lickitung", level = 25, num_moves = 4 },
 ]
-label = "Ace Trainer Maya"
+label = "Route 215 - Ace Trainer Maya"
 
 [psychic_maxwell]
 id = 288
@@ -2286,7 +2286,7 @@ party = [
     { species = "misdreavus", level = 58, num_moves = 0 },
     { species = "haunter", level = 54, num_moves = 0 },
 ]
-label = "Psychic Maxwell"
+label = "Route 224 - Psychic Maxwell"
 requires_national_dex = true
 
 [psychic_brittney]
@@ -2295,7 +2295,7 @@ party = [
     { species = "drowzee", level = 55, num_moves = 0 },
     { species = "alakazam", level = 57, num_moves = 0 },
 ]
-label = "Psychic Brittney"
+label = "Route 224 - Psychic Brittney"
 requires_national_dex = true
 
 [belle_and_pa_ava_and_matt]
@@ -2304,7 +2304,7 @@ party = [
     { species = "ponyta", level = 24, num_moves = 0 },
     { species = "rapidash", level = 24, num_moves = 0 },
 ]
-label = "Belle And Pa Ava And Matt"
+label = "Route 210 South - Belle And Pa Ava And Matt"
 
 [dummy_291]
 id = 291
@@ -2318,7 +2318,7 @@ id = 292
 party = [
     { species = "ponyta", level = 24, num_moves = 0 },
 ]
-label = "Rancher Marco"
+label = "Route 210 South - Rancher Marco"
 
 [fisherman_erick]
 id = 293
@@ -2327,7 +2327,7 @@ party = [
     { species = "seaking", level = 31, num_moves = 4 },
     { species = "gyarados", level = 31, num_moves = 2 },
 ]
-label = "Fisherman Erick"
+label = "Pastoria City Gym - Fisherman Erick"
 
 [twins_emma_and_lil]
 id = 294
@@ -2335,7 +2335,7 @@ party = [
     { species = "bonsly", level = 22, num_moves = 0 },
     { species = "mime_jr", level = 22, num_moves = 0 },
 ]
-label = "Twins Emma And Lil"
+label = "Route 209 - Twins Emma And Lil"
 
 [commander_mars_valley_windworks]
 id = 295
@@ -2343,7 +2343,7 @@ party = [
     { species = "zubat", level = 15, num_moves = 3 },
     { species = "purugly", level = 17, num_moves = 3 },
 ]
-label = "Commander Mars Valley Windworks"
+label = "Valley Windworks - Commander Mars"
 
 [commander_mars_valley_windworks.check]
 id = 16521
@@ -2354,7 +2354,7 @@ id = 296
 party = [
     { species = "stunky", level = 13, num_moves = 0 },
 ]
-label = "Galactic Grunt Floaroma Meadow 1"
+label = "Floaroma Meadow - Galactic Grunt 1"
 
 [galactic_grunt_floaroma_meadow_2]
 id = 297
@@ -2362,14 +2362,14 @@ party = [
     { species = "zubat", level = 11, num_moves = 0 },
     { species = "zubat", level = 11, num_moves = 0 },
 ]
-label = "Galactic Grunt Floaroma Meadow 2"
+label = "Floaroma Meadow - Galactic Grunt 2"
 
 [galactic_grunt_valley_windworks_2]
 id = 298
 party = [
     { species = "zubat", level = 13, num_moves = 0 },
 ]
-label = "Galactic Grunt Valley Windworks 2"
+label = "Valley Windworks - Galactic Grunt 2"
 
 [galactic_grunt_valley_windworks_3]
 id = 299
@@ -2377,7 +2377,7 @@ party = [
     { species = "glameow", level = 11, num_moves = 0 },
     { species = "stunky", level = 11, num_moves = 0 },
 ]
-label = "Galactic Grunt Valley Windworks 3"
+label = "Valley Windworks - Galactic Grunt 3"
 
 [guitarist_tony]
 id = 300
@@ -2385,7 +2385,7 @@ party = [
     { species = "kricketune", level = 33, num_moves = 0 },
     { species = "magnemite", level = 33, num_moves = 0 },
 ]
-label = "Guitarist Tony"
+label = "Route 218 - Guitarist Tony"
 
 [guitarist_jerry]
 id = 301
@@ -2394,7 +2394,7 @@ party = [
     { species = "luxio", level = 44, num_moves = 0 },
     { species = "luxio", level = 44, num_moves = 0 },
 ]
-label = "Guitarist Jerry"
+label = "Sunyshore City Gym - Guitarist Jerry"
 
 [guitarist_preston]
 id = 302
@@ -2409,7 +2409,7 @@ id = 303
 party = [
     { species = "raichu", level = 47, num_moves = 4 },
 ]
-label = "Guitarist Lonnie"
+label = "Sunyshore City Gym - Guitarist Lonnie"
 
 [ruin_maniac_calvin]
 id = 304
@@ -2417,14 +2417,14 @@ party = [
     { species = "bronzor", level = 23, num_moves = 0 },
     { species = "shieldon", level = 23, num_moves = 0 },
 ]
-label = "Ruin Maniac Calvin"
+label = "Route 215 - Ruin Maniac Calvin"
 
 [ruin_maniac_larry]
 id = 305
 party = [
     { species = "aerodactyl", level = 57, num_moves = 0 },
 ]
-label = "Ruin Maniac Larry"
+label = "Route 224 - Ruin Maniac Larry"
 requires_national_dex = true
 
 [jogger_wyatt]
@@ -2432,7 +2432,7 @@ id = 306
 party = [
     { species = "pikachu", level = 24, num_moves = 0 },
 ]
-label = "Jogger Wyatt"
+label = "Route 210 South - Jogger Wyatt"
 
 [jogger_craig]
 id = 307
@@ -2440,14 +2440,14 @@ party = [
     { species = "luxio", level = 22, num_moves = 0 },
     { species = "luxio", level = 24, num_moves = 0 },
 ]
-label = "Jogger Craig"
+label = "Route 215 - Jogger Craig"
 
 [jogger_raul]
 id = 308
 party = [
     { species = "staravia", level = 23, num_moves = 0 },
 ]
-label = "Jogger Raul"
+label = "Route 209 - Jogger Raul"
 
 [black_belt_colby]
 id = 309
@@ -2456,7 +2456,7 @@ party = [
     { species = "machoke", level = 25, num_moves = 2 },
     { species = "machoke", level = 27, num_moves = 3 },
 ]
-label = "Black Belt Colby"
+label = "Veilstone City Gym - Black Belt Colby"
 
 [black_belt_darren]
 id = 310
@@ -2465,7 +2465,7 @@ party = [
     { species = "meditite", level = 25, num_moves = 2 },
     { species = "machoke", level = 25, num_moves = 2 },
 ]
-label = "Black Belt Darren"
+label = "Veilstone City Gym - Black Belt Darren"
 
 [black_belt_rafael]
 id = 311
@@ -2473,14 +2473,14 @@ party = [
     { species = "croagunk", level = 26, num_moves = 3 },
     { species = "machoke", level = 26, num_moves = 2 },
 ]
-label = "Black Belt Rafael"
+label = "Veilstone City Gym - Black Belt Rafael"
 
 [black_belt_jeffery]
 id = 312
 party = [
     { species = "heracross", level = 28, num_moves = 3 },
 ]
-label = "Black Belt Jeffery"
+label = "Veilstone City Gym - Black Belt Jeffery"
 
 [black_belt_carl]
 id = 313
@@ -2488,7 +2488,7 @@ party = [
     { species = "tyrogue", level = 55, num_moves = 0 },
     { species = "hitmonlee", level = 59, num_moves = 0 },
 ]
-label = "Black Belt Carl"
+label = "Route 224 - Black Belt Carl"
 requires_national_dex = true
 
 [black_belt_ricky]
@@ -2496,7 +2496,7 @@ id = 314
 party = [
     { species = "steelix", level = 38, num_moves = 4 },
 ]
-label = "Black Belt Ricky"
+label = "Canalave City Gym - Black Belt Ricky"
 
 [leader_gardenia]
 id = 315
@@ -2506,7 +2506,7 @@ party = [
     { species = "roserade", level = 22, num_moves = 4 },
 ]
 check = 116
-label = "Leader Gardenia"
+label = "Eterna City Gym - Leader Gardenia"
 
 [leader_wake]
 id = 316
@@ -2516,7 +2516,7 @@ party = [
     { species = "floatzel", level = 37, num_moves = 4 },
 ]
 check = 156
-label = "Leader Wake"
+label = "Pastoria City Gym - Leader Wake"
 
 [leader_maylene]
 id = 317
@@ -2526,7 +2526,7 @@ party = [
     { species = "lucario", level = 32, num_moves = 4 },
 ]
 check = 157
-label = "Leader Maylene"
+label = "Veilstone City Gym - Leader Maylene"
 
 [leader_fantina]
 id = 318
@@ -2536,7 +2536,7 @@ party = [
     { species = "mismagius", level = 26, num_moves = 4 },
 ]
 check = 125
-label = "Leader Fantina"
+label = "Hearthome City Gym - Leader Fantina"
 
 [leader_candice]
 id = 319
@@ -2547,7 +2547,7 @@ party = [
     { species = "froslass", level = 44, num_moves = 4 },
 ]
 check = 158
-label = "Leader Candice"
+label = "Snowpoint City Gym - Leader Candice"
 
 [leader_volkner]
 id = 320
@@ -2558,7 +2558,7 @@ party = [
     { species = "electivire", level = 50, num_moves = 4 },
 ]
 check = 182
-label = "Leader Volkner"
+label = "Sunyshore City Gym - Leader Volkner"
 
 [dummy_321]
 id = 321
@@ -2572,7 +2572,7 @@ id = 322
 party = [
     { species = "psyduck", level = 8, num_moves = 0 },
 ]
-label = "Lass Madeline"
+label = "Route 203 - Lass Madeline"
 
 [lass_kaitlin]
 id = 323
@@ -2582,7 +2582,7 @@ party = [
     { species = "starly", level = 4, num_moves = 0 },
     { species = "abra", level = 4, num_moves = 0 },
 ]
-label = "Lass Kaitlin"
+label = "Route 203 - Lass Kaitlin"
 
 [lass_caroline]
 id = 324
@@ -2590,7 +2590,7 @@ party = [
     { species = "cherubi", level = 17, num_moves = 2 },
     { species = "roselia", level = 17, num_moves = 3 },
 ]
-label = "Lass Caroline"
+label = "Eterna City Gym - Lass Caroline"
 
 [lass_caroline.check]
 id = 16558
@@ -2601,7 +2601,7 @@ id = 325
 party = [
     { species = "misdreavus", level = 23, num_moves = 3 },
 ]
-label = "Lass Molly"
+label = "Hearthome City Gym - Lass Molly"
 
 [hiker_louis]
 id = 326
@@ -2609,7 +2609,7 @@ party = [
     { species = "geodude", level = 14, num_moves = 0 },
     { species = "onix", level = 18, num_moves = 0 },
 ]
-label = "Hiker Louis"
+label = "Route 211 West - Hiker Louis"
 
 [parasol_lady_alexa]
 id = 327
@@ -2617,7 +2617,7 @@ party = [
     { species = "goldeen", level = 27, num_moves = 0 },
     { species = "bibarel", level = 27, num_moves = 0 },
 ]
-label = "Parasol Lady Alexa"
+label = "Route 211 West - Parasol Lady Alexa"
 
 [parasol_lady_sabrina]
 id = 328
@@ -2625,14 +2625,14 @@ party = [
     { species = "wooper", level = 26, num_moves = 0 },
     { species = "quagsire", level = 28, num_moves = 0 },
 ]
-label = "Parasol Lady Sabrina"
+label = "Route 212 South - Parasol Lady Sabrina"
 
 [picnicker_diana]
 id = 329
 party = [
     { species = "bidoof", level = 9, num_moves = 0 },
 ]
-label = "Picnicker Diana"
+label = "Oreburgh Gate 1F - Picnicker Diana"
 
 [picnicker_cheyenne]
 id = 330
@@ -2640,7 +2640,7 @@ party = [
     { species = "drifloon", level = 28, num_moves = 3 },
     { species = "misdreavus", level = 28, num_moves = 3 },
 ]
-label = "Picnicker Cheyenne"
+label = "Picnicker Cheyenne" #Not in Platinum
 
 [poke_kid_meghan]
 id = 331
@@ -2650,7 +2650,7 @@ party = [
     { species = "pikachu", level = 42, num_moves = 0 },
     { species = "pikachu", level = 42, num_moves = 0 },
 ]
-label = "Poke Kid Meghan"
+label = "Sunyshore City Gym - Poke Kid Meghan"
 
 [policeman_danny]
 id = 332
@@ -2658,7 +2658,7 @@ party = [
     { species = "hoothoot", level = 26, num_moves = 0 },
     { species = "machop", level = 28, num_moves = 0 },
 ]
-label = "Policeman Danny"
+label = "Route 212 South - Policeman Danny"
 
 [policeman_thomas]
 id = 333
@@ -2666,7 +2666,7 @@ party = [
     { species = "noctowl", level = 43, num_moves = 0 },
     { species = "machoke", level = 43, num_moves = 0 },
 ]
-label = "Policeman Thomas"
+label = "Route 222 - Policeman Thomas"
 
 [dummy_334]
 id = 334
@@ -2680,7 +2680,7 @@ id = 335
 party = [
     { species = "luxray", level = 45, num_moves = 0 },
 ]
-label = "Rich Boy Trey"
+label = "Route 222 - Rich Boy Trey"
 
 [dummy_336]
 id = 336
@@ -2694,7 +2694,7 @@ id = 337
 party = [
     { species = "mantyke", level = 45, num_moves = 0 },
 ]
-label = "Sailor Marc"
+label = "Route 222 - Sailor Marc"
 
 [sailor_skyler]
 id = 338
@@ -2702,7 +2702,7 @@ party = [
     { species = "mantyke", level = 32, num_moves = 0 },
     { species = "machoke", level = 34, num_moves = 0 },
 ]
-label = "Sailor Skyler"
+label = "Route 218 - Sailor Skyler"
 
 [sailor_damian]
 id = 339
@@ -2710,28 +2710,28 @@ party = [
     { species = "wingull", level = 31, num_moves = 3 },
     { species = "pelipper", level = 31, num_moves = 3 },
 ]
-label = "Sailor Damian"
+label = "Pastoria City Gym - Sailor Damian"
 
 [school_kid_chance]
 id = 340
 party = [
     { species = "gastly", level = 23, num_moves = 4 },
 ]
-label = "School Kid Chance"
+label = "Hearthome City Gym - School Kid Chance"
 
 [school_kid_forrest]
 id = 341
 party = [
     { species = "magneton", level = 47, num_moves = 3 },
 ]
-label = "School Kid Forrest"
+label = "Sunyshore City Gym - School Kid Forrest"
 
 [school_kid_harrison]
 id = 342
 party = [
     { species = "starly", level = 6, num_moves = 1 },
 ]
-label = "School Kid Harrison"
+label = "Trainers School - School Kid Harrison"
 
 [school_kid_mackenzie]
 id = 343
@@ -2739,28 +2739,28 @@ party = [
     { species = "drifloon", level = 21, num_moves = 4 },
     { species = "drifloon", level = 21, num_moves = 3 },
 ]
-label = "School Kid Mackenzie"
+label = "Hearthome City Gym - School Kid Mackenzie"
 
 [school_kid_tiera]
 id = 344
 party = [
     { species = "pachirisu", level = 47, num_moves = 4 },
 ]
-label = "School Kid Tiera"
+label = "Sunyshore City Gym - School Kid Tiera"
 
 [school_kid_christine]
 id = 345
 party = [
     { species = "bidoof", level = 6, num_moves = 0 },
 ]
-label = "School Kid Christine"
+label = "Trainers School - School Kid Christine"
 
 [beauty_cyndy]
 id = 346
 party = [
     { species = "glameow", level = 29, num_moves = 0 },
 ]
-label = "Beauty Cyndy"
+label = "Route 213 - Beauty Cyndy"
 
 [dummy_347]
 id = 347
@@ -2774,7 +2774,7 @@ id = 348
 party = [
     { species = "roselia", level = 19, num_moves = 3 },
 ]
-label = "Beauty Lindsay"
+label = "Beauty Lindsay" #not in Platinum
 
 [dummy_349]
 id = 349
@@ -2823,14 +2823,14 @@ id = 355
 party = [
     { species = "shinx", level = 8, num_moves = 0 },
 ]
-label = "Youngster Dallas"
+label = "Route 203 - Youngster Dallas"
 
 [youngster_sebastian]
 id = 356
 party = [
     { species = "machop", level = 8, num_moves = 2 },
 ]
-label = "Youngster Sebastian"
+label = "Route 203 - Youngster Sebastian"
 
 [youngster_donny]
 id = 357
@@ -2838,7 +2838,7 @@ party = [
     { species = "gastly", level = 20, num_moves = 4 },
     { species = "drifloon", level = 22, num_moves = 3 },
 ]
-label = "Youngster Donny"
+label = "Hearthome City Gym - Youngster Donny"
 
 [tuber_trenton]
 id = 358
@@ -2846,14 +2846,14 @@ party = [
     { species = "shellos", level = 31, num_moves = 0 },
     { species = "shellos", level = 33, num_moves = 0 },
 ]
-label = "Tuber Trenton"
+label = "Route 219 - Tuber Trenton"
 
 [tuber_conner]
 id = 359
 party = [
     { species = "remoraid", level = 44, num_moves = 0 },
 ]
-label = "Tuber Conner"
+label = "Route 222 - Tuber Conner"
 
 [tuber_mariel]
 id = 360
@@ -2861,14 +2861,14 @@ party = [
     { species = "marill", level = 31, num_moves = 0 },
     { species = "marill", level = 33, num_moves = 0 },
 ]
-label = "Tuber Mariel"
+label = "Route 219 - Tuber Mariel"
 
 [tuber_holly]
 id = 361
 party = [
     { species = "remoraid", level = 44, num_moves = 0 },
 ]
-label = "Tuber Holly"
+label = "Route 222 - Tuber Holly"
 
 [veteran_armando]
 id = 362
@@ -2877,7 +2877,7 @@ party = [
     { species = "mightyena", level = 53, num_moves = 4 },
     { species = "lickitung", level = 56, num_moves = 4 },
 ]
-label = "Veteran Armando"
+label = "Route 224 - Veteran Armando"
 requires_national_dex = true
 
 [dummy_363]
@@ -2906,7 +2906,7 @@ id = 366
 party = [
     { species = "clefairy", level = 25, num_moves = 0 },
 ]
-label = "Waitress Kati"
+label = "Route 210 South - Waitress Kati"
 
 [worker_gerardo]
 id = 367
@@ -2914,7 +2914,7 @@ party = [
     { species = "magnemite", level = 35, num_moves = 3 },
     { species = "magnemite", level = 35, num_moves = 3 },
 ]
-label = "Worker Gerardo"
+label = "Canalave City Gym - Worker Gerardo"
 
 [interviewers_roxy_and_oli_unused]
 id = 368
@@ -2950,7 +2950,7 @@ id = 372
 party = [
     { species = "medicham", level = 38, num_moves = 0 },
 ]
-label = "Battle Girl Tyler"
+label = "Iron Island B2F Left - Battle Girl Tyler"
 
 [bird_keeper_autumn]
 id = 373
@@ -2958,7 +2958,7 @@ party = [
     { species = "murkrow", level = 54, num_moves = 0 },
     { species = "xatu", level = 54, num_moves = 0 },
 ]
-label = "Bird Keeper Autumn"
+label = "Victory Road 1F - Bird Keeper Autumn"
 requires_national_dex = true
 
 [dummy_374]
@@ -2987,7 +2987,7 @@ id = 377
 party = [
     { species = "aipom", level = 14, num_moves = 0 },
 ]
-label = "Camper Zackary"
+label = "Route 205 South - Camper Zackary"
 
 [camper_lawrence]
 id = 378
@@ -2995,7 +2995,7 @@ party = [
     { species = "aipom", level = 34, num_moves = 0 },
     { species = "floatzel", level = 36, num_moves = 0 },
 ]
-label = "Camper Lawrence"
+label = "Iron Island B1F Left - Camper Lawrence"
 
 [camper_diego]
 id = 379
@@ -3010,7 +3010,7 @@ party = [
     { species = "buizel", level = 20, num_moves = 3 },
     { species = "shinx", level = 20, num_moves = 2 },
 ]
-label = "Camper Parker"
+label = "Wayward Cave 1F - Camper Parker"
 
 [collector_dean]
 id = 381
@@ -3018,21 +3018,21 @@ party = [
     { species = "umbreon", level = 27, num_moves = 0 },
     { species = "espeon", level = 27, num_moves = 0 },
 ]
-label = "Collector Dean"
+label = "Route 212 South - Collector Dean"
 
 [collector_jamal]
 id = 382
 party = [
     { species = "porygon", level = 27, num_moves = 0 },
 ]
-label = "Collector Jamal"
+label = "Route 214 - Collector Jamal"
 
 [collector_terry]
 id = 383
 party = [
     { species = "gible", level = 22, num_moves = 0 },
 ]
-label = "Collector Terry"
+label = "Wayward Cave 1F - Collector Terry"
 
 [dummy_384]
 id = 384
@@ -3054,7 +3054,7 @@ party = [
     { species = "dratini", level = 52, num_moves = 0 },
     { species = "gabite", level = 56, num_moves = 0 },
 ]
-label = "Dragon Tamer Joe"
+label = "Victory Road 1F - Dragon Tamer Joe"
 requires_national_dex = true
 
 [dummy_387]
@@ -3071,7 +3071,7 @@ party = [
     { species = "staraptor", level = 36, num_moves = 0 },
     { species = "hippopotas", level = 38, num_moves = 0 },
 ]
-label = "Ace Trainer Jonah"
+label = "Iron Island B2F Left - Ace Trainer Jonah"
 
 [ace_trainer_micah]
 id = 389
@@ -3079,7 +3079,7 @@ party = [
     { species = "metang", level = 55, num_moves = 4 },
     { species = "ludicolo", level = 56, num_moves = 4 },
 ]
-label = "Ace Trainer Micah"
+label = "Victory Road 1F - Ace Trainer Micah"
 requires_national_dex = true
 
 [ace_trainer_arthur]
@@ -3089,7 +3089,7 @@ party = [
     { species = "beedrill", level = 54, num_moves = 4 },
     { species = "electrode", level = 55, num_moves = 4 },
 ]
-label = "Ace Trainer Arthur"
+label = "Victory Road 1F - Ace Trainer Arthur"
 requires_national_dex = true
 
 [dummy_391]
@@ -3106,7 +3106,7 @@ party = [
     { species = "kirlia", level = 36, num_moves = 0 },
     { species = "medicham", level = 35, num_moves = 0 },
 ]
-label = "Ace Trainer Brenda"
+label = "Iron Island B2F Left - Ace Trainer Brenda"
 
 [ace_trainer_brandi]
 id = 393
@@ -3114,7 +3114,7 @@ party = [
     { species = "marowak", level = 54, num_moves = 4 },
     { species = "kangaskhan", level = 57, num_moves = 4 },
 ]
-label = "Ace Trainer Brandi"
+label = "Victory Road 1F - Ace Trainer Brandi"
 requires_national_dex = true
 
 [ace_trainer_clarice]
@@ -3124,7 +3124,7 @@ party = [
     { species = "ninetales", level = 54, num_moves = 4 },
     { species = "magnezone", level = 56, num_moves = 4 },
 ]
-label = "Ace Trainer Clarice"
+label = "Victory Road 1F - Ace Trainer Clarice"
 requires_national_dex = true
 
 [psychic_kody]
@@ -3132,7 +3132,7 @@ id = 395
 party = [
     { species = "meditite", level = 17, num_moves = 3 },
 ]
-label = "Psychic Kody"
+label = "Eterna Forest - Psychic Kody"
 
 [psychic_landon]
 id = 396
@@ -3140,7 +3140,7 @@ party = [
     { species = "shuppet", level = 53, num_moves = 4 },
     { species = "alakazam", level = 55, num_moves = 4 },
 ]
-label = "Psychic Landon"
+label = "Victory Road 1F - Psychic Landon"
 requires_national_dex = true
 
 [psychic_deandre]
@@ -3148,7 +3148,7 @@ id = 397
 party = [
     { species = "dusknoir", level = 56, num_moves = 4 },
 ]
-label = "Psychic Deandre"
+label = "Victory Road 1F - Psychic Deandre"
 requires_national_dex = true
 
 [psychic_rachael]
@@ -3156,7 +3156,7 @@ id = 398
 party = [
     { species = "psyduck", level = 17, num_moves = 3 },
 ]
-label = "Psychic Rachael"
+label = "Eterna Forest - Psychic Rachael"
 
 [psychic_desiree]
 id = 399
@@ -3164,7 +3164,7 @@ party = [
     { species = "mr_mime", level = 54, num_moves = 4 },
     { species = "mismagius", level = 54, num_moves = 4 },
 ]
-label = "Psychic Desiree"
+label = "Victory Road 1F - Psychic Desiree"
 requires_national_dex = true
 
 [psychic_kendra]
@@ -3174,7 +3174,7 @@ party = [
     { species = "haunter", level = 52, num_moves = 4 },
     { species = "gengar", level = 55, num_moves = 4 },
 ]
-label = "Psychic Kendra"
+label = "Victory Road 1F - Psychic Kendra"
 requires_national_dex = true
 
 [fisherman_walter]
@@ -3182,7 +3182,7 @@ id = 401
 party = [
     { species = "whiscash", level = 33, num_moves = 2 },
 ]
-label = "Fisherman Walter"
+label = "Pastoria City Gym - Fisherman Walter"
 
 [dummy_402]
 id = 402
@@ -3198,7 +3198,7 @@ party = [
     { species = "crobat", level = 44, num_moves = 4 },
     { species = "honchkrow", level = 46, num_moves = 4 },
 ]
-label = "Galactic Boss Cyrus Galactic Hq"
+label = "Galactic Hq - Galactic Boss Cyrus"
 
 [galactic_boss_cyrus_galactic_hq.check]
 id = 16598
@@ -3213,7 +3213,7 @@ party = [
     { species = "gyarados", level = 46, num_moves = 4 },
     { species = "weavile", level = 48, num_moves = 4 },
 ]
-label = "Galactic Boss Cyrus Distortion World"
+label = "Distortion World - Galactic Boss Cyrus"
 
 [galactic_boss_cyrus_distortion_world.check]
 id = 16469
@@ -3227,7 +3227,7 @@ party = [
     { species = "purugly", level = 40, num_moves = 4 },
 ]
 check = 186
-label = "Commander Mars Lake Verity"
+label = "Lake Verity - Commander Mars"
 
 [commander_jupiter_team_galactic_eterna_building]
 id = 406
@@ -3235,7 +3235,7 @@ party = [
     { species = "zubat", level = 21, num_moves = 3 },
     { species = "skuntank", level = 23, num_moves = 4 },
 ]
-label = "Commander Jupiter Team Galactic Eterna Building"
+label = "Galactic Eterna Building - Commander Jupiter Team"
 
 [commander_jupiter_team_galactic_eterna_building.check]
 id = 16506
@@ -3248,7 +3248,7 @@ party = [
     { species = "golbat", level = 44, num_moves = 4 },
     { species = "skuntank", level = 46, num_moves = 4 },
 ]
-label = "Commander Jupiter Spear Pillar"
+label = "Spear Pillar - Commander Jupiter"
 
 [commander_saturn_valor_cavern]
 id = 408
@@ -3258,7 +3258,7 @@ party = [
     { species = "toxicroak", level = 40, num_moves = 4 },
 ]
 check = 318
-label = "Commander Saturn Valor Cavern"
+label = "Valor Cavern - Commander Saturn"
 
 [commander_saturn_galactic_hq]
 id = 409
@@ -3267,7 +3267,7 @@ party = [
     { species = "bronzor", level = 42, num_moves = 4 },
     { species = "toxicroak", level = 44, num_moves = 4 },
 ]
-label = "Commander Saturn Galactic Hq"
+label = "Galactic Hq - Commander Saturn"
 
 [galactic_grunt_team_galactic_eterna_building_1f_1]
 id = 410
@@ -3275,7 +3275,7 @@ party = [
     { species = "zubat", level = 17, num_moves = 0 },
     { species = "stunky", level = 17, num_moves = 0 },
 ]
-label = "Galactic Grunt Team Galactic Eterna Building 1f 1"
+label = "Team Galactic Eterna Building 1F - Galactic Grunt 1"
 
 [dummy_411]
 id = 411
@@ -3289,7 +3289,7 @@ id = 412
 party = [
     { species = "croagunk", level = 19, num_moves = 0 },
 ]
-label = "Galactic Grunt Team Galactic Eterna Building 2f 1"
+label = "Team Galactic Eterna Building 2F - Galactic Grunt 1"
 
 [dummy_413]
 id = 413
@@ -3303,14 +3303,14 @@ id = 414
 party = [
     { species = "stunky", level = 11, num_moves = 0 },
 ]
-label = "Galactic Grunt Jubilife City 1"
+label = "Jubilife City - Galactic Grunt 1"
 
 [galactic_grunt_jubilife_city_2]
 id = 415
 party = [
     { species = "glameow", level = 11, num_moves = 0 },
 ]
-label = "Galactic Grunt Jubilife City 2"
+label = "Jubilife City - Galactic Grunt 2"
 
 [galactic_grunt_celestic_town]
 id = 416
@@ -3318,14 +3318,14 @@ party = [
     { species = "houndour", level = 32, num_moves = 0 },
     { species = "golbat", level = 30, num_moves = 0 },
 ]
-label = "Galactic Grunt Celestic Town"
+label = "Celestic Town - Galactic Grunt"
 
 [galactic_grunt_lake_valor_1]
 id = 417
 party = [
     { species = "golbat", level = 37, num_moves = 0 },
 ]
-label = "Galactic Grunt Lake Valor 1"
+label = "Lake Valor - Galactic Grunt 1"
 
 [galactic_grunt_lake_valor_2]
 id = 418
@@ -3335,14 +3335,14 @@ party = [
     { species = "stunky", level = 33, num_moves = 0 },
     { species = "houndour", level = 33, num_moves = 0 },
 ]
-label = "Galactic Grunt Lake Valor 2"
+label = "Lake Valor - Galactic Grunt 2"
 
 [galactic_grunt_lake_verity_1]
 id = 419
 party = [
     { species = "croagunk", level = 37, num_moves = 0 },
 ]
-label = "Galactic Grunt Lake Verity 1"
+label = "Lake Verity - Galactic Grunt 1"
 
 [galactic_grunt_lake_verity_3]
 id = 420
@@ -3350,7 +3350,7 @@ party = [
     { species = "stunky", level = 35, num_moves = 0 },
     { species = "houndour", level = 35, num_moves = 0 },
 ]
-label = "Galactic Grunt Lake Verity 3"
+label = "Lake Verity - Galactic Grunt 3"
 
 [galactic_grunt_team_galactic_eterna_building_1f_2]
 id = 421
@@ -3358,14 +3358,14 @@ party = [
     { species = "zubat", level = 16, num_moves = 0 },
     { species = "glameow", level = 18, num_moves = 0 },
 ]
-label = "Galactic Grunt Team Galactic Eterna Building 1f 2"
+label = "Team Galactic Eterna Building 1F - Galactic Grunt 2"
 
 [galactic_grunt_team_galactic_eterna_building_2f_2]
 id = 422
 party = [
     { species = "glameow", level = 19, num_moves = 0 },
 ]
-label = "Galactic Grunt Team Galactic Eterna Building 2f 2"
+label = "Team Galactic Eterna Building 2F - Galactic Grunt 2"
 
 [galactic_grunt_team_galactic_eterna_building_3f]
 id = 423
@@ -3374,7 +3374,7 @@ party = [
     { species = "croagunk", level = 16, num_moves = 0 },
     { species = "glameow", level = 16, num_moves = 0 },
 ]
-label = "Galactic Grunt Team Galactic Eterna Building 3f"
+label = "Team Galactic Eterna Building 3F - Galactic Grunt"
 
 [dummy_424]
 id = 424
@@ -3389,7 +3389,7 @@ party = [
     { species = "glameow", level = 35, num_moves = 0 },
     { species = "murkrow", level = 35, num_moves = 0 },
 ]
-label = "Galactic Grunt Lake Valor 3"
+label = "Lake Valor - Galactic Grunt 3"
 
 [galactic_grunt_lake_verity_2]
 id = 426
@@ -3398,7 +3398,7 @@ party = [
     { species = "golbat", level = 33, num_moves = 4 },
     { species = "murkrow", level = 36, num_moves = 3 },
 ]
-label = "Galactic Grunt Lake Verity 2"
+label = "Lake Verity - Galactic Grunt 2"
 
 [galactic_grunt_lake_verity_4]
 id = 427
@@ -3406,14 +3406,14 @@ party = [
     { species = "houndour", level = 34, num_moves = 0 },
     { species = "glameow", level = 36, num_moves = 0 },
 ]
-label = "Galactic Grunt Lake Verity 4"
+label = "Lake Verity - Galactic Grunt 4"
 
 [galactic_grunt_galactic_hq_1f]
 id = 428
 party = [
     { species = "glameow", level = 41, num_moves = 0 },
 ]
-label = "Galactic Grunt Galactic Hq 1f"
+label = "Galactic Hq 1F - Galactic Grunt"
 
 [dummy_429]
 id = 429
@@ -3428,7 +3428,7 @@ party = [
     { species = "golbat", level = 39, num_moves = 0 },
     { species = "houndour", level = 39, num_moves = 0 },
 ]
-label = "Galactic Grunt Galactic Hq 2f 3"
+label = "Galactic Hq 2F - Galactic Grunt 3"
 
 [guitarist_arturo_unused]
 id = 431
@@ -3514,7 +3514,7 @@ party = [
     { species = "bronzor", level = 30, num_moves = 0 },
     { species = "bronzor", level = 32, num_moves = 0 },
 ]
-label = "Ruin Maniac Harry"
+label = "Route 211 East - Ruin Maniac Harry"
 
 [ruin_maniac_gerald]
 id = 443
@@ -3522,21 +3522,21 @@ party = [
     { species = "geodude", level = 19, num_moves = 0 },
     { species = "bronzor", level = 21, num_moves = 0 },
 ]
-label = "Ruin Maniac Gerald"
+label = "Wayward Cave 1F - Ruin Maniac Gerald"
 
 [black_belt_miles]
 id = 444
 party = [
     { species = "machamp", level = 48, num_moves = 0 },
 ]
-label = "Black Belt Miles"
+label = "Victory Road 1F - Black Belt Miles"
 
 [black_belt_kendal]
 id = 445
 party = [
     { species = "toxicroak", level = 38, num_moves = 0 },
 ]
-label = "Black Belt Kendal"
+label = "Iron Island B2F Left - Black Belt Kendal"
 
 [black_belt_eddie]
 id = 446
@@ -3545,7 +3545,7 @@ party = [
     { species = "machoke", level = 53, num_moves = 0 },
     { species = "infernape", level = 55, num_moves = 0 },
 ]
-label = "Black Belt Eddie"
+label = "Victory Road 1F - Black Belt Eddie"
 requires_national_dex = true
 
 [black_belt_willie]
@@ -3554,7 +3554,7 @@ party = [
     { species = "heracross", level = 54, num_moves = 0 },
     { species = "machamp", level = 54, num_moves = 0 },
 ]
-label = "Black Belt Willie"
+label = "Victory Road 1F - Black Belt Willie"
 requires_national_dex = true
 
 [dummy_448]
@@ -3576,7 +3576,7 @@ id = 450
 party = [
     { species = "buneary", level = 22, num_moves = 0 },
 ]
-label = "Lass Cassidy"
+label = "Wayward Cave 1F - Lass Cassidy"
 
 [hiker_theodore]
 id = 451
@@ -3584,7 +3584,7 @@ party = [
     { species = "onix", level = 18, num_moves = 0 },
     { species = "onix", level = 20, num_moves = 0 },
 ]
-label = "Hiker Theodore"
+label = "Route 206 - Hiker Theodore"
 
 [hiker_damon]
 id = 452
@@ -3593,7 +3593,7 @@ party = [
     { species = "onix", level = 33, num_moves = 0 },
     { species = "steelix", level = 34, num_moves = 0 },
 ]
-label = "Hiker Damon"
+label = "Iron Island B2F Left - Hiker Damon"
 
 [hiker_maurice]
 id = 453
@@ -3601,7 +3601,7 @@ party = [
     { species = "graveler", level = 35, num_moves = 0 },
     { species = "rhyhorn", level = 35, num_moves = 0 },
 ]
-label = "Hiker Maurice"
+label = "Iron Island B2F Left - Hiker Maurice"
 
 [hiker_reginald]
 id = 454
@@ -3609,42 +3609,42 @@ party = [
     { species = "geodude", level = 20, num_moves = 0 },
     { species = "geodude", level = 20, num_moves = 0 },
 ]
-label = "Hiker Reginald"
+label = "Wayward Cave 1F - Hiker Reginald"
 
 [hiker_lorenzo]
 id = 455
 party = [
     { species = "onix", level = 22, num_moves = 0 },
 ]
-label = "Hiker Lorenzo"
+label = "Wayward Cave 1F - Hiker Lorenzo"
 
 [picnicker_karina]
 id = 456
 party = [
     { species = "piplup", level = 14, num_moves = 2 },
 ]
-label = "Picnicker Karina"
+label = "Route 205 South - Picnicker Karina"
 
 [picnicker_summer]
 id = 457
 party = [
     { species = "raichu", level = 37, num_moves = 0 },
 ]
-label = "Picnicker Summer"
+label = "Iron Island B1F Right - Picnicker Summer"
 
 [picnicker_tori]
 id = 458
 party = [
     { species = "psyduck", level = 22, num_moves = 0 },
 ]
-label = "Picnicker Tori"
+label = "Wayward Cave 1F - Picnicker Tori"
 
 [picnicker_ana]
 id = 459
 party = [
     { species = "hoothoot", level = 22, num_moves = 0 },
 ]
-label = "Picnicker Ana"
+label = "Wayward Cave 1F - Picnicker Ana"
 
 [clown_lee_unused]
 id = 460
@@ -3726,7 +3726,7 @@ party = [
     { species = "ponyta", level = 23, num_moves = 4 },
     { species = "grotle", level = 27, num_moves = 4 },
 ]
-label = "Rival Route 209 Piplup"
+label = "Route 209 - Rival"
 
 [rival_route_209_piplup.check]
 id = 16507
@@ -3740,7 +3740,7 @@ party = [
     { species = "roselia", level = 23, num_moves = 4 },
     { species = "monferno", level = 27, num_moves = 4 },
 ]
-label = "Rival Route 209 Turtwig"
+label = "Route 209 - Rival"
 
 [rival_route_209_turtwig.check]
 id = 16507
@@ -3754,7 +3754,7 @@ party = [
     { species = "ponyta", level = 23, num_moves = 4 },
     { species = "prinplup", level = 27, num_moves = 4 },
 ]
-label = "Rival Route 209 Chimchar"
+label = "Route 209 - Rival"
 
 [rival_route_209_chimchar.check]
 id = 16507
@@ -3768,7 +3768,7 @@ party = [
     { species = "ponyta", level = 32, num_moves = 4 },
     { species = "grotle", level = 36, num_moves = 4 },
 ]
-label = "Rival Pastoria City Piplup"
+label = "Pastoria City - Rival"
 
 [rival_pastoria_city_piplup.check]
 id = 16508
@@ -3782,7 +3782,7 @@ party = [
     { species = "roselia", level = 32, num_moves = 4 },
     { species = "monferno", level = 36, num_moves = 4 },
 ]
-label = "Rival Pastoria City Turtwig"
+label = "Pastoria City - Rival"
 
 [rival_pastoria_city_turtwig.check]
 id = 16508
@@ -3796,7 +3796,7 @@ party = [
     { species = "ponyta", level = 32, num_moves = 4 },
     { species = "prinplup", level = 36, num_moves = 4 },
 ]
-label = "Rival Pastoria City Chimchar"
+label = "Pastoria City - Rival"
 
 [rival_pastoria_city_chimchar.check]
 id = 16508
@@ -3811,7 +3811,7 @@ party = [
     { species = "rapidash", level = 35, num_moves = 4 },
     { species = "torterra", level = 38, num_moves = 4 },
 ]
-label = "Rival Canalave City Piplup"
+label = "Canalave City - Rival"
 
 [rival_canalave_city_piplup.check]
 id = 16504
@@ -3826,7 +3826,7 @@ party = [
     { species = "roserade", level = 35, num_moves = 4 },
     { species = "infernape", level = 38, num_moves = 4 },
 ]
-label = "Rival Canalave City Turtwig"
+label = "Canalave City - Rival"
 
 [rival_canalave_city_turtwig.check]
 id = 16504
@@ -3841,7 +3841,7 @@ party = [
     { species = "rapidash", level = 35, num_moves = 4 },
     { species = "empoleon", level = 38, num_moves = 4 },
 ]
-label = "Rival Canalave City Chimchar"
+label = "Canalave City - Rival"
 
 [rival_canalave_city_chimchar.check]
 id = 16504
@@ -3857,7 +3857,7 @@ party = [
     { species = "snorlax", level = 49, num_moves = 4 },
     { species = "torterra", level = 51, num_moves = 4 },
 ]
-label = "Rival Pokemon League Piplup"
+label = "Pokemon League - Rival"
 
 [rival_pokemon_league_piplup.check]
 id = 16623
@@ -3873,7 +3873,7 @@ party = [
     { species = "snorlax", level = 49, num_moves = 4 },
     { species = "infernape", level = 51, num_moves = 4 },
 ]
-label = "Rival Pokemon League Turtwig"
+label = "Pokemon League - Rival"
 
 [rival_pokemon_league_turtwig.check]
 id = 16623
@@ -3889,7 +3889,7 @@ party = [
     { species = "snorlax", level = 49, num_moves = 4 },
     { species = "empoleon", level = 51, num_moves = 4 },
 ]
-label = "Rival Pokemon League Chimchar"
+label = "Pokemon League - Rival"
 
 [rival_pokemon_league_chimchar.check]
 id = 16623
@@ -3902,7 +3902,7 @@ party = [
     { species = "machoke", level = 42, num_moves = 0 },
     { species = "gastrodon", level = 44, num_moves = 0 },
 ]
-label = "Sailor Zachariah"
+label = "Route 223 - Sailor Zachariah"
 
 [sailor_samson]
 id = 483
@@ -3911,7 +3911,7 @@ party = [
     { species = "shellos", level = 30, num_moves = 3 },
     { species = "golduck", level = 31, num_moves = 3 },
 ]
-label = "Sailor Samson"
+label = "Pastoria City Gym - Sailor Samson"
 
 [dummy_484]
 id = 484
@@ -3933,7 +3933,7 @@ party = [
     { species = "magnemite", level = 30, num_moves = 2 },
     { species = "kadabra", level = 26, num_moves = 4 },
 ]
-label = "Scientist Shaun"
+label = "Route 212 South - Scientist Shaun"
 
 [dummy_487]
 id = 487
@@ -3948,7 +3948,7 @@ party = [
     { species = "croagunk", level = 31, num_moves = 0 },
     { species = "croagunk", level = 31, num_moves = 0 },
 ]
-label = "Ninja Boy Fabian"
+label = "Route 210 South - Ninja Boy Fabian"
 
 [ninja_boy_brennan]
 id = 489
@@ -3956,14 +3956,14 @@ party = [
     { species = "zubat", level = 30, num_moves = 0 },
     { species = "skorupi", level = 32, num_moves = 0 },
 ]
-label = "Ninja Boy Brennan"
+label = "Route 210 South - Ninja Boy Brennan"
 
 [ninja_boy_bruce]
 id = 490
 party = [
     { species = "stunky", level = 33, num_moves = 0 },
 ]
-label = "Ninja Boy Bruce"
+label = "Route 210 South - Ninja Boy Bruce"
 
 [beauty_devon]
 id = 491
@@ -3972,14 +3972,14 @@ party = [
     { species = "wormadam", level = 24, num_moves = 0 },
     { species = "wormadam", level = 24, num_moves = 0 },
 ]
-label = "Beauty Devon"
+label = "Route 214 - Beauty Devon"
 
 [beauty_nicola]
 id = 492
 party = [
     { species = "lopunny", level = 45, num_moves = 0 },
 ]
-label = "Beauty Nicola"
+label = "Route 222 - Beauty Nicola"
 
 [dummy_493]
 id = 493
@@ -3993,7 +3993,7 @@ id = 494
 party = [
     { species = "floatzel", level = 35, num_moves = 0 },
 ]
-label = "Swimmer Claire"
+label = "Route 220 - Swimmer Claire"
 
 [dummy_495]
 id = 495
@@ -4009,14 +4009,14 @@ party = [
     { species = "shellos", level = 20, num_moves = 0 },
     { species = "ponyta", level = 20, num_moves = 0 },
 ]
-label = "Youngster Wayne"
+label = "Wayward Cave 1F - Youngster Wayne"
 
 [tuber_jacky]
 id = 497
 party = [
     { species = "bibarel", level = 32, num_moves = 4 },
 ]
-label = "Tuber Jacky"
+label = "Pastoria City Gym - Tuber Jacky"
 
 [tuber_caitlyn]
 id = 498
@@ -4025,7 +4025,7 @@ party = [
     { species = "marill", level = 29, num_moves = 4 },
     { species = "azumarill", level = 31, num_moves = 4 },
 ]
-label = "Tuber Caitlyn"
+label = "Pastoria City Gym - Tuber Caitlyn"
 
 [veteran_terrell]
 id = 499
@@ -4034,7 +4034,7 @@ party = [
     { species = "rhydon", level = 54, num_moves = 4 },
     { species = "magmar", level = 55, num_moves = 4 },
 ]
-label = "Veteran Terrell"
+label = "Victory Road 1F - Veteran Terrell"
 requires_national_dex = true
 
 [veteran_brenden]
@@ -4044,7 +4044,7 @@ party = [
     { species = "gyarados", level = 54, num_moves = 4 },
     { species = "hippowdon", level = 54, num_moves = 4 },
 ]
-label = "Veteran Brenden"
+label = "Victory Road 1F - Veteran Brenden"
 requires_national_dex = true
 
 [dummy_501]
@@ -4067,14 +4067,14 @@ party = [
     { species = "magnemite", level = 34, num_moves = 0 },
     { species = "magnemite", level = 36, num_moves = 0 },
 ]
-label = "Worker Noel"
+label = "Iron Island B2F Right - Worker Noel"
 
 [worker_braden]
 id = 504
 party = [
     { species = "steelix", level = 37, num_moves = 0 },
 ]
-label = "Worker Braden"
+label = "Iron Island B2F Right - Worker Braden"
 
 [worker_brendon]
 id = 505
@@ -4083,7 +4083,7 @@ party = [
     { species = "geodude", level = 33, num_moves = 0 },
     { species = "machoke", level = 36, num_moves = 0 },
 ]
-label = "Worker Brendon"
+label = "Iron Island B2F Left - Worker Brendon"
 
 [worker_quentin]
 id = 506
@@ -4092,14 +4092,14 @@ party = [
     { species = "machop", level = 34, num_moves = 0 },
     { species = "graveler", level = 34, num_moves = 0 },
 ]
-label = "Worker Quentin"
+label = "Iron Island B2F Left - Worker Quentin"
 
 [galactic_grunt_galactic_hq_b2f_1]
 id = 507
 party = [
     { species = "golbat", level = 41, num_moves = 0 },
 ]
-label = "Galactic Grunt Galactic Hq B2f 1"
+label = "Galactic Hq B2F - Galactic Grunt 1"
 
 [galactic_grunt_galactic_hq_b2f_2]
 id = 508
@@ -4107,14 +4107,14 @@ party = [
     { species = "houndour", level = 38, num_moves = 0 },
     { species = "murkrow", level = 40, num_moves = 0 },
 ]
-label = "Galactic Grunt Galactic Hq B2f 2"
+label = "Galactic Hq B2F - Galactic Grunt 2"
 
 [galactic_grunt_galactic_hq_3f_1]
 id = 509
 party = [
     { species = "stunky", level = 41, num_moves = 0 },
 ]
-label = "Galactic Grunt Galactic Hq 3f 1"
+label = "Galactic Hq 3F - Galactic Grunt 1"
 
 [galactic_grunt_galactic_hq_2f_1]
 id = 510
@@ -4123,7 +4123,7 @@ party = [
     { species = "murkrow", level = 38, num_moves = 0 },
     { species = "croagunk", level = 39, num_moves = 0 },
 ]
-label = "Galactic Grunt Galactic Hq 2f 1"
+label = "Galactic Grunt 1"
 
 [dummy_511]
 id = 511
@@ -4138,7 +4138,7 @@ party = [
     { species = "murkrow", level = 39, num_moves = 0 },
     { species = "stunky", level = 39, num_moves = 0 },
 ]
-label = "Galactic Grunt Galactic Hq 3f 2"
+label = "Galactic Hq 3F - Galactic Grunt 2"
 
 [galactic_grunt_galactic_hq_2f_2]
 id = 513
@@ -4146,7 +4146,7 @@ party = [
     { species = "golbat", level = 40, num_moves = 0 },
     { species = "golbat", level = 38, num_moves = 0 },
 ]
-label = "Galactic Grunt Galactic Hq 2f 2"
+label = "Galactic Hq 2F - Galactic Grunt 2"
 
 [galactic_grunt_galactic_hq_3f_3]
 id = 514
@@ -4154,14 +4154,14 @@ party = [
     { species = "stunky", level = 38, num_moves = 0 },
     { species = "croagunk", level = 40, num_moves = 0 },
 ]
-label = "Galactic Grunt Galactic Hq 3f 3"
+label = "Galactic Hq 3F - Galactic Grunt 3"
 
 [galactic_grunt_mt_coronet_3f_1]
 id = 515
 party = [
     { species = "murkrow", level = 43, num_moves = 0 },
 ]
-label = "Galactic Grunt Mt Coronet 3f 1"
+label = "Mt Coronet 3F - Galactic Grunt 1"
 
 [galactic_grunt_mt_coronet_4f_1]
 id = 516
@@ -4170,7 +4170,7 @@ party = [
     { species = "golbat", level = 40, num_moves = 0 },
     { species = "houndour", level = 40, num_moves = 0 },
 ]
-label = "Galactic Grunt Mt Coronet 4f 1"
+label = "Mt Coronet 4F - Galactic Grunt 1"
 
 [galactic_grunt_mt_coronet_4f_2]
 id = 517
@@ -4178,7 +4178,7 @@ party = [
     { species = "stunky", level = 42, num_moves = 0 },
     { species = "golbat", level = 40, num_moves = 0 },
 ]
-label = "Galactic Grunt Mt Coronet 4f 2"
+label = "Mt Coronet 4F - Galactic Grunt 2"
 
 [galactic_grunt_mt_coronet_tunnel_room_1]
 id = 518
@@ -4187,14 +4187,14 @@ party = [
     { species = "stunky", level = 40, num_moves = 0 },
     { species = "croagunk", level = 42, num_moves = 0 },
 ]
-label = "Galactic Grunt Mt Coronet Tunnel Room 1"
+label = "Mt Coronet Tunnel Room - Galactic Grunt 1"
 
 [galactic_grunt_mt_coronet_tunnel_room_2]
 id = 519
 party = [
     { species = "golbat", level = 43, num_moves = 0 },
 ]
-label = "Galactic Grunt Mt Coronet Tunnel Room 2"
+label = "Mt Coronet Tunnel Room - Galactic Grunt 2"
 
 [galactic_grunt_mt_coronet_5f_1]
 id = 520
@@ -4202,7 +4202,7 @@ party = [
     { species = "glameow", level = 41, num_moves = 0 },
     { species = "golbat", level = 41, num_moves = 0 },
 ]
-label = "Galactic Grunt Mt Coronet 5f 1"
+label = "Mt Coronet 5F - Galactic Grunt 1"
 
 [galactic_grunt_spear_pillar_1]
 id = 521
@@ -4210,7 +4210,7 @@ party = [
     { species = "croagunk", level = 39, num_moves = 0 },
     { species = "croagunk", level = 43, num_moves = 0 },
 ]
-label = "Galactic Grunt Spear Pillar 1"
+label = "Spear Pillar - Galactic Grunt 1"
 
 [galactic_grunt_galactic_hq_3f_4]
 id = 522
@@ -4219,14 +4219,14 @@ party = [
     { species = "stunky", level = 38, num_moves = 0 },
     { species = "glameow", level = 38, num_moves = 0 },
 ]
-label = "Galactic Grunt Galactic Hq 3f 4"
+label = "Galactic Hq 3F - Galactic Grunt 4"
 
 [galactic_grunt_mt_coronet_3f_2]
 id = 523
 party = [
     { species = "stunky", level = 43, num_moves = 0 },
 ]
-label = "Galactic Grunt Mt Coronet 3f 2"
+label = "Mt Coronet 3F - Galactic Grunt 2"
 
 [galactic_grunt_mt_coronet_tunnel_room_3]
 id = 524
@@ -4235,7 +4235,7 @@ party = [
     { species = "glameow", level = 42, num_moves = 0 },
     { species = "murkrow", level = 39, num_moves = 0 },
 ]
-label = "Galactic Grunt Mt Coronet Tunnel Room 3"
+label = "Mt Coronet Tunnel Room - Galactic Grunt 3"
 
 [galactic_grunt_mt_coronet_5f_2]
 id = 525
@@ -4243,7 +4243,7 @@ party = [
     { species = "houndour", level = 40, num_moves = 0 },
     { species = "glameow", level = 42, num_moves = 0 },
 ]
-label = "Galactic Grunt Mt Coronet 5f 2"
+label = "Mt Coronet 5F - Galactic Grunt 2"
 
 [galactic_grunt_mt_coronet_6f]
 id = 526
@@ -4252,7 +4252,7 @@ party = [
     { species = "croagunk", level = 40, num_moves = 0 },
     { species = "murkrow", level = 41, num_moves = 0 },
 ]
-label = "Galactic Grunt Mt Coronet 6f"
+label = "Mt Coronet 6F - Galactic Grunt"
 
 [galactic_grunt_spear_pillar_2]
 id = 527
@@ -4260,7 +4260,7 @@ party = [
     { species = "stunky", level = 41, num_moves = 0 },
     { species = "glameow", level = 41, num_moves = 0 },
 ]
-label = "Galactic Grunt Spear Pillar 2"
+label = "Spear Pillar - Galactic Grunt 2"
 
 [commander_mars_spear_pillar]
 id = 528
@@ -4269,14 +4269,14 @@ party = [
     { species = "golbat", level = 44, num_moves = 4 },
     { species = "purugly", level = 46, num_moves = 4 },
 ]
-label = "Commander Mars Spear Pillar"
+label = "Spear Pillar - Commander Mars"
 
 [roughneck_kirby]
 id = 529
 party = [
     { species = "cleffa", level = 23, num_moves = 0 },
 ]
-label = "Roughneck Kirby"
+label = "Lost Tower 3F - Roughneck Kirby"
 
 [pokefan_leonard]
 id = 530
@@ -4285,14 +4285,14 @@ party = [
     { species = "pichu", level = 19, num_moves = 0 },
     { species = "pikachu", level = 22, num_moves = 0 },
 ]
-label = "Pokefan Leonard"
+label = "Lost Tower 3F - Pokefan Leonard"
 
 [pokefan_rebekah]
 id = 531
 party = [
     { species = "bonsly", level = 23, num_moves = 0 },
 ]
-label = "Pokefan Rebekah"
+label = "Lost Tower 4F - Pokefan Rebekah"
 
 [youngster_oliver]
 id = 532
@@ -4301,7 +4301,7 @@ party = [
     { species = "barboach", level = 19, num_moves = 0 },
     { species = "chatot", level = 21, num_moves = 0 },
 ]
-label = "Youngster Oliver"
+label = "Lost Tower 2F - Youngster Oliver"
 
 [belle_and_pa_beth_and_bob]
 id = 533
@@ -4309,7 +4309,7 @@ party = [
     { species = "ponyta", level = 23, num_moves = 0 },
     { species = "ponyta", level = 23, num_moves = 0 },
 ]
-label = "Belle And Pa Beth And Bob"
+label = "Lost Tower 4F - Belle And Pa Beth And Bob"
 
 [young_couple_mike_and_nat]
 id = 534
@@ -4317,7 +4317,7 @@ party = [
     { species = "murkrow", level = 23, num_moves = 0 },
     { species = "misdreavus", level = 23, num_moves = 0 },
 ]
-label = "Young Couple Mike And Nat"
+label = "Lost Tower 4F - Young Couple Mike And Nat"
 
 [aroma_lady_alison]
 id = 535
@@ -4459,7 +4459,7 @@ party = [
     { species = "geodude", level = 21, num_moves = 0 },
     { species = "bronzor", level = 23, num_moves = 0 },
 ]
-label = "Ruin Maniac Karl"
+label = "Solaceon Ruins - Ruin Maniac Karl"
 
 [bird_keeper_audrey]
 id = 554
@@ -4468,7 +4468,7 @@ party = [
     { species = "farfetchd", level = 53, num_moves = 0 },
     { species = "pidgeot", level = 55, num_moves = 0 },
 ]
-label = "Bird Keeper Audrey"
+label = "Route 225 - Bird Keeper Audrey"
 requires_national_dex = true
 
 [bird_keeper_geneva]
@@ -4477,7 +4477,7 @@ party = [
     { species = "fearow", level = 55, num_moves = 0 },
     { species = "xatu", level = 57, num_moves = 0 },
 ]
-label = "Bird Keeper Geneva"
+label = "Route 226 Mid - Bird Keeper Geneva"
 requires_national_dex = true
 
 [bird_keeper_krystal]
@@ -4487,7 +4487,7 @@ party = [
     { species = "fearow", level = 57, num_moves = 0 },
     { species = "noctowl", level = 59, num_moves = 0 },
 ]
-label = "Bird Keeper Krystal"
+label = "Stark Mountain - Bird Keeper Krystal"
 requires_national_dex = true
 
 [dragon_tamer_geoffrey]
@@ -4496,7 +4496,7 @@ party = [
     { species = "gabite", level = 53, num_moves = 0 },
     { species = "altaria", level = 55, num_moves = 0 },
 ]
-label = "Dragon Tamer Geoffrey"
+label = "Route 225 - Dragon Tamer Geoffrey"
 requires_national_dex = true
 
 [dragon_tamer_darien]
@@ -4504,7 +4504,7 @@ id = 558
 party = [
     { species = "dragonite", level = 60, num_moves = 0 },
 ]
-label = "Dragon Tamer Darien"
+label = "Stark Mountain Outside - Dragon Tamer Darien"
 requires_national_dex = true
 
 [dragon_tamer_keegan]
@@ -4513,7 +4513,7 @@ party = [
     { species = "trapinch", level = 55, num_moves = 0 },
     { species = "vibrava", level = 57, num_moves = 0 },
 ]
-label = "Dragon Tamer Keegan"
+label = "Route 228 - Dragon Tamer Keegan"
 requires_national_dex = true
 
 [dragon_tamer_stanley]
@@ -4522,7 +4522,7 @@ party = [
     { species = "dratini", level = 55, num_moves = 0 },
     { species = "altaria", level = 57, num_moves = 0 },
 ]
-label = "Dragon Tamer Stanley"
+label = "Route 226 Mid - Dragon Tamer Stanley"
 requires_national_dex = true
 
 [dragon_tamer_drake]
@@ -4532,7 +4532,7 @@ party = [
     { species = "gabite", level = 57, num_moves = 0 },
     { species = "dragonair", level = 57, num_moves = 0 },
 ]
-label = "Dragon Tamer Drake"
+label = "Stark Mountain - Dragon Tamer Drake"
 requires_national_dex = true
 
 [dragon_tamer_kenny]
@@ -4542,7 +4542,7 @@ party = [
     { species = "shelgon", level = 57, num_moves = 0 },
     { species = "vibrava", level = 57, num_moves = 0 },
 ]
-label = "Dragon Tamer Kenny"
+label = "Stark Mountain - Dragon Tamer Kenny"
 requires_national_dex = true
 
 [ace_trainer_rodolfo]
@@ -4551,7 +4551,7 @@ party = [
     { species = "starmie", level = 55, num_moves = 4 },
     { species = "vibrava", level = 56, num_moves = 4 },
 ]
-label = "Ace Trainer Rodolfo"
+label = "Route 225 - Ace Trainer Rodolfo"
 requires_national_dex = true
 
 [ace_trainer_saul]
@@ -4559,7 +4559,7 @@ id = 564
 party = [
     { species = "tauros", level = 61, num_moves = 4 },
 ]
-label = "Ace Trainer Saul"
+label = "Route 227 Lower - Ace Trainer Saul"
 requires_national_dex = true
 
 [ace_trainer_jose]
@@ -4569,7 +4569,7 @@ party = [
     { species = "sandslash", level = 56, num_moves = 4 },
     { species = "manectric", level = 57, num_moves = 4 },
 ]
-label = "Ace Trainer Jose"
+label = "Route 228 - Ace Trainer Jose"
 requires_national_dex = true
 
 [ace_trainer_felix]
@@ -4578,7 +4578,7 @@ party = [
     { species = "dusclops", level = 55, num_moves = 4 },
     { species = "salamence", level = 56, num_moves = 4 },
 ]
-label = "Ace Trainer Felix"
+label = "Route 229 - Ace Trainer Felix"
 requires_national_dex = true
 
 [ace_trainer_quinn]
@@ -4587,7 +4587,7 @@ party = [
     { species = "pinsir", level = 55, num_moves = 4 },
     { species = "lanturn", level = 56, num_moves = 4 },
 ]
-label = "Ace Trainer Quinn"
+label = "Route 225 - Ace Trainer Quinn"
 requires_national_dex = true
 
 [ace_trainer_graham]
@@ -4596,7 +4596,7 @@ party = [
     { species = "tyrogue", level = 55, num_moves = 0 },
     { species = "hitmonchan", level = 59, num_moves = 0 },
 ]
-label = "Ace Trainer Graham"
+label = "Route 226 Mid - Ace Trainer Graham"
 requires_national_dex = true
 
 [ace_trainer_keenan]
@@ -4606,7 +4606,7 @@ party = [
     { species = "electabuzz", level = 58, num_moves = 0 },
     { species = "banette", level = 59, num_moves = 0 },
 ]
-label = "Ace Trainer Keenan"
+label = "Stark Mountain - Ace Trainer Keenan"
 requires_national_dex = true
 
 [ace_trainer_stefan]
@@ -4615,7 +4615,7 @@ party = [
     { species = "pupitar", level = 58, num_moves = 0 },
     { species = "torterra", level = 61, num_moves = 0 },
 ]
-label = "Ace Trainer Stefan"
+label = "Stark Mountain - Ace Trainer Stefan"
 requires_national_dex = true
 
 [ace_trainer_skylar]
@@ -4625,7 +4625,7 @@ party = [
     { species = "rampardos", level = 59, num_moves = 4 },
     { species = "pelipper", level = 58, num_moves = 4 },
 ]
-label = "Ace Trainer Skylar"
+label = "Stark Mountain - Ace Trainer Skylar"
 requires_national_dex = true
 
 [ace_trainer_abel]
@@ -4634,7 +4634,7 @@ party = [
     { species = "glalie", level = 59, num_moves = 4 },
     { species = "crobat", level = 60, num_moves = 4 },
 ]
-label = "Ace Trainer Abel"
+label = "Stark Mountain - Ace Trainer Abel"
 requires_national_dex = true
 
 [ace_trainer_deanna]
@@ -4643,7 +4643,7 @@ party = [
     { species = "flaaffy", level = 55, num_moves = 4 },
     { species = "tropius", level = 56, num_moves = 4 },
 ]
-label = "Ace Trainer Deanna"
+label = "Route 225 - Ace Trainer Deanna"
 requires_national_dex = true
 
 [ace_trainer_moira]
@@ -4653,7 +4653,7 @@ party = [
     { species = "gastrodon", level = 56, num_moves = 4 },
     { species = "claydol", level = 57, num_moves = 4 },
 ]
-label = "Ace Trainer Moira"
+label = "Route 228 - Ace Trainer Moira"
 requires_national_dex = true
 
 [ace_trainer_dana]
@@ -4662,7 +4662,7 @@ party = [
     { species = "mightyena", level = 55, num_moves = 4 },
     { species = "kirlia", level = 56, num_moves = 4 },
 ]
-label = "Ace Trainer Dana"
+label = "Route 229 - Ace Trainer Dana"
 requires_national_dex = true
 
 [ace_trainer_mikayla]
@@ -4672,7 +4672,7 @@ party = [
     { species = "persian", level = 56, num_moves = 4 },
     { species = "absol", level = 56, num_moves = 4 },
 ]
-label = "Ace Trainer Mikayla"
+label = "Route 227 Lower - Ace Trainer Mikayla"
 requires_national_dex = true
 
 [ace_trainer_meagan]
@@ -4681,7 +4681,7 @@ party = [
     { species = "delcatty", level = 57, num_moves = 4 },
     { species = "abomasnow", level = 58, num_moves = 4 },
 ]
-label = "Ace Trainer Meagan"
+label = "Route 228 - Ace Trainer Meagan"
 requires_national_dex = true
 
 [ace_trainer_sandra]
@@ -4691,7 +4691,7 @@ party = [
     { species = "raichu", level = 54, num_moves = 0 },
     { species = "ninetales", level = 54, num_moves = 0 },
 ]
-label = "Ace Trainer Sandra"
+label = "Route 229 - Ace Trainer Sandra"
 requires_national_dex = true
 
 [ace_trainer_kassandra]
@@ -4701,7 +4701,7 @@ party = [
     { species = "onix", level = 58, num_moves = 4 },
     { species = "ampharos", level = 59, num_moves = 4 },
 ]
-label = "Ace Trainer Kassandra"
+label = "Stark Mountain - Ace Trainer Kassandra"
 requires_national_dex = true
 
 [ace_trainer_jasmin]
@@ -4709,7 +4709,7 @@ id = 580
 party = [
     { species = "drapion", level = 61, num_moves = 4 },
 ]
-label = "Ace Trainer Jasmin"
+label = "Stark Mountain - Ace Trainer Jasmin"
 requires_national_dex = true
 
 [ace_trainer_natasha]
@@ -4719,7 +4719,7 @@ party = [
     { species = "gardevoir", level = 59, num_moves = 4 },
     { species = "medicham", level = 58, num_moves = 4 },
 ]
-label = "Ace Trainer Natasha"
+label = "Stark Mountain - Ace Trainer Natasha"
 requires_national_dex = true
 
 [ace_trainer_monique]
@@ -4729,7 +4729,7 @@ party = [
     { species = "ursaring", level = 59, num_moves = 4 },
     { species = "gliscor", level = 58, num_moves = 4 },
 ]
-label = "Ace Trainer Monique"
+label = "Stark Mountain - Ace Trainer Monique"
 requires_national_dex = true
 
 [psychic_corbin]
@@ -4738,7 +4738,7 @@ party = [
     { species = "xatu", level = 56, num_moves = 0 },
     { species = "gallade", level = 56, num_moves = 0 },
 ]
-label = "Psychic Corbin"
+label = "Route 228 - Psychic Corbin"
 requires_national_dex = true
 
 [psychic_sterling]
@@ -4747,7 +4747,7 @@ party = [
     { species = "solrock", level = 57, num_moves = 0 },
     { species = "gallade", level = 59, num_moves = 0 },
 ]
-label = "Psychic Sterling"
+label = "Stark Mountain - Psychic Sterling"
 requires_national_dex = true
 
 [psychic_daisy]
@@ -4756,7 +4756,7 @@ party = [
     { species = "slowpoke", level = 52, num_moves = 0 },
     { species = "slowbro", level = 56, num_moves = 0 },
 ]
-label = "Psychic Daisy"
+label = "Route 225 - Psychic Daisy"
 requires_national_dex = true
 
 [psychic_chelsey]
@@ -4765,7 +4765,7 @@ party = [
     { species = "lunatone", level = 57, num_moves = 0 },
     { species = "gardevoir", level = 59, num_moves = 0 },
 ]
-label = "Psychic Chelsey"
+label = "Stark Mountain - Psychic Chelsey"
 requires_national_dex = true
 
 [black_belt_davon]
@@ -4775,7 +4775,7 @@ party = [
     { species = "makuhita", level = 54, num_moves = 0 },
     { species = "machamp", level = 57, num_moves = 0 },
 ]
-label = "Black Belt Davon"
+label = "Route 228 - Black Belt Davon"
 requires_national_dex = true
 
 [black_belt_griffin]
@@ -4784,7 +4784,7 @@ party = [
     { species = "breloom", level = 58, num_moves = 4 },
     { species = "medicham", level = 58, num_moves = 4 },
 ]
-label = "Black Belt Griffin"
+label = "Route 227 - Black Belt Griffin"
 requires_national_dex = true
 
 [black_belt_ray]
@@ -4793,7 +4793,7 @@ party = [
     { species = "breloom", level = 58, num_moves = 4 },
     { species = "toxicroak", level = 58, num_moves = 4 },
 ]
-label = "Black Belt Ray"
+label = "Stark Mountain - Black Belt Ray"
 requires_national_dex = true
 
 [black_belt_jarrett]
@@ -4801,7 +4801,7 @@ id = 590
 party = [
     { species = "machamp", level = 60, num_moves = 4 },
 ]
-label = "Black Belt Jarrett"
+label = "Stark Mountain - Black Belt Jarrett"
 requires_national_dex = true
 
 [ranger_kyler]
@@ -4811,7 +4811,7 @@ party = [
     { species = "zangoose", level = 55, num_moves = 0 },
     { species = "empoleon", level = 58, num_moves = 0 },
 ]
-label = "Ranger Kyler"
+label = "Route 228 - Ranger Kyler"
 requires_national_dex = true
 
 [ranger_deshawn]
@@ -4821,7 +4821,7 @@ party = [
     { species = "kecleon", level = 54, num_moves = 0 },
     { species = "granbull", level = 54, num_moves = 0 },
 ]
-label = "Ranger Deshawn"
+label = "Route 229 - Ranger Deshawn"
 requires_national_dex = true
 
 [ranger_dwayne]
@@ -4831,7 +4831,7 @@ party = [
     { species = "golduck", level = 54, num_moves = 0 },
     { species = "donphan", level = 54, num_moves = 0 },
 ]
-label = "Ranger Dwayne"
+label = "Route 225 - Ranger Dwayne"
 requires_national_dex = true
 
 [ranger_ashlee]
@@ -4840,7 +4840,7 @@ party = [
     { species = "linoone", level = 55, num_moves = 0 },
     { species = "arbok", level = 55, num_moves = 0 },
 ]
-label = "Ranger Ashlee"
+label = "Route 225 - Ranger Ashlee"
 requires_national_dex = true
 
 [ranger_felicia]
@@ -4849,7 +4849,7 @@ party = [
     { species = "skiploom", level = 59, num_moves = 0 },
     { species = "lopunny", level = 59, num_moves = 0 },
 ]
-label = "Ranger Felicia"
+label = "Route 227 Lower - Ranger Felicia"
 requires_national_dex = true
 
 [ranger_krista]
@@ -4858,7 +4858,7 @@ party = [
     { species = "lairon", level = 57, num_moves = 0 },
     { species = "marowak", level = 57, num_moves = 0 },
 ]
-label = "Ranger Krista"
+label = "Route 228 - Ranger Krista"
 requires_national_dex = true
 
 [swimmer_glenn]
@@ -4867,7 +4867,7 @@ party = [
     { species = "octillery", level = 53, num_moves = 0 },
     { species = "poliwhirl", level = 53, num_moves = 0 },
 ]
-label = "Swimmer Glenn"
+label = "Route 230 - Swimmer Glenn"
 requires_national_dex = true
 
 [swimmer_kurt]
@@ -4877,7 +4877,7 @@ party = [
     { species = "corphish", level = 51, num_moves = 0 },
     { species = "kingler", level = 54, num_moves = 0 },
 ]
-label = "Swimmer Kurt"
+label = "Route 230 - Swimmer Kurt"
 requires_national_dex = true
 
 [swimmer_sam]
@@ -4886,7 +4886,7 @@ party = [
     { species = "sealeo", level = 53, num_moves = 0 },
     { species = "gastrodon", level = 53, num_moves = 0 },
 ]
-label = "Swimmer Sam"
+label = "Route 230 - Swimmer Sam"
 requires_national_dex = true
 
 [swimmer_wade]
@@ -4896,7 +4896,7 @@ party = [
     { species = "carvanha", level = 53, num_moves = 0 },
     { species = "sharpedo", level = 56, num_moves = 0 },
 ]
-label = "Swimmer Wade"
+label = "Route 226 East - Swimmer Wade"
 requires_national_dex = true
 
 [swimmer_joanna]
@@ -4905,7 +4905,7 @@ party = [
     { species = "luvdisc", level = 52, num_moves = 0 },
     { species = "lapras", level = 54, num_moves = 0 },
 ]
-label = "Swimmer Joanna"
+label = "Route 230 - Swimmer Joanna"
 requires_national_dex = true
 
 [swimmer_sophia]
@@ -4914,7 +4914,7 @@ party = [
     { species = "delibird", level = 53, num_moves = 0 },
     { species = "mantine", level = 53, num_moves = 0 },
 ]
-label = "Swimmer Sophia"
+label = "Route 230 - Swimmer Sophia"
 requires_national_dex = true
 
 [swimmer_mallory]
@@ -4923,7 +4923,7 @@ party = [
     { species = "surskit", level = 52, num_moves = 0 },
     { species = "lombre", level = 54, num_moves = 0 },
 ]
-label = "Swimmer Mallory"
+label = "Route 230 - Swimmer Mallory"
 requires_national_dex = true
 
 [swimmer_lydia]
@@ -4933,7 +4933,7 @@ party = [
     { species = "spheal", level = 54, num_moves = 0 },
     { species = "wailmer", level = 54, num_moves = 0 },
 ]
-label = "Swimmer Lydia"
+label = "Route 226 East - Swimmer Lydia"
 requires_national_dex = true
 
 [dummy_605]
@@ -4950,7 +4950,7 @@ party = [
     { species = "drifblim", level = 58, num_moves = 4 },
     { species = "shiftry", level = 59, num_moves = 4 },
 ]
-label = "Veteran Harlan"
+label = "Stark Mountain - Veteran Harlan"
 requires_national_dex = true
 
 [rival_spear_pillar_piplup]
@@ -4963,84 +4963,84 @@ party = [
     { species = "rapidash", level = 40, num_moves = 4 },
     { species = "torterra", level = 44, num_moves = 4 },
 ]
-label = "Rival Spear Pillar Piplup"
+label = "Spear Pillar - Rival"
 
 [cheryl_eterna_forest]
 id = 608
 party = [
     { species = "chansey", level = 20, num_moves = 3 },
 ]
-label = "Cheryl Eterna Forest"
+label = "Eterna Forest - Cheryl"
 
 [riley_iron_island]
 id = 609
 party = [
     { species = "lucario", level = 41, num_moves = 4 },
 ]
-label = "Riley Iron Island"
+label = "Iron Island - Riley"
 
 [marley_victory_road]
 id = 610
 party = [
     { species = "arcanine", level = 59, num_moves = 4 },
 ]
-label = "Marley Victory Road"
+label = "Victory Road - Marley"
 
 [buck_stark_mountain]
 id = 611
 party = [
     { species = "claydol", level = 63, num_moves = 4 },
 ]
-label = "Buck Stark Mountain"
+label = "Stark Mountain - Buck"
 
 [mira_wayward_cave]
 id = 612
 party = [
     { species = "kadabra", level = 26, num_moves = 4 },
 ]
-label = "Mira Wayward Cave"
+label = "Wayward Cave 1F - Mira"
 
 [lucas_jubilife_city_turtwig]
 id = 613
 party = [
     { species = "turtwig", level = 13, num_moves = 2 },
 ]
-label = "Lucas Jubilife City Turtwig"
+label = "Jubilife City - Lucas"
 
 [lucas_jubilife_city_chimchar]
 id = 614
 party = [
     { species = "chimchar", level = 13, num_moves = 2 },
 ]
-label = "Lucas Jubilife City Chimchar"
+label = "Jubilife City - Lucas"
 
 [lucas_jubilife_city_piplup]
 id = 615
 party = [
     { species = "piplup", level = 13, num_moves = 2 },
 ]
-label = "Lucas Jubilife City Piplup"
+label = "Jubilife City - Lucas"
 
 [dawn_jubilife_city_turtwig]
 id = 616
 party = [
     { species = "turtwig", level = 13, num_moves = 2 },
 ]
-label = "Dawn Jubilife City Turtwig"
+label = "Jubilife City - Dawn"
 
 [dawn_jubilife_city_chimchar]
 id = 617
 party = [
     { species = "chimchar", level = 13, num_moves = 2 },
 ]
-label = "Dawn Jubilife City Chimchar"
+label = "Jubilife City - Dawn"
 
 [dawn_jubilife_city_piplup]
 id = 618
 party = [
     { species = "piplup", level = 13, num_moves = 2 },
 ]
-label = "Dawn Jubilife City Piplup"
+label = "Jubilife City - Dawn"
 
 [rival_spear_pillar_turtwig]
 id = 619
@@ -5052,7 +5052,7 @@ party = [
     { species = "roserade", level = 40, num_moves = 4 },
     { species = "infernape", level = 44, num_moves = 4 },
 ]
-label = "Rival Spear Pillar Turtwig"
+label = "Spear Pillar - Rival"
 
 [rival_spear_pillar_chimchar]
 id = 620
@@ -5064,7 +5064,7 @@ party = [
     { species = "rapidash", level = 40, num_moves = 4 },
     { species = "empoleon", level = 44, num_moves = 4 },
 ]
-label = "Rival Spear Pillar Chimchar"
+label = "Spear Pillar - Rival"
 
 [lucas_veilstone_city_turtwig]
 id = 621
@@ -5073,7 +5073,7 @@ party = [
     { species = "kadabra", level = 25, num_moves = 4 },
     { species = "prinplup", level = 27, num_moves = 4 },
 ]
-label = "Lucas Veilstone City Turtwig"
+label = "Veilstone City - Lucas"
 
 [lucas_veilstone_city_chimchar]
 id = 622
@@ -5082,7 +5082,7 @@ party = [
     { species = "kadabra", level = 25, num_moves = 4 },
     { species = "grotle", level = 27, num_moves = 4 },
 ]
-label = "Lucas Veilstone City Chimchar"
+label = "Veilstone City - Lucas"
 
 [lucas_veilstone_city_piplup]
 id = 623
@@ -5091,7 +5091,7 @@ party = [
     { species = "kadabra", level = 25, num_moves = 4 },
     { species = "monferno", level = 27, num_moves = 4 },
 ]
-label = "Lucas Veilstone City Piplup"
+label = "Veilstone City - Lucas"
 
 [dawn_veilstone_city_turtwig]
 id = 624
@@ -5100,7 +5100,7 @@ party = [
     { species = "kadabra", level = 25, num_moves = 4 },
     { species = "prinplup", level = 27, num_moves = 4 },
 ]
-label = "Dawn Veilstone City Turtwig"
+label = "Veilstone City - Dawn"
 
 [dawn_veilstone_city_chimchar]
 id = 625
@@ -5109,7 +5109,7 @@ party = [
     { species = "kadabra", level = 25, num_moves = 4 },
     { species = "grotle", level = 27, num_moves = 4 },
 ]
-label = "Dawn Veilstone City Chimchar"
+label = "Veilstone City - Dawn"
 
 [dawn_veilstone_city_piplup]
 id = 626
@@ -5118,28 +5118,28 @@ party = [
     { species = "kadabra", level = 25, num_moves = 4 },
     { species = "monferno", level = 27, num_moves = 4 },
 ]
-label = "Dawn Veilstone City Piplup"
+label = "Veilstone City - Dawn"
 
 [aroma_lady_elizabeth_rematch_1]
 id = 627
 party = [
     { species = "roselia", level = 24, num_moves = 0 },
 ]
-label = "Aroma Lady Elizabeth Rematch 1"
+label = "Route 205 South - Aroma Lady Elizabeth Rematch 1"
 
 [aroma_lady_elizabeth_rematch_2]
 id = 628
 party = [
     { species = "roselia", level = 35, num_moves = 0 },
 ]
-label = "Aroma Lady Elizabeth Rematch 2"
+label = "Route 205 South - Aroma Lady Elizabeth Rematch 2"
 
 [aroma_lady_elizabeth_rematch_3]
 id = 629
 party = [
     { species = "roserade", level = 54, num_moves = 0 },
 ]
-label = "Aroma Lady Elizabeth Rematch 3"
+label = "Route 205 South - Aroma Lady Elizabeth Rematch 3"
 
 [artist_william_rematch_1]
 id = 630
@@ -5147,7 +5147,7 @@ party = [
     { species = "mr_mime", level = 33, num_moves = 0 },
     { species = "sudowoodo", level = 33, num_moves = 0 },
 ]
-label = "Artist William Rematch 1"
+label = "Route 208 - Artist William Rematch 1"
 
 [artist_william_rematch_2]
 id = 631
@@ -5155,7 +5155,7 @@ party = [
     { species = "mr_mime", level = 43, num_moves = 0 },
     { species = "sudowoodo", level = 43, num_moves = 0 },
 ]
-label = "Artist William Rematch 2"
+label = "Route 208 - Artist William Rematch 2"
 
 [artist_william_rematch_3]
 id = 632
@@ -5164,7 +5164,7 @@ party = [
     { species = "mr_mime", level = 57, num_moves = 4 },
     { species = "sudowoodo", level = 57, num_moves = 4 },
 ]
-label = "Artist William Rematch 3"
+label = "Route 208 - Artist William Rematch 3"
 
 [battle_girl_helen_rematch_1]
 id = 633
@@ -5172,7 +5172,7 @@ party = [
     { species = "meditite", level = 23, num_moves = 0 },
     { species = "machop", level = 23, num_moves = 0 },
 ]
-label = "Battle Girl Helen Rematch 1"
+label = "Route 207 - Battle Girl Helen Rematch 1"
 
 [battle_girl_helen_rematch_2]
 id = 634
@@ -5180,7 +5180,7 @@ party = [
     { species = "medicham", level = 44, num_moves = 0 },
     { species = "machoke", level = 44, num_moves = 0 },
 ]
-label = "Battle Girl Helen Rematch 2"
+label = "Route 207 - Battle Girl Helen Rematch 2"
 
 [battle_girl_helen_rematch_3]
 id = 635
@@ -5188,7 +5188,7 @@ party = [
     { species = "medicham", level = 60, num_moves = 0 },
     { species = "machamp", level = 60, num_moves = 0 },
 ]
-label = "Battle Girl Helen Rematch 3"
+label = "Route 207 - Battle Girl Helen Rematch 3"
 
 [bird_keeper_brianna_rematch_1]
 id = 636
@@ -5196,7 +5196,7 @@ party = [
     { species = "noctowl", level = 44, num_moves = 0 },
     { species = "noctowl", level = 44, num_moves = 0 },
 ]
-label = "Bird Keeper Brianna Rematch 1"
+label = "Route 210 North - Bird Keeper Brianna Rematch 1"
 
 [bird_keeper_brianna_rematch_2]
 id = 637
@@ -5205,7 +5205,7 @@ party = [
     { species = "noctowl", level = 59, num_moves = 4 },
     { species = "noctowl", level = 59, num_moves = 4 },
 ]
-label = "Bird Keeper Brianna Rematch 2"
+label = "Route 210 North - Bird Keeper Brianna Rematch 2"
 
 [bird_keeper_audrey_rematch]
 id = 638
@@ -5214,7 +5214,7 @@ party = [
     { species = "swellow", level = 59, num_moves = 0 },
     { species = "pidgeot", level = 61, num_moves = 0 },
 ]
-label = "Bird Keeper Audrey Rematch"
+label = "Route 225 - Bird Keeper Audrey Rematch"
 
 [breeder_albert_rematch_1]
 id = 639
@@ -5224,7 +5224,7 @@ party = [
     { species = "pikachu", level = 32, num_moves = 0 },
     { species = "eevee", level = 32, num_moves = 0 },
 ]
-label = "Breeder Albert Rematch 1"
+label = "Route 209 - Breeder Albert Rematch 1"
 
 [breeder_albert_rematch_2]
 id = 640
@@ -5234,7 +5234,7 @@ party = [
     { species = "pikachu", level = 42, num_moves = 0 },
     { species = "umbreon", level = 42, num_moves = 0 },
 ]
-label = "Breeder Albert Rematch 2"
+label = "Route 209 - Breeder Albert Rematch 2"
 
 [breeder_albert_rematch_3]
 id = 641
@@ -5244,7 +5244,7 @@ party = [
     { species = "raichu", level = 51, num_moves = 0 },
     { species = "umbreon", level = 51, num_moves = 0 },
 ]
-label = "Breeder Albert Rematch 3"
+label = "Route 209 - Breeder Albert Rematch 3"
 
 [breeder_jennifer_rematch_1]
 id = 642
@@ -5254,7 +5254,7 @@ party = [
     { species = "clefairy", level = 32, num_moves = 0 },
     { species = "eevee", level = 32, num_moves = 0 },
 ]
-label = "Breeder Jennifer Rematch 1"
+label = "Route 209 - Breeder Jennifer Rematch 1"
 
 [breeder_jennifer_rematch_2]
 id = 643
@@ -5264,7 +5264,7 @@ party = [
     { species = "clefairy", level = 41, num_moves = 0 },
     { species = "espeon", level = 41, num_moves = 0 },
 ]
-label = "Breeder Jennifer Rematch 2"
+label = "Route 209 - Breeder Jennifer Rematch 2"
 
 [breeder_jennifer_rematch_3]
 id = 644
@@ -5274,21 +5274,21 @@ party = [
     { species = "clefable", level = 50, num_moves = 0 },
     { species = "espeon", level = 50, num_moves = 0 },
 ]
-label = "Breeder Jennifer Rematch 3"
+label = "Route 209 - Breeder Jennifer Rematch 3"
 
 [camper_zackary_rematch_1]
 id = 645
 party = [
     { species = "aipom", level = 24, num_moves = 0 },
 ]
-label = "Camper Zackary Rematch 1"
+label = "Route 205 South - Camper Zackary Rematch 1"
 
 [camper_zackary_rematch_2]
 id = 646
 party = [
     { species = "ambipom", level = 35, num_moves = 0 },
 ]
-label = "Camper Zackary Rematch 2"
+label = "Route 205 South - Camper Zackary Rematch 2"
 
 [camper_zackary_rematch_3]
 id = 647
@@ -5296,7 +5296,7 @@ party = [
     { species = "ambipom", level = 52, num_moves = 4 },
     { species = "bibarel", level = 52, num_moves = 4 },
 ]
-label = "Camper Zackary Rematch 3"
+label = "Route 205 South - Camper Zackary Rematch 3"
 
 [ace_trainer_dalton_rematch]
 id = 648
@@ -6708,7 +6708,7 @@ id = 827
 party = [
     { species = "glalie", level = 44, num_moves = 2 },
 ]
-label = "Ace Trainer Anton"
+label = "Snowpoint City Gym - Ace Trainer Anton"
 
 [ace_trainer_brenna]
 id = 828
@@ -6717,14 +6717,14 @@ party = [
     { species = "snorunt", level = 40, num_moves = 3 },
     { species = "snover", level = 41, num_moves = 4 },
 ]
-label = "Ace Trainer Brenna"
+label = "Snowpoint City Gym - Ace Trainer Brenna"
 
 [scientist_darrius]
 id = 829
 party = [
     { species = "porygon2", level = 42, num_moves = 4 },
 ]
-label = "Scientist Darrius"
+label = "Galactic HQ - Scientist Darrius"
 
 [scientist_fredrick]
 id = 830
@@ -6732,14 +6732,14 @@ party = [
     { species = "kirlia", level = 40, num_moves = 4 },
     { species = "kadabra", level = 40, num_moves = 4 },
 ]
-label = "Scientist Fredrick"
+label = "Galactic HQ - Scientist Fredrick"
 
 [scientist_travon]
 id = 831
 party = [
     { species = "kadabra", level = 20, num_moves = 1 },
 ]
-label = "Scientist Travon"
+label = "Team Galactic Eterna Building - Scientist Travon"
 
 [poke_kid_janet]
 id = 832
@@ -6747,7 +6747,7 @@ party = [
     { species = "pikachu", level = 42, num_moves = 0 },
     { species = "pikachu", level = 42, num_moves = 0 },
 ]
-label = "Poke Kid Janet"
+label = "Route 222 West - Poke Kid Janet"
 
 [dummy_833]
 id = 833
@@ -6770,7 +6770,7 @@ party = [
     { species = "houndour", level = 34, num_moves = 0 },
     { species = "golbat", level = 34, num_moves = 0 },
 ]
-label = "Galactic Grunt Iron Island 1"
+label = "Iron Island - Galactic Grunt 1"
 
 [galactic_grunt_iron_island_2]
 id = 836
@@ -6779,7 +6779,7 @@ party = [
     { species = "stunky", level = 34, num_moves = 0 },
     { species = "croagunk", level = 34, num_moves = 0 },
 ]
-label = "Galactic Grunt Iron Island 2"
+label = "Iron Island - Galactic Grunt 2"
 
 [rival_survival_area_1_piplup]
 id = 837
@@ -6792,7 +6792,7 @@ party = [
     { species = "torterra", level = 65, num_moves = 4 },
 ]
 check = 2738
-label = "Rival Survival Area 1 Piplup"
+label = "Survival Area - Rival 1"
 
 [rival_survival_area_1_turtwig]
 id = 838
@@ -6805,7 +6805,7 @@ party = [
     { species = "infernape", level = 65, num_moves = 4 },
 ]
 check = 2738
-label = "Rival Survival Area 1 Turtwig"
+label = "Survival Area - Rival 1"
 
 [rival_survival_area_1_chimchar]
 id = 839
@@ -6818,7 +6818,7 @@ party = [
     { species = "empoleon", level = 65, num_moves = 4 },
 ]
 check = 2738
-label = "Rival Survival Area 1 Chimchar"
+label = "Survival Area - Rival 1"
 
 [rival_survival_area_unused_piplup]
 id = 840
@@ -6862,7 +6862,7 @@ party = [
     { species = "glameow", level = 13, num_moves = 0 },
 ]
 check = 398
-label = "Galactic Grunt Valley Windworks 1"
+label = "Valley Windworks - Galactic Grunt 1"
 
 [worker_dillan]
 id = 844
@@ -6870,7 +6870,7 @@ party = [
     { species = "machop", level = 33, num_moves = 0 },
     { species = "machoke", level = 33, num_moves = 0 },
 ]
-label = "Worker Dillan"
+label = "Fuego Ironworks - Worker Dillan"
 
 [worker_holden]
 id = 845
@@ -6879,21 +6879,21 @@ party = [
     { species = "magnemite", level = 32, num_moves = 0 },
     { species = "magnemite", level = 32, num_moves = 0 },
 ]
-label = "Worker Holden"
+label = "Fuego Ironworks - Worker Holden"
 
 [worker_conrad]
 id = 846
 party = [
     { species = "magmar", level = 35, num_moves = 0 },
 ]
-label = "Worker Conrad"
+label = "Fuego Ironworks - Worker Conrad"
 
 [galactic_grunt_valor_lakefront]
 id = 847
 party = [
     { species = "croagunk", level = 31, num_moves = 0 },
 ]
-label = "Galactic Grunt Valor Lakefront"
+label = "Valor Lakefront - Galactic Grunt"
 
 [galactic_grunt_veilstone_city_1]
 id = 848
@@ -6901,7 +6901,7 @@ party = [
     { species = "zubat", level = 24, num_moves = 0 },
     { species = "stunky", level = 26, num_moves = 0 },
 ]
-label = "Galactic Grunt Veilstone City 1"
+label = "Veilstone City - Galactic Grunt 1"
 
 [galactic_grunt_veilstone_city_2]
 id = 849
@@ -6909,28 +6909,28 @@ party = [
     { species = "zubat", level = 24, num_moves = 0 },
     { species = "croagunk", level = 26, num_moves = 0 },
 ]
-label = "Galactic Grunt Veilstone City 2"
+label = "Veilstone City - Galactic Grunt 2"
 
 [rival_route_201_piplup]
 id = 850
 party = [
     { species = "turtwig", level = 5, num_moves = 0 },
 ]
-label = "Rival Route 201 Piplup"
+label = "Route 201 - Rival"
 
 [rival_route_201_turtwig]
 id = 851
 party = [
     { species = "chimchar", level = 5, num_moves = 0 },
 ]
-label = "Rival Route 201 Turtwig"
+label = "Route 201 - Rival"
 
 [rival_route_201_chimchar]
 id = 852
 party = [
     { species = "piplup", level = 5, num_moves = 0 },
 ]
-label = "Rival Route 201 Chimchar"
+label = "Route 201 - Rival"
 
 [leader_candice_rematch]
 id = 853
@@ -7029,7 +7029,7 @@ party = [
     { species = "salamence", level = 63, num_moves = 4 },
     { species = "lucario", level = 65, num_moves = 4 },
 ]
-label = "Riley Battleground"
+label = "Battleground - Riley"
 
 [buck_battleground]
 id = 862
@@ -7040,7 +7040,7 @@ party = [
     { species = "dusknoir", level = 63, num_moves = 4 },
     { species = "claydol", level = 65, num_moves = 4 },
 ]
-label = "Buck Battleground"
+label = "Battleground - Buck"
 
 [marley_battleground]
 id = 863
@@ -7051,7 +7051,7 @@ party = [
     { species = "weavile", level = 63, num_moves = 4 },
     { species = "arcanine", level = 65, num_moves = 4 },
 ]
-label = "Marley Battleground"
+label = "Battleground - Marley"
 
 [mira_battleground]
 id = 864
@@ -7062,7 +7062,7 @@ party = [
     { species = "togekiss", level = 63, num_moves = 4 },
     { species = "alakazam", level = 65, num_moves = 4 },
 ]
-label = "Mira Battleground"
+label = "Battleground - Mira"
 
 [cheryl_battleground]
 id = 865
@@ -7073,7 +7073,7 @@ party = [
     { species = "wailord", level = 63, num_moves = 4 },
     { species = "blissey", level = 65, num_moves = 4 },
 ]
-label = "Cheryl Battleground"
+label = "Battleground - Cheryl"
 
 [elite_four_aaron_rematch]
 id = 866
@@ -7084,7 +7084,7 @@ party = [
     { species = "heracross", level = 67, num_moves = 4 },
     { species = "drapion", level = 69, num_moves = 4 },
 ]
-label = "Elite Four Aaron Rematch"
+label = "Pokemon League - Elite Four Aaron Rematch"
 requires_national_dex = true
 
 [elite_four_bertha_rematch]
@@ -7096,7 +7096,7 @@ party = [
     { species = "golem", level = 68, num_moves = 4 },
     { species = "rhyperior", level = 71, num_moves = 4 },
 ]
-label = "Elite Four Bertha Rematch"
+label = "Pokemon League - Elite Four Bertha Rematch"
 requires_national_dex = true
 
 [elite_four_flint_rematch]
@@ -7108,7 +7108,7 @@ party = [
     { species = "infernape", level = 71, num_moves = 4 },
     { species = "magmortar", level = 73, num_moves = 4 },
 ]
-label = "Elite Four Flint Rematch"
+label = "Pokemon League - Elite Four Flint Rematch"
 requires_national_dex = true
 
 [elite_four_lucian_rematch]
@@ -7120,7 +7120,7 @@ party = [
     { species = "alakazam", level = 72, num_moves = 4 },
     { species = "gallade", level = 75, num_moves = 4 },
 ]
-label = "Elite Four Lucian Rematch"
+label = "Pokemon League - Elite Four Lucian Rematch"
 requires_national_dex = true
 
 [champion_cynthia_rematch]
@@ -7133,7 +7133,7 @@ party = [
     { species = "milotic", level = 74, num_moves = 4 },
     { species = "garchomp", level = 78, num_moves = 4 },
 ]
-label = "Champion Cynthia Rematch"
+label = "Pokemon League - Champion Cynthia Rematch"
 requires_national_dex = true
 
 [rival_survival_area_2_piplup]
@@ -7146,7 +7146,7 @@ party = [
     { species = "snorlax", level = 83, num_moves = 4 },
     { species = "torterra", level = 85, num_moves = 4 },
 ]
-label = "Rival Survival Area 2 Piplup"
+label = "Survival Area - Rival 2"
 
 [rival_survival_area_2_turtwig]
 id = 872
@@ -7158,7 +7158,7 @@ party = [
     { species = "snorlax", level = 83, num_moves = 4 },
     { species = "infernape", level = 85, num_moves = 4 },
 ]
-label = "Rival Survival Area 2 Turtwig"
+label = "Survival Area - Rival 2"
 
 [rival_survival_area_2_chimchar]
 id = 873
@@ -7170,7 +7170,7 @@ party = [
     { species = "snorlax", level = 83, num_moves = 4 },
     { species = "empoleon", level = 85, num_moves = 4 },
 ]
-label = "Rival Survival Area 2 Chimchar"
+label = "Survival Area - Rival 2"
 
 [cameraman_tevin]
 id = 874
@@ -7492,7 +7492,7 @@ party = [
     { species = "golbat", level = 34, num_moves = 4 },
     { species = "murkrow", level = 36, num_moves = 4 },
 ]
-label = "Galactic Boss Cyrus Celestic Town Ruins"
+label = "Celestic Town Ruins - Galactic Boss Cyrus"
 
 [galactic_boss_cyrus_celestic_town_ruins.check]
 id = 16500
@@ -7568,7 +7568,7 @@ party = [
     { species = "jolteon", level = 56, num_moves = 4 },
     { species = "electivire", level = 58, num_moves = 4 },
 ]
-label = "Leader Volkner Fight Area"
+label = "Fight Area - Leader Volkner"
 
 [elite_four_flint_fight_area]
 id = 922
@@ -7577,7 +7577,7 @@ party = [
     { species = "flareon", level = 56, num_moves = 4 },
     { species = "magmortar", level = 58, num_moves = 4 },
 ]
-label = "Elite Four Flint Fight Area"
+label = "Fight Area - Elite Four Flint"
 
 [rival_fight_area_piplup]
 id = 923
@@ -7589,7 +7589,7 @@ party = [
     { species = "snorlax", level = 54, num_moves = 4 },
     { species = "torterra", level = 56, num_moves = 4 },
 ]
-label = "Rival Fight Area Piplup"
+label = "Fight Area - Rival"
 
 [rival_fight_area_turtwig]
 id = 924
@@ -7601,7 +7601,7 @@ party = [
     { species = "snorlax", level = 54, num_moves = 4 },
     { species = "infernape", level = 56, num_moves = 4 },
 ]
-label = "Rival Fight Area Turtwig"
+label = "Fight Area - Rival"
 
 [rival_fight_area_chimchar]
 id = 925
@@ -7613,7 +7613,7 @@ party = [
     { species = "snorlax", level = 54, num_moves = 4 },
     { species = "empoleon", level = 56, num_moves = 4 },
 ]
-label = "Rival Fight Area Chimchar"
+label = "Fight Area - Rival"
 
 [commander_mars_stark_mountain]
 id = 926
@@ -7622,7 +7622,7 @@ party = [
     { species = "golbat", level = 58, num_moves = 4 },
     { species = "purugly", level = 60, num_moves = 4 },
 ]
-label = "Commander Mars Stark Mountain"
+label = "Stark Mountain - Commander Mars"
 requires_national_dex = true
 
 [commander_jupiter_stark_mountain]
@@ -7632,5 +7632,5 @@ party = [
     { species = "golbat", level = 58, num_moves = 4 },
     { species = "skuntank", level = 60, num_moves = 4 },
 ]
-label = "Commander Jupiter Stark Mountain"
+label = "Stark Mountain - Commander Jupiter"
 requires_national_dex = true
