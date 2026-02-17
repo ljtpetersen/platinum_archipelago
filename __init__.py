@@ -16,7 +16,7 @@ from .data import items as itemdata, rules as ruledata, Hm, map_header_labels, e
 from .data.locations import RequiredLocations, LocationTable
 from .items import create_item_label_to_code_map, get_item_classification, PokemonPlatinumItem, get_item_groups
 from .locations import PokemonPlatinumLocation, create_location_label_to_code_map, create_locations
-from .options import PokemonPlatinumOptions, RandomizeCartridges, RandomizeTimeItems, UnownsOption
+from .options import AddHMReader, PokemonPlatinumOptions, RandomizeCartridges, RandomizeTimeItems, UnownsOption
 from .regions import create_regions
 from .rom import generate_output, PokemonPlatinumPatch
 from .rules import set_rules, verify_hm_accessibility
@@ -132,7 +132,7 @@ class PokemonPlatinumWorld(World):
             locations)
 
         add_items: list[str] = ["dragon_scale", "deepseatooth", "deepseascale"]
-        for item in ["master_repel", "storage_key"]:
+        for item in ["master_repel", "storage_key", "hm_reader"]:
             if getattr(self.options, item).value == 1:
                 add_items.append(item)
         if self.options.cartridges == RandomizeCartridges.option_no_location:
@@ -153,12 +153,13 @@ class PokemonPlatinumWorld(World):
                 itempool.append(self.create_item_by_code(item_id))
 
         self.multiworld.itempool += itempool
+        if self.options.hm_reader.value == AddHMReader.option_precollected:
+            self.multiworld.push_precollected(self.create_item(itemdata.items["hm_reader"].label))
         for item in add_items:
             self.multiworld.push_precollected(self.create_item(itemdata.items[item].label))
         if self.options.cartridges == RandomizeCartridges.option_no_location:
             for cart in sorted(self.item_name_groups["GBA Cartridges"]):
                 self.multiworld.push_precollected(self.create_item(cart))
-
         if self.options.time_items == RandomizeTimeItems.option_no_location:
             for item in sorted(self.item_name_groups["Time Items"]):
                 self.multiworld.push_precollected(self.create_item(item))

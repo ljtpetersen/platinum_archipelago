@@ -10,7 +10,7 @@ from worlds.generic.Rules import add_rule, set_rule
 
 from .data import encounters as encounterdata, Hm, items as itemdata, regions as regiondata, rules as ruledata, trainers as trainerdata, species as speciesdata
 from .locations import is_location_in_world, get_parent_region
-from .options import Goal
+from .options import Goal, HMReaderMode
 from .regions import is_event_region_enabled, is_region_enabled
 
 if TYPE_CHECKING:
@@ -110,6 +110,8 @@ def set_rules(world: "PokemonPlatinumWorld") -> None:
     world.multiworld.completion_condition[world.player] = lambda state : state.has(goal_event, world.player)
 
 def verify_hm_accessibility(world: "PokemonPlatinumWorld") -> None:
+    if world.options.hm_reader_mode == HMReaderMode.option_noreq_mon:
+        return
     rules = world.ruledata
 
     def do_verify(hms: list[Hm]):

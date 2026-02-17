@@ -255,8 +255,7 @@ def generate_output(world: "PokemonPlatinumWorld", output_directory: str, patch:
     add_opt_byte("start_with_swarms")
     add_opt_byte("can_reset_legendaries_in_ap_helper")
     add_opt_byte("evo_items_shop_in_ap_helper")
-    # where tm user mode goes.
-    ap_bin += b'\x01'
+    add_opt_byte('hm_reader_mode')
 
     match game_opts.received_items_notification:
         case "nothing":
@@ -398,6 +397,8 @@ def generate_output(world: "PokemonPlatinumWorld", output_directory: str, patch:
     roamers_ids = [species[spec].id for spec in world.generated_roamers]
     roamers_adj = roamers_ids[:2] + [491] + roamers_ids[2:]
     ap_bin += b''.join(id.to_bytes(2, 'little') for id in roamers_adj)
+    odd_keystone_id = species[world.generated_speencs.get(("odd_keystone", 0), "spiritomb")].id
+    ap_bin += odd_keystone_id.to_bytes(2, 'little')
 
     patch.write_file("ap.bin", ap_bin)
 

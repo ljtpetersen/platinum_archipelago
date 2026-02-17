@@ -570,6 +570,32 @@ class InLogicEvolutionMethods(OptionSet):
     default = {"level", "level_atk_gt_def", "level_atk_eq_def", "level_atk_lt_def", "level_pid_low", "level_pid_high", "level_ninjask", "level_shedinja", "level_male", "level_female", "trade_with_held_item", "use_item", "use_item_male", "use_item_female", "level_with_held_item_day", "level_with_held_item_night", "level_happiness", "level_happiness_day", "level_happiness_night", "trade", "level_beauty", "level_magnetic_field", "level_moss_rock", "level_ice_rock", "level_know_move", "level_species_in_party" }
     valid_keys = {"level", "level_atk_gt_def", "level_atk_eq_def", "level_atk_lt_def", "level_pid_low", "level_pid_high", "level_ninjask", "level_shedinja", "level_male", "level_female", "trade_with_held_item", "use_item", "use_item_male", "use_item_female", "level_with_held_item_day", "level_with_held_item_night", "level_happiness", "level_happiness_day", "level_happiness_night", "trade", "level_beauty", "level_magnetic_field", "level_moss_rock", "level_ice_rock", "level_know_move", "level_species_in_party" }
 
+class AddHMReader(Choice):
+    """
+    Add the HM Reader item. The HM Reader is an item that lets you use field moves without teaching them.
+
+    Options:
+    - no: Don't add the HM Reader item.
+    - itempool: Add the HM Reader item to the itempool.
+    - precollected: Start with the HM Reader item.
+    """
+    option_no = 0
+    option_itempool = 1
+    option_precollected = 2
+    default = option_no
+
+class HMReaderMode(Choice):
+    """
+    Mode for the HM Reader. The HM Reader is an item that lets you use field moves without teaching them.
+
+    Options:
+    - req_mon: require a Pokemon in your party to which you can teach the move, in order for the HM Reader to use it.
+    - noreq_mon: do not require a Pokemon in your party to which you can teach the move.
+    """
+    option_req_mon = 0
+    option_noreq_mon = 1
+    default = option_req_mon
+
 slot_data_options: Sequence[str] = [
     "hms",
     "badges",
@@ -599,6 +625,9 @@ slot_data_options: Sequence[str] = [
     "start_with_swarms",
     "can_reset_legendaries_in_ap_helper",
     "evo_items_shop_in_ap_helper",
+
+    "hm_reader",
+    "hm_reader_mode",
 
     "randomize_starters",
     "require_two_level_evolution_starters",
@@ -670,6 +699,9 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
     start_with_swarms: StartWithSwarms
     can_reset_legendaries_in_ap_helper: CanResetLegendariesInAPHelper
     evo_items_shop_in_ap_helper: EvoItemsShopInAPHelper
+    
+    hm_reader: AddHMReader
+    hm_reader_mode: HMReaderMode
 
     randomize_starters: RandomizeStarters
     require_two_level_evolution_starters: RequireTwoLevelEvolutionStarters

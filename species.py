@@ -436,7 +436,7 @@ def encounter_slot_label(key: Tuple[str, str, int], in_logic_encounters: Set[str
 
 speenc_labels: Mapping[str, str] = {
     "regular_honey_tree": "Honey Tree (Normal)",
-    "munchlax_honey_tree": "Honey Tere (Munchlax)",
+    "munchlax_honey_tree": "Honey Tree (Munchlax)",
     "trophy_garden": "Trophy Garden",
     "great_marsh_observatory": "Great Marsh Observatory",
     "great_marsh_observatory_national_dex": "Great Marsh Observatory (With National Dex)",

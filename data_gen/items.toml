@@ -4169,23 +4169,22 @@ group = "timeitem"
 classification = "progression"
 
 [honey_tree_upgrade]
-label = "Honey Tree Upgrade"
+label = "Tree Camera"
 id = 12
 clas = "special"
 classification = "progression"
 group = "dowsing_machine_upgrade"
 
 [feebas_upgrade]
-label = "Feebas Upgrade"
+label = "PokeSonar"
 id = 13
 clas = "special"
 classification = "progression"
 group = "dowsing_machine_upgrade"
 
-[tm_user]
-# Placeholder label
-label = "TM User"
+[hm_reader]
+label = "HM Reader"
 id = 478
 clas = "bagitem"
 classification = "progression"
-group = "tm_user"
+group = "hm_reader"
