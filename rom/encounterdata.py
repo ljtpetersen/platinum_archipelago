@@ -46,7 +46,7 @@ class WaterEncounter:
 
     @staticmethod
     def from_bytes(data: bytes, offset: int) -> "WaterEncounter":
-        return WaterEncounter(*unpack_from("<2b2xI", data, offset))
+        return WaterEncounter(*unpack_from("<2B2xI", data, offset))
 
     def to_bytes(self) -> bytes:
         return pack("<2B2xI", self.min_level, self.max_level, self.species)
