@@ -135,12 +135,6 @@ class PokemonPlatinumWorld(World):
         for item in ["master_repel", "storage_key", "hm_reader"]:
             if getattr(self.options, item).value == 1:
                 add_items.append(item)
-        if self.options.cartridges == RandomizeCartridges.option_no_location:
-            for cart in ["ruby", "sapphire", "emerald", "leafgreen", "firered"]:
-                add_items.append(cart + "_cartridge")
-        if self.options.time_items == RandomizeTimeItems.option_no_location:
-            for cart in ["night", "day"]:
-                add_items.append(cart + "time")
 
         itempool = []
         for loc in item_locations:
