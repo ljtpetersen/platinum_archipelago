@@ -82,7 +82,12 @@ def is_location_in_world(label: str, world: "PokemonPlatinumWorld") -> bool:
 def create_location_label_to_code_map() -> Dict[str, int]:
     id_map = {}
     id_map.update({v.label:v.get_raw_id() for v in locationdata.locations.values()})
-    id_map.update({"Trainersanity - " + v.label:v.get_raw_id() for v in trainerdata.trainers.values()})
+    id_map.update({
+        "Trainersanity - " + v.label:v.get_raw_id()
+        for k, v in trainerdata.trainers.items()
+        if not ((k.startswith("rival") or k.startswith("lucas") or k.startswith("dawn")) \
+                and (k.endswith("chimchar") or k.endswith("piplup")))
+    })
     id_map.update({"Dexsanity - " + v.label:v.id | (locationdata.LocationTable.DEX << 16) for v in speciesdata.species.values()})
     return id_map
 
@@ -146,6 +151,7 @@ def create_locations(world: "PokemonPlatinumWorld", regions: Mapping[str, Region
             region.locations.append(plat_loc)
         if world.options.trainersanity:
             for name in region_data.trainers:
+                tr_reg = regions[f"trainer_{name}"]
                 if name.startswith("rival_"):
                     name += "_turtwig"
                 tr = trainerdata.trainers[name]
@@ -157,10 +163,10 @@ def create_locations(world: "PokemonPlatinumWorld", regions: Mapping[str, Region
                     "Trainersanity - " + tr.label,
                     "trainersanity",
                     address=address,
-                    parent=region,
+                    parent=tr_reg,
                     default_item_id=item.get_raw_id(),
                     is_enabled=True)
-                region.locations.append(plat_loc)
+                tr_reg.locations.append(plat_loc)
 
     rgms = set(speciesdata.regional_mons)
     balls = sorted(world.item_name_groups["Balls"])

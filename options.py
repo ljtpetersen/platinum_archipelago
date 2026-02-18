@@ -19,8 +19,8 @@ class SpeciesBlacklist(OptionSet):
 
     def blacklist(self) -> Set[str]:
         if self.cached_blacklist is None:
-            if "LEGENDARIES" in self:
-                self.cached_blacklist = (frozenset(self.value) - {"LEGENDARIES"}) | set(regional_mons)
+            if "legendaries" in self:
+                self.cached_blacklist = (frozenset(self.value) - {"legendaries"}) | set(regional_mons)
             else:
                 self.cached_blacklist = frozenset(self.value)
         return self.cached_blacklist
@@ -81,7 +81,7 @@ class RandomizeAccessories(Toggle):
     display_name = "Randomize Accessories"
 
 class RandomizeCartridges(Choice):
-    """Adds the GBA cartridges to the item pool. The no location option removes the location and adds the cartridges to the starting inventory."""
+    """Adds the GBA cartridges to the item pool. The no location option removes the location and adds the cartridges to the starting inventory. The false option means they won't be randomized."""
     display_name = "Randomize Cartridges"
     default = 1
     option_true = 1
@@ -89,7 +89,7 @@ class RandomizeCartridges(Choice):
     option_no_location = 2
 
 class RandomizeTimeItems(Choice):
-    """Adds the time items to the item pool. The no location option removes the location and adds the time items to the starting inventory."""
+    """Adds the time items to the item pool. The no location option removes the location and adds the time items to the starting inventory. The false option means they won't be randomized."""
     display_name = "Randomize Time Items"
     default = 1
     option_true = 1
@@ -104,10 +104,10 @@ class RemoveBadgeRequirement(OptionSet):
     """
     Specify which HMs do not require a badge to use outside of battle. This overrides the HM Badge Requirements setting.
 
-    HMs should be provided in the form: "FLY", "WATERFALL", "ROCK_SMASH", etc.
+    HMs should be provided in the form: "fly", "waterfall", "rock_smash", etc.
     """
     display_name = "Remove Badge Requirement"
-    valid_keys = ["CUT", "FLY", "SURF", "STRENGTH", "DEFOG", "ROCK_SMASH", "WATERFALL", "ROCK_CLIMB"]
+    valid_keys = ["cut", "fly", "surf", "strength", "defog", "rock_smash", "waterfall", "rock_climb"]
 
 class VisibilityHmLogic(DefaultOnToggle):
     """Logically require Flash or Defog for traversing and finding locations in applicable regions."""
@@ -335,12 +335,18 @@ class HBSpeed(Range):
 
 class NormalizeEncounters(DefaultOnToggle):
     """
-    In the vanilla game, encounter slots have varying probabilities, from 20% down to 1%.
+    In the vanilla game, encounter table entries have varying probabilities, from 20% down to 1%.
     This option will normalize these, so they all have the same probability. The normalized
-    probabilities are 1/12 for each slot in the land table, and 1/5 for each slot in the water
+    probabilities are 1/12 for each entry in the land table, and 1/5 for each entry in the water
     and rod tables.
 
     This option is modifiable in the in-game options menu.
+
+    Note: this does not mean that there are twelve encounter slots, and a 1/12 chance for each slot.
+    Often there will only be two or three encounter slots per route, occupying all twelve entries
+    in the encounter table. This option only means that the *smallest* possible probability for any
+    slot will be 1/12. (except for special encounters, where there may be more or less table
+    entries)
     """
     display_name = "Normalize Encounters"
 
@@ -433,12 +439,12 @@ class EncounterSpeciesBlacklist(SpeciesBlacklist):
     Spaces should be replaced by underscores. For example,
     Mr. Mime would be mr_mime.
 
-    LEGENDARIES, all uppercase, will be interpreted as banning all legendary
+    legendaries, all lowercase, will be interpreted as banning all legendary
     species.
 
     Currently, this cannot include kecleon, geodude, or munchlax.
     """
-    valid_keys = list(species.keys() - {"kecleon", "geodude", "munchlax"})
+    valid_keys = list(species.keys() - {"kecleon", "geodude", "munchlax"}) + ["legendaries"]
 
 class RandomizeTrainerParties(Toggle):
     """Randomize trainer party members."""
@@ -454,10 +460,10 @@ class TrainerPartyBlacklist(SpeciesBlacklist):
     Spaces should be replaced by underscores. For example,
     Mr. Mime would be mr_mime.
 
-    LEGENDARIES, all uppercase, will be interpreted as banning all legendary
+    legendaries, all lowercase, will be interpreted as banning all legendary
     species.
     """
-    valid_keys = list(species)
+    valid_keys = list(species) + ["legendaries"]
 
 
 class RandomizeStarters(Toggle):
@@ -478,6 +484,8 @@ class StarterWhitelist(OptionSet):
     The species names should be entered entirely in lowercase.
     Spaces should be replaced by underscores. For example,
     Mr. Mime would be mr_mime.
+
+    Note: legendaries is **not** a valid key for this option.
     """
     display_name = "Starter Whitelist"
     valid_keys = list(species)
@@ -492,11 +500,11 @@ class StarterBlacklist(SpeciesBlacklist):
     Spaces should be replaced by underscores. For example,
     Mr. Mime would be mr_mime.
 
-    LEGENDARIES, all uppercase, will be interpreted as banning all legendary
+    legendaries, all lowercase, will be interpreted as banning all legendary
     species.
     """
     display_name = "Starter Blacklist"
-    valid_keys = list(species) + ["LEGENDARIES"]
+    valid_keys = list(species) + ["legendaries"]
 
 class RandomizeBunearyInIntro(DefaultOnToggle):
     """Randomize the species of the Pokémon that is shown in the intro."""
@@ -556,10 +564,10 @@ class RoamerBlacklist(SpeciesBlacklist):
     Spaces should be replaced by underscores. For example,
     Mr. Mime would be mr_mime.
 
-    LEGENDARIES, all uppercase, will be interpreted as banning all legendary
+    legendaries, all lowercase, will be interpreted as banning all legendary
     species.
     """
-    valid_keys = list(species.keys())
+    valid_keys = list(species) + ["legendaries"]
     display_name = "Roamer Blacklist"
 
 class InLogicEvolutionMethods(OptionSet):
@@ -753,7 +761,7 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
     goal: Goal
 
     def requires_badge(self, hm: str) -> bool:
-        return self.hm_badge_requirement.value == 1 or hm in self.remove_badge_requirements
+        return self.hm_badge_requirement.value == 1 or hm.lower() in self.remove_badge_requirements
 
     def validate(self) -> None:
         if self.pastoria_barriers:

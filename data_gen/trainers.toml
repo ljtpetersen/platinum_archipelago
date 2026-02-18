@@ -3304,6 +3304,7 @@ party = [
     { species = "stunky", level = 11, num_moves = 0 },
 ]
 label = "Jubilife City - Galactic Grunt 1"
+check = 242
 
 [galactic_grunt_jubilife_city_2]
 id = 415
@@ -3311,6 +3312,7 @@ party = [
     { species = "glameow", level = 11, num_moves = 0 },
 ]
 label = "Jubilife City - Galactic Grunt 2"
+check = 242
 
 [galactic_grunt_celestic_town]
 id = 416
@@ -6793,6 +6795,7 @@ party = [
 ]
 check = 2738
 label = "Survival Area - Rival 1"
+requires_national_dex = true
 
 [rival_survival_area_1_turtwig]
 id = 838
@@ -6806,6 +6809,7 @@ party = [
 ]
 check = 2738
 label = "Survival Area - Rival 1"
+requires_national_dex = true
 
 [rival_survival_area_1_chimchar]
 id = 839
@@ -6819,6 +6823,7 @@ party = [
 ]
 check = 2738
 label = "Survival Area - Rival 1"
+requires_national_dex = true
 
 [rival_survival_area_unused_piplup]
 id = 840

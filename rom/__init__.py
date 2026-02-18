@@ -225,7 +225,7 @@ def generate_output(world: "PokemonPlatinumWorld", output_directory: str, patch:
 
     if world.options.hm_badge_requirement.value == 1:
         hm_accum = 0
-        hm_order = ["CUT", "FLY", "SURF", "STRENGTH", "DEFOG", "ROCK_SMASH", "WATERFALL", "ROCK_CLIMB"]
+        hm_order = ["cut", "fly", "surf", "strength", "defog", "rock_smash", "waterfall", "rock_climb"]
         for i, v in enumerate(hm_order):
             if v in world.options.remove_badge_requirements:
                 hm_accum |= 1 << i

@@ -51,7 +51,7 @@ def trainer_party_supporting_starters(name: str) -> Sequence[PartyMember]:
 
 def trainer_requires_national_dex(name: str) -> bool:
     if name.startswith("lucas") or name.startswith("rival") or name.startswith("dawn"):
-        return trainers[name + "_chimchar"].requires_national_dex
+        return trainers[name + "_turtwig"].requires_national_dex
     else:
         return trainers[name].requires_national_dex
 

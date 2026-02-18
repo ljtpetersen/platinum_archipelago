@@ -129,6 +129,7 @@ def create_regions(world: "PokemonPlatinumWorld") -> Mapping[str, Region]:
 
     def setup_trainer_region(parent_region: Region, trainer: str) -> None:
         trainer_region = Region(f"trainer_{trainer}", world.player, world.multiworld)
+        regions[f"trainer_{trainer}"] = trainer_region
         parent_region.connect(trainer_region, f"{parent_region.name} -> trainer_{trainer}")
         for i in range(len(trainer_party_supporting_starters(trainer))):
             location = PokemonPlatinumLocation(
