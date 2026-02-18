@@ -3,7 +3,7 @@
 # Copyright (C) 2025-2026 James Petersen <m@jamespetersen.ca>
 # Licensed under MIT. See LICENSE
 
-from collections.abc import Mapping, Set
+from collections.abc import Mapping, Set, Sequence
 from dataclasses import dataclass
 from enum import IntEnum
 from NetUtils import ClientStatus
@@ -171,6 +171,12 @@ class Pokedex:
 
     def has_national(self) -> bool:
         return self.data[795] != 0
+
+def dex_bytearray_to_seq(data: bytearray | bytes) -> Sequence[int]:
+    return [v
+        for v in range(1, 494)
+        if (data[v >> 3] & (1 << (v & 7))) != 0
+    ]
 
 class PokemonPlatinumClient(BizHawkClient):
     game = "Pokemon Platinum"
@@ -421,24 +427,24 @@ class PokemonPlatinumClient(BizHawkClient):
             packages = []
 
             if local_seen_pokemon != self.local_seen_pokemon:
-                for chunk in range(16):
-                    packages.append({
-                        "cmd": "Set",
-                        "key": f"pokemon_platinum_seen_pokemon_{ctx.team}_{ctx.slot}_{chunk}",
-                        "default": 0,
-                        "want_reply": False,
-                        "operations": [{"operation": "replace", "value": int.from_bytes(local_seen_pokemon[chunk * 4:chunk * 4 + 4], 'little')}]
-                    })
+                seq = dex_bytearray_to_seq(local_seen_pokemon)
+                packages.append({
+                    "cmd": "Set",
+                    "key": f"pokemon_platinum_seen_pokemon_{ctx.team}_{ctx.slot}",
+                    "default": [],
+                    "want_reply": False,
+                    "operations": [{"operation": "replace", "value": seq}]
+                })
 
             if local_caught_pokemon != self.local_caught_pokemon:
-                for chunk in range(16):
-                    packages.append({
-                        "cmd": "Set",
-                        "key": f"pokemon_platinum_caught_pokemon_{ctx.team}_{ctx.slot}_{chunk}",
-                        "default": 0,
-                        "want_reply": False,
-                        "operations": [{"operation": "replace", "value": int.from_bytes(local_caught_pokemon[chunk * 4:chunk * 4 + 4], 'little')}]
-                    })
+                seq = dex_bytearray_to_seq(local_caught_pokemon)
+                packages.append({
+                    "cmd": "Set",
+                    "key": f"pokemon_platinum_caught_pokemon_{ctx.team}_{ctx.slot}",
+                    "default": [],
+                    "want_reply": False,
+                    "operations": [{"operation": "replace", "value": seq}]
+                })
 
             if packages:
                 await ctx.send_msgs(packages)
