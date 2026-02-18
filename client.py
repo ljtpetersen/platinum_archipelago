@@ -194,10 +194,8 @@ class PokemonPlatinumClient(BizHawkClient):
     current_z: int
     local_tracked_events: int
     local_tracked_unrandomized_prog_locs: int
-    local_seen_pokemon: set[int]
-    local_caught_pokemon: set[int]
-    remote_seen_pokemon: set[int]
-    remote_caught_pokemon: set[int]
+    local_seen_pokemon: bytearray
+    local_caught_pokemon: bytearray
     notify_setup_complete: bool
 
     def initialize_client(self):
@@ -215,10 +213,8 @@ class PokemonPlatinumClient(BizHawkClient):
         self.current_z = -1
         self.local_tracked_events = 0
         self.local_tracked_unrandomized_prog_locs = 0
-        self.local_seen_pokemon = set()
-        self.local_caught_pokemon = set()
-        self.remote_seen_pokemon = set()
-        self.remote_caught_pokemon = set()
+        self.local_seen_pokemon = bytearray(64)
+        self.local_caught_pokemon = bytearray(64)
         self.notify_setup_complete = False
 
     async def validate_rom(self, ctx: "BizHawkClientContext") -> bool:
@@ -283,14 +279,6 @@ class PokemonPlatinumClient(BizHawkClient):
     async def game_watcher(self, ctx: "BizHawkClientContext") -> None:
         if ctx.server is None or ctx.server.socket.closed or ctx.slot_data is None:
             return
-
-        pokedex_seen_key = f"pokemon_platinum_seen_pokemon_{ctx.team}_{ctx.slot}"
-        pokedex_caught_key = f"pokemon_platinum_caught_pokemon_{ctx.team}_{ctx.slot}"
-
-        if not self.notify_setup_complete:
-            if ctx.items_handling & 0b010:
-                ctx.set_notify(pokedex_caught_key, pokedex_seen_key)
-            self.notify_setup_complete = True
 
         version_data = AP_VERSION_DATA[self.rom_version]
 
@@ -394,10 +382,8 @@ class PokemonPlatinumClient(BizHawkClient):
             game_clear = vars_flags.is_checked(self.goal_flag) # type: ignore
             local_tracked_events = 0
             local_tracked_unrandomized_prog_locs = 0
-            remote_seen_pokemon = ctx.stored_data.get(pokedex_seen_key)
-            local_seen_pokemon = set(remote_seen_pokemon) if remote_seen_pokemon else set()
-            remote_caught_pokemon = ctx.stored_data.get(pokedex_caught_key)
-            local_caught_pokemon = set(remote_caught_pokemon) if remote_caught_pokemon else set()
+            local_seen_pokemon = bytearray(64)
+            local_caught_pokemon = bytearray(64)
 
             for k in ctx.missing_locations:
                 if k >> 16 == LocationTable.DEX:
@@ -420,17 +406,11 @@ class PokemonPlatinumClient(BizHawkClient):
                 if vars_flags.is_checked(locations[loc].check):
                     local_tracked_unrandomized_prog_locs |= 1 << k
 
-            local_seen_pokemon.update(
-                i
-                for i in range(1, 494)
-                if pokedex.has_seen(i)
-            )
-
-            local_caught_pokemon.update(
-                i
-                for i in range(1, 494)
-                if pokedex.has_caught(i)
-            )
+            for i in range(1, 494):
+                if pokedex.has_seen(i):
+                    local_seen_pokemon[(i - 1) >> 3] |= 1 << ((i - 1) & 7)
+                if pokedex.has_caught(i):
+                    local_caught_pokemon[(i - 1) >> 3] |= 1 << ((i - 1) & 7)
 
             if local_checked_locations != self.local_checked_locations:
                 await ctx.check_locations(local_checked_locations)
@@ -441,22 +421,24 @@ class PokemonPlatinumClient(BizHawkClient):
             packages = []
 
             if local_seen_pokemon != self.local_seen_pokemon:
-                packages.append({
-                    "cmd": "Set",
-                    "key": pokedex_seen_key,
-                    "default": [],
-                    "want_reply": ctx.items_handling & 0b010,
-                    "operations": [{"operation": "update" if ctx.items_handling & 0b010 else "replace", "value": list(local_seen_pokemon)}]
-                })
+                for chunk in range(16):
+                    packages.append({
+                        "cmd": "Set",
+                        "key": f"pokemon_platinum_seen_pokemon_{ctx.team}_{ctx.slot}_{chunk}",
+                        "default": 0,
+                        "want_reply": False,
+                        "operations": [{"operation": "replace", "value": int.from_bytes(local_seen_pokemon[chunk * 4:chunk * 4 + 4], 'little')}]
+                    })
 
             if local_caught_pokemon != self.local_caught_pokemon:
-                packages.append({
-                    "cmd": "Set",
-                    "key": pokedex_caught_key,
-                    "default": [],
-                    "want_reply": ctx.items_handling & 0b010,
-                    "operations": [{"operation": "update" if ctx.items_handling & 0b010 else "replace", "value": list(local_caught_pokemon)}]
-                })
+                for chunk in range(16):
+                    packages.append({
+                        "cmd": "Set",
+                        "key": f"pokemon_platinum_caught_pokemon_{ctx.team}_{ctx.slot}_{chunk}",
+                        "default": 0,
+                        "want_reply": False,
+                        "operations": [{"operation": "replace", "value": int.from_bytes(local_caught_pokemon[chunk * 4:chunk * 4 + 4], 'little')}]
+                    })
 
             if packages:
                 await ctx.send_msgs(packages)
@@ -517,28 +499,6 @@ class PokemonPlatinumClient(BizHawkClient):
                            }}]
                 await ctx.send_msgs(message)
 
-            if ctx.items_handling & 0b010:
-                caught_bytes = bytearray(pokedex.data[4:68])
-                seen_bytes = bytearray(pokedex.data[68:132])
-
-                for i in range(1, 494):
-                    bitmask = 1 << ((i - 1) & 7)
-                    byteidx = (i - 1) >> 3
-                    if i in local_seen_pokemon:
-                        seen_bytes[byteidx] |= bitmask
-                    if i in local_caught_pokemon:
-                        caught_bytes[byteidx] |= bitmask
-
-                await bizhawk.guarded_write(
-                    ctx.bizhawk_ctx,
-                    [
-                        (savedata_ptr + version_data.pokedex_offset_in_save + 4, bytes(caught_bytes + seen_bytes), "ARM9 System Bus")
-                    ],
-                    [
-                        guards["AP STRUCT VALID"], guards["SAVEDATA PTR"],
-                        (savedata_ptr + version_data.pokedex_offset_in_save + 4, pokedex.data[4:132], "ARM9 System Bus"),
-                    ]
-                )
         except bizhawk.RequestFailedError:
             pass
 
@@ -604,23 +564,6 @@ class PokemonPlatinumClient(BizHawkClient):
             [(self.ap_struct_address + version_data.cheat_offset, old_bits.to_bytes(4, 'little'), "ARM9 System Bus")],
             [guards["AP STRUCT VALID"]]
         )
-
-    def on_package(self, ctx: "BizHawkClientContext", cmd: str, args: dict) -> None:
-        super().on_package(ctx, cmd, args)
-
-        if cmd == "Retrieved":
-            if ctx.items_handling & 0b010:
-                if f"pokemon_platinum_caught_pokemon_{ctx.team}_{ctx.slot}" in args["keys"]:
-                    remote_caught_pokemon = args["keys"][f"pokemon_platinum_caught_pokemon_{ctx.team}_{ctx.slot}"]
-                    self.remote_caught_pokemon = set(remote_caught_pokemon) if remote_caught_pokemon else set()
-                if f"pokemon_platinum_seen_pokemon_{ctx.team}_{ctx.slot}" in args["keys"]:
-                    remote_seen_pokemon = args["keys"][f"pokemon_platinum_seen_pokemon_{ctx.team}_{ctx.slot}"]
-                    self.remote_seen_pokemon = set(remote_seen_pokemon) if remote_seen_pokemon else set()
-        elif cmd == "SetReply":
-            if args["key"] == f"pokemon_platinum_caught_pokemon_{ctx.team}_{ctx.slot}":
-                self.remote_caught_pokemon = set(args["value"])
-            elif args["key"] == f"pokemon_platinum_seen_pokemon_{ctx.team}_{ctx.slot}":
-                self.remote_seen_pokemon = set(args["value"])
 
 def cmd_cheat(self: "BizHawkClientCommandProcessor", name: str | None = None) -> None:
     """Activate a Pokémon Platinum Cheat. Enter the command without any arguments to list all cheats."""
