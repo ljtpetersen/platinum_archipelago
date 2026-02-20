@@ -38,3 +38,32 @@ legendary_mons: Sequence[str] = [
 ]
 
 species_id_to_const_name: Mapping[int, str] = {v.id:k for k, v in species.items()}
+
+def make_evolution_map() -> Mapping[str, Sequence[str]]:
+    ret = {}
+    for name, spec in species.items():
+        if spec.pre_evolution:
+            from_spec = spec.pre_evolution.species 
+            if from_spec not in ret:
+                ret[from_spec] = [name]
+            else:
+                ret[from_spec].append(name)
+    return ret
+
+evolutions: Mapping[str, Sequence[str]] = make_evolution_map()
+
+def get_two_level_evo_species() -> Set[str]:
+    def has_two_level_evo(spec: str) -> bool:
+        for _ in range(2):
+            for evo_to in evolutions.get(spec, []):
+                pevo = species[evo_to].pre_evolution
+                if pevo.method == "level": # type: ignore
+                    spec = evo_to
+                    break
+            else:
+                return False
+        else:
+            return True
+    return {spec for spec in species if has_two_level_evo(spec)}
+
+having_two_level_evos: Set[str] = get_two_level_evo_species()

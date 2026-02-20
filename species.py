@@ -15,41 +15,11 @@ from worlds.pokemon_platinum.regions import is_region_enabled
 from .data import special_encounters, map_header_labels
 from .data.encounters import encounters as encounterdata, encounter_type_pairs, EncounterSlot, national_dex_requiring_encs
 from .data.regions import regions as regiondata
-from .data.species import species as speciesdata, regional_mons
+from .data.species import species as speciesdata, regional_mons, having_two_level_evos
 from .data.trainers import trainers as trainerdata, trainer_party_supporting_starters, trainer_requires_national_dex
 
 if TYPE_CHECKING:
     from . import PokemonPlatinumWorld
-
-def make_evolution_map() -> Mapping[str, Sequence[str]]:
-    ret = {}
-    for name, spec in speciesdata.items():
-        if spec.pre_evolution:
-            from_spec = spec.pre_evolution.species 
-            if from_spec not in ret:
-                ret[from_spec] = [name]
-            else:
-                ret[from_spec].append(name)
-    return ret
-
-evolutions: Mapping[str, Sequence[str]] = make_evolution_map()
-
-def get_species_set() -> Set[str]:
-    return set(speciesdata)
-
-def get_two_level_evo_species() -> Set[str]:
-    def has_two_level_evo(spec: str) -> bool:
-        for _ in range(2):
-            for evo_to in evolutions.get(spec, []):
-                pevo = speciesdata[evo_to].pre_evolution
-                if pevo.method == "level": # type: ignore
-                    spec = evo_to
-                    continue
-            else:
-                return False
-        else:
-            return True
-    return {spec for spec in speciesdata if has_two_level_evo(spec)}
 
 def randomize_starters(world: "PokemonPlatinumWorld") -> None:
     if not world.options.randomize_starters:
@@ -59,13 +29,13 @@ def randomize_starters(world: "PokemonPlatinumWorld") -> None:
         world.generated_starters = tuple(world.random.sample(selection, k=3)) # type: ignore
     else:
         if world.options.require_two_level_evolution_starters:
-            selection_set = get_two_level_evo_species()
+            selection_set = having_two_level_evos
         else:
-            selection_set = get_species_set()
+            selection_set = set(speciesdata)
         selection_set -= world.options.starter_blacklist.blacklist()
         world.generated_starters = tuple(world.random.sample(sorted(selection_set), k=3)) # type: ignore
     if world.options.randomize_intro_mon:
-        world.generated_buneary = world.random.choice(sorted(get_species_set()))
+        world.generated_buneary = world.random.choice(sorted(speciesdata))
     else:
         world.generated_buneary = "buneary"
 

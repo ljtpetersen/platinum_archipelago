@@ -9,7 +9,7 @@ from typing import Any
 from Options import Choice, DeathLink, DefaultOnToggle, NamedRange, OptionDict, OptionError, OptionSet, PerGameCommonOptions, Range, Toggle
 
 from .data import special_encounters
-from .data.species import species, regional_mons
+from .data.species import species, regional_mons, having_two_level_evos, legendary_mons
 from .data.regions import regions
 from .data.trainers import trainer_party_supporting_starters, trainers, trainer_requires_national_dex
 from .data.encounters import encounters, encounter_type_pairs, national_dex_requiring_encs
@@ -20,7 +20,7 @@ class SpeciesBlacklist(OptionSet):
     def blacklist(self) -> Set[str]:
         if self.cached_blacklist is None:
             if "legendaries" in self:
-                self.cached_blacklist = (frozenset(self.value) - {"legendaries"}) | set(regional_mons)
+                self.cached_blacklist = (frozenset(self.value) - {"legendaries"}) | set(legendary_mons)
             else:
                 self.cached_blacklist = frozenset(self.value)
         return self.cached_blacklist
@@ -471,7 +471,11 @@ class RandomizeStarters(Toggle):
     display_name = "Randomize Starters"
 
 class RequireTwoLevelEvolutionStarters(Toggle):
-    """If the starters are randomized, require that they all be two-level-evolution species."""
+    """
+    If the starters are randomized, require that they all be two-level-evolution species.
+    This option only applies to the blacklist. If the whitelist is nonempty,
+    it is ignore.
+    """
     display_name = "Require Two Level Evolution Starters"
 
 class StarterWhitelist(OptionSet):
@@ -954,8 +958,10 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
         if self.randomize_starters:
             if 0 < len(self.starter_whitelist.value) < 3:
                 raise OptionError(f"starter whitelist must contain at least three values")
-            elif len(self.starter_whitelist.value) == 0 and len(species.keys() - self.starter_blacklist.blacklist()) < 3:
-                raise OptionError(f"starter blacklist too restrictive")
+            elif len(self.starter_whitelist.value) == 0:
+                species_set = having_two_level_evos if self.require_two_level_evolution_starters else species.keys()
+                if len(species_set - self.starter_blacklist.blacklist()) < 3:
+                    raise OptionError(f"starter blacklist too restrictive")
 
     def save_options(self) -> MutableMapping[str, Any]:
         return self.as_dict(*slot_data_options)

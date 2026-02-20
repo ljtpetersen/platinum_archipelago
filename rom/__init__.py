@@ -22,12 +22,11 @@ from .speciesdata import patch_species
 from .trainerdata import patch_trainer_parties
 
 from ..apnds.rom import Rom
-from ..species import evolutions
 from ..data import special_encounters
 from ..data.charmap import encode_string
 from ..data.locations import locations, LocationTable
 from ..data.items import items
-from ..data.species import species
+from ..data.species import species, evolutions
 from ..data.encounters import encounters, encounter_type_pairs, EncounterSlot
 from ..data.trainers import trainer_party_supporting_starters, trainers
 from ..data.moves import move_ids
