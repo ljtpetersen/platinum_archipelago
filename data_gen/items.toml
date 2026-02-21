@@ -3330,6 +3330,7 @@ label = "COLOR CHANGER"
 id = 21
 clas = "poketchapp"
 group = "poketch_apps"
+classification = "useful"
 
 [matchupchecker]
 label = "MATCHUP CHECKER"

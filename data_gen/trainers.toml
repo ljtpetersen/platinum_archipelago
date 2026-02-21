@@ -2402,7 +2402,7 @@ party = [
     { species = "luxio", level = 45, num_moves = 0 },
     { species = "luxio", level = 45, num_moves = 0 },
 ]
-label = "Guitarist Preston"
+label = "Sunyshore City Gym - Guitarist Preston"
 
 [guitarist_lonnie]
 id = 303
@@ -2617,7 +2617,7 @@ party = [
     { species = "goldeen", level = 27, num_moves = 0 },
     { species = "bibarel", level = 27, num_moves = 0 },
 ]
-label = "Route 211 West - Parasol Lady Alexa"
+label = "Route 212 South - Parasol Lady Alexa"
 
 [parasol_lady_sabrina]
 id = 328
@@ -3198,7 +3198,7 @@ party = [
     { species = "crobat", level = 44, num_moves = 4 },
     { species = "honchkrow", level = 46, num_moves = 4 },
 ]
-label = "Galactic Hq - Galactic Boss Cyrus"
+label = "Galactic HQ - Galactic Boss Cyrus"
 
 [galactic_boss_cyrus_galactic_hq.check]
 id = 16598
@@ -3267,7 +3267,7 @@ party = [
     { species = "bronzor", level = 42, num_moves = 4 },
     { species = "toxicroak", level = 44, num_moves = 4 },
 ]
-label = "Galactic Hq - Commander Saturn"
+label = "Galactic HQ - Commander Saturn"
 
 [galactic_grunt_team_galactic_eterna_building_1f_1]
 id = 410
@@ -3415,7 +3415,7 @@ id = 428
 party = [
     { species = "glameow", level = 41, num_moves = 0 },
 ]
-label = "Galactic Hq 1F - Galactic Grunt"
+label = "Galactic HQ 1F - Galactic Grunt"
 
 [dummy_429]
 id = 429
@@ -3430,7 +3430,7 @@ party = [
     { species = "golbat", level = 39, num_moves = 0 },
     { species = "houndour", level = 39, num_moves = 0 },
 ]
-label = "Galactic Hq 2F - Galactic Grunt 3"
+label = "Galactic HQ 2F - Galactic Grunt 3"
 
 [guitarist_arturo_unused]
 id = 431
@@ -4101,7 +4101,7 @@ id = 507
 party = [
     { species = "golbat", level = 41, num_moves = 0 },
 ]
-label = "Galactic Hq B2F - Galactic Grunt 1"
+label = "Galactic HQ B2F - Galactic Grunt 1"
 
 [galactic_grunt_galactic_hq_b2f_2]
 id = 508
@@ -4109,14 +4109,14 @@ party = [
     { species = "houndour", level = 38, num_moves = 0 },
     { species = "murkrow", level = 40, num_moves = 0 },
 ]
-label = "Galactic Hq B2F - Galactic Grunt 2"
+label = "Galactic HQ B2F - Galactic Grunt 2"
 
 [galactic_grunt_galactic_hq_3f_1]
 id = 509
 party = [
     { species = "stunky", level = 41, num_moves = 0 },
 ]
-label = "Galactic Hq 3F - Galactic Grunt 1"
+label = "Galactic HQ 3F - Galactic Grunt 1"
 
 [galactic_grunt_galactic_hq_2f_1]
 id = 510
@@ -4140,7 +4140,7 @@ party = [
     { species = "murkrow", level = 39, num_moves = 0 },
     { species = "stunky", level = 39, num_moves = 0 },
 ]
-label = "Galactic Hq 3F - Galactic Grunt 2"
+label = "Galactic HQ 3F - Galactic Grunt 2"
 
 [galactic_grunt_galactic_hq_2f_2]
 id = 513
@@ -4148,7 +4148,7 @@ party = [
     { species = "golbat", level = 40, num_moves = 0 },
     { species = "golbat", level = 38, num_moves = 0 },
 ]
-label = "Galactic Hq 2F - Galactic Grunt 2"
+label = "Galactic HQ 2F - Galactic Grunt 2"
 
 [galactic_grunt_galactic_hq_3f_3]
 id = 514
@@ -4156,7 +4156,7 @@ party = [
     { species = "stunky", level = 38, num_moves = 0 },
     { species = "croagunk", level = 40, num_moves = 0 },
 ]
-label = "Galactic Hq 3F - Galactic Grunt 3"
+label = "Galactic HQ 3F - Galactic Grunt 3"
 
 [galactic_grunt_mt_coronet_3f_1]
 id = 515
@@ -4221,7 +4221,7 @@ party = [
     { species = "stunky", level = 38, num_moves = 0 },
     { species = "glameow", level = 38, num_moves = 0 },
 ]
-label = "Galactic Hq 3F - Galactic Grunt 4"
+label = "Galactic HQ 3F - Galactic Grunt 4"
 
 [galactic_grunt_mt_coronet_3f_2]
 id = 523
@@ -6749,7 +6749,7 @@ party = [
     { species = "pikachu", level = 42, num_moves = 0 },
     { species = "pikachu", level = 42, num_moves = 0 },
 ]
-label = "Route 222 West - Poke Kid Janet"
+label = "Route 222 West House - Poke Kid Janet"
 
 [dummy_833]
 id = 833
@@ -6773,6 +6773,7 @@ party = [
     { species = "golbat", level = 34, num_moves = 0 },
 ]
 label = "Iron Island - Galactic Grunt 1"
+check = 0x1E7
 
 [galactic_grunt_iron_island_2]
 id = 836
@@ -6782,6 +6783,7 @@ party = [
     { species = "croagunk", level = 34, num_moves = 0 },
 ]
 label = "Iron Island - Galactic Grunt 2"
+check = 0x1E7
 
 [rival_survival_area_1_piplup]
 id = 837
@@ -6907,6 +6909,7 @@ party = [
     { species = "stunky", level = 26, num_moves = 0 },
 ]
 label = "Veilstone City - Galactic Grunt 1"
+check = { id = 0x411F, value = 1 }
 
 [galactic_grunt_veilstone_city_2]
 id = 849
@@ -6915,6 +6918,7 @@ party = [
     { species = "croagunk", level = 26, num_moves = 0 },
 ]
 label = "Veilstone City - Galactic Grunt 2"
+check = { id = 0x411F, value = 1 }
 
 [rival_route_201_piplup]
 id = 850
@@ -7574,6 +7578,7 @@ party = [
     { species = "electivire", level = 58, num_moves = 4 },
 ]
 label = "Fight Area - Leader Volkner"
+check = { id = 0x4081, value = 2 }
 
 [elite_four_flint_fight_area]
 id = 922
@@ -7583,6 +7588,7 @@ party = [
     { species = "magmortar", level = 58, num_moves = 4 },
 ]
 label = "Fight Area - Elite Four Flint"
+check = { id = 0x4081, value = 2 }
 
 [rival_fight_area_piplup]
 id = 923

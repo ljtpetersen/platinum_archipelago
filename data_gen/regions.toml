@@ -1343,6 +1343,8 @@ exits = [
 locs = [
     "pal_park_lobby_counter",
     "pal_park_lobby_emerald_cartridge",
+    "pal_park_lobby_colorchanger",
+    "pal_park_lobby_kitchentimer",
 ]
 header = "pal_park_lobby"
 events = [
@@ -3431,6 +3433,7 @@ trainers = [
     "galactic_grunt_galactic_hq_2f_1",
     "galactic_grunt_galactic_hq_1f",
     "galactic_grunt_galactic_hq_3f_1",
+    "galactic_grunt_galactic_hq_3f_2",
 ]
 
 [galactic_hq_w_key]

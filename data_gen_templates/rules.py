@@ -116,6 +116,8 @@ class Rules:
             reqd_items.append(items.items["poketch"].label)
         if pevo.item is not None:
             reqd_items.append(pevo.item)
+            if not "held" in mthd:
+                reqd_items.append(items.items["bag"].label)
             if (pevo.item not in items.reusable_evo_items or pevo.item.startswith("TM") and not options.reusable_tms) and not options.evo_items_shop_in_ap_helper:
                 reqd_items.append("event_veilstone_store")
         elif pevo.other_species is not None:

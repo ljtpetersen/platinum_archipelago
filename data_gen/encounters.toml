@@ -2615,21 +2615,21 @@ accessibility = [
 ]
 
 [route_204_north]
-surf = [
-    { species = "psyduck", level_lower = 20, level_upper = 30 },
-    { species = "golduck", level_lower = 20, level_upper = 40 },
-]
-good_rod = [
-    { species = "magikarp", level_lower = 10, level_upper = 25 },
-    { species = "goldeen", level_lower = 10, level_upper = 25 },
-]
-old_rod = [
-    { species = "magikarp", level_lower = 3, level_upper = 15 },
-]
-super_rod = [
-    { species = "gyarados", level_lower = 30, level_upper = 55 },
-    { species = "seaking", level_lower = 30, level_upper = 55 },
-]
+#surf = [
+#    { species = "psyduck", level_lower = 20, level_upper = 30 },
+#    { species = "golduck", level_lower = 20, level_upper = 40 },
+#]
+#good_rod = [
+#    { species = "magikarp", level_lower = 10, level_upper = 25 },
+#    { species = "goldeen", level_lower = 10, level_upper = 25 },
+#]
+#old_rod = [
+#    { species = "magikarp", level_lower = 3, level_upper = 15 },
+#]
+#super_rod = [
+#    { species = "gyarados", level_lower = 30, level_upper = 55 },
+#    { species = "seaking", level_lower = 30, level_upper = 55 },
+#]
 id = 144
 
 [[route_204_north.land]]

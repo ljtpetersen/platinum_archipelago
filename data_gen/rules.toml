@@ -179,6 +179,7 @@ exits.celestic_town.route_210_north = "defog_if_opt"
 locs.celestic_town_cave_hm03 = "old_charm"
 locs.celestic_town_dragon_fang = "old_charm"
 locs.celestic_town_kings_rock = "old_charm"
+trainers.galactic_boss_cyrus_celestic_town_ruins = "old_charm"
 
 locs.route_211_east_calcium = "rock_climb & rock_smash"
 locs.route_211_east_tm29 = "rock_climb & rock_smash"
