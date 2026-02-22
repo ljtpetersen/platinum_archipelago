@@ -131,6 +131,8 @@ class Rules:
             reqd_items.append("event_ice_rock")
         if mthd in {"level_atk_gt_def", "level_atk_eq_def", "level_atk_lt_def"}:
             reqd_items.append("event_veilstone_store")
+        if "beauty" in mthd:
+            reqd_items.extend(["event_veilstone_city", items.items["poffin_case"].label, "event_hearthome_city"])
 
         def rule(state: CollectionState) -> bool:
             return state.has_all(reqd_items, self.player)

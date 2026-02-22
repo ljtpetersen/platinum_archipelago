@@ -1560,6 +1560,7 @@ header = "hearthome_city"
 locs = [
     "hearthome_city_big_mushroom",
 ]
+events = ["event_hearthome_city"]
 
 [poffin_house]
 exits = [
@@ -3209,6 +3210,7 @@ trainers = [
     "galactic_grunt_veilstone_city_1",
     "galactic_grunt_veilstone_city_2",
 ]
+events = ["event_veilstone_city"]
 
 [eterna_city_condominiums_2f]
 exits = [
