@@ -83,12 +83,12 @@ def create_location_label_to_code_map() -> Dict[str, int]:
     id_map = {}
     id_map.update({v.label:v.get_raw_id() for v in locationdata.locations.values()})
     id_map.update({
-        "Trainersanity - " + v.label:v.get_raw_id()
+        v.label:v.get_raw_id()
         for k, v in trainerdata.trainers.items()
         if not ((k.startswith("rival") or k.startswith("lucas") or k.startswith("dawn")) \
                 and (k.endswith("chimchar") or k.endswith("piplup")))
     })
-    id_map.update({"Dexsanity - " + v.label:v.id | (locationdata.LocationTable.DEX << 16) for v in speciesdata.species.values()})
+    id_map.update({"Pokedex - " + v.label:v.id | (locationdata.LocationTable.DEX << 16) for v in speciesdata.species.values()})
     return id_map
 
 class PokemonPlatinumLocation(Location):
@@ -160,7 +160,7 @@ def create_locations(world: "PokemonPlatinumWorld", regions: Mapping[str, Region
                 address = tr.get_raw_id()
                 plat_loc = PokemonPlatinumLocation(
                     world.player,
-                    "Trainersanity - " + tr.label,
+                    tr.label,
                     "trainersanity",
                     address=address,
                     parent=tr_reg,
@@ -179,7 +179,7 @@ def create_locations(world: "PokemonPlatinumWorld", regions: Mapping[str, Region
             region = national_dex_reg
         plat_loc = PokemonPlatinumLocation(
             world.player,
-            "Dexsanity - " + speciesdata.species[spec].label,
+            "Pokedex - " + speciesdata.species[spec].label,
             "dexsanity",
             address=speciesdata.species[spec].id | (locationdata.LocationTable.DEX << 16),
             parent=region,
