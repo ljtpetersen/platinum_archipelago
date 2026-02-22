@@ -1032,6 +1032,7 @@ OPTION_GROUPS = [
          DexsanityMode,
          InLogicEvolutionMethods,
          EvoItemsShopInAPHelper,
+         ReusableTms,
          NationalDexNumMons,
          StartWithSwarms,
          RandomizeRoamers,
@@ -1066,7 +1067,6 @@ OPTION_GROUPS = [
          GuaranteedEscape,
          TalkTrainersWithoutFight,
          ExpMultiplier,
-         AddMasterRepel,
-         ReusableTms]
+         AddMasterRepel]
     )
 ]
