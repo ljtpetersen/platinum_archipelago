@@ -36,6 +36,7 @@ He also sells TM70 Flash.
 * Dowsing Machine Upgrades to identify munchlax honey trees and feebas fishing tiles. (sprites missing)
 * An item to allow use of field moves without a party member knowing them. (sprites missing)
 * An option to just talk to trainers. (useful for trainersanity)
+* Added option groups to the WebWorld and the template YAML ([@snowflav-goob](https://github.com/snowflav-goob))
 ### Changed
 * In-game game options option is now validated before generation.
 * Some evolution stones have been key-itemified, and are no longer consumed when used.
