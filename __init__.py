@@ -16,7 +16,7 @@ from .data import items as itemdata, rules as ruledata, Hm, map_header_labels, e
 from .data.locations import RequiredLocations, LocationTable
 from .items import create_item_label_to_code_map, get_item_classification, PokemonPlatinumItem, get_item_groups
 from .locations import PokemonPlatinumLocation, create_location_label_to_code_map, create_locations
-from .options import AddHMReader, PokemonPlatinumOptions, RandomizeCartridges, RandomizeTimeItems, UnownsOption
+from .options import AddHMReader, OPTION_GROUPS, PokemonPlatinumOptions, RandomizeCartridges, RandomizeTimeItems, UnownsOption
 from .regions import create_regions
 from .rom import generate_output, PokemonPlatinumPatch
 from .rules import set_rules, verify_hm_accessibility
@@ -43,6 +43,8 @@ class PokemonPlatinumWebWorld(WebWorld):
     )
 
     tutorials = [setup_en]
+
+    option_groups = OPTION_GROUPS
 
 class PokemonPlatinumWorld(World):
     game = "Pokemon Platinum"
