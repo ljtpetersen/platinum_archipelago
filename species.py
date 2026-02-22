@@ -231,7 +231,8 @@ def randomize_trainer_parties_and_encounters(world: "PokemonPlatinumWorld") -> N
             "happiny",
         } - world.options.encounter_species_blacklist.blacklist()
         amity_square_mon = world.random.choice(sorted(amity_square_mons))
-        randomize_encounters(world, set(world.random.sample(poss_enc, k=num_enc)) | {"munchlax", "kecleon", "geodude", amity_square_mon})
+        munchlax_mon = world.random.choice(sorted({"munchlax", "snorlax"} & all_enc)) if "level_happiness" in world.options.in_logic_evolution_methods else "snorlax"
+        randomize_encounters(world, set(world.random.sample(poss_enc, k=num_enc)) | {munchlax_mon, "kecleon", "geodude", amity_square_mon})
         randomize_trainer_parties(world, set(world.random.sample(poss_trp, k=num_trp)))
     elif world.options.randomize_encounters:
         bl = world.options.encounter_species_blacklist.blacklist()
@@ -280,7 +281,8 @@ def randomize_trainer_parties_and_encounters(world: "PokemonPlatinumWorld") -> N
             "happiny",
         } - world.options.encounter_species_blacklist.blacklist()
         amity_square_mon = world.random.choice(sorted(amity_square_mons))
-        randomize_encounters(world, req_encounter_specs | {"munchlax", "kecleon", "geodude", amity_square_mon})
+        munchlax_mon = world.random.choice(sorted({"munchlax", "snorlax"} & (speciesdata.keys() - bl))) if "level_happiness" in world.options.in_logic_evolution_methods else "snorlax"
+        randomize_encounters(world, req_encounter_specs | {munchlax_mon, "kecleon", "geodude", amity_square_mon})
         fill_unrandomized_trainer_parties(world)
     elif world.options.randomize_trainer_parties:
         bl = world.options.trainer_party_blacklist.blacklist()

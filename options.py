@@ -442,9 +442,11 @@ class EncounterSpeciesBlacklist(SpeciesBlacklist):
     legendaries, all lowercase, will be interpreted as banning all legendary
     species.
 
-    Currently, this cannot include kecleon, geodude, or munchlax.
+    Currently, this cannot include kecleon, geodude.
+    Additionally, you cannot block both snorlax and munchlax. If snorlax is blocked,
+    then level_happiness must be in logic.
     """
-    valid_keys = list(species.keys() - {"kecleon", "geodude", "munchlax"}) + ["legendaries"]
+    valid_keys = list(species.keys() - {"kecleon", "geodude"}) + ["legendaries"]
 
 class RandomizeTrainerParties(Toggle):
     """Randomize trainer party members."""
@@ -798,8 +800,18 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
         if game_opts.received_items_notification not in {"nothing", "message", "jingle"}:
             raise OptionError(f"invalid received items notification: \"{game_opts.received_items_notification}\"")
 
-        if not self.randomize_encounters and not {"great_marsh_observatory_national_dex", "munchlax_honey_tree"} <= self.in_logic_encounters.value:
-            raise OptionError("if encounters are not randomized, then great_marsh_observatory_national_dex and munchlax_honey_tree must both be in logic")
+        if not self.randomize_encounters:
+            if not {"great_marsh_observatory_national_dex", "munchlax_honey_tree"} <= self.in_logic_encounters.value:
+                raise OptionError("if encounters are not randomized, then great_marsh_observatory_national_dex and munchlax_honey_tree must both be in logic")
+            elif not "level_happiness" in self.in_logic_evolution_methods:
+                raise OptionError("if encounters are not randomized, then level_happiness must be an in-logic evolution method")
+        else:
+            if "level_happiness" in self.in_logic_evolution_methods:
+                if {"munchlax", "snorlax"} <= self.encounter_species_blacklist.blacklist():
+                    raise OptionError("one of munchlax or snorlax must not be in encounter_species_blacklist")
+            else:
+                if {"snorlax"} <= self.encounter_species_blacklist.blacklist():
+                    raise OptionError("without level_happiness in logic, snorlax cannot be in the encounter species blacklist")
         rm_set = frozenset(regional_mons)
         if self.randomize_encounters and self.randomize_trainer_parties and len(rm_set - (self.encounter_species_blacklist.blacklist() & self.trainer_party_blacklist.blacklist())) < max(50, self.regional_dex_goal.value):
             raise OptionError(f"encounter species blacklist and trainer party blacklist are too restrictive: can't get enough regional species.")
