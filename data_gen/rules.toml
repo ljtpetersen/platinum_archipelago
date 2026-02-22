@@ -22,6 +22,8 @@ enc_types.swarms = "poffin_case & bag if start_with_swarms else poffin_case & ba
 enc_types.regular_honey_tree = "event_floaroma_meadow"
 enc_types.munchlax_honey_tree = "event_floaroma_meadow & poketch & honey_tree_upgrade"
 
+common.evo_item_shop = "event_veilstone_store if !evo_items_shop_in_ap_helper"
+
 common.cut = "hm01 & cut_badge & (bag | hm_reader) & use_cut if hm_reader_mode == option_req_mon else hm01 & cut_badge & ((bag & use_cut) | hm_reader)"
 common.fly = "hm02 & fly_badge & bag & use_fly if hm_reader_mode == option_req_mon else hm02 & fly_badge & bag & (use_fly | hm_reader)"
 common.surf = "hm03 & surf_badge & (bag | hm_reader) & use_surf if hm_reader_mode == option_req_mon else hm03 & surf_badge & ((bag & use_surf) | hm_reader)"
@@ -30,14 +32,13 @@ common.defog = "hm05 & defog_badge & bag & use_defog if hm_reader_mode == option
 common.rock_smash = "hm06 & rock_smash_badge & (bag | hm_reader) & use_rock_smash if hm_reader_mode == option_req_mon else hm06 & rock_smash_badge & ((bag & use_rock_smash) | hm_reader)"
 common.waterfall = "hm07 & waterfall_badge & (bag | hm_reader) & use_waterfall if hm_reader_mode == option_req_mon else hm07 & waterfall_badge & ((bag & use_waterfall) | hm_reader)"
 common.rock_climb = "hm08 & rock_climb_badge & (bag | hm_reader) & use_rock_climb if hm_reader_mode == option_req_mon else hm08 & rock_climb_badge & ((bag & use_rock_climb) | hm_reader)"
-common.flash = "tm70 & bag & use_flash if hm_reader_mode == option_req_mon else tm70 & bag & (use_flash | hm_reader)"
+common.flash = "tm70 & bag & use_flash if hm_reader_mode == option_req_mon & reusable_tms else tm70 & bag & use_flash & evo_item_shop if hm_reader_mode == option_req_mon else tm70 & bag & (use_flash | hm_reader) if reusable_tms else tm70 & bag & (use_flash | hm_reader) & evo_item_shop"
 
 common.national_dex = "pokedex * 3"
 common.dowsingmachine_if_opt = "dowsingmachine & poketch if dowsing_machine_logic"
 common.defog_if_opt = "defog if visibility_hm_logic"
 common.flash_if_opt = "flash if visibility_hm_logic"
 common.poketch_req = "parcel & coupon_1 & coupon_2 & coupon_3"
-common.evo_item_shop = "event_veilstone_store if !evo_items_shop_in_ap_helper"
 
 locs.twinleaf_town_odd_keystone = "surf"
 locs.lake_verity_tm38 = "surf"
