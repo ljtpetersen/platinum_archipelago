@@ -59,7 +59,6 @@ class CheatBits(IntEnum):
 class VersionData:
     savedata_ptr_offset: int
     champion_flag: int
-    recv_item_id_offset: int
     vars_flags_offset_in_save: int
     vars_offset_in_vars_flags: int
     vars_flags_size: int
@@ -76,12 +75,14 @@ class VersionData:
     trainersanity_flags_offset_in_ap_save: int
     trainersanity_flags_count: int
     player_pos_offset: int
+    recv_state_offset: int
+    remote_item_queue_offset: int
+    remote_item_queue_size: int
 
 AP_VERSION_DATA: Mapping[int, VersionData] = {
     1: VersionData(
         savedata_ptr_offset=16,
         champion_flag=2404,
-        recv_item_id_offset=20,
         vars_flags_offset_in_save=0xDC0,
         vars_offset_in_vars_flags=0,
         vars_flags_size=0x3E0,
@@ -90,7 +91,7 @@ AP_VERSION_DATA: Mapping[int, VersionData] = {
         recv_item_count_offset_in_ap_save=0,
         once_loc_flags_offset_in_ap_save=8,
         once_loc_flags_count=16,
-        deathlink_tx_offset=22,
+        deathlink_tx_offset=21,
         num_blacked_out_offset_in_ap_save=12,
         cheat_offset=24,
         pokedex_offset_in_save=0x1370,
@@ -98,6 +99,9 @@ AP_VERSION_DATA: Mapping[int, VersionData] = {
         trainersanity_flags_offset_in_ap_save=16,
         trainersanity_flags_count=927,
         player_pos_offset=28,
+        recv_state_offset=20,
+        remote_item_queue_offset=40,
+        remote_item_queue_size=64,
     ),
 }
 
@@ -177,6 +181,42 @@ def dex_bytearray_to_seq(data: bytearray | bytes) -> Sequence[int]:
         for v in range(1, 494)
         if (data[v >> 3] & (1 << (v & 7))) != 0
     ]
+
+def seq_int_bytes(data: Sequence[int], len_per: int) -> bytes:
+    return b''.join(v.to_bytes(len_per, 'little') for v in data)
+
+@dataclass(frozen=True)
+class RemoteItemQueue:
+    size: int
+    front: int
+    back: int
+
+    @staticmethod
+    def from_bytes(size: int, data: bytes) -> "RemoteItemQueue":
+        return RemoteItemQueue(size, *unpack_from("<2I", data))
+
+    def amount_in_queue(self) -> int:
+        if self.front >= self.back:
+            return self.front - self.back
+        else:
+            return self.size + self.front - self.back
+
+
+    def remaining_capacity(self) -> int:
+        return self.size - self.amount_in_queue() - 1
+
+    def get_writes(self, queue_addr: int, new_values: Sequence[int]) -> Sequence[Tuple[int, bytes, str]]:
+        new_front = (self.front + len(new_values)) & (self.size - 1)
+        ret = [(queue_addr, new_front.to_bytes(4, 'little'), "ARM9 System Bus")]
+        if new_front < self.front:
+            first_upper = self.size - self.front
+            if first_upper < len(new_values):
+                ret.append((queue_addr + 8, seq_int_bytes(new_values[first_upper:], 2), "ARM9 System Bus"))
+        else:
+            first_upper = new_front - self.front
+        if first_upper > 0:
+            ret.append((queue_addr + 8 + self.front * 2, seq_int_bytes(new_values[:first_upper], 2), "ARM9 System Bus"))
+        return ret
 
 class PokemonPlatinumClient(BizHawkClient):
     game = "Pokemon Platinum"
@@ -340,7 +380,8 @@ class PokemonPlatinumClient(BizHawkClient):
                 ctx.bizhawk_ctx,
                 [
                     (savedata_ptr + version_data.ap_save_offset + version_data.recv_item_count_offset_in_ap_save, 4, "ARM9 System Bus"),
-                    (self.ap_struct_address + version_data.recv_item_id_offset, 2, "ARM9 System Bus"),
+                    (self.ap_struct_address + version_data.recv_state_offset, 1, "ARM9 System Bus"),
+                    (self.ap_struct_address + version_data.remote_item_queue_offset, 8, "ARM9 System Bus"),
                 ],
                 [guards["AP STRUCT VALID"], guards["SAVEDATA PTR"]]
             )
@@ -349,19 +390,16 @@ class PokemonPlatinumClient(BizHawkClient):
                 return
 
             recv_item_count = int.from_bytes(read_result[0], byteorder='little')
-            recv_item_id = int.from_bytes(read_result[1], byteorder='little')
-            if recv_item_id == 0xFFFF and recv_item_count < len(ctx.items_received):
-                next_item = ctx.items_received[recv_item_count].item
-                if await bizhawk.guarded_write(
+            recv_state = read_result[1][0]
+            remote_item_queue = RemoteItemQueue.from_bytes(version_data.remote_item_queue_size, read_result[2])
+            if recv_state == 1 and recv_item_count + remote_item_queue.amount_in_queue() < len(ctx.items_received) and remote_item_queue.remaining_capacity() > 0:
+                start_idx = recv_item_count + remote_item_queue.amount_in_queue()
+                if not await bizhawk.guarded_write(
                     ctx.bizhawk_ctx,
-                    [
-                        (self.ap_struct_address + version_data.recv_item_id_offset, next_item.to_bytes(length=2, byteorder='little'), "ARM9 System Bus"),
-                    ],
-                    [
-                        guards["AP STRUCT VALID"],
-                        guards["SAVEDATA PTR"],
-                        (self.ap_struct_address + version_data.recv_item_id_offset, b'\xFF\xFF', "ARM9 System Bus"),
-                    ]
+                    remote_item_queue.get_writes(
+                        self.ap_struct_address + version_data.remote_item_queue_offset,
+                        [v.item for v in ctx.items_received[start_idx:start_idx + remote_item_queue.remaining_capacity()]]),
+                    [guards["AP STRUCT VALID"]]
                 ):
                     return
 
