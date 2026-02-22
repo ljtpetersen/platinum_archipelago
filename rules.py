@@ -80,7 +80,7 @@ def set_rules(world: "PokemonPlatinumWorld") -> None:
                 set_rule(world.multiworld.get_entrance(f"{region_name} -> speenc_munchlax_honey_tree", world.player), rules.encounter_type_rules["munchlax_honey_tree"])
 
     for mon in world.dexsanity_specs:
-        set_rule(world.multiworld.get_location(f"Dexsanity - " + speciesdata.species[mon].label, world.player), rules.get_once_mon_rule(mon))
+        set_rule(world.multiworld.get_location(f"Pokedex - " + speciesdata.species[mon].label, world.player), rules.get_once_mon_rule(mon))
 
     am_set = frozenset(world.accessible_mons)
     for mon in world.accessible_mons:
