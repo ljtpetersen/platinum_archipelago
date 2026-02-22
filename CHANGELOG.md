@@ -56,6 +56,10 @@ He also sells TM70 Flash.
 * Triggering the second Galactic warehouse scene before defeating Maylene and doing the first scene is no longer possible.
 * Victory Road room after defeating Cynthia now requires Defog logically.
 
+## [0.1.8] - 2026-02-21
+### Fixed
+* Event tracking for Saturn's defeat at Valor now works.
+
 ## [0.1.7] - 2026-02-16
 ### Added
 * Information reporting for trackers.
@@ -166,7 +170,8 @@ skip over the forms, and the second one would give the National Pokédex.
 ## [0.0.1] - 2025-08-26
 The first release of this project.
 
-[0.1.6]: https://github.com/ljtpetersen/platinum_archipelago/compare/v0.1.7...v0.1.6
+[0.1.8]: https://github.com/ljtpetersen/platinum_archipelago/compare/v0.1.8...v0.1.7
+[0.1.7]: https://github.com/ljtpetersen/platinum_archipelago/compare/v0.1.7...v0.1.6
 [0.1.6]: https://github.com/ljtpetersen/platinum_archipelago/compare/v0.1.6...v0.1.5
 [0.1.5]: https://github.com/ljtpetersen/platinum_archipelago/compare/v0.1.5...v0.1.4
 [0.1.4]: https://github.com/ljtpetersen/platinum_archipelago/compare/v0.1.4...v0.1.3
