@@ -6,7 +6,7 @@
 from collections.abc import Mapping, MutableMapping, Sequence, Set
 from dataclasses import dataclass
 from typing import Any
-from Options import Choice, DeathLink, DefaultOnToggle, NamedRange, OptionDict, OptionError, OptionSet, PerGameCommonOptions, Range, Toggle
+from Options import Choice, DeathLink, DefaultOnToggle, NamedRange, OptionDict, OptionError, OptionGroup, OptionSet, PerGameCommonOptions, Range, Toggle
 
 from .data import special_encounters
 from .data.species import species, regional_mons, having_two_level_evos, legendary_mons
@@ -685,6 +685,12 @@ class PokemonPlatinumDeathLink(DeathLink):
 
 @dataclass
 class PokemonPlatinumOptions(PerGameCommonOptions):
+    goal: Goal
+
+    death_link: PokemonPlatinumDeathLink
+    remote_items: RemoteItems
+    cheats_enabled: CheatsEnabled
+
     hms: RandomizeHms
     badges: RandomizeBadges
     overworlds: RandomizeOverworlds
@@ -751,20 +757,12 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
     talk_trainers_without_fight: TalkTrainersWithoutFight
     exp_multiplier: ExpMultiplier
 
-    death_link: PokemonPlatinumDeathLink
-
-    cheats_enabled: CheatsEnabled
-
     master_repel: AddMasterRepel
     s_s_ticket: AddSSTicket
     marsh_pass: AddMarshPass
     storage_key: AddStorageKey
     bag: AddBag
     unown_option: UnownsOption
-
-    remote_items: RemoteItems
-
-    goal: Goal
 
     def requires_badge(self, hm: str) -> bool:
         return self.hm_badge_requirement.value == 1 or hm.lower() in self.remove_badge_requirements
@@ -984,3 +982,91 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
                 getattr(self, key).value = frozenset(slot_data[key])
             else:
                 getattr(self, key).value = slot_data[key]
+
+OPTION_GROUPS = [
+    OptionGroup(
+        "Item Shuffles",
+        [RandomizeOverworlds,
+         RandomizeHiddenItems,
+         RandomizeNpcGifts,
+         RandomizeKeyItems,
+         RandomizeHms,
+         RandomizeBadges,
+         RandomizeRods,
+         RandomizeBicycle,
+         AddBag,
+         RandomizeRunningShoes,
+         RandomizePoketchApps,
+         RandomizeCartridges,
+         RandomizePokedex,
+         RandomizeAccessories,
+         RandomizeTimeItems]
+    ),
+    OptionGroup(
+        "Logic and Roadblock Tweaks",
+        [RequireParcelCouponsCheckRoute203,
+         PastoriaBarriers,
+         RequireFlyForNorthSinnoh,
+         SunyshoreEarly,
+         VisibilityHmLogic,
+         DowsingMachineLogic,
+         AddMarshPass,
+         AddStorageKey,
+         AddSSTicket,
+         UnownsOption]
+    ),
+    OptionGroup(
+        "Starters",
+        [RandomizeStarters,
+         RequireTwoLevelEvolutionStarters,
+         StarterWhitelist,
+         StarterBlacklist,
+         RandomizeBunearyInIntro]
+    ),
+    OptionGroup(
+        "Pokémon",
+        [RandomizeEncounters,
+         InLogicEncounters,
+         EncounterSpeciesBlacklist,
+         DexsanityCount,
+         DexsanityMode,
+         InLogicEvolutionMethods,
+         EvoItemsShopInAPHelper,
+         NationalDexNumMons,
+         StartWithSwarms,
+         RandomizeRoamers,
+         RoamerBlacklist,
+         CanResetLegendariesInAPHelper]
+    ),
+    OptionGroup(
+        "Trainers",
+        [Trainersanity,
+         RandomizeTrainerParties,
+         TrainerPartyBlacklist]
+    ),
+    OptionGroup(
+        "HMs",
+        [HmBadgeRequirements,
+         RemoveBadgeRequirement,
+         AddHMReader,
+         HMReaderMode]
+    ),
+    OptionGroup(
+        "Quality of Life",
+        [GameOptions,
+         BlindTrainers,
+         HMCutIns,
+         FPS60,
+         BuckPos,
+         HBSpeed,
+         NormalizeEncounters,
+         InstantText,
+         HoldAToAdvance,
+         AlwaysCatch,
+         GuaranteedEscape,
+         TalkTrainersWithoutFight,
+         ExpMultiplier,
+         AddMasterRepel,
+         ReusableTms]
+    )
+]
