@@ -75,8 +75,9 @@ def set_rules(world: "PokemonPlatinumWorld") -> None:
                         if slot.accessibility and (set(slot.accessibility) & world.options.in_logic_encounters.value):
                             set_rule(world.multiworld.get_location(f"{header}_land_{i + 1}", world.player), rules.get_enc_accessibility_rule(slot.accessibility))
         if region_data.honey_tree_idx is not None:
-            name = "munchlax_honey_tree" if region_data.honey_tree_idx in world.generated_munchlax_trees else "regular_honey_tree"
-            set_rule(world.multiworld.get_entrance(f"{region_name} -> speenc_{name}", world.player), rules.encounter_type_rules["honey_tree"])
+            set_rule(world.multiworld.get_entrance(f"{region_name} -> speenc_regular_honey_tree", world.player), rules.encounter_type_rules["regular_honey_tree"])
+            if region_data.honey_tree_idx in world.generated_munchlax_trees:
+                set_rule(world.multiworld.get_entrance(f"{region_name} -> speenc_munchlax_honey_tree", world.player), rules.encounter_type_rules["munchlax_honey_tree"])
 
     for mon in world.dexsanity_specs:
         set_rule(world.multiworld.get_location(f"Dexsanity - " + speciesdata.species[mon].label, world.player), rules.get_once_mon_rule(mon))

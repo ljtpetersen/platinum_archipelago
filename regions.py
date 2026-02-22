@@ -79,33 +79,26 @@ def create_regions(world: "PokemonPlatinumWorld") -> Mapping[str, Region]:
     def setup_honey_tree(parent_region: Region, wild_region_data: regiondata.RegionData) -> None:
         if wild_region_data.honey_tree_idx is None:
             return
-        name = "munchlax_honey_tree" if wild_region_data.honey_tree_idx in world.generated_munchlax_trees else "regular_honey_tree"
-        if "speenc_" + name not in regions:
-            wild_region = Region("speenc_" + name, world.player, world.multiworld)
-            regions["speenc_" + name] = wild_region
-            if "regular_honey_tree" in world.options.in_logic_encounters:
-                for i in range(len(special_encounters.regular_honey_tree)):
-                    location = PokemonPlatinumLocation(
-                        world.player,
-                        f"speenc_{name}_{i + 1}",
-                        "mon_event",
-                        parent=wild_region,
-                    )
-                    location.show_in_spoiler = False
-                    wild_region.locations.append(location)
-            if name == "munchlax_honey_tree" and "munchlax_honey_tree" in world.options.in_logic_encounters:
-                for i in range(len(special_encounters.munchlax_honey_tree)):
-                    location = PokemonPlatinumLocation(
-                        world.player,
-                        f"speenc_{name}_{i + len(special_encounters.regular_honey_tree) + 1}",
-                        "mon_event",
-                        parent=wild_region,
-                    )
-                    location.show_in_spoiler = False
-                    wild_region.locations.append(location)
-        else:
-            wild_region = regions["speenc_" + name]
-        parent_region.connect(wild_region, f"{parent_region.name} -> speenc_{name}")
+        names = ["regular_honey_tree"]
+        if wild_region_data.honey_tree_idx in world.generated_munchlax_trees:
+            names.append("munchlax_honey_tree")
+        for name in names:
+            if "speenc_" + name not in regions:
+                wild_region = Region("speenc_" + name, world.player, world.multiworld)
+                regions["speenc_" + name] = wild_region
+                if name in world.options.in_logic_encounters:
+                    for i in range(len(getattr(special_encounters, name))):
+                        location = PokemonPlatinumLocation(
+                            world.player,
+                            f"speenc_{name}_{i + 1}",
+                            "mon_event",
+                            parent=wild_region,
+                        )
+                        location.show_in_spoiler = False
+                        wild_region.locations.append(location)
+            else:
+                wild_region = regions["speenc_" + name]
+            parent_region.connect(wild_region, f"{parent_region.name} -> speenc_{name}")
 
     def setup_special_encounters(parent_region: Region, wild_region_data: regiondata.RegionData) -> None:
         if wild_region_data.special_encounters is None or wild_region_data.special_encounters not in world.options.in_logic_encounters:

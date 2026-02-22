@@ -131,7 +131,7 @@ class PokemonPlatinumWorld(World):
             lambda loc : loc.address is not None and loc.is_enabled and not loc.locked,
             locations)
 
-        add_items: list[str] = ["dragon_scale", "deepseatooth", "deepseascale"]
+        add_items: list[str] = ["dragon_scale", "deepseatooth", "deepseascale", "honey_tree_upgrade", "feebas_upgrade"]
         for item in ["master_repel", "storage_key", "hm_reader"]:
             if getattr(self.options, item).value == 1:
                 add_items.append(item)

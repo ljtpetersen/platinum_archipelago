@@ -313,14 +313,7 @@ def fill_species(world: "PokemonPlatinumWorld") -> None:
     for (hdr, tbl, i), spec in world.generated_encounters.items():
         world.multiworld.get_location(f"{hdr}_{tbl}_{i + 1}", world.player).place_locked_item(world.create_event(f"mon_{spec}"))
     for (speenc, i), spec in world.generated_speencs.items():
-        if speenc.endswith("honey_tree"):
-            if speenc == "regular_honey_tree":
-                world.multiworld.get_location(f"speenc_regular_honey_tree_{i + 1}", world.player).place_locked_item(world.create_event(f"mon_{spec}"))
-                world.multiworld.get_location(f"speenc_munchlax_honey_tree_{i + 1}", world.player).place_locked_item(world.create_event(f"mon_{spec}"))
-            else:
-                world.multiworld.get_location(f"speenc_munchlax_honey_tree_{len(special_encounters.regular_honey_tree) + i + 1}", world.player).place_locked_item(world.create_event(f"mon_{spec}"))
-        else:
-            world.multiworld.get_location(f"speenc_{speenc}_{i + 1}", world.player).place_locked_item(world.create_event(f"mon_{spec}"))
+        world.multiworld.get_location(f"speenc_{speenc}_{i + 1}", world.player).place_locked_item(world.create_event(f"mon_{spec}"))
 
     if "roamers" in world.options.in_logic_encounters:
         for i, spec in zip([0, 1, 3, 4, 5], world.generated_roamers):
