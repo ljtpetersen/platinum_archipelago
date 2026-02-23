@@ -30,7 +30,9 @@ jobs:
 
       - name: Copy apworld
         shell: bash
-        run: cp archipelago/worlds/pokemon_platinum/pokemon_platinum.apworld archipelago/worlds/pokemon_platinum/fuzz_meta.yaml .
+        run: |
+          cp archipelago/worlds/pokemon_platinum/pokemon_platinum.apworld .
+          cp archipelago/worlds/pokemon_platinum/fuzz_meta.yaml .
 
       - name: Clean up Archipelago clone
         shell: bash
@@ -42,4 +44,4 @@ jobs:
           ap-version: '0.6.5'
           python-version: '3.13'
           checkout: false
-          meta: fuzz_meta.yaml
+          meta: ../fuzz_meta.yaml
