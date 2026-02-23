@@ -812,7 +812,7 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
                     raise OptionError("without level_happiness in logic, snorlax cannot be in the encounter species blacklist")
         rm_set = frozenset(regional_mons)
         if self.randomize_encounters and self.randomize_trainer_parties and len(rm_set - (self.encounter_species_blacklist.blacklist() & self.trainer_party_blacklist.blacklist())) < max(50, self.regional_dex_goal.value):
-            raise OptionError(f"encounter species blacklist and trainer party blacklist are too restrictive: can't get enough regional species.")
+            raise OptionError(f"encounter species blacklist and trainer party blacklist are too restrictive: can't get enough regional species. number of regional encounters possible: {len(rm_set - (self.encounter_species_blacklist.blacklist() & self.trainer_party_blacklist.blacklist()))}")
         elif self.randomize_encounters:
             if not self.pokedex:
                 in_logic_trainer_mons = {p.species
@@ -831,7 +831,7 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
                 if p.species in rm_set
             }
             if len(rm_set - self.encounter_species_blacklist.blacklist() - in_logic_trainer_mons) < max(50, self.regional_dex_goal.value) - len(in_logic_trainer_mons):
-                raise OptionError(f"encounter species blacklist is too restrictive: can't get enough regional species.")
+                raise OptionError(f"encounter species blacklist is too restrictive: can't get enough regional species. number of regional encounters possible: {len(rm_set - self.encounter_species_blacklist.blacklist() - in_logic_trainer_mons) + len(in_logic_trainer_mons)}")
         elif self.randomize_trainer_parties:
             if not self.pokedex:
                 acc_suc = set() if self.start_with_swarms else {"swarms"}
@@ -850,7 +850,7 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
                     if spec in rm_set
                 }
                 if len(rm_set - self.trainer_party_blacklist.blacklist() - in_logic_encounter_mons) < self.regional_dex_goal.value - len(in_logic_encounter_mons):
-                    raise OptionError(f"trainer party blacklist is too restrictive: can't get enough regional species.")
+                    raise OptionError(f"trainer party blacklist is too restrictive: can't get enough regional species. number of regional encounters possible: {len(rm_set - self.trainer_party_blacklist.blacklist() - in_logic_encounter_mons) + len(in_logic_encounter_mons)}")
             in_logic_encounter_mons = {slot.species
                 for rd in regions.values()
                 if rd.header in encounters \
@@ -866,7 +866,7 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
                 if spec in rm_set
             }
             if len(rm_set - self.trainer_party_blacklist.blacklist() - in_logic_encounter_mons) < max(50, self.regional_dex_goal.value) - len(in_logic_encounter_mons):
-                raise OptionError(f"trainer party blacklist is too restrictive: can't get enough regional species.")
+                raise OptionError(f"trainer party blacklist is too restrictive: can't get enough regional species. number of regional encounters possible: {len(rm_set - self.trainer_party_blacklist.blacklist() - in_logic_encounter_mons) + len(in_logic_encounter_mons)}")
         else:
             if not self.pokedex:
                 acc_suc = set() if self.start_with_swarms else {"swarms"}
@@ -887,7 +887,7 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
                     if p.species in rm_set
                 }
                 if len(in_logic_encounter_mons | in_logic_trainer_mons) < self.regional_dex_goal.value:
-                    raise OptionError(f"regional dex goal is too high. not enough encounters to fill it")
+                    raise OptionError(f"regional dex goal is too high. not enough encounters to fill it. number of regional encounters possible: {len(in_logic_encounter_mons | in_logic_trainer_mons)}")
             in_logic_encounter_mons = {slot.species
                 for rd in regions.values()
                 if rd.header in encounters \
@@ -904,7 +904,7 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
                 if p.species in rm_set
             }
             if len(in_logic_encounter_mons | in_logic_trainer_mons) < max(50, self.regional_dex_goal.value):
-                raise OptionError(f"regional dex goal is too high. not enough encounters to fill it")
+                raise OptionError(f"regional dex goal is too high. not enough encounters to fill it. number of regional encounters possible: {len(in_logic_encounter_mons | in_logic_trainer_mons)}")
         if self.randomize_encounters:
             amity_square_mons = {
                 "pikachu",
@@ -946,8 +946,10 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
                     if nm in self.in_logic_encounters
                     for i in range(len(getattr(special_encounters, nm)))
                 })
-                if min(slots + speenc_slots, len(species) - len(self.encounter_species_blacklist.blacklist())) < self.dexsanity_count:
-                    raise OptionError("dexsanity count larger than number of in-logic encounter slots")
+                if slots + speenc_slots < self.dexsanity_count:
+                    raise OptionError(f"dexsanity count larger than number of in-logic encounter slots. number of in-logic encounter slots: {slots + speenc_slots}")
+                elif len(species) - len(self.encounter_species_blacklist.blacklist()) < self.dexsanity_count:
+                    raise OptionError(f"dexsanity count larger than number of available species. number of available species: {len(species) - len(self.encounter_species_blacklist.blacklist())}")
             else:
                 in_logic_encounter_mons = {slot.species
                     for rd in regions.values()
@@ -961,7 +963,7 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
                     for spec in getattr(special_encounters, nm)
                 }
                 if len(in_logic_encounter_mons) < self.dexsanity_count:
-                    raise OptionError("dexsanity count larger than in-logic species count")
+                    raise OptionError(f"dexsanity count larger than in-logic species count. number of in-logic species: {len(in_logic_encounter_mons)}")
         if self.randomize_roamers and len(species.keys() - self.roamer_blacklist.blacklist()) < 5:
             raise OptionError(f"roamer blacklist too restrictive")
 

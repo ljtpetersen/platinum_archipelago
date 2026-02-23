@@ -1,0 +1,16 @@
+Pokemon Platinum:
+  starter_whitelist: []
+  starter_blacklist: []
+  encounter_species_blacklist: []
+  trainer_party_blacklist: []
+  roamer_blacklist: []
+  dexsanity_count:
+    0: 50
+    50: 50
+  regional_dex_goal:
+    30: 50
+    60: 50
+  in_logic_encounters:
+    ['leafgreen', 'trophy_garden', 'munchlax_honey_tree', 'emerald', 'feebas_fishing', 'poke_radar', 'sapphire', 'super_rod', 'ruby', 'day', 'great_marsh_observatory_national_dex', 'regular_honey_tree', 'firered', 'good_rod', 'night', 'old_rod', 'great_marsh_observatory', 'surf', 'roamers', 'odd_keystone', 'swarms']
+  in_logic_evolution_methods:
+    ['level_with_held_item_day', 'level_happiness_night', 'level_know_move', 'level_pid_low', 'trade_with_held_item', 'use_item_male', 'level_pid_high', 'level_happiness_day', 'level_moss_rock', 'level_male', 'level_with_held_item_night', 'level_beauty', 'level', 'level_magnetic_field', 'trade', 'level_shedinja', 'level_atk_gt_def', 'level_happiness', 'level_ninjask', 'use_item_female', 'use_item', 'level_atk_eq_def', 'level_female', 'level_ice_rock', 'level_atk_lt_def', 'level_species_in_party']
