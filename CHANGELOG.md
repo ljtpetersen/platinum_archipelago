@@ -48,6 +48,7 @@ He also sells TM70 Flash.
 * There is no longer an option to show unrandomized progression items.
 * The Great Marsh binoculars now reset the special encounters in the Great Marsh when they are checked.
 * Up to 64 items can be received at once (when using none item notification).
+* The experience multiplier now supports fractional values. It is now modifiable in-game.
 ### Fixed
 * Non-determinism of generation. (hopefully)
 * Elite Four rematch is triggered only if the game has been completed and stark mountain has been cleared.

@@ -6,7 +6,7 @@
 from collections.abc import Mapping, MutableMapping, Sequence, Set
 from dataclasses import dataclass
 from typing import Any
-from Options import Choice, DeathLink, DefaultOnToggle, NamedRange, OptionDict, OptionError, OptionGroup, OptionSet, PerGameCommonOptions, Range, Toggle
+from Options import Choice, DeathLink, DefaultOnToggle, NamedRange, OptionDict, OptionError, OptionGroup, OptionSet, PerGameCommonOptions, Range, Toggle, Option
 
 from .data import special_encounters
 from .data.species import species, regional_mons, having_two_level_evos, legendary_mons
@@ -130,12 +130,77 @@ class AddMasterRepel(Toggle):
     """
     display_name = "Add Master Repel"
 
-class ExpMultiplier(Range):
-    """Set an experience multiplier for all gained experience."""
+class ExpMultiplier(Option[int | str]):
+    """
+    Set an experience multiplier for all gained experience.
+    This can either be an integer between 0 and 65535, inclusive,
+    or a string of a fraction "a/b", where the numerator is
+    between 0 and 65535, inclusive, and the denominator is
+    between 1 and 65535, inclusive.
+
+    This option can be modified in-game.
+    """
     display_name = "Exp. Multiplier"
-    range_start = 1
-    range_end = 16
     default = 1
+
+    def __init__(self, value: str | int):
+        assert isinstance(value, str) or isinstance(value, int), "value of ExpMultiplier must be a string or an integer"
+        self.value = value
+
+    @classmethod
+    def from_text(cls, text: str) -> "ExpMultiplier":
+        try:
+            return cls(int(text.strip()))
+        except ValueError:
+            return cls(text.strip())
+
+    @classmethod
+    def from_any(cls, data: Any) -> "ExpMultiplier":
+        if isinstance(data, int):
+            return cls(data)
+        else:
+            return cls.from_text(data)
+
+    @classmethod
+    def get_option_name(cls, value: str | int) -> str:
+        if isinstance(value, str):
+            return "".join(c for c in value if not c.isspace())
+        else:
+            return str(value)
+
+    def __eq__(self, other):
+        if isinstance(other, self.__class__):
+            return other.to_bytes() == self.to_bytes()
+        elif isinstance(other, str) or isinstance(other, int):
+            return ExpMultiplier(other).to_bytes() == self.to_bytes()
+        else:
+            raise TypeError(f"Can't compare {self.__class__.__name__} with {other.__class__.__name__}")
+
+    def verify(self, *args, **kwargs) -> None:
+        self.to_bytes()
+
+    def to_bytes(self) -> bytes:
+        def try_ints(num: int, denom: int = 1) -> bytes:
+            if num < 0 or num > 65535:
+                raise OptionError(f"exp multiplier numerator must be between 0 and 65535")
+            elif denom < 1 or denom > 65535:
+                raise OptionError(f"exp multiplier denominator must be between 1 and 65535")
+            else:
+                return num.to_bytes(2, 'little') + denom.to_bytes(2, 'little')
+        if isinstance(self.value, int):
+            return try_ints(self.value)
+        pivot = self.value.find('/')
+        if pivot == -1:
+            # only a numerator
+            try:
+                return try_ints(int(self.value.strip()))
+            except ValueError:
+                raise OptionError("exp multiplier string must be an integer or fraction")
+        else:
+            try:
+                return try_ints(int(self.value[:pivot].strip()), int(self.value[pivot + 1:].strip()))
+            except ValueError:
+                raise OptionError("exp multiplier string must be an integer or fraction")
 
 class BlindTrainers(Toggle):
     """
@@ -797,6 +862,7 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
             raise OptionError(f"invalid text frame: \"{text_frame}\"")
         if game_opts.received_items_notification not in {"nothing", "message", "jingle"}:
             raise OptionError(f"invalid received items notification: \"{game_opts.received_items_notification}\"")
+        self.exp_multiplier.to_bytes()
 
         if not self.randomize_encounters:
             if not {"great_marsh_observatory_national_dex", "munchlax_honey_tree"} <= self.in_logic_encounters.value:

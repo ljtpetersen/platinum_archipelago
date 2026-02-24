@@ -236,7 +236,6 @@ def generate_output(world: "PokemonPlatinumWorld", output_directory: str, patch:
         nonlocal ap_bin
         ap_bin += getattr(world.options, name).value.to_bytes(length=1, byteorder='little')
 
-    add_opt_byte("exp_multiplier")
     add_opt_byte("parcel_coupons_route_203")
     add_opt_byte("regional_dex_goal")
     add_opt_byte("marsh_pass")
@@ -256,6 +255,11 @@ def generate_output(world: "PokemonPlatinumWorld", output_directory: str, patch:
     add_opt_byte("evo_items_shop_in_ap_helper")
     add_opt_byte('hm_reader_mode')
 
+    # start of save config
+    if len(ap_bin) % 2 == 1:
+        ap_bin += b'\x00'
+
+    ap_bin += world.options.exp_multiplier.to_bytes()
     match game_opts.received_items_notification:
         case "nothing":
             ap_bin += b'\x00'
