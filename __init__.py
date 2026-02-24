@@ -12,11 +12,11 @@ from typing import ClassVar, Any, Tuple
 from worlds.AutoWorld import WebWorld, World
 
 from .client import PokemonPlatinumClient
-from .data import items as itemdata, rules as ruledata, Hm, map_header_labels, encounters, species as speciesdata, regions as regiondata
+from .data import items as itemdata, rules as ruledata, Hm, species as speciesdata, regions as regiondata, trainers as trainerdata, map_header_labels
 from .data.locations import RequiredLocations, LocationTable
 from .items import create_item_label_to_code_map, get_item_classification, PokemonPlatinumItem, get_item_groups
 from .locations import PokemonPlatinumLocation, create_location_label_to_code_map, create_locations
-from .options import AddHMReader, OPTION_GROUPS, PokemonPlatinumOptions, RandomizeCartridges, RandomizeTimeItems, UnownsOption
+from .options import AddHMReader, OPTION_GROUPS, PokemonPlatinumOptions, RandomizeCartridges, RandomizeTimeItems
 from .regions import create_regions
 from .rom import generate_output, PokemonPlatinumPatch
 from .rules import set_rules, verify_hm_accessibility
@@ -74,6 +74,7 @@ class PokemonPlatinumWorld(World):
     # (trainer, index) -> species
     generated_trainer_parties: MutableMapping[Tuple[str, int], str]
     dexsanity_specs: Sequence[str]
+    trainersanity_trainers: Sequence[str]
     added_hm_compatibility: MutableMapping[str, MutableSequence[Hm]]
 
     accessible_mons: Sequence[str]
@@ -118,12 +119,13 @@ class PokemonPlatinumWorld(World):
 
     def create_regions(self) -> None:
         self.generated_munchlax_trees = tuple(self.random.sample(list(range(21)), k=4)) # type: ignore
-        regions = create_regions(self)
+        regions, trainers = create_regions(self)
 
         randomize_starters(self)
         randomize_trainer_parties_and_encounters(self)
         randomize_roamers(self)
         add_virt_specs(self, regions)
+        self.trainersanity_trainers = self.random.sample(sorted(trainers), k=self.options.trainersanity_count.value)
         create_locations(self, regions)
         self.multiworld.regions.extend(regions.values())
 
@@ -197,6 +199,7 @@ class PokemonPlatinumWorld(World):
         ret = self.options.save_options()
         ret["seed"] = self.seed
         ret["dexsanity_specs"] = [speciesdata.species[spec].id for spec in self.dexsanity_specs]
+        ret["trainersanity_trainers"] = [trainerdata.trainers[trainer + "_turtwig" if trainer.startswith("rival_") else trainer].get_raw_id() for trainer in self.trainersanity_trainers]
         ret["generated_encounters"] = {f"{region}_{table}_{i}":speciesdata.species[spec].id for (region, table, i), spec in self.generated_encounters.items()}
         ret["generated_special_encounters"] = {f"{speenc}_{i}":speciesdata.species[spec].id for (speenc, i), spec in self.generated_speencs.items()}
         ret["generated_roamers"] = [speciesdata.species[spec].id for spec in self.generated_roamers]

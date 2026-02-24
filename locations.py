@@ -149,24 +149,24 @@ def create_locations(world: "PokemonPlatinumWorld", regions: Mapping[str, Region
                 plat_loc.place_locked_item(ap_item)
                 plat_loc.show_in_spoiler = False
             region.locations.append(plat_loc)
-        if world.options.trainersanity:
-            for name in region_data.trainers:
-                tr_reg = regions[f"trainer_{name}"]
-                if name.startswith("rival_"):
-                    name += "_turtwig"
-                tr = trainerdata.trainers[name]
-                original_item = world.random.choice(["star_piece", "nugget"])
-                item = itemdata.items[original_item]
-                address = tr.get_raw_id()
-                plat_loc = PokemonPlatinumLocation(
-                    world.player,
-                    tr.label,
-                    "trainersanity",
-                    address=address,
-                    parent=tr_reg,
-                    default_item_id=item.get_raw_id(),
-                    is_enabled=True)
-                tr_reg.locations.append(plat_loc)
+
+    for name in world.trainersanity_trainers:
+        tr_reg = regions[f"trainer_{name}"]
+        if name.startswith("rival_"):
+            name += "_turtwig"
+        tr = trainerdata.trainers[name]
+        original_item = world.random.choice(["star_piece", "nugget"])
+        item = itemdata.items[original_item]
+        address = tr.get_raw_id()
+        plat_loc = PokemonPlatinumLocation(
+            world.player,
+            tr.label,
+            "trainersanity",
+            address=address,
+            parent=tr_reg,
+            default_item_id=item.get_raw_id(),
+            is_enabled=True)
+        tr_reg.locations.append(plat_loc)
 
     rgms = set(speciesdata.regional_mons)
     balls = sorted(world.item_name_groups["Balls"])

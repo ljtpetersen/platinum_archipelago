@@ -244,7 +244,7 @@ def generate_output(world: "PokemonPlatinumWorld", output_directory: str, patch:
     add_opt_byte("unown_option")
     add_opt_byte("pastoria_barriers")
     ap_bin += (world.options.dexsanity_mode.value if world.options.dexsanity_count.value > 0 else 0).to_bytes(1, 'little')
-    add_opt_byte("trainersanity")
+    ap_bin += b'\x01' if world.options.trainersanity_count > 0 else b'\0'
     add_opt_byte("death_link")
     add_opt_byte("cartridges")
     add_opt_byte("time_items")

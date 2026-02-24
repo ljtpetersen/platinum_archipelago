@@ -11,7 +11,7 @@ from Options import Choice, DeathLink, DefaultOnToggle, NamedRange, OptionDict, 
 from .data import special_encounters
 from .data.species import species, regional_mons, having_two_level_evos, legendary_mons
 from .data.regions import regions
-from .data.trainers import trainer_party_supporting_starters, trainers, trainer_requires_national_dex
+from .data.trainers import trainer_party_supporting_starters, trainer_requires_national_dex
 from .data.encounters import encounters, encounter_type_pairs, national_dex_requiring_encs
 
 class SpeciesBlacklist(OptionSet):
@@ -581,12 +581,19 @@ class RandomizeBunearyInIntro(DefaultOnToggle):
     """Randomize the species of the Pokémon that is shown in the intro."""
     display_name = "Randomize Intro Pokémon"
 
-class Trainersanity(Toggle):
+class TrainersanityCount(NamedRange):
     """
     Each trainer adds a location to the game. These locations are
     filled with nuggets by default.
     """
-    display_name = "Trainersanity"
+    display_name = "Trainersanity Count"
+    default = 0
+    range_start = 0
+    range_end = 457
+    special_range_names = {
+        "none": default,
+        "full": range_end,
+    }
 
 class DexsanityCount(NamedRange):
     """
@@ -725,7 +732,7 @@ slot_data_options: Sequence[str] = [
     "roamer_blacklist",
     "roamer_blacklist",
 
-    "trainersanity",
+    "trainersanity_count",
     "randomize_trainer_parties",
     "trainer_party_blacklist",
 
@@ -804,7 +811,7 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
     randomize_roamers: RandomizeRoamers
     roamer_blacklist: RoamerBlacklist
 
-    trainersanity: Trainersanity
+    trainersanity_count: TrainersanityCount
     randomize_trainer_parties: RandomizeTrainerParties
     trainer_party_blacklist: TrainerPartyBlacklist
 
@@ -906,7 +913,7 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
                     if rd.header in encounters and rd.header not in national_dex_requiring_encs \
                     for type, table in encounter_type_pairs
                     if type != "water" or table in self.in_logic_encounters
-                    for i, slot in enumerate(getattr(encounters[rd.header], table))
+                    for _, slot in enumerate(getattr(encounters[rd.header], table))
                     if not slot.accessibility or (set(slot.accessibility) - acc_suc) & self.in_logic_encounters.value
                     if slot.species in rm_set
                 } | {spec
@@ -922,7 +929,7 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
                 if rd.header in encounters \
                 for type, table in encounter_type_pairs
                 if type != "water" or table in self.in_logic_encounters
-                for i, slot in enumerate(getattr(encounters[rd.header], table))
+                for _, slot in enumerate(getattr(encounters[rd.header], table))
                 if not slot.accessibility or set(slot.accessibility) & self.in_logic_encounters.value
                 if slot.species in rm_set
             } | {spec
@@ -1022,7 +1029,7 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
                     if rd.header in encounters \
                     for type, table in encounter_type_pairs
                     if type != "water" or table in self.in_logic_encounters
-                    for i, slot in enumerate(getattr(encounters[rd.header], table))
+                    for _, slot in enumerate(getattr(encounters[rd.header], table))
                     if not slot.accessibility or set(slot.accessibility) & self.in_logic_encounters.value
                 } | {spec
                     for nm in ["regular_honey_tree", "munchlax_honey_tree", "trophy_garden", "great_marsh_observatory", "great_marsh_observatory_national_dex", "feebas_fishing", "odd_keystone"]
@@ -1109,7 +1116,7 @@ OPTION_GROUPS = [
     ),
     OptionGroup(
         "Trainers",
-        [Trainersanity,
+        [TrainersanityCount,
          RandomizeTrainerParties,
          TrainerPartyBlacklist]
     ),

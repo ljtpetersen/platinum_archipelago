@@ -4,14 +4,14 @@
 # Licensed under MIT. See LICENSE
 
 from BaseClasses import Region
-from collections.abc import Callable, Mapping, MutableSet, Sequence
+from collections.abc import Callable, Mapping, MutableSet, Sequence, Set
 from dataclasses import dataclass
 from typing import Tuple, TYPE_CHECKING
 
 from worlds.pokemon_platinum.options import PokemonPlatinumOptions
 
 from .data import regions as regiondata
-from .data.encounters import EncounterSlot, encounters, encounter_type_pairs, encounter_type_tables
+from .data.encounters import EncounterSlot, encounters, encounter_type_tables
 from .data.trainers import trainer_party_supporting_starters
 from .data import special_encounters
 from .locations import PokemonPlatinumLocation
@@ -40,8 +40,9 @@ def is_region_enabled(region: str | None, opts: PokemonPlatinumOptions) -> bool:
 def is_event_region_enabled(event: str, opts: PokemonPlatinumOptions) -> bool:
     return is_region_enabled(regiondata.event_region_map[event], opts)
 
-def create_regions(world: "PokemonPlatinumWorld") -> Mapping[str, Region]:
+def create_regions(world: "PokemonPlatinumWorld") -> Tuple[Mapping[str, Region], Set[str]]:
     regions: Mapping[str, Region] = {}
+    trainers: Set[str] = set()
     connections: Sequence[Tuple[str, str, str]] = []
 
     def setup_wild_regions(parent_region: Region, wild_region_data: regiondata.RegionData) -> None:
@@ -121,6 +122,7 @@ def create_regions(world: "PokemonPlatinumWorld") -> Mapping[str, Region]:
         parent_region.connect(wild_region, f"{parent_region.name} -> {name}")
 
     def setup_trainer_region(parent_region: Region, trainer: str) -> None:
+        trainers.add(trainer)
         trainer_region = Region(f"trainer_{trainer}", world.player, world.multiworld)
         regions[f"trainer_{trainer}"] = trainer_region
         parent_region.connect(trainer_region, f"{parent_region.name} -> trainer_{trainer}")
@@ -184,4 +186,4 @@ def create_regions(world: "PokemonPlatinumWorld") -> Mapping[str, Region]:
     regions["Menu"] = Region("Menu", world.player, world.multiworld)
     regions["Menu"].connect(regions["twinleaf_town_player_house_2f"], "Start Game")
 
-    return regions
+    return (regions, trainers)
