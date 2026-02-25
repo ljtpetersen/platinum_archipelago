@@ -712,7 +712,7 @@ original_item = "ultra_ball"
 type = "hidden"
 table = "hidden"
 check = 877
-label = "Route 230 - Hidden Island on Island North Side"
+label = "Route 230 - Hidden Item on Island North Side"
 id = 147
 
 [route_230_water_stone]
