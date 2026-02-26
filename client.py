@@ -13,6 +13,8 @@ from typing import Optional, TYPE_CHECKING, Tuple
 
 import Utils
 
+from .apnds import rom as ndsrom
+
 from .data.locations import FlagCheck, LocationCheck, LocationTable, locations, VarCheck, OnceCheck, maximal_required_locations
 from .data.trainers import trainers, trainer_id_to_trainer_const_name, TrainerCheck
 from .data.species import regional_mons, species_id_to_const_name
@@ -244,6 +246,13 @@ class PokemonPlatinumClient(BizHawkClient):
     local_caught_pokemon: bytearray
     notify_setup_complete: bool
 
+    player_name: str | None
+
+    def __init__(self):
+        super().__init__()
+
+        self.player_name = None
+
     def initialize_client(self):
         self.goal_flag = None
         self.local_checked_locations = set()
@@ -262,6 +271,31 @@ class PokemonPlatinumClient(BizHawkClient):
         self.local_seen_pokemon = bytearray(64)
         self.local_caught_pokemon = bytearray(64)
         self.notify_setup_complete = False
+
+    async def get_slot_name(self, ctx: "BizHawkClientContext") -> str | None:
+        try:
+            header = ndsrom.Header((await bizhawk.read(ctx.bizhawk_ctx, [(0, 0x4000, "ROM")]))[0])
+            fatb_offset = header.get_le(ndsrom.HeaderField.FATB_ROMOFFSET)
+            fatb_size = header.get_le(ndsrom.HeaderField.FATB_BSIZE)
+            fatb = (await bizhawk.read(ctx.bizhawk_ctx, [(fatb_offset, fatb_size, "ROM")]))[0]
+            fntb_offset = header.get_le(ndsrom.HeaderField.FNTB_ROMOFFSET)
+            fntb_size = header.get_le(ndsrom.HeaderField.FNTB_BSIZE)
+            fntb = (await bizhawk.read(ctx.bizhawk_ctx, [(fntb_offset, fntb_size, "ROM")]))[0]
+            filename_id_map = ndsrom.get_filename_id_map(fntb)
+            ap_bin_id = filename_id_map["/ap.bin"]
+            ap_bin_start, ap_bin_end = unpack_from("<2I", fatb, ap_bin_id * 8)
+            player_name_bytes = (await bizhawk.read(ctx.bizhawk_ctx, [(ap_bin_start, 64, "ROM")]))[0]
+            name_end = player_name_bytes.find(b'\0')
+            if name_end != -1:
+                player_name = player_name_bytes[:name_end].decode()
+            else:
+                player_name = player_name_bytes.decode()
+
+            return player_name
+        except UnicodeDecodeError:
+            return None
+        except bizhawk.RequestFailedError:
+            return None
 
     async def validate_rom(self, ctx: "BizHawkClientContext") -> bool:
         from CommonClient import logger
@@ -302,6 +336,7 @@ class PokemonPlatinumClient(BizHawkClient):
             remove_cheat()
             return False
 
+        self.player_name = await self.get_slot_name(ctx)
         ctx.game = self.game
         ctx.items_handling = 0b001
         self.want_slot_data = True
@@ -608,6 +643,10 @@ class PokemonPlatinumClient(BizHawkClient):
             [(self.ap_struct_address + version_data.cheat_offset, old_bits.to_bytes(4, 'little'), "ARM9 System Bus")],
             [guards["AP STRUCT VALID"]]
         )
+
+    async def set_auth(self, ctx: "BizHawkClientContext") -> None:
+        if self.player_name is not None:
+            ctx.auth = self.player_name
 
 def cmd_cheat(self: "BizHawkClientCommandProcessor", name: str | None = None) -> None:
     """Activate a Pokémon Platinum Cheat. Enter the command without any arguments to list all cheats."""

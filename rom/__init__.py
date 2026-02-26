@@ -132,7 +132,11 @@ class PokemonPlatinumPatch(APAutoPatchInterface):
     def write_file(self, file_name: str, file: bytes) -> None:
         self.files[file_name] = file
 
-def process_name(name: str, world: "PokemonPlatinumWorld") -> bytes:
+def process_name(name: str, world: "PokemonPlatinumWorld", name_strictness: str) -> bytes:
+    if name_strictness == "strict":
+        unknown_filler = None
+    else:
+        unknown_filler = "?"
     match name:
         case "vanilla":
             return b'\xFF' * 16
@@ -141,25 +145,28 @@ def process_name(name: str, world: "PokemonPlatinumWorld") -> bytes:
             world.random.shuffle(other_players)
             # if no player name matches, then return vanilla
             for name in other_players:
-                ret = encode_string(name)
+                ret = encode_string(name, unknown_filler=unknown_filler)
                 if ret is not None:
                     break
             else:
                 return b'\xFF' * 16
         case "player_name":
-            ret = encode_string(world.multiworld.get_file_safe_player_name(world.player))
+            ret = encode_string(world.multiworld.get_file_safe_player_name(world.player), unknown_filler=unknown_filler)
         case _:
-            ret = encode_string(name)
-    if ret is not None and len(ret) <= 14:
-        return ret + b'\xFF' * (16 - len(ret))
+            ret = encode_string(name, unknown_filler=unknown_filler)
+    if ret is not None and (len(ret) <= 14 or name_strictness == "relaxed"):
+        return ret[:14] + b'\xFF' * (16 - min(len(ret), 14))
     else:
         return b'\xFF' * 16
 
 def generate_output(world: "PokemonPlatinumWorld", output_directory: str, patch: PokemonPlatinumPatch) -> None:
     game_opts = world.options.game_options
     ap_bin = bytes()
-    ap_bin += process_name(game_opts.default_player_name, world)
-    ap_bin += process_name(game_opts.default_rival_name, world)
+    slot_name_bytes = world.player_name.encode()
+    slot_name_bytes += b'\0' * (64 - len(slot_name_bytes))
+    ap_bin += slot_name_bytes
+    ap_bin += process_name(game_opts.default_player_name, world, game_opts.name_strictness)
+    ap_bin += process_name(game_opts.default_rival_name, world, game_opts.name_strictness)
     match game_opts.default_gender:
         case "male":
             ap_bin += b'\x00'

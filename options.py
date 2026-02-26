@@ -225,6 +225,7 @@ class GameOptions(OptionDict):
     received_items_notification: jingle/nothing/message - Sets the received_items_notification.
     default_player_name: player_name/custom/random/vanilla - Sets the default player name. with player_name, tries to use the AP player name.
     default_rival_name: random/custom/player_name/vanilla - Sets the default rival name. with random, picks from one of the players in the AP.
+    name_strictness: relaxed/strict - How strict setting the default player/rival name is. With strict, it will require a name of length less than or equal to 7, with no invalid characters. With relaxed, it will truncate the name and fill the invalid characters with question marks.
     default_gender: vanilla/male/female/random - Sets the default gender.
 
     The text_speed, sound, battle_scene, battle_style, button_mode, text_frame, and received_items_notification
@@ -250,6 +251,7 @@ class GameOptions(OptionDict):
         "received_items_notification": "jingle",
         "default_player_name": "player_name",
         "default_rival_name": "random",
+        "name_strictness": "relaxed",
         "default_gender": "vanilla",
     }
 
@@ -869,6 +871,8 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
             raise OptionError(f"invalid text frame: \"{text_frame}\"")
         if game_opts.received_items_notification not in {"nothing", "message", "jingle"}:
             raise OptionError(f"invalid received items notification: \"{game_opts.received_items_notification}\"")
+        if game_opts.name_strictness not in {"relaxed", "strict"}:
+            raise OptionError(f"invalid name strictness: \"{game_opts.name_strictness}\"")
         self.exp_multiplier.to_bytes()
 
         if not self.randomize_encounters:
