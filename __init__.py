@@ -125,7 +125,7 @@ class PokemonPlatinumWorld(World):
         randomize_trainer_parties_and_encounters(self)
         randomize_roamers(self)
         add_virt_specs(self, regions)
-        self.trainersanity_trainers = self.random.sample(sorted(trainers), k=self.options.trainersanity_count.value)
+        self.trainersanity_trainers = self.random.sample(sorted(trainers), k=self.options.trainersanity.value)
         create_locations(self, regions)
         self.multiworld.regions.extend(regions.values())
 
@@ -247,7 +247,7 @@ class PokemonPlatinumWorld(World):
         #        dexsanity_hint_data[mon].add("Evolve from " + speciesdata.species[data.pre_evolution.species].label)
 
         player_hint_data = hint_data.setdefault(self.player, {})
-        if self.options.dexsanity_count > 0:
+        if self.options.dexsanity > 0:
             dexsanity_hint_data: dict[str, MutableSet[str]] = defaultdict(set)
             get_dexsanity_encounter_hint_data(dexsanity_hint_data)
             player_hint_data.update({

@@ -726,7 +726,7 @@ slot_data_options: Sequence[str] = [
     "randomize_encounters",
     "in_logic_encounters",
     "encounter_species_blacklist",
-    "dexsanity_count",
+    "dexsanity",
     "dexsanity_mode",
     "in_logic_evolution_methods",
 
@@ -734,7 +734,7 @@ slot_data_options: Sequence[str] = [
     "roamer_blacklist",
     "roamer_blacklist",
 
-    "trainersanity_count",
+    "trainersanity",
     "randomize_trainer_parties",
     "trainer_party_blacklist",
 
@@ -806,14 +806,14 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
     randomize_encounters: RandomizeEncounters
     in_logic_encounters: InLogicEncounters
     encounter_species_blacklist: EncounterSpeciesBlacklist
-    dexsanity_count: DexsanityCount
+    dexsanity: DexsanityCount
     dexsanity_mode: DexsanityMode
     in_logic_evolution_methods: InLogicEvolutionMethods
 
     randomize_roamers: RandomizeRoamers
     roamer_blacklist: RoamerBlacklist
 
-    trainersanity_count: TrainersanityCount
+    trainersanity: TrainersanityCount
     randomize_trainer_parties: RandomizeTrainerParties
     trainer_party_blacklist: TrainerPartyBlacklist
 
@@ -1007,7 +1007,7 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
             } - self.encounter_species_blacklist.blacklist()
             if not amity_square_mons:
                 raise OptionError("at least one Amity Square species must be able to be encountered")
-        if self.dexsanity_count:
+        if self.dexsanity:
             if self.randomize_encounters:
                 slots = len({(rd.header, table, i)
                     for _, rd in regions.items()
@@ -1023,9 +1023,9 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
                     if nm in self.in_logic_encounters
                     for i in range(len(getattr(special_encounters, nm)))
                 })
-                if slots + speenc_slots < self.dexsanity_count:
+                if slots + speenc_slots < self.dexsanity:
                     raise OptionError(f"dexsanity count larger than number of in-logic encounter slots. number of in-logic encounter slots: {slots + speenc_slots}")
-                elif len(species) - len(self.encounter_species_blacklist.blacklist()) < self.dexsanity_count:
+                elif len(species) - len(self.encounter_species_blacklist.blacklist()) < self.dexsanity:
                     raise OptionError(f"dexsanity count larger than number of available species. number of available species: {len(species) - len(self.encounter_species_blacklist.blacklist())}")
             else:
                 in_logic_encounter_mons = {slot.species
@@ -1039,7 +1039,7 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
                     for nm in ["regular_honey_tree", "munchlax_honey_tree", "trophy_garden", "great_marsh_observatory", "great_marsh_observatory_national_dex", "feebas_fishing", "odd_keystone"]
                     for spec in getattr(special_encounters, nm)
                 }
-                if len(in_logic_encounter_mons) < self.dexsanity_count:
+                if len(in_logic_encounter_mons) < self.dexsanity:
                     raise OptionError(f"dexsanity count larger than in-logic species count. number of in-logic species: {len(in_logic_encounter_mons)}")
         if self.randomize_roamers and len(species.keys() - self.roamer_blacklist.blacklist()) < 5:
             raise OptionError(f"roamer blacklist too restrictive")

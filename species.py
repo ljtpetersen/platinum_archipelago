@@ -122,7 +122,7 @@ def randomize_encounters(world: "PokemonPlatinumWorld", req_specs: Set[str]) -> 
         before_dex_slots_spe = sorted(before_dex_slots_spe_set)
         after_dex_slots = sorted(slots - before_dex_slots_set)
         after_dex_slots_spe = sorted(speenc_slots - before_dex_slots_spe_set)
-    min_unique_count = world.options.dexsanity_count
+    min_unique_count = world.options.dexsanity
     assert min_unique_count <= len(slots) + len(speenc_slots)
     before_mons = sorted(req_specs)
     assert len(before_mons) <= len(before_dex_slots) + len(before_dex_slots_spe)
@@ -387,7 +387,7 @@ def add_virt_specs(world: "PokemonPlatinumWorld", regions: Mapping[str, Region])
         location.place_locked_item(world.create_event(f"see_mon_{mon}"))
         reg.locations.append(location)
 
-    world.dexsanity_specs = world.random.sample(accessible_once_mons, k=world.options.dexsanity_count.value)
+    world.dexsanity_specs = world.random.sample(accessible_once_mons, k=world.options.dexsanity.value)
 
 def encounter_slot_label(key: Tuple[str, str, int], in_logic_encounters: Set[str]) -> str:
     (header, table, index) = key
