@@ -3235,7 +3235,7 @@ party = [
     { species = "zubat", level = 21, num_moves = 3 },
     { species = "skuntank", level = 23, num_moves = 4 },
 ]
-label = "Galactic Eterna Building 4F - Commander Jupiter Team"
+label = "Galactic Eterna Building 4F - Commander Jupiter"
 
 [commander_jupiter_team_galactic_eterna_building.check]
 id = 16506
