@@ -4124,7 +4124,7 @@ classification = "progression"
 data_id = 449
 
 [tm93]
-label = "TM93"
+label = "TM93 Rollout"
 id = 472
 clas = "specialbagitem"
 group = "tmhms"
@@ -4132,7 +4132,7 @@ classification = "progression"
 data_id = 450
 
 [tm94]
-label = "TM94"
+label = "TM94 Ancient Power"
 id = 473
 clas = "specialbagitem"
 group = "tmhms"
@@ -4140,7 +4140,7 @@ classification = "progression"
 data_id = 451
 
 [tm95]
-label = "TM95"
+label = "TM95 Double Hit"
 id = 474
 clas = "specialbagitem"
 group = "tmhms"
@@ -4148,7 +4148,7 @@ classification = "progression"
 data_id = 452
 
 [tm96]
-label = "TM96"
+label = "TM96 Mimic"
 id = 475
 clas = "specialbagitem"
 group = "tmhms"
