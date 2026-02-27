@@ -40,6 +40,7 @@ He also sells TM70 Flash.
 * The slot name is now stored in the ROM, so it does not need to be entered when BizHawk Client connects.
 * There is now an option to have "relaxed" player and rival name conversion, which replaces unknown characters and truncates
 appropriately.
+* An event for defeating Team Galactic at Stark Mountain.
 ### Changed
 * In-game game options option is now validated before generation.
 * Some evolution stones have been key-itemified, and are no longer consumed when used.
