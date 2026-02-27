@@ -454,11 +454,11 @@ class StartWithSwarms(DefaultOnToggle):
     display_name = "Start With Swarms"
 
 class CanResetLegendariesInAPHelper(DefaultOnToggle):
-    """Can reset roamers with the AP Helper. (Present in the 2nd floor of any Pokémon Centre)"""
+    """Can reset roamers with the AP Helper. (Present in the 2nd floor of any Pokémon Center)"""
     display_name = "Can Reset Roamers in AP Helper"
 
 class EvoItemsShopInAPHelper(DefaultOnToggle):
-    """Evolution items shop is available with the AP Helper. (Present in the 2nd floor of any Pokémon Centre)"""
+    """Evolution items shop is available with the AP Helper. (Present in the 2nd floor of any Pokémon Center)"""
     display_name = "Evolution Item Shop in AP Helper"
 
 class CheatsEnabled(Toggle):

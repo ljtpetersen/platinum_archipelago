@@ -32,7 +32,7 @@ He also sells TM70 Flash.
 * An option to have a 100% catch rate.
 * Cheats in the client.
 * Swarms can now be attracted by berries.
-* AP Helper NPC to 2nd floors of all Pokémon Centres.
+* AP Helper NPC to 2nd floors of all Pokémon Centers.
 * Dowsing Machine Upgrades to identify munchlax honey trees and feebas fishing tiles. (sprites missing)
 * An item to allow use of field moves without a party member knowing them. (sprites missing)
 * An option to just talk to trainers. (useful for trainersanity)
