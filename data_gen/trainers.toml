@@ -3002,7 +3002,7 @@ id = 379
 party = [
     { species = "aipom", level = 22, num_moves = 0 },
 ]
-label = "Camper Diego"
+label = "Wayward Cave 1F - Camper Diego"
 
 [camper_parker]
 id = 380
@@ -3198,7 +3198,7 @@ party = [
     { species = "crobat", level = 44, num_moves = 4 },
     { species = "honchkrow", level = 46, num_moves = 4 },
 ]
-label = "Galactic HQ - Galactic Boss Cyrus"
+label = "Galactic HQ 4F - Galactic Boss Cyrus"
 
 [galactic_boss_cyrus_galactic_hq.check]
 id = 16598
@@ -3235,7 +3235,7 @@ party = [
     { species = "zubat", level = 21, num_moves = 3 },
     { species = "skuntank", level = 23, num_moves = 4 },
 ]
-label = "Galactic Eterna Building - Commander Jupiter Team"
+label = "Galactic Eterna Building 4F - Commander Jupiter Team"
 
 [commander_jupiter_team_galactic_eterna_building.check]
 id = 16506
@@ -3267,7 +3267,7 @@ party = [
     { species = "bronzor", level = 42, num_moves = 4 },
     { species = "toxicroak", level = 44, num_moves = 4 },
 ]
-label = "Galactic HQ - Commander Saturn"
+label = "Galactic HQ Secret Lab - Commander Saturn"
 
 [galactic_grunt_team_galactic_eterna_building_1f_1]
 id = 410
@@ -4125,7 +4125,7 @@ party = [
     { species = "murkrow", level = 38, num_moves = 0 },
     { species = "croagunk", level = 39, num_moves = 0 },
 ]
-label = "Galactic Grunt 1"
+label = "Galactic HQ 2F - Galactic Grunt 1"
 
 [dummy_511]
 id = 511
@@ -6726,7 +6726,7 @@ id = 829
 party = [
     { species = "porygon2", level = 42, num_moves = 4 },
 ]
-label = "Galactic HQ - Scientist Darrius"
+label = "Galactic HQ 2F - Scientist Darrius"
 
 [scientist_fredrick]
 id = 830
@@ -6734,14 +6734,14 @@ party = [
     { species = "kirlia", level = 40, num_moves = 4 },
     { species = "kadabra", level = 40, num_moves = 4 },
 ]
-label = "Galactic HQ - Scientist Fredrick"
+label = "Galactic HQ 1F - Scientist Fredrick"
 
 [scientist_travon]
 id = 831
 party = [
     { species = "kadabra", level = 20, num_moves = 1 },
 ]
-label = "Team Galactic Eterna Building - Scientist Travon"
+label = "Team Galactic Eterna Building 3F - Scientist Travon"
 
 [poke_kid_janet]
 id = 832

@@ -125,7 +125,7 @@ class PokemonPlatinumWorld(World):
         randomize_trainer_parties_and_encounters(self)
         randomize_roamers(self)
         add_virt_specs(self, regions)
-        self.trainersanity_trainers = self.random.sample(sorted(trainers), k=self.options.trainersanity_count.value)
+        self.trainersanity_trainers = self.random.sample(sorted(trainers), k=self.options.trainersanity.value)
         create_locations(self, regions)
         self.multiworld.regions.extend(regions.values())
 
@@ -200,11 +200,15 @@ class PokemonPlatinumWorld(World):
         ret["seed"] = self.seed
         ret["dexsanity_specs"] = [speciesdata.species[spec].id for spec in self.dexsanity_specs]
         ret["trainersanity_trainers"] = [trainerdata.trainers[trainer + "_turtwig" if trainer.startswith("rival_") else trainer].get_raw_id() for trainer in self.trainersanity_trainers]
-        ret["generated_encounters"] = {f"{region}_{table}_{i}":speciesdata.species[spec].id for (region, table, i), spec in self.generated_encounters.items()}
-        ret["generated_special_encounters"] = {f"{speenc}_{i}":speciesdata.species[spec].id for (speenc, i), spec in self.generated_speencs.items()}
+        generated_encounter_map = defaultdict(dict)
+        for (region, table, i), spec in self.generated_encounters.items():
+            generated_encounter_map[f"{region}_{table}"][i] = speciesdata.species[spec].id
+        ret["generated_encounters"] = generated_encounter_map
+        generated_speenc_map = defaultdict(dict)
+        for (table, i), spec in self.generated_speencs.items():
+            generated_speenc_map[table][i] = speciesdata.species[spec].id
+        ret["generated_special_encounters"] = generated_speenc_map
         ret["generated_roamers"] = [speciesdata.species[spec].id for spec in self.generated_roamers]
-        ret["generated_starters"] = [speciesdata.species[spec].id for spec in self.generated_starters]
-        ret["generated_trainer_parties"] = {f"{trainer}_{i}":speciesdata.species[spec].id for (trainer, i), spec in self.generated_trainer_parties.items()}
         ret["generated_munchlax_trees"] = list(self.generated_munchlax_trees)
         ret["added_hm_compatibility"] = {spec:[hm.name.lower() for hm in compat] for spec, compat in self.added_hm_compatibility.items()}
         ret["version"] = "0.2.0"
@@ -247,7 +251,7 @@ class PokemonPlatinumWorld(World):
         #        dexsanity_hint_data[mon].add("Evolve from " + speciesdata.species[data.pre_evolution.species].label)
 
         player_hint_data = hint_data.setdefault(self.player, {})
-        if self.options.dexsanity_count > 0:
+        if self.options.dexsanity > 0:
             dexsanity_hint_data: dict[str, MutableSet[str]] = defaultdict(set)
             get_dexsanity_encounter_hint_data(dexsanity_hint_data)
             player_hint_data.update({
