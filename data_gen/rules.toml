@@ -407,7 +407,7 @@ locs.celestic_town_wise_glasses = "nighttime & poketch"
 exits.trophy_garden.trophy_garden_national_dex = "national_dex"
 exits.mt_coronet_b1f.mt_coronet_b1f_feebas = "surf & (old_rod | good_rod | super_rod) & poketch & feebas_upgrade"
 exits.route_209.route_209_odd_keystone = "odd_keystone & evo_item_shop"
-exits.twinleaf_town_player_house_2f.virt_roamers = "poketch & markingmap & event_beat_cynthia if can_reset_legendaries_in_ap_helper else poketch & markingmap"
+exits.twinleaf_town_player_house_2f.virt_roamers = "poketch & markingmap if can_reset_legendaries_in_ap_helper else poketch & markingmap & event_beat_cynthia"
 exits.twinleaf_town_player_house_2f.virt_dex = "pokedex if dexsanity_mode >= option_req"
 exits.twinleaf_town_player_house_2f.virt_national_dex = "national_dex if dexsanity_mode >= option_req"
 
