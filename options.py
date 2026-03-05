@@ -493,8 +493,8 @@ class InLogicEncounters(OptionSet):
     Which methods/variations of encounters are in logic.
     """
     display_name = "In Logic Encounters"
-    default = {"surf", "old_rod", "good_rod", "super_rod", "poke_radar", "ruby", "sapphire", "night", "emerald", "firered", "leafgreen", "day", "swarms", "great_marsh_observatory", "great_marsh_observatory_national_dex", "regular_honey_tree", "munchlax_honey_tree", "feebas_fishing", "trophy_garden", "odd_keystone", "roamers"}
-    valid_keys = ["surf", "old_rod", "good_rod", "super_rod", "poke_radar", "ruby", "sapphire", "night", "emerald", "firered", "leafgreen", "day", "swarms", "great_marsh_observatory", "great_marsh_observatory_national_dex", "regular_honey_tree", "munchlax_honey_tree", "feebas_fishing", "trophy_garden", "odd_keystone", "roamers"]
+    default = {"surf", "old_rod", "good_rod", "super_rod", "radar", "ruby", "sapphire", "night", "emerald", "firered", "leafgreen", "day", "swarms", "great_marsh_observatory", "great_marsh_observatory_national_dex", "regular_honey_tree", "munchlax_honey_tree", "feebas_fishing", "trophy_garden", "odd_keystone", "roamers"}
+    valid_keys = ["surf", "old_rod", "good_rod", "super_rod", "radar", "ruby", "sapphire", "night", "emerald", "firered", "leafgreen", "day", "swarms", "great_marsh_observatory", "great_marsh_observatory_national_dex", "regular_honey_tree", "munchlax_honey_tree", "feebas_fishing", "trophy_garden", "odd_keystone", "roamers"]
 
 class EncounterSpeciesBlacklist(SpeciesBlacklist):
     """
