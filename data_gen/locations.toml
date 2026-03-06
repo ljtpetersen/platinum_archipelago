@@ -3078,7 +3078,7 @@ original_item = "pp_up"
 type = "hidden"
 table = "hidden"
 check = 804
-label = "Galactic HQ - Hidden Item Near Entrance in Green Warp Room"
+label = "Galactic HQ 1F - Hidden Item Near Entrance in Green Warp Room"
 id = 74
 
 [galactic_hq_4f_razor_claw]
@@ -3086,7 +3086,7 @@ original_item = "razor_claw"
 type = "hidden"
 table = "hidden"
 check = 810
-label = "Galactic HQ - Hidden Item in Room Next to Cyrus"
+label = "Galactic HQ 4F Cyrus' Office - Hidden Item in Room Next to Cyrus"
 id = 80
 
 [galactic_hq_3f_tm21]
@@ -3102,7 +3102,7 @@ original_item = "max_elixir"
 type = "overworld"
 table = "overworld"
 check = 1182
-label = "Galactic HQ - Item in Room with Two Tables"
+label = "Galactic HQ 3F - Item in Room with Two Tables"
 id = 168
 
 [galactic_hq_3f_protein]
@@ -3110,7 +3110,7 @@ original_item = "protein"
 type = "overworld"
 table = "overworld"
 check = 1310
-label = "Galactic HQ - Item Behind Box"
+label = "Galactic HQ 3F - Item Behind Box"
 id = 295
 
 [galactic_hq_3f_elixir]
@@ -3118,7 +3118,7 @@ original_item = "elixir"
 type = "hidden"
 table = "hidden"
 check = 808
-label = "Galactic HQ - Hidden Item in Box in Room with Two Tables"
+label = "Galactic HQ 3F - Hidden Item in Box in Room with Two Tables"
 id = 78
 
 [galactic_hq_3f_rare_candy]
@@ -3518,7 +3518,7 @@ original_item = "max_revive"
 type = "overworld"
 table = "overworld"
 check = 1181
-label = "Galactic HQ - Item in Room with Two Generators"
+label = "Galactic HQ 2F - Item in Room with Two Generators"
 id = 167
 
 [galactic_hq_2f_green_shard]
@@ -3526,7 +3526,7 @@ original_item = "green_shard"
 type = "overworld"
 table = "overworld"
 check = 1313
-label = "Galactic HQ - Item in Room with Four Boxes"
+label = "Galactic HQ 2F - Item in Room with Four Boxes"
 id = 298
 
 [galactic_hq_2f_poke_doll]
@@ -3534,7 +3534,7 @@ original_item = "poke_doll"
 type = "hidden"
 table = "hidden"
 check = 805
-label = "Galactic HQ - Hidden Item in Bed"
+label = "Galactic HQ 2F - Hidden Item in Bed"
 id = 75
 
 [galactic_hq_2f_max_potion]
@@ -3542,7 +3542,7 @@ original_item = "max_potion"
 type = "hidden"
 table = "hidden"
 check = 806
-label = "Galactic HQ - Hidden Item in Room with Four Boxes"
+label = "Galactic HQ 2F - Hidden Item in Room with Four Boxes"
 id = 76
 
 [lake_valor_drained_hp_up]
@@ -5297,7 +5297,7 @@ id = 85
 original_item = "master_ball"
 type = "npc_gift"
 table = "base"
-label = "Galactic HQ - Master Ball from Cyrus"
+label = "Galactic HQ 4F Cyrus' Office- Master Ball from Cyrus"
 
 [galactic_hq_master_ball.check]
 id = 16598
@@ -5477,7 +5477,7 @@ check = 2941
 original_item = "counter"
 type = "poketchapp"
 table = "base"
-label = "Veilstone Department Store - Counter App"
+label = "Veilstone Department Store 2F - Counter App"
 
 [veilstone_store_5f_sticky_barb]
 id = 107
@@ -5485,7 +5485,7 @@ check = 261
 original_item = "sticky_barb"
 type = "npc_gift"
 table = "base"
-label = "Veilstone Department Store - Sticky Barb"
+label = "Veilstone Department Store 5F - Sticky Barb"
 
 [pokecenter_b1f_pal_pad]
 id = 108
@@ -5792,7 +5792,7 @@ check = 297
 original_item = "turtwig_mask"
 type = "accessory"
 table = "base"
-label = "Veilstone Department Store - Turtwig Mask"
+label = "Veilstone Department Store 1F - Turtwig Mask"
 
 [veilstone_city_southwest_house_accessory]
 id = 0
@@ -5816,7 +5816,7 @@ original_item = [
 ]
 table = "once"
 type = "accessory"
-label = "Veilstone City - Random Accessory"
+label = "Veilstone City - Random Accessory from Massage Girl"
 
 [veilstone_city_southwest_house_accessory.check]
 id = 0
@@ -5922,7 +5922,7 @@ original_item = [
 ]
 type = "npc_gift"
 table = "once"
-label = "Route 208 - Random Berry"
+label = "Route 208 - Random Berry from Berry Master in House"
 
 [route_208_house_berry.check]
 id = 3
@@ -6080,5 +6080,5 @@ id = 335
 check = 0xBA8
 type = "key_item"
 table = "overworld"
-label = "Galactic HQ - Linking Cord (In First Basement)"
+label = "Galactic HQ B1F - Linking Cord (In First Basement)"
 original_item = "linking_cord"
