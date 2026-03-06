@@ -6048,7 +6048,7 @@ id = 331
 check = 0xBA4
 type = "overworld"
 table = "overworld"
-label = "Snowpoint Temple - TM94 (Overworld Item)"
+label = "Snowpoint Temple B3F - TM94 (Overworld Item)"
 original_item = "tm94"
 
 [fuego_ironworks_building_tm93]
