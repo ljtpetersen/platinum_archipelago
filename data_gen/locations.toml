@@ -4834,7 +4834,7 @@ original_item = "pokedex"
 type = "pokedex"
 table = "base"
 check = 144
-label = "Pokemon Research Lab - Pokedex from Prof Rowan"
+label = "Sandgem Town Pokemon Research Lab - Pokedex from Prof Rowan"
 id = 29
 
 [sandgem_town_pokemon_research_lab_pokedex_2]
@@ -4857,7 +4857,7 @@ id = 31
 original_item = "tm27"
 type = "npc_gift"
 table = "base"
-label = "Sandgem Town - TM27 from Professor Rowan"
+label = "Sandgem Town Pokemon Research Lab - TM27 from Professor Rowan"
 id = 32
 
 [sandgem_town_tm27.check]
