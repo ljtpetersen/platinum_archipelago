@@ -3198,7 +3198,7 @@ party = [
     { species = "crobat", level = 44, num_moves = 4 },
     { species = "honchkrow", level = 46, num_moves = 4 },
 ]
-label = "Galactic HQ 4F - Galactic Boss Cyrus"
+label = "Galactic HQ 4F Cyrus' Office- Galactic Boss Cyrus"
 
 [galactic_boss_cyrus_galactic_hq.check]
 id = 16598
