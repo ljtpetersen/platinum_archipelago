@@ -1924,14 +1924,6 @@ level_lower = 31
 level_upper = 33
 
 [[iron_island_b3f.land]]
-species = "onix"
-level_lower = 32
-level_upper = 32
-accessibility = [
-    "swarms",
-]
-
-[[iron_island_b3f.land]]
 species = "mawile"
 level_lower = 31
 level_upper = 32
