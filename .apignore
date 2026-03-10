@@ -34,6 +34,8 @@
 !/data/trainers.py
 !/apnds/LICENSE
 !/apnds/__init__.py
+!/apnds/aes.py
+!/apnds/code.py
 !/apnds/lz.py
 !/apnds/narc.py
 !/apnds/rom.py

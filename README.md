@@ -7,11 +7,20 @@ The following are required.
 * Additionally to what Archipelago requires, the `pyparsing` library is required.
 This can be installed via PIP.
 
-With these, clone this repository in the `worlds` directory of the Archipelago repository.
+With these, clone this repository in the `worlds` directory of the Archipelago repository, and rename the repository root's
+folder to `pokemon_platinum`.
 With every modification to the files in `data_gen` or `data_gen_templates`, and when first cloning the
 repository, the `data_gen.py` file must be executed. (Do `python data_gen.py` in the root directory of the repository)
 
 To make the `.apworld` file, run `make` within the root directory of the repository.
+This is expecting standard UNIX utilities (`make`, `if`, `curl`, `rm`, `tar`, `echo`).
+On Windows, it is recommended to run this through Git Bash or WSL.
+
+If you don't have standard UNIX utilities, you can make it manually as follows. First,
+download the release of [apnds](https://github.com/ljtpetersen/apnds) corresponding to
+the version in the [`apnds_version.txt`](apnds_version.txt) file. Extract the output into the root of the repository.
+Run the data generation (`python data_gen.py` in the root of the repository).
+Afterwards, in the Archipelago Launcher, run the Build APWorlds option.
 
 ## Where Help is Needed
 * Better documentation! (`docs/setup_en.md` and `en_Pokemon Platinum.md`)
