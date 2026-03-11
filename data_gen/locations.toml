@@ -5333,7 +5333,7 @@ check = 163
 original_item = "matchupchecker"
 type = "poketchapp"
 table = "base"
-label = "Great Marsh - Matchup Checker App from Cowgirl"
+label = "Great Marsh Lobby - Matchup Checker App from Cowgirl"
 
 [pokemon_mansion_maids_room_soothe_bell]
 id = 90
