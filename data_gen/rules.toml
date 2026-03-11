@@ -332,6 +332,7 @@ exits.victory_road_2f_entrance.victory_road_2f = "rock_smash & strength"
 exits.pastoria_city_observatory_gate_1f.virt_great_marsh = "marsh_pass if marsh_pass"
 exits.virt_great_marsh.virt_great_marsh_national_dex = "national_dex"
 locs.pastoria_city_observatory_gate_1f_matchupchecker = "marsh_pass if marsh_pass"
+locs.pastoria_city_marsh_pass = "event_fen_badge if marsh_pass"
 locs.route_210_south_old_charm = "secretpotion"
 
 exits.route_212_north_top.route_212_north = "surf if pastoria_barriers"
