@@ -53,6 +53,7 @@ TRACKED_EVENTS = [
     "valley_windworks_defeat_team_galactic",
 ]
 TRACKED_UNRANDOMIZED_REQUIRED_LOCATIONS = sorted(maximal_required_locations)
+TRACKED_HEIGHT_MAP_HEADERS = {35, 350}
 
 class CheatBits(IntEnum):
     UNLOCK_ALL_FLY_REGIONS = 1
@@ -102,7 +103,7 @@ AP_VERSION_DATA: Mapping[int, VersionData] = {
         trainersanity_flags_count=927,
         player_pos_offset=28,
         recv_state_offset=20,
-        remote_item_queue_offset=40,
+        remote_item_queue_offset=44,
         remote_item_queue_size=64,
     ),
 }
@@ -239,6 +240,7 @@ class PokemonPlatinumClient(BizHawkClient):
 
     current_map: int
     current_x: int
+    current_y: int
     current_z: int
     local_tracked_events: int
     local_tracked_unrandomized_prog_locs: int
@@ -565,16 +567,20 @@ class PokemonPlatinumClient(BizHawkClient):
             if read_result is None:
                 return
 
-            current_x, current_z, current_map, pos_lock = unpack_from("<2IHB", read_result[0])
-            if pos_lock == 0 and (current_map != self.current_map or current_x != self.current_x or current_z != self.current_z):
+            current_x, current_y, current_z, current_map, pos_lock = unpack_from("<3IHB", read_result[0])
+            if current_map not in TRACKED_HEIGHT_MAP_HEADERS:
+                current_y = 0
+            if pos_lock == 0 and (current_map != self.current_map or current_x != self.current_x or current_y != self.current_y or current_z != self.current_z):
                 self.current_map = current_map
                 self.current_x = current_x
+                self.current_y = current_y
                 self.current_z = current_z
                 message = [{"cmd": "Bounce", "slots": [ctx.slot],
                            "data": {
                                "mapNumber": current_map,
                                "matrixX": current_x,
                                "matrixZ": current_z,
+                               "playerY": current_y,
                            }}]
                 await ctx.send_msgs(message)
 
