@@ -9,6 +9,7 @@ from collections import Counter
 import json
 import os
 import pkgutil
+from BaseClasses import ItemClassification
 from settings import get_settings
 import struct
 from typing import Any, Dict, TYPE_CHECKING, Tuple
@@ -23,9 +24,9 @@ from .trainerdata import patch_trainer_parties
 
 from ..apnds.rom import Rom
 from ..data import special_encounters
-from ..data.charmap import encode_string
+from ..data.charmap import encode_string, RemoteItemColor
 from ..data.locations import locations, LocationTable
-from ..data.items import items
+from ..data.items import items, ItemClass
 from ..data.species import species, evolutions
 from ..data.encounters import encounters, encounter_type_pairs, EncounterSlot
 from ..data.trainers import trainer_party_supporting_starters, trainers
@@ -308,11 +309,29 @@ def generate_output(world: "PokemonPlatinumWorld", output_directory: str, patch:
 
     filled_locations = set()
 
-    dest_names: MutableSequence[str] = []
-    dest_names_set: MutableSet[str] = set()
-    foreign_item_names: MutableSequence[str] = []
-    foreign_item_names_set: MutableSet[str] = set()
-    foreign_items: MutableSequence[Tuple[str, str]] = []
+    strbufs: MutableSequence[bytes] = []
+    strbufs_set: MutableSet[bytes] = set()
+    foreign_items: MutableSequence[Tuple[bytes, bytes]] = []
+
+    def classification_to_color(clas: ItemClassification) -> RemoteItemColor:
+        flags = clas.as_flag()
+        if flags & 0b001:
+            return RemoteItemColor.PURPLE
+        elif flags & 0b010:
+            return RemoteItemColor.BLUE
+        elif flags & 0b100:
+            return RemoteItemColor.RED
+        else:
+            return RemoteItemColor.BLACK
+
+    def name_to_strbuf(name: str, len_cutoff: int, color: RemoteItemColor = RemoteItemColor.BLACK) -> bytes:
+        ret: bytes = encode_string(name, '?', len_cutoff) # type: ignore
+        if color != RemoteItemColor.BLACK:
+            ret = b''.join((color.encode(), ret, RemoteItemColor.BLACK.encode()))
+        if len(ret) & 3 != 0:
+            ret += b'\xFF\xFF'
+        sz = len(ret) // 2
+        return b''.join((struct.pack("<2HI", sz, sz, 0xB6F8D2EC), ret, b'\xFF\xFF'))
 
     for location in world.multiworld.get_locations(world.player):
         if location.address is None or location.item is None or location.item.code is None:
@@ -323,16 +342,16 @@ def generate_output(world: "PokemonPlatinumWorld", output_directory: str, patch:
         if location.item.player == world.player:
             item_id = location.item.code
         else:
-            dest_name = world.multiworld.player_name[location.item.player]
-            if dest_name not in dest_names_set:
-                dest_names.append(dest_name)
-                dest_names_set.add(dest_name)
-            item_name = location.item.name
-            if item_name not in foreign_item_names_set:
-                foreign_item_names.append(item_name)
-                foreign_item_names_set.add(item_name)
-            assert len(foreign_items) < 0x1000, "foreign items overflow item id"
-            item_id = 0xD000 | len(foreign_items)
+            dest_name = name_to_strbuf(world.multiworld.player_name[location.item.player], 94)
+            if dest_name not in strbufs_set:
+                strbufs.append(dest_name)
+                strbufs_set.add(dest_name)
+            item_name = name_to_strbuf(location.item.name, 207, classification_to_color(location.item.classification))
+            if item_name not in strbufs_set:
+                strbufs.append(item_name)
+                strbufs_set.add(item_name)
+            assert len(foreign_items) < 0x2000, "foreign items overflow item id"
+            item_id = ItemClass.REMOTE0 << 12 | len(foreign_items)
             foreign_items.append((item_name, dest_name))
         put_in_table(table, id, item_id, True)
 
@@ -365,38 +384,25 @@ def generate_output(world: "PokemonPlatinumWorld", output_directory: str, patch:
     ap_bin += len(entries).to_bytes(length=4, byteorder='little')
     ap_bin += b''.join(entries)
 
-    foreign_name_map = {}
-    dest_name_map = {}
+    strbuf_map = {}
     cur_name_off = 0
-    len_cutoff = 94
 
-    cur_dict = dest_name_map
-    def name_to_strbuf(name: str) -> bytes:
+    def add_strbuf_offset(data: bytes) -> bytes:
         nonlocal cur_name_off
-        cur_dict[name] = cur_name_off
-        ret: bytes = encode_string(name, '?', len_cutoff) # type: ignore
-        sz = len(ret) // 2
-        ret = b''.join((struct.pack("<2HI", sz, sz, 0xB6F8D2EC), ret, b'\xFF\xFF'))
-        if len(ret) % 4 != 0:
-            ret += b'\xFF\xFF'
-        cur_name_off += len(ret)
-        return ret
+        strbuf_map[data] = cur_name_off
+        cur_name_off += len(data)
+        return data
 
 
-    dest_name_data = b''.join(name_to_strbuf(name) for name in dest_names)
+    strbuf_data = b''.join(add_strbuf_offset(data) for data in strbufs)
 
-    len_cutoff = 207
-    cur_dict = foreign_name_map
-
-    foreign_name_data = b''.join(name_to_strbuf(name) for name in foreign_item_names)
-
-    def name_idx_to_bytes(idx: Tuple[str, str]) -> bytes:
-        return struct.pack("<II", foreign_name_map[idx[0]], dest_name_map[idx[1]])
+    def name_idx_to_bytes(idx: Tuple[bytes, bytes]) -> bytes:
+        return struct.pack("<II", strbuf_map[idx[0]], strbuf_map[idx[1]])
 
     ap_bin += len(foreign_items).to_bytes(4, 'little')
     ap_bin += b''.join(name_idx_to_bytes(idx) for idx in foreign_items)
-    ap_bin += (len(dest_name_data) + len(foreign_name_data)).to_bytes(4, 'little')
-    ap_bin += dest_name_data + foreign_name_data
+    ap_bin += len(strbuf_data).to_bytes(4, 'little')
+    ap_bin += strbuf_data
 
     ap_bin += b''.join(species[spec].id.to_bytes(2, 'little') for spec in world.generated_starters)
     # the buneary that is shown by rowan in the intro

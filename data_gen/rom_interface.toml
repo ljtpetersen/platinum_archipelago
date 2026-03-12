@@ -18,6 +18,8 @@ item_clas.specialbagitem = 4
 item_clas.poketchapp = 5
 item_clas.badge = 6
 item_clas.accessory = 7
+item_clas.remote0 = 0xC
+item_clas.remote1 = 0xD
 item_clas.special = 0xE
 
 hm.cut = "hm01"

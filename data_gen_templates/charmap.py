@@ -3,6 +3,29 @@
 # Copyright (C) 2025-2026 James Petersen <m@jamespetersen.ca>
 # Licensed under MIT. See LICENSE
 
+from enum import IntEnum
+
+CONTROL_SET_COLOR = b'\x00\xFF'
+
+def encode_control_command(command: bytes, *args: int) -> bytes:
+    return b''.join((
+        b'\xFE\xFF',
+        CONTROL_SET_COLOR,
+        len(args).to_bytes(2, 'little'),
+        *(v.to_bytes(2, 'little') for v in args),
+    ))
+
+class RemoteItemColor(IntEnum):
+    BLACK = 0
+    RED = 1
+    GREEN = 2
+    BLUE = 3
+    PURPLE = 4
+
+    def encode(self) -> bytes:
+        return encode_control_command(CONTROL_SET_COLOR, self)
+
+
 charmap: dict[str, int] = {
     "←": 283,
     "↑": 284,
