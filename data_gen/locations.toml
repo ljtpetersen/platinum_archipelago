@@ -1132,7 +1132,7 @@ original_item = "big_pearl"
 type = "hidden"
 table = "hidden"
 check = 759
-label = "Route 213 - Hidden Item on Sandy Island"
+label = "Route 213 - Hidden Item on Southeast White Rock"
 id = 29
 
 [route_213_pearl]
@@ -1140,7 +1140,7 @@ original_item = "pearl"
 type = "hidden"
 table = "hidden"
 check = 758
-label = "Route 213 - Hidden Item Below Footstep's House 2"
+label = "Route 213 - Hidden Item Below Footstep's House 1"
 id = 28
 
 [route_213_hyper_potion]
@@ -1188,7 +1188,7 @@ original_item = "big_pearl"
 type = "hidden"
 table = "hidden"
 check = 915
-label = "Route 213 - Hidden Item on Southeast White Rock"
+label = "Route 213 - Hidden Item on Sandy Island"
 id = 185
 
 [route_213_heart_scale_0]
@@ -1196,7 +1196,7 @@ original_item = "heart_scale"
 type = "hidden"
 table = "hidden"
 check = 916
-label = "Route 213 - Hidden Item Below Footstep's House 1"
+label = "Route 213 - Hidden Item Below Footstep's House 2"
 id = 186
 
 [route_213_suite_key]
@@ -5381,7 +5381,7 @@ check = 814
 original_item = "star_piece"
 type = "hidden"
 table = "hidden"
-label = "Mt. Coronet Outside 1 - Hidden Item on Rock in Grass Above Upper Rock Climb Slope"
+label = "Mt. Coronet Outside 2 - Hidden Item in Corner Behind Breakable Rock"
 
 [mt_coronet_outside_north_star_piece_0]
 id = 92
@@ -5389,7 +5389,7 @@ check = 822
 original_item = "star_piece"
 type = "hidden"
 table = "hidden"
-label = "Mt. Coronet Outside 2 - Hidden Item in Corner Behind Breakable Rock"
+label = "Mt. Coronet Outside 1 - Hidden Item on Rock in Grass Above Upper Rock Climb Slope"
 
 [route_222_tm56]
 id = 95
