@@ -16,6 +16,11 @@ SOURCES := __init__.py \
 	 regions.py \
 	 rules.py \
 	 species.py \
+	 rom/__init__.py \
+	 rom/encounterdata.py \
+	 rom/itemdata.py \
+	 rom/speciesdata.py \
+	 rom/trainerdata.py \
 	 LICENSE
 DATA := data_gen/encounters.toml \
        data_gen/event_checks.toml \

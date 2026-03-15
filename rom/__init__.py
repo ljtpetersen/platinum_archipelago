@@ -311,7 +311,7 @@ def generate_output(world: "PokemonPlatinumWorld", output_directory: str, patch:
 
     strbufs: MutableSequence[bytes] = []
     strbufs_set: MutableSet[bytes] = set()
-    foreign_items: MutableSequence[Tuple[bytes, bytes]] = []
+    foreign_items: MutableMapping[Tuple[bytes, bytes], int] = {}
 
     def classification_to_color(clas: ItemClassification) -> RemoteItemColor:
         flags = clas.as_flag()
@@ -328,9 +328,9 @@ def generate_output(world: "PokemonPlatinumWorld", output_directory: str, patch:
         ret: bytes = encode_string(name, '?', len_cutoff) # type: ignore
         if color != RemoteItemColor.BLACK:
             ret = b''.join((color.encode(), ret, RemoteItemColor.BLACK.encode()))
+        sz = len(ret) // 2
         if len(ret) & 3 != 0:
             ret += b'\xFF\xFF'
-        sz = len(ret) // 2
         return b''.join((struct.pack("<2HI", sz, sz, 0xB6F8D2EC), ret, b'\xFF\xFF'))
 
     for location in world.multiworld.get_locations(world.player):
@@ -350,9 +350,8 @@ def generate_output(world: "PokemonPlatinumWorld", output_directory: str, patch:
             if item_name not in strbufs_set:
                 strbufs.append(item_name)
                 strbufs_set.add(item_name)
+            item_id = ItemClass.REMOTE0 << 12 | foreign_items.setdefault((item_name, dest_name), len(foreign_items))
             assert len(foreign_items) < 0x2000, "foreign items overflow item id"
-            item_id = ItemClass.REMOTE0 << 12 | len(foreign_items)
-            foreign_items.append((item_name, dest_name))
         put_in_table(table, id, item_id, True)
 
     for location in locations.values():
