@@ -328,9 +328,9 @@ def generate_output(world: "PokemonPlatinumWorld", output_directory: str, patch:
         ret: bytes = encode_string(name, '?', len_cutoff) # type: ignore
         if color != RemoteItemColor.BLACK:
             ret = b''.join((color.encode(), ret, RemoteItemColor.BLACK.encode()))
+        sz = len(ret) // 2
         if len(ret) & 3 != 0:
             ret += b'\xFF\xFF'
-        sz = len(ret) // 2
         return b''.join((struct.pack("<2HI", sz, sz, 0xB6F8D2EC), ret, b'\xFF\xFF'))
 
     for location in world.multiworld.get_locations(world.player):
