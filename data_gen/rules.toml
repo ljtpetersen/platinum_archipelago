@@ -20,7 +20,7 @@ enc_types.leafgreen = "leafgreen_cartridge & poketch"
 enc_types.day = "daytime & poketch"
 enc_types.swarms = "poffin_case & bag if start_with_swarms else poffin_case & bag & national_dex & event_beat_cynthia"
 enc_types.regular_honey_tree = "event_floaroma_meadow"
-enc_types.munchlax_honey_tree = "event_floaroma_meadow & poketch & dowsingmachine honey_tree_upgrade"
+enc_types.munchlax_honey_tree = "event_floaroma_meadow & poketch & dowsingmachine & honey_tree_upgrade"
 
 common.evo_item_shop = "event_veilstone_store if !evo_items_shop_in_ap_helper"
 
