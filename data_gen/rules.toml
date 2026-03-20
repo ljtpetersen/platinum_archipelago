@@ -381,8 +381,7 @@ locs.route_225_dubious_disc = "surf"
 locs.route_225_dawn_stone = "rock_climb"
 
 exits.route_227_lower.route_227 = "bicycle & bag"
-locs.route_227_max_repel = "rock_climb"
-locs.route_227_charcoal = "rock_climb"
+exits.route_227.route_227_pit = "rock_climb"
 
 locs.stark_mountain_outside_life_orb = "rock_climb"
 exits.stark_mountain_room_1_entrance.stark_mountain_room_1 = "strength"
