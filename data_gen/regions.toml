@@ -452,18 +452,20 @@ trainers = [
 ]
 
 [route_227]
+accessible_encounters = [
+    "land",
+]
 exits = [
     "route_227_lower",
     "route_227_house",
+    "route_227_pit",
     "stark_mountain_outside",
 ]
 header = "route_227"
 locs = [
-    "route_227_charcoal",
     "route_227_zinc",
     "route_227_yellow_shard",
-    "route_227_star_piece",
-    "route_227_max_repel",
+    "route_227_star_piece"
 ]
 group = "fight_area"
 trainers = [
@@ -476,6 +478,23 @@ exits = [
 ]
 header = "route_227_house"
 group = "fight_area"
+
+[route_227_pit]
+accessible_encounters = [
+    "water",
+]
+exits = [
+    "route_227",
+]
+header = "route_227"
+locs = [
+    "route_227_charcoal",
+    "route_227_max_repel"
+]
+group = "fight_area"
+trainers = [
+    "black_belt_griffin",
+]
 
 [route_226_house]
 exits = [
