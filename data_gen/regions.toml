@@ -3332,6 +3332,11 @@ locs = [
 ]
 header = "floaroma_meadow"
 honey_tree_idx = 20
+trainers = [
+    "galactic_grunt_floaroma_meadow_1",
+    "galactic_grunt_floaroma_meadow_2",
+]
+events = ["event_floaroma_meadow"]
 
 [floaroma_meadow]
 exits = [
@@ -3356,11 +3361,6 @@ locs = [
     "floaroma_meadow_full_heal",
     "floaroma_meadow_honey_4",
 ]
-trainers = [
-    "galactic_grunt_floaroma_meadow_1",
-    "galactic_grunt_floaroma_meadow_2",
-]
-events = ["event_floaroma_meadow"]
 
 [floaroma_meadow_house]
 exits = [
