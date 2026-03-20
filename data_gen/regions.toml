@@ -492,9 +492,6 @@ locs = [
     "route_227_max_repel"
 ]
 group = "fight_area"
-trainers = [
-    "black_belt_griffin",
-]
 
 [route_226_house]
 exits = [
