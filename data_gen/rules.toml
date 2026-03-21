@@ -191,7 +191,7 @@ locs.route_215_tm34 = "cut"
 
 locs.veilstone_city_full_incense = "rock_climb"
 
-exits.galactic_hq_wo_key.veilstone_city_galactic_warehouse = "event_lake_acuity_meet_jupiter | storage_key"
+exits.galactic_hq_wo_key.veilstone_city_galactic_warehouse = "event_cobble_badge"
 exits.veilstone_city_galactic_warehouse.galactic_hq_wo_key = "event_lake_acuity_meet_jupiter | storage_key"
 exits.veilstone_city.galactic_hq_w_key = "galactic_key"
 locs.galactic_hq_3f_tm21 = "galactic_key"
