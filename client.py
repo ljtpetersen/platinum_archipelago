@@ -53,6 +53,7 @@ TRACKED_EVENTS = [
     "valley_windworks_defeat_team_galactic",
 ]
 TRACKED_UNRANDOMIZED_REQUIRED_LOCATIONS = sorted(maximal_required_locations)
+TRACKED_HEIGHT_MAP_HEADERS = {35, 350}
 
 class CheatBits(IntEnum):
     UNLOCK_ALL_FLY_REGIONS = 1
@@ -102,7 +103,7 @@ AP_VERSION_DATA: Mapping[int, VersionData] = {
         trainersanity_flags_count=927,
         player_pos_offset=28,
         recv_state_offset=20,
-        remote_item_queue_offset=40,
+        remote_item_queue_offset=44,
         remote_item_queue_size=64,
     ),
 }
@@ -163,13 +164,14 @@ class Pokedex:
                 return False
             if not self.has_national() and species_id_to_const_name[id] not in regional_mons:
                 return False
-        id -= 1
         return self.has_caught(id)
 
     def has_caught(self, id: int):
+        id -= 1
         return (self.data[4 + (id >> 3)] & (1 << (id & 7))) != 0
 
     def has_seen(self, id: int):
+        id -= 1
         return (self.data[68 + (id >> 3)] & (1 << (id & 7))) != 0
 
     def has_regular(self) -> bool:
@@ -181,7 +183,7 @@ class Pokedex:
 def dex_bytearray_to_seq(data: bytearray | bytes) -> Sequence[int]:
     return [v
         for v in range(1, 494)
-        if (data[v >> 3] & (1 << (v & 7))) != 0
+        if (data[(v - 1) >> 3] & (1 << ((v - 1) & 7))) != 0
     ]
 
 def seq_int_bytes(data: Sequence[int], len_per: int) -> bytes:
@@ -239,6 +241,7 @@ class PokemonPlatinumClient(BizHawkClient):
 
     current_map: int
     current_x: int
+    current_y: int
     current_z: int
     local_tracked_events: int
     local_tracked_unrandomized_prog_locs: int
@@ -485,11 +488,11 @@ class PokemonPlatinumClient(BizHawkClient):
                 if vars_flags.is_checked(locations[loc].check):
                     local_tracked_unrandomized_prog_locs |= 1 << k
 
-            for i in range(1, 494):
-                if pokedex.has_seen(i):
-                    local_seen_pokemon[(i - 1) >> 3] |= 1 << ((i - 1) & 7)
-                if pokedex.has_caught(i):
-                    local_caught_pokemon[(i - 1) >> 3] |= 1 << ((i - 1) & 7)
+            for i in range(0, 493):
+                if pokedex.has_seen(i + 1):
+                    local_seen_pokemon[i >> 3] |= 1 << (i & 7)
+                if pokedex.has_caught(i + 1):
+                    local_caught_pokemon[i >> 3] |= 1 << (i & 7)
 
             if local_checked_locations != self.local_checked_locations:
                 await ctx.check_locations(local_checked_locations)
@@ -542,7 +545,7 @@ class PokemonPlatinumClient(BizHawkClient):
                         "key": f"pokemon_platinum_tracked_unrandomized_required_locations_{ctx.team}_{ctx.slot}_{chunk}",
                         "default": 0,
                         "want_reply": False,
-                        "operations": [{"operation": "or", "value": (local_tracked_events >> (chunk * 32)) & 0xFFFFFFFF}]
+                        "operations": [{"operation": "or", "value": (local_tracked_unrandomized_prog_locs >> (chunk * 32)) & 0xFFFFFFFF}]
                     }])
                 self.local_tracked_unrandomized_prog_locs = local_tracked_unrandomized_prog_locs
 
@@ -557,7 +560,7 @@ class PokemonPlatinumClient(BizHawkClient):
             read_result = await bizhawk.guarded_read(
                 ctx.bizhawk_ctx,
                 [
-                    (self.ap_struct_address + version_data.player_pos_offset, 12, "ARM9 System Bus"),
+                    (self.ap_struct_address + version_data.player_pos_offset, 16, "ARM9 System Bus"),
                 ],
                 [guards["AP STRUCT VALID"]]
             )
@@ -565,16 +568,20 @@ class PokemonPlatinumClient(BizHawkClient):
             if read_result is None:
                 return
 
-            current_x, current_z, current_map, pos_lock = unpack_from("<2IHB", read_result[0])
-            if pos_lock == 0 and (current_map != self.current_map or current_x != self.current_x or current_z != self.current_z):
+            current_x, current_y, current_z, current_map, pos_lock = unpack_from("<3IHB", read_result[0])
+            if current_map not in TRACKED_HEIGHT_MAP_HEADERS:
+                current_y = 0
+            if pos_lock == 0 and (current_map != self.current_map or current_x != self.current_x or current_y != self.current_y or current_z != self.current_z):
                 self.current_map = current_map
                 self.current_x = current_x
+                self.current_y = current_y
                 self.current_z = current_z
                 message = [{"cmd": "Bounce", "slots": [ctx.slot],
                            "data": {
                                "mapNumber": current_map,
                                "matrixX": current_x,
                                "matrixZ": current_z,
+                               "playerY": current_y,
                            }}]
                 await ctx.send_msgs(message)
 

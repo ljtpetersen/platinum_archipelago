@@ -56966,7 +56966,6 @@ hms = [
     "rock_climb",
     "flash",
 ]
-regional = true
 id = 493
 legendary = true
 label = "ARCEUS"
