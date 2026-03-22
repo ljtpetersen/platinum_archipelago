@@ -465,7 +465,7 @@ header = "route_227"
 locs = [
     "route_227_zinc",
     "route_227_yellow_shard",
-    "route_227_star_piece"
+    "route_227_star_piece",
 ]
 group = "fight_area"
 trainers = [
@@ -489,7 +489,7 @@ exits = [
 header = "route_227"
 locs = [
     "route_227_charcoal",
-    "route_227_max_repel"
+    "route_227_max_repel",
 ]
 group = "fight_area"
 
