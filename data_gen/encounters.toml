@@ -4795,10 +4795,6 @@ accessibility = [
 ]
 
 [great_marsh_1]
-surf = [
-    { species = "wooper", level_lower = 20, level_upper = 30 },
-    { species = "quagsire", level_lower = 20, level_upper = 40 },
-]
 good_rod = [
     { species = "magikarp", level_lower = 10, level_upper = 25 },
     { species = "barboach", level_lower = 10, level_upper = 25 },
@@ -4993,22 +4989,6 @@ accessibility = [
 ]
 
 [great_marsh_4]
-surf = [
-    { species = "wooper", level_lower = 20, level_upper = 30 },
-    { species = "quagsire", level_lower = 20, level_upper = 40 },
-]
-good_rod = [
-    { species = "magikarp", level_lower = 10, level_upper = 25 },
-    { species = "barboach", level_lower = 10, level_upper = 25 },
-]
-old_rod = [
-    { species = "magikarp", level_lower = 3, level_upper = 15 },
-]
-super_rod = [
-    { species = "gyarados", level_lower = 30, level_upper = 55 },
-    { species = "carvanha", level_lower = 30, level_upper = 55 },
-    { species = "whiscash", level_lower = 20, level_upper = 50 },
-]
 id = 26
 
 [[great_marsh_4.land]]
@@ -5061,22 +5041,6 @@ accessibility = [
 ]
 
 [great_marsh_5]
-surf = [
-    { species = "wooper", level_lower = 20, level_upper = 30 },
-    { species = "quagsire", level_lower = 20, level_upper = 40 },
-]
-good_rod = [
-    { species = "magikarp", level_lower = 10, level_upper = 25 },
-    { species = "barboach", level_lower = 10, level_upper = 25 },
-]
-old_rod = [
-    { species = "magikarp", level_lower = 3, level_upper = 15 },
-]
-super_rod = [
-    { species = "gyarados", level_lower = 30, level_upper = 55 },
-    { species = "carvanha", level_lower = 30, level_upper = 55 },
-    { species = "whiscash", level_lower = 20, level_upper = 50 },
-]
 id = 27
 
 [[great_marsh_5.land]]

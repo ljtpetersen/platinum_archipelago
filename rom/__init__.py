@@ -554,6 +554,78 @@ def generate_output(world: "PokemonPlatinumWorld", output_directory: str, patch:
                         np["moves"] = [move_ids[move] for move in world.random.sample(move_pool, k=min(len(move_pool), p.num_moves))]
                     new_party.append(np)
                 trainer_party_patches[trainer.id] = new_party
+    elif world.options.randomize_starters:
+        common_st_map: MutableMapping[str, MutableMapping[str, str]] = {}
+        starter_idx_map: Mapping[str, int] = {
+            "turtwig": 0,
+            "chimchar": 1,
+            "piplup": 2,
+            "grotle": 0,
+            "monferno": 1,
+            "prinplup": 2,
+            "torterra": 0,
+            "infernape": 1,
+            "empoleon": 2,
+        }
+        starter_evos: Sequence[Sequence[str]] = []
+        for st in world.generated_starters:
+            chain = [st]
+            while True:
+                if st not in evolutions:
+                    break
+                st = world.random.choice(evolutions[st])
+                chain.append(st)
+            starter_evos.append(chain)
+        for name, trainer in trainers.items():
+            if name.startswith("rival") or name.startswith("lucas") or name.startswith("dawn"):
+                for starter in starter_idx_map:
+                    if name.endswith(starter):
+                        name_ns = name[:-len(starter) - 1]
+                        break
+                else:
+                    assert False, f"trainer {name} does not end with starter"
+                new_party = []
+                tps = {v.species:i for i, v in enumerate(trainer_party_supporting_starters(name_ns))}
+                common_map = common_st_map.setdefault(name_ns, {})
+                for p in trainer.party:
+                    if p.species in tps and (name_ns, tps[p.species]) in world.generated_trainer_parties:
+                        new_spec = world.generated_trainer_parties[(name_ns, tps[p.species])]
+                        is_randomized = True
+                    elif p.species in starter_idx_map:
+                        chain = starter_evos[starter_idx_map[p.species]]
+                        level_for_nonlevel = 20
+                        for i, mon in enumerate(chain):
+                            pevo = species[mon].pre_evolution
+                            if pevo is not None:
+                                if pevo.level is not None:
+                                    if pevo.level > p.level:
+                                        break
+                                else:
+                                    if level_for_nonlevel > p.level:
+                                        break
+                                    else:
+                                        level_for_nonlevel += 20
+                        else:
+                            i = len(chain)
+                        new_spec = chain[max(0, i - 1)]
+                        is_randomized = True
+                    elif p.species in common_map:
+                        new_spec = common_map[p.species]
+                        is_randomized = False
+                    else:
+                        new_spec = p.species
+                        common_map[p.species] = new_spec
+                        is_randomized = False
+                    np: Mapping[str, int | Sequence[int]] = {}
+                    np["level"] = p.level
+                    np["species"] = species[new_spec].id
+                    if p.num_moves == 0 or not is_randomized:
+                        np["moves"] = []
+                    else:
+                        move_pool = sorted(set(species[new_spec].other_learnset) | {move for level, move in species[new_spec].level_learnset if level <= p.level})
+                        np["moves"] = [move_ids[move] for move in world.random.sample(move_pool, k=min(len(move_pool), p.num_moves))]
+                    new_party.append(np)
+                trainer_party_patches[trainer.id] = new_party
     if len(trainer_party_patches) > 0:
         patch.write_file("trainer_party_patches.json", json.dumps(trainer_party_patches).encode('utf-8'))
 
