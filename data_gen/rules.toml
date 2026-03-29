@@ -350,6 +350,7 @@ locs.route_230_water_stone = "rock_smash & surf"
 locs.route_230_blue_shard = "rock_smash & surf"
 locs.route_230_ultra_ball = "rock_smash & surf"
 
+encs.route_229.water = "cut"
 locs.route_229_reaper_cloth = "cut"
 locs.route_229_protein = "cut"
 locs.route_229_thunderstone = "cut & surf"
