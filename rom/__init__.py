@@ -470,6 +470,7 @@ def generate_output(world: "PokemonPlatinumWorld", output_directory: str, patch:
                     "graphics_id": PSYDUCK_GFX_ID,
                     "script": 10016,
                     "flag": 0xBC3,
+                    "initial_dir": 1,
                 })),
             )
 
