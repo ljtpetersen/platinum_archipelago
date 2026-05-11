@@ -2004,7 +2004,7 @@ original_item = "rare_candy"
 type = "overworld"
 table = "overworld"
 check = 1146
-label = "Route 218 - Item in Northeast Corner"
+label = "Route 218 East - Item in Northeast Corner"
 id = 132
 
 [route_218_hyper_potion]
@@ -2012,7 +2012,7 @@ original_item = "hyper_potion"
 type = "overworld"
 table = "overworld"
 check = 1147
-label = "Route 218 - Item Below Fisherman"
+label = "Route 218 East - Item Below Fisherman"
 id = 133
 
 [route_218_x_accuracy]
@@ -2020,7 +2020,7 @@ original_item = "x_accuracy"
 type = "overworld"
 table = "overworld"
 check = 1271
-label = "Route 218 - Item on Pier"
+label = "Route 218 East - Item on Pier"
 id = 256
 
 [solaceon_ruins_room_1_northwest_dead_end_fire_stone]

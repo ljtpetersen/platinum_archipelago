@@ -1183,7 +1183,7 @@ party = [
     { species = "gyarados", level = 33, num_moves = 0 },
     { species = "gyarados", level = 33, num_moves = 0 },
 ]
-label = "Route 218 - Fisherman Miguel"
+label = "Route 218 East - Fisherman Miguel"
 
 [fisherman_luc]
 id = 154
@@ -1194,7 +1194,7 @@ party = [
     { species = "gyarados", level = 31, num_moves = 0 },
     { species = "remoraid", level = 31, num_moves = 0 },
 ]
-label = "Route 218 - Fisherman Luc"
+label = "Route 218 East - Fisherman Luc"
 
 [dummy_155]
 id = 155
@@ -2385,7 +2385,7 @@ party = [
     { species = "kricketune", level = 33, num_moves = 0 },
     { species = "magnemite", level = 33, num_moves = 0 },
 ]
-label = "Route 218 - Guitarist Tony"
+label = "Route 218 West - Guitarist Tony"
 
 [guitarist_jerry]
 id = 301
@@ -2702,7 +2702,7 @@ party = [
     { species = "mantyke", level = 32, num_moves = 0 },
     { species = "machoke", level = 34, num_moves = 0 },
 ]
-label = "Route 218 - Sailor Skyler"
+label = "Route 218 West - Sailor Skyler"
 
 [sailor_damian]
 id = 339
