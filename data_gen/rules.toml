@@ -74,7 +74,62 @@ locs.oreburgh_gate_b1f_tm01 = "surf & strength"
 locs.oreburgh_gate_b1f_earth_plate = "surf & strength"
 
 locs.oreburgh_city_north_house_2f_heal_ball = "mon_geodude"
-exits.route_207_south.route_207 = "bicycle"
+exits.route_207_south.route_207 = """
+    bicycle
+    if route_207_barricade == option_bicycle_slope
+    else rock_climb
+    if route_207_barricade == option_rock_climb
+    else False
+    if route_207_barricade == option_impassable
+    else cut
+    if route_207_barricade == option_cut_tree
+    else rock_smash
+    if route_207_barricade == option_rock_smash
+    else strength
+    if route_207_barricade == option_strength_boulder
+    else secretpotion
+    if route_207_barricade == option_psyduck
+    else bicycle & cut
+    if route_207_barricade == option_bicycle_slope_and_cut_tree
+    else bicycle & rock_smash
+    if route_207_barricade == option_bicycle_slope_and_rock_smash
+    else bicycle & strength
+    if route_207_barricade == option_bicycle_slope_and_strength_boulder
+    else bicycle & secretpotion
+    if route_207_barricade == option_bicycle_slope_and_psyduck
+    else rock_climb & cut
+    if route_207_barricade == option_rock_climb_and_cut_tree
+    else rock_climb & rock_smash
+    if route_207_barricade == option_rock_climb_and_rock_smash
+    else rock_climb & strength
+    if route_207_barricade == option_rock_climb_and_strength_boulder
+    else rock_climb & secretpotion
+    if route_207_barricade == option_rock_climb_and_psyduck
+"""
+exits.route_207.route_207_south = """
+    bicycle
+    if route_207_barricade == option_bicycle_slope
+    else rock_climb
+    if route_207_barricade == option_rock_climb
+    else False
+    if route_207_barricade == option_impassable
+    else cut
+    if route_207_barricade == option_cut_tree | route_207_barricade == option_bicycle_slope_and_cut_tree
+    else rock_smash
+    if route_207_barricade == option_rock_smash | route_207_barricade == option_bicycle_slope_and_rock_smash
+    else strength
+    if route_207_barricade == option_strength_boulder | route_207_barricade == option_bicycle_slope_and_strength_boulder
+    else secretpotion
+    if route_207_barricade == option_psyduck | route_207_barricade == option_bicycle_slope_and_psyduck
+    else rock_climb & cut
+    if route_207_barricade == option_rock_climb_and_cut_tree
+    else rock_climb & rock_smash
+    if route_207_barricade == option_rock_climb_and_rock_smash
+    else rock_climb & strength
+    if route_207_barricade == option_rock_climb_and_strength_boulder
+    else rock_climb & secretpotion
+    if route_207_barricade == option_rock_climb_and_psyduck
+"""
 
 locs.jubilife_city_fashion_case = "event_coal_badge"
 exits.jubilife_city.jubilife_tv_1f = "event_coal_badge"

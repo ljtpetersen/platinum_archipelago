@@ -3738,6 +3738,7 @@ locs = [
     "route_207_iron",
 ]
 header = "route_207"
+accessible_encounters = []
 
 [route_207]
 exits = [
@@ -3764,6 +3765,7 @@ trainers = [
     "battle_girl_helen",
 ]
 honey_tree_idx = 3
+accessible_encounters = []
 
 [mt_coronet_2f_right]
 exits = [

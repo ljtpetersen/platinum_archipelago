@@ -4,7 +4,7 @@
 # Licensed under MIT. See LICENSE
 
 from collections.abc import Mapping, MutableSequence, Sequence
-from dataclasses import dataclass
+from dataclasses import dataclass, astuple
 from struct import pack, unpack_from
 
 from ..apnds.narc import Narc
@@ -19,7 +19,7 @@ class GrassEncounter:
         return GrassEncounter(*unpack_from("<B3xI", data, offset))
 
     def to_bytes(self) -> bytes:
-        return pack("<B3xI", self.level, self.species)
+        return pack("<B3xI", *astuple(self))
 
 @dataclass
 class GrassEncounters:
@@ -49,7 +49,7 @@ class WaterEncounter:
         return WaterEncounter(*unpack_from("<2B2xI", data, offset))
 
     def to_bytes(self) -> bytes:
-        return pack("<2B2xI", self.min_level, self.max_level, self.species)
+        return pack("<2B2xI", *astuple(self))
 
 
 @dataclass

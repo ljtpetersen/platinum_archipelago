@@ -42,6 +42,7 @@ He also sells TM70 Flash.
 appropriately.
 * An event for defeating Team Galactic at Stark Mountain.
 * The boat can now be taken between Canalave City, Pastoria City, and Snowpoint City.
+* More options for roadblocks in Route 207.
 ### Changed
 * In-game game options option is now validated before generation.
 * Some evolution stones have been key-itemified, and are no longer consumed when used.

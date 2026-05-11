@@ -233,7 +233,10 @@ class Rule:
                 exprs.append(f"{val}")
             elif isinstance(val, CountItem):
                 exprs.append(val.to_string(item_name_map))
-        centre = "{}({})".format(self.op.get_rule_class(), f", ".join(exprs))
+        if len(exprs) == 1:
+            centre = exprs[0]
+        else:
+            centre = "{}({})".format(self.op.get_rule_class(), f", ".join(exprs))
         if parent_op is None:
             return centre
         elif parent_op is RuleOp.AND and self.op is RuleOp.OR and len(exprs) > 1:

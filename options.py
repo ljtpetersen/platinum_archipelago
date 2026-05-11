@@ -726,6 +726,48 @@ class BoatPastoriaSnowpoint(Choice):
     option_on = 1
     default = option_off
 
+class Route207Barricade(Choice):
+    """
+    What barricade is present in Route 207 (which is above Oreburgh City).
+
+    Options:
+    - none
+    - bicycle_slope
+    - rock_climb
+    - impassable
+    - cut_tree
+    - rock_smash
+    - strength_boulder
+    - psyduck
+    - bicycle_slope_and_cut_tree
+    - bicycle_slope_and_rock_smash
+    - bicycle_slope_and_strength_boulder
+    - bicycle_slope_and_psyduck
+    - rock_climb_and_cut_tree
+    - rock_climb_and_rock_smash
+    - rock_climb_and_strength_boulder
+    - rock_climb_and_psyduck
+    """
+    # bottom two bits are map: none, bicycle_slope, or rock_climb
+    # three after are object event barricade
+    option_none = 0b00000
+    option_bicycle_slope = 0b00001
+    option_rock_climb = 0b00010
+    option_impassable = 0b00100
+    option_cut_tree = 0b01000
+    option_rock_smash = 0b01100
+    option_strength_boulder = 0b10000
+    option_psyduck = 0b10100
+    option_bicycle_slope_and_cut_tree = 0b01001
+    option_bicycle_slope_and_rock_smash = 0b01101
+    option_bicycle_slope_and_strength_boulder = 0b10001
+    option_bicycle_slope_and_psyduck = 0b10101
+    option_rock_climb_and_cut_tree = 0b01010
+    option_rock_climb_and_rock_smash = 0b01110
+    option_rock_climb_and_strength_boulder = 0b10010
+    option_rock_climb_and_psyduck = 0b10110
+    default = option_bicycle_slope
+
 slot_data_options: Sequence[str] = [
     "hms",
     "badges",
@@ -755,6 +797,7 @@ slot_data_options: Sequence[str] = [
     "start_with_swarms",
     "can_reset_legendaries_in_ap_helper",
     "evo_items_shop_in_ap_helper",
+    "route_207_barricade",
 
     "hm_reader",
     "hm_reader_mode",
@@ -841,6 +884,7 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
     start_with_swarms: StartWithSwarms
     can_reset_legendaries_in_ap_helper: CanResetLegendariesInAPHelper
     evo_items_shop_in_ap_helper: EvoItemsShopInAPHelper
+    route_207_barricade: Route207Barricade
 
     pastoria_barriers: PastoriaBarriers
     north_sinnoh_fly: RequireFlyForNorthSinnoh
@@ -1159,6 +1203,7 @@ OPTION_GROUPS = [
             BoatCanalavePastoria,
             BoatCanalaveSnowpoint,
             BoatPastoriaSnowpoint,
+            Route207Barricade,
         ],
     ),
     OptionGroup(

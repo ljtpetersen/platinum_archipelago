@@ -16,9 +16,10 @@ from typing import Any, Dict, TYPE_CHECKING, Tuple
 from worlds.Files import APAutoPatchInterface
 import zipfile
 
-
 from .itemdata import patch_items
 from .encounterdata import patch_encounters, patch_speencs
+from .eventdata import BOLLARD_GFX_ID, CUT_TREE_GFX_ID, PSYDUCK_GFX_ID, ROCK_SMASH_GFX_ID, STRENGTH_BOULDER_GFX_ID, patch_events
+from .mapdata import replace_maps
 from .speciesdata import patch_species
 from .trainerdata import patch_trainer_parties
 
@@ -32,7 +33,6 @@ from ..data.encounters import encounters, encounter_type_pairs, EncounterSlot
 from ..data.trainers import trainer_party_supporting_starters, trainers
 from ..data.moves import move_ids
 from ..items import raw_id_to_const_name
-from ..options import GameOptions
 
 if TYPE_CHECKING:
     from .. import PokemonPlatinumWorld
@@ -98,6 +98,12 @@ class PokemonPlatinumPatch(APAutoPatchInterface):
         if "species_patches.json" in self.files:
             species_patches = json.loads(self.get_file("species_patches.json"))
             rom.files["/poketool/personal/personal.narc"] = patch_species(rom.files["/poketool/personal/personal.narc"], species_patches)
+        if "map_replacements.json" in self.files:
+            map_replacements = json.loads(self.get_file("map_replacements.json"))
+            rom.files["/fielddata/land_data/land_data.narc"] = replace_maps(rom.files["/fielddata/land_data/land_data.narc"], {k:self.get_file(v) for k, v in map_replacements.items()})
+        if "event_patches.json" in self.files:
+            event_patches = json.loads(self.get_file("event_patches.json"))
+            rom.files["/fielddata/eventdata/zone_event.narc"] = patch_events(rom.files["/fielddata/eventdata/zone_event.narc"], event_patches)
 
         with open(target, 'wb') as f:
             f.write(rom.to_bytes())
@@ -419,6 +425,54 @@ def generate_output(world: "PokemonPlatinumWorld", output_directory: str, patch:
 
     patch.write_file("ap.bin", ap_bin)
 
+    map_replacements: MutableMapping[str, bytes] = {}
+    event_patches: MutableMapping[str, MutableSequence[Tuple[str, Any]]] = {}
+
+    route_207_opt = world.options.route_207_barricade.value
+    if route_207_opt & 0b00011 != 0b01:
+        map_addition = "rock_climb" if route_207_opt & 0b00011 == 0b10 else "stairs"
+        map_replacements["25"] = pkgutil.get_data(__name__, f"data/maps/route_207_{map_addition}.bin") # type: ignore
+        event_patches.setdefault("339", []).append(
+            ("replace_obj_fields_by_graphics_id", (38, {
+                "data_1": 15 if route_207_opt & 0b00011 == 0b10 else 14,
+            })),
+        )
+
+    match (route_207_opt & 0b11100) >> 2:
+        case 0b000:
+            event_patches.setdefault("339", []).append(
+                ("remove_objs_by_graphics_id", BOLLARD_GFX_ID),
+            )
+        case 0b010:
+            event_patches.setdefault("339", []).append(
+                ("replace_obj_fields_by_graphics_id", (BOLLARD_GFX_ID, {
+                    "graphics_id": CUT_TREE_GFX_ID,
+                    "script": 10000,
+                })),
+            )
+        case 0b011:
+            event_patches.setdefault("339", []).append(
+                ("replace_obj_fields_by_graphics_id", (BOLLARD_GFX_ID, {
+                    "graphics_id": ROCK_SMASH_GFX_ID,
+                    "script": 10001,
+                })),
+            )
+        case 0b100:
+            event_patches.setdefault("339", []).append(
+                ("replace_obj_fields_by_graphics_id", (BOLLARD_GFX_ID, {
+                    "graphics_id": STRENGTH_BOULDER_GFX_ID,
+                    "script": 10002,
+                })),
+            )
+        case 0b101:
+            event_patches.setdefault("339", []).append(
+                ("replace_obj_fields_by_graphics_id", (BOLLARD_GFX_ID, {
+                    "graphics_id": PSYDUCK_GFX_ID,
+                    "script": 10016,
+                    "flag": 0xBC3,
+                })),
+            )
+
     item_patches = {}
     if world.options.reusable_tms.value == 1:
         for lbl in world.item_name_groups["TMs and HMs"]:
@@ -652,6 +706,19 @@ def generate_output(world: "PokemonPlatinumWorld", output_directory: str, patch:
         patches.setdefault("add_tmhm_compat", []).extend(hm.tmhm_id() for hm in seq)
     if len(species_patches) > 0:
         patch.write_file("species_patches.json", json.dumps(species_patches).encode('utf-8'))
+
+    binary_file_index = 0
+
+    def add_binary(data: bytes) -> str:
+        nonlocal binary_file_index
+        binary_file_index += 1
+        patch.write_file(f"{binary_file_index}.bin", data)
+        return f"{binary_file_index}.bin"
+
+    if len(map_replacements) > 0:
+        patch.write_file("map_replacements.json", json.dumps({k:add_binary(v) for k, v in map_replacements.items()}).encode('utf-8'))
+    if len(event_patches) > 0:
+        patch.write_file("event_patches.json", json.dumps(event_patches).encode('utf-8'))
 
     out_file_name = world.multiworld.get_out_file_name_base(world.player)
     patch.write(os.path.join(output_directory, f"{out_file_name}{patch.patch_file_ending}"))
