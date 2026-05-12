@@ -107,9 +107,7 @@ exits.route_207_south.route_207 = """
     if route_207_barricade == option_rock_climb_and_psyduck
 """
 exits.route_207.route_207_south = """
-    bicycle
-    if route_207_barricade == option_bicycle_slope
-    else rock_climb
+    rock_climb
     if route_207_barricade == option_rock_climb
     else False
     if route_207_barricade == option_impassable
