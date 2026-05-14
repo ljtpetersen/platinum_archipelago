@@ -288,7 +288,7 @@ original_item = "repeat_ball"
 type = "overworld"
 table = "overworld"
 check = 1318
-label = "Route 224 - Top Right item Island"
+label = "Route 224 - Top Right item on Island"
 id = 303
 
 [route_224_pp_max]
@@ -2516,7 +2516,7 @@ original_item = "old_gateau"
 type = "overworld"
 table = "overworld"
 check = 1036
-label = "Old Chateau 2F - Item in Room Left of Entrance"
+label = "Old Chateau 2F - Item in Left Side Room"
 id = 22
 
 [route_205_north_guard_spec]
@@ -4566,7 +4566,7 @@ original_item = "odd_incense"
 type = "overworld"
 table = "overworld"
 check = 1110
-label = "Solaceon Ruins Frendship Room -  Bottom Right Item"
+label = "Solaceon Ruins Frendship Room - Bottom Right Item"
 id = 96
 
 [solaceon_ruins_room_7_nugget]
@@ -5600,7 +5600,7 @@ check = 2955
 original_item = "uunown"
 type = "uunown"
 table = "hidden"
-label = "Solaceon Ruins B4F- Unown File M"
+label = "Solaceon Ruins B4F - Unown File M"
 
 [uunown_n]
 id = 297
@@ -5776,7 +5776,7 @@ check = 317
 original_item = "chimchar_mask"
 type = "accessory"
 table = "base"
-label = "Jubilife City  - Accessory from Man in Jubilife TV 2F"
+label = "Jubilife City - Accessory from Man in Jubilife TV 2F"
 
 [pastoria_city_piplup_mask]
 id = 116
