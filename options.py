@@ -514,6 +514,7 @@ class EncounterSpeciesBlacklist(SpeciesBlacklist):
     then level_happiness must be in logic.
     """
     valid_keys = list(species.keys() - {"kecleon", "geodude"}) + ["legendaries"]
+    display_name = "Encounter Species Blacklist"
 
 class RandomizeTrainerParties(Toggle):
     """Randomize trainer party members."""
@@ -533,7 +534,7 @@ class TrainerPartyBlacklist(SpeciesBlacklist):
     species.
     """
     valid_keys = list(species) + ["legendaries"]
-
+    display_name = "Trainer Party Blacklist"
 
 class RandomizeStarters(Toggle):
     """Randomize starter Pokémon."""
@@ -671,6 +672,7 @@ class AddHMReader(Choice):
     option_itempool = 1
     option_precollected = 2
     default = option_no
+    display_name = "Add HM Reader"
 
 class HMReaderMode(Choice):
     """
@@ -683,6 +685,7 @@ class HMReaderMode(Choice):
     option_req_mon = 0
     option_noreq_mon = 1
     default = option_req_mon
+    display_name = "HM Reader Mode"
 
 class BoatCanalavePastoria(Choice):
     """
@@ -697,6 +700,7 @@ class BoatCanalavePastoria(Choice):
     option_ss_ticket = 2
     option_on = 1
     default = option_off
+    display_name = "Boat Canalave-Pastoria"
 
 class BoatCanalaveSnowpoint(Choice):
     """
@@ -711,6 +715,7 @@ class BoatCanalaveSnowpoint(Choice):
     option_ss_ticket = 2
     option_on = 1
     default = option_off
+    display_name = "Boat Canalave-Snowpoint"
 
 class BoatPastoriaSnowpoint(Choice):
     """
@@ -725,6 +730,7 @@ class BoatPastoriaSnowpoint(Choice):
     option_ss_ticket = 2
     option_on = 1
     default = option_off
+    display_name = "Boat Pastoria-Snowpoint"
 
 class Route207Barricade(Choice):
     """
@@ -767,6 +773,7 @@ class Route207Barricade(Choice):
     option_rock_climb_and_strength_boulder = 0b10010
     option_rock_climb_and_psyduck = 0b10110
     default = option_bicycle_slope
+    display_name = "Route 207 Barricade"
 
 slot_data_options: Sequence[str] = [
     "hms",
@@ -801,6 +808,9 @@ slot_data_options: Sequence[str] = [
 
     "hm_reader",
     "hm_reader_mode",
+    "boat_canalave_pastoria",
+    "boat_canalave_snowpoint",
+    "boat_pastoria_snowpoint",
 
     "randomize_starters",
     "require_two_level_evolution_starters",
@@ -849,6 +859,7 @@ class DeathLinkGroup(FreeText):
     To interface with games which do not support groups, use the empty group "".
     """
     default = ""
+    display_name = "Death Link Group"
 
 @dataclass
 class PokemonPlatinumOptions(PerGameCommonOptions):
