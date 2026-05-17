@@ -221,7 +221,7 @@ class GameOptions(OptionDict):
     battle_scene: on/off - Sets whether the battle animations are shown
     battle_style: shift/set - Sets whether pokemon can be changed when the opponent's pokemon faints
     button_mode: normal/start=x/l=a - Sets the button mode
-    text_frame: 1-20 - Sets the textbox frame. "random" will pick a random frame.
+    text_frame: 1–20 - Sets the textbox frame. "random" will pick a random frame.
     received_items_notification: jingle/nothing/message - Sets the received_items_notification.
     default_player_name: player_name/custom/random/vanilla - Sets the default player name. with player_name, tries to use the AP player name.
     default_rival_name: random/custom/player_name/vanilla - Sets the default rival name. with random, picks from one of the players in the AP.
@@ -233,7 +233,7 @@ class GameOptions(OptionDict):
 
     for the player and rival names, the maximum length is 7 characters, and
     the following characters are accepted:
-    all alphanumeric characters (A-Z, a-z, 0-9),
+    all alphanumeric characters (A–Z, a–z, 0–9),
     and the following symbols: , . ' - : ; ! ? " ( ) ~ @ # % + * / =,
     and as spaces. Additionally, some special characters, for example most accented vowels, are accepted.
 
@@ -700,7 +700,7 @@ class BoatCanalavePastoria(Choice):
     option_ss_ticket = 2
     option_on = 1
     default = option_off
-    display_name = "Boat Canalave-Pastoria"
+    display_name = "Boat Canalave–Pastoria"
 
 class BoatCanalaveSnowpoint(Choice):
     """
@@ -715,7 +715,7 @@ class BoatCanalaveSnowpoint(Choice):
     option_ss_ticket = 2
     option_on = 1
     default = option_off
-    display_name = "Boat Canalave-Snowpoint"
+    display_name = "Boat Canalave–Snowpoint"
 
 class BoatPastoriaSnowpoint(Choice):
     """
@@ -730,7 +730,7 @@ class BoatPastoriaSnowpoint(Choice):
     option_ss_ticket = 2
     option_on = 1
     default = option_off
-    display_name = "Boat Pastoria-Snowpoint"
+    display_name = "Boat Pastoria–Snowpoint"
 
 class Route207Barricade(Choice):
     """
