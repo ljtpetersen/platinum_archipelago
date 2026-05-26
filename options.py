@@ -221,7 +221,7 @@ class GameOptions(OptionDict):
     battle_scene: on/off - Sets whether the battle animations are shown
     battle_style: shift/set - Sets whether pokemon can be changed when the opponent's pokemon faints
     button_mode: normal/start=x/l=a - Sets the button mode
-    text_frame: 1-20 - Sets the textbox frame. "random" will pick a random frame.
+    text_frame: 1–20 - Sets the textbox frame. "random" will pick a random frame.
     received_items_notification: jingle/nothing/message - Sets the received_items_notification.
     default_player_name: player_name/custom/random/vanilla - Sets the default player name. with player_name, tries to use the AP player name.
     default_rival_name: random/custom/player_name/vanilla - Sets the default rival name. with random, picks from one of the players in the AP.
@@ -233,7 +233,7 @@ class GameOptions(OptionDict):
 
     for the player and rival names, the maximum length is 7 characters, and
     the following characters are accepted:
-    all alphanumeric characters (A-Z, a-z, 0-9),
+    all alphanumeric characters (A–Z, a–z, 0–9),
     and the following symbols: , . ' - : ; ! ? " ( ) ~ @ # % + * / =,
     and as spaces. Additionally, some special characters, for example most accented vowels, are accepted.
 
@@ -514,6 +514,7 @@ class EncounterSpeciesBlacklist(SpeciesBlacklist):
     then level_happiness must be in logic.
     """
     valid_keys = list(species.keys() - {"kecleon", "geodude"}) + ["legendaries"]
+    display_name = "Encounter Species Blacklist"
 
 class RandomizeTrainerParties(Toggle):
     """Randomize trainer party members."""
@@ -533,7 +534,7 @@ class TrainerPartyBlacklist(SpeciesBlacklist):
     species.
     """
     valid_keys = list(species) + ["legendaries"]
-
+    display_name = "Trainer Party Blacklist"
 
 class RandomizeStarters(Toggle):
     """Randomize starter Pokémon."""
@@ -671,6 +672,7 @@ class AddHMReader(Choice):
     option_itempool = 1
     option_precollected = 2
     default = option_no
+    display_name = "Add HM Reader"
 
 class HMReaderMode(Choice):
     """
@@ -683,6 +685,7 @@ class HMReaderMode(Choice):
     option_req_mon = 0
     option_noreq_mon = 1
     default = option_req_mon
+    display_name = "HM Reader Mode"
 
 class BoatCanalavePastoria(Choice):
     """
@@ -697,6 +700,7 @@ class BoatCanalavePastoria(Choice):
     option_ss_ticket = 2
     option_on = 1
     default = option_off
+    display_name = "Boat Canalave–Pastoria"
 
 class BoatCanalaveSnowpoint(Choice):
     """
@@ -711,6 +715,7 @@ class BoatCanalaveSnowpoint(Choice):
     option_ss_ticket = 2
     option_on = 1
     default = option_off
+    display_name = "Boat Canalave–Snowpoint"
 
 class BoatPastoriaSnowpoint(Choice):
     """
@@ -725,6 +730,7 @@ class BoatPastoriaSnowpoint(Choice):
     option_ss_ticket = 2
     option_on = 1
     default = option_off
+    display_name = "Boat Pastoria–Snowpoint"
 
 class Route207Barricade(Choice):
     """
@@ -767,6 +773,7 @@ class Route207Barricade(Choice):
     option_rock_climb_and_strength_boulder = 0b10010
     option_rock_climb_and_psyduck = 0b10110
     default = option_bicycle_slope
+    display_name = "Route 207 Barricade"
 
 slot_data_options: Sequence[str] = [
     "hms",
@@ -798,7 +805,10 @@ slot_data_options: Sequence[str] = [
     "can_reset_legendaries_in_ap_helper",
     "evo_items_shop_in_ap_helper",
     "route_207_barricade",
-
+    "boat_canalave_pastoria",
+    "boat_canalave_snowpoint",
+    "boat_pastoria_snowpoint",
+    
     "hm_reader",
     "hm_reader_mode",
 
@@ -849,6 +859,7 @@ class DeathLinkGroup(FreeText):
     To interface with games which do not support groups, use the empty group "".
     """
     default = ""
+    display_name = "Death Link Group"
 
 @dataclass
 class PokemonPlatinumOptions(PerGameCommonOptions):
@@ -884,17 +895,17 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
     start_with_swarms: StartWithSwarms
     can_reset_legendaries_in_ap_helper: CanResetLegendariesInAPHelper
     evo_items_shop_in_ap_helper: EvoItemsShopInAPHelper
-    route_207_barricade: Route207Barricade
 
     pastoria_barriers: PastoriaBarriers
     north_sinnoh_fly: RequireFlyForNorthSinnoh
     early_sunyshore: SunyshoreEarly
-    
-    hm_reader: AddHMReader
-    hm_reader_mode: HMReaderMode
     boat_canalave_pastoria: BoatCanalavePastoria
     boat_canalave_snowpoint: BoatCanalaveSnowpoint
     boat_pastoria_snowpoint: BoatPastoriaSnowpoint
+    route_207_barricade: Route207Barricade
+    
+    hm_reader: AddHMReader
+    hm_reader_mode: HMReaderMode
 
     randomize_starters: RandomizeStarters
     require_two_level_evolution_starters: RequireTwoLevelEvolutionStarters
