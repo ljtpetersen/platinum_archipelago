@@ -128,7 +128,7 @@ original_item = "poke_ball"
 type = "overworld"
 table = "overworld"
 check = 1083
-label = "Great Marsh Area 6 - Item Below Bug Catcher"
+label = "Great Marsh Area 4 - Item Below Bug Catcher"
 id = 69
 
 [great_marsh_4_hyper_potion]
@@ -288,7 +288,7 @@ original_item = "repeat_ball"
 type = "overworld"
 table = "overworld"
 check = 1318
-label = "Route 224 - Item on Island 2"
+label = "Route 224 - Top Right item on Island"
 id = 303
 
 [route_224_pp_max]
@@ -304,7 +304,7 @@ original_item = "ultra_ball"
 type = "overworld"
 table = "overworld"
 check = 1320
-label = "Route 224 - Item on Island 1"
+label = "Route 224 - Bottom Left Item on Island"
 id = 305
 
 [route_224_upgrade]
@@ -536,7 +536,7 @@ original_item = "tinymushroom"
 type = "hidden"
 table = "hidden"
 check = 862
-label = "Route 226 - Hidden Item on Grassy Plateau Near Lake 1"
+label = "Route 226 - Hidden Item on Left Side of Grassy Plateau Near Lake"
 id = 132
 
 [route_226_big_mushroom]
@@ -544,7 +544,7 @@ original_item = "big_mushroom"
 type = "hidden"
 table = "hidden"
 check = 864
-label = "Route 226 - Hidden Item on Grassy Plateau Near Lake 2"
+label = "Route 226 - Hidden Item on Bottom Right of Grassy Plateau Near Lake"
 id = 134
 
 [route_226_pp_max]
@@ -552,7 +552,7 @@ original_item = "pp_max"
 type = "hidden"
 table = "hidden"
 check = 863
-label = "Route 226 - Hidden Item on Grassy Plateau Near Lake 3"
+label = "Route 226 - Hidden Item on Top Right of Grassy Plateau Near Lake"
 id = 133
 
 [route_227_charcoal]
@@ -752,7 +752,7 @@ original_item = "full_restore"
 type = "overworld"
 table = "overworld"
 check = 1205
-label = "Victory Road Foggy Basement - NW Strength Boulders Item 1"
+label = "Victory Road Foggy Basement - NW Strength Boulders Bottom Item"
 id = 191
 
 [victory_road_1f_room_2_dusk_stone]
@@ -760,7 +760,7 @@ original_item = "dusk_stone"
 type = "overworld"
 table = "overworld"
 check = 1206
-label = "Victory Road Foggy Basement - NW Strength Boulders Item 2"
+label = "Victory Road Foggy Basement - NW Strength Boulders Top Item"
 id = 192
 
 [victory_road_1f_room_2_leftovers]
@@ -1140,7 +1140,7 @@ original_item = "pearl"
 type = "hidden"
 table = "hidden"
 check = 758
-label = "Route 213 - Hidden Item Below Footstep's House 1"
+label = "Route 213 - Hidden Item SE Below Footstep's House"
 id = 28
 
 [route_213_hyper_potion]
@@ -1180,7 +1180,7 @@ original_item = "heart_scale"
 type = "hidden"
 table = "hidden"
 check = 914
-label = "Route 213 - Hidden Item on Beach East Side 2"
+label = "Route 213 - Hidden Item on Bottom Right of Eastern Beach"
 id = 184
 
 [route_213_big_pearl_0]
@@ -1196,7 +1196,7 @@ original_item = "heart_scale"
 type = "hidden"
 table = "hidden"
 check = 916
-label = "Route 213 - Hidden Item Below Footstep's House 2"
+label = "Route 213 - Hidden Item By the Coast Below Footstep's House"
 id = 186
 
 [route_213_suite_key]
@@ -1212,7 +1212,7 @@ original_item = "pearl"
 type = "hidden"
 table = "hidden"
 check = 988
-label = "Route 213 - Hidden Item on Beach East Side 1"
+label = "Route 213 - Hidden Item on Right side of Eastern Beach"
 id = 258
 
 [route_219_antidote]
@@ -1428,7 +1428,7 @@ original_item = "dawn_stone"
 type = "hidden"
 table = "hidden"
 check = 756
-label = "Route 212 South - Hidden Item in Mud Near Pastoria 3"
+label = "Route 212 South - Hidden Item in Left Side of Mud Near Pastoria"
 id = 26
 
 [route_212_south_full_heal_0]
@@ -1452,7 +1452,7 @@ original_item = "hyper_potion"
 type = "hidden"
 table = "hidden"
 check = 754
-label = "Route 212 South - Hidden Item in Mud Near Pastoria 1"
+label = "Route 212 South - Hidden Item in Bottom Right of Mud Near Pastoria"
 id = 24
 
 [route_212_south_max_repel]
@@ -1468,7 +1468,7 @@ original_item = "ultra_ball"
 type = "hidden"
 table = "hidden"
 check = 752
-label = "Route 212 South - Hidden Item in Mud Near Pastoria 2"
+label = "Route 212 South - Hidden Item in Top Right of Mud Near Pastoria"
 id = 22
 
 [route_212_south_big_mushroom]
@@ -2084,7 +2084,7 @@ original_item = "full_restore"
 type = "hidden"
 table = "hidden"
 check = 839
-label = "Route 222 - Hidden Item in Grass Below Fence 1"
+label = "Route 222 - Hidden Item in Grass Below Fence on the left"
 id = 109
 
 [route_222_pp_up_0]
@@ -2100,7 +2100,7 @@ original_item = "tinymushroom"
 type = "hidden"
 table = "hidden"
 check = 887
-label = "Route 222 - Hidden Item in Grass Below Fence 2"
+label = "Route 222 - Hidden Item in Grass Below Fence on the Right"
 id = 157
 
 [route_222_ultra_ball]
@@ -2516,7 +2516,7 @@ original_item = "old_gateau"
 type = "overworld"
 table = "overworld"
 check = 1036
-label = "Old Chateau 2F - Item in Room Left of Entrance"
+label = "Old Chateau 2F - Item in Left Side Room"
 id = 22
 
 [route_205_north_guard_spec]
@@ -2780,7 +2780,7 @@ original_item = "magmarizer"
 type = "overworld"
 table = "overworld"
 check = 1332
-label = "Route 214 - Route 214 - Item Near Breakable Rocks"
+label = "Route 214 - Item Near Breakable Rocks"
 id = 317
 
 [route_214_carbos]
@@ -3366,7 +3366,7 @@ original_item = "blue_shard"
 type = "hidden"
 table = "hidden"
 check = 819
-label = "Mt. Coronet Outside 1 - Hidden Item Behind Breakable Rock"
+label = "Mt. Coronet Outside South - Hidden Item Behind Breakable Rock"
 id = 89
 
 [mt_coronet_outside_south_max_potion]
@@ -3374,7 +3374,7 @@ original_item = "max_potion"
 type = "hidden"
 table = "hidden"
 check = 820
-label = "Mt. Coronet Outside 1 - Hidden Item in SE Grass"
+label = "Mt. Coronet Outside South - Hidden Item in SE Grass"
 id = 90
 
 [mt_coronet_outside_south_revival_herb]
@@ -3382,7 +3382,7 @@ original_item = "revival_herb"
 type = "hidden"
 table = "hidden"
 check = 990
-label = "Mt. Coronet Outside 1 - Hidden Item in Big Grass Patch"
+label = "Mt. Coronet Outside South - Hidden Item in Big Grass Patch"
 id = 260
 
 [mt_coronet_outside_south_energy_root]
@@ -3390,7 +3390,7 @@ original_item = "energy_root"
 type = "hidden"
 table = "hidden"
 check = 999
-label = "Mt. Coronet Outside 1 - Hidden Item in Grass Above Upper Rock Climb Slope"
+label = "Mt. Coronet Outside South - Hidden Item in Grass Above Upper Rock Climb Slope"
 id = 269
 
 [mt_coronet_4f_rooms_1_and_2_adamant_orb]
@@ -3398,7 +3398,7 @@ original_item = "adamant_orb"
 type = "overworld"
 table = "overworld"
 check = 1051
-label = "Mt. Coronet 4F Room Above Waterfall - Item 1"
+label = "Mt. Coronet 4F Room Above Waterfall - Right Item"
 id = 37
 
 [mt_coronet_4f_rooms_1_and_2_lustrous_orb]
@@ -3406,7 +3406,7 @@ original_item = "lustrous_orb"
 type = "overworld"
 table = "overworld"
 check = 1053
-label = "Mt. Coronet 4F Room Above Waterfall - Item 2"
+label = "Mt. Coronet 4F Room Above Waterfall - Left Item"
 id = 39
 
 [mt_coronet_4f_rooms_1_and_2_sun_stone]
@@ -3478,7 +3478,7 @@ original_item = "stardust"
 type = "hidden"
 table = "hidden"
 check = 815
-label = "Mt. Coronet Outside 2 - Hidden Item on Northmost Rock"
+label = "Mt. Coronet Outside North - Hidden Item on Northmost Rock"
 id = 85
 
 [mt_coronet_outside_north_full_restore]
@@ -3486,7 +3486,7 @@ original_item = "full_restore"
 type = "hidden"
 table = "hidden"
 check = 816
-label = "Mt. Coronet Outside 2 - Hidden Item on Ledge Without Grass"
+label = "Mt. Coronet Outside North - Hidden Item on Ledge Without Grass"
 id = 86
 
 [mt_coronet_outside_north_moon_stone]
@@ -3494,7 +3494,7 @@ original_item = "moon_stone"
 type = "hidden"
 table = "hidden"
 check = 818
-label = "Mt. Coronet Outside 2 - Hidden Item on Rock in Grass"
+label = "Mt. Coronet Outside North - Hidden Item on Rock in Grass"
 id = 88
 
 [mt_coronet_outside_north_revival_herb]
@@ -3502,7 +3502,7 @@ original_item = "revival_herb"
 type = "hidden"
 table = "hidden"
 check = 992
-label = "Mt. Coronet Outside 2 - Hidden Item in Grass North of Strength Boulder"
+label = "Mt. Coronet Outside North - Hidden Item in Grass North of Strength Boulder"
 id = 262
 
 [mt_coronet_outside_north_energy_root]
@@ -3510,7 +3510,7 @@ original_item = "energy_root"
 type = "hidden"
 table = "hidden"
 check = 1000
-label = "Mt. Coronet Outside 2 - Hidden Item in Corner By NW Exit"
+label = "Mt. Coronet Outside North - Hidden Item in Corner By NW Exit"
 id = 270
 
 [galactic_hq_2f_max_revive]
@@ -4182,7 +4182,7 @@ original_item = "revive"
 type = "overworld"
 table = "overworld"
 check = 1292
-label = "Team Galactic Eterna Building 4F - Dead End Item 2"
+label = "Team Galactic Eterna Building 4F - Right Dead End Item"
 id = 277
 
 [team_galactic_eterna_building_4f_blue_shard]
@@ -4190,7 +4190,7 @@ original_item = "blue_shard"
 type = "overworld"
 table = "overworld"
 check = 1279
-label = "Team Galactic Eterna Building 4F - Dead End Item 1"
+label = "Team Galactic Eterna Building 4F - Left Dead End Item"
 id = 264
 
 [team_galactic_eterna_building_4f_upgrade]
@@ -4558,7 +4558,7 @@ original_item = "mind_plate"
 type = "overworld"
 table = "overworld"
 check = 1109
-label = "Solaceon Ruins B5F - FRIENDSHIP Room Bottom Left Item"
+label = "Solaceon Ruins Frendship Room - Bottom Left Item"
 id = 95
 
 [solaceon_ruins_room_7_odd_incense]
@@ -4566,7 +4566,7 @@ original_item = "odd_incense"
 type = "overworld"
 table = "overworld"
 check = 1110
-label = "Solaceon Ruins B5F - FRIENDSHIP Room Bottom Right Item"
+label = "Solaceon Ruins Frendship Room - Bottom Right Item"
 id = 96
 
 [solaceon_ruins_room_7_nugget]
@@ -4574,7 +4574,7 @@ original_item = "nugget"
 type = "overworld"
 table = "overworld"
 check = 1111
-label = "Solaceon Ruins B5F - FRIENDSHIP Room Top Left Item"
+label = "Solaceon Ruins Frendship Room - Top Left Item"
 id = 97
 
 [solaceon_ruins_room_7_hm05]
@@ -4582,7 +4582,7 @@ original_item = "hm05"
 type = "hm"
 table = "overworld"
 check = 1112
-label = "Solaceon Ruins B5F - FRIENDSHIP Room Top Right Item"
+label = "Solaceon Ruins Frendship Room - Top Right Item"
 id = 98
 
 [oreburgh_city_gym_coal_badge]
@@ -4826,7 +4826,7 @@ original_item = "potion"
 type = "npc_gift"
 table = "base"
 check = 108
-label = "Route 201 - Potion from Poke Mart Employee"
+label = "Route 201 - Gift from Poke Mart Employee"
 id = 28
 
 [sandgem_town_pokemon_research_lab_pokedex]
@@ -4997,7 +4997,7 @@ original_item = "dusk_ball"
 type = "npc_gift"
 table = "base"
 check = 192
-label = "Oreburgh City - Lass in Northwest Building"
+label = "Oreburgh City - Gift from Lass in Northwest Building"
 id = 48
 
 [oreburgh_city_north_house_2f_heal_ball]
@@ -5069,7 +5069,7 @@ original_item = "tm88"
 type = "npc_gift"
 table = "base"
 check = 131
-label = "Floaroma Town - Girl in Northwest House"
+label = "Floaroma Town - Gift from Girl in Northwest House"
 id = 57
 
 [flower_shop_sprayduck]
@@ -5085,7 +5085,7 @@ original_item = "star_piece"
 type = "npc_gift"
 table = "base"
 check = 312
-label = "Fuego Ironworks - Star Piece from Mr. Fuego"
+label = "Fuego Ironworks - Gift from Mr. Fuego"
 id = 59
 
 [eterna_forest_soothe_bell]
@@ -5093,7 +5093,7 @@ original_item = "soothe_bell"
 type = "npc_gift"
 table = "base"
 check = 227
-label = "Eterna Forest - Soothe Bell from Cheryl"
+label = "Eterna Forest - Gift from Cheryl"
 id = 60
 
 [eterna_city_pokecenter_1f_friendshipchecker]
@@ -5117,7 +5117,7 @@ original_item = "upgrade"
 type = "npc_gift"
 table = "base"
 check = 281
-label = "Eterna City - Up-Grade from Prof Oak"
+label = "Eterna City - Gift from Prof Oak"
 id = 63
 
 [route_206_cycling_road_north_gate_exp_share]
@@ -5153,7 +5153,7 @@ original_item = "odd_keystone"
 type = "npc_gift"
 table = "base"
 check = 319
-label = "Route 208 - Black Belt Near Honey Tree"
+label = "Route 208 - Gift from Black Belt Near Honey Tree"
 id = 67
 
 [route_208_house_berrysearcher]
@@ -5218,7 +5218,7 @@ check = 210
 original_item = "green_shard"
 type = "npc_gift"
 table = "base"
-label = "Solaceon Ruins B2F - Gift for Lending Defog to Hiker"
+label = "Solaceon Ruins B1F - Gift for Lending Defog to Hiker"
 
 [solaceon_town_east_house_seal_case]
 id = 76
@@ -5297,7 +5297,7 @@ id = 85
 original_item = "master_ball"
 type = "npc_gift"
 table = "base"
-label = "Galactic HQ 4F Cyrus' Office- Master Ball from Cyrus"
+label = "Galactic HQ 4F Cyrus' Office - Master Ball from Cyrus"
 
 [galactic_hq_master_ball.check]
 id = 16598
@@ -5341,7 +5341,7 @@ check = 313
 original_item = "soothe_bell"
 type = "npc_gift"
 table = "base"
-label = "Pokemon Mansion - Soothe Bell from Maid in Center Bedroom"
+label = "Pokemon Mansion - Gift from Maid in Center Bedroom"
 
 [canalave_city_southeast_house_tm48]
 id = 91
@@ -5357,7 +5357,7 @@ check = 285
 original_item = "metal_coat"
 type = "npc_gift"
 table = "base"
-label = "Iron Island - Metal Coat from Byron"
+label = "Iron Island - Gift from Byron"
 
 [route_217_west_house_icicle_plate]
 id = 93
@@ -5373,7 +5373,7 @@ check = 315
 original_item = "spell_tag"
 type = "npc_gift"
 table = "base"
-label = "Route 217 - Spell Tag from Ghost Woman"
+label = "Route 217 - Gift from Ghost Woman"
 
 [mt_coronet_outside_north_star_piece]
 id = 84
@@ -5381,7 +5381,7 @@ check = 814
 original_item = "star_piece"
 type = "hidden"
 table = "hidden"
-label = "Mt. Coronet Outside 2 - Hidden Item in Corner Behind Breakable Rock"
+label = "Mt. Coronet Outside North - Hidden Item in Corner Behind Breakable Rock"
 
 [mt_coronet_outside_north_star_piece_0]
 id = 92
@@ -5389,7 +5389,7 @@ check = 822
 original_item = "star_piece"
 type = "hidden"
 table = "hidden"
-label = "Mt. Coronet Outside 1 - Hidden Item on Rock in Grass Above Upper Rock Climb Slope"
+label = "Mt. Coronet Outside South - Hidden Item on Rock in Grass Above Upper Rock Climb Slope"
 
 [route_222_tm56]
 id = 95
@@ -5485,7 +5485,7 @@ check = 261
 original_item = "sticky_barb"
 type = "npc_gift"
 table = "base"
-label = "Veilstone Department Store 5F - Sticky Barb"
+label = "Veilstone Department Store 5F - Gift from the Two Men"
 
 [pokecenter_b1f_pal_pad]
 id = 108
@@ -5504,7 +5504,7 @@ check = 2943
 original_item = "uunown"
 type = "uunown"
 table = "hidden"
-label = "Solaceon Ruins - Unown File A"
+label = "Solaceon Ruins B1F - Unown File A"
 
 [uunown_b]
 id = 285
@@ -5512,7 +5512,7 @@ check = 2944
 original_item = "uunown"
 type = "uunown"
 table = "hidden"
-label = "Solaceon Ruins - Unown File B"
+label = "Solaceon Ruins B1F - Unown File B"
 
 [uunown_c]
 id = 286
@@ -5520,7 +5520,7 @@ check = 2945
 original_item = "uunown"
 type = "uunown"
 table = "hidden"
-label = "Solaceon Ruins - Unown File C"
+label = "Solaceon Ruins B1F - Unown File C"
 
 [uunown_d]
 id = 287
@@ -5528,7 +5528,7 @@ check = 2946
 original_item = "uunown"
 type = "uunown"
 table = "hidden"
-label = "Solaceon Ruins - Unown File D"
+label = "Solaceon Ruins B1F - Unown File D"
 
 [uunown_e]
 id = 288
@@ -5536,7 +5536,7 @@ check = 2947
 original_item = "uunown"
 type = "uunown"
 table = "hidden"
-label = "Solaceon Ruins - Unown File E"
+label = "Solaceon Ruins B2F - Unown File E"
 
 [uunown_f]
 id = 289
@@ -5544,7 +5544,7 @@ check = 2948
 original_item = "uunown"
 type = "uunown"
 table = "hidden"
-label = "Solaceon Ruins - Unown File F"
+label = "Solaceon Ruins B2F - Unown File F"
 
 [uunown_g]
 id = 290
@@ -5552,7 +5552,7 @@ check = 2949
 original_item = "uunown"
 type = "uunown"
 table = "hidden"
-label = "Solaceon Ruins - Unown File G"
+label = "Solaceon Ruins B2F - Unown File G"
 
 [uunown_h]
 id = 291
@@ -5560,7 +5560,7 @@ check = 2950
 original_item = "uunown"
 type = "uunown"
 table = "hidden"
-label = "Solaceon Ruins - Unown File H"
+label = "Solaceon Ruins B2F - Unown File H"
 
 [uunown_i]
 id = 292
@@ -5568,7 +5568,7 @@ check = 2951
 original_item = "uunown"
 type = "uunown"
 table = "hidden"
-label = "Solaceon Ruins - Unown File I"
+label = "Solaceon Ruins B3F - Unown File I"
 
 [uunown_j]
 id = 293
@@ -5576,7 +5576,7 @@ check = 2952
 original_item = "uunown"
 type = "uunown"
 table = "hidden"
-label = "Solaceon Ruins - Unown File J"
+label = "Solaceon Ruins B3F - Unown File J"
 
 [uunown_k]
 id = 294
@@ -5584,7 +5584,7 @@ check = 2953
 original_item = "uunown"
 type = "uunown"
 table = "hidden"
-label = "Solaceon Ruins - Unown File K"
+label = "Solaceon Ruins B3F - Unown File K"
 
 [uunown_l]
 id = 295
@@ -5592,7 +5592,7 @@ check = 2954
 original_item = "uunown"
 type = "uunown"
 table = "hidden"
-label = "Solaceon Ruins - Unown File L"
+label = "Solaceon Ruins B3F - Unown File L"
 
 [uunown_m]
 id = 296
@@ -5600,7 +5600,7 @@ check = 2955
 original_item = "uunown"
 type = "uunown"
 table = "hidden"
-label = "Solaceon Ruins - Unown File M"
+label = "Solaceon Ruins B4F - Unown File M"
 
 [uunown_n]
 id = 297
@@ -5608,7 +5608,7 @@ check = 2956
 original_item = "uunown"
 type = "uunown"
 table = "hidden"
-label = "Solaceon Ruins - Unown File N"
+label = "Solaceon Ruins B4F - Unown File N"
 
 [uunown_o]
 id = 298
@@ -5616,7 +5616,7 @@ check = 2957
 original_item = "uunown"
 type = "uunown"
 table = "hidden"
-label = "Solaceon Ruins - Unown File O"
+label = "Solaceon Ruins B5F - Unown File O"
 
 [uunown_p]
 id = 299
@@ -5624,7 +5624,7 @@ check = 2958
 original_item = "uunown"
 type = "uunown"
 table = "hidden"
-label = "Solaceon Ruins - Unown File P"
+label = "Solaceon Ruins B5F - Unown File P"
 
 [uunown_q]
 id = 300
@@ -5632,7 +5632,7 @@ check = 2959
 original_item = "uunown"
 type = "uunown"
 table = "hidden"
-label = "Solaceon Ruins - Unown File Q"
+label = "Solaceon Ruins B3F - Unown File Q"
 
 [uunown_r]
 id = 301
@@ -5640,7 +5640,7 @@ check = 2960
 original_item = "uunown"
 type = "uunown"
 table = "hidden"
-label = "Solaceon Ruins - Unown File R"
+label = "Solaceon Ruins B3F - Unown File R"
 
 [uunown_s]
 id = 302
@@ -5648,7 +5648,7 @@ check = 2961
 original_item = "uunown"
 type = "uunown"
 table = "hidden"
-label = "Solaceon Ruins - Unown File S"
+label = "Solaceon Ruins B4F - Unown File S"
 
 [uunown_t]
 id = 303
@@ -5656,7 +5656,7 @@ check = 2962
 original_item = "uunown"
 type = "uunown"
 table = "hidden"
-label = "Solaceon Ruins - Unown File T"
+label = "Solaceon Ruins B4F - Unown File T"
 
 [uunown_u]
 id = 304
@@ -5664,7 +5664,7 @@ check = 2963
 original_item = "uunown"
 type = "uunown"
 table = "hidden"
-label = "Solaceon Ruins - Unown File U"
+label = "Solaceon Ruins Friendship Room - Unown File U"
 
 [uunown_v]
 id = 305
@@ -5672,7 +5672,7 @@ check = 2964
 original_item = "uunown"
 type = "uunown"
 table = "hidden"
-label = "Solaceon Ruins - Unown File V"
+label = "Solaceon Ruins B3F - Unown File V"
 
 [uunown_w]
 id = 306
@@ -5680,7 +5680,7 @@ check = 2965
 original_item = "uunown"
 type = "uunown"
 table = "hidden"
-label = "Solaceon Ruins - Unown File W"
+label = "Solaceon Ruins B4F - Unown File W"
 
 [uunown_x]
 id = 307
@@ -5688,7 +5688,7 @@ check = 2966
 original_item = "uunown"
 type = "uunown"
 table = "hidden"
-label = "Solaceon Ruins - Unown File X"
+label = "Solaceon Ruins B3F - Unown File X"
 
 [uunown_y]
 id = 308
@@ -5696,7 +5696,7 @@ check = 2967
 original_item = "uunown"
 type = "uunown"
 table = "hidden"
-label = "Solaceon Ruins - Unown File Y"
+label = "Solaceon Ruins B2F - Unown File Y"
 
 [uunown_z]
 id = 309
@@ -5704,7 +5704,7 @@ check = 2968
 original_item = "uunown"
 type = "uunown"
 table = "hidden"
-label = "Solaceon Ruins - Unown File Z"
+label = "Solaceon Ruins B1F - Unown File Z"
 
 [uunown_ex]
 id = 310
@@ -5712,7 +5712,7 @@ check = 2969
 original_item = "uunown"
 type = "uunown"
 table = "hidden"
-label = "Solaceon Ruins - Unown File !"
+label = "Solaceon Ruins 2F - Unown File !"
 
 [uunown_qu]
 id = 311
@@ -5720,7 +5720,7 @@ check = 2970
 original_item = "uunown"
 type = "uunown"
 table = "hidden"
-label = "Solaceon Ruins - Unown File ?"
+label = "Solaceon Ruins 2F - Unown File ?"
 
 [fight_area_mart_scope_lens]
 id = 109
@@ -5768,7 +5768,7 @@ check = 299
 original_item = "flag"
 type = "accessory"
 table = "base"
-label = "Cycling Road South Gate - Flag"
+label = "Route 206 - Accessory from NPC in Cycling Road South Gate"
 
 [jubilife_tv_2f_chimchar_mask]
 id = 115
@@ -5776,7 +5776,7 @@ check = 317
 original_item = "chimchar_mask"
 type = "accessory"
 table = "base"
-label = "Jubilife City - Mask from Man in Jubilife TV 2F"
+label = "Jubilife City - Accessory from Man in Jubilife TV 2F"
 
 [pastoria_city_piplup_mask]
 id = 116
@@ -5784,7 +5784,7 @@ check = 296
 original_item = "piplup_mask"
 type = "accessory"
 table = "base"
-label = "Pastoria City - Gift from Parasol Lady"
+label = "Pastoria City - Accessory from Parasol Lady"
 
 [veilstone_store_1f_turtwig_mask]
 id = 117
@@ -5792,7 +5792,7 @@ check = 297
 original_item = "turtwig_mask"
 type = "accessory"
 table = "base"
-label = "Veilstone Department Store 1F - Turtwig Mask"
+label = "Veilstone Department Store 1F - Accessory from Socialite"
 
 [veilstone_city_southwest_house_accessory]
 id = 0
@@ -5816,7 +5816,7 @@ original_item = [
 ]
 table = "once"
 type = "accessory"
-label = "Veilstone City - Random Accessory from Massage Girl"
+label = "Veilstone City - Accessory from Massage Girl"
 
 [veilstone_city_southwest_house_accessory.check]
 id = 0
@@ -5827,7 +5827,7 @@ id = 118
 original_item = "glitter_powder"
 type = "accessory"
 table = "base"
-label = "Hearthome City - Glitter Powder gift in Contest Hall"
+label = "Hearthome City - Accessory from Keira in Contest Hall"
 
 [contest_hall_lobby_glitter_powder.check]
 id = 16631
@@ -5855,7 +5855,7 @@ original_item = [
 ]
 type = "npc_gift"
 table = "once"
-label = "Amity Square - Random Berry or Accessory"
+label = "Amity Square - (Right) Gift From Man in Random Spot"
 
 [amity_square_gift.check]
 id = 1
@@ -5867,7 +5867,7 @@ check = 298
 original_item = "big_tree"
 type = "accessory"
 table = "base"
-label = "Eterna Forest Side Route - Big Tree from Woman"
+label = "Eterna Forest Side Route - Accessory from Woman"
 
 [flower_shop_berry]
 id = 2
@@ -5880,7 +5880,7 @@ original_item = [
 ]
 type = "npc_gift"
 table = "once"
-label = "Floaroma Town - Daily Berry from Flower Shop"
+label = "Floaroma Town - Gift from Flower Shop"
 
 [flower_shop_berry.check]
 id = 2
@@ -5922,7 +5922,7 @@ original_item = [
 ]
 type = "npc_gift"
 table = "once"
-label = "Route 208 - Random Berry from Berry Master in House"
+label = "Route 208 - Gift from Berry Master in House"
 
 [route_208_house_berry.check]
 id = 3
@@ -5944,7 +5944,7 @@ id = 328
 table = "overworld"
 type = "bag"
 check = 0xB9C
-label = "Twinleaf Town - Bag in Player's Bedroom"
+label = "Twinleaf Town - Item in Player's Bedroom"
 original_item = "bag"
 
 [jubilife_city_firered_cartridge]
@@ -5952,7 +5952,7 @@ id = 120
 original_item = "firered_cartridge"
 type = "cartridge"
 table = "base"
-label = "Jubilife City - Fire Red Cartridge from DS Kid"
+label = "Jubilife City - Item from Left DS Kid"
 check = 0xB9D
 
 [jubilife_city_leafgreen_cartridge]
@@ -5960,7 +5960,7 @@ id = 121
 original_item = "leafgreen_cartridge"
 type = "cartridge"
 table = "base"
-label = "Jubilife City - Leaf Green Cartridge from DS Kid"
+label = "Jubilife City - Item from Right DS Kid"
 check = 0xB9E
 
 [jubilife_city_sapphire_cartridge]
@@ -5968,7 +5968,7 @@ id = 122
 original_item = "sapphire_cartridge"
 type = "cartridge"
 table = "base"
-label = "Jubilife City - Sapphire Cartridge from Schoolboy in Southwest Corner"
+label = "Jubilife City - Item from Schoolboy in Southwest Corner"
 check = 0xB9F
 
 [valley_windworks_building_ruby_cartridge]
@@ -5976,7 +5976,7 @@ id = 123
 original_item = "ruby_cartridge"
 type = "cartridge"
 table = "base"
-label = "Valley Windworks - Ruby Cartridge from Scientist After Defeating Mars"
+label = "Valley Windworks - Item from Scientist After Defeating Mars"
 check = { id = 0x4089, value = 2 }
 
 [pal_park_lobby_emerald_cartridge]
@@ -5984,7 +5984,7 @@ id = 124
 check = 0xBA0
 type = "cartridge"
 table = "base"
-label = "Pal Park - Emerald Cartridge from Guy"
+label = "Pal Park - Item from Guy"
 original_item = "emerald_cartridge"
 
 [twinleaf_town_player_house_1f_ss_ticket]
@@ -6000,7 +6000,7 @@ id = 126
 check = { id = 0x407C, value = 4 }
 type = "marsh_pass"
 table = "base"
-label = "Pastoria City - Marsh Pass from Wake (After Defeating Gym)"
+label = "Pastoria City - Item from Wake (After Defeating Gym)"
 original_item = "marsh_pass"
 
 [celestic_town_choice_specs]
@@ -6008,7 +6008,7 @@ id = 127
 check = 0x134
 type = "npc_gift"
 table = "base"
-label = "Celestic Town - Choice Specs from Man in Shop (Morning)"
+label = "Celestic Town - Item from Man in Shop (Morning)"
 original_item = "choice_specs"
 
 [celestic_town_black_glasses]
@@ -6016,7 +6016,7 @@ id = 128
 check = 0x135
 type = "npc_gift"
 table = "base"
-label = "Celestic Town - Black Glasses from Man in Shop (Day)"
+label = "Celestic Town - Item from Man in Shop (Day)"
 original_item = "blackglasses"
 
 [celestic_town_wise_glasses]
@@ -6024,7 +6024,7 @@ id = 129
 check = 0x136
 type = "npc_gift"
 table = "base"
-label = "Celestic Town - Black Glasses from Man in Shop (Night)"
+label = "Celestic Town - Item from Man in Shop (Night)"
 original_item = "wise_glasses"
 
 [vista_lighthouse_daytime]
@@ -6032,7 +6032,7 @@ id = 329
 check = 0xBA2
 type = "time_item"
 table = "overworld"
-label = "Sunyshore City - Daytime in Lighthouse"
+label = "Sunyshore City - Item in Lighthouse"
 original_item = "daytime"
 
 [spear_pillar_nighttime]
@@ -6040,7 +6040,7 @@ id = 330
 check = 0xBA3
 type = "time_item"
 table = "overworld"
-label = "Spear Pillar - Nighttime"
+label = "Spear Pillar - Item Before Stairs"
 original_item = "nighttime"
 
 [snowpoint_temple_b3f_tm94]
@@ -6048,7 +6048,7 @@ id = 331
 check = 0xBA4
 type = "overworld"
 table = "overworld"
-label = "Snowpoint Temple B3F - TM94 (Overworld Item)"
+label = "Snowpoint Temple B3F - Bottom left Item"
 original_item = "tm94"
 
 [fuego_ironworks_building_tm93]
@@ -6056,7 +6056,7 @@ id = 332
 check = 0xBA5
 type = "overworld"
 table = "overworld"
-label = "Fuego Ironworks - TM93 (Overworld Item)"
+label = "Fuego Ironworks - Bottom Right Item in Front of Blue Crate"
 original_item = "tm93"
 
 [old_chateau_side_rooms_tm96]
@@ -6064,7 +6064,7 @@ id = 333
 check = 0xBA6
 type = "overworld"
 table = "overworld"
-label = "Old Chateau - TM96 (In Right Side Room)"
+label = "Old Chateau 2F - Item in Right Side Room"
 original_item = "tm96"
 
 [eterna_forest_tm95]
@@ -6072,7 +6072,7 @@ id = 334
 check = 0xBA7
 type = "overworld"
 table = "overworld"
-label = "Eterna Forest - TM95 (By Mossy Rock)"
+label = "Eterna Forest - Item by Mossy Rock"
 original_item = "tm95"
 
 [galactic_hq_b1f_linking_cord]
@@ -6080,5 +6080,5 @@ id = 335
 check = 0xBA8
 type = "key_item"
 table = "overworld"
-label = "Galactic HQ B1F - Linking Cord (In First Basement)"
+label = "Galactic HQ B1F - Item By Machine"
 original_item = "linking_cord"
