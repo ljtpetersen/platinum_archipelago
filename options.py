@@ -805,12 +805,12 @@ slot_data_options: Sequence[str] = [
     "can_reset_legendaries_in_ap_helper",
     "evo_items_shop_in_ap_helper",
     "route_207_barricade",
-
-    "hm_reader",
-    "hm_reader_mode",
     "boat_canalave_pastoria",
     "boat_canalave_snowpoint",
     "boat_pastoria_snowpoint",
+    
+    "hm_reader",
+    "hm_reader_mode",
 
     "randomize_starters",
     "require_two_level_evolution_starters",
@@ -895,17 +895,17 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
     start_with_swarms: StartWithSwarms
     can_reset_legendaries_in_ap_helper: CanResetLegendariesInAPHelper
     evo_items_shop_in_ap_helper: EvoItemsShopInAPHelper
-    route_207_barricade: Route207Barricade
 
     pastoria_barriers: PastoriaBarriers
     north_sinnoh_fly: RequireFlyForNorthSinnoh
     early_sunyshore: SunyshoreEarly
-    
-    hm_reader: AddHMReader
-    hm_reader_mode: HMReaderMode
     boat_canalave_pastoria: BoatCanalavePastoria
     boat_canalave_snowpoint: BoatCanalaveSnowpoint
     boat_pastoria_snowpoint: BoatPastoriaSnowpoint
+    route_207_barricade: Route207Barricade
+    
+    hm_reader: AddHMReader
+    hm_reader_mode: HMReaderMode
 
     randomize_starters: RandomizeStarters
     require_two_level_evolution_starters: RequireTwoLevelEvolutionStarters
