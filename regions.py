@@ -195,7 +195,4 @@ def create_regions(world: "PokemonPlatinumWorld") -> Tuple[Mapping[str, Region],
             location.show_in_spoiler = False
             roamreg.locations.append(location)
 
-    regions["Menu"] = Region("Menu", world.player, world.multiworld)
-    regions["Menu"].connect(regions["twinleaf_town_player_house_2f"], "Start Game")
-
     return (regions, trainers)

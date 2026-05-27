@@ -9,7 +9,7 @@ from dataclasses import dataclass
 from typing import Dict, TYPE_CHECKING
 
 from .data import items as itemdata, locations as locationdata, regions as regiondata, trainers as trainerdata, species as speciesdata
-from .options import PokemonPlatinumOptions, RandomizeKeyItems, RemoteItems, UnownsOption
+from .options import PokemonPlatinumOptions, RandomizeFlyItems, RandomizeKeyItems, RemoteItems, UnownsOption
 
 if TYPE_CHECKING:
     from . import PokemonPlatinumWorld
@@ -52,6 +52,14 @@ location_types: Mapping[str, LocationType] = {
     "marsh_pass": LocationType(
         is_enabled = lambda opts : opts.marsh_pass == 1,
         should_be_added = lambda opts : opts.marsh_pass == 1
+    ),
+    "fly_location": LocationType(
+        is_enabled = lambda opts : opts.randomize_fly_items.value != 0,
+        should_be_added = lambda opts : opts.randomize_fly_items.value != 0 or opts.require_fly_items_for_flight.value == 1,
+    ),
+    "fly_location_league": LocationType(
+        is_enabled = lambda opts : opts.randomize_fly_items.value == RandomizeFlyItems.option_all,
+        should_be_added = lambda opts : opts.randomize_fly_items.value == RandomizeFlyItems.option_all or opts.require_fly_items_for_flight.value == 1,
     ),
 }
 

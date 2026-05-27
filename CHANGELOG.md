@@ -44,6 +44,7 @@ appropriately.
 * The boat can now be taken between Canalave City, Pastoria City, and Snowpoint City.
 * More options for roadblocks in Route 207.
 * A Poketch app to modify the camera type and make the player invisible.
+* An option to include fly regions as locations.
 ### Changed
 * In-game game options option is now validated before generation.
 * Some evolution stones have been key-itemified, and are no longer consumed when used.

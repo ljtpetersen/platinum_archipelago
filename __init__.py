@@ -61,6 +61,8 @@ class PokemonPlatinumWorld(World):
     location_name_to_id = create_location_label_to_code_map()
     item_name_groups = get_item_groups()
 
+    origin_region_name = "virt_start"
+
     required_locations: RequiredLocations
 
     generated_starters: Tuple[str, str, str]

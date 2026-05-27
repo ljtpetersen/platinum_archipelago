@@ -6082,3 +6082,163 @@ type = "key_item"
 table = "overworld"
 label = "Galactic HQ B1F - Item By Machine"
 original_item = "linking_cord"
+
+[fly_twinleaf_town]
+id = 130
+check = 0xBC4
+type = "fly_location"
+table = "base"
+label = "Twinleaf Town Fly Region"
+original_item = "fly_twinleaf_town"
+
+[fly_sandgem_town]
+id = 131
+check = 0xBC5
+type = "fly_location"
+table = "base"
+label = "Sandgem Town Fly Region"
+original_item = "fly_sandgem_town"
+
+[fly_floaroma_town]
+id = 132
+check = 0xBC6
+type = "fly_location"
+table = "base"
+label = "Floaroma Town Fly Region"
+original_item = "fly_floaroma_town"
+
+[fly_solaceon_town]
+id = 133
+check = 0xBC7
+type = "fly_location"
+table = "base"
+label = "Solaceon Town Fly Region"
+original_item = "fly_solaceon_town"
+
+[fly_celestic_town]
+id = 134
+check = 0xBC8
+type = "fly_location"
+table = "base"
+label = "Celestic Town Fly Region"
+original_item = "fly_celestic_town"
+
+[fly_jubilife_city]
+id = 135
+check = 0xBC9
+type = "fly_location"
+table = "base"
+label = "Jubilife City Fly Region"
+original_item = "fly_jubilife_city"
+
+[fly_canalave_city]
+id = 136
+check = 0xBCA
+type = "fly_location"
+table = "base"
+label = "Canalave City Fly Region"
+original_item = "fly_canalave_city"
+
+[fly_oreburgh_city]
+id = 137
+check = 0xBCB
+type = "fly_location"
+table = "base"
+label = "Oreburgh City Fly Region"
+original_item = "fly_oreburgh_city"
+
+[fly_eterna_city]
+id = 138
+check = 0xBCC
+type = "fly_location"
+table = "base"
+label = "Eterna City Fly Region"
+original_item = "fly_eterna_city"
+
+[fly_hearthome_city]
+id = 139
+check = 0xBCD
+type = "fly_location"
+table = "base"
+label = "Hearthome City Fly Region"
+original_item = "fly_hearthome_city"
+
+[fly_pastoria_city]
+id = 140
+check = 0xBCE
+type = "fly_location"
+table = "base"
+label = "Pastoria City Fly Region"
+original_item = "fly_pastoria_city"
+
+[fly_veilstone_city]
+id = 141
+check = 0xBCF
+type = "fly_location"
+table = "base"
+label = "Veilstone City Fly Region"
+original_item = "fly_veilstone_city"
+
+[fly_sunyshore_city]
+id = 142
+check = 0xBD0
+type = "fly_location"
+table = "base"
+label = "Sunyshore City Fly Region"
+original_item = "fly_sunyshore_city"
+
+[fly_snowpoint_city]
+id = 143
+check = 0xBD1
+type = "fly_location"
+table = "base"
+label = "Snowpoint City Fly Region"
+original_item = "fly_snowpoint_city"
+
+[fly_pokemon_league_south]
+id = 144
+check = 0xBD2
+type = "fly_location_league"
+table = "base"
+label = "Pokemon League South Fly Region"
+original_item = "fly_pokemon_league_south"
+
+[fly_fight_area]
+id = 145
+check = 0xBD3
+type = "fly_location"
+table = "base"
+label = "Fight Area Fly Region"
+original_item = "fly_fight_area"
+
+[fly_survival_area]
+id = 146
+check = 0xBD4
+type = "fly_location"
+table = "base"
+label = "Survival Area Fly Region"
+original_item = "fly_survival_area"
+
+[fly_resort_area]
+id = 147
+check = 0xBD5
+type = "fly_location"
+table = "base"
+label = "Resort Area Fly Region"
+original_item = "fly_resort_area"
+
+[fly_route_221]
+id = 148
+check = 0xBD6
+type = "fly_location"
+table = "base"
+label = "Route 221 Fly Region"
+original_item = "fly_route_221"
+
+[fly_pokemon_league]
+id = 149
+check = 0xBD7
+type = "fly_location_league"
+table = "base"
+label = "Pokemon League Fly Region"
+original_item = "fly_pokemon_league"

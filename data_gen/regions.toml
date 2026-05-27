@@ -91,11 +91,21 @@ exits = [
 ]
 header = "victory_road_2f"
 
+[victory_road_1f_upper_entrance]
+exits = [
+    "victory_road_1f",
+    "pokemon_league",
+]
+trainers = [
+    "dragon_tamer_clinton",
+]
+header = "victory_road_1f"
+
 [victory_road_1f]
 exits = [
-    "victory_road_2f",
+    "victory_road_2f_from_1f",
     "pokemon_league_south",
-    "pokemon_league",
+    "victory_road_1f_upper_entrance",
     "victory_road_1f_room_1",
     "victory_road_b1f",
 ]
@@ -110,7 +120,6 @@ locs = [
 trainers = [
     "black_belt_miles",
     "veteran_edgar",
-    "dragon_tamer_clinton",
 ]
 
 [pokemon_league_south_south]
@@ -129,36 +138,53 @@ exits = [
     "victory_road_1f_entrance",
     "pokemon_league_south_south",
 ]
+locs = ["fly_pokemon_league_south"]
 header = "pokemon_league"
 
 [pokemon_league]
 exits = [
     "pokemon_league_north_pokecenter_1f",
-    "victory_road_1f",
+    "victory_road_1f_upper_entrance",
 ]
 header = "pokemon_league"
 locs = [
     "pokemon_league_sky_plate",
+    "fly_pokemon_league",
+]
+
+[victory_road_2f_from_1f_strength]
+header = "victory_road_2f"
+exits = ["victory_road_2f"]
+locs = [
+    "victory_road_2f_full_restore_0",
+    "victory_road_2f_tm79",
+]
+trainers = [
+    "ace_trainer_sydney",
+]
+
+[victory_road_2f_from_1f]
+header = "victory_road_2f"
+exits = ["victory_road_2f_from_1f_strength"]
+trainers = [
+    "veteran_clayton",
 ]
 
 [victory_road_2f]
 exits = [
     "victory_road_1f",
     "victory_road_2f_entrance",
+    "victory_road_2f_from_1f",
 ]
 header = "victory_road_2f"
 locs = [
-    "victory_road_2f_tm79",
     "victory_road_2f_max_elixir",
     "victory_road_2f_full_restore",
     "victory_road_2f_tm71",
-    "victory_road_2f_full_restore_0",
     "victory_road_2f_rare_candy",
 ]
 trainers = [
     "ace_trainer_omar",
-    "ace_trainer_sydney",
-    "veteran_clayton",
     "double_team_al_and_kay",
 ]
 
@@ -235,6 +261,7 @@ locs = [
     "survival_area_rare_candy",
     "survival_area_red_shard",
     "survival_area_pp_up",
+    "fly_survival_area",
 ]
 group = "fight_area"
 trainers = [
@@ -337,10 +364,6 @@ locs = [
 [twinleaf_town_player_house_2f]
 exits = [
     "twinleaf_town_player_house_1f",
-    "virt_roamers",
-    "virt_dex",
-    "virt_national_dex",
-    "virt_specs",
 ]
 locs = [
     "twinleaf_town_player_house_2f_bag",
@@ -579,6 +602,7 @@ locs = [
     "celestic_town_choice_specs",
     "celestic_town_black_glasses",
     "celestic_town_wise_glasses",
+    "fly_celestic_town",
 ]
 trainers = [
     "galactic_grunt_celestic_town",
@@ -742,6 +766,7 @@ exits = [
 ]
 locs = [
     "sandgem_town_tm27",
+    "fly_sandgem_town",
 ]
 header = "sandgem_town"
 
@@ -778,11 +803,16 @@ exits = [
 header = "route_228_gate_to_route_226"
 group = "fight_area"
 
+[route_230_east]
+header = "route_229"
+accessible_encounters = ["water"]
+
 [route_229]
 exits = [
     "resort_area",
     "route_230",
     "route_228",
+    "route_230_east",
 ]
 header = "route_229"
 locs = [
@@ -813,6 +843,7 @@ header = "resort_area"
 locs = [
     "resort_area_nugget",
     "resort_area_nugget_0",
+    "fly_resort_area",
 ]
 group = "fight_area"
 
@@ -898,6 +929,7 @@ exits = [
 header = "twinleaf_town"
 locs = [
     "twinleaf_town_odd_keystone",
+    "fly_twinleaf_town",
 ]
 
 [route_201]
@@ -929,6 +961,7 @@ exits = [
 ]
 locs = [
     "fight_area_super_rod",
+    "fly_fight_area",
 ]
 header = "fight_area"
 group = "fight_area"
@@ -1071,6 +1104,7 @@ locs = [
     "pastoria_city_zinc",
     "pastoria_city_piplup_mask",
     "pastoria_city_marsh_pass",
+    "fly_pastoria_city",
 ]
 trainers = [
     "rival_pastoria_city",
@@ -1361,6 +1395,7 @@ locs = [
     "pal_park_lobby_emerald_cartridge",
     "pal_park_lobby_colorchanger",
     "pal_park_lobby_kitchentimer",
+    "fly_route_221",
 ]
 header = "pal_park_lobby"
 events = [
@@ -1575,6 +1610,7 @@ exits = [
 header = "hearthome_city"
 locs = [
     "hearthome_city_big_mushroom",
+    "fly_hearthome_city",
 ]
 events = ["event_hearthome_city"]
 
@@ -1944,6 +1980,7 @@ locs = [
     "jubilife_city_firered_cartridge",
     "jubilife_city_leafgreen_cartridge",
     "jubilife_city_sapphire_cartridge",
+    "fly_jubilife_city",
 ]
 trainers = [
     "galactic_grunt_jubilife_city_1",
@@ -1974,12 +2011,14 @@ locs = [
     "solaceon_town_pp_up",
     "solaceon_town_big_mushroom",
     "solaceon_town_pokemonhistory",
+    "fly_solaceon_town",
 ]
 
 [solaceon_town_ledge]
 locs = [
     "solaceon_town_rare_candy",
 ]
+events = ["solaceon_town_ledge"]
 exits = [
     "solaceon_ruins_maniac_tunnel_room",
 ]
@@ -2397,6 +2436,7 @@ locs = [
     "sunyshore_city_zap_plate",
     "sunyshore_city_hm07",
     "vista_lighthouse_daytime",
+    "fly_sunyshore_city",
 ]
 
 [vista_lighthouse_elevator]
@@ -2605,6 +2645,7 @@ header = "canalave_city"
 locs = [
     "canalave_city_tm89",
     "canalave_city_big_pearl",
+    "fly_canalave_city",
 ]
 trainers = [
     "rival_canalave_city",
@@ -2868,6 +2909,7 @@ locs = [
     "eterna_city_super_potion_0",
     "eterna_city_moon_stone",
     "eterna_city_hm01",
+    "fly_eterna_city",
 ]
 
 [eterna_city_east_house]
@@ -3083,6 +3125,7 @@ exits = [
     "floaroma_town_middle_house",
     "flower_shop",
 ]
+locs = ["fly_floaroma_town"]
 header = "floaroma_town"
 
 [floaroma_town_middle_house]
@@ -3242,6 +3285,7 @@ locs = [
     "veilstone_city_star_piece_0",
     "veilstone_city_tm63",
     "galactic_hq_1f_pp_up",
+    "fly_veilstone_city",
 ]
 trainers = [
     "galactic_grunt_veilstone_city_1",
@@ -4356,6 +4400,7 @@ header = "snowpoint_city"
 locs = [
     "snowpoint_city_ultra_ball",
     "snowpoint_city_rare_candy",
+    "fly_snowpoint_city",
 ]
 
 [snowpoint_city_pokecenter_1f]
@@ -4802,6 +4847,7 @@ locs = [
     "oreburgh_city_pearl",
     "oreburgh_city_heart_scale",
     "oreburgh_city_super_potion",
+    "fly_oreburgh_city",
 ]
 
 [oreburgh_city_gym]
@@ -5521,3 +5567,39 @@ header = "virt"
 [virt_mt_coronet]
 header = "virt"
 events = ["event_magnetic_field"]
+
+[virt_fly]
+header = "virt"
+exits = [
+    "twinleaf_town",
+    "sandgem_town",
+    "floaroma_town",
+    "solaceon_town",
+    "celestic_town",
+    "jubilife_city",
+    "canalave_city",
+    "oreburgh_city",
+    "eterna_city",
+    "hearthome_city",
+    "pastoria_city",
+    "veilstone_city",
+    "sunyshore_city",
+    "snowpoint_city",
+    "pokemon_league_south",
+    "fight_area",
+    "survival_area",
+    "resort_area",
+    "route_221",
+    "pokemon_league",
+]
+
+[virt_start]
+header = "virt"
+exits = [
+    "virt_roamers",
+    "virt_dex",
+    "virt_national_dex",
+    "virt_specs",
+    "virt_fly",
+    "twinleaf_town_player_house_2f",
+]

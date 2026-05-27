@@ -4195,3 +4195,143 @@ label = "SCREENSHOT"
 id = 26
 clas = "poketchapp"
 group = "poketch_apps"
+
+[fly_twinleaf_town]
+label = "Twinleaf Town Fly Region"
+id = 14
+clas = "special"
+classification = "progression"
+group = "fly_item"
+
+[fly_sandgem_town]
+label = "Sandgem Town Fly Region"
+id = 15
+clas = "special"
+classification = "progression"
+group = "fly_item"
+
+[fly_floaroma_town]
+label = "Floaroma Town Fly Region"
+id = 16
+clas = "special"
+classification = "progression"
+group = "fly_item"
+
+[fly_solaceon_town]
+label = "Solaceon Town Fly Region"
+id = 17
+clas = "special"
+classification = "progression"
+group = "fly_item"
+
+[fly_celestic_town]
+label = "Celestic Town Fly Region"
+id = 18
+clas = "special"
+classification = "progression"
+group = "fly_item"
+
+[fly_jubilife_city]
+label = "Jubilife City Fly Region"
+id = 19
+clas = "special"
+classification = "progression"
+group = "fly_item"
+
+[fly_canalave_city]
+label = "Canalave City Fly Region"
+id = 20
+clas = "special"
+classification = "progression"
+group = "fly_item"
+
+[fly_oreburgh_city]
+label = "Oreburgh City Fly Region"
+id = 21
+clas = "special"
+classification = "progression"
+group = "fly_item"
+
+[fly_eterna_city]
+label = "Eterna City Fly Region"
+id = 22
+clas = "special"
+classification = "progression"
+group = "fly_item"
+
+[fly_hearthome_city]
+label = "Hearthome City Fly Region"
+id = 23
+clas = "special"
+classification = "progression"
+group = "fly_item"
+
+[fly_pastoria_city]
+label = "Pastoria City Fly Region"
+id = 24
+clas = "special"
+classification = "progression"
+group = "fly_item"
+
+[fly_veilstone_city]
+label = "Veilstone City Fly Region"
+id = 25
+clas = "special"
+classification = "progression"
+group = "fly_item"
+
+[fly_sunyshore_city]
+label = "Sunyshore City Fly Region"
+id = 26
+clas = "special"
+classification = "progression"
+group = "fly_item"
+
+[fly_snowpoint_city]
+label = "Snowpoint City Fly Region"
+id = 27
+clas = "special"
+classification = "progression"
+group = "fly_item"
+
+[fly_pokemon_league_south]
+label = "Pokemon League South Fly Region"
+id = 28
+clas = "special"
+classification = "progression"
+group = "fly_item"
+
+[fly_fight_area]
+label = "Fight Area Fly Region"
+id = 29
+clas = "special"
+classification = "progression"
+group = "fly_item"
+
+[fly_survival_area]
+label = "Survival Area Fly Region"
+id = 30
+clas = "special"
+classification = "progression"
+group = "fly_item"
+
+[fly_resort_area]
+label = "Resort Area Fly Region"
+id = 31
+clas = "special"
+classification = "progression"
+group = "fly_item"
+
+[fly_route_221]
+label = "Route 221 Fly Region"
+id = 32
+clas = "special"
+classification = "progression"
+group = "fly_item"
+
+[fly_pokemon_league]
+label = "Pokemon League Fly Region"
+id = 33
+clas = "special"
+classification = "progression"
+group = "fly_item"

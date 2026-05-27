@@ -775,6 +775,22 @@ class Route207Barricade(Choice):
     default = option_bicycle_slope
     display_name = "Route 207 Barricade"
 
+class RandomizeFlyItems(Choice):
+    """
+    Add fly locations to the pool.
+    """
+    option_off = 0
+    option_all_except_pokemon_league = 1
+    option_all = 2
+    display_name = "Randomize Fly Locations"
+
+class RequireFlyItemsForFlight(Toggle):
+    """
+    Require the fly location item to fly to a certain location.
+    If this is false, then simply visiting the location will be sufficient.
+    """
+    display_name = "Require Fly Location Items for Flight"
+
 slot_data_options: Sequence[str] = [
     "hms",
     "badges",
@@ -811,6 +827,9 @@ slot_data_options: Sequence[str] = [
     
     "hm_reader",
     "hm_reader_mode",
+    
+    "randomize_fly_items",
+    "require_fly_items_for_flight",
 
     "randomize_starters",
     "require_two_level_evolution_starters",
@@ -903,6 +922,9 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
     boat_canalave_snowpoint: BoatCanalaveSnowpoint
     boat_pastoria_snowpoint: BoatPastoriaSnowpoint
     route_207_barricade: Route207Barricade
+
+    randomize_fly_items: RandomizeFlyItems
+    require_fly_items_for_flight: RequireFlyItemsForFlight
     
     hm_reader: AddHMReader
     hm_reader_mode: HMReaderMode
@@ -1191,6 +1213,7 @@ OPTION_GROUPS = [
             RandomizePokedex,
             RandomizeAccessories,
             RandomizeTimeItems,
+            RandomizeFlyItems,
         ],
     ),
     OptionGroup(
@@ -1279,6 +1302,7 @@ OPTION_GROUPS = [
             TalkTrainersWithoutFight,
             ExpMultiplier,
             AddMasterRepel,
+            RequireFlyItemsForFlight,
         ],
     ),
 ]

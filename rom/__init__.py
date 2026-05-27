@@ -270,6 +270,7 @@ def generate_output(world: "PokemonPlatinumWorld", output_directory: str, patch:
     add_opt_byte('boat_canalave_pastoria')
     add_opt_byte('boat_canalave_snowpoint')
     add_opt_byte('boat_pastoria_snowpoint')
+    add_opt_byte('require_fly_items_for_flight')
 
     # start of save config
     if len(ap_bin) % 2 == 1:
