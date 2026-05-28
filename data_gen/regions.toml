@@ -104,22 +104,35 @@ header = "victory_road_1f"
 [victory_road_1f]
 exits = [
     "victory_road_2f_from_1f",
-    "pokemon_league_south",
+    "victory_road_2f_north_alcove",
+    "victory_road_1f_center",
     "victory_road_1f_upper_entrance",
     "victory_road_1f_room_1",
+    "victory_road_b1f_upper",
+]
+header = "victory_road_1f"
+locs = [
+    "victory_road_1f_razor_claw",
+    "victory_road_1f_zinc",
+    "victory_road_1f_max_revive",
+]
+trainers = [
+    "veteran_edgar",
+]
+
+[victory_road_1f_center]
+exits = [
+    "victory_road_1f_entrance",
+    "victory_road_2f_from_1f",
     "victory_road_b1f",
 ]
 header = "victory_road_1f"
 locs = [
     "victory_road_1f_rare_candy",
-    "victory_road_1f_razor_claw",
-    "victory_road_1f_zinc",
     "victory_road_1f_ultra_ball",
-    "victory_road_1f_max_revive",
 ]
 trainers = [
     "black_belt_miles",
-    "veteran_edgar",
 ]
 
 [pokemon_league_south_south]
@@ -152,12 +165,18 @@ locs = [
     "fly_pokemon_league",
 ]
 
+[victory_road_2f_north_alcove]
+header = "victory_road_2f"
+exits = ["victory_road_1f"]
+locs = [
+    "victory_road_2f_tm79",
+]
+
 [victory_road_2f_from_1f_strength]
 header = "victory_road_2f"
 exits = ["victory_road_2f"]
 locs = [
     "victory_road_2f_full_restore_0",
-    "victory_road_2f_tm79",
 ]
 trainers = [
     "ace_trainer_sydney",
@@ -172,7 +191,7 @@ trainers = [
 
 [victory_road_2f]
 exits = [
-    "victory_road_1f",
+    "victory_road_1f_center",
     "victory_road_2f_entrance",
     "victory_road_2f_from_1f",
 ]
@@ -372,21 +391,33 @@ header = "twinleaf_town_player_house_2f"
 
 [victory_road_b1f]
 exits = [
+    "victory_road_b1f_upper",
+    "victory_road_1f_center",
+]
+header = "victory_road_b1f"
+locs = [
+    "victory_road_b1f_ultra_ball",
+    "victory_road_b1f_calcium",
+    "victory_road_b1f_heart_scale",
+]
+trainers = [
+    "double_team_jo_and_pat",
+    "psychic_valencia",
+    "ace_trainer_henry",
+]
+
+[victory_road_b1f_upper]
+exits = [
     "victory_road_1f",
+    "victory_road_b1f",
 ]
 header = "victory_road_b1f"
 locs = [
     "victory_road_b1f_tm59",
-    "victory_road_b1f_ultra_ball",
-    "victory_road_b1f_calcium",
-    "victory_road_b1f_heart_scale",
     "victory_road_b1f_max_elixir",
 ]
 trainers = [
-    "double_team_jo_and_pat",
     "dragon_tamer_ondrej",
-    "psychic_valencia",
-    "ace_trainer_henry",
 ]
 
 [union_room]
