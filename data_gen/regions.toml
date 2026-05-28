@@ -5607,7 +5607,6 @@ exits = [
 
 [virt_fly_solaceon_town]
 header = "virt"
-exits = []
 locs = [
     "fly_solaceon_town",
 ]
