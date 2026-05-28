@@ -2084,7 +2084,7 @@ original_item = "full_restore"
 type = "hidden"
 table = "hidden"
 check = 839
-label = "Route 222 - Hidden Item in Grass Below Fence on the left"
+label = "Route 222 - Hidden Item in Grass Below Fence on the Left"
 id = 109
 
 [route_222_pp_up_0]
@@ -4558,7 +4558,7 @@ original_item = "mind_plate"
 type = "overworld"
 table = "overworld"
 check = 1109
-label = "Solaceon Ruins Frendship Room - Bottom Left Item"
+label = "Solaceon Ruins Friendship Room - Bottom Left Item"
 id = 95
 
 [solaceon_ruins_room_7_odd_incense]
@@ -4566,7 +4566,7 @@ original_item = "odd_incense"
 type = "overworld"
 table = "overworld"
 check = 1110
-label = "Solaceon Ruins Frendship Room - Bottom Right Item"
+label = "Solaceon Ruins Friendship Room - Bottom Right Item"
 id = 96
 
 [solaceon_ruins_room_7_nugget]
@@ -4574,7 +4574,7 @@ original_item = "nugget"
 type = "overworld"
 table = "overworld"
 check = 1111
-label = "Solaceon Ruins Frendship Room - Top Left Item"
+label = "Solaceon Ruins Friendship Room - Top Left Item"
 id = 97
 
 [solaceon_ruins_room_7_hm05]
@@ -4582,7 +4582,7 @@ original_item = "hm05"
 type = "hm"
 table = "overworld"
 check = 1112
-label = "Solaceon Ruins Frendship Room - Top Right Item"
+label = "Solaceon Ruins Friendship Room - Top Right Item"
 id = 98
 
 [oreburgh_city_gym_coal_badge]
@@ -6048,7 +6048,7 @@ id = 331
 check = 0xBA4
 type = "overworld"
 table = "overworld"
-label = "Snowpoint Temple B3F - Bottom left Item"
+label = "Snowpoint Temple B3F - Bottom Left Item"
 original_item = "tm94"
 
 [fuego_ironworks_building_tm93]

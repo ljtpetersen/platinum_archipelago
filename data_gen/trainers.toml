@@ -2958,7 +2958,7 @@ party = [
     { species = "murkrow", level = 54, num_moves = 0 },
     { species = "xatu", level = 54, num_moves = 0 },
 ]
-label = "Victory Road 1F - Bird Keeper Autumn"
+label = "Victory Road Foggy Basement - Bird Keeper Autumn"
 requires_national_dex = true
 
 [dummy_374]
@@ -3054,7 +3054,7 @@ party = [
     { species = "dratini", level = 52, num_moves = 0 },
     { species = "gabite", level = 56, num_moves = 0 },
 ]
-label = "Victory Road 1F - Dragon Tamer Joe"
+label = "Victory Road Foggy Basement - Dragon Tamer Joe"
 requires_national_dex = true
 
 [dummy_387]
@@ -3079,7 +3079,7 @@ party = [
     { species = "metang", level = 55, num_moves = 4 },
     { species = "ludicolo", level = 56, num_moves = 4 },
 ]
-label = "Victory Road 1F - Ace Trainer Micah"
+label = "Victory Road Foggy Basement - Ace Trainer Micah"
 requires_national_dex = true
 
 [ace_trainer_arthur]
@@ -3089,7 +3089,7 @@ party = [
     { species = "beedrill", level = 54, num_moves = 4 },
     { species = "electrode", level = 55, num_moves = 4 },
 ]
-label = "Victory Road 1F - Ace Trainer Arthur"
+label = "Victory Road Foggy Basement - Ace Trainer Arthur"
 requires_national_dex = true
 
 [dummy_391]
@@ -3114,7 +3114,7 @@ party = [
     { species = "marowak", level = 54, num_moves = 4 },
     { species = "kangaskhan", level = 57, num_moves = 4 },
 ]
-label = "Victory Road 1F - Ace Trainer Brandi"
+label = "Victory Road Foggy Basement - Ace Trainer Brandi"
 requires_national_dex = true
 
 [ace_trainer_clarice]
@@ -3124,7 +3124,7 @@ party = [
     { species = "ninetales", level = 54, num_moves = 4 },
     { species = "magnezone", level = 56, num_moves = 4 },
 ]
-label = "Victory Road 1F - Ace Trainer Clarice"
+label = "Victory Road Foggy Basement - Ace Trainer Clarice"
 requires_national_dex = true
 
 [psychic_kody]
@@ -3140,7 +3140,7 @@ party = [
     { species = "shuppet", level = 53, num_moves = 4 },
     { species = "alakazam", level = 55, num_moves = 4 },
 ]
-label = "Victory Road 1F - Psychic Landon"
+label = "Victory Road Foggy Basement - Psychic Landon"
 requires_national_dex = true
 
 [psychic_deandre]
@@ -3148,7 +3148,7 @@ id = 397
 party = [
     { species = "dusknoir", level = 56, num_moves = 4 },
 ]
-label = "Victory Road 1F - Psychic Deandre"
+label = "Victory Road Foggy Basement - Psychic Deandre"
 requires_national_dex = true
 
 [psychic_rachael]
@@ -3164,7 +3164,7 @@ party = [
     { species = "mr_mime", level = 54, num_moves = 4 },
     { species = "mismagius", level = 54, num_moves = 4 },
 ]
-label = "Victory Road 1F - Psychic Desiree"
+label = "Victory Road Foggy Basement - Psychic Desiree"
 requires_national_dex = true
 
 [psychic_kendra]
@@ -3174,7 +3174,7 @@ party = [
     { species = "haunter", level = 52, num_moves = 4 },
     { species = "gengar", level = 55, num_moves = 4 },
 ]
-label = "Victory Road 1F - Psychic Kendra"
+label = "Victory Road Foggy Basement - Psychic Kendra"
 requires_national_dex = true
 
 [fisherman_walter]
@@ -3198,7 +3198,7 @@ party = [
     { species = "crobat", level = 44, num_moves = 4 },
     { species = "honchkrow", level = 46, num_moves = 4 },
 ]
-label = "Galactic HQ 4F Cyrus' Office- Galactic Boss Cyrus"
+label = "Galactic HQ 4F Cyrus' Office - Galactic Boss Cyrus"
 
 [galactic_boss_cyrus_galactic_hq.check]
 id = 16598
@@ -3547,7 +3547,7 @@ party = [
     { species = "machoke", level = 53, num_moves = 0 },
     { species = "infernape", level = 55, num_moves = 0 },
 ]
-label = "Victory Road 1F - Black Belt Eddie"
+label = "Victory Road Foggy Basement - Black Belt Eddie"
 requires_national_dex = true
 
 [black_belt_willie]
@@ -3556,7 +3556,7 @@ party = [
     { species = "heracross", level = 54, num_moves = 0 },
     { species = "machamp", level = 54, num_moves = 0 },
 ]
-label = "Victory Road 1F - Black Belt Willie"
+label = "Victory Road Foggy Basement - Black Belt Willie"
 requires_national_dex = true
 
 [dummy_448]
@@ -4036,7 +4036,7 @@ party = [
     { species = "rhydon", level = 54, num_moves = 4 },
     { species = "magmar", level = 55, num_moves = 4 },
 ]
-label = "Victory Road 1F - Veteran Terrell"
+label = "Victory Road Foggy Basement - Veteran Terrell"
 requires_national_dex = true
 
 [veteran_brenden]
@@ -4046,7 +4046,7 @@ party = [
     { species = "gyarados", level = 54, num_moves = 4 },
     { species = "hippowdon", level = 54, num_moves = 4 },
 ]
-label = "Victory Road 1F - Veteran Brenden"
+label = "Victory Road Foggy Basement - Veteran Brenden"
 requires_national_dex = true
 
 [dummy_501]
@@ -4461,7 +4461,7 @@ party = [
     { species = "geodude", level = 21, num_moves = 0 },
     { species = "bronzor", level = 23, num_moves = 0 },
 ]
-label = "Solaceon Ruins - Ruin Maniac Karl"
+label = "Solaceon Ruins B2F - Ruin Maniac Karl"
 
 [bird_keeper_audrey]
 id = 554
