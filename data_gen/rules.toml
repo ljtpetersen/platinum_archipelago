@@ -395,8 +395,8 @@ exits.route_214_top.route_214 = "surf if pastoria_barriers"
 exits.route_214.route_214_top = "surf if pastoria_barriers"
 
 exits.fight_area.route_225_gate_to_fight_area = "national_dex"
+exits.route_225_gate_to_fight_area.fight_area = "national_dex"
 exits.fight_area.route_230 = "national_dex"
-locs.fight_area_super_rod = "national_dex"
 
 encs.route_230.land = "surf"
 locs.route_230_rare_candy = "rock_smash & surf"

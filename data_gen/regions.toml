@@ -54,6 +54,9 @@ exits = [
 ]
 header = "route_225_gate_to_fight_area"
 group = "fight_area"
+locs = [
+    "fight_area_super_rod",
+]
 
 [great_marsh_4]
 exits = [
@@ -515,9 +518,7 @@ locs = [
 group = "fight_area"
 
 [route_226_house]
-exits = [
-    "route_226_west",
-]
+exits = []
 header = "route_226_house"
 group = "fight_area"
 
@@ -960,7 +961,6 @@ exits = [
     "route_230",
 ]
 locs = [
-    "fight_area_super_rod",
     "fly_fight_area",
 ]
 header = "fight_area"
