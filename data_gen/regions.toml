@@ -1533,7 +1533,6 @@ honey_tree_idx = 9
 exits = [
     "route_212_north_top",
     "route_212_south",
-    "route_208",
     "pokemon_mansion",
 ]
 header = "route_212_north"
