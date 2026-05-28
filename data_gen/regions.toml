@@ -2005,22 +2005,22 @@ exits = [
     "route_210_south",
     "route_209",
     "solaceon_ruins_room_1",
+    "virt_fly_solaceon_town",
 ]
 header = "solaceon_town"
 locs = [
     "solaceon_town_pp_up",
     "solaceon_town_big_mushroom",
     "solaceon_town_pokemonhistory",
-    "fly_solaceon_town",
 ]
 
 [solaceon_town_ledge]
 locs = [
     "solaceon_town_rare_candy",
 ]
-events = ["solaceon_town_ledge"]
 exits = [
     "solaceon_ruins_maniac_tunnel_room",
+    "virt_fly_solaceon_town",
 ]
 header = "virt"
 
@@ -5602,4 +5602,11 @@ exits = [
     "virt_specs",
     "virt_fly",
     "twinleaf_town_player_house_2f",
+]
+
+[virt_fly_solaceon_town]
+header = "virt"
+exits = []
+locs = [
+    "fly_solaceon_town",
 ]
