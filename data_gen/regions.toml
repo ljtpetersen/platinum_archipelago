@@ -2018,6 +2018,7 @@ locs = [
 locs = [
     "solaceon_town_rare_candy",
 ]
+events = ["solaceon_town_ledge"]
 exits = [
     "solaceon_ruins_maniac_tunnel_room",
     "virt_fly_solaceon_town",
