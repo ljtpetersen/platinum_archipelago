@@ -8,7 +8,7 @@ from collections.abc import Callable, Mapping, MutableSet, Sequence, Set
 from dataclasses import dataclass
 from typing import Tuple, TYPE_CHECKING
 
-from worlds.pokemon_platinum.options import PokemonPlatinumOptions
+from .options import PokemonPlatinumOptions
 
 from .data import regions as regiondata
 from .data.encounters import EncounterSlot, encounters, encounter_type_tables, possible_accessibilities

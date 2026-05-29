@@ -7,6 +7,7 @@ from collections.abc import Mapping, Sequence
 from dataclasses import dataclass
 
 from .locations import LocationCheck, VarCheck, FlagCheck, OnceCheck, LocationTable
+from .regions import regions
 
 @dataclass(frozen=True)
 class TrainerCheck(LocationCheck):
@@ -56,3 +57,24 @@ def trainer_requires_national_dex(name: str) -> bool:
         return trainers[name].requires_national_dex
 
 trainer_id_to_trainer_const_name: Mapping[int, str] = {v.id:k for k, v in trainers.items()}
+
+def get_in_game_trainers() -> Sequence[str]:
+    ret = set()
+    for data in regions.values():
+        ret |= set(data.trainers)
+    return list(ret)
+
+def remove_starter_suffix(s: str) -> str:
+    return s.removesuffix("_piplup").removesuffix("_chimchar").removesuffix("_turtwig")
+
+def add_starter_suffix(s: str) -> str:
+    if s.startswith("lucas") or s.startswith("rival") or s.startswith("dawn"):
+        return s + "_turtwig"
+    else:
+        return s
+
+in_game_trainers: Sequence[str] = get_in_game_trainers()
+
+in_game_trainer_labels: Sequence[str] = list({trainers[add_starter_suffix(v)].label for v in in_game_trainers})
+
+trainer_name_to_trainer_const_name: Mapping[str, str] = {v.label:remove_starter_suffix(k) for k, v in trainers.items()}

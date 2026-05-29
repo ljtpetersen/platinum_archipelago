@@ -128,7 +128,10 @@ class PokemonPlatinumWorld(World):
         randomize_trainer_parties_and_encounters(self)
         randomize_roamers(self)
         add_virt_specs(self, regions)
-        self.trainersanity_trainers = self.random.sample(sorted(trainers), k=self.options.trainersanity.value)
+        if len(self.options.trainersanity_whitelist.value) > 0:
+            self.trainersanity_trainers = self.random.sample(sorted(trainers & self.options.trainersanity_whitelist.to_const_names()), k=self.options.trainersanity.value)
+        else:
+            self.trainersanity_trainers = self.random.sample(sorted(trainers - self.options.trainersanity_blacklist.to_const_names()), k=self.options.trainersanity.value)
         create_locations(self, regions)
         self.multiworld.regions.extend(regions.values())
 

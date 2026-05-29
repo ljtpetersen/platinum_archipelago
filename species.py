@@ -8,14 +8,14 @@ from typing import TYPE_CHECKING, Tuple
 
 from BaseClasses import Region
 
-from worlds.pokemon_platinum.locations import PokemonPlatinumLocation
-from worlds.pokemon_platinum.options import UnownsOption
-from worlds.pokemon_platinum.regions import is_region_enabled
+from .locations import PokemonPlatinumLocation
+from .options import PokemonPlatinumOptions, UnownsOption
+from .regions import is_region_enabled
 
 from .data import special_encounters, map_header_labels
 from .data.encounters import encounters as encounterdata, encounter_type_pairs, EncounterSlot, national_dex_requiring_encs
 from .data.regions import regions as regiondata
-from .data.species import species as speciesdata, regional_mons, having_two_level_evos
+from .data.species import species as speciesdata, regional_mons, having_two_level_evos, expand_set_via_evolutions, affected_species
 from .data.trainers import trainers as trainerdata, trainer_party_supporting_starters, trainer_requires_national_dex
 
 if TYPE_CHECKING:
@@ -231,7 +231,7 @@ def randomize_trainer_parties_and_encounters(world: "PokemonPlatinumWorld") -> N
         } - world.options.encounter_species_blacklist.blacklist()
         amity_square_mon = world.random.choice(sorted(amity_square_mons))
         munchlax_mon = world.random.choice(sorted({"munchlax", "snorlax"} & all_enc)) if "level_happiness" in world.options.in_logic_evolution_methods else "snorlax"
-        randomize_encounters(world, set(world.random.sample(poss_enc, k=num_enc)) | {munchlax_mon, "kecleon", "geodude", amity_square_mon})
+        randomize_encounters(world, generate_required_encounter_species(world) | set(world.random.sample(poss_enc, k=num_enc)) | {munchlax_mon, "kecleon", "geodude", amity_square_mon})
         randomize_trainer_parties(world, set(world.random.sample(poss_trp, k=num_trp)))
     elif world.options.randomize_encounters:
         bl = world.options.encounter_species_blacklist.blacklist()
@@ -281,7 +281,7 @@ def randomize_trainer_parties_and_encounters(world: "PokemonPlatinumWorld") -> N
         } - world.options.encounter_species_blacklist.blacklist()
         amity_square_mon = world.random.choice(sorted(amity_square_mons))
         munchlax_mon = world.random.choice(sorted({"munchlax", "snorlax"} & (speciesdata.keys() - bl))) if "level_happiness" in world.options.in_logic_evolution_methods else "snorlax"
-        randomize_encounters(world, req_encounter_specs | {munchlax_mon, "kecleon", "geodude", amity_square_mon})
+        randomize_encounters(world, generate_required_encounter_species(world) | req_encounter_specs | {munchlax_mon, "kecleon", "geodude", amity_square_mon})
         fill_unrandomized_trainer_parties(world)
     elif world.options.randomize_trainer_parties:
         bl = world.options.trainer_party_blacklist.blacklist()
@@ -321,22 +321,10 @@ def fill_species(world: "PokemonPlatinumWorld") -> None:
             world.multiworld.get_location(f"roamer_{i}", world.player).place_locked_item(world.create_event(f"once_mon_{spec}"))
 
 def add_virt_specs(world: "PokemonPlatinumWorld", regions: Mapping[str, Region]) -> None:
-    accessible_mons = set(world.generated_encounters.values()) | set(world.generated_speencs.values())
-    while True:
-        to_add = set()
-        for mon, data in speciesdata.items():
-            if mon in accessible_mons or data.pre_evolution is None:
-                continue
-            if data.pre_evolution.species not in accessible_mons:
-                continue
-            if data.pre_evolution.method not in world.options.in_logic_evolution_methods:
-                continue
-            if data.pre_evolution.other_species is not None and data.pre_evolution.other_species not in accessible_mons:
-                continue
-            to_add.add(mon)
-        accessible_mons |= to_add
-        if not to_add:
-            break
+    accessible_mons = expand_set_via_evolutions(
+        set(world.generated_encounters.values()) | set(world.generated_speencs.values()),
+        world.options.in_logic_evolution_methods.value,
+    )
     accessible_once_mons = accessible_mons.copy()
     if "roamers" in world.options.in_logic_encounters:
         accessible_once_mons |= set(world.generated_roamers)
@@ -388,7 +376,11 @@ def add_virt_specs(world: "PokemonPlatinumWorld", regions: Mapping[str, Region])
         location.place_locked_item(world.create_event(f"see_mon_{mon}"))
         reg.locations.append(location)
 
-    world.dexsanity_specs = world.random.sample(accessible_once_mons, k=world.options.dexsanity.value)
+    if len(world.options.dexsanity_whitelist.blacklist()) > 0:
+        possible_dexsanity_mons = list(set(accessible_once_mons) & world.options.dexsanity_whitelist.blacklist())
+    else:
+        possible_dexsanity_mons = list(set(accessible_once_mons) - world.options.dexsanity_blacklist.blacklist())
+    world.dexsanity_specs = world.random.sample(possible_dexsanity_mons, k=world.options.dexsanity.value)
 
 def encounter_slot_label(key: Tuple[str, str, int], in_logic_encounters: Set[str]) -> str:
     (header, table, index) = key
@@ -419,3 +411,52 @@ roamer_labels: Sequence[str] = [
     "Roamer (Talk with Oak in Eterna)",
     "Roamer (Talk with Oak in Eterna)",
 ]
+
+def generate_required_encounter_species(world: "PokemonPlatinumWorld") -> Set[str]:
+    ret = set()
+    accessible = set()
+    poss_enc = speciesdata.keys() - world.options.encounter_species_blacklist.blacklist()
+    not_added = list(poss_enc)
+    world.random.shuffle(not_added)
+    if len(world.options.dexsanity_whitelist.blacklist()) > 0:
+        poss_dexs = world.options.dexsanity_whitelist.blacklist()
+    else:
+        poss_dexs = speciesdata.keys() - world.options.dexsanity_blacklist.blacklist()
+    dexs = set()
+
+    def add_spec(spec: str) -> None:
+        nonlocal ret
+        nonlocal accessible
+        nonlocal dexs
+
+        affected = affected_species[spec]
+        ret.add(spec)
+        accessible.add(spec)
+        if spec in poss_dexs:
+            dexs.add(spec)
+
+        while True:
+            to_add = set()
+            for mon in affected:
+                data = speciesdata[mon]
+                pevo = data.pre_evolution
+                if mon in accessible or pevo is None:
+                    continue
+                if pevo.species not in ret:
+                    continue
+                if pevo.method not in world.options.in_logic_evolution_methods.value:
+                    continue
+                if pevo.other_species is not None and pevo.other_species not in ret:
+                    continue
+                to_add.add(mon)
+            if len(to_add) == 0:
+                break
+            accessible |= to_add
+            dexs |= to_add & poss_dexs
+            affected |= {v for u in to_add for v in affected_species[u]}
+
+    while len(dexs) < world.options.dexsanity.value:
+        spec = not_added.pop()
+        add_spec(spec)
+
+    return ret

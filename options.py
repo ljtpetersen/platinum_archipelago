@@ -9,9 +9,9 @@ from typing import Any
 from Options import Choice, DeathLink, DefaultOnToggle, NamedRange, OptionDict, OptionError, OptionGroup, OptionSet, PerGameCommonOptions, Range, Toggle, Option, FreeText
 
 from .data import special_encounters
-from .data.species import species, regional_mons, having_two_level_evos, legendary_mons
+from .data.species import species, regional_mons, having_two_level_evos, legendary_mons, expand_set_via_evolutions
 from .data.regions import regions
-from .data.trainers import trainer_party_supporting_starters, trainer_requires_national_dex
+from .data.trainers import in_game_trainer_labels, trainer_party_supporting_starters, trainer_requires_national_dex, trainer_name_to_trainer_const_name
 from .data.encounters import encounters, encounter_type_pairs, national_dex_requiring_encs
 
 class SpeciesBlacklist(OptionSet):
@@ -598,6 +598,28 @@ class TrainersanityCount(NamedRange):
         "full": range_end,
     }
 
+class TrainersanityWhitelist(OptionSet):
+    """
+    Specify the possible trainers which can be trainersanity locations.
+    This has precedence over the trainersanity blacklist.
+    """
+    display_name = "Trainersanity Whitelist"
+    valid_keys = in_game_trainer_labels
+
+    def to_const_names(self) -> Set[str]:
+        return {trainer_name_to_trainer_const_name[v] for v in self.value}
+
+class TrainersanityBlacklist(OptionSet):
+    """
+    Specify the trainers which cannot be trainersanity locations.
+    The whitelist has precedence over this.
+    """
+    display_name = "Trainersanity Blacklist"
+    valid_keys = in_game_trainer_labels
+
+    def to_const_names(self) -> Set[str]:
+        return {trainer_name_to_trainer_const_name[v] for v in self.value}
+
 class DexsanityCount(NamedRange):
     """
     How many dexsanity locations there will be.
@@ -791,6 +813,36 @@ class RequireFlyItemsForFlight(Toggle):
     """
     display_name = "Require Fly Location Items for Flight"
 
+class DexsanityWhitelist(SpeciesBlacklist):
+    """
+    Specify the possible species which can be dexsanity locations.
+    This has precedence over the dexsanity blacklist.
+
+    The species names should be entered entirely in lowercase.
+    Spaces should be replaced by underscores. For example,
+    Mr. Mime would be mr_mime.
+
+    legendaries, all lowercase, will be interpreted as allowing all legendary
+    species.
+    """
+    display_name = "Dexsanity Whitelist"
+    valid_keys = list(species) + ["legendaries"]
+
+class DexsanityBlacklist(SpeciesBlacklist):
+    """
+    Specify the species which cannot be dexsanity locations.
+    The whitelist has precedence over this.
+
+    The species names should be entered entirely in lowercase.
+    Spaces should be replaced by underscores. For example,
+    Mr. Mime would be mr_mime.
+
+    legendaries, all lowercase, will be interpreted as banning all legendary
+    species.
+    """
+    display_name = "Dexsanity Blacklist"
+    valid_keys = list(species) + ["legendaries"]
+
 slot_data_options: Sequence[str] = [
     "hms",
     "badges",
@@ -842,6 +894,8 @@ slot_data_options: Sequence[str] = [
     "encounter_species_blacklist",
     "dexsanity",
     "dexsanity_mode",
+    "dexsanity_whitelist",
+    "dexsanity_blacklist",
     "in_logic_evolution_methods",
 
     "randomize_roamers",
@@ -849,6 +903,8 @@ slot_data_options: Sequence[str] = [
     "roamer_blacklist",
 
     "trainersanity",
+    "trainersanity_whitelist",
+    "trainersanity_blacklist",
     "randomize_trainer_parties",
     "trainer_party_blacklist",
 
@@ -940,12 +996,16 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
     encounter_species_blacklist: EncounterSpeciesBlacklist
     dexsanity: DexsanityCount
     dexsanity_mode: DexsanityMode
+    dexsanity_whitelist: DexsanityWhitelist
+    dexsanity_blacklist: DexsanityBlacklist
     in_logic_evolution_methods: InLogicEvolutionMethods
 
     randomize_roamers: RandomizeRoamers
     roamer_blacklist: RoamerBlacklist
 
     trainersanity: TrainersanityCount
+    trainersanity_whitelist: TrainersanityWhitelist
+    trainersanity_blacklist: TrainersanityBlacklist
     randomize_trainer_parties: RandomizeTrainerParties
     trainer_party_blacklist: TrainerPartyBlacklist
 
@@ -1031,7 +1091,7 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
                     for p in trainer_party_supporting_starters(trainer)
                     if p.species in rm_set
                 }
-                if len(rm_set - self.encounter_species_blacklist.blacklist() - in_logic_trainer_mons) <  self.regional_dex_goal.value - len(in_logic_trainer_mons):
+                if len(expand_set_via_evolutions(rm_set - self.encounter_species_blacklist.blacklist(), self.in_logic_evolution_methods.value) - in_logic_trainer_mons) <  self.regional_dex_goal.value - len(in_logic_trainer_mons):
                     raise OptionError(f"encounter species blacklist is too restrictive: can't get enough regional species.")
             in_logic_trainer_mons = {p.species
                 for rd in regions.values()
@@ -1039,12 +1099,12 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
                 for p in trainer_party_supporting_starters(trainer)
                 if p.species in rm_set
             }
-            if len(rm_set - self.encounter_species_blacklist.blacklist() - in_logic_trainer_mons) < max(50, self.regional_dex_goal.value) - len(in_logic_trainer_mons):
+            if len(expand_set_via_evolutions(rm_set - self.encounter_species_blacklist.blacklist(), self.in_logic_evolution_methods.value) - in_logic_trainer_mons) < max(50, self.regional_dex_goal.value) - len(in_logic_trainer_mons):
                 raise OptionError(f"encounter species blacklist is too restrictive: can't get enough regional species. number of regional encounters possible: {len(rm_set - self.encounter_species_blacklist.blacklist() - in_logic_trainer_mons) + len(in_logic_trainer_mons)}")
         elif self.randomize_trainer_parties:
             if not self.pokedex:
                 acc_suc = set() if self.start_with_swarms else {"swarms"}
-                in_logic_encounter_mons = {slot.species
+                in_logic_encounter_mons = expand_set_via_evolutions({slot.species
                     for rd in regions.values()
                     if rd.header in encounters and rd.header not in national_dex_requiring_encs \
                     for type, table in encounter_type_pairs
@@ -1057,10 +1117,10 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
                     if nm in self.in_logic_encounters and nm not in special_encounters.requiring_national_dex
                     for spec in getattr(special_encounters, nm)
                     if spec in rm_set
-                }
+                }, self.in_logic_evolution_methods.value)
                 if len(rm_set - self.trainer_party_blacklist.blacklist() - in_logic_encounter_mons) < self.regional_dex_goal.value - len(in_logic_encounter_mons):
                     raise OptionError(f"trainer party blacklist is too restrictive: can't get enough regional species. number of regional encounters possible: {len(rm_set - self.trainer_party_blacklist.blacklist() - in_logic_encounter_mons) + len(in_logic_encounter_mons)}")
-            in_logic_encounter_mons = {slot.species
+            in_logic_encounter_mons = expand_set_via_evolutions({slot.species
                 for rd in regions.values()
                 if rd.header in encounters \
                 for type, table in encounter_type_pairs
@@ -1073,7 +1133,7 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
                 if nm in self.in_logic_encounters
                 for spec in getattr(special_encounters, nm)
                 if spec in rm_set
-            }
+            }, self.in_logic_evolution_methods.value)
             if len(rm_set - self.trainer_party_blacklist.blacklist() - in_logic_encounter_mons) < max(50, self.regional_dex_goal.value) - len(in_logic_encounter_mons):
                 raise OptionError(f"trainer party blacklist is too restrictive: can't get enough regional species. number of regional encounters possible: {len(rm_set - self.trainer_party_blacklist.blacklist() - in_logic_encounter_mons) + len(in_logic_encounter_mons)}")
         else:
@@ -1095,7 +1155,7 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
                     for p in trainer_party_supporting_starters(trainer)
                     if p.species in rm_set
                 }
-                if len(in_logic_encounter_mons | in_logic_trainer_mons) < self.regional_dex_goal.value:
+                if len(expand_set_via_evolutions(in_logic_encounter_mons, self.in_logic_evolution_methods.value) | in_logic_trainer_mons) < self.regional_dex_goal.value:
                     raise OptionError(f"regional dex goal is too high. not enough encounters to fill it. number of regional encounters possible: {len(in_logic_encounter_mons | in_logic_trainer_mons)}")
             in_logic_encounter_mons = {slot.species
                 for rd in regions.values()
@@ -1112,7 +1172,7 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
                 for p in trainer_party_supporting_starters(trainer)
                 if p.species in rm_set
             }
-            if len(in_logic_encounter_mons | in_logic_trainer_mons) < max(50, self.regional_dex_goal.value):
+            if len(expand_set_via_evolutions(in_logic_encounter_mons, self.in_logic_evolution_methods.value) | in_logic_trainer_mons) < max(50, self.regional_dex_goal.value):
                 raise OptionError(f"regional dex goal is too high. not enough encounters to fill it. number of regional encounters possible: {len(in_logic_encounter_mons | in_logic_trainer_mons)}")
         if self.randomize_encounters:
             amity_square_mons = {
@@ -1141,24 +1201,13 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
                 raise OptionError("at least one Amity Square species must be able to be encountered")
         if self.dexsanity:
             if self.randomize_encounters:
-                slots = len({(rd.header, table, i)
-                    for _, rd in regions.items()
-                    if rd.header in encounters \
-                        and (self.unown_option != UnownsOption.option_vanilla or not rd.header.startswith("solaceon_ruins"))
-                    for type, table in encounter_type_pairs
-                    if type != "water" or table in self.in_logic_encounters
-                    for i, slot in enumerate(getattr(encounters[rd.header], table))
-                    if not slot.accessibility or set(slot.accessibility) & self.in_logic_encounters.value
-                })
-                speenc_slots = len({(nm, i)
-                    for nm in ["regular_honey_tree", "munchlax_honey_tree", "trophy_garden", "great_marsh_observatory", "great_marsh_observatory_national_dex", "feebas_fishing", "odd_keystone"]
-                    if nm in self.in_logic_encounters
-                    for i in range(len(getattr(special_encounters, nm)))
-                })
-                if slots + speenc_slots < self.dexsanity:
-                    raise OptionError(f"dexsanity count larger than number of in-logic encounter slots. number of in-logic encounter slots: {slots + speenc_slots}")
-                elif len(species) - len(self.encounter_species_blacklist.blacklist()) < self.dexsanity:
-                    raise OptionError(f"dexsanity count larger than number of available species. number of available species: {len(species) - len(self.encounter_species_blacklist.blacklist())}")
+                possible_species = expand_set_via_evolutions(species.keys() - self.encounter_species_blacklist.blacklist(), self.in_logic_evolution_methods.value)
+                if len(self.dexsanity_whitelist.blacklist()) > 0:
+                    possible_species &= self.dexsanity_whitelist.blacklist()
+                else:
+                    possible_species -= self.dexsanity_blacklist.blacklist()
+                if len(possible_species) < self.dexsanity:
+                    raise OptionError(f"dexsanity count larger than number of available species. number of available species: {len(possible_species)}")
             else:
                 in_logic_encounter_mons = {slot.species
                     for rd in regions.values()
@@ -1168,9 +1217,14 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
                     for _, slot in enumerate(getattr(encounters[rd.header], table))
                     if not slot.accessibility or set(slot.accessibility) & self.in_logic_encounters.value
                 } | {spec
-                    for nm in ["regular_honey_tree", "munchlax_honey_tree", "trophy_garden", "great_marsh_observatory", "great_marsh_observatory_national_dex", "feebas_fishing", "odd_keystone"]
+                    for nm in {"regular_honey_tree", "munchlax_honey_tree", "trophy_garden", "great_marsh_observatory", "great_marsh_observatory_national_dex", "feebas_fishing", "odd_keystone"} & self.in_logic_encounters.value
                     for spec in getattr(special_encounters, nm)
                 }
+                in_logic_encounter_mons = expand_set_via_evolutions(in_logic_encounter_mons, self.in_logic_evolution_methods.value)
+                if len(self.dexsanity_whitelist.blacklist()) > 0:
+                    in_logic_encounter_mons &= self.dexsanity_whitelist.blacklist()
+                else:
+                    in_logic_encounter_mons -= self.dexsanity_blacklist.blacklist()
                 if len(in_logic_encounter_mons) < self.dexsanity:
                     raise OptionError(f"dexsanity count larger than in-logic species count. number of in-logic species: {len(in_logic_encounter_mons)}")
         if self.randomize_roamers and len(species.keys() - self.roamer_blacklist.blacklist()) < 5:
@@ -1183,6 +1237,11 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
                 species_set = having_two_level_evos if self.require_two_level_evolution_starters else species.keys()
                 if len(species_set - self.starter_blacklist.blacklist()) < 3:
                     raise OptionError(f"starter blacklist too restrictive")
+        if 0 < len(self.trainersanity_whitelist.value):
+            if len(self.trainersanity_whitelist.value) < self.trainersanity.value:
+                raise OptionError("trainersanity whitelist does not have enough trainers")
+        elif len(set(in_game_trainer_labels) - self.trainersanity_blacklist.value) < self.trainersanity.value:
+            raise OptionError("trainersanity blacklist is too restrictive")
 
     def save_options(self) -> MutableMapping[str, Any]:
         return self.as_dict(*slot_data_options)
@@ -1258,6 +1317,8 @@ OPTION_GROUPS = [
             EncounterSpeciesBlacklist,
             DexsanityCount,
             DexsanityMode,
+            DexsanityBlacklist,
+            DexsanityWhitelist,
             InLogicEvolutionMethods,
             EvoItemsShopInAPHelper,
             ReusableTms,
@@ -1272,6 +1333,8 @@ OPTION_GROUPS = [
         "Trainers",
         [
             TrainersanityCount,
+            TrainersanityWhitelist,
+            TrainersanityBlacklist,
             RandomizeTrainerParties,
             TrainerPartyBlacklist,
         ],
