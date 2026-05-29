@@ -241,7 +241,7 @@ trainers = [
 
 [victory_road_1f_room_1]
 exits = [
-    "victory_road_1f_room_2",
+    "victory_road_1f_room_2_entrance",
     "victory_road_1f",
 ]
 header = "victory_road_1f_room_1"
@@ -669,9 +669,19 @@ exits = [
 ]
 header = "celestic_town_north_house"
 
-[victory_road_1f_room_2]
+[victory_road_1f_room_2_entrance]
 exits = [
     "victory_road_1f_room_1",
+    "victory_road_1f_room_2",
+]
+header = "victory_road_1f_room_2"
+accessible_encounters = [
+    "land",
+]
+
+[victory_road_1f_room_2]
+exits = [
+    "victory_road_1f_room_2_entrance",
     "victory_road_1f_room_3",
 ]
 header = "victory_road_1f_room_2"
