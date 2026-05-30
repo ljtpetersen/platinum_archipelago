@@ -9,21 +9,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 * Universal tracker YAML-less support.
 * A location for the bag item.
-* GBA cartridge items and locations for them. (option to remove location untested)
-* A linking cable item and a location for it. (location untested)
-* TMs for Rollout, Ancient Power, Double Hit, and Mimic, and corresponding locations for them. (Ancient Power location untested)
+* GBA cartridge items and locations for them.
+* A linking cable item and a location for it.
+* TMs for Rollout, Ancient Power, Double Hit, and Mimic, and corresponding locations for them.
 * AP items now display their name and destination when picked up.
-* A location for the S.S. Ticket (untested).
-* A location for the Marsh Pass (untested).
-* Daytime and nighttime items (untested).
+* A location for the S.S. Ticket.
+* A location for the Marsh Pass.
+* Daytime and nighttime items.
 * An option to normalize encounter slot probabilities.
-* Dexsanity support, including partial. (mostly tested)
-* Trainersanity support. (mostly tested)
+* Dexsanity support, including partial.
+* Trainersanity support.
 * Instant text speed option.
-* Death Link support (moderately tested).
-* Starter randomization. (mostly tested)
-* Encounter randomization, including special encounters. (special encounters, water, rods untested)
-* Trainer party randomization. (somewhat tested)
+* Death Link support.
+* Starter randomization.
+* Encounter randomization, including special encounters.
+* Trainer party randomization.
 * Hold A to advance option.
 * Randomizing the species that Rowan shows during the intro.
 * A clerk in the fourth floor of the Veilstone Department Store, who sells non-reusable evolution items after they have been previously obtained.
@@ -33,8 +33,8 @@ He also sells TM70 Flash.
 * Cheats in the client.
 * Swarms can now be attracted by berries.
 * AP Helper NPC to 2nd floors of all Pokémon Centers.
-* Dowsing Machine Upgrades to identify munchlax honey trees and feebas fishing tiles. (sprites missing)
-* An item to allow use of field moves without a party member knowing them. (sprites missing)
+* Dowsing Machine Upgrades to identify munchlax honey trees and feebas fishing tiles.
+* An item to allow use of field moves without a party member knowing them.
 * An option to just talk to trainers. (useful for trainersanity)
 * Added option groups to the WebWorld and the template YAML ([@snowflav-goob](https://github.com/snowflav-goob))
 * The slot name is now stored in the ROM, so it does not need to be entered when BizHawk Client connects.
@@ -52,7 +52,7 @@ appropriately.
 * The trophy garden can now be quickly reset.
 * Locations that check for number of seen species now require the Pokédex.
 * Poké Radar no longer needs to recharge.
-* Remote items now have more options regarding which items are remote. (untested)
+* Remote items now have more options regarding which items are remote.
 * There is no longer an option to show unrandomized progression items.
 * The Great Marsh binoculars now reset the special encounters in the Great Marsh when they are checked.
 * Up to 64 items can be received at once (when using none item notification).
@@ -61,7 +61,7 @@ appropriately.
 ### Fixed
 * Non-determinism of generation. (hopefully)
 * Elite Four rematch is triggered only if the game has been completed and stark mountain has been cleared.
-* The bag now shows the amount of collected unown file items. (untested)
+* The bag now shows the amount of collected unown file items.
 * Team Galactic Grunts now disappear if you defeat Mars before hitting the Route 205 South trigger.
 * Correct Rev. 0 ROM is now being used for diffs.
 * APWorld building is now compatible with Archipelago 7.
