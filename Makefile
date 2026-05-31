@@ -50,6 +50,8 @@ DATA := data_gen/encounters.toml \
 
 PATCHES := $(ROMS:%=patches/base_patch_%.bsdiff4)
 
+APNDS_VERSION := $(shell cat apnds_version.txt)
+
 default: pokemon_platinum.apworld
 
 patches/base_patch_%.bsdiff4: roms/%.nds roms/target.nds
@@ -62,10 +64,12 @@ data/__init__.py: $(DATA)
 
 apnds/__init__.py: apnds_version.txt
 	@echo UDPATE APNDS
-	$Qcurl -LSso apnds.tar.gz "https://github.com/ljtpetersen/apnds/releases/download/v`cat apnds_version.txt`/apnds.tar.gz"
+	$Qcurl -LSso apnds.tar.gz "https://github.com/ljtpetersen/apnds/releases/download/v$(APNDS_VERSION)/apnds-$(APNDS_VERSION).tar.gz"
 	$Qrm -r apnds >/dev/null 2>&1 || true
-	$Qtar xzf apnds.tar.gz
-	$Qrm apnds.tar.gz
+	$Qtar xzf apnds.tar.gz apnds-$(APNDS_VERSION)/apnds apnds-$(APNDS_VERSION)/LICENSE
+	$Qmv apnds-$(APNDS_VERSION)/LICENSE apnds-$(APNDS_VERSION)/apnds
+	$Qmv apnds-$(APNDS_VERSION)/apnds apnds
+	$Qrm -r apnds.tar.gz apnds-$(APNDS_VERSION)
 	$Qtouch apnds/__init__.py
 
 patches: $(PATCHES)
