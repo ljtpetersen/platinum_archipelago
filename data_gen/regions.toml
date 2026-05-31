@@ -549,7 +549,9 @@ locs = [
 group = "fight_area"
 
 [route_226_house]
-exits = []
+exits = [
+    "route_226_east",
+]
 header = "route_226_house"
 group = "fight_area"
 
