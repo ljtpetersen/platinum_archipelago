@@ -5632,7 +5632,7 @@ exits = [
     "fight_area",
     "survival_area",
     "resort_area",
-    "pal_park_lobby",
+    "route_221",
     "pokemon_league",
 ]
 
