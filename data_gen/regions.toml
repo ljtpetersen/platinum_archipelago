@@ -995,6 +995,7 @@ header = "twinleaf_town_southwest_house"
 
 [fight_area]
 exits = [
+    "snowpoint_city",
     "route_225_gate_to_fight_area",
     "fight_area_middle_house",
     "fight_area_mart",
