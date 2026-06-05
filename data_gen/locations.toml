@@ -4590,7 +4590,7 @@ original_item = "coal_badge"
 type = "badge"
 table = "base"
 check = 117
-label = "Oreburgh City Gym - Coal Badge From Roark"
+label = "Oreburgh City Gym - Badge From Roark"
 id = 103
 
 [oreburgh_city_gym_tm76]
@@ -4606,7 +4606,7 @@ original_item = "forest_badge"
 type = "badge"
 table = "base"
 check = 116
-label = "Eterna City Gym - Forest Badge From Gardenia"
+label = "Eterna City Gym - Badge From Gardenia"
 id = 2
 
 [eterna_city_gym_tm86]
@@ -4622,7 +4622,7 @@ original_item = "cobble_badge"
 type = "badge"
 table = "base"
 check = 157
-label = "Veilstone City Gym - Cobble Badge from Maylene"
+label = "Veilstone City Gym - Badge from Maylene"
 id = 4
 
 [veilstone_city_gym_tm60]
@@ -4638,7 +4638,7 @@ original_item = "fen_badge"
 type = "badge"
 table = "base"
 check = 156
-label = "Pastoria City Gym - Fen Badge from Crasher Wake"
+label = "Pastoria City Gym - Badge from Crasher Wake"
 id = 6
 
 [pastoria_city_gym_tm55]
@@ -4654,7 +4654,7 @@ original_item = "relic_badge"
 type = "badge"
 table = "base"
 check = 125
-label = "Hearthome City Gym - Relic Badge From Fantina"
+label = "Hearthome City Gym - Badge From Fantina"
 id = 8
 
 [hearthome_city_gym_leader_room_tm65]
@@ -4670,7 +4670,7 @@ original_item = "mine_badge"
 type = "badge"
 table = "base"
 check = 146
-label = "Canalave City Gym - Mine Badge from Byron"
+label = "Canalave City Gym - Badge from Byron"
 id = 10
 
 [canalave_city_gym_tm91]
@@ -4686,7 +4686,7 @@ original_item = "icicle_badge"
 type = "badge"
 table = "base"
 check = 158
-label = "Snowpoint City Gym - Icicle Badge from Candice"
+label = "Snowpoint City Gym - Badge from Candice"
 id = 12
 
 [snowpoint_city_gym_tm72]
@@ -4702,7 +4702,7 @@ original_item = "beacon_badge"
 type = "badge"
 table = "base"
 check = 182
-label = "Sunyshore City Gym - Beacon Badge from Volkner"
+label = "Sunyshore City Gym - Badge from Volkner"
 id = 14
 
 [sunyshore_city_gym_room_3_tm57]
