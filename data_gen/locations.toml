@@ -32,7 +32,7 @@ original_item = "rare_candy"
 type = "overworld"
 table = "overworld"
 check = 1213
-Route 225 - Item Behind Cut Trees Near Trainer Trio"
+label = "Route 225 - Item Behind Cut Trees Near Trainer Trio"
 id = 199
 
 [route_225_hp_up]
@@ -40,7 +40,7 @@ original_item = "hp_up"
 type = "overworld"
 table = "overworld"
 check = 1214
-Route 225 - Item SW in Bridge Section"
+label = "Route 225 - Item SW in Bridge Section"
 id = 200
 
 [route_225_lax_incense]
