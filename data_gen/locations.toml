@@ -32,7 +32,7 @@ original_item = "rare_candy"
 type = "overworld"
 table = "overworld"
 check = 1213
-label = "Route 225 - Item Behind Cut Trees Near Trainer Trio"
+Route 225 - Item Behind Cut Trees Near Trainer Trio"
 id = 199
 
 [route_225_hp_up]
@@ -40,7 +40,7 @@ original_item = "hp_up"
 type = "overworld"
 table = "overworld"
 check = 1214
-label = "Route 225 - Item SW in Bridge Section"
+Route 225 - Item SW in Bridge Section"
 id = 200
 
 [route_225_lax_incense]
@@ -3894,7 +3894,7 @@ original_item = "hm08"
 type = "hm"
 table = "overworld"
 check = 1175
-label = "Route 217 - HM08 Above Hiker's House"
+label = "Route 217 - Item Above Hiker's House"
 id = 161
 
 [route_217_iron]
@@ -4398,7 +4398,7 @@ original_item = "escape_rope"
 type = "overworld"
 table = "overworld"
 check = 1021
-label = "Oreburgh Mine - B2F Left item"
+label = "Oreburgh Mine B2F - Left item"
 id = 7
 
 [oreburgh_mine_b2f_potion]
@@ -4406,7 +4406,7 @@ original_item = "potion"
 type = "overworld"
 table = "overworld"
 check = 1022
-label = "Oreburgh Mine - B2F Right item"
+label = "Oreburgh Mine B2F - Right item"
 id = 8
 
 [oreburgh_gate_b1f_tm01]
@@ -4462,7 +4462,7 @@ original_item = "hm02"
 type = "hm"
 table = "overworld"
 check = 1250
-label = "Galactic Warehouse - HM02 with Looker"
+label = "Galactic Warehouse - Item Found with Looker"
 id = 236
 
 [solaceon_ruins_room_5_southeast_deadend_thunderstone]
@@ -4518,7 +4518,7 @@ original_item = "protein"
 type = "overworld"
 table = "overworld"
 check = 1060
-label = "Mt. Coronet (Routes 207-208 Room) - Item Across Upper Pond"
+label = "Mt. Coronet (Southern Room) - Item Across Upper Pond"
 id = 46
 
 [mt_coronet_1f_south_dawn_stone]
@@ -4526,7 +4526,7 @@ original_item = "dawn_stone"
 type = "overworld"
 table = "overworld"
 check = 1061
-label = "Mt. Coronet (Routes 207-208 Room) - Item Across Lower Pond"
+label = "Mt. Coronet (Southern Room) - Item Across Lower Pond"
 id = 47
 
 [mt_coronet_1f_south_stardust]
@@ -4534,7 +4534,7 @@ original_item = "stardust"
 type = "hidden"
 table = "hidden"
 check = 743
-label = "Mt. Coronet (Routes 207-208 Room) - Hidden Item on Center Boulder"
+label = "Mt. Coronet (Southern Room) - Hidden Item on Center Boulder"
 id = 13
 
 [mt_coronet_1f_south_energypowder]
@@ -4542,7 +4542,7 @@ original_item = "energypowder"
 type = "hidden"
 table = "hidden"
 check = 1001
-label = "Mt. Coronet (Routes 207-208 Room) - Hidden Item in Boulder in Top Left"
+label = "Mt. Coronet (Southern Room) - Hidden Item in Boulder in Top Left"
 id = 271
 
 [mt_coronet_1f_south_revive]
@@ -4550,7 +4550,7 @@ original_item = "revive"
 type = "hidden"
 table = "hidden"
 check = 1002
-label = "Mt. Coronet (Routes 207-208 Room) - Hidden Item in Bottom Left"
+label = "Mt. Coronet (Southern Room) - Hidden Item in Bottom Left"
 id = 272
 
 [solaceon_ruins_room_7_mind_plate]
@@ -4746,7 +4746,7 @@ original_item = "hm04"
 type = "hm"
 table = "base"
 check = 532
-label = "Iron Island - HM04 from Riley"
+label = "Iron Island - Item from Riley"
 id = 19
 
 [sunyshore_city_hm07]
@@ -4754,7 +4754,7 @@ original_item = "hm07"
 type = "hm"
 table = "base"
 check = 154
-label = "Sunyshore City - HM07 from Jasmine"
+label = "Sunyshore City - Item from Jasmine"
 id = 20
 
 [route_207_dowsingmachine]
@@ -4774,7 +4774,7 @@ original_item = "old_rod"
 type = "rod"
 table = "base"
 check = 132
-label = "Jubilife City Gate to Route 218 - Old Rod from Fisherman"
+label = "Jubilife City Gate to Route 218 - Item from Fisherman"
 id = 22
 
 [route_209_good_rod]
@@ -4782,7 +4782,7 @@ original_item = "good_rod"
 type = "rod"
 table = "base"
 check = 162
-label = "Route 209 - Good Rod from Fisherman"
+label = "Route 209 - Item from Fisherman"
 id = 23
 
 [fight_area_super_rod]
@@ -4790,7 +4790,7 @@ original_item = "super_rod"
 type = "rod"
 table = "base"
 check = 107
-label = "Fight Area - Super Rod from Fisherman"
+label = "Fight Area - Item from Fisherman"
 id = 24
 
 [twinleaf_town_player_house_1f_running_shoes]
@@ -5005,7 +5005,7 @@ original_item = "heal_ball"
 type = "npc_gift"
 table = "base"
 check = 193
-label = "Oreburgh City - Gift from Overalls Man for Showing Geodude in North House"
+label = "Oreburgh City - Show Geodude to Overalls Man in North House"
 id = 49
 
 [oreburgh_city_east_house_2f_great_ball]
@@ -5013,7 +5013,7 @@ original_item = "great_ball"
 type = "npc_gift"
 table = "base"
 check = 266
-label = "Oreburgh City - Youngster in Southeast Building"
+label = "Oreburgh City - Gift from Youngster in Southeast Building"
 id = 50
 
 [oreburgh_city_super_potion]
@@ -5101,7 +5101,7 @@ original_item = "friendshipchecker"
 type = "poketchapp"
 table = "base"
 check = 2918
-label = "Eterna City Pokemon Center - Item from Woman in Pokecenter"
+label = "Eterna City Pokemon Center - Item from Woman in Pokemon Center"
 id = 61
 
 [eterna_city_underground_man_house_explorer_kit]
