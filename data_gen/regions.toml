@@ -106,7 +106,6 @@ header = "victory_road_1f"
 
 [victory_road_1f]
 exits = [
-    "victory_road_2f_from_1f",
     "victory_road_2f_north_alcove",
     "victory_road_1f_center",
     "victory_road_1f_upper_entrance",
@@ -177,7 +176,10 @@ locs = [
 
 [victory_road_2f_from_1f_strength]
 header = "victory_road_2f"
-exits = ["victory_road_2f"]
+exits = [
+    "victory_road_2f",
+    "victory_road_2f_from_1f",
+]
 locs = [
     "victory_road_2f_full_restore_0",
 ]
@@ -187,16 +189,18 @@ trainers = [
 
 [victory_road_2f_from_1f]
 header = "victory_road_2f"
-exits = ["victory_road_2f_from_1f_strength"]
+exits = [
+    "victory_road_1f_center",
+    "victory_road_2f_from_1f_strength",
+]
 trainers = [
     "veteran_clayton",
 ]
 
 [victory_road_2f]
 exits = [
-    "victory_road_1f_center",
     "victory_road_2f_entrance",
-    "victory_road_2f_from_1f",
+    "victory_road_2f_from_1f_strength",
 ]
 header = "victory_road_2f"
 locs = [
