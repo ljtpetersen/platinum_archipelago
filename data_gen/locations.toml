@@ -1,4 +1,4 @@
-# data_gen/locations.toml
+F# data_gen/locations.toml
 #
 # Copyright (C) 2025-2026 James Petersen <m@jamespetersen.ca>
 # Licensed under MIT. See LICENSE
@@ -5485,7 +5485,7 @@ check = 261
 original_item = "sticky_barb"
 type = "npc_gift"
 table = "base"
-label = "Veilstone Department Store 5F - Gift from the Two Men"
+label = "Veilstone Department Store 5F - Gift from the Two Buff Guys Standing Side by Side"
 
 [pokecenter_b1f_pal_pad]
 id = 108
