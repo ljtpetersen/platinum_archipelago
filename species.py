@@ -122,15 +122,10 @@ def randomize_encounters(world: "PokemonPlatinumWorld", req_specs: Set[str]) -> 
         before_dex_slots_spe = sorted(before_dex_slots_spe_set)
         after_dex_slots = sorted(slots - before_dex_slots_set)
         after_dex_slots_spe = sorted(speenc_slots - before_dex_slots_spe_set)
-    min_unique_count = world.options.dexsanity
-    assert min_unique_count <= len(slots) + len(speenc_slots)
     before_mons = sorted(req_specs)
     assert len(before_mons) <= len(before_dex_slots) + len(before_dex_slots_spe)
     bl = world.options.encounter_species_blacklist.blacklist()
     new_specs = []
-    if len(before_mons) < min_unique_count:
-        pokemon_pool = [mon for mon in speciesdata if mon not in req_specs and mon not in bl]
-        new_specs.extend(world.random.sample(pokemon_pool, k=min_unique_count - len(req_specs)))
     pokemon_pool = [mon for mon in speciesdata if mon not in bl]
     new_specs += world.random.choices(pokemon_pool, k=len(slots) + len(speenc_slots) - len(new_specs) - len(before_mons))
     world.random.shuffle(new_specs)

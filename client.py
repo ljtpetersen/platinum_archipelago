@@ -287,7 +287,8 @@ class PokemonPlatinumClient(BizHawkClient):
         self.death_link_group = ""
         self.death_link_state = False
 
-    async def get_slot_name(self, ctx: "BizHawkClientContext") -> str | None:
+    async def get_slot_name_and_remote_items(self, ctx: "BizHawkClientContext") -> Tuple[str | None, bool]:
+        remote_items: bool = False
         try:
             header = ndsrom.Header((await bizhawk.read(ctx.bizhawk_ctx, [(0, 0x4000, "ROM")]))[0])
             fatb_offset = header.get_le(ndsrom.HeaderField.FATB_ROMOFFSET)
@@ -299,18 +300,19 @@ class PokemonPlatinumClient(BizHawkClient):
             filename_id_map = ndsrom.get_filename_id_map(fntb)
             ap_bin_id = filename_id_map["/ap.bin"]
             ap_bin_start, ap_bin_end = unpack_from("<2I", fatb, ap_bin_id * 8)
-            player_name_bytes = (await bizhawk.read(ctx.bizhawk_ctx, [(ap_bin_start, 64, "ROM")]))[0]
-            name_end = player_name_bytes.find(b'\0')
+            ap_bin_bytes = (await bizhawk.read(ctx.bizhawk_ctx, [(ap_bin_start, 97, "ROM")]))[0]
+            name_end = ap_bin_bytes[:64].find(b'\0')
+            remote_items = ap_bin_bytes[96] != 0
             if name_end != -1:
-                player_name = player_name_bytes[:name_end].decode()
+                player_name = ap_bin_bytes[:name_end].decode()
             else:
-                player_name = player_name_bytes.decode()
+                player_name = ap_bin_bytes[:64].decode()
 
-            return player_name
+            return (player_name, remote_items)
         except UnicodeDecodeError:
-            return None
+            return (None, remote_items)
         except bizhawk.RequestFailedError:
-            return None
+            return (None, remote_items)
 
     async def validate_rom(self, ctx: "BizHawkClientContext") -> bool:
         from CommonClient import logger
@@ -352,9 +354,12 @@ class PokemonPlatinumClient(BizHawkClient):
             remove_commands()
             return False
 
-        self.player_name = await self.get_slot_name(ctx)
+        self.player_name, remote_items = await self.get_slot_name_and_remote_items(ctx)
         ctx.game = self.game
-        ctx.items_handling = 0b001
+        if remote_items:
+            ctx.items_handling = 0b011
+        else:
+            ctx.items_handling = 0b001
         self.want_slot_data = True
         self.watcher_timeout = 0.125
 
@@ -467,9 +472,6 @@ class PokemonPlatinumClient(BizHawkClient):
                     [
                         guards["AP STRUCT VALID"],
                         guards["SAVEDATA PTR"],
-                        (savedata_ptr + version_data.ap_save_offset + version_data.recv_item_count_offset_in_ap_save, read_result[0], "ARM9 System Bus"),
-                        (self.ap_struct_address + version_data.recv_state_offset, b'\x01', "ARM9 System Bus"),
-                        (self.ap_struct_address + version_data.remote_item_queue_offset, read_result[2], "ARM9 System Bus"),
                     ]
                 )
 

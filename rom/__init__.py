@@ -174,6 +174,12 @@ def generate_output(world: "PokemonPlatinumWorld", output_directory: str, patch:
     ap_bin += slot_name_bytes
     ap_bin += process_name(game_opts.default_player_name, world, game_opts.name_strictness)
     ap_bin += process_name(game_opts.default_rival_name, world, game_opts.name_strictness)
+
+    def add_opt_byte(name: str):
+        nonlocal ap_bin
+        ap_bin += getattr(world.options, name).value.to_bytes(length=1, byteorder='little')
+
+    add_opt_byte("remote_items")
     match game_opts.default_gender:
         case "male":
             ap_bin += b'\x00'
@@ -246,14 +252,9 @@ def generate_output(world: "PokemonPlatinumWorld", output_directory: str, patch:
         hm_accum = 0xFF
     ap_bin += hm_accum.to_bytes(length=1, byteorder='little')
 
-    def add_opt_byte(name: str):
-        nonlocal ap_bin
-        ap_bin += getattr(world.options, name).value.to_bytes(length=1, byteorder='little')
-
     add_opt_byte("parcel_coupons_route_203")
     add_opt_byte("regional_dex_goal")
     add_opt_byte("marsh_pass")
-    add_opt_byte("remote_items")
     add_opt_byte("early_sunyshore")
     add_opt_byte("unown_option")
     add_opt_byte("pastoria_barriers")
@@ -400,7 +401,6 @@ def generate_output(world: "PokemonPlatinumWorld", output_directory: str, patch:
         strbuf_map[data] = cur_name_off
         cur_name_off += len(data)
         return data
-
 
     strbuf_data = b''.join(add_strbuf_offset(data) for data in strbufs)
 

@@ -67,6 +67,7 @@ appropriately.
 * APWorld building is now compatible with Archipelago 7.
 * Triggering the second Galactic warehouse scene before defeating Maylene and doing the first scene is no longer possible.
 * Victory Road room after defeating Cynthia now requires Defog logically.
+* Fixed bug where received items can occasionally be lost.
 
 ## [0.1.8] - 2026-02-21
 ### Fixed
