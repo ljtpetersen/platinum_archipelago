@@ -344,6 +344,10 @@ locs.route_217_west_house_icicle_plate = "hm08"
 locs.acuity_lakefront_reaper_cloth = "rock_climb"
 exits.acuity_lakefront.lake_acuity_low_water = "rock_climb"
 
+locs.lake_acuity_tm14 = "surf"
+encs.lake_acuity.land = "surf"
+exits.lake_acuity.acuity_cavern = "surf"
+
 exits.snowpoint_city.fight_area = "s_s_ticket"
 exits.snowpoint_city.snowpoint_temple_1f = "national_dex & event_beat_cynthia"
 locs.snowpoint_temple_b4f_full_heal = "strength"
