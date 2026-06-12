@@ -1692,6 +1692,11 @@ exits = [
     "stark_mountain_room_1",
 ]
 header = "stark_mountain_room_1"
+group = "fight_area"
+trainers = [
+    "commander_mars_stark_mountain",
+    "commander_jupiter_stark_mountain",
+]
 
 [stark_mountain_room_1]
 exits = [
@@ -1707,10 +1712,6 @@ locs = [
     "stark_mountain_room_1_star_piece",
 ]
 group = "fight_area"
-trainers = [
-    "commander_mars_stark_mountain",
-    "commander_jupiter_stark_mountain",
-]
 
 [battle_frontier_gate_to_fight_area]
 exits = [
