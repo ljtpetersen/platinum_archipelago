@@ -5405,7 +5405,7 @@ check = 2929
 original_item = "roulette"
 type = "poketchapp"
 table = "base"
-label = "Sunyshore City - Show Quirky Pokemon to Developer"
+label = "Sunyshore City - Third Item from Developer"
 
 [sunyshore_city_east_house_dotart]
 id = 97
@@ -5413,7 +5413,7 @@ check = 2930
 original_item = "dotart"
 type = "poketchapp"
 table = "base"
-label = "Sunyshore City - Show Naive Pokemon to Developer"
+label = "Sunyshore City - Second Item from Developer"
 
 [sunyshore_city_east_house_calendar]
 id = 98
@@ -5421,7 +5421,7 @@ check = 2931
 original_item = "calendar"
 type = "poketchapp"
 table = "base"
-label = "Sunyshore City - Show Serious Pokemon to Developer"
+label = "Sunyshore City - First Item from Developer"
 
 [poketch_co_1f_memopad]
 id = 99
