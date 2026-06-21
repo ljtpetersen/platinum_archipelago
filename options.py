@@ -278,8 +278,6 @@ class RemoteItems(Choice):
     """
     Whether local items should be given in-game, or sent by the server.
     This overrides the show randomized progression items option: all items are shown.
-    It is highly recommended to use nothing for received items notification, otherwise
-    you will be notified twice for each item.
 
     Choices:
     - off: no items are remote.
@@ -843,6 +841,24 @@ class DexsanityBlacklist(SpeciesBlacklist):
     display_name = "Dexsanity Blacklist"
     valid_keys = list(species) + ["legendaries"]
 
+class ItemNotificationsMask(OptionSet):
+    """
+    Which types of items should in-game notifications be shown for.
+    Valid options are all, progression, useful, and trap.
+
+    This option can also be modified in the in-game options menu.
+    """
+    display_name = "Item Notifications Mask"
+    valid_keys = ["progression", "useful", "trap", "all"]
+    default = {"progression", "useful"}
+    
+    def to_mask(self) -> int:
+        mask = 0
+        for index, key in enumerate(self.valid_keys):
+            if key in self:
+                mask |= 1 << index
+        return mask
+
 slot_data_options: Sequence[str] = [
     "hms",
     "badges",
@@ -1022,6 +1038,7 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
     guaranteed_escape: GuaranteedEscape
     talk_trainers_without_fight: TalkTrainersWithoutFight
     exp_multiplier: ExpMultiplier
+    item_notifications_mask: ItemNotificationsMask
 
     master_repel: AddMasterRepel
     s_s_ticket: AddSSTicket
@@ -1366,6 +1383,7 @@ OPTION_GROUPS = [
             ExpMultiplier,
             AddMasterRepel,
             RequireFlyItemsForFlight,
+            ItemNotificationsMask
         ],
     ),
 ]

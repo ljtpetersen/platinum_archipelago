@@ -298,6 +298,7 @@ def generate_output(world: "PokemonPlatinumWorld", output_directory: str, patch:
     add_opt_byte("always_catch")
     add_opt_byte("guaranteed_escape")
     add_opt_byte("talk_trainers_without_fight")
+    ap_bin += world.options.item_notifications_mask.to_mask().to_bytes(1, 'little')
 
     if len(ap_bin) % 2 == 1:
         ap_bin += b'\x00'

@@ -45,6 +45,8 @@ appropriately.
 * More options for roadblocks in Route 207.
 * A Poketch app to modify the camera type and make the player invisible.
 * An option to include fly regions as locations.
+* An option to filter item notifications by classification.
+* The R button can be held to stop receiving items.
 ### Changed
 * In-game game options option is now validated before generation.
 * Some evolution stones have been key-itemified, and are no longer consumed when used.
@@ -58,6 +60,7 @@ appropriately.
 * Up to 64 items can be received at once (when using none item notification).
 * The experience multiplier now supports fractional values. It is now modifiable in-game.
 * Changed to rule builder.
+* Scientist in Sunyshore no longer requires Pokémon of specific natures.
 ### Fixed
 * Non-determinism of generation. (hopefully)
 * Elite Four rematch is triggered only if the game has been completed and stark mountain has been cleared.
@@ -68,6 +71,7 @@ appropriately.
 * Triggering the second Galactic warehouse scene before defeating Maylene and doing the first scene is no longer possible.
 * Victory Road room after defeating Cynthia now requires Defog logically.
 * Fixed bug where received items can occasionally be lost.
+* Triggers cannot be walked through when receiving items.
 
 ## [0.1.8] - 2026-02-21
 ### Fixed

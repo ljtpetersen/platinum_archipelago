@@ -3,10 +3,11 @@
 # Copyright (C) 2025-2026 James Petersen <m@jamespetersen.ca>
 # Licensed under MIT. See LICENSE
 
-from collections.abc import Mapping, Set, Sequence
+from collections.abc import Iterable, Mapping, Set, Sequence
 from dataclasses import dataclass
 from enum import IntEnum
-from NetUtils import ClientStatus
+from itertools import batched, chain
+from NetUtils import ClientStatus, NetworkItem
 from Options import Toggle
 from struct import unpack_from
 import time
@@ -20,6 +21,7 @@ from .data.locations import FlagCheck, LocationCheck, LocationTable, locations, 
 from .data.trainers import trainers, trainer_id_to_trainer_const_name, TrainerCheck
 from .data.species import regional_mons, species_id_to_const_name
 from .data.event_checks import event_checks
+from .items import get_item_classification
 from .locations import raw_id_to_const_name
 from .options import Goal, RemoteItems
 
@@ -86,6 +88,7 @@ class VersionData:
     recv_state_offset: int
     remote_item_queue_offset: int
     remote_item_queue_size: int
+    remote_item_queue_flags_offset_in_queue: int
 
 AP_VERSION_DATA: Mapping[int, VersionData] = {
     1: VersionData(
@@ -110,6 +113,7 @@ AP_VERSION_DATA: Mapping[int, VersionData] = {
         recv_state_offset=20,
         remote_item_queue_offset=44,
         remote_item_queue_size=64,
+        remote_item_queue_flags_offset_in_queue=136,
     ),
 }
 
@@ -191,8 +195,11 @@ def dex_bytearray_to_seq(data: bytearray | bytes) -> Sequence[int]:
         if (data[(v - 1) >> 3] & (1 << ((v - 1) & 7))) != 0
     ]
 
-def seq_int_bytes(data: Sequence[int], len_per: int) -> bytes:
+def seq_int_bytes(data: Iterable[int], len_per: int) -> bytes:
     return b''.join(v.to_bytes(len_per, 'little') for v in data)
+
+def pack_nibbles(data: Iterable[int]) -> bytes:
+    return b''.join((v0 & 0xF | v1 << 4 & 0xF0).to_bytes(1, 'little') for v0, v1 in batched(data, n=2))
 
 @dataclass(frozen=True)
 class RemoteItemQueue:
@@ -213,17 +220,36 @@ class RemoteItemQueue:
     def remaining_capacity(self) -> int:
         return self.size - self.amount_in_queue() - 1
 
-    def get_writes(self, queue_addr: int, new_values: Sequence[int]) -> Sequence[Tuple[int, bytes, str]]:
+    def get_writes(self, queue_addr: int, new_values: Sequence[NetworkItem], present_queue_flags: bytes, player: int) -> Sequence[Tuple[int, bytes, str]]:
+        def item_flags(item: NetworkItem) -> int:
+            if item.location <= 0:
+                return get_item_classification(item.item).as_flag() | 8
+            elif item.player == player:
+                return 0
+            else:
+                return item.flags | 8
+
         new_front = (self.front + len(new_values)) & (self.size - 1)
         ret = [(queue_addr, new_front.to_bytes(4, 'little'), "ARM9 System Bus")]
         if new_front < self.front:
             first_upper = self.size - self.front
             if first_upper < len(new_values):
-                ret.append((queue_addr + 8, seq_int_bytes(new_values[first_upper:], 2), "ARM9 System Bus"))
+                ret.append((queue_addr + 8, seq_int_bytes((v.item for v in new_values[first_upper:]), 2), "ARM9 System Bus"))
+                if len(new_values) - first_upper & 1 == 0:
+                    ret.append((queue_addr + 8 + self.size * 2, pack_nibbles(item_flags(v) for v in new_values[first_upper:]), "ARM9 System Bus"))
+                else:
+                    ret.append((queue_addr + 8 + self.size * 2, pack_nibbles(chain((item_flags(v) for v in new_values[first_upper:]), [present_queue_flags[(len(new_values) - first_upper) // 2] >> 4])), "ARM9 System Bus"))
         else:
             first_upper = new_front - self.front
         if first_upper > 0:
-            ret.append((queue_addr + 8 + self.front * 2, seq_int_bytes(new_values[:first_upper], 2), "ARM9 System Bus"))
+            ret.append((queue_addr + 8 + self.front * 2, seq_int_bytes((v.item for v in new_values[:first_upper]), 2), "ARM9 System Bus"))
+            item_flag_seq = []
+            if self.front & 1 != 0:
+                item_flag_seq.append(present_queue_flags[self.front // 2])
+            item_flag_seq.extend(item_flags(v) for v in new_values[:first_upper])
+            if self.front + first_upper & 1 != 0:
+                item_flag_seq.append(present_queue_flags[(self.front + first_upper) // 2] >> 4)
+            ret.append((queue_addr + 8 + self.size * 2 + self.front // 2, pack_nibbles(item_flag_seq), "ARM9 System Bus"))
         return ret
 
 class PokemonPlatinumClient(BizHawkClient):
@@ -299,7 +325,7 @@ class PokemonPlatinumClient(BizHawkClient):
             fntb = (await bizhawk.read(ctx.bizhawk_ctx, [(fntb_offset, fntb_size, "ROM")]))[0]
             filename_id_map = ndsrom.get_filename_id_map(fntb)
             ap_bin_id = filename_id_map["/ap.bin"]
-            ap_bin_start, ap_bin_end = unpack_from("<2I", fatb, ap_bin_id * 8)
+            ap_bin_start, = unpack_from("<I", fatb, ap_bin_id * 8)
             ap_bin_bytes = (await bizhawk.read(ctx.bizhawk_ctx, [(ap_bin_start, 97, "ROM")]))[0]
             name_end = ap_bin_bytes[:64].find(b'\0')
             remote_items = ap_bin_bytes[96] != 0
@@ -449,6 +475,7 @@ class PokemonPlatinumClient(BizHawkClient):
                     (savedata_ptr + version_data.ap_save_offset + version_data.recv_item_count_offset_in_ap_save, 4, "ARM9 System Bus"),
                     (self.ap_struct_address + version_data.recv_state_offset, 1, "ARM9 System Bus"),
                     (self.ap_struct_address + version_data.remote_item_queue_offset, 8, "ARM9 System Bus"),
+                    (self.ap_struct_address + version_data.remote_item_queue_offset + version_data.remote_item_queue_flags_offset_in_queue, version_data.remote_item_queue_size // 2, "ARM9 System Bus"),
                 ],
                 [guards["AP STRUCT VALID"], guards["SAVEDATA PTR"]]
             )
@@ -468,7 +495,9 @@ class PokemonPlatinumClient(BizHawkClient):
                     ctx.bizhawk_ctx,
                     remote_item_queue.get_writes(
                         self.ap_struct_address + version_data.remote_item_queue_offset,
-                        [v.item for v in ctx.items_received[start_idx:start_idx + remote_item_queue.remaining_capacity()]]),
+                        [v for v in ctx.items_received[start_idx:start_idx + remote_item_queue.remaining_capacity()]],
+                        read_result[3],
+                        ctx.slot),
                     [
                         guards["AP STRUCT VALID"],
                         guards["SAVEDATA PTR"],
