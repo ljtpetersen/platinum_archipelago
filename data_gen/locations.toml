@@ -1204,7 +1204,7 @@ original_item = "suite_key"
 type = "key_item"
 table = "hidden"
 check = 946
-label = "Route 213 - Hidden Suite Key By Reception"
+label = "Route 213 - Hidden Item By Reception"
 id = 216
 
 [route_213_pearl_2]
@@ -2708,7 +2708,7 @@ original_item = "tm85"
 type = "overworld"
 table = "overworld"
 check = 1097
-label = "Valor Lakefront - Item After Rock Climb Ledges 2"
+label = "Valor Lakefront - Bottom Item After Rock Climb Ledges"
 id = 83
 
 [valor_lakefront_ultra_ball]
@@ -2724,7 +2724,7 @@ original_item = "iron"
 type = "overworld"
 table = "overworld"
 check = 1330
-label = "Valor Lakefront - Item After Rock Climb Ledges 1"
+label = "Valor Lakefront - Top Item After Rock Climb Ledges"
 id = 315
 
 [valor_lakefront_sun_stone]
@@ -3150,7 +3150,7 @@ original_item = "galactic_key"
 type = "key_item"
 table = "overworld"
 check = 1251
-label = "Galactic Warehouse - Galactic Key Next to Locked Door"
+label = "Galactic Warehouse - Item Next to Locked Door"
 id = 237
 
 [galactic_hq_b2f_zinc]
@@ -3894,7 +3894,7 @@ original_item = "hm08"
 type = "hm"
 table = "overworld"
 check = 1175
-label = "Route 217 - HM08 Above Hiker's House"
+label = "Route 217 - Item Above Hiker's House"
 id = 161
 
 [route_217_iron]
@@ -4398,7 +4398,7 @@ original_item = "escape_rope"
 type = "overworld"
 table = "overworld"
 check = 1021
-label = "Oreburgh Mine - B2F Left item"
+label = "Oreburgh Mine B2F - Left item"
 id = 7
 
 [oreburgh_mine_b2f_potion]
@@ -4406,7 +4406,7 @@ original_item = "potion"
 type = "overworld"
 table = "overworld"
 check = 1022
-label = "Oreburgh Mine - B2F Right item"
+label = "Oreburgh Mine B2F - Right item"
 id = 8
 
 [oreburgh_gate_b1f_tm01]
@@ -4462,7 +4462,7 @@ original_item = "hm02"
 type = "hm"
 table = "overworld"
 check = 1250
-label = "Galactic Warehouse - HM02 with Looker"
+label = "Galactic Warehouse - Item Found with Looker"
 id = 236
 
 [solaceon_ruins_room_5_southeast_deadend_thunderstone]
@@ -4518,7 +4518,7 @@ original_item = "protein"
 type = "overworld"
 table = "overworld"
 check = 1060
-label = "Mt. Coronet (Routes 207-208 Room) - Item Across Upper Pond"
+label = "Mt. Coronet (Southern Room) - Item Across Upper Pond"
 id = 46
 
 [mt_coronet_1f_south_dawn_stone]
@@ -4526,7 +4526,7 @@ original_item = "dawn_stone"
 type = "overworld"
 table = "overworld"
 check = 1061
-label = "Mt. Coronet (Routes 207-208 Room) - Item Across Lower Pond"
+label = "Mt. Coronet (Southern Room) - Item Across Lower Pond"
 id = 47
 
 [mt_coronet_1f_south_stardust]
@@ -4534,7 +4534,7 @@ original_item = "stardust"
 type = "hidden"
 table = "hidden"
 check = 743
-label = "Mt. Coronet (Routes 207-208 Room) - Hidden Item on Center Boulder"
+label = "Mt. Coronet (Southern Room) - Hidden Item on Center Boulder"
 id = 13
 
 [mt_coronet_1f_south_energypowder]
@@ -4542,7 +4542,7 @@ original_item = "energypowder"
 type = "hidden"
 table = "hidden"
 check = 1001
-label = "Mt. Coronet (Routes 207-208 Room) - Hidden Item in Boulder in Top Left"
+label = "Mt. Coronet (Southern Room) - Hidden Item in Boulder in Top Left"
 id = 271
 
 [mt_coronet_1f_south_revive]
@@ -4550,7 +4550,7 @@ original_item = "revive"
 type = "hidden"
 table = "hidden"
 check = 1002
-label = "Mt. Coronet (Routes 207-208 Room) - Hidden Item in Bottom Left"
+label = "Mt. Coronet (Southern Room) - Hidden Item in Bottom Left"
 id = 272
 
 [solaceon_ruins_room_7_mind_plate]
@@ -4590,7 +4590,7 @@ original_item = "coal_badge"
 type = "badge"
 table = "base"
 check = 117
-label = "Oreburgh City Gym - Coal Badge From Roark"
+label = "Oreburgh City Gym - Badge From Roark"
 id = 103
 
 [oreburgh_city_gym_tm76]
@@ -4598,7 +4598,7 @@ original_item = "tm76"
 type = "npc_gift"
 table = "base"
 check = 117
-label = "Oreburgh City Gym - TM75 From Roark"
+label = "Oreburgh City Gym - Gift From Roark"
 id = 1
 
 [eterna_city_gym_forest_badge]
@@ -4606,7 +4606,7 @@ original_item = "forest_badge"
 type = "badge"
 table = "base"
 check = 116
-label = "Eterna City Gym - Forest Badge From Gardenia"
+label = "Eterna City Gym - Badge From Gardenia"
 id = 2
 
 [eterna_city_gym_tm86]
@@ -4614,7 +4614,7 @@ original_item = "tm86"
 type = "npc_gift"
 table = "base"
 check = 116
-label = "Eterna City Gym - TM86 From Gardenia"
+label = "Eterna City Gym - Gift From Gardenia"
 id = 3
 
 [veilstone_city_gym_cobble_badge]
@@ -4622,7 +4622,7 @@ original_item = "cobble_badge"
 type = "badge"
 table = "base"
 check = 157
-label = "Veilstone City Gym - Cobble Badge from Maylene"
+label = "Veilstone City Gym - Badge from Maylene"
 id = 4
 
 [veilstone_city_gym_tm60]
@@ -4630,7 +4630,7 @@ original_item = "tm60"
 type = "npc_gift"
 table = "base"
 check = 157
-label = "Veilstone City Gym - TM60 from Maylene"
+label = "Veilstone City Gym - Gift from Maylene"
 id = 5
 
 [pastoria_city_gym_fen_badge]
@@ -4638,7 +4638,7 @@ original_item = "fen_badge"
 type = "badge"
 table = "base"
 check = 156
-label = "Pastoria City Gym - Fen Badge from Crasher Wake"
+label = "Pastoria City Gym - Badge from Crasher Wake"
 id = 6
 
 [pastoria_city_gym_tm55]
@@ -4646,7 +4646,7 @@ original_item = "tm55"
 type = "npc_gift"
 table = "base"
 check = 156
-label = "Pastoria City Gym - TM55 from Crasher Wake"
+label = "Pastoria City Gym - Gift from Crasher Wake"
 id = 7
 
 [hearthome_city_gym_leader_room_relic_badge]
@@ -4654,7 +4654,7 @@ original_item = "relic_badge"
 type = "badge"
 table = "base"
 check = 125
-label = "Hearthome City Gym - Relic Badge From Fantina"
+label = "Hearthome City Gym - Badge From Fantina"
 id = 8
 
 [hearthome_city_gym_leader_room_tm65]
@@ -4662,7 +4662,7 @@ original_item = "tm65"
 type = "npc_gift"
 table = "base"
 check = 125
-label = "Hearthome City Gym - TM65 From Fantina"
+label = "Hearthome City Gym - Gift From Fantina"
 id = 9
 
 [canalave_city_gym_mine_badge]
@@ -4670,7 +4670,7 @@ original_item = "mine_badge"
 type = "badge"
 table = "base"
 check = 146
-label = "Canalave City Gym - Mine Badge from Byron"
+label = "Canalave City Gym - Badge from Byron"
 id = 10
 
 [canalave_city_gym_tm91]
@@ -4678,7 +4678,7 @@ original_item = "tm91"
 type = "npc_gift"
 table = "base"
 check = 146
-label = "Canalave City Gym - TM91 from Byron"
+label = "Canalave City Gym - Gift from Byron"
 id = 11
 
 [snowpoint_city_gym_icicle_badge]
@@ -4686,7 +4686,7 @@ original_item = "icicle_badge"
 type = "badge"
 table = "base"
 check = 158
-label = "Snowpoint City Gym - Icicle Badge from Candice"
+label = "Snowpoint City Gym - Badge from Candice"
 id = 12
 
 [snowpoint_city_gym_tm72]
@@ -4694,7 +4694,7 @@ original_item = "tm72"
 type = "npc_gift"
 table = "base"
 check = 158
-label = "Snowpoint City Gym - TM72 from Candice"
+label = "Snowpoint City Gym - Gift from Candice"
 id = 13
 
 [sunyshore_city_gym_room_3_beacon_badge]
@@ -4702,7 +4702,7 @@ original_item = "beacon_badge"
 type = "badge"
 table = "base"
 check = 182
-label = "Sunyshore City Gym - Beacon Badge from Volkner"
+label = "Sunyshore City Gym - Badge from Volkner"
 id = 14
 
 [sunyshore_city_gym_room_3_tm57]
@@ -4710,14 +4710,14 @@ original_item = "tm57"
 type = "npc_gift"
 table = "base"
 check = 182
-label = "Sunyshore City Gym - TM57 from Volkner"
+label = "Sunyshore City Gym - Gift from Volkner"
 id = 15
 
 [eterna_city_hm01]
 original_item = "hm01"
 type = "hm"
 table = "base"
-label = "Eterna City - HM01 from Cynthia"
+label = "Eterna City - First Item from Cynthia"
 id = 16
 
 [eterna_city_hm01.check]
@@ -4730,7 +4730,7 @@ original_item = "hm06"
 type = "hm"
 table = "base"
 check = 147
-label = "Oreburgh Gate - HM06 from Hiker"
+label = "Oreburgh Gate - Item from Hiker"
 id = 17
 
 [celestic_town_cave_hm03]
@@ -4738,7 +4738,7 @@ original_item = "hm03"
 type = "hm"
 table = "base"
 check = 2445
-label = "Celestic Town Cave - HM03 from Cynthia's Grandmother"
+label = "Celestic Town Cave - Item from Cynthia's Grandmother"
 id = 18
 
 [iron_island_hm04]
@@ -4746,7 +4746,7 @@ original_item = "hm04"
 type = "hm"
 table = "base"
 check = 532
-label = "Iron Island - HM04 from Riley"
+label = "Iron Island - Item from Riley"
 id = 19
 
 [sunyshore_city_hm07]
@@ -4754,7 +4754,7 @@ original_item = "hm07"
 type = "hm"
 table = "base"
 check = 154
-label = "Sunyshore City - HM07 from Jasmine"
+label = "Sunyshore City - Item from Jasmine"
 id = 20
 
 [route_207_dowsingmachine]
@@ -4774,7 +4774,7 @@ original_item = "old_rod"
 type = "rod"
 table = "base"
 check = 132
-label = "Jubilife City Gate to Route 218 - Old Rod from Fisherman"
+label = "Jubilife City Gate to Route 218 - Item from Fisherman"
 id = 22
 
 [route_209_good_rod]
@@ -4782,7 +4782,7 @@ original_item = "good_rod"
 type = "rod"
 table = "base"
 check = 162
-label = "Route 209 - Good Rod from Fisherman"
+label = "Route 209 - Item from Fisherman"
 id = 23
 
 [fight_area_super_rod]
@@ -4790,14 +4790,14 @@ original_item = "super_rod"
 type = "rod"
 table = "base"
 check = 107
-label = "Fight Area - Super Rod from Fisherman"
+label = "Fight Area - Item from Fisherman"
 id = 24
 
 [twinleaf_town_player_house_1f_running_shoes]
 original_item = "running_shoes"
 type = "running_shoes"
 table = "base"
-label = "Twinleaf Town - Running Shoes From Mom"
+label = "Twinleaf Town - Item From Mom"
 id = 25
 
 [twinleaf_town_player_house_1f_running_shoes.check]
@@ -4810,7 +4810,7 @@ original_item = "journal"
 type = "key_item"
 table = "base"
 check = 143
-label = "Twinleaf Town - Journal from Mom"
+label = "Twinleaf Town - Item from Mom (After Visiting Rowan)"
 id = 26
 
 [twinleaf_town_player_house_1f_parcel]
@@ -4818,7 +4818,7 @@ original_item = "parcel"
 type = "key_item"
 table = "base"
 check = 143
-label = "Twinleaf Town - Parcel from Rival's Mom"
+label = "Twinleaf Town - Item from Rival's Mom"
 id = 27
 
 [route_201_potion]
@@ -4834,7 +4834,7 @@ original_item = "pokedex"
 type = "pokedex"
 table = "base"
 check = 144
-label = "Sandgem Town Pokemon Research Lab - Pokedex from Prof Rowan"
+label = "Sandgem Town Pokemon Research Lab - Item from Prof Rowan"
 id = 29
 
 [sandgem_town_pokemon_research_lab_pokedex_2]
@@ -4842,7 +4842,7 @@ original_item = "pokedex"
 type = "pokedex"
 table = "base"
 check = 2914
-label = "Sandgem Town Pokemon Research Lab - National Pokedex from Prof Oak"
+label = "Sandgem Town Pokemon Research Lab - First Item from Prof Oak"
 id = 30
 
 [sandgem_town_pokemon_research_lab_poke_radar]
@@ -4850,14 +4850,14 @@ original_item = "poke_radar"
 type = "key_item"
 table = "base"
 check = 2914
-label = "Sandgem Town Pokemon Research Lab - Poke Radar from Rowan"
+label = "Sandgem Town Pokemon Research Lab - Item from Prof Rowan (After Regional Dex)"
 id = 31
 
 [sandgem_town_tm27]
 original_item = "tm27"
 type = "npc_gift"
 table = "base"
-label = "Sandgem Town Pokemon Research Lab - TM27 from Professor Rowan"
+label = "Sandgem Town Pokemon Research Lab - Item from Prof Rowan (Outside)"
 id = 32
 
 [sandgem_town_tm27.check]
@@ -4870,7 +4870,7 @@ original_item = "kitchentimer"
 type = "poketchapp"
 table = "base"
 check = 2915
-label = "Pal Park - Kitchen Timer App from Girl"
+label = "Pal Park - Show Snorlax to Girl"
 id = 33
 
 [pal_park_lobby_colorchanger]
@@ -4878,14 +4878,14 @@ original_item = "colorchanger"
 type = "poketchapp"
 table = "base"
 check = 2916
-label = "Pal Park - Color Changer App from Girl"
+label = "Pal Park - Show Kecleon to Girl"
 id = 34
 
 [pal_park_lobby_counter]
 original_item = "radarchaincounter"
 type = "poketchapp"
 table = "base"
-label = "Pal Park - Trainer Counter App from Prof Oak"
+label = "Pal Park - Second Item from Prof Oak"
 id = 35
 
 [pal_park_lobby_counter.check]
@@ -4897,14 +4897,14 @@ original_item = "poke_ball_x5"
 type = "npc_gift"
 table = "base"
 check = 392
-label = "Route 202 - Poke Balls from Lucas or Dawn"
+label = "Route 202 - Item from Lucas or Dawn"
 id = 36
 
 [jubilife_city_vs_recorder]
 original_item = "vs_recorder"
 type = "key_item"
 table = "base"
-label = "Jubilife City - Vs. Recorder from Looker"
+label = "Jubilife City - Item from Looker"
 id = 37
 
 [jubilife_city_vs_recorder.check]
@@ -4917,7 +4917,7 @@ original_item = "town_map"
 type = "key_item"
 table = "base"
 check = 500
-label = "Jubilife Trainers' School - Town Map from Rival"
+label = "Jubilife Trainers' School - Item from Rival"
 id = 38
 
 [trainers_school_potion]
@@ -4933,7 +4933,7 @@ original_item = "coupon_1"
 type = "all_key_item"
 table = "base"
 check = 237
-label = "Jubilife City - Coupon from East Clown"
+label = "Jubilife City - Item from East Clown"
 id = 40
 
 [jubilife_city_coupon_2]
@@ -4941,7 +4941,7 @@ original_item = "coupon_2"
 type = "all_key_item"
 table = "base"
 check = 238
-label = "Jubilife City - Coupon from Clown in front of Poketch HQ"
+label = "Jubilife City - Item from Clown in front of Poketch HQ"
 id = 41
 
 [jubilife_city_coupon_3]
@@ -4949,7 +4949,7 @@ original_item = "coupon_3"
 type = "all_key_item"
 table = "base"
 check = 239
-label = "Jubilife City - Coupon from Clown in front of Jubilife TV"
+label = "Jubilife City - Item from Clown in front of Jubilife TV"
 id = 42
 
 [jubilife_city_poketch]
@@ -4957,7 +4957,7 @@ original_item = "poketch"
 type = "poketchapp"
 table = "base"
 check = 2940
-label = "Jubilife City - Poketch from CEO"
+label = "Jubilife City - First Item from CEO"
 id = 43
 
 [jubilife_city_calculator]
@@ -4965,7 +4965,7 @@ original_item = "calculator"
 type = "poketchapp"
 table = "base"
 check = 2940
-label = "Jubilife City - Calculator App from CEO"
+label = "Jubilife City - Second Item from CEO"
 id = 44
 
 [jubilife_city_pedometer]
@@ -4973,7 +4973,7 @@ original_item = "pedometer"
 type = "poketchapp"
 table = "base"
 check = 2940
-label = "Jubilife City - Pedometer App from CEO"
+label = "Jubilife City - Third Item from CEO"
 id = 45
 
 [jubilife_city_partystatus]
@@ -4981,7 +4981,7 @@ original_item = "partystatus"
 type = "poketchapp"
 table = "base"
 check = 2940
-label = "Jubilife City - Party Status App from CEO"
+label = "Jubilife City - Fourth Item from CEO"
 id = 46
 
 [cycle_shop_bicycle]
@@ -4989,7 +4989,7 @@ original_item = "bicycle"
 type = "bicycle"
 table = "base"
 check = 130
-label = "Eterna City - Bike from Rad Rickshaw"
+label = "Eterna City - Item from Rad Rickshaw"
 id = 47
 
 [oreburgh_city_northwest_house_2f_dusk_ball]
@@ -5005,7 +5005,7 @@ original_item = "heal_ball"
 type = "npc_gift"
 table = "base"
 check = 193
-label = "Oreburgh City - Gift from Overalls Man for Showing Geodude in North House"
+label = "Oreburgh City - Show Geodude to Overalls Man in North House"
 id = 49
 
 [oreburgh_city_east_house_2f_great_ball]
@@ -5013,7 +5013,7 @@ original_item = "great_ball"
 type = "npc_gift"
 table = "base"
 check = 266
-label = "Oreburgh City - Youngster in Southeast Building"
+label = "Oreburgh City - Gift from Youngster in Southeast Building"
 id = 50
 
 [oreburgh_city_super_potion]
@@ -5037,7 +5037,7 @@ original_item = "fashion_case"
 type = "key_item"
 table = "base"
 check = 242
-label = "Jubilife City - Fashion Case from Overalls Man After Grunts Battle After Oreburgh Gym"
+label = "Jubilife City - Item from Overalls Man After Grunts Battle After Oreburgh Gym"
 id = 53
 
 [route_204_north_tm78]
@@ -5053,7 +5053,7 @@ original_item = "works_key"
 type = "key_item"
 table = "base"
 check = 159
-label = "Floaroma Meadow - Works Key after Galactic Grunts"
+label = "Floaroma Meadow - Item after Galactic Grunts"
 id = 55
 
 [floaroma_meadow_honey_x10]
@@ -5077,7 +5077,7 @@ original_item = "sprayduck"
 type = "key_item"
 table = "base"
 check = 128
-label = "Floaroma Town Flower Shop - Sprayduck from Left Lady"
+label = "Floaroma Town Flower Shop - Item from Left Lady"
 id = 58
 
 [fuego_ironworks_building_star_piece_0]
@@ -5101,7 +5101,7 @@ original_item = "friendshipchecker"
 type = "poketchapp"
 table = "base"
 check = 2918
-label = "Eterna City Pokemon Center - Friendship Checker App from Woman"
+label = "Eterna City Pokemon Center - Item from Woman in Pokemon Center"
 id = 61
 
 [eterna_city_underground_man_house_explorer_kit]
@@ -5109,7 +5109,7 @@ original_item = "explorer_kit"
 type = "key_item"
 table = "base"
 check = 121
-label = "Eterna City - Explorer Kit from Underground Man"
+label = "Eterna City - Item from Underground Man"
 id = 62
 
 [eterna_city_south_house_upgrade]
@@ -5117,7 +5117,7 @@ original_item = "upgrade"
 type = "npc_gift"
 table = "base"
 check = 281
-label = "Eterna City - Gift from Prof Oak"
+label = "Eterna City - Third Item from Prof Oak"
 id = 63
 
 [route_206_cycling_road_north_gate_exp_share]
@@ -5161,7 +5161,7 @@ original_item = "berrysearcher"
 type = "poketchapp"
 table = "base"
 check = 2923
-label = "Route 208 - Berry Searcher App from Berry Master's Daughter"
+label = "Route 208 - Item from Berry Master's Daughter"
 id = 68
 
 [hearthome_city_pokemon_fan_club_poffin_case]
@@ -5169,7 +5169,7 @@ original_item = "poffin_case"
 type = "key_item"
 table = "base"
 check = 141
-label = "Hearthome City - Poffin Case from Fan Club Chairman"
+label = "Hearthome City - Item from Fan Club Chairman"
 id = 69
 
 [hearthome_city_southeast_house_2f_shell_bell]
@@ -5202,7 +5202,7 @@ check = 2924
 original_item = "pokemonhistory"
 type = "poketchapp"
 table = "base"
-label = "Solaceon Town - Pokemon History App from Ruin Maniac"
+label = "Solaceon Town - Item from Ruin Maniac"
 
 [pokemon_day_care_daycarechecker]
 id = 74
@@ -5210,7 +5210,7 @@ check = 2925
 original_item = "daycarechecker"
 type = "poketchapp"
 table = "base"
-label = "Solaceon Town - Day Care Checker App from Man After Leaving a Pokemon"
+label = "Solaceon Town - Item from Man After Leaving a Pokemon"
 
 [solaceon_ruins_room_2_green_shard]
 id = 75
@@ -5226,7 +5226,7 @@ check = 279
 original_item = "seal_case"
 type = "key_item"
 table = "base"
-label = "Solaceon Town - Seal Case From Woman in Far East House"
+label = "Solaceon Town - Item From Woman in Far East House"
 
 [valor_lakefront_secretpotion]
 id = 77
@@ -5234,7 +5234,7 @@ check = 183
 original_item = "secretpotion"
 type = "key_item"
 table = "base"
-label = "Valor Lakefront - SecretPotion from Cynthia"
+label = "Valor Lakefront - Second Item from Cynthia"
 
 [route_210_south_tm51]
 id = 78
@@ -5242,7 +5242,7 @@ check = 199
 original_item = "tm51"
 type = "npc_gift"
 table = "base"
-label = "Route 210 South - TM51 from Girl on Hill"
+label = "Route 210 South - Gift from Girl on Hill"
 
 [route_210_south_old_charm]
 id = 79
@@ -5250,7 +5250,7 @@ check = 263
 original_item = "old_charm"
 type = "key_item"
 table = "base"
-label = "Route 210 South - Old Charm from Cynthia"
+label = "Route 210 South - Third Item from Cynthia"
 
 [route_211_east_tm77]
 id = 80
@@ -5258,7 +5258,7 @@ check = 198
 original_item = "tm77"
 type = "npc_gift"
 table = "base"
-label = "Route 211 East - TM77 from Ace Trainer"
+label = "Route 211 East - Gift from Ace Trainer"
 
 [celestic_town_southwest_house_analogwatch]
 id = 81
@@ -5266,7 +5266,7 @@ check = 2926
 original_item = "analogwatch"
 type = "poketchapp"
 table = "base"
-label = "Celestic Town - Analog Watch App from Black Belt in Lower Left House"
+label = "Celestic Town - Item from Black Belt in Lower Left House"
 
 [route_215_tm66]
 id = 82
@@ -5274,7 +5274,7 @@ check = 205
 original_item = "tm66"
 type = "npc_gift"
 table = "base"
-label = "Route 215 - TM66 from Black Belt"
+label = "Route 215 - Gift from Black Belt"
 
 [veilstone_city_tm63]
 id = 83
@@ -5282,7 +5282,7 @@ check = 204
 original_item = "tm63"
 type = "npc_gift"
 table = "base"
-label = "Veilstone City - TM63 from Roughneck Near Gym"
+label = "Veilstone City - Gift from Roughneck Near Gym"
 
 [veilstone_city_southeast_house_coin_case]
 id = 84
@@ -5290,14 +5290,14 @@ check = 188
 original_item = "coin_case"
 type = "key_item"
 table = "base"
-label = "Veilstone City - Coin Case from Clown in House"
+label = "Veilstone City - Item from Clown in House"
 
 [galactic_hq_master_ball]
 id = 85
 original_item = "master_ball"
 type = "npc_gift"
 table = "base"
-label = "Galactic HQ 4F Cyrus' Office - Master Ball from Cyrus"
+label = "Galactic HQ 4F Cyrus' Office - Gift from Cyrus"
 
 [galactic_hq_master_ball.check]
 id = 16598
@@ -5317,7 +5317,7 @@ check = 2927
 original_item = "cointoss"
 type = "poketchapp"
 table = "base"
-label = "Route 213 - Coin Toss App from Rich Boy in Rock Climb House"
+label = "Route 213 - Item from Rich Boy in Rock Climb House"
 
 [grand_lake_route_213_northwest_house_tm92]
 id = 88
@@ -5325,7 +5325,7 @@ check = 202
 original_item = "tm92"
 type = "npc_gift"
 table = "base"
-label = "Route 213 - TM92 from Clown in NW House"
+label = "Route 213 - Gift from Clown in NW House"
 
 [pastoria_city_observatory_gate_1f_matchupchecker]
 id = 89
@@ -5333,7 +5333,7 @@ check = 163
 original_item = "matchupchecker"
 type = "poketchapp"
 table = "base"
-label = "Great Marsh Lobby - Matchup Checker App from Cowgirl"
+label = "Great Marsh Lobby - Item from Cowgirl"
 
 [pokemon_mansion_maids_room_soothe_bell]
 id = 90
@@ -5405,7 +5405,7 @@ check = 2929
 original_item = "roulette"
 type = "poketchapp"
 table = "base"
-label = "Sunyshore City - Roulette App From Developer"
+label = "Sunyshore City - Third Item from Developer"
 
 [sunyshore_city_east_house_dotart]
 id = 97
@@ -5413,7 +5413,7 @@ check = 2930
 original_item = "dotart"
 type = "poketchapp"
 table = "base"
-label = "Sunyshore City - Dot Artist App From Developer"
+label = "Sunyshore City - Second Item from Developer"
 
 [sunyshore_city_east_house_calendar]
 id = 98
@@ -5421,7 +5421,7 @@ check = 2931
 original_item = "calendar"
 type = "poketchapp"
 table = "base"
-label = "Sunyshore City - Calendar App From Developer"
+label = "Sunyshore City - First Item from Developer"
 
 [poketch_co_1f_memopad]
 id = 99
@@ -5429,7 +5429,7 @@ check = 2932
 original_item = "memopad"
 type = "poketchapp"
 table = "base"
-label = "Poketch Company - Memo Pad App"
+label = "Poketch Company - Gift from CEO (1 Badge)"
 
 [poketch_co_1f_markingmap]
 id = 100
@@ -5437,7 +5437,7 @@ check = 2933
 original_item = "markingmap"
 type = "poketchapp"
 table = "base"
-label = "Poketch Company - Marking Map App"
+label = "Poketch Company - Gift from CEO (3 Badges)"
 
 [poketch_co_1f_linksearcher]
 id = 101
@@ -5445,7 +5445,7 @@ check = 2934
 original_item = "linksearcher"
 type = "poketchapp"
 table = "base"
-label = "Poketch Company - Link Searcher App"
+label = "Poketch Company - Gift from CEO (5 Badges)"
 
 [poketch_co_1f_movetester]
 id = 102
@@ -5453,7 +5453,7 @@ check = 2935
 original_item = "movetester"
 type = "poketchapp"
 table = "base"
-label = "Poketch Company - Move Tester App"
+label = "Poketch Company - Gift from CEO (7 Badges)"
 
 [eterna_city_condominiums_2f_tm67]
 id = 104
@@ -5469,7 +5469,7 @@ check = 540
 original_item = "pokedex"
 type = "pokedex"
 table = "base"
-label = "Route 218 Gate to Canalave - Pokedex Upgrade from Dawn or Lucas' Father"
+label = "Route 218 Gate to Canalave - Item from Dawn or Lucas' Father"
 
 [veilstone_store_2f_counter]
 id = 106
@@ -5477,7 +5477,7 @@ check = 2941
 original_item = "counter"
 type = "poketchapp"
 table = "base"
-label = "Veilstone Department Store 2F - Counter App"
+label = "Veilstone Department Store 2F - Item from Clerk"
 
 [veilstone_store_5f_sticky_barb]
 id = 107
@@ -5492,7 +5492,7 @@ id = 108
 original_item = "pal_pad"
 type = "key_item"
 table = "base"
-label = "Pokemon Center Basement - Pal Pad"
+label = "Pokemon Center Basement - Item from Teala"
 
 [pokecenter_b1f_pal_pad.check]
 id = 16596
@@ -5992,7 +5992,7 @@ id = 125
 check = 0xBA1
 type = "s_s_ticket"
 table = "base"
-label = "Twinleaf Town - S.S. Ticket from Mom (After Defeating Champion)"
+label = "Twinleaf Town - Item from Mom (After Defeating Champion)"
 original_item = "s_s_ticket"
 
 [pastoria_city_marsh_pass]
