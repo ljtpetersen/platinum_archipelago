@@ -26,11 +26,23 @@ class SpeciesBlacklist(OptionSet):
         return self.cached_blacklist
 
 class RandomizeHms(DefaultOnToggle):
-    """Adds the HMs to the pool."""
+    """
+    Adds the HMs to the pool.
+
+    The expectation is that this will be enabled. If not, depending on
+    other options—particularly barricades—certain locations may be inaccessible,
+    or certain seeds uncompletable.
+    """
     display_name = "Randomize HMs"
 
 class RandomizeBadges(DefaultOnToggle):
-    """Adds the badges to the pool."""
+    """
+    Adds the badges to the pool.
+
+    The expectation is that this will be enabled. If not, depending on
+    other options—particularly barricades—certain locations may be inaccessible,
+    or certain seeds uncompletable.
+    """
     display_name = "Randomize Badges"
 
 class RandomizeOverworlds(DefaultOnToggle):
@@ -1051,15 +1063,13 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
         return self.hm_badge_requirement.value == 1 or hm.lower() in self.remove_badge_requirements
 
     def validate(self) -> None:
-        if self.pastoria_barriers:
+        if self.pastoria_barriers and self.randomize_fly_items.value == 0:
             if not self.badges and self.requires_badge("SURF"):
                 raise OptionError(f"cannot enable Pastoria barriers if Surf requires the Fen Badge and badges are not randomized.")
             if not (self.hms or self.key_items.are_most_randomized()):
                 raise OptionError(f"cannot enable Pastoria barriers if both HMs and Key Items are not randomized.")
         if not (self.overworlds or self.hiddens or self.npc_gifts or self.key_items.value > 0 or self.poketch_apps):
             raise OptionError(f"at least one of overworlds, hiddens, npc_gifts, key_items, or poketch apps must be enabled")
-        if self.bag and self.dowsing_machine_logic and not (self.overworlds or self.npc_gifts or self.rods or self.running_shoes or self.pokedex or self.key_items.value > 0):
-            raise OptionError(f"if the bag is enabled, then at least one of overworlds, npc_gifts, rods, running_shoes, pokedex, key_items must be enabled")
 
         # validate game options
         game_opts = self.game_options
