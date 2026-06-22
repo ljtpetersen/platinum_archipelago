@@ -47,6 +47,7 @@ appropriately.
 * An option to include fly regions as locations.
 * An option to filter item notifications by classification.
 * The R button can be held to stop receiving items.
+* An option to add TM/HM compatibility.
 ### Changed
 * In-game game options option is now validated before generation.
 * Some evolution stones have been key-itemified, and are no longer consumed when used.

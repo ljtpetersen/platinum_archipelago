@@ -16,6 +16,7 @@ from typing import Any, Dict, TYPE_CHECKING, Tuple
 from worlds.Files import APAutoPatchInterface
 import zipfile
 
+
 from .itemdata import patch_items
 from .encounterdata import patch_encounters, patch_speencs
 from .eventdata import BOLLARD_GFX_ID, CUT_TREE_GFX_ID, PSYDUCK_GFX_ID, ROCK_SMASH_GFX_ID, STRENGTH_BOULDER_GFX_ID, patch_events
@@ -24,7 +25,7 @@ from .speciesdata import patch_species
 from .trainerdata import patch_trainer_parties
 
 from ..apnds.rom import Rom
-from ..data import special_encounters
+from ..data import Hm, special_encounters
 from ..data.charmap import encode_string, RemoteItemColor
 from ..data.locations import locations, LocationTable
 from ..data.items import items, ItemClass
@@ -33,6 +34,7 @@ from ..data.encounters import encounters, encounter_type_pairs, EncounterSlot
 from ..data.trainers import trainer_party_supporting_starters, trainers
 from ..data.moves import move_ids
 from ..items import raw_id_to_const_name
+from ..options import TMHMCompatibility
 
 if TYPE_CHECKING:
     from .. import PokemonPlatinumWorld
@@ -97,7 +99,7 @@ class PokemonPlatinumPatch(APAutoPatchInterface):
             rom.files["/poketool/trainer/trpoke.narc"] = patch_trainer_parties(rom.files["/poketool/trainer/trdata.narc"], rom.files["/poketool/trainer/trpoke.narc"], trainer_party_patches)
         if "species_patches.json" in self.files:
             species_patches = json.loads(self.get_file("species_patches.json"))
-            rom.files["/poketool/personal/personal.narc"] = patch_species(rom.files["/poketool/personal/personal.narc"], species_patches)
+            rom.files["/poketool/personal/pl_personal.narc"] = patch_species(rom.files["/poketool/personal/pl_personal.narc"], species_patches)
         if "map_replacements.json" in self.files:
             map_replacements = json.loads(self.get_file("map_replacements.json"))
             rom.files["/fielddata/land_data/land_data.narc"] = replace_maps(rom.files["/fielddata/land_data/land_data.narc"], {k:self.get_file(v) for k, v in map_replacements.items()})
@@ -707,6 +709,14 @@ def generate_output(world: "PokemonPlatinumWorld", output_directory: str, patch:
     for mon, seq in world.added_hm_compatibility.items():
         patches: MutableMapping[str, Any] = species_patches.setdefault(species[mon].id, {})
         patches.setdefault("add_tmhm_compat", []).extend(hm.tmhm_id() for hm in seq)
+    if world.options.tmhm_compatibility != TMHMCompatibility.option_none:
+        if world.options.tmhm_compatibility == TMHMCompatibility.option_all:
+            compat_to_add = list(range(0, 104))
+        else:
+            compat_to_add = [hm.tmhm_id() for hm in Hm]
+        for spec in species.values():
+            patches: MutableMapping[str, Any] = species_patches.setdefault(spec.id, {})
+            patches.setdefault("add_tmhm_compat", []).extend(compat_to_add)
     if len(species_patches) > 0:
         patch.write_file("species_patches.json", json.dumps(species_patches).encode('utf-8'))
 

@@ -864,6 +864,33 @@ class ItemNotificationsMask(OptionSet):
                 mask |= 1 << index
         return mask
 
+class PokemonPlatinumDeathLink(DeathLink):
+    __doc__ = DeathLink.__doc__ + "\n\n    In Pokémon Platinum, blacking out sends a death and receiving a death causes you to black out.\n" # type: ignore
+
+class DeathLinkGroup(FreeText):
+    """
+    The death link group to use. Death links are only sent within groups.
+    To interface with games which do not support groups, use the empty group "".
+    """
+    default = ""
+    display_name = "Death Link Group"
+
+
+class TMHMCompatibility(Choice):
+    """
+    Add TM/HM compatibility to all species.
+
+    Choices:
+    - none: the compatibility is unaffected
+    - hms: all species will be compatible with all HMs (and TM70 Flash)
+    - all: all species will be compatible with all TMs and HMs
+    """
+    display_name = "TM/HM Compatibility"
+    option_none = 0
+    option_hms = 1
+    option_all = 2
+    default = option_none
+
 slot_data_options: Sequence[str] = [
     "hms",
     "badges",
@@ -900,6 +927,7 @@ slot_data_options: Sequence[str] = [
     
     "hm_reader",
     "hm_reader_mode",
+    "tmhm_compatibility",
     
     "randomize_fly_items",
     "require_fly_items_for_flight",
@@ -945,17 +973,6 @@ slot_data_options: Sequence[str] = [
 
     "goal",
 ]
-
-class PokemonPlatinumDeathLink(DeathLink):
-    __doc__ = DeathLink.__doc__ + "\n\n    In Pokémon Platinum, blacking out sends a death and receiving a death causes you to black out.\n" # type: ignore
-
-class DeathLinkGroup(FreeText):
-    """
-    The death link group to use. Death links are only sent within groups.
-    To interface with games which do not support groups, use the empty group "".
-    """
-    default = ""
-    display_name = "Death Link Group"
 
 @dataclass
 class PokemonPlatinumOptions(PerGameCommonOptions):
@@ -1005,6 +1022,7 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
     
     hm_reader: AddHMReader
     hm_reader_mode: HMReaderMode
+    tmhm_compatibility: TMHMCompatibility
 
     randomize_starters: RandomizeStarters
     require_two_level_evolution_starters: RequireTwoLevelEvolutionStarters
@@ -1366,6 +1384,7 @@ OPTION_GROUPS = [
             RemoveBadgeRequirement,
             AddHMReader,
             HMReaderMode,
+            TMHMCompatibility,
         ],
     ),
     OptionGroup(
