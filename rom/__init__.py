@@ -252,7 +252,7 @@ def generate_output(world: "PokemonPlatinumWorld", output_directory: str, patch:
         hm_accum = 0xFF
     ap_bin += hm_accum.to_bytes(length=1, byteorder='little')
 
-    add_opt_byte("parcel_coupons_route_203")
+    add_opt_byte("poketch_route_203")
     add_opt_byte("regional_dex_goal")
     add_opt_byte("marsh_pass")
     add_opt_byte("early_sunyshore")

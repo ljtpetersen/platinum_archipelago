@@ -4930,7 +4930,7 @@ id = 39
 
 [jubilife_city_coupon_1]
 original_item = "coupon_1"
-type = "all_key_item"
+type = "key_item"
 table = "base"
 check = 237
 label = "Jubilife City - Item from East Clown"
@@ -4938,7 +4938,7 @@ id = 40
 
 [jubilife_city_coupon_2]
 original_item = "coupon_2"
-type = "all_key_item"
+type = "key_item"
 table = "base"
 check = 238
 label = "Jubilife City - Item from Clown in front of Poketch HQ"
@@ -4946,7 +4946,7 @@ id = 41
 
 [jubilife_city_coupon_3]
 original_item = "coupon_3"
-type = "all_key_item"
+type = "key_item"
 table = "base"
 check = 239
 label = "Jubilife City - Item from Clown in front of Jubilife TV"

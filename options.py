@@ -57,16 +57,9 @@ class RandomizeNpcGifts(DefaultOnToggle):
     """Adds NPC gifts to the pool."""
     display_name = "Randomize NPC Gifts"
 
-class RandomizeKeyItems(Choice):
+class RandomizeKeyItems(DefaultOnToggle):
     """Adds key items to the pool."""
     display_name = "Randomize Key Items"
-    default = 1
-    option_vanilla = 0
-    option_most = 1
-    option_all = 2
-
-    def are_most_randomized(self) -> bool:
-        return self.value >= self.option_most
 
 class RandomizeRods(DefaultOnToggle):
     """Adds rods to the pool."""
@@ -279,12 +272,12 @@ class RequireFlyForNorthSinnoh(Toggle):
     """
     display_name = "North Sinnoh Requires Fly"
 
-class RequireParcelCouponsCheckRoute203(DefaultOnToggle):
+class RequirePoketchCheckRoute203(DefaultOnToggle):
     """
     Whether Looker blocks you from exiting Jubilife city towards Route 203 if you
-    haven't delivered the parcel and exchanged the three coupons.
+    don't have a Pokétch.
     """
-    display_name = "Require Parcel and Coupons for Route 203 from Jubilife"
+    display_name = "Require Pokétch for Route 203 from Jubilife"
 
 class RemoteItems(Choice):
     """
@@ -892,7 +885,7 @@ slot_data_options: Sequence[str] = [
     "visibility_hm_logic",
     "dowsing_machine_logic",
     "north_sinnoh_fly",
-    "parcel_coupons_route_203",
+    "poketch_route_203",
     "regional_dex_goal",
     "early_sunyshore",
     "pastoria_barriers",
@@ -992,7 +985,7 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
     remove_badge_requirements: RemoveBadgeRequirement
     visibility_hm_logic: VisibilityHmLogic
     dowsing_machine_logic: DowsingMachineLogic
-    parcel_coupons_route_203: RequireParcelCouponsCheckRoute203
+    poketch_route_203: RequirePoketchCheckRoute203
     regional_dex_goal: NationalDexNumMons
     reusable_tms: ReusableTms
     start_with_swarms: StartWithSwarms
@@ -1305,7 +1298,7 @@ OPTION_GROUPS = [
     OptionGroup(
         "Logic Tweaks",
         [
-            RequireParcelCouponsCheckRoute203,
+            RequirePoketchCheckRoute203,
             RequireFlyForNorthSinnoh,
             VisibilityHmLogic,
             DowsingMachineLogic,

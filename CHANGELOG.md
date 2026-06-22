@@ -61,6 +61,7 @@ appropriately.
 * The experience multiplier now supports fractional values. It is now modifiable in-game.
 * Changed to rule builder.
 * Scientist in Sunyshore no longer requires Pokémon of specific natures.
+* The Pokétch is now the requirement to access Route 203 from Jubilife, instead of the parcel and three coupons.
 ### Fixed
 * Non-determinism of generation. (hopefully)
 * Elite Four rematch is triggered only if the game has been completed and stark mountain has been cleared.
@@ -72,6 +73,8 @@ appropriately.
 * Victory Road room after defeating Cynthia now requires Defog logically.
 * Fixed bug where received items can occasionally be lost.
 * Triggers cannot be walked through when receiving items.
+### Removed
+* The `all` key item option no longer exists.
 
 ## [0.1.8] - 2026-02-21
 ### Fixed
