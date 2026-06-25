@@ -6,9 +6,9 @@
 from collections.abc import Sequence
 from typing import TYPE_CHECKING
 
-from .data import encounters as encounterdata, Hm, items as itemdata, regions as regiondata, rules as ruledata, trainers as trainerdata, species as speciesdata
+from .data import encounters as encounterdata, Hm, regions as regiondata, rules as ruledata, trainers as trainerdata, species as speciesdata
 from .locations import is_location_in_world, get_parent_region
-from .options import Goal, HMReaderMode
+from .options import Goal, HMReaderMode, TMHMCompatibility
 from .regions import is_event_region_enabled, is_region_enabled
 
 if TYPE_CHECKING:
@@ -115,7 +115,7 @@ def set_rules(world: "PokemonPlatinumWorld") -> None:
     world.set_completion_rule(ruledata.Has(goal_event))
 
 def verify_hm_accessibility(world: "PokemonPlatinumWorld") -> None:
-    if world.options.hm_reader_mode == HMReaderMode.option_noreq_mon:
+    if world.options.hm_reader_mode == HMReaderMode.option_noreq_mon or world.options.tmhm_compatibility != TMHMCompatibility.option_none:
         return
     rules = world.ruledata
 

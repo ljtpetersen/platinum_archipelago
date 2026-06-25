@@ -7633,7 +7633,7 @@ party = [
     { species = "golbat", level = 58, num_moves = 4 },
     { species = "purugly", level = 60, num_moves = 4 },
 ]
-label = "Stark Mountain Entrance - Commander Mars"
+label = "Stark Mountain First Room - Commander Mars"
 requires_national_dex = true
 
 [commander_jupiter_stark_mountain]
@@ -7643,5 +7643,5 @@ party = [
     { species = "golbat", level = 58, num_moves = 4 },
     { species = "skuntank", level = 60, num_moves = 4 },
 ]
-label = "Stark Mountain Entrance - Commander Jupiter"
+label = "Stark Mountain First Room - Commander Jupiter"
 requires_national_dex = true
