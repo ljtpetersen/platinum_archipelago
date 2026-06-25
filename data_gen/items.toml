@@ -267,6 +267,7 @@ label = "Ether"
 id = 38
 clas = "bagitem"
 group = "medicine"
+classification = "useful"
 data_id = 38
 
 [max_ether]
@@ -274,6 +275,7 @@ label = "Max Ether"
 id = 39
 clas = "bagitem"
 group = "medicine"
+classification = "useful"
 data_id = 39
 
 [elixir]
@@ -281,6 +283,7 @@ label = "Elixir"
 id = 40
 clas = "bagitem"
 group = "medicine"
+classification = "useful"
 data_id = 40
 
 [max_elixir]
@@ -288,6 +291,7 @@ label = "Max Elixir"
 id = 41
 clas = "bagitem"
 group = "medicine"
+classification = "useful"
 data_id = 41
 
 [lava_cookie]
@@ -3446,6 +3450,7 @@ label = "COLOR CHANGER"
 id = 21
 clas = "poketchapp"
 group = "poketch_apps"
+classification = "useful"
 
 [matchupchecker]
 label = "MATCHUP CHECKER"
