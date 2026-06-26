@@ -891,6 +891,14 @@ class TMHMCompatibility(Choice):
     option_all = 2
     default = option_none
 
+class FastFishing(Toggle):
+    """
+    A QOL option to accelerate fishing encounters.
+
+    This option can be modified in-game.
+    """
+    display_name = "Fast Fishing"
+
 slot_data_options: Sequence[str] = [
     "hms",
     "badges",
@@ -1062,6 +1070,7 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
     talk_trainers_without_fight: TalkTrainersWithoutFight
     exp_multiplier: ExpMultiplier
     item_notifications_mask: ItemNotificationsMask
+    fast_fishing: FastFishing
 
     master_repel: AddMasterRepel
     s_s_ticket: AddSSTicket
@@ -1405,7 +1414,8 @@ OPTION_GROUPS = [
             ExpMultiplier,
             AddMasterRepel,
             RequireFlyItemsForFlight,
-            ItemNotificationsMask
+            ItemNotificationsMask,
+            FastFishing,
         ],
     ),
 ]

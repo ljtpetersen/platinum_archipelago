@@ -69,6 +69,8 @@ class Rules:
         }
 
     def get_use_hm_rule(self, hm: Hm) -> Rule:
+        if self.opts.tmhm_compatibility > 0:
+            return True_()
         if hm not in self.hm_mons:
             self.hm_mons[hm] = HasAny(*["mon_" + mon for mon, data in species.species.items() if hm in data.hms])
         return self.hm_mons[hm]
