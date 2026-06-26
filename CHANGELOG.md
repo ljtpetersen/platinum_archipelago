@@ -62,6 +62,7 @@ appropriately.
 * The experience multiplier now supports fractional values. It is now modifiable in-game.
 * Changed to rule builder.
 * Scientist in Sunyshore no longer requires Pokémon of specific natures.
+* A lot of item classification changes to better reflect their usefulness ([@Justior-l](https://github.com/Justior-l),  [@palex00](https://github.com/palex00))
 * The Pokétch is now the requirement to access Route 203 from Jubilife, instead of the parcel and three coupons.
 ### Fixed
 * Non-determinism of generation. (hopefully)
