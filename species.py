@@ -70,6 +70,21 @@ def fill_unrandomized_encounters(world: "PokemonPlatinumWorld") -> Set[str]:
                 if world.options.pokedex or nm not in special_encounters.requiring_national_dex:
                     accessible_mons.add(spec)
 
+    # fill OOL encounters
+    world.ool_encounters = {
+        (header, table, i):slot.species
+        for header, encs in encounterdata.items()
+        for (_, table) in encounter_type_pairs
+        for i, slot in enumerate(getattr(encs, table))
+        if (header, table, i) not in world.generated_encounters
+    }
+    world.ool_speencs = {
+        (speenc, i):spec
+        for speenc in ["regular_honey_tree", "munchlax_honey_tree", "trophy_garden", "great_marsh_observatory", "great_marsh_observatory_national_dex", "feebas_fishing", "odd_keystone"]
+        for i, spec in enumerate(getattr(special_encounters, speenc))
+        if (speenc, i) not in world.generated_speencs
+    }
+
     return accessible_mons
 
 def fill_unrandomized_trainer_parties(world: "PokemonPlatinumWorld") -> None:
@@ -150,6 +165,22 @@ def randomize_encounters(world: "PokemonPlatinumWorld", req_specs: Set[str]) -> 
             if not slot.accessibility or set(slot.accessibility) & world.options.in_logic_encounters.value
         })
         world.generated_encounters.update({slot:"unown" for slot in sol_ruins_slots})
+
+    # fill OOL encounters
+    enc_pool = list(set(speciesdata) - world.options.encounter_species_blacklist.blacklist())
+    world.ool_encounters = {
+        (header, table, i):world.random.choice(enc_pool)
+        for header, encs in encounterdata.items()
+        for (_, table) in encounter_type_pairs
+        for i in range(len(getattr(encs, table)))
+        if (header, table, i) not in world.generated_encounters
+    }
+    world.ool_speencs = {
+        (speenc, i):world.random.choice(enc_pool)
+        for speenc in ["regular_honey_tree", "munchlax_honey_tree", "trophy_garden", "great_marsh_observatory", "great_marsh_observatory_national_dex", "feebas_fishing", "odd_keystone"]
+        for i in range(len(getattr(special_encounters, speenc)))
+        if (speenc, i) not in world.generated_speencs
+    }
 
 def randomize_trainer_parties(world: "PokemonPlatinumWorld", req_specs: Set[str]) -> None:
     slots = {(trainer, i)
