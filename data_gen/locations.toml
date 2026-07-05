@@ -1316,7 +1316,7 @@ original_item = "protector"
 type = "overworld"
 table = "overworld"
 check = 1149
-label = "Iron Island B1F Left - Item in Center"
+label = "Iron Island B1F Left - Item on Raised Walkway"
 id = 135
 
 [iron_island_b1f_left_room_yellow_shard]
@@ -1324,7 +1324,7 @@ original_item = "yellow_shard"
 type = "overworld"
 table = "overworld"
 check = 1302
-label = "Iron Island B1F Left - Item on Raised Walkway"
+label = "Iron Island B1F Left - Item in Center"
 id = 287
 
 [iron_island_iron_ruins_metal_coat]
