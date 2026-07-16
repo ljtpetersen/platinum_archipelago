@@ -244,6 +244,14 @@ class PokemonPlatinumWorld(World):
             for key, mon in self.generated_encounters.items():
                 if mon in dexsanity_specs:
                     dexsanity_hint_data[mon].add(encounter_slot_label(key, self.options.in_logic_encounters.value))
+            for (speenc, _), mon in self.generated_speencs.items():
+                if mon in dexsanity_specs:
+                    dexsanity_hint_data[mon].add(speenc_labels[speenc])
+            if self.options.randomize_roamers and "roamers" in self.options.in_logic_encounters.value:
+                for i, mon in enumerate(self.generated_roamers):
+                    if mon in dexsanity_specs:
+                        dexsanity_hint_data[mon].add(roamer_labels[i])
+
 
         #am_set = set(self.accessible_mons)
         #def get_dexsanity_evolution_hint_data(dexsanity_hint_data: dict[str, set[str]]) -> None:
@@ -278,7 +286,7 @@ class PokemonPlatinumWorld(World):
                 encounters_per_pokemon[mon].add(encounter_slot_label(key, self.options.in_logic_encounters.value))
             for (speenc, _), mon in self.generated_speencs.items():
                 encounters_per_pokemon[mon].add(speenc_labels[speenc])
-        if self.options.randomize_roamers:
+        if self.options.randomize_roamers and "roamers" in self.options.in_logic_encounters.value:
             for i, mon in enumerate(self.generated_roamers):
                 encounters_per_pokemon[mon].add(roamer_labels[i])
 
