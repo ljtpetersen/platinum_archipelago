@@ -70,8 +70,10 @@ class PokemonPlatinumWorld(World):
     generated_munchlax_trees: Tuple[int, int, int, int]
     # (map header, encounter table, index) -> species.
     generated_encounters: MutableMapping[Tuple[str, str, int], str]
+    ool_encounters: MutableMapping[Tuple[str, str, int], str]
     # (speenc, index) -> species
     generated_speencs: MutableMapping[Tuple[str, int], str]
+    ool_speencs: MutableMapping[Tuple[str, int], str]
     generated_roamers: Tuple[str, str, str, str, str]
     # (trainer, index) -> species
     generated_trainer_parties: MutableMapping[Tuple[str, int], str]
@@ -96,7 +98,9 @@ class PokemonPlatinumWorld(World):
         self.generated_buneary = "buneary"
         self.generated_munchlax_trees = (0, 1, 2, 3)
         self.generated_encounters = {}
+        self.ool_encounters = {}
         self.generated_speencs = {}
+        self.ool_speens = {}
         self.generated_trainer_parties = {}
         self.added_hm_compatibility = {}
         self.itempool = []
@@ -207,7 +211,9 @@ class PokemonPlatinumWorld(World):
         ret["dexsanity_specs"] = [speciesdata.species[spec].id for spec in self.dexsanity_specs]
         ret["trainersanity_trainers"] = [trainerdata.trainers[trainer + "_turtwig" if trainer.startswith("rival_") else trainer].get_raw_id() for trainer in self.trainersanity_trainers]
         ret["generated_encounters"] = {f"{region}_{table}_{i}":speciesdata.species[spec].id for (region, table, i), spec in self.generated_encounters.items()}
+        ret["generated_encounters"].update({f"{region}_{table}_{i}":speciesdata.species[spec].id for (region, table, i), spec in self.ool_encounters.items()})
         ret["generated_special_encounters"] = {f"{speenc}_{i}":speciesdata.species[spec].id for (speenc, i), spec in self.generated_speencs.items()}
+        ret["generated_special_encounters"].update({f"{speenc}_{i}":speciesdata.species[spec].id for (speenc, i), spec in self.ool_speencs.items()})
         ret["generated_roamers"] = [speciesdata.species[spec].id for spec in self.generated_roamers]
         ret["generated_munchlax_trees"] = list(self.generated_munchlax_trees)
         ret["added_hm_compatibility"] = {spec:[hm.name.lower() for hm in compat] for spec, compat in self.added_hm_compatibility.items()}
@@ -238,6 +244,14 @@ class PokemonPlatinumWorld(World):
             for key, mon in self.generated_encounters.items():
                 if mon in dexsanity_specs:
                     dexsanity_hint_data[mon].add(encounter_slot_label(key, self.options.in_logic_encounters.value))
+            for (speenc, _), mon in self.generated_speencs.items():
+                if mon in dexsanity_specs:
+                    dexsanity_hint_data[mon].add(speenc_labels[speenc])
+            if self.options.randomize_roamers and "roamers" in self.options.in_logic_encounters.value:
+                for i, mon in enumerate(self.generated_roamers):
+                    if mon in dexsanity_specs:
+                        dexsanity_hint_data[mon].add(roamer_labels[i])
+
 
         #am_set = set(self.accessible_mons)
         #def get_dexsanity_evolution_hint_data(dexsanity_hint_data: dict[str, set[str]]) -> None:
@@ -272,7 +286,7 @@ class PokemonPlatinumWorld(World):
                 encounters_per_pokemon[mon].add(encounter_slot_label(key, self.options.in_logic_encounters.value))
             for (speenc, _), mon in self.generated_speencs.items():
                 encounters_per_pokemon[mon].add(speenc_labels[speenc])
-        if self.options.randomize_roamers:
+        if self.options.randomize_roamers and "roamers" in self.options.in_logic_encounters.value:
             for i, mon in enumerate(self.generated_roamers):
                 encounters_per_pokemon[mon].add(roamer_labels[i])
 

@@ -301,6 +301,7 @@ def generate_output(world: "PokemonPlatinumWorld", output_directory: str, patch:
     add_opt_byte("guaranteed_escape")
     add_opt_byte("talk_trainers_without_fight")
     ap_bin += world.options.item_notifications_mask.to_mask().to_bytes(1, 'little')
+    add_opt_byte("fast_fishing")
 
     if len(ap_bin) % 2 == 1:
         ap_bin += b'\x00'
@@ -503,9 +504,9 @@ def generate_output(world: "PokemonPlatinumWorld", output_directory: str, patch:
                 table_map = tbls.setdefault(table, [])
                 for i, slot in enumerate(e):
                     if (header, table, i) in world.generated_encounters:
-                        new_spec = world.generated_encounters[(header, table, i)]
+                        new_spec = world.generated_encounters[header, table, i]
                     else:
-                        new_spec = world.random.choice(enc_pool)
+                        new_spec = world.ool_encounters[header, table, i]
                     table_map.append((species[slot.species].id, species[new_spec].id))
 
         def get_speenc_map(speenc: str) -> list[tuple[int, int]]:
@@ -513,9 +514,9 @@ def generate_output(world: "PokemonPlatinumWorld", output_directory: str, patch:
             spec_map = []
             for i, spec in enumerate(e2):
                 if (speenc, i) in world.generated_speencs:
-                    new_spec = world.generated_speencs[(speenc, i)]
+                    new_spec = world.generated_speencs[speenc, i]
                 else:
-                    new_spec = world.random.choice(enc_pool)
+                    new_spec = world.ool_speencs[speenc, i]
                 spec_map.append((species[spec].id, species[new_spec].id))
             return spec_map
         for ids, speenc in [
@@ -580,7 +581,7 @@ def generate_output(world: "PokemonPlatinumWorld", output_directory: str, patch:
                 common_map = common_st_map.setdefault(name_ns, {})
                 for p in trainer.party:
                     if p.species in tps and (name_ns, tps[p.species]) in world.generated_trainer_parties:
-                        new_spec = world.generated_trainer_parties[(name_ns, tps[p.species])]
+                        new_spec = world.generated_trainer_parties[name_ns, tps[p.species]]
                     elif p.species in starter_idx_map:
                         chain = starter_evos[starter_idx_map[p.species]]
                         level_for_nonlevel = 20
@@ -617,7 +618,7 @@ def generate_output(world: "PokemonPlatinumWorld", output_directory: str, patch:
                 new_party = []
                 for i, p in enumerate(trainer.party):
                     if (name, i) in world.generated_trainer_parties:
-                        new_spec = world.generated_trainer_parties[(name, i)]
+                        new_spec = world.generated_trainer_parties[name, i]
                     else:
                         new_spec = world.random.choice(trp_pool)
                     np: Mapping[str, int | Sequence[int]] = {}
@@ -665,7 +666,7 @@ def generate_output(world: "PokemonPlatinumWorld", output_directory: str, patch:
                 common_map = common_st_map.setdefault(name_ns, {})
                 for p in trainer.party:
                     if p.species in tps and (name_ns, tps[p.species]) in world.generated_trainer_parties:
-                        new_spec = world.generated_trainer_parties[(name_ns, tps[p.species])]
+                        new_spec = world.generated_trainer_parties[name_ns, tps[p.species]]
                         is_randomized = True
                     elif p.species in starter_idx_map:
                         chain = starter_evos[starter_idx_map[p.species]]
