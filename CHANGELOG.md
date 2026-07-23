@@ -42,13 +42,15 @@ He also sells TM70 Flash.
 appropriately.
 * An event for defeating Team Galactic at Stark Mountain.
 * The boat can now be taken between Canalave City, Pastoria City, and Snowpoint City.
-* More options for roadblocks in Route 207.
+* More options for roadblocks in Routes 207, 210, and 215.
 * A Poketch app to modify the camera type and make the player invisible.
 * An option to include fly regions as locations.
 * An option to filter item notifications by classification.
 * The R button can be held to stop receiving items.
 * An option to add TM/HM compatibility.
 * An option for fast fishing.
+* Entries to the game credits.
+* Version number to title screen.
 ### Changed
 * In-game game options option is now validated before generation.
 * Some evolution stones have been key-itemified, and are no longer consumed when used.
@@ -65,6 +67,9 @@ appropriately.
 * Scientist in Sunyshore no longer requires Pokémon of specific natures.
 * A lot of item classification changes to better reflect their usefulness ([@Justior-l](https://github.com/Justior-l),  [@palex00](https://github.com/palex00))
 * The Pokétch is now the requirement to access Route 203 from Jubilife, instead of the parcel and three coupons.
+* The bicycle can now be used indoors.
+* The escape rope can now be used in lost tower.
+* Title screen logo.
 ### Fixed
 * Non-determinism of generation. (hopefully)
 * Elite Four rematch is triggered only if the game has been completed and stark mountain has been cleared.

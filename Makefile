@@ -9,19 +9,36 @@ Q ?= @
 
 ROMS := us_rev0 us_rev1
 SOURCES := __init__.py \
-	 client.py \
-	 items.py \
-	 locations.py \
-	 options.py \
-	 regions.py \
-	 rules.py \
-	 species.py \
-	 rom/__init__.py \
-	 rom/encounterdata.py \
-	 rom/itemdata.py \
-	 rom/speciesdata.py \
-	 rom/trainerdata.py \
-	 LICENSE
+	client.py \
+	items.py \
+	locations.py \
+	options.py \
+	regions.py \
+	rules.py \
+	species.py \
+	rom/__init__.py \
+	rom/encounterdata.py \
+	rom/eventdata.py \
+	rom/itemdata.py \
+	rom/mapdata.py \
+	rom/speciesdata.py \
+	rom/trainerdata.py \
+	rom/data/maps/route_207_rock_climb.bin \
+	rom/data/maps/route_207_stairs.bin \
+	rom/data/maps/route_210_junction_bicycle_slope.bin \
+	rom/data/maps/route_210_junction_none_fence.bin \
+	rom/data/maps/route_210_junction_rock_climb.bin \
+	rom/data/maps/route_210_junction_surf.bin \
+	rom/data/maps/route_210_junction_surf_fence.bin \
+	rom/data/maps/route_210_junction_waterfall.bin \
+	rom/data/maps/route_215_west_bicycle_bridge.bin \
+	rom/data/maps/route_215_west_none_fence.bin \
+	rom/data/maps/route_215_west_rock_climb.bin \
+	rom/data/maps/route_215_west_surf.bin \
+	rom/data/maps/route_215_west_surf_fence.bin \
+	rom/data/maps/route_215_west_waterfall.bin \
+	rom/data/maps/route_215_west_waterfall_fence.bin \
+	LICENSE
 DATA := data_gen/encounters.toml \
        data_gen/event_checks.toml \
        data_gen/items.toml \

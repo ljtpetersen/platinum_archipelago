@@ -25,3 +25,7 @@ stark_mountain_arrest_team_galactic = 214
 activate_roaming_moltres_zapdos_articuno = 0x199
 activate_roaming_cresselia = 0x11F
 activate_roaming_mesprit = { id = 16463, value = 4, op = "ne" }
+
+saw_route_210_barricade = 0xBC5
+saw_route_215_west_barricade = 0xBC6
+saw_route_207_barricade = 0xBC7

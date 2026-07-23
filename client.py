@@ -61,6 +61,11 @@ TRACKED_EVENTS = [
 ]
 TRACKED_UNRANDOMIZED_REQUIRED_LOCATIONS = sorted(maximal_required_locations)
 TRACKED_HEIGHT_MAP_HEADERS = {35, 350}
+TRACKED_SAW_LOCATIONS = [
+    "saw_route_210_barricade",
+    "saw_route_215_west_barricade",
+    "saw_route_207_barricade",
+]
 
 class CheatBits(IntEnum):
     UNLOCK_ALL_FLY_REGIONS = 1
@@ -274,6 +279,7 @@ class PokemonPlatinumClient(BizHawkClient):
     current_y: int
     current_z: int
     local_tracked_events: int
+    local_saw_locations: int
     local_tracked_unrandomized_prog_locs: int
     local_seen_pokemon: bytearray
     local_caught_pokemon: bytearray
@@ -304,6 +310,7 @@ class PokemonPlatinumClient(BizHawkClient):
         self.current_x = -1
         self.current_z = -1
         self.local_tracked_events = 0
+        self.local_saw_locations = 0
         self.local_tracked_unrandomized_prog_locs = 0
         self.local_seen_pokemon = bytearray(64)
         self.local_caught_pokemon = bytearray(64)
@@ -526,6 +533,7 @@ class PokemonPlatinumClient(BizHawkClient):
             local_checked_locations = set()
             game_clear = vars_flags.is_checked(self.goal_flag) # type: ignore
             local_tracked_events = 0
+            local_saw_locations = 0
             local_tracked_unrandomized_prog_locs = 0
             local_seen_pokemon = bytearray(64)
             local_caught_pokemon = bytearray(64)
@@ -546,6 +554,10 @@ class PokemonPlatinumClient(BizHawkClient):
             for k, event in enumerate(TRACKED_EVENTS):
                 if vars_flags.is_checked(event_checks[event]):
                     local_tracked_events |= 1 << k
+
+            for k, event in enumerate(TRACKED_SAW_LOCATIONS):
+                if vars_flags.is_checked(event_checks[event]):
+                    local_saw_locations |= 1 << k
 
             for k, loc in enumerate(TRACKED_UNRANDOMIZED_REQUIRED_LOCATIONS):
                 if vars_flags.is_checked(locations[loc].check):
@@ -600,6 +612,16 @@ class PokemonPlatinumClient(BizHawkClient):
                     "operations": [{"operation": "or", "value": local_tracked_events}]
                 }])
                 self.local_tracked_events = local_tracked_events
+
+            if local_saw_locations != self.local_saw_locations:
+                await ctx.send_msgs([{
+                    "cmd": "Set",
+                    "key": f"pokemon_platinum_saw_locations_{ctx.team}_{ctx.slot}",
+                    "default": 0,
+                    "want_reply": False,
+                    "operations": [{"operation": "or", "value": local_saw_locations}]
+                }])
+                self.local_saw_locations = local_saw_locations
 
             if local_tracked_unrandomized_prog_locs != self.local_tracked_unrandomized_prog_locs:
                 for chunk in range((len(TRACKED_UNRANDOMIZED_REQUIRED_LOCATIONS) + 31) // 32):

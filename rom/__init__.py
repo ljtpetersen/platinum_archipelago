@@ -479,6 +479,176 @@ def generate_output(world: "PokemonPlatinumWorld", output_directory: str, patch:
                 })),
             )
 
+    route_210_lower_opt = world.options.route_210_lower_barricade
+    route_210_lower_has_obj_barricade = route_210_lower_opt & 0b111000 != 0
+    match route_210_lower_opt & 0b000111:
+        case 0b000:
+            if route_210_lower_has_obj_barricade:
+                map_addition = "none_fence"
+            else:
+                map_addition = None
+        case 0b001:
+            map_addition = "bicycle_slope"
+        case 0b010:
+            map_addition = "rock_climb"
+        case 0b011:
+            if route_210_lower_has_obj_barricade:
+                map_addition = "surf_fence"
+            else:
+                map_addition = "surf"
+            event_patches.setdefault("348", []).append(
+                ("replace_obj_fields_by_local_id", (12, {"z": 597}))
+            )
+        case 0b100:
+            map_addition = "waterfall"
+            event_patches.setdefault("348", []).append(
+                ("replace_obj_fields_by_local_id", (12, {"z": 597}))
+            )
+            if route_210_lower_has_obj_barricade:
+                event_patches.setdefault("348", []).extend([
+                    ("replace_obj_fields_by_data_0", (0xFF, {"x": 564})),
+                    ("add_obj_event_at_end", {
+                        "local_id": 35,
+                        "graphics_id": BOLLARD_GFX_ID,
+                        "movement_type": 0,
+                        "trainer_type": 0,
+                        "flag": 0,
+                        "script": 0,
+                        "initial_dir": 0,
+                        "data_0": 0,
+                        "data_1": 0,
+                        "data_2": 0,
+                        "movement_range_x": 0,
+                        "movement_range_z": 0,
+                        "x": 563,
+                        "z": 597,
+                        "y": 0,
+                    })
+                ])
+        case _:
+            map_addition = None
+    if map_addition is not None:
+        map_replacements["67"] = pkgutil.get_data(__name__, f"data/maps/route_210_junction_{map_addition}.bin") # type: ignore
+        event_patches.setdefault("348", []).append(
+            ("replace_obj_fields_by_local_id", (7, {"x": 565, "z": 595}))
+        )
+
+    match (route_210_lower_opt & 0b111000) >> 3:
+        case 0b000:
+            event_patches.setdefault("348", []).append(
+                ("remove_objs_by_data_0", 0xFF),
+            )
+        case 0b010:
+            event_patches.setdefault("348", []).append(
+                ("replace_obj_fields_by_data_0", (255, {
+                    "graphics_id": CUT_TREE_GFX_ID,
+                    "script": 10000,
+                })),
+            )
+        case 0b011:
+            event_patches.setdefault("348", []).append(
+                ("replace_obj_fields_by_data_0", (255, {
+                    "graphics_id": ROCK_SMASH_GFX_ID,
+                    "script": 10001,
+                })),
+            )
+        case 0b100:
+            event_patches.setdefault("348", []).append(
+                ("replace_obj_fields_by_data_0", (255, {
+                    "graphics_id": STRENGTH_BOULDER_GFX_ID,
+                    "script": 10002,
+                })),
+            )
+        case 0b101:
+            event_patches.setdefault("348", []).append(
+                ("replace_obj_fields_by_data_0", (255, {
+                    "graphics_id": PSYDUCK_GFX_ID,
+                    "script": 10016,
+                    "flag": 0xBD9,
+                    "initial_dir": 1,
+                })),
+            )
+
+    route_215_opt = world.options.route_215_barricade
+    route_215_has_obj_barricade = route_215_opt & 0b111000 != 0
+    match route_215_opt & 0b000111:
+        case 0b000:
+            if route_215_has_obj_barricade:
+                map_addition = "none_fence"
+            else:
+                map_addition = None
+            event_patches.setdefault("368", []).append(
+                ("translate_objs_by_graphics_id", (BOLLARD_GFX_ID, (-6, -2))),
+            )
+        case 0b001:
+            map_addition = "bicycle_bridge"
+        case 0b010:
+            map_addition = "rock_climb"
+        case 0b011:
+            if route_215_has_obj_barricade:
+                map_addition = "surf_fence"
+            else:
+                map_addition = "surf"
+            event_patches.setdefault("368", []).extend([
+                ("translate_objs_by_graphics_id", (BOLLARD_GFX_ID, (-8, -3))),
+                ("translate_objs_by_local_id", (8, (0, -1))),
+            ])
+            event_patches.setdefault("348", []).append(
+                ("translate_aliases_by_local_id", (8, (0, -1))),
+            )
+        case 0b100:
+            if route_215_has_obj_barricade:
+                map_addition = "waterfall_fence"
+            else:
+                map_addition = "waterfall"
+            event_patches.setdefault("368", []).extend([
+                ("translate_objs_by_graphics_id", (BOLLARD_GFX_ID, (-8, -3))),
+                ("translate_objs_by_local_id", (8, (0, -1))),
+            ])
+            event_patches.setdefault("348", []).append(
+                ("translate_aliases_by_local_id", (8, (0, -1))),
+            )
+        case _:
+            map_addition = None
+    if map_addition is not None:
+        map_replacements["69"] = pkgutil.get_data(__name__, f"data/maps/route_215_west_{map_addition}.bin") # type: ignore
+
+    match (route_215_opt & 0b111000) >> 3:
+        case 0b000:
+            event_patches.setdefault("368", []).append(
+                ("remove_objs_by_graphics_id", BOLLARD_GFX_ID)
+            )
+        case 0b010:
+            event_patches.setdefault("368", []).append(
+                ("replace_obj_fields_by_graphics_id", (BOLLARD_GFX_ID, {
+                    "graphics_id": CUT_TREE_GFX_ID,
+                    "script": 10000,
+                })),
+            )
+        case 0b011:
+            event_patches.setdefault("368", []).append(
+                ("replace_obj_fields_by_graphics_id", (BOLLARD_GFX_ID, {
+                    "graphics_id": ROCK_SMASH_GFX_ID,
+                    "script": 10001,
+                })),
+            )
+        case 0b100:
+            event_patches.setdefault("368", []).append(
+                ("replace_obj_fields_by_graphics_id", (BOLLARD_GFX_ID, {
+                    "graphics_id": STRENGTH_BOULDER_GFX_ID,
+                    "script": 10002,
+                })),
+            )
+        case 0b101:
+            event_patches.setdefault("368", []).append(
+                ("replace_obj_fields_by_graphics_id", (BOLLARD_GFX_ID, {
+                    "graphics_id": PSYDUCK_GFX_ID,
+                    "script": 10016,
+                    "flag": 0xBDA,
+                    "initial_dir": 1,
+                })),
+            )
+
     item_patches = {}
     if world.options.reusable_tms.value == 1:
         for lbl in world.item_name_groups["TMs and HMs"]:

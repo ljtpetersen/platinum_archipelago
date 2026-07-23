@@ -131,11 +131,38 @@ def patch_events(events_data: bytes, patch_info: Mapping[str, Sequence[Tuple[str
         for patch, patch_data in patches:
             match patch:
                 case "remove_objs_by_graphics_id":
-                    events.object_events = [e for e in events.object_events if e.graphics_id != patch_data]
+                    events.object_events = [e for e in events.object_events if e.graphics_id != patch_data or e.script == 0xFFFF]
                 case "replace_obj_fields_by_graphics_id":
                     for e in events.object_events:
-                        if e.graphics_id == patch_data[0]:
+                        if e.graphics_id == patch_data[0] and e.script != 0xFFFF:
                             replace_obj_field(e, patch_data[1])
+                case "remove_objs_by_data_0":
+                    events.object_events = [e for e in events.object_events if e.data_0 != patch_data or e.script == 0xFFFF]
+                case "replace_obj_fields_by_data_0":
+                    for e in events.object_events:
+                        if e.data_0 == patch_data[0] and e.script != 0xFFFF:
+                            replace_obj_field(e, patch_data[1])
+                case "replace_obj_fields_by_local_id":
+                    for e in events.object_events:
+                        if e.local_id == patch_data[0] and e.script != 0xFFFF:
+                            replace_obj_field(e, patch_data[1])
+                case "add_obj_event_at_end":
+                    events.object_events.append(ObjectEvent(**patch_data))
+                case "translate_objs_by_graphics_id":
+                    for e in events.object_events:
+                        if e.graphics_id == patch_data[0] and e.script != 0xFFFF:
+                            e.x += patch_data[1][0];
+                            e.z += patch_data[1][1];
+                case "translate_objs_by_local_id":
+                    for e in events.object_events:
+                        if e.local_id == patch_data[0] and e.script != 0xFFFF:
+                            e.x += patch_data[1][0];
+                            e.z += patch_data[1][1];
+                case "translate_aliases_by_local_id":
+                    for e in events.object_events:
+                        if e.local_id == patch_data[0] and e.script == 0xFFFF:
+                            e.x += patch_data[1][0];
+                            e.z += patch_data[1][1];
                 case _:
                     raise ValueError(f"unsupported events patch {patch}")
         narc.files[int(idx_str)] = events.to_bytes()

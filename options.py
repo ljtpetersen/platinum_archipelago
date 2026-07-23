@@ -760,24 +760,6 @@ class BoatPastoriaSnowpoint(Choice):
 class Route207Barricade(Choice):
     """
     What barricade is present in Route 207 (which is above Oreburgh City).
-
-    Options:
-    - none
-    - bicycle_slope
-    - rock_climb
-    - impassable
-    - cut_tree
-    - rock_smash
-    - strength_boulder
-    - psyduck
-    - bicycle_slope_and_cut_tree
-    - bicycle_slope_and_rock_smash
-    - bicycle_slope_and_strength_boulder
-    - bicycle_slope_and_psyduck
-    - rock_climb_and_cut_tree
-    - rock_climb_and_rock_smash
-    - rock_climb_and_strength_boulder
-    - rock_climb_and_psyduck
     """
     # bottom two bits are map: none, bicycle_slope, or rock_climb
     # three after are object event barricade
@@ -899,6 +881,76 @@ class FastFishing(Toggle):
     """
     display_name = "Fast Fishing"
 
+class Route210LowerBarricade(Choice):
+    """
+    What barricade is present between the lower part of Route 210 and the Route 210–215 junction.
+    """
+    # bottom three bits are map: none, bicycle slope, rock climb, surf, or waterfall
+    # three after are object event barricade: impassable, cut tree, rock smash, strength boulder, psyduck
+    option_none = 0b000000
+    option_bicycle_slope = 0b000001
+    option_rock_climb = 0b00010
+    option_surf = 0b00011
+    option_waterfall = 0b000100
+    option_impassable = 0b001000
+    option_cut_tree = 0b010000
+    option_rock_smash = 0b011000
+    option_strength_boulder = 0b100000
+    option_psyduck = 0b101000
+    option_bicycle_slope_and_cut_tree = 0b010001
+    option_bicycle_slope_and_rock_smash = 0b011001
+    option_bicycle_slope_and_strength_boulder = 0b100001
+    option_bicycle_slope_and_psyduck = 0b101001
+    option_rock_climb_and_cut_tree = 0b010010
+    option_rock_climb_and_rock_smash = 0b011010
+    option_rock_climb_and_strength_boulder = 0b100010
+    option_rock_climb_and_psyduck = 0b101010
+    option_surf_and_cut_tree = 0b010011
+    option_surf_and_rock_smash = 0b011011
+    option_surf_and_strength_boulder = 0b100011
+    option_surf_and_psyduck = 0b101011
+    option_waterfall_and_cut_tree = 0b010100
+    option_waterfall_and_rock_smash = 0b011100
+    option_waterfall_and_strength_boulder = 0b100100
+    option_waterfall_and_psyduck = 0b101100
+    default = option_none
+    display_name = "Route 210 Lower Barricade"
+
+class Route215Barricade(Choice):
+    """
+    What barricade is present to the west of Route 215, blocking the Route 210–215 junction.
+    """
+    # bottom three bits are map: none, bicycle bridge, rock climb, surf, or waterfall
+    # three after are object event barricade: impassable, cut tree, rock smash, strength boulder, psyduck
+    option_none = 0b000000
+    option_bicycle_bridge = 0b000001
+    option_rock_climb = 0b00010
+    option_surf = 0b00011
+    option_waterfall = 0b000100
+    option_impassable = 0b001000
+    option_cut_tree = 0b010000
+    option_rock_smash = 0b011000
+    option_strength_boulder = 0b100000
+    option_psyduck = 0b101000
+    option_bicycle_bridge_and_cut_tree = 0b010001
+    option_bicycle_bridge_and_rock_smash = 0b011001
+    option_bicycle_bridge_and_strength_boulder = 0b100001
+    option_bicycle_bridge_and_psyduck = 0b101001
+    option_rock_climb_and_cut_tree = 0b010010
+    option_rock_climb_and_rock_smash = 0b011010
+    option_rock_climb_and_strength_boulder = 0b100010
+    option_rock_climb_and_psyduck = 0b101010
+    option_surf_and_cut_tree = 0b010011
+    option_surf_and_rock_smash = 0b011011
+    option_surf_and_strength_boulder = 0b100011
+    option_surf_and_psyduck = 0b101011
+    option_waterfall_and_cut_tree = 0b010100
+    option_waterfall_and_rock_smash = 0b011100
+    option_waterfall_and_strength_boulder = 0b100100
+    option_waterfall_and_psyduck = 0b101100
+    default = option_none
+    display_name = "Route 215 Barricade"
+
 slot_data_options: Sequence[str] = [
     "hms",
     "badges",
@@ -929,6 +981,8 @@ slot_data_options: Sequence[str] = [
     "can_reset_legendaries_in_ap_helper",
     "evo_items_shop_in_ap_helper",
     "route_207_barricade",
+    "route_210_lower_barricade",
+    "route_215_barricade",
     "boat_canalave_pastoria",
     "boat_canalave_snowpoint",
     "boat_pastoria_snowpoint",
@@ -1024,6 +1078,8 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
     boat_canalave_snowpoint: BoatCanalaveSnowpoint
     boat_pastoria_snowpoint: BoatPastoriaSnowpoint
     route_207_barricade: Route207Barricade
+    route_210_lower_barricade: Route210LowerBarricade
+    route_215_barricade: Route215Barricade
 
     randomize_fly_items: RandomizeFlyItems
     require_fly_items_for_flight: RequireFlyItemsForFlight
@@ -1344,6 +1400,8 @@ OPTION_GROUPS = [
             BoatCanalaveSnowpoint,
             BoatPastoriaSnowpoint,
             Route207Barricade,
+            Route210LowerBarricade,
+            Route215Barricade,
         ],
     ),
     OptionGroup(

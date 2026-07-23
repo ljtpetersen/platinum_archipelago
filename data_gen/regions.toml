@@ -2073,12 +2073,22 @@ exits = [
 ]
 header = "virt"
 
+[route_210_junction]
+header = "virt"
+exits = [
+    "route_210_south",
+    "route_210_south_upper",
+    "route_215",
+    "cafe",
+]
+trainers = [
+    "breeder_amber",
+]
+
 [route_210_south]
 exits = [
     "solaceon_town",
-    "cafe",
-    "route_210_south_upper",
-    "route_215",
+    "route_210_junction",
 ]
 header = "route_210_south"
 locs = [
@@ -2090,7 +2100,6 @@ trainers = [
     "twins_teri_and_tia",
     "jogger_wyatt",
     "breeder_kahlil",
-    "breeder_amber",
     "belle_and_pa_ava_and_matt",
     "rancher_marco",
 ]
@@ -2131,7 +2140,7 @@ trainers = [
 [route_210_south_upper]
 exits = [
     "route_210_north",
-    "route_210_south",
+    "route_210_junction",
 ]
 header = "route_210_south"
 locs = [
@@ -2389,7 +2398,7 @@ header = "jubilife_tv_elevator"
 
 [cafe]
 exits = [
-    "route_210_south",
+    "route_210_junction",
 ]
 header = "cafe"
 trainers = [
@@ -4585,7 +4594,7 @@ header = "solaceon_ruins_room_2_southeast_dead_end"
 [route_215]
 exits = [
     "route_215_gate_to_veilstone_city",
-    "route_210_south",
+    "route_210_junction",
 ]
 header = "route_215"
 locs = [
