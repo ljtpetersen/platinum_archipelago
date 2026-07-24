@@ -136,7 +136,7 @@ class AddMasterRepel(Toggle):
     """
     display_name = "Add Master Repel"
 
-class ExpMultiplier(Option[Fraction]):
+class ExpMultiplier(Option[int | str]):
     """
     Set an experience multiplier for all gained experience.
     This can either be an integer between 0 and 65535, inclusive,
@@ -147,62 +147,66 @@ class ExpMultiplier(Option[Fraction]):
     This option can be modified in-game.
     """
     display_name = "Exp. Multiplier"
-    supports_weighting = False
-    default = "1"
+    default = 1
 
-    def __init__(self, value: Fraction):
-        assert isinstance(value, Fraction), "value of ExpMultiplier must be a fraction"
+    def __init__(self, value: str | int):
+        assert isinstance(value, str) or isinstance(value, int), "value of ExpMultiplier must be a string or an integer"
         self.value = value
 
     @classmethod
     def from_text(cls, text: str) -> "ExpMultiplier":
         try:
-            frac = Fraction(text.strip())
-            if frac.numerator < 0 or frac.numerator > 65535:
-                raise OptionError("exp multiplier numerator must be between 0 and 65535")
-            elif frac.denominator > 65535:
-                raise OptionError("exp multiplier denominator must be between 1 and 65535")
-            return cls(frac)
-        except ValueError as e:
-            raise OptionError(f"failed to parse exp multiplier") from e
+            return cls(int(text.strip()))
+        except ValueError:
+            return cls(text.strip())
 
     @classmethod
     def from_any(cls, data: Any) -> "ExpMultiplier":
-        if isinstance(data, Fraction):
-            if data.numerator < 0 or data.numerator > 65535:
-                raise OptionError("exp multiplier numerator must be between 0 and 65535")
-            elif data.denominator > 65535:
-                raise OptionError("exp multiplier denominator must be between 1 and 65535")
+        if isinstance(data, int):
             return cls(data)
-        elif isinstance(data, int):
-            if data < 0 or data > 65535:
-                raise OptionError("exp multiplier numerator must be between 0 and 65535")
-            return cls(Fraction(data))
-        elif isinstance(data, str):
-            return cls.from_text(data)
         else:
-            raise OptionError(f"Option {cls.__name__} does not support a value of {data}")
+            return cls.from_text(data)
 
     @classmethod
-    def get_option_name(cls, value: Fraction) -> str:
-        return str(value)
+    def get_option_name(cls, value: str | int) -> str:
+        if isinstance(value, str):
+            return "".join(c for c in value if not c.isspace())
+        else:
+            return str(value)
 
     def __eq__(self, other):
         if isinstance(other, self.__class__):
             return other.to_bytes() == self.to_bytes()
-        elif isinstance(other, Fraction):
-            return ExpMultiplier(other).value == self.value
+        elif isinstance(other, str) or isinstance(other, int):
+            return ExpMultiplier(other).to_bytes() == self.to_bytes()
         else:
             raise TypeError(f"Can't compare {self.__class__.__name__} with {other.__class__.__name__}")
 
     def verify(self, *args, **kwargs) -> None:
-        if self.value.numerator < 0 or self.value.numerator > 65535:
-            raise OptionError("exp multiplier numerator must be between 0 and 65535")
-        elif self.value.denominator > 65535:
-            raise OptionError("exp multiplier denominator must be between 1 and 65535")
+        self.to_bytes()
 
     def to_bytes(self) -> bytes:
-        return self.value.numerator.to_bytes(2, 'little') + self.value.denominator.to_bytes(2, 'little')
+        def try_ints(num: int, denom: int = 1) -> bytes:
+            if num < 0 or num > 65535:
+                raise OptionError(f"exp multiplier numerator must be between 0 and 65535")
+            elif denom < 1 or denom > 65535:
+                raise OptionError(f"exp multiplier denominator must be between 1 and 65535")
+            else:
+                return num.to_bytes(2, 'little') + denom.to_bytes(2, 'little')
+        if isinstance(self.value, int):
+            return try_ints(self.value)
+        pivot = self.value.find('/')
+        if pivot == -1:
+            # only a numerator
+            try:
+                return try_ints(int(self.value.strip()))
+            except ValueError:
+                raise OptionError("exp multiplier string must be an integer or fraction")
+        else:
+            try:
+                return try_ints(int(self.value[:pivot].strip()), int(self.value[pivot + 1:].strip()))
+            except ValueError:
+                raise OptionError("exp multiplier string must be an integer or fraction")
 
 class BlindTrainers(Toggle):
     """
