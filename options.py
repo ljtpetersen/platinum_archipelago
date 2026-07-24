@@ -148,7 +148,7 @@ class ExpMultiplier(Option[Fraction]):
     """
     display_name = "Exp. Multiplier"
     supports_weighting = False
-    default = 1
+    default = "1"
 
     def __init__(self, value: Fraction):
         assert isinstance(value, Fraction), "value of ExpMultiplier must be a fraction"
