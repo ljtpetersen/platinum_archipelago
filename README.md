@@ -22,19 +22,10 @@ the version in the [`apnds_version.txt`](apnds_version.txt) file. Extract the ou
 Run the data generation (`python data_gen.py` in the root of the repository).
 Afterwards, in the Archipelago Launcher, run the Build APWorlds option.
 
-## Where Help is Needed
-* Better documentation! (`docs/setup_en.md` and `en_Pokemon Platinum.md`)
-* Better location labels. In [`data_gen/locations.toml`](data_gen/locations.toml), for each location, simply modify the `label` field.
-No other changes necessary.
-* Correct logic. There are probably some places with incorrect logic. If you find any of these, open up an issue, and I'll get to fixing it promptly.
-* Correct item classifications. Some items may not be classified as `useful`, when they should be. To adjust these, in the `data_gen/items.toml` file,
-for each item that should be marked as useful, add the line `classification = "useful"` line.
-
 ## What is Missing
-* Encounter randomization and level scaling.
-* More victory conditions (including rules for fight area).
-* Trainersanity.
-* Dexsanity.
+* Level scaling.
+* More victory conditions.
+* Alternative access conditions for post-goal locations.
 * Various QOL things.
 
 ## Credits
@@ -44,3 +35,4 @@ for each item that should be marked as useful, add the line `classification = "u
   tech support.
 * Thanks to [ZobeePlays](https://github.com/ZobeePlays) and [Useless](https://github.com/UselessWater3) for location names.
 * Thanks to [Seafo](https://github.com/Seatori) for help with getting the rules for the trainers.
+* All of the GitHub contributors to this project!
