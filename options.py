@@ -624,6 +624,17 @@ class TrainersanityBlacklist(OptionSet):
     def to_const_names(self) -> Set[str]:
         return {trainer_name_to_trainer_const_name[v] for v in self.value}
 
+class TrainersanityRequired(OptionSet):
+    """
+    Specify trainers which must be trainersanity locations.
+    Has precedence over the whitelist and blacklist.
+    """
+    display_name = "Trainersanity Required"
+    valid_keys = in_game_trainer_labels
+
+    def to_const_names(self) -> Set[str]:
+        return {trainer_name_to_trainer_const_name[v] for v in self.value}
+
 class DexsanityCount(NamedRange):
     """
     How many dexsanity locations there will be.
@@ -829,6 +840,21 @@ class DexsanityBlacklist(SpeciesBlacklist):
     display_name = "Dexsanity Blacklist"
     valid_keys = list(species) + ["legendaries"]
 
+class DexsanityRequired(SpeciesBlacklist):
+    """
+    Specify the species which must be dexsanity locations.
+    This has precedence over the whitelist and blacklist.
+
+    The species names should be entered entirely in lowercase.
+    Spaces should be replaced by underscores. For example,
+    Mr. Mime would be mr_mime.
+
+    legendaries, all lowercase, will be interpreted as banning all legendary
+    species.
+    """
+    display_name = "Dexsanity Required"
+    valid_keys = list(species) + ["legendaries"]
+
 class ItemNotificationsMask(OptionSet):
     """
     Which types of items should in-game notifications be shown for.
@@ -1008,15 +1034,16 @@ slot_data_options: Sequence[str] = [
     "dexsanity_mode",
     "dexsanity_whitelist",
     "dexsanity_blacklist",
+    "dexsanity_required",
     "in_logic_evolution_methods",
 
     "randomize_roamers",
-    "roamer_blacklist",
     "roamer_blacklist",
 
     "trainersanity",
     "trainersanity_whitelist",
     "trainersanity_blacklist",
+    "trainersanity_required",
     "randomize_trainer_parties",
     "trainer_party_blacklist",
 
@@ -1102,6 +1129,7 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
     dexsanity_mode: DexsanityMode
     dexsanity_whitelist: DexsanityWhitelist
     dexsanity_blacklist: DexsanityBlacklist
+    dexsanity_required: DexsanityRequired
     in_logic_evolution_methods: InLogicEvolutionMethods
 
     randomize_roamers: RandomizeRoamers
@@ -1110,6 +1138,7 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
     trainersanity: TrainersanityCount
     trainersanity_whitelist: TrainersanityWhitelist
     trainersanity_blacklist: TrainersanityBlacklist
+    trainersanity_required: TrainersanityRequired
     randomize_trainer_parties: RandomizeTrainerParties
     trainer_party_blacklist: TrainerPartyBlacklist
 
@@ -1306,11 +1335,14 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
         if self.dexsanity:
             if self.randomize_encounters:
                 possible_species = expand_set_via_evolutions(species.keys() - self.encounter_species_blacklist.blacklist(), self.in_logic_evolution_methods.value)
+                if len(self.dexsanity_required.blacklist() - possible_species) > 0:
+                    raise OptionError(f"the following species are required dexsanity locations, but are not possible: {', '.join(self.dexsanity_required.blacklist() - possible_species)}")
+                possible_species -= self.dexsanity_required.blacklist()
                 if len(self.dexsanity_whitelist.blacklist()) > 0:
                     possible_species &= self.dexsanity_whitelist.blacklist()
                 else:
                     possible_species -= self.dexsanity_blacklist.blacklist()
-                if len(possible_species) < self.dexsanity:
+                if len(possible_species) + len(self.dexsanity_required.blacklist()) < self.dexsanity:
                     raise OptionError(f"dexsanity count larger than number of available species. number of available species: {len(possible_species)}")
             else:
                 in_logic_encounter_mons = {slot.species
@@ -1325,12 +1357,17 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
                     for spec in getattr(special_encounters, nm)
                 }
                 in_logic_encounter_mons = expand_set_via_evolutions(in_logic_encounter_mons, self.in_logic_evolution_methods.value)
+                if len(self.dexsanity_required.blacklist() - in_logic_encounter_mons) > 0:
+                    raise OptionError(f"the following species are required dexsanity locations, but are not possible: {', '.join(self.dexsanity_required.blacklist() - in_logic_encounter_mons)}")
+                in_logic_encounter_mons -= self.dexsanity_required.blacklist()
                 if len(self.dexsanity_whitelist.blacklist()) > 0:
                     in_logic_encounter_mons &= self.dexsanity_whitelist.blacklist()
                 else:
                     in_logic_encounter_mons -= self.dexsanity_blacklist.blacklist()
-                if len(in_logic_encounter_mons) < self.dexsanity:
+                if len(in_logic_encounter_mons) + len(in_logic_encounter_mons) < self.dexsanity:
                     raise OptionError(f"dexsanity count larger than in-logic species count. number of in-logic species: {len(in_logic_encounter_mons)}")
+        if len(self.dexsanity_required.blacklist()) > self.dexsanity.value:
+            raise OptionError(f"more dexsanity locations are required ({len(self.dexsanity_required.blacklist())}) than alloted ({self.dexsanity.value})")
         if self.randomize_roamers and len(species.keys() - self.roamer_blacklist.blacklist()) < 5:
             raise OptionError(f"roamer blacklist too restrictive")
 
@@ -1342,10 +1379,12 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
                 if len(species_set - self.starter_blacklist.blacklist()) < 3:
                     raise OptionError(f"starter blacklist too restrictive")
         if 0 < len(self.trainersanity_whitelist.value):
-            if len(self.trainersanity_whitelist.value) < self.trainersanity.value:
+            if len(self.trainersanity_whitelist.value | self.trainersanity_required.value) < self.trainersanity.value:
                 raise OptionError("trainersanity whitelist does not have enough trainers")
-        elif len(set(in_game_trainer_labels) - self.trainersanity_blacklist.value) < self.trainersanity.value:
+        elif len((set(in_game_trainer_labels) - self.trainersanity_blacklist.value) | self.trainersanity_required.value) < self.trainersanity.value:
             raise OptionError("trainersanity blacklist is too restrictive")
+        if len(self.trainersanity_required.value) > self.trainersanity.value:
+            raise OptionError(f"more trainersanity locations are required ({len(self.trainersanity_required.value)}) than alloted ({self.trainersanity.value})")
 
     def save_options(self) -> MutableMapping[str, Any]:
         return self.as_dict(*slot_data_options)
@@ -1425,6 +1464,7 @@ OPTION_GROUPS = [
             DexsanityMode,
             DexsanityBlacklist,
             DexsanityWhitelist,
+            DexsanityRequired,
             InLogicEvolutionMethods,
             EvoItemsShopInAPHelper,
             ReusableTms,
@@ -1441,6 +1481,7 @@ OPTION_GROUPS = [
             TrainersanityCount,
             TrainersanityWhitelist,
             TrainersanityBlacklist,
+            TrainersanityRequired,
             RandomizeTrainerParties,
             TrainerPartyBlacklist,
         ],

@@ -18,7 +18,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * Daytime and nighttime items.
 * An option to normalize encounter slot probabilities.
 * Dexsanity support, including partial.
-* Trainersanity support.
+* Trainersanity support, including partial.
 * Instant text speed option.
 * Death Link support.
 * Starter randomization.
@@ -51,6 +51,7 @@ appropriately.
 * An option for fast fishing.
 * Entries to the game credits.
 * Version number to title screen.
+* A QOL menu when pressing the select button.
 ### Changed
 * In-game game options option is now validated before generation.
 * Some evolution stones have been key-itemified, and are no longer consumed when used.

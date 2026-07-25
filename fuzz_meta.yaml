@@ -16,7 +16,9 @@ Pokemon Platinum:
     ['level_with_held_item_day', 'level_happiness_night', 'level_know_move', 'level_pid_low', 'trade_with_held_item', 'use_item_male', 'level_pid_high', 'level_happiness_day', 'level_moss_rock', 'level_male', 'level_with_held_item_night', 'level_beauty', 'level', 'level_magnetic_field', 'trade', 'level_shedinja', 'level_atk_gt_def', 'level_happiness', 'level_ninjask', 'use_item_female', 'use_item', 'level_atk_eq_def', 'level_female', 'level_ice_rock', 'level_atk_lt_def', 'level_species_in_party']
   dexsanity_whitelist: []
   dexsanity_blacklist: []
+  dexsanity_required: []
   trainersanity_whitelist: []
   trainersanity_blacklist: []
+  trainersanity_required: []
   hms: 1
   badges: 1

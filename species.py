@@ -356,6 +356,9 @@ def add_virt_specs(world: "PokemonPlatinumWorld", regions: Mapping[str, Region])
         accessible_once_mons |= set(world.generated_roamers)
     accessible_see_mons = accessible_once_mons | set(world.generated_trainer_parties.values())
 
+    required_dexsanity = world.options.dexsanity_required.blacklist()
+    accessible_dexsanity = accessible_once_mons - required_dexsanity
+
     am_set = accessible_mons
     accessible_mons = sorted(accessible_mons)
     world.accessible_mons = accessible_mons
@@ -403,10 +406,10 @@ def add_virt_specs(world: "PokemonPlatinumWorld", regions: Mapping[str, Region])
         reg.locations.append(location)
 
     if len(world.options.dexsanity_whitelist.blacklist()) > 0:
-        possible_dexsanity_mons = list(set(accessible_once_mons) & world.options.dexsanity_whitelist.blacklist())
+        possible_dexsanity_mons = sorted(accessible_dexsanity & world.options.dexsanity_whitelist.blacklist())
     else:
-        possible_dexsanity_mons = list(set(accessible_once_mons) - world.options.dexsanity_blacklist.blacklist())
-    world.dexsanity_specs = world.random.sample(possible_dexsanity_mons, k=world.options.dexsanity.value)
+        possible_dexsanity_mons = sorted(accessible_dexsanity - world.options.dexsanity_blacklist.blacklist())
+    world.dexsanity_specs = world.random.sample(possible_dexsanity_mons, k=world.options.dexsanity.value - len(required_dexsanity)) + sorted(required_dexsanity)
 
 def encounter_slot_label(key: Tuple[str, str, int], in_logic_encounters: Set[str]) -> str:
     (header, table, index) = key
@@ -448,18 +451,24 @@ def generate_required_encounter_species(world: "PokemonPlatinumWorld") -> Set[st
         poss_dexs = world.options.dexsanity_whitelist.blacklist()
     else:
         poss_dexs = speciesdata.keys() - world.options.dexsanity_blacklist.blacklist()
+    dexsanity_required = world.options.dexsanity_required.blacklist()
+    poss_dexs |= dexsanity_required
     dexs = set()
+    reqd_dexs = set()
 
     def add_spec(spec: str) -> None:
         nonlocal ret
         nonlocal accessible
         nonlocal dexs
+        nonlocal reqd_dexs
 
         affected = affected_species[spec]
         ret.add(spec)
         accessible.add(spec)
         if spec in poss_dexs:
             dexs.add(spec)
+        if spec in dexsanity_required:
+            reqd_dexs.add(spec)
 
         while True:
             to_add = set()
@@ -468,20 +477,21 @@ def generate_required_encounter_species(world: "PokemonPlatinumWorld") -> Set[st
                 pevo = data.pre_evolution
                 if mon in accessible or pevo is None:
                     continue
-                if pevo.species not in ret:
+                if pevo.species not in accessible:
                     continue
                 if pevo.method not in world.options.in_logic_evolution_methods.value:
                     continue
-                if pevo.other_species is not None and pevo.other_species not in ret:
+                if pevo.other_species is not None and pevo.other_species not in accessible:
                     continue
                 to_add.add(mon)
             if len(to_add) == 0:
                 break
             accessible |= to_add
             dexs |= to_add & poss_dexs
-            affected |= {v for u in to_add for v in affected_species[u]}
+            reqd_dexs |= to_add & dexsanity_required
+            affected = {v for u in to_add for v in affected_species[u]}
 
-    while len(dexs) < world.options.dexsanity.value:
+    while len(dexs) < world.options.dexsanity.value or len(reqd_dexs) < len(dexsanity_required):
         spec = not_added.pop()
         add_spec(spec)
 

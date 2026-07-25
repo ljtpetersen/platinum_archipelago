@@ -65,6 +65,9 @@ TRACKED_SAW_LOCATIONS = [
     "saw_route_210_barricade",
     "saw_route_215_west_barricade",
     "saw_route_207_barricade",
+    "saw_boat_canalave_snowpoint",
+    "saw_boat_canalave_pastoria",
+    "saw_boat_pastoria_snowpoint",
 ]
 
 class CheatBits(IntEnum):
