@@ -36,3 +36,9 @@ Afterwards, in the Archipelago Launcher, run the Build APWorlds option.
 * Thanks to [ZobeePlays](https://github.com/ZobeePlays) and [Useless](https://github.com/UselessWater3) for location names.
 * Thanks to [Seafo](https://github.com/Seatori) for help with getting the rules for the trainers.
 * All of the GitHub contributors to this project!
+
+## AI Usage Disclosure
+* This project (both the world and the client) contains **no** AI-generated code.
+* This project contains **no** AI-generated art.
+* Occasionally, LLMs have been used for debugging obscure issues, but the solutions are manually implemented and tested.
+* Pull requests by other contributors, which may contain AI-generated code, are reviewed for correctness before being merged.
