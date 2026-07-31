@@ -58,6 +58,7 @@ TRACKED_EVENTS = [
     "activate_roaming_moltres_zapdos_articuno",
     "activate_roaming_cresselia",
     "activate_roaming_mesprit",
+    "talk_looker_veilstone_galactic",
 ]
 TRACKED_UNRANDOMIZED_REQUIRED_LOCATIONS = sorted(maximal_required_locations)
 TRACKED_HEIGHT_MAP_HEADERS = {35, 350}
