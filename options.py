@@ -691,10 +691,88 @@ class RoamerBlacklist(SpeciesBlacklist):
 class InLogicEvolutionMethods(OptionSet):
     """
     Evolution methods that are in logic.
+    Valid keys:
+    - level: all species which require a specific level to evolve.
+    - happiness: all species which require happiness to evolve.
+    - use_item: all species which require a specific item to evolve. This includes trade evolutions (item is linking cord) and levelup while knowing a move (moves are taught by their corresponding TMs)
+    - held_item: all species which require a held item to evolve.
+    - time: all species which require being evolved at certain times.
+    - location: all species which require being evolved at certain locations.
+    - mildly_annoying: the secondary evolution of nincada, leveling up with a certain species in the party, those requiring certain genders.
+    - highly_annoying: the evolutions of tyrogue, wurmple, and feebas.
+
+    For species whose evolutions intersect multiple categories, all categories are required for their evolution to be in logic. For example, time and held_item must be specified for happiny's evolution to be in logic. level and mildly_annoying must be specified for the evolution of nincada into shedinja.
     """
     display_name = "In-Logic Evolution Methods"
-    default = {"level", "level_atk_gt_def", "level_atk_eq_def", "level_atk_lt_def", "level_pid_low", "level_pid_high", "level_ninjask", "level_shedinja", "level_male", "level_female", "trade_with_held_item", "use_item", "use_item_male", "use_item_female", "level_with_held_item_day", "level_with_held_item_night", "level_happiness", "level_happiness_day", "level_happiness_night", "trade", "level_beauty", "level_magnetic_field", "level_moss_rock", "level_ice_rock", "level_know_move", "level_species_in_party" }
-    valid_keys = {"level", "level_atk_gt_def", "level_atk_eq_def", "level_atk_lt_def", "level_pid_low", "level_pid_high", "level_ninjask", "level_shedinja", "level_male", "level_female", "trade_with_held_item", "use_item", "use_item_male", "use_item_female", "level_with_held_item_day", "level_with_held_item_night", "level_happiness", "level_happiness_day", "level_happiness_night", "trade", "level_beauty", "level_magnetic_field", "level_moss_rock", "level_ice_rock", "level_know_move", "level_species_in_party" }
+    default = {"level", "use_item", "held_item", "time", "location", "happiness"}
+    valid_keys = {"level", "happiness", "use_item", "held_item", "time", "location", "mildly_annoying", "highly_annoying"}
+
+    cached_methods: Set[str] | None = None
+
+    def methods(self) -> Set[str]:
+        if self.cached_methods is not None:
+            return self.cached_methods
+        ret = set()
+        if "level" in self:
+            ret |= {
+                "level",
+                "level_ninjask",
+            }
+            if "mildly_annoying" in self:
+                ret.add("level_shedinja")
+            if "highly_annoying" in self:
+                ret |= {
+                    "level_atk_gt_def",
+                    "level_atk_eq_def",
+                    "level_atk_lt_def",
+                    "level_pid_low",
+                    "level_pid_high",
+                }
+
+
+        if "time" in self and "held_item" in self:
+            ret |= {
+                "level_with_held_item_day",
+                "level_with_held_item_night",
+            }
+
+        if "mildly_annoying" in self:
+            ret.add("level_species_in_party")
+
+        if "highly_annoying" in self:
+            ret.add("level_beauty")
+
+        if "happiness" in self:
+            ret.add("level_happiness")
+            if "time" in self:
+                ret |= {
+                    "level_happiness_day",
+                    "level_happiness_night",
+                }
+
+        if "use_item" in self:
+            ret |= {
+                "use_item",
+                "trade",
+                "level_know_move",
+            }
+            if "held_item" in self:
+                ret.add("trade_with_held_item")
+            if "mildly_annoying" in self:
+                ret |= {
+                    "use_item_male",
+                    "use_item_female",
+                }
+
+        if "location" in self:
+            ret |= {
+                "level_magnetic_field",
+                "level_moss_rock",
+                "level_ice_rock",
+            }
+
+        self.cached_methods = ret
+        return ret
 
 class AddHMReader(Choice):
     """
@@ -1203,10 +1281,10 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
         if not self.randomize_encounters:
             if not {"great_marsh_observatory_national_dex", "munchlax_honey_tree"} <= self.in_logic_encounters.value:
                 raise OptionError("if encounters are not randomized, then great_marsh_observatory_national_dex and munchlax_honey_tree must both be in logic")
-            elif not "level_happiness" in self.in_logic_evolution_methods:
+            elif not "level_happiness" in self.in_logic_evolution_methods.methods():
                 raise OptionError("if encounters are not randomized, then level_happiness must be an in-logic evolution method")
         else:
-            if "level_happiness" in self.in_logic_evolution_methods:
+            if "level_happiness" in self.in_logic_evolution_methods.methods():
                 if {"munchlax", "snorlax"} <= self.encounter_species_blacklist.blacklist():
                     raise OptionError("one of munchlax or snorlax must not be in encounter_species_blacklist")
             else:
@@ -1224,7 +1302,7 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
                     for p in trainer_party_supporting_starters(trainer)
                     if p.species in rm_set
                 }
-                if len(expand_set_via_evolutions(rm_set - self.encounter_species_blacklist.blacklist(), self.in_logic_evolution_methods.value) - in_logic_trainer_mons) <  self.regional_dex_goal.value - len(in_logic_trainer_mons):
+                if len(expand_set_via_evolutions(rm_set - self.encounter_species_blacklist.blacklist(), self.in_logic_evolution_methods.methods()) - in_logic_trainer_mons) <  self.regional_dex_goal.value - len(in_logic_trainer_mons):
                     raise OptionError(f"encounter species blacklist is too restrictive: can't get enough regional species.")
             in_logic_trainer_mons = {p.species
                 for rd in regions.values()
@@ -1232,7 +1310,7 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
                 for p in trainer_party_supporting_starters(trainer)
                 if p.species in rm_set
             }
-            if len(expand_set_via_evolutions(rm_set - self.encounter_species_blacklist.blacklist(), self.in_logic_evolution_methods.value) - in_logic_trainer_mons) < max(50, self.regional_dex_goal.value) - len(in_logic_trainer_mons):
+            if len(expand_set_via_evolutions(rm_set - self.encounter_species_blacklist.blacklist(), self.in_logic_evolution_methods.methods()) - in_logic_trainer_mons) < max(50, self.regional_dex_goal.value) - len(in_logic_trainer_mons):
                 raise OptionError(f"encounter species blacklist is too restrictive: can't get enough regional species. number of regional encounters possible: {len(rm_set - self.encounter_species_blacklist.blacklist() - in_logic_trainer_mons) + len(in_logic_trainer_mons)}")
         elif self.randomize_trainer_parties:
             if not self.pokedex:
@@ -1250,7 +1328,7 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
                     if nm in self.in_logic_encounters and nm not in special_encounters.requiring_national_dex
                     for spec in getattr(special_encounters, nm)
                     if spec in rm_set
-                }, self.in_logic_evolution_methods.value)
+                }, self.in_logic_evolution_methods.methods())
                 if len(rm_set - self.trainer_party_blacklist.blacklist() - in_logic_encounter_mons) < self.regional_dex_goal.value - len(in_logic_encounter_mons):
                     raise OptionError(f"trainer party blacklist is too restrictive: can't get enough regional species. number of regional encounters possible: {len(rm_set - self.trainer_party_blacklist.blacklist() - in_logic_encounter_mons) + len(in_logic_encounter_mons)}")
             in_logic_encounter_mons = expand_set_via_evolutions({slot.species
@@ -1266,7 +1344,7 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
                 if nm in self.in_logic_encounters
                 for spec in getattr(special_encounters, nm)
                 if spec in rm_set
-            }, self.in_logic_evolution_methods.value)
+            }, self.in_logic_evolution_methods.methods())
             if len(rm_set - self.trainer_party_blacklist.blacklist() - in_logic_encounter_mons) < max(50, self.regional_dex_goal.value) - len(in_logic_encounter_mons):
                 raise OptionError(f"trainer party blacklist is too restrictive: can't get enough regional species. number of regional encounters possible: {len(rm_set - self.trainer_party_blacklist.blacklist() - in_logic_encounter_mons) + len(in_logic_encounter_mons)}")
         else:
@@ -1288,7 +1366,7 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
                     for p in trainer_party_supporting_starters(trainer)
                     if p.species in rm_set
                 }
-                if len(expand_set_via_evolutions(in_logic_encounter_mons, self.in_logic_evolution_methods.value) | in_logic_trainer_mons) < self.regional_dex_goal.value:
+                if len(expand_set_via_evolutions(in_logic_encounter_mons, self.in_logic_evolution_methods.methods()) | in_logic_trainer_mons) < self.regional_dex_goal.value:
                     raise OptionError(f"regional dex goal is too high. not enough encounters to fill it. number of regional encounters possible: {len(in_logic_encounter_mons | in_logic_trainer_mons)}")
             in_logic_encounter_mons = {slot.species
                 for rd in regions.values()
@@ -1305,7 +1383,7 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
                 for p in trainer_party_supporting_starters(trainer)
                 if p.species in rm_set
             }
-            if len(expand_set_via_evolutions(in_logic_encounter_mons, self.in_logic_evolution_methods.value) | in_logic_trainer_mons) < max(50, self.regional_dex_goal.value):
+            if len(expand_set_via_evolutions(in_logic_encounter_mons, self.in_logic_evolution_methods.methods()) | in_logic_trainer_mons) < max(50, self.regional_dex_goal.value):
                 raise OptionError(f"regional dex goal is too high. not enough encounters to fill it. number of regional encounters possible: {len(in_logic_encounter_mons | in_logic_trainer_mons)}")
         if self.randomize_encounters:
             amity_square_mons = {
@@ -1334,7 +1412,7 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
                 raise OptionError("at least one Amity Square species must be able to be encountered")
         if self.dexsanity:
             if self.randomize_encounters:
-                possible_species = expand_set_via_evolutions(species.keys() - self.encounter_species_blacklist.blacklist(), self.in_logic_evolution_methods.value)
+                possible_species = expand_set_via_evolutions(species.keys() - self.encounter_species_blacklist.blacklist(), self.in_logic_evolution_methods.methods())
                 if len(self.dexsanity_required.blacklist() - possible_species) > 0:
                     raise OptionError(f"the following species are required dexsanity locations, but are not possible: {', '.join(self.dexsanity_required.blacklist() - possible_species)}")
                 possible_species -= self.dexsanity_required.blacklist()
@@ -1356,7 +1434,7 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
                     for nm in {"regular_honey_tree", "munchlax_honey_tree", "trophy_garden", "great_marsh_observatory", "great_marsh_observatory_national_dex", "feebas_fishing", "odd_keystone"} & self.in_logic_encounters.value
                     for spec in getattr(special_encounters, nm)
                 }
-                in_logic_encounter_mons = expand_set_via_evolutions(in_logic_encounter_mons, self.in_logic_evolution_methods.value)
+                in_logic_encounter_mons = expand_set_via_evolutions(in_logic_encounter_mons, self.in_logic_evolution_methods.methods())
                 if len(self.dexsanity_required.blacklist() - in_logic_encounter_mons) > 0:
                     raise OptionError(f"the following species are required dexsanity locations, but are not possible: {', '.join(self.dexsanity_required.blacklist() - in_logic_encounter_mons)}")
                 in_logic_encounter_mons -= self.dexsanity_required.blacklist()

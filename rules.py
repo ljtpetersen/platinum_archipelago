@@ -94,7 +94,7 @@ def set_rules(world: "PokemonPlatinumWorld") -> None:
             continue
         pevo = data.pre_evolution
         if pevo.species not in am_set \
-            or pevo.method not in world.options.in_logic_evolution_methods \
+            or pevo.method not in world.options.in_logic_evolution_methods.methods() \
             or pevo.other_species is not None and pevo.other_species not in am_set:
             continue
         rule = rules.get_pevo_rule(pevo, world.options)

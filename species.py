@@ -256,7 +256,7 @@ def randomize_trainer_parties_and_encounters(world: "PokemonPlatinumWorld") -> N
             "happiny",
         } - world.options.encounter_species_blacklist.blacklist()
         amity_square_mon = world.random.choice(sorted(amity_square_mons))
-        munchlax_mon = world.random.choice(sorted({"munchlax", "snorlax"} & all_enc)) if "level_happiness" in world.options.in_logic_evolution_methods else "snorlax"
+        munchlax_mon = world.random.choice(sorted({"munchlax", "snorlax"} & all_enc)) if "level_happiness" in world.options.in_logic_evolution_methods.methods() else "snorlax"
         randomize_encounters(world, generate_required_encounter_species(world) | set(world.random.sample(poss_enc, k=num_enc)) | {munchlax_mon, "kecleon", "geodude", amity_square_mon})
         randomize_trainer_parties(world, set(world.random.sample(poss_trp, k=num_trp)))
     elif world.options.randomize_encounters:
@@ -306,7 +306,7 @@ def randomize_trainer_parties_and_encounters(world: "PokemonPlatinumWorld") -> N
             "happiny",
         } - world.options.encounter_species_blacklist.blacklist()
         amity_square_mon = world.random.choice(sorted(amity_square_mons))
-        munchlax_mon = world.random.choice(sorted({"munchlax", "snorlax"} & (speciesdata.keys() - bl))) if "level_happiness" in world.options.in_logic_evolution_methods else "snorlax"
+        munchlax_mon = world.random.choice(sorted({"munchlax", "snorlax"} & (speciesdata.keys() - bl))) if "level_happiness" in world.options.in_logic_evolution_methods.methods() else "snorlax"
         randomize_encounters(world, generate_required_encounter_species(world) | req_encounter_specs | {munchlax_mon, "kecleon", "geodude", amity_square_mon})
         fill_unrandomized_trainer_parties(world)
     elif world.options.randomize_trainer_parties:
@@ -349,7 +349,7 @@ def fill_species(world: "PokemonPlatinumWorld") -> None:
 def add_virt_specs(world: "PokemonPlatinumWorld", regions: Mapping[str, Region]) -> None:
     accessible_mons = expand_set_via_evolutions(
         set(world.generated_encounters.values()) | set(world.generated_speencs.values()),
-        world.options.in_logic_evolution_methods.value,
+        world.options.in_logic_evolution_methods.methods(),
     )
     accessible_once_mons = accessible_mons.copy()
     if "roamers" in world.options.in_logic_encounters:
@@ -381,7 +381,7 @@ def add_virt_specs(world: "PokemonPlatinumWorld", regions: Mapping[str, Region])
         data = speciesdata[mon]
         if data.pre_evolution is None \
             or data.pre_evolution.species not in am_set \
-            or data.pre_evolution.method not in world.options.in_logic_evolution_methods \
+            or data.pre_evolution.method not in world.options.in_logic_evolution_methods.methods() \
             or data.pre_evolution.other_species is not None and data.pre_evolution.other_species not in am_set:
             continue
         location = PokemonPlatinumLocation(
@@ -479,7 +479,7 @@ def generate_required_encounter_species(world: "PokemonPlatinumWorld") -> Set[st
                     continue
                 if pevo.species not in accessible:
                     continue
-                if pevo.method not in world.options.in_logic_evolution_methods.value:
+                if pevo.method not in world.options.in_logic_evolution_methods.methods():
                     continue
                 if pevo.other_species is not None and pevo.other_species not in accessible:
                     continue
