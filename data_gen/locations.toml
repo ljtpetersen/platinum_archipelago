@@ -216,7 +216,7 @@ original_item = "tm79"
 type = "overworld"
 table = "overworld"
 check = 1202
-label = "Victory Road 2F - Item From Northern 1F Stairs"
+label = "Victory Road 2F - Item from Northern 1F Stairs"
 id = 188
 
 [victory_road_2f_max_elixir]
@@ -1716,7 +1716,7 @@ original_item = "hyper_potion"
 type = "overworld"
 table = "overworld"
 check = 1101
-label = "Route 209 - Item Across From Pikachu Cosplayer"
+label = "Route 209 - Item Across from Pikachu Cosplayer"
 id = 87
 
 [route_209_tm47]
@@ -2732,7 +2732,7 @@ original_item = "sun_stone"
 type = "hidden"
 table = "hidden"
 check = 761
-label = "Valor Lakefront - Hidden Item After Rock Climbing From Route 213"
+label = "Valor Lakefront - Hidden Item After Rock Climbing from Route 213"
 id = 31
 
 [valor_lakefront_big_mushroom]
@@ -4590,7 +4590,7 @@ original_item = "coal_badge"
 type = "badge"
 table = "base"
 check = 117
-label = "Oreburgh City Gym - Badge From Roark"
+label = "Oreburgh City Gym - Badge from Roark"
 id = 103
 
 [oreburgh_city_gym_tm76]
@@ -4598,7 +4598,7 @@ original_item = "tm76"
 type = "npc_gift"
 table = "base"
 check = 117
-label = "Oreburgh City Gym - Gift From Roark"
+label = "Oreburgh City Gym - Gift from Roark"
 id = 1
 
 [eterna_city_gym_forest_badge]
@@ -4606,7 +4606,7 @@ original_item = "forest_badge"
 type = "badge"
 table = "base"
 check = 116
-label = "Eterna City Gym - Badge From Gardenia"
+label = "Eterna City Gym - Badge from Gardenia"
 id = 2
 
 [eterna_city_gym_tm86]
@@ -4614,7 +4614,7 @@ original_item = "tm86"
 type = "npc_gift"
 table = "base"
 check = 116
-label = "Eterna City Gym - Gift From Gardenia"
+label = "Eterna City Gym - Gift from Gardenia"
 id = 3
 
 [veilstone_city_gym_cobble_badge]
@@ -4654,7 +4654,7 @@ original_item = "relic_badge"
 type = "badge"
 table = "base"
 check = 125
-label = "Hearthome City Gym - Badge From Fantina"
+label = "Hearthome City Gym - Badge from Fantina"
 id = 8
 
 [hearthome_city_gym_leader_room_tm65]
@@ -4662,7 +4662,7 @@ original_item = "tm65"
 type = "npc_gift"
 table = "base"
 check = 125
-label = "Hearthome City Gym - Gift From Fantina"
+label = "Hearthome City Gym - Gift from Fantina"
 id = 9
 
 [canalave_city_gym_mine_badge]
@@ -4797,7 +4797,7 @@ id = 24
 original_item = "running_shoes"
 type = "running_shoes"
 table = "base"
-label = "Twinleaf Town - Item From Mom"
+label = "Twinleaf Town - Item from Mom"
 id = 25
 
 [twinleaf_town_player_house_1f_running_shoes.check]
@@ -5226,7 +5226,7 @@ check = 279
 original_item = "seal_case"
 type = "key_item"
 table = "base"
-label = "Solaceon Town - Item From Woman in Far East House"
+label = "Solaceon Town - Item from Woman in Far East House"
 
 [valor_lakefront_secretpotion]
 id = 77
@@ -5397,7 +5397,7 @@ check = 206
 original_item = "tm56"
 type = "npc_gift"
 table = "base"
-label = "Route 222 - Gift From Rich Boy Above Pikachu House"
+label = "Route 222 - Gift from Rich Boy Above Pikachu House"
 
 [sunyshore_city_east_house_roulette]
 id = 96
@@ -5855,7 +5855,7 @@ original_item = [
 ]
 type = "npc_gift"
 table = "once"
-label = "Amity Square - (Right) Gift From Man in Random Spot"
+label = "Amity Square - (Right) Gift from Man in Random Spot"
 
 [amity_square_gift.check]
 id = 1
