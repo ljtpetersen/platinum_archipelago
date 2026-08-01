@@ -20,6 +20,7 @@ raw_id_to_const_name = { loc.get_raw_id():name for name, loc in locationdata.loc
 class LocationType:
     is_enabled: Callable[[PokemonPlatinumOptions], bool]
     should_be_added: Callable[[PokemonPlatinumOptions], bool] = lambda _ : True
+    should_have_item: Callable[[PokemonPlatinumOptions], bool] = lambda _ : True
 
 location_types: Mapping[str, LocationType] = {
     "overworld": LocationType(is_enabled = lambda opts : opts.overworlds.value == 1),
@@ -59,6 +60,7 @@ location_types: Mapping[str, LocationType] = {
     "fly_location_league": LocationType(
         is_enabled = lambda opts : opts.randomize_fly_items.value == RandomizeFlyItems.option_all,
         should_be_added = lambda opts : opts.randomize_fly_items.value == RandomizeFlyItems.option_all or opts.require_fly_items_for_flight.value == 1,
+        should_have_item = lambda opts : opts.randomize_fly_items.value == RandomizeFlyItems.option_all or opts.require_fly_items_for_flight.value == 1,
     ),
 }
 

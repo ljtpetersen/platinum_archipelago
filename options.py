@@ -1056,6 +1056,23 @@ class Route215Barricade(Choice):
     default = option_none
     display_name = "Route 215 Barricade"
 
+class PreventPoptrackerSpoiling(OptionSet):
+    """
+    The value of the barricades will be spoiled by the Poptracker by default.
+    It can be preferred to avoid this, if the options are weighted. This option
+    will prevent poptracker from spoiling these options until they are seen in-game.
+
+    Options:
+    - route_207_barricade
+    - route_215_barricade
+    - route_210_lower_barricade
+    - boat_canalave_pastoria
+    - boat_canalave_snowpoint
+    - boat_pastoria_snowpoint
+    """
+    default = []
+    valid_keys = { "route_207_barricade", "route_215_barricade", "route_210_lower_barricade", "boat_canalave_pastoria", "boat_canalave_snowpoint", "boat_pastoria_snowpoint" }
+
 slot_data_options: Sequence[str] = [
     "hms",
     "badges",
@@ -1138,6 +1155,8 @@ slot_data_options: Sequence[str] = [
     "unown_option",
 
     "remote_items",
+
+    "prevent_poptracker_spoiling",
 
     "goal",
 ]
@@ -1243,6 +1262,8 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
     bag: AddBag
     unown_option: UnownsOption
 
+    prevent_poptracker_spoiling: PreventPoptrackerSpoiling
+
     def requires_badge(self, hm: str) -> bool:
         return self.hm_badge_requirement.value == 1 or hm.lower() in self.remove_badge_requirements
 
@@ -1250,8 +1271,8 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
         if self.pastoria_barriers and self.randomize_fly_items.value == 0:
             if not self.badges and self.requires_badge("SURF"):
                 raise OptionError(f"cannot enable Pastoria barriers if Surf requires the Fen Badge and badges are not randomized.")
-            if not (self.hms or self.key_items.are_most_randomized()):
-                raise OptionError(f"cannot enable Pastoria barriers if both HMs and Key Items are not randomized.")
+            if not (self.hms or self.key_items or self.randomize_fly_items):
+                raise OptionError(f"cannot enable Pastoria barriers if HMs, Key Items, Fly Locations are not randomized.")
         if not (self.overworlds or self.hiddens or self.npc_gifts or self.key_items.value > 0 or self.poketch_apps):
             raise OptionError(f"at least one of overworlds, hiddens, npc_gifts, key_items, or poketch apps must be enabled")
 
@@ -1594,6 +1615,7 @@ OPTION_GROUPS = [
             RequireFlyItemsForFlight,
             ItemNotificationsMask,
             FastFishing,
+            PreventPoptrackerSpoiling,
         ],
     ),
 ]

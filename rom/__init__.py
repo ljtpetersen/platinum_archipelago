@@ -20,6 +20,7 @@ import zipfile
 from .itemdata import patch_items
 from .encounterdata import patch_encounters, patch_speencs
 from .eventdata import BOLLARD_GFX_ID, CUT_TREE_GFX_ID, PSYDUCK_GFX_ID, ROCK_SMASH_GFX_ID, STRENGTH_BOULDER_GFX_ID, patch_events
+from ..locations import location_types
 from .mapdata import replace_maps
 from .speciesdata import patch_species
 from .trainerdata import patch_trainer_parties
@@ -368,8 +369,9 @@ def generate_output(world: "PokemonPlatinumWorld", output_directory: str, patch:
             assert len(foreign_items) < 0x2000, "foreign items overflow item id"
         put_in_table(table, id, item_id, True)
 
+    added_map = {v:t.should_be_added(world.options) for v, t in location_types.items()}
     for location in locations.values():
-        if location.label not in filled_locations:
+        if location.label not in filled_locations and added_map[location.type]:
             if isinstance(location.original_item, str):
                 original_item = location.original_item
             else:
