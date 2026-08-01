@@ -456,7 +456,7 @@ class ParserState:
             if isinstance(loc.check, Check):
                 assert loc.check.op in ["eq", "ne", "lt", "le", "gt", "ge"]
         item_labels = set()
-        item_classifications = {"filler", "progression", "useful"}
+        item_classifications = {"filler", "progression", "useful", "trap", "deprioritized", "progression_deprioritized_skip_balancing", "progression_skip_balancing", "progression_deprioritized"}
         for item in self.items.values():
             assert item.label not in item_labels, f"{item.label} is a unique item label"
             item_labels.add(item.label)

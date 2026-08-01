@@ -568,7 +568,7 @@ id = 80
 clas = "bagitem"
 group = "items"
 data_id = 80
-classification = "progression"
+classification = "progression_deprioritized_skip_balancing"
 
 [moon_stone]
 label = "Moon Stone"
@@ -576,7 +576,7 @@ id = 81
 clas = "bagitem"
 group = "items"
 data_id = 81
-classification = "progression"
+classification = "progression_deprioritized_skip_balancing"
 
 [fire_stone]
 label = "Fire Stone"
@@ -584,7 +584,7 @@ id = 82
 clas = "bagitem"
 group = "items"
 data_id = 82
-classification = "progression"
+classification = "progression_deprioritized_skip_balancing"
 
 [thunderstone]
 label = "Thunderstone"
@@ -592,7 +592,7 @@ id = 83
 clas = "bagitem"
 group = "items"
 data_id = 83
-classification = "progression"
+classification = "progression_deprioritized_skip_balancing"
 
 [water_stone]
 label = "Water Stone"
@@ -600,7 +600,7 @@ id = 84
 clas = "bagitem"
 group = "items"
 data_id = 84
-classification = "progression"
+classification = "progression_deprioritized_skip_balancing"
 
 [leaf_stone]
 label = "Leaf Stone"
@@ -608,7 +608,7 @@ id = 85
 clas = "bagitem"
 group = "items"
 data_id = 85
-classification = "progression"
+classification = "progression_deprioritized_skip_balancing"
 
 [tinymushroom]
 label = "TinyMushroom"
@@ -763,7 +763,7 @@ id = 107
 clas = "bagitem"
 group = "items"
 data_id = 107
-classification = "progression"
+classification = "progression_deprioritized_skip_balancing"
 
 [dusk_stone]
 label = "Dusk Stone"
@@ -771,7 +771,7 @@ id = 108
 clas = "bagitem"
 group = "items"
 data_id = 108
-classification = "progression"
+classification = "progression_deprioritized_skip_balancing"
 
 [dawn_stone]
 label = "Dawn Stone"
@@ -779,7 +779,7 @@ id = 109
 clas = "bagitem"
 group = "items"
 data_id = 109
-classification = "progression"
+classification = "progression_deprioritized_skip_balancing"
 
 [oval_stone]
 label = "Oval Stone"
@@ -787,7 +787,7 @@ id = 110
 clas = "specialbagitem"
 group = "items"
 data_id = 110
-classification = "progression"
+classification = "progression_deprioritized_skip_balancing"
 
 [odd_keystone]
 label = "Odd Keystone"
@@ -795,7 +795,7 @@ id = 111
 clas = "specialbagitem"
 group = "items"
 data_id = 111
-classification = "progression"
+classification = "progression_deprioritized_skip_balancing"
 
 [griseous_orb]
 label = "Griseous Orb"
@@ -1418,7 +1418,7 @@ id = 221
 clas = "specialbagitem"
 group = "items"
 data_id = 199
-classification = "progression"
+classification = "progression_deprioritized_skip_balancing"
 
 [silverpowder]
 label = "SilverPowder"
@@ -1458,7 +1458,7 @@ id = 226
 clas = "specialbagitem"
 group = "items"
 data_id = 204
-classification = "progression"
+classification = "progression_deprioritized_skip_balancing"
 
 [deepseascale]
 label = "DeepSeaScale"
@@ -1466,7 +1466,7 @@ id = 227
 clas = "specialbagitem"
 group = "items"
 data_id = 205
-classification = "progression"
+classification = "progression_deprioritized_skip_balancing"
 
 [smoke_ball]
 label = "Smoke Ball"
@@ -1511,7 +1511,7 @@ id = 233
 clas = "specialbagitem"
 group = "items"
 data_id = 211
-classification = "progression"
+classification = "progression_deprioritized_skip_balancing"
 
 [leftovers]
 label = "Leftovers"
@@ -1527,7 +1527,7 @@ id = 235
 clas = "specialbagitem"
 group = "items"
 data_id = 213
-classification = "progression"
+classification = "progression_deprioritized_skip_balancing"
 
 [light_ball]
 label = "Light Ball"
@@ -1662,7 +1662,7 @@ id = 252
 clas = "specialbagitem"
 group = "items"
 data_id = 230
-classification = "progression"
+classification = "progression_deprioritized_skip_balancing"
 
 [shell_bell]
 label = "Shell Bell"
@@ -2163,7 +2163,7 @@ id = 321
 clas = "specialbagitem"
 group = "items"
 data_id = 299
-classification = "progression"
+classification = "progression_deprioritized_skip_balancing"
 
 [electirizer]
 label = "Electirizer"
@@ -2171,7 +2171,7 @@ id = 322
 clas = "specialbagitem"
 group = "items"
 data_id = 300
-classification = "progression"
+classification = "progression_deprioritized_skip_balancing"
 
 [magmarizer]
 label = "Magmarizer"
@@ -2179,7 +2179,7 @@ id = 323
 clas = "specialbagitem"
 group = "items"
 data_id = 301
-classification = "progression"
+classification = "progression_deprioritized_skip_balancing"
 
 [dubious_disc]
 label = "Dubious Disc"
@@ -2187,7 +2187,7 @@ id = 324
 clas = "specialbagitem"
 group = "items"
 data_id = 302
-classification = "progression"
+classification = "progression_deprioritized_skip_balancing"
 
 [reaper_cloth]
 label = "Reaper Cloth"
@@ -2195,7 +2195,7 @@ id = 325
 clas = "specialbagitem"
 group = "items"
 data_id = 303
-classification = "progression"
+classification = "progression_deprioritized_skip_balancing"
 
 [razor_claw]
 label = "Razor Claw"
@@ -2203,7 +2203,7 @@ id = 326
 clas = "specialbagitem"
 group = "items"
 data_id = 304
-classification = "progression"
+classification = "progression_deprioritized_skip_balancing"
 
 [razor_fang]
 label = "Razor Fang"
@@ -2211,7 +2211,7 @@ id = 327
 clas = "specialbagitem"
 group = "items"
 data_id = 305
-classification = "progression"
+classification = "progression_deprioritized_skip_balancing"
 
 [tm01]
 label = "TM01"
@@ -3053,6 +3053,7 @@ data_id = 410
 label = "Journal"
 id = 433
 clas = "specialbagitem"
+classification = "trap"
 group = "key_items"
 data_id = 411
 
@@ -3589,7 +3590,7 @@ label = "Unown File"
 id = 470
 clas = "bagitem"
 group = "key_items"
-classification = "progression"
+classification = "progression_deprioritized"
 data_id = 448
 
 [bag]
@@ -4239,7 +4240,7 @@ label = "Linking Cord"
 id = 471
 clas = "bagitem"
 group = "key_items"
-classification = "progression"
+classification = "progression_deprioritized_skip_balancing"
 data_id = 449
 
 [tm93]
@@ -4247,7 +4248,7 @@ label = "TM93 Rollout"
 id = 472
 clas = "specialbagitem"
 group = "tmhms"
-classification = "progression"
+classification = "progression_deprioritized_skip_balancing"
 data_id = 450
 
 [tm94]
@@ -4255,7 +4256,7 @@ label = "TM94 Ancient Power"
 id = 473
 clas = "specialbagitem"
 group = "tmhms"
-classification = "progression"
+classification = "progression_deprioritized_skip_balancing"
 data_id = 451
 
 [tm95]
@@ -4263,7 +4264,7 @@ label = "TM95 Double Hit"
 id = 474
 clas = "specialbagitem"
 group = "tmhms"
-classification = "progression"
+classification = "progression_deprioritized_skip_balancing"
 data_id = 452
 
 [tm96]
@@ -4271,7 +4272,7 @@ label = "TM96 Mimic"
 id = 475
 clas = "specialbagitem"
 group = "tmhms"
-classification = "progression"
+classification = "progression_deprioritized_skip_balancing"
 data_id = 453
 
 [daytime]
