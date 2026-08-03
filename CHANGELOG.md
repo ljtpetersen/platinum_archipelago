@@ -52,6 +52,7 @@ appropriately.
 * Entries to the game credits.
 * Version number to title screen.
 * A QOL menu when pressing the select button.
+* An option to prevent the PopTracker from spoiling optional roadblocks, and client support for the option.
 ### Changed
 * In-game game options option is now validated before generation.
 * Some evolution stones have been key-itemified, and are no longer consumed when used.
@@ -71,6 +72,8 @@ appropriately.
 * The bicycle can now be used indoors.
 * The escape rope can now be used in lost tower.
 * Title screen logo.
+* The female cyclist in the upper left of cycling road now moves around.
+* The journal is now a trap item.
 ### Fixed
 * Non-determinism of generation. (hopefully)
 * Elite Four rematch is triggered only if the game has been completed and stark mountain has been cleared.
@@ -82,6 +85,7 @@ appropriately.
 * Victory Road room after defeating Cynthia now requires Defog logically.
 * Fixed bug where received items can occasionally be lost.
 * Triggers cannot be walked through when receiving items.
+* The clown in front of Jubilife TV now moves immediately after the Team Galactic event in Jubuilife City, instead of requiring leaving and re-entering.
 ### Removed
 * The `all` key item option no longer exists.
 
