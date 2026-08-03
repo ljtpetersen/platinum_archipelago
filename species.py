@@ -53,18 +53,18 @@ def fill_unrandomized_encounters(world: "PokemonPlatinumWorld") -> Set[str]:
             continue
         encs = encounterdata[rd.header]
         for type, table in encounter_type_pairs:
-            if type == "water" and table not in world.options.in_logic_encounters:
+            if type == "water" and table not in world.options.in_logic_encounters.methods():
                 continue
             tbl: Sequence[EncounterSlot] = getattr(encs, table)
             for i, slot in enumerate(tbl):
-                if slot.accessibility and not (set(slot.accessibility) & world.options.in_logic_encounters.value):
+                if slot.accessibility and not (set(slot.accessibility) & world.options.in_logic_encounters.methods()):
                     continue
                 world.generated_encounters[(rd.header, table, i)] = slot.species
-                if world.options.pokedex or (rd.header not in national_dex_requiring_encs and (not slot.accessibility or (set(slot.accessibility) - acc_suc) & world.options.in_logic_encounters.value)):
+                if world.options.pokedex or (rd.header not in national_dex_requiring_encs and (not slot.accessibility or (set(slot.accessibility) - acc_suc) & world.options.in_logic_encounters.methods())):
                     accessible_mons.add(slot.species)
 
     for nm in ["regular_honey_tree", "munchlax_honey_tree", "trophy_garden", "great_marsh_observatory", "great_marsh_observatory_national_dex", "feebas_fishing", "odd_keystone"]:
-        if nm in world.options.in_logic_encounters:
+        if nm in world.options.in_logic_encounters.methods():
             for i, spec in enumerate(getattr(special_encounters, nm)):
                 world.generated_speencs[(nm, i)] = spec
                 if world.options.pokedex or nm not in special_encounters.requiring_national_dex:
@@ -101,14 +101,14 @@ def randomize_encounters(world: "PokemonPlatinumWorld", req_specs: Set[str]) -> 
         if is_region_enabled(name, world.options) and rd.header in encounterdata \
             and (world.options.unown_option != UnownsOption.option_vanilla or not rd.header.startswith("solaceon_ruins"))
         for type, table in encounter_type_pairs
-        if type != "water" or table in world.options.in_logic_encounters
+        if type != "water" or table in world.options.in_logic_encounters.methods()
         for i, slot in enumerate(getattr(encounterdata[rd.header], table))
-        if not slot.accessibility or set(slot.accessibility) & world.options.in_logic_encounters.value
+        if not slot.accessibility or set(slot.accessibility) & world.options.in_logic_encounters.methods()
     }
     # roamers are not included here.
     speenc_slots = {(nm, i)
         for nm in ["regular_honey_tree", "munchlax_honey_tree", "trophy_garden", "great_marsh_observatory", "great_marsh_observatory_national_dex", "feebas_fishing", "odd_keystone"]
-        if nm in world.options.in_logic_encounters
+        if nm in world.options.in_logic_encounters.methods()
         for i in range(len(getattr(special_encounters, nm)))
     }
     if world.options.pokedex:
@@ -124,13 +124,13 @@ def randomize_encounters(world: "PokemonPlatinumWorld", req_specs: Set[str]) -> 
                 and (world.options.unown_option != UnownsOption.option_vanilla or not rd.header.startswith("solaceon_ruins")) \
                 and rd.header not in national_dex_requiring_encs
             for type, table in encounter_type_pairs
-            if type != "water" or table in world.options.in_logic_encounters
+            if type != "water" or table in world.options.in_logic_encounters.methods()
             for i, slot in enumerate(getattr(encounterdata[rd.header], table))
-            if not slot.accessibility or (set(slot.accessibility) - acc_suc) & world.options.in_logic_encounters.value
+            if not slot.accessibility or (set(slot.accessibility) - acc_suc) & world.options.in_logic_encounters.methods()
         }
         before_dex_slots_spe_set = {(nm, i)
             for nm in ["regular_honey_tree", "munchlax_honey_tree", "trophy_garden", "great_marsh_observatory", "great_marsh_observatory_national_dex", "feebas_fishing", "odd_keystone"]
-            if nm in world.options.in_logic_encounters and nm not in special_encounters.requiring_national_dex
+            if nm in world.options.in_logic_encounters.methods() and nm not in special_encounters.requiring_national_dex
             for i in range(len(getattr(special_encounters, nm)))
         }
         before_dex_slots = sorted(before_dex_slots_set)
@@ -160,9 +160,9 @@ def randomize_encounters(world: "PokemonPlatinumWorld", req_specs: Set[str]) -> 
             if is_region_enabled(name, world.options) and rd.header in encounterdata \
                 and rd.header.startswith("solaceon_ruins")
             for type, table in encounter_type_pairs
-            if type != "water" or table in world.options.in_logic_encounters
+            if type != "water" or table in world.options.in_logic_encounters.methods()
             for i, slot in enumerate(getattr(encounterdata[rd.header], table))
-            if not slot.accessibility or set(slot.accessibility) & world.options.in_logic_encounters.value
+            if not slot.accessibility or set(slot.accessibility) & world.options.in_logic_encounters.methods()
         })
         world.generated_encounters.update({slot:"unown" for slot in sol_ruins_slots})
 
@@ -342,7 +342,7 @@ def fill_species(world: "PokemonPlatinumWorld") -> None:
     for header, i in world.long_grass_slots:
         world.multiworld.get_location(f"{header}_long_grass_land_{i + 1}", world.player).place_locked_item(world.create_event(f"mon_{world.generated_encounters[(header, "land", i)]}"))
 
-    if "roamers" in world.options.in_logic_encounters:
+    if "roamers" in world.options.in_logic_encounters.methods():
         for i, spec in zip([0, 1, 3, 4, 5], world.generated_roamers):
             world.multiworld.get_location(f"roamer_{i}", world.player).place_locked_item(world.create_event(f"once_mon_{spec}"))
 
@@ -352,7 +352,7 @@ def add_virt_specs(world: "PokemonPlatinumWorld", regions: Mapping[str, Region])
         world.options.in_logic_evolution_methods.methods(),
     )
     accessible_once_mons = accessible_mons.copy()
-    if "roamers" in world.options.in_logic_encounters:
+    if "roamers" in world.options.in_logic_encounters.methods():
         accessible_once_mons |= set(world.generated_roamers)
     accessible_see_mons = accessible_once_mons | set(world.generated_trainer_parties.values())
 

@@ -5,8 +5,7 @@
 
 from collections.abc import Mapping, MutableMapping, Sequence, Set
 from dataclasses import dataclass
-from fractions import Fraction
-from typing import Any
+from typing import Any, Optional
 from Options import Choice, DeathLink, DefaultOnToggle, NamedRange, OptionDict, OptionError, OptionGroup, OptionSet, PerGameCommonOptions, Range, Toggle, Option, FreeText
 
 from .data import special_encounters
@@ -492,13 +491,80 @@ class RandomizeEncounters(Toggle):
     display_name = "Randomize Encounters"
 
 
+ENCOUNTER_METHOD_MAP: Mapping[str, Sequence[str]] = {
+    "rods": ["old_rod", "good_rod", "super_rod"],
+    "cartridges": ["emerald", "firered", "leafgreen", "sapphire", "ruby"],
+    "time": ["day", "night"],
+    "great_marsh_observatory": ["great_marsh_observatory", "great_marsh_observatory_national_dex"],
+}
+
 class InLogicEncounters(OptionSet):
     """
     Which methods/variations of encounters are in logic.
+    Valid keys:
+    - surf: surfing encounters.
+    - rods: fishing encounters.
+    - radar: encounters with the Poké Radar, which is activated in tall grass.
+    - cartridges: tall-grass encounters which require specific Game Boy Advanced Pokémon cartridges to be inserted.
+                  These are activated in the Pokétch, within a newly-created app.
+    - time: tall-grass encounters which require a specific time of day.
+            These are activated in the Pokétch, within the digital watch app.
+    - swarms: tall-grass encounters which are only present in swarms.
+              Swarms can be manually triggered within the route the player is in if the player has the Pokétch case.
+              The method to trigger them is to select a berry in the bag, and choose the SMN SWARM option.
+              By default, swarms are activated once the poffin case is obtained. This is contrary to vanilla behaviour.
+              To recover vanilla behaviour, modify the start_with_swarms option. 
+    - great_marsh_observatory: wild grass encounters in the Great Marsh which are modified by the binoculars.
+                               In the second floor of the Great Marsh observatory building, there is a set of binoculars.
+                               Each time they are interacted with, a new set of six Pokémon are displayed, one for each
+                               of the six Great Marsh regions.
+                               At the start, there are eight possible species which can be found. Once the national
+                               dex is acquired, another eight species can be encountered.
+    - regular_honey_tree: encounters from honey trees. Interact once to slather honey on the tree. Interact a second
+                          time for the encounter.
+    - munchlax_honey_tree: honey-tree encounters on the munchlax honey trees.
+                           At generation, four honey trees are chosen as munchlax honey trees.
+                           These will have an additional encounterable species.
+                           The munchlax honey trees can be distinguished with the dowsing machine,
+                           once the tree camera item is obtained.
+                           Before the tree camera is obtained, the probability of the special encounter is 1/100.
+                           After it is obtained, the probability is increased to 1/13.
+                           The tree camera, Pokétch, and dowsing machine are required by the world's logic to access
+                           this encounter.
+    - feebas_fishing: in the basement of Mt. Coronet is a large lake. On this lake, four random tiles are selected.
+                      These four tiles will have a 1/2 chance of a special encounter.
+                      They can be identified using the dowsing machine, once the PokéSonar item is obtained.
+                      The PokéSonar, Pokétch, and dowsing machine are required by the world's logic to access
+                      this encounter.
+    - trophy_garden: in the trophy garden in the mansion in route 210 north, there are special encounters.
+                     These are triggered by talking to the rich man in the office, where he will announce that a
+                     species can be encountered in the garden. He can be talked to over and over again to cycle
+                     the selected species. He can only be triggered once the national dex is obtained.
+    - odd_keystone: in route 209, there is a small stone mound. Once an odd keystone is obtained,
+                    it can be interacted with to access a special encounter. Each attempt uses an odd keystone.
+                    Odd keystones can be purchased in the evolution items shop after one has been obtained.
+    - roamers: there are five roaming species. They have different conditions for activation.
+               Three are activated by talking to Prof. Oak in Eterna city, after previously obtaining the national dex
+               and talking to him in Pal Park Lobby.
+               One is activated by interacting with Cresselia on Fullmoon Island.
+               One is activated by interacting with Mesprit in the cave on the island at Lake Verity.
+               Once they roaming species are activated, their positions can be tracked using the marking map Pokétch
+               app, which is required by the world's logic to catch them. The will be randomly encountered in the
+               routes within which they are present, and move routes every time a different region is loaded.
+               If a roamer is defeated, it can be reset by clearing the hall of fame. If the option is enabled,
+               it can also be reset by the AP Helper NPC in the second floor of any Pokémon Center.
+               Once reset, it will need to be activated again before it can be encountered.
     """
     display_name = "In Logic Encounters"
-    default = {"surf", "old_rod", "good_rod", "super_rod", "radar", "ruby", "sapphire", "night", "emerald", "firered", "leafgreen", "day", "swarms", "great_marsh_observatory", "great_marsh_observatory_national_dex", "regular_honey_tree", "munchlax_honey_tree", "feebas_fishing", "trophy_garden", "odd_keystone", "roamers"}
-    valid_keys = ["surf", "old_rod", "good_rod", "super_rod", "radar", "ruby", "sapphire", "night", "emerald", "firered", "leafgreen", "day", "swarms", "great_marsh_observatory", "great_marsh_observatory_national_dex", "regular_honey_tree", "munchlax_honey_tree", "feebas_fishing", "trophy_garden", "odd_keystone", "roamers"]
+    default = {"surf", "rods", "radar", "cartridges", "time", "swarms", "great_marsh_observatory", "regular_honey_tree", "munchlax_honey_tree", "feebas_fishing", "trophy_garden", "odd_keystone", "roamers"}
+    valid_keys = ["surf", "rods", "radar", "cartridges", "time", "swarms", "great_marsh_observatory", "regular_honey_tree", "munchlax_honey_tree", "feebas_fishing", "trophy_garden", "odd_keystone", "roamers"]
+    cached_methods: Optional[Set[str]] = None
+
+    def methods(self) -> Set[str]:
+        if self.cached_methods is None:
+            self.cached_methods = {v for k in self.value for v in ENCOUNTER_METHOD_MAP.get(k, [k])}
+        return self.cached_methods
+
 
 class EncounterSpeciesBlacklist(SpeciesBlacklist):
     """
@@ -707,7 +773,7 @@ class InLogicEvolutionMethods(OptionSet):
     default = {"level", "use_item", "held_item", "time", "location", "happiness"}
     valid_keys = {"level", "happiness", "use_item", "held_item", "time", "location", "mildly_annoying", "highly_annoying"}
 
-    cached_methods: Set[str] | None = None
+    cached_methods: Optional[Set[str]] = None
 
     def methods(self) -> Set[str]:
         if self.cached_methods is not None:
@@ -719,7 +785,11 @@ class InLogicEvolutionMethods(OptionSet):
                 "level_ninjask",
             }
             if "mildly_annoying" in self:
-                ret.add("level_shedinja")
+                ret |= {
+                    "level_shedinja",
+                    "level_male",
+                    "level_female",
+                }
             if "highly_annoying" in self:
                 ret |= {
                     "level_atk_gt_def",
@@ -1300,7 +1370,7 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
         self.exp_multiplier.to_bytes()
 
         if not self.randomize_encounters:
-            if not {"great_marsh_observatory_national_dex", "munchlax_honey_tree"} <= self.in_logic_encounters.value:
+            if not {"great_marsh_observatory_national_dex", "munchlax_honey_tree"} <= self.in_logic_encounters.methods():
                 raise OptionError("if encounters are not randomized, then great_marsh_observatory_national_dex and munchlax_honey_tree must both be in logic")
             elif not "level_happiness" in self.in_logic_evolution_methods.methods():
                 raise OptionError("if encounters are not randomized, then level_happiness must be an in-logic evolution method")
@@ -1340,13 +1410,13 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
                     for rd in regions.values()
                     if rd.header in encounters and rd.header not in national_dex_requiring_encs \
                     for type, table in encounter_type_pairs
-                    if type != "water" or table in self.in_logic_encounters
+                    if type != "water" or table in self.in_logic_encounters.methods()
                     for _, slot in enumerate(getattr(encounters[rd.header], table))
-                    if not slot.accessibility or (set(slot.accessibility) - acc_suc) & self.in_logic_encounters.value
+                    if not slot.accessibility or (set(slot.accessibility) - acc_suc) & self.in_logic_encounters.methods()
                     if slot.species in rm_set
                 } | {spec
                     for nm in ["regular_honey_tree", "munchlax_honey_tree", "trophy_garden", "great_marsh_observatory", "great_marsh_observatory_national_dex", "feebas_fishing", "odd_keystone"]
-                    if nm in self.in_logic_encounters and nm not in special_encounters.requiring_national_dex
+                    if nm in self.in_logic_encounters.methods() and nm not in special_encounters.requiring_national_dex
                     for spec in getattr(special_encounters, nm)
                     if spec in rm_set
                 }, self.in_logic_evolution_methods.methods())
@@ -1356,13 +1426,13 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
                 for rd in regions.values()
                 if rd.header in encounters \
                 for type, table in encounter_type_pairs
-                if type != "water" or table in self.in_logic_encounters
+                if type != "water" or table in self.in_logic_encounters.methods()
                 for _, slot in enumerate(getattr(encounters[rd.header], table))
-                if not slot.accessibility or set(slot.accessibility) & self.in_logic_encounters.value
+                if not slot.accessibility or set(slot.accessibility) & self.in_logic_encounters.methods()
                 if slot.species in rm_set
             } | {spec
                 for nm in ["regular_honey_tree", "munchlax_honey_tree", "trophy_garden", "great_marsh_observatory", "great_marsh_observatory_national_dex", "feebas_fishing", "odd_keystone"]
-                if nm in self.in_logic_encounters
+                if nm in self.in_logic_encounters.methods()
                 for spec in getattr(special_encounters, nm)
                 if spec in rm_set
             }, self.in_logic_evolution_methods.methods())
@@ -1375,9 +1445,9 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
                     for rd in regions.values()
                     if rd.header in encounters and rd.header not in national_dex_requiring_encs \
                     for type, table in encounter_type_pairs
-                    if type != "water" or table in self.in_logic_encounters
+                    if type != "water" or table in self.in_logic_encounters.methods()
                     for slot in getattr(encounters[rd.header], table)
-                    if not slot.accessibility or (set(slot.accessibility) - acc_suc) & self.in_logic_encounters.value
+                    if not slot.accessibility or (set(slot.accessibility) - acc_suc) & self.in_logic_encounters.methods()
                     if slot.species in rm_set
                 }
                 in_logic_trainer_mons = {p.species
@@ -1393,9 +1463,9 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
                 for rd in regions.values()
                 if rd.header in encounters \
                 for type, table in encounter_type_pairs
-                if type != "water" or table in self.in_logic_encounters
+                if type != "water" or table in self.in_logic_encounters.methods()
                 for slot in getattr(encounters[rd.header], table)
-                if not slot.accessibility or set(slot.accessibility) & self.in_logic_encounters.value
+                if not slot.accessibility or set(slot.accessibility) & self.in_logic_encounters.methods()
                 if slot.species in rm_set
             }
             in_logic_trainer_mons = {p.species
@@ -1448,11 +1518,11 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
                     for rd in regions.values()
                     if rd.header in encounters \
                     for type, table in encounter_type_pairs
-                    if type != "water" or table in self.in_logic_encounters
+                    if type != "water" or table in self.in_logic_encounters.methods()
                     for _, slot in enumerate(getattr(encounters[rd.header], table))
-                    if not slot.accessibility or set(slot.accessibility) & self.in_logic_encounters.value
+                    if not slot.accessibility or set(slot.accessibility) & self.in_logic_encounters.methods()
                 } | {spec
-                    for nm in {"regular_honey_tree", "munchlax_honey_tree", "trophy_garden", "great_marsh_observatory", "great_marsh_observatory_national_dex", "feebas_fishing", "odd_keystone"} & self.in_logic_encounters.value
+                    for nm in {"regular_honey_tree", "munchlax_honey_tree", "trophy_garden", "great_marsh_observatory", "great_marsh_observatory_national_dex", "feebas_fishing", "odd_keystone"} & self.in_logic_encounters.methods()
                     for spec in getattr(special_encounters, nm)
                 }
                 in_logic_encounter_mons = expand_set_via_evolutions(in_logic_encounter_mons, self.in_logic_evolution_methods.methods())

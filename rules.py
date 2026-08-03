@@ -66,15 +66,15 @@ def set_rules(world: "PokemonPlatinumWorld") -> None:
                     e: Sequence[encounterdata.EncounterSlot] = getattr(encounterdata.encounters[header], table)
                     if not e:
                         continue
-                    if type == "water" and table in (rules.encounter_type_rules.keys() & world.options.in_logic_encounters):
+                    if type == "water" and table in (rules.encounter_type_rules.keys() & world.options.in_logic_encounters.methods()):
                         for i in range(len(e)):
                             world.set_rule(world.multiworld.get_location(f"{header}_{table}_{i + 1}", world.player), rules.encounter_type_rules[table])
                     elif type == "land":
                         for i, slot in enumerate(e):
-                            if slot.accessibility and (set(slot.accessibility) & world.options.in_logic_encounters.value):
+                            if slot.accessibility and (set(slot.accessibility) & world.options.in_logic_encounters.methods()):
                                 world.set_rule(world.multiworld.get_location(f"{header}_land_{i + 1}", world.player), rules.get_enc_accessibility_rule(slot.accessibility))
                     elif type == "long_grass":
-                        accessibility_mask = (encounterdata.possible_accessibilities - {"radar"}) & world.options.in_logic_encounters.value
+                        accessibility_mask = (encounterdata.possible_accessibilities - {"radar"}) & world.options.in_logic_encounters.methods()
                         for i, slot in enumerate(e):
                             if slot.accessibility and (set(slot.accessibility) & accessibility_mask):
                                 world.set_rule(world.multiworld.get_location(f"{header}_long_grass_land_{i + 1}", world.player), rules.get_enc_accessibility_rule(slot.accessibility))
@@ -103,7 +103,7 @@ def set_rules(world: "PokemonPlatinumWorld") -> None:
     for mon in world.accessible_once_mons:
         world.set_rule(world.multiworld.get_location(f"mon_map_once_{mon}", world.player), rules.get_once_mon_rule(mon))
 
-    if "roamers" in world.options.in_logic_encounters:
+    if "roamers" in world.options.in_logic_encounters.methods():
         for i in [0, 1, 3, 4, 5]:
             world.set_rule(world.multiworld.get_location(f"roamer_{i}", world.player), rules.get_roamer_rule(i))
 

@@ -11,7 +11,7 @@ Pokemon Platinum:
     30: 50
     60: 50
   in_logic_encounters:
-    ['leafgreen', 'trophy_garden', 'munchlax_honey_tree', 'emerald', 'feebas_fishing', 'radar', 'sapphire', 'super_rod', 'ruby', 'day', 'great_marsh_observatory_national_dex', 'regular_honey_tree', 'firered', 'good_rod', 'night', 'old_rod', 'great_marsh_observatory', 'surf', 'roamers', 'odd_keystone', 'swarms']
+    ['trophy_garden', 'munchlax_honey_tree', 'cartridges', 'feebas_fishing', 'radar', 'rods', 'time', 'regular_honey_tree', 'great_marsh_observatory', 'surf', 'roamers', 'odd_keystone', 'swarms']
   in_logic_evolution_methods: ['level', 'use_item', 'held_item', 'time', 'location', 'happiness']
   dexsanity_whitelist: []
   dexsanity_blacklist: []

@@ -56,7 +56,7 @@ def create_regions(world: "PokemonPlatinumWorld") -> Tuple[Mapping[str, Region],
                 wild_region = Region(name, world.player, world.multiworld)
                 regions[name] = wild_region
                 for table in encounter_type_tables[type]:
-                    if type == "water" and table not in world.options.in_logic_encounters:
+                    if type == "water" and table not in world.options.in_logic_encounters.methods():
                         continue
                     e: Sequence[EncounterSlot] = getattr(encs, table)
                     if not e:
@@ -67,7 +67,7 @@ def create_regions(world: "PokemonPlatinumWorld") -> Tuple[Mapping[str, Region],
                     else:
                         accessibility_mask = possible_accessibilities
 
-                    accessibility_mask &= world.options.in_logic_encounters.value
+                    accessibility_mask &= world.options.in_logic_encounters.methods()
 
                     for i, slot in enumerate(e):
                         if slot.accessibility and not set(slot.accessibility) & accessibility_mask:
@@ -99,7 +99,7 @@ def create_regions(world: "PokemonPlatinumWorld") -> Tuple[Mapping[str, Region],
             if "speenc_" + name not in regions:
                 wild_region = Region("speenc_" + name, world.player, world.multiworld)
                 regions["speenc_" + name] = wild_region
-                if name in world.options.in_logic_encounters:
+                if name in world.options.in_logic_encounters.methods():
                     for i in range(len(getattr(special_encounters, name))):
                         location = PokemonPlatinumLocation(
                             world.player,
@@ -114,7 +114,7 @@ def create_regions(world: "PokemonPlatinumWorld") -> Tuple[Mapping[str, Region],
             parent_region.connect(wild_region, f"{parent_region.name} -> speenc_{name}")
 
     def setup_special_encounters(parent_region: Region, wild_region_data: regiondata.RegionData) -> None:
-        if wild_region_data.special_encounters is None or wild_region_data.special_encounters not in world.options.in_logic_encounters:
+        if wild_region_data.special_encounters is None or wild_region_data.special_encounters not in world.options.in_logic_encounters.methods():
             return
         name = "speenc_" + wild_region_data.special_encounters
         if name not in regions:
@@ -183,7 +183,7 @@ def create_regions(world: "PokemonPlatinumWorld") -> Tuple[Mapping[str, Region],
             continue
         regions[source].connect(regions[dest], name)
 
-    if "roamers" in world.options.in_logic_encounters:
+    if "roamers" in world.options.in_logic_encounters.methods():
         roamreg = regions["virt_roamers"]
         for i in [0, 1, 3, 4, 5]:
             location = PokemonPlatinumLocation(

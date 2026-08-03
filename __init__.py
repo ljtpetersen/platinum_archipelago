@@ -246,11 +246,11 @@ class PokemonPlatinumWorld(World):
         def get_dexsanity_encounter_hint_data(dexsanity_hint_data: MutableMapping[str, MutableSet[str]]) -> None:
             for key, mon in self.generated_encounters.items():
                 if mon in dexsanity_specs:
-                    dexsanity_hint_data[mon].add(encounter_slot_label(key, self.options.in_logic_encounters.value))
+                    dexsanity_hint_data[mon].add(encounter_slot_label(key, self.options.in_logic_encounters.methods()))
             for (speenc, _), mon in self.generated_speencs.items():
                 if mon in dexsanity_specs:
                     dexsanity_hint_data[mon].add(speenc_labels[speenc])
-            if self.options.randomize_roamers and "roamers" in self.options.in_logic_encounters.value:
+            if self.options.randomize_roamers and "roamers" in self.options.in_logic_encounters.methods():
                 for i, mon in enumerate(self.generated_roamers):
                     if mon in dexsanity_specs:
                         dexsanity_hint_data[mon].add(roamer_labels[i])
@@ -286,10 +286,10 @@ class PokemonPlatinumWorld(World):
         encounters_per_pokemon = defaultdict(set)
         if self.options.randomize_encounters:
             for key, mon in self.generated_encounters.items():
-                encounters_per_pokemon[mon].add(encounter_slot_label(key, self.options.in_logic_encounters.value))
+                encounters_per_pokemon[mon].add(encounter_slot_label(key, self.options.in_logic_encounters.methods()))
             for (speenc, _), mon in self.generated_speencs.items():
                 encounters_per_pokemon[mon].add(speenc_labels[speenc])
-        if self.options.randomize_roamers and "roamers" in self.options.in_logic_encounters.value:
+        if self.options.randomize_roamers and "roamers" in self.options.in_logic_encounters.methods():
             for i, mon in enumerate(self.generated_roamers):
                 encounters_per_pokemon[mon].add(roamer_labels[i])
 

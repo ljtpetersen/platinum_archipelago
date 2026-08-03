@@ -12,9 +12,7 @@ regular_honey_tree_encounters = [
     "heracross",
 ]
 
-munchlax_honey_tree_encounters = [
-    "munchlax",
-]
+munchlax_honey_tree_encounters = ["munchlax"]
 
 trophy_garden_daily_encounters = [
     "eevee",

@@ -3,12 +3,12 @@
 The setup guide is [here](docs/setup_en.md).
 
 ## Running From Source
-The following are required.
-* Additionally to what Archipelago requires, the `pyparsing` library is required.
+Additionally to what Archipelago requires, the `pyparsing` library is required.
 This can be installed via PIP.
 
-With these, clone this repository in the `worlds` directory of the Archipelago repository, and rename the repository root's
-folder to `pokemon_platinum`.
+With the dependencies installed,
+clone this repository in the `worlds` directory of the Archipelago repository,
+and rename the repository root's folder to `pokemon_platinum`.
 With every modification to the files in `data_gen` or `data_gen_templates`, and when first cloning the
 repository, the `data_gen.py` file must be executed. (Do `python data_gen.py` in the root directory of the repository)
 
