@@ -74,6 +74,7 @@ appropriately.
 * Title screen logo.
 * The female cyclist in the upper left of cycling road now moves around.
 * The journal is now a trap item.
+* Various location name changes.
 ### Fixed
 * Non-determinism of generation. (hopefully)
 * Elite Four rematch is triggered only if the game has been completed and stark mountain has been cleared.
