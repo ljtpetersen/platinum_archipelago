@@ -33,3 +33,5 @@ saw_route_207_barricade = 0xBDD
 saw_boat_canalave_snowpoint = 0xBDE
 saw_boat_canalave_pastoria = 0xBDF
 saw_boat_pastoria_snowpoint = 0xBE0
+saw_pastoria_barriers = 0xBE1
+saw_early_sunyshore = 0xBE2

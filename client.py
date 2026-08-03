@@ -69,6 +69,8 @@ TRACKED_SAW_LOCATIONS = [
     "saw_boat_canalave_snowpoint",
     "saw_boat_canalave_pastoria",
     "saw_boat_pastoria_snowpoint",
+    "saw_pastoria_barriers",
+    "saw_early_sunyshore",
 ]
 
 class CheatBits(IntEnum):
