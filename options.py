@@ -510,7 +510,7 @@ class InLogicEncounters(OptionSet):
     - time: tall-grass encounters which require a specific time of day.
             These are activated in the Pokétch, within the digital watch app.
     - swarms: tall-grass encounters which are only present in swarms.
-              Swarms can be manually triggered within the route the player is in if the player has the Pokétch case.
+              Swarms can be manually triggered within the route the player is in if the player has the poffin case.
               The method to trigger them is to select a berry in the bag, and choose the SMN SWARM option.
               By default, swarms are activated once the poffin case is obtained. This is contrary to vanilla behaviour.
               To recover vanilla behaviour, modify the start_with_swarms option. 
