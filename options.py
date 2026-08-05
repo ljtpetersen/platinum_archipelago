@@ -1139,9 +1139,20 @@ class PreventPoptrackerSpoiling(OptionSet):
     - boat_canalave_pastoria
     - boat_canalave_snowpoint
     - boat_pastoria_snowpoint
+    - pastoria_barriers
+    - early_sunyshore
     """
     default = []
-    valid_keys = { "route_207_barricade", "route_215_barricade", "route_210_lower_barricade", "boat_canalave_pastoria", "boat_canalave_snowpoint", "boat_pastoria_snowpoint" }
+    valid_keys = {
+        "route_207_barricade",
+        "route_215_barricade",
+        "route_210_lower_barricade",
+        "boat_canalave_pastoria",
+        "boat_canalave_snowpoint",
+        "boat_pastoria_snowpoint",
+        "pastoria_barriers",
+        "early_sunyshore",
+    }
 
 slot_data_options: Sequence[str] = [
     "hms",
