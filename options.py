@@ -1352,9 +1352,9 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
         if self.pastoria_barriers and self.randomize_fly_items.value == 0:
             if not self.badges and self.requires_badge("SURF"):
                 raise OptionError(f"cannot enable Pastoria barriers if Surf requires the Fen Badge and badges are not randomized.")
-            if not (self.hms or self.key_items or self.randomize_fly_items):
+            if not (self.hms or self.key_items):
                 raise OptionError(f"cannot enable Pastoria barriers if HMs, Key Items, Fly Locations are not randomized.")
-        if not (self.overworlds or self.hiddens or self.npc_gifts or self.key_items.value > 0 or self.poketch_apps):
+        if not (self.overworlds or self.hiddens or self.npc_gifts or self.key_items or self.poketch_apps):
             raise OptionError(f"at least one of overworlds, hiddens, npc_gifts, key_items, or poketch apps must be enabled")
 
         # validate game options
@@ -1544,7 +1544,7 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
                     in_logic_encounter_mons &= self.dexsanity_whitelist.blacklist()
                 else:
                     in_logic_encounter_mons -= self.dexsanity_blacklist.blacklist()
-                if len(in_logic_encounter_mons) + len(in_logic_encounter_mons) < self.dexsanity:
+                if len(in_logic_encounter_mons) + len(self.dexsanity_required.blacklist()) < self.dexsanity:
                     raise OptionError(f"dexsanity count larger than in-logic species count. number of in-logic species: {len(in_logic_encounter_mons)}")
         if len(self.dexsanity_required.blacklist()) > self.dexsanity.value:
             raise OptionError(f"more dexsanity locations are required ({len(self.dexsanity_required.blacklist())}) than alloted ({self.dexsanity.value})")
