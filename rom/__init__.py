@@ -284,6 +284,8 @@ def generate_output(world: "PokemonPlatinumWorld", output_directory: str, patch:
     match game_opts.received_items_notification:
         case "nothing":
             ap_bin += b'\x00'
+        case "none":
+            ap_bin += b'\x00'
         case "message":
             ap_bin += b'\x03'
         case "jingle":

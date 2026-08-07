@@ -1374,7 +1374,7 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
         text_frame = game_opts.text_frame
         if game_opts.text_frame not in set(range(1, 21)) | {"random"}:
             raise OptionError(f"invalid text frame: \"{text_frame}\"")
-        if game_opts.received_items_notification not in {"nothing", "message", "jingle"}:
+        if game_opts.received_items_notification not in {"none", "nothing", "message", "jingle"}:
             raise OptionError(f"invalid received items notification: \"{game_opts.received_items_notification}\"")
         if game_opts.name_strictness not in {"relaxed", "strict"}:
             raise OptionError(f"invalid name strictness: \"{game_opts.name_strictness}\"")
