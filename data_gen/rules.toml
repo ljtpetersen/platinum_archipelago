@@ -184,6 +184,21 @@ common.route_210_south_to_route_210_junction = """
     if route_210_lower_barricade == option_waterfall_and_psyduck
 """
 exits.route_210_south.route_210_junction = "route_210_south_to_route_210_junction"
+common.bicycle_through_route_210_barricade = """
+    bag
+    if route_210_lower_barricade == option_impassable
+        | route_210_lower_barricade == option_surf
+        | route_210_lower_barricade == option_surf_and_cut_tree
+        | route_210_lower_barricade == option_surf_and_rock_smash
+        | route_210_lower_barricade == option_surf_and_strength_boulder
+        | route_210_lower_barricade == option_surf_and_psyduck
+        | route_210_lower_barricade == option_waterfall
+        | route_210_lower_barricade == option_waterfall_and_cut_tree
+        | route_210_lower_barricade == option_waterfall_and_rock_smash
+        | route_210_lower_barricade == option_waterfall_and_strength_boulder
+        | route_210_lower_barricade == option_waterfall_and_psyduck
+    else bag | route_210_south_to_route_210_junction
+"""
 exits.route_210_junction.route_210_south = """
     rock_climb
     if route_210_lower_barricade == option_rock_climb
@@ -332,21 +347,6 @@ common.route_210_junction_to_route_215 = """
 """
 exits.route_210_junction.route_215 = "route_210_junction_to_route_215"
 
-common.bicycle_through_route_210_barricade = """
-    bag
-    if route_210_lower_barricade == option_impassable
-        | route_210_lower_barricade == option_surf
-        | route_210_lower_barricade == option_surf_and_cut_tree
-        | route_210_lower_barricade == option_surf_and_rock_smash
-        | route_210_lower_barricade == option_surf_and_strength_boulder
-        | route_210_lower_barricade == option_surf_and_psyduck
-        | route_210_lower_barricade == option_waterfall
-        | route_210_lower_barricade == option_waterfall_and_cut_tree
-        | route_210_lower_barricade == option_waterfall_and_rock_smash
-        | route_210_lower_barricade == option_waterfall_and_strength_boulder
-        | route_210_lower_barricade == option_waterfall_and_psyduck
-    else bag | route_210_south_to_route_210_junction
-"""
 common.bicycle_through_route_215_barricade = """
     bag
     if route_215_barricade == option_impassable
