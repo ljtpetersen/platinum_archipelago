@@ -603,13 +603,7 @@ locs.poketch_co_1f_markingmap = "parcel & coupon_1 & coupon_2 & coupon_3 & badge
 locs.poketch_co_1f_linksearcher = "parcel & coupon_1 & coupon_2 & coupon_3 & badges(5)"
 locs.poketch_co_1f_movetester = "parcel & coupon_1 & coupon_2 & coupon_3 & badges(7)"
 
-locs.route_223_tm18 = "surf"
-locs.route_223_ultra_ball = "surf"
-locs.route_223_dive_ball = "surf"
-locs.route_223_rare_candy = "surf"
-locs.route_223_heart_scale = "surf"
-locs.route_223_heart_scale_0 = "surf"
-exits.route_223.pokemon_league_south_south = "surf"
+exits.sunyshore_city.route_223 = "surf"
 exits.pokemon_league_south_south.pokemon_league_south = "surf & waterfall"
 exits.pokemon_league_south.pokemon_league_south_south = "surf & down_waterfall"
 
