@@ -360,7 +360,7 @@ common.bicycle_through_route_215_barricade = """
         | route_215_barricade == option_waterfall_and_rock_smash
         | route_215_barricade == option_waterfall_and_strength_boulder
         | route_215_barricade == option_waterfall_and_psyduck
-    else bag | bicycle_through_route_210_barricade
+    else bag | route_210_junction_to_route_215
 """
 
 common.veilstone_bicycle_from_solaceon = "bicycle_through_route_210_barricade & bicycle_through_route_215_barricade"
