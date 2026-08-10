@@ -131,7 +131,7 @@ exits.route_207.route_207_south = """
     else rock_climb & secretpotion
     if route_207_barricade == option_rock_climb_and_psyduck
 """
-exits.route_210_south.route_210_junction = """
+common.route_210_south_to_route_210_junction = """
     bicycle
     if route_210_lower_barricade == option_bicycle_slope
     else rock_climb
@@ -182,6 +182,22 @@ exits.route_210_south.route_210_junction = """
     if route_210_lower_barricade == option_waterfall_and_strength_boulder
     else surf & waterfall & secretpotion
     if route_210_lower_barricade == option_waterfall_and_psyduck
+"""
+exits.route_210_south.route_210_junction = "route_210_south_to_route_210_junction"
+common.bicycle_through_route_210_barricade = """
+    bag
+    if route_210_lower_barricade == option_impassable
+        | route_210_lower_barricade == option_surf
+        | route_210_lower_barricade == option_surf_and_cut_tree
+        | route_210_lower_barricade == option_surf_and_rock_smash
+        | route_210_lower_barricade == option_surf_and_strength_boulder
+        | route_210_lower_barricade == option_surf_and_psyduck
+        | route_210_lower_barricade == option_waterfall
+        | route_210_lower_barricade == option_waterfall_and_cut_tree
+        | route_210_lower_barricade == option_waterfall_and_rock_smash
+        | route_210_lower_barricade == option_waterfall_and_strength_boulder
+        | route_210_lower_barricade == option_waterfall_and_psyduck
+    else bag | route_210_south_to_route_210_junction
 """
 exits.route_210_junction.route_210_south = """
     rock_climb
@@ -277,7 +293,7 @@ exits.route_215.route_210_junction = """
     else surf & down_waterfall & secretpotion
     if route_215_barricade == option_waterfall_and_psyduck
 """
-exits.route_210_junction.route_215 = """
+common.route_210_junction_to_route_215 = """
     bicycle_through_route_210_barricade & bicycle
     if route_215_barricade == option_bicycle_bridge
     else rock_climb
@@ -329,23 +345,9 @@ exits.route_210_junction.route_215 = """
     else surf & waterfall & secretpotion
     if route_215_barricade == option_waterfall_and_psyduck
 """
+exits.route_210_junction.route_215 = "route_210_junction_to_route_215"
 
-common.bicycle_through_route_210_barricade = """
-    bag
-    if route_210_lower_barricade == option_impassable
-        | route_210_lower_barricade == option_surf
-        | route_210_lower_barricade == option_surf_and_cut_tree
-        | route_210_lower_barricade == option_surf_and_rock_smash
-        | route_210_lower_barricade == option_surf_and_strength_boulder
-        | route_210_lower_barricade == option_surf_and_psyduck
-        | route_210_lower_barricade == option_waterfall
-        | route_210_lower_barricade == option_waterfall_and_cut_tree
-        | route_210_lower_barricade == option_waterfall_and_rock_smash
-        | route_210_lower_barricade == option_waterfall_and_strength_boulder
-        | route_210_lower_barricade == option_waterfall_and_psyduck
-"""
-
-common.veilstone_bicycle_from_solaceon = """
+common.bicycle_through_route_215_barricade = """
     bag
     if route_215_barricade == option_impassable
         | route_215_barricade == option_surf
@@ -358,8 +360,10 @@ common.veilstone_bicycle_from_solaceon = """
         | route_215_barricade == option_waterfall_and_rock_smash
         | route_215_barricade == option_waterfall_and_strength_boulder
         | route_215_barricade == option_waterfall_and_psyduck
-    else bicycle_through_route_210_barricade
+    else bag | route_210_junction_to_route_215
 """
+
+common.veilstone_bicycle_from_solaceon = "bicycle_through_route_210_barricade & bicycle_through_route_215_barricade"
 
 locs.jubilife_city_fashion_case = "event_coal_badge"
 exits.jubilife_city.jubilife_tv_1f = "event_coal_badge"
