@@ -155,6 +155,8 @@ def process_name(name: str, world: "PokemonPlatinumWorld", name_strictness: str)
             world.random.shuffle(other_players)
             # if no player name matches, then return vanilla
             for name in other_players:
+                if len(name) > 7 and name_strictness == "strict":
+                    continue
                 ret = encode_string(name, unknown_filler=unknown_filler)
                 if ret is not None:
                     break
