@@ -5130,7 +5130,7 @@ id = 64
 
 [route_207_vs_seeker]
 original_item = "vs_seeker"
-type = "npc_gift"
+type = "key_item"
 table = "base"
 label = "Route 207 - First Gift from Dawn or Lucas"
 id = 65

@@ -75,6 +75,7 @@ appropriately.
 * The female cyclist in the upper left of cycling road now moves around.
 * The journal is now a trap item.
 * Various location name changes.
+* VS Seeker location is now correctly classified as a `key_item` location.
 ### Fixed
 * Non-determinism of generation. (hopefully)
 * Elite Four rematch is triggered only if the game has been completed and stark mountain has been cleared.
