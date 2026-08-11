@@ -2433,7 +2433,7 @@ data_id = 332
 label = "TM28 Dig"
 id = 355
 clas = "bagitem"
-group = "tmhms"
+group = ["tmhms", "field_moves"]
 classification = "useful"
 data_id = 333
 
@@ -2769,7 +2769,7 @@ data_id = 374
 label = "TM70 Flash"
 id = 397
 clas = "specialbagitem"
-group = "tmhms"
+group = ["tmhms", "field_moves", "hms"]
 classification = "progression"
 data_id = 375
 
@@ -2953,7 +2953,7 @@ data_id = 397
 label = "HM01 Cut"
 id = 420
 clas = "bagitem"
-group = "tmhms"
+group = ["tmhms", "field_moves", "hms"]
 classification = "progression"
 data_id = 398
 
@@ -2961,7 +2961,7 @@ data_id = 398
 label = "HM02 Fly"
 id = 421
 clas = "bagitem"
-group = "tmhms"
+group = ["tmhms", "field_moves", "hms"]
 classification = "progression"
 data_id = 399
 
@@ -2969,7 +2969,7 @@ data_id = 399
 label = "HM03 Surf"
 id = 422
 clas = "bagitem"
-group = "tmhms"
+group = ["tmhms", "field_moves", "hms"]
 classification = "progression"
 data_id = 400
 
@@ -2977,7 +2977,7 @@ data_id = 400
 label = "HM04 Strength"
 id = 423
 clas = "bagitem"
-group = "tmhms"
+group = ["tmhms", "field_moves", "hms"]
 classification = "progression"
 data_id = 401
 
@@ -2985,7 +2985,7 @@ data_id = 401
 label = "HM05 Defog"
 id = 424
 clas = "bagitem"
-group = "tmhms"
+group = ["tmhms", "field_moves", "hms"]
 classification = "progression"
 data_id = 402
 
@@ -2993,7 +2993,7 @@ data_id = 402
 label = "HM06 Rock Smash"
 id = 425
 clas = "bagitem"
-group = "tmhms"
+group = ["tmhms", "field_moves", "hms"]
 classification = "progression"
 data_id = 403
 
@@ -3001,7 +3001,7 @@ data_id = 403
 label = "HM07 Waterfall"
 id = 426
 clas = "bagitem"
-group = "tmhms"
+group = ["tmhms", "field_moves", "hms"]
 classification = "progression"
 data_id = 404
 
@@ -3009,7 +3009,7 @@ data_id = 404
 label = "HM08 Rock Climb"
 id = 427
 clas = "bagitem"
-group = "tmhms"
+group = ["tmhms", "field_moves", "hms"]
 classification = "progression"
 data_id = 405
 

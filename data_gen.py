@@ -182,7 +182,7 @@ class Item:
     label: str
     id: int
     clas: str
-    group: str
+    group: str | Sequence[str]
     classification: str = "filler"
     count: int | None = None
     data_id: int | None = None
@@ -199,6 +199,12 @@ class Item:
             ret += f", data_id={self.data_id}"
         ret += ")"
         return ret
+
+    def in_group(self, group: str) -> bool:
+        if isinstance(self.group, str):
+            return self.group == group
+        else:
+            return group in self.group
 
 @dataclass(frozen=True)
 class RomInterface:
@@ -587,7 +593,7 @@ class ParserState:
         ret["ITEM_CLASSES"] = [f"{k.upper()} = 0x{v:X}\n" for k, v in self.rom_interface.item_clas.items()]
         ret["ITEMS"] = [f"\"{k}\": {v},\n" for k, v in self.items.items()]
         item_groups: Mapping[str, Set[str]] = {f"\"{label}\"":{f"\"{item.label}\""
-            for item in self.items.values() if item.group == group}
+            for item in self.items.values() if item.in_group(group)}
             for group, label in self.rom_interface.item_group.items()}
         ret["ITEM_GROUPS"] = [l for group, items in item_groups.items()
             for l in convert_item_groups(group, items)]

@@ -65,6 +65,8 @@ item_group.battle_items = "Battle Items"
 item_group.gbacart = "GBA Cartridges"
 item_group.timeitem = "Time Items"
 item_group.fly_item = "Fly Items"
+item_group.field_moves = "Field Machines"
+item_group.hms = "HMs (actually Field Machines)"
 
 reusable_evo_items = [
     "shiny_stone",
