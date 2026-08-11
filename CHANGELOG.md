@@ -90,6 +90,7 @@ appropriately.
 * Fixed bug where received items can occasionally be lost.
 * Triggers cannot be walked through when receiving items.
 * The clown in front of Jubilife TV now moves immediately after the Team Galactic event in Jubuilife City, instead of requiring leaving and re-entering.
+* Fixed broken texture in Route 214.
 ### Removed
 * The `all` key item option no longer exists.
 
