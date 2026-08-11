@@ -6,7 +6,7 @@
 from collections.abc import Mapping, MutableMapping, Sequence, Set
 from dataclasses import dataclass
 from typing import Any, Optional
-from Options import Choice, DeathLink, DefaultOnToggle, NamedRange, OptionDict, OptionError, OptionGroup, OptionSet, PerGameCommonOptions, Range, Toggle, Option, FreeText
+from Options import Choice, DeathLink, DefaultOnToggle, NamedRange, OptionDict, OptionError, OptionGroup, OptionSet, PerGameCommonOptions, Range, StartInventoryPool, Toggle, Option, FreeText
 
 from .data import special_encounters
 from .data.species import species, regional_mons, having_two_level_evos, legendary_mons, expand_set_via_evolutions
@@ -1344,6 +1344,8 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
     unown_option: UnownsOption
 
     prevent_poptracker_spoiling: PreventPoptrackerSpoiling
+
+    start_inventory_from_pool: StartInventoryPool
 
     def requires_badge(self, hm: str) -> bool:
         return self.hm_badge_requirement.value == 1 or hm.lower() in self.remove_badge_requirements
