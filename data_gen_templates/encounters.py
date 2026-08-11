@@ -48,3 +48,8 @@ national_dex_requiring_encs: Set[str] = {
     # TEMPLATE: NATIONAL_DEX_REQUIRING_ENCS
     "" # TEMPLATE: DELETE
 }
+
+fight_area_encs: Set[str] = {
+    # TEMPLATE: FIGHT_AREA_ENCS
+    "" # TEMPLATE: DELETE
+}

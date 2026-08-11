@@ -9,14 +9,14 @@ from typing import TYPE_CHECKING, Tuple
 from BaseClasses import Region
 
 from .locations import PokemonPlatinumLocation
-from .options import PokemonPlatinumOptions, UnownsOption
+from .options import UnownsOption
 from .regions import is_region_enabled
 
 from .data import special_encounters, map_header_labels
-from .data.encounters import encounters as encounterdata, encounter_type_pairs, EncounterSlot, national_dex_requiring_encs
+from .data.encounters import encounters as encounterdata, encounter_type_pairs, EncounterSlot, national_dex_requiring_encs, fight_area_encs
 from .data.regions import regions as regiondata
 from .data.species import species as speciesdata, regional_mons, having_two_level_evos, expand_set_via_evolutions, affected_species
-from .data.trainers import trainers as trainerdata, trainer_party_supporting_starters, trainer_requires_national_dex
+from .data.trainers import trainer_party_supporting_starters, trainer_requires_national_dex, trainer_in_fight_area
 
 if TYPE_CHECKING:
     from . import PokemonPlatinumWorld
@@ -52,6 +52,7 @@ def fill_unrandomized_encounters(world: "PokemonPlatinumWorld") -> Set[str]:
         if rd.header not in encounterdata:
             continue
         encs = encounterdata[rd.header]
+        header_doesnt_needs_nat_dex = rd.header not in national_dex_requiring_encs and not (rd.header in fight_area_encs and world.options.fight_area_requires_national_dex())
         for type, table in encounter_type_pairs:
             if type == "water" and table not in world.options.in_logic_encounters.methods():
                 continue
@@ -60,7 +61,9 @@ def fill_unrandomized_encounters(world: "PokemonPlatinumWorld") -> Set[str]:
                 if slot.accessibility and not (set(slot.accessibility) & world.options.in_logic_encounters.methods()):
                     continue
                 world.generated_encounters[(rd.header, table, i)] = slot.species
-                if world.options.pokedex or (rd.header not in national_dex_requiring_encs and (not slot.accessibility or (set(slot.accessibility) - acc_suc) & world.options.in_logic_encounters.methods())):
+                if world.options.pokedex \
+                    or (header_doesnt_needs_nat_dex
+                        and (not slot.accessibility or (set(slot.accessibility) - acc_suc) & world.options.in_logic_encounters.methods())):
                     accessible_mons.add(slot.species)
 
     for nm in ["regular_honey_tree", "munchlax_honey_tree", "trophy_garden", "great_marsh_observatory", "great_marsh_observatory_national_dex", "feebas_fishing", "odd_keystone"]:
@@ -122,7 +125,8 @@ def randomize_encounters(world: "PokemonPlatinumWorld", req_specs: Set[str]) -> 
             for name, rd in regiondata.items()
             if is_region_enabled(name, world.options) and rd.header in encounterdata \
                 and (world.options.unown_option != UnownsOption.option_vanilla or not rd.header.startswith("solaceon_ruins")) \
-                and rd.header not in national_dex_requiring_encs
+                and rd.header not in national_dex_requiring_encs \
+                and not (rd.header in fight_area_encs and world.options.fight_area_requires_national_dex())
             for type, table in encounter_type_pairs
             if type != "water" or table in world.options.in_logic_encounters.methods()
             for i, slot in enumerate(getattr(encounterdata[rd.header], table))
@@ -197,7 +201,8 @@ def randomize_trainer_parties(world: "PokemonPlatinumWorld", req_specs: Set[str]
             for name, rd in regiondata.items()
             if is_region_enabled(name, world.options)
             for trainer in rd.trainers
-            if not trainer_requires_national_dex(trainer)
+            if not trainer_requires_national_dex(trainer) \
+                and not (trainer_in_fight_area(trainer) and world.options.fight_area_requires_national_dex())
             for i in range(len(trainer_party_supporting_starters(trainer)))
         }
         before_slots = sorted(before_slots_set)
@@ -274,7 +279,8 @@ def randomize_trainer_parties_and_encounters(world: "PokemonPlatinumWorld") -> N
                 for region_name, region in regiondata.items()
                 if is_region_enabled(region_name, world.options)
                 for trainer in region.trainers
-                if not trainer_requires_national_dex(trainer)
+                if not trainer_requires_national_dex(trainer) \
+                    and not (trainer_in_fight_area(trainer) and world.options.fight_area_requires_national_dex())
                 for ps in trainer_party_supporting_starters(trainer)
                 if ps.species in regional_mons_set}
         regional_mons_set -= bl

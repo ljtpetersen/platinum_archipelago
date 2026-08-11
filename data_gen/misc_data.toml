@@ -261,6 +261,9 @@ national_dex_requiring_encs = [
     "victory_road_1f_room_3",
     "victory_road_1f_room_3",
     "route_224",
+]
+
+fight_area_encs = [
     "route_225",
     "route_226",
     "route_227",

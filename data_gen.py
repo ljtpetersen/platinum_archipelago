@@ -220,6 +220,7 @@ class MiscData:
     map_header_labels: Mapping[str, str]
     aux_reqd_items: Sequence[str]
     national_dex_requiring_encs: Sequence[str]
+    fight_area_encs: Sequence[str]
 
 @dataclass(frozen=True)
 class PreEvolution:
@@ -296,6 +297,7 @@ class Trainer:
     label: str
     party: Sequence[PartyMember]
     requires_national_dex: bool = False
+    in_fight_area: bool = False
     check: Check | int | None = None
 
     def to_string(self, parent_region: str | None) -> str:
@@ -309,7 +311,9 @@ class Trainer:
         if parent_region is not None:
             ret += f", parent_region=\"{parent_region}\""
         if self.requires_national_dex:
-            ret += f", requires_national_dex=True"
+            ret += ", requires_national_dex=True"
+        if self.in_fight_area:
+            ret += ", in_fight_area=True"
         return ret + ")"
 
 @dataclass(frozen=True)
@@ -755,6 +759,7 @@ class ParserState:
 
         ret["ENCOUNTERS"] = [f"\"{name}\": {encs},\n" for name, encs in self.encounters.items()]
         ret["NATIONAL_DEX_REQUIRING_ENCS"] = [f"\"{hdr}\",\n" for hdr in self.misc_data.national_dex_requiring_encs]
+        ret["FIGHT_AREA_ENCS"] = [f"\"{hdr}\",\n" for hdr in self.misc_data.fight_area_encs]
 
         return ret
 

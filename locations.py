@@ -9,7 +9,7 @@ from dataclasses import dataclass
 from typing import Dict, TYPE_CHECKING
 
 from .data import items as itemdata, locations as locationdata, regions as regiondata, trainers as trainerdata, species as speciesdata
-from .options import PokemonPlatinumOptions, RandomizeFlyItems, RandomizeKeyItems, RemoteItems, UnownsOption
+from .options import PokemonPlatinumOptions, RandomizeFlyItems, RemoteItems, UnownsOption
 
 if TYPE_CHECKING:
     from . import PokemonPlatinumWorld
