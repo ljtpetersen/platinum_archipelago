@@ -207,7 +207,7 @@ class Item:
             return group in self.group
 
 @dataclass(frozen=True)
-class RomInterface:
+class MiscData:
     loc_table: Mapping[str, int]
     item_clas: Mapping[str, int]
     hm: Mapping[str, str]
@@ -329,7 +329,7 @@ class ParserState:
     locations: Mapping[str, Location]
     species: Mapping[str, Species]
     items: Mapping[str, Item]
-    rom_interface: RomInterface
+    misc_data: MiscData
     rules: Rules
     trainers: Mapping[str, Trainer]
     special_encounters: SpecialEncounters
@@ -370,8 +370,8 @@ class ParserState:
             return val
         self.locations = {k:Location(**convert_inner_check(v)) for k, v in get_toml("locations").items()}
 
-    def parse_rom_interface(self):
-        self.rom_interface = RomInterface(**get_toml("rom_interface"))
+    def parse_misc_data(self):
+        self.misc_data = MiscData(**get_toml("misc_data"))
 
     def parse_species(self):
         def convert_inner_pre_evolution(val: MutableMapping[str, Any]) -> Mapping[str, Any]:
@@ -452,7 +452,7 @@ class ParserState:
                 assert loc.original_item, f"{loc} has an original item"
                 for original_item in loc.original_item:
                     assert original_item in self.items, f"{original_item} is an item"
-            assert loc.table in self.rom_interface.loc_table, f"{loc.table} is a location table"
+            assert loc.table in self.misc_data.loc_table, f"{loc.table} is a location table"
             assert loc.label not in location_labels, f"{loc.label} is a unique location label"
             location_labels.add(loc.label)
             assert loc.id >= 0, f"location id must be positive ({loc.label})"
@@ -466,15 +466,15 @@ class ParserState:
         for item in self.items.values():
             assert item.label not in item_labels, f"{item.label} is a unique item label"
             item_labels.add(item.label)
-            assert item.clas in self.rom_interface.item_clas, f"{item.clas} is an item class"
+            assert item.clas in self.misc_data.item_clas, f"{item.clas} is an item class"
             assert item.classification in item_classifications, f"{item.classification} is an item classification"
             if item.count is not None:
                 assert item.clas == "bagitem", f"item {item.label} with count is not bag item"
-        evo_items = set(self.rom_interface.reusable_evo_items) | set(self.rom_interface.nonreusable_evo_items)
+        evo_items = set(self.misc_data.reusable_evo_items) | set(self.misc_data.nonreusable_evo_items)
         for spec in self.species.values():
             prev_hms = set()
             for hm in spec.hms:
-                assert hm in self.rom_interface.hm, f"{hm} is a field move"
+                assert hm in self.misc_data.hm, f"{hm} is a field move"
                 assert hm not in prev_hms, f"repeated hm {hm}"
                 prev_hms.add(hm)
             if spec.pre_evolution is not None:
@@ -532,7 +532,7 @@ class ParserState:
                     }:
                     assert pe.level is None and pe.item is not None and pe.move is None and pe.other_species is None and pe.item in evo_items, f"only item for method {mthd}"
                 elif mthd == "level_know_move":
-                    assert pe.level is None and pe.item is None and pe.move is not None and pe.other_species is None and pe.move in self.rom_interface.tm_of_move, f"only move for method {mthd}"
+                    assert pe.level is None and pe.item is None and pe.move is not None and pe.other_species is None and pe.move in self.misc_data.tm_of_move, f"only move for method {mthd}"
                 elif mthd == "level_species_in_party":
                     assert pe.level is None and pe.item is None and pe.move is None and pe.other_species is not None, f"only species for method {mthd}"
                 else:
@@ -580,24 +580,24 @@ class ParserState:
             for spec in getattr(self.special_encounters, seq):
                 assert spec in self.species, f"{spec} is a species"
 
-        for item in self.rom_interface.tm_of_move.values():
+        for item in self.misc_data.tm_of_move.values():
             assert item in self.items, f"{item} is an item"
-        for item in self.rom_interface.reusable_evo_items:
+        for item in self.misc_data.reusable_evo_items:
             assert item in self.items, f"{item} is an item"
-        for item in self.rom_interface.nonreusable_evo_items:
+        for item in self.misc_data.nonreusable_evo_items:
             assert item in self.items, f"{item} is an item"
 
     def generate_items(self) -> Mapping[str, Sequence[str]]:
         ret = {}
 
-        ret["ITEM_CLASSES"] = [f"{k.upper()} = 0x{v:X}\n" for k, v in self.rom_interface.item_clas.items()]
+        ret["ITEM_CLASSES"] = [f"{k.upper()} = 0x{v:X}\n" for k, v in self.misc_data.item_clas.items()]
         ret["ITEMS"] = [f"\"{k}\": {v},\n" for k, v in self.items.items()]
         item_groups: Mapping[str, Set[str]] = {f"\"{label}\"":{f"\"{item.label}\""
             for item in self.items.values() if item.in_group(group)}
-            for group, label in self.rom_interface.item_group.items()}
+            for group, label in self.misc_data.item_group.items()}
         ret["ITEM_GROUPS"] = [l for group, items in item_groups.items()
             for l in convert_item_groups(group, items)]
-        ret["REUSABLE_EVO_ITEMS"] = [f"{self.item_name_map(k)},\n" for k in self.rom_interface.reusable_evo_items]
+        ret["REUSABLE_EVO_ITEMS"] = [f"{self.item_name_map(k)},\n" for k in self.misc_data.reusable_evo_items]
 
         return ret
 
@@ -619,11 +619,11 @@ class ParserState:
             rule.add_dependent_items(item_conds)
         for rule in self.rules.trainers.values():
             rule.add_dependent_items(item_conds)
-        item_conds.add_all(self.rom_interface.hm.values())
-        item_conds.add_all(self.rom_interface.hm_badge.values())
-        item_conds.add_all(self.rom_interface.reusable_evo_items)
-        item_conds.add_all(self.rom_interface.nonreusable_evo_items)
-        item_conds.add_all(self.rom_interface.aux_reqd_items)
+        item_conds.add_all(self.misc_data.hm.values())
+        item_conds.add_all(self.misc_data.hm_badge.values())
+        item_conds.add_all(self.misc_data.reusable_evo_items)
+        item_conds.add_all(self.misc_data.nonreusable_evo_items)
+        item_conds.add_all(self.misc_data.aux_reqd_items)
         item_conds.restrict(self.items.keys())
         return item_conds
 
@@ -637,7 +637,7 @@ class ParserState:
         }
         
         ret["LOCATION_TABLES"] = [f"{k.upper()} = 0x{v:X}\n"
-            for k, v in self.rom_interface.loc_table.items()]
+            for k, v in self.misc_data.loc_table.items()]
         ret["LOCATIONS"] = [f"\"{k}\": {v.to_string(location_region_map.get(k))},\n" for k, v in self.locations.items()]
         rule_items = self.get_rule_items()
         req_locs: Mapping[str, MutableSequence[str]] = {}
@@ -726,20 +726,20 @@ class ParserState:
         ret = {}
 
         ret["HMS"] = [f"{hm.upper()} = \"{self.items[item].label}\"\n"
-            for hm, item in self.rom_interface.hm.items()]
+            for hm, item in self.misc_data.hm.items()]
         ret["HM_BADGE_ITEMS"] = [f"case Hm.{hm.upper()}: return \"{self.items[item].label}\"\n"
-                                 for hm, item in self.rom_interface.hm_badge.items()]
+                                 for hm, item in self.misc_data.hm_badge.items()]
         ret["HM_TMHM_IDS"] = [f"case Hm.{hm.upper()}: return {id}\n"
-                                 for hm, id in self.rom_interface.hm_tmhm_id.items()]
+                                 for hm, id in self.misc_data.hm_tmhm_id.items()]
         ret["MAP_HEADER_LABELS"] = [f"\"{header}\": \"{label}\",\n"
-                                 for header, label in self.rom_interface.map_header_labels.items()]
+                                 for header, label in self.misc_data.map_header_labels.items()]
 
         return ret
 
     def generate_species(self) -> Mapping[str, Sequence[str]]:
         ret = {}
 
-        ret["SPECIES"] = [f"\"{name}\": {spec.to_string(self.item_name_map, self.rom_interface.tm_of_move)},\n"
+        ret["SPECIES"] = [f"\"{name}\": {spec.to_string(self.item_name_map, self.misc_data.tm_of_move)},\n"
             for name, spec in self.species.items()]
         ret["REGIONAL_SPECIES"] = [f"\"{name}\",\n"
             for name, spec in self.species.items()
@@ -754,7 +754,7 @@ class ParserState:
         ret = {}
 
         ret["ENCOUNTERS"] = [f"\"{name}\": {encs},\n" for name, encs in self.encounters.items()]
-        ret["NATIONAL_DEX_REQUIRING_ENCS"] = [f"\"{hdr}\",\n" for hdr in self.rom_interface.national_dex_requiring_encs]
+        ret["NATIONAL_DEX_REQUIRING_ENCS"] = [f"\"{hdr}\",\n" for hdr in self.misc_data.national_dex_requiring_encs]
 
         return ret
 

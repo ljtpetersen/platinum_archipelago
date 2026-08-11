@@ -45,7 +45,7 @@ DATA := data_gen/encounters.toml \
        data_gen/locations.toml \
        data_gen/moves.toml \
        data_gen/regions.toml \
-       data_gen/rom_interface.toml \
+       data_gen/misc_data.toml \
        data_gen/rules.toml \
        data_gen/special_encounters.toml \
        data_gen/species.toml \
