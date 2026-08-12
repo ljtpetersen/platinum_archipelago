@@ -60,7 +60,7 @@ TRACKED_EVENTS = [
     "activate_roaming_mesprit",
     "talk_looker_veilstone_galactic",
 ]
-TRACKED_UNRANDOMIZED_REQUIRED_LOCATIONS = sorted(maximal_required_locations)
+TRACKED_UNRANDOMIZED_REQUIRED_LOCATIONS = maximal_required_locations
 TRACKED_HEIGHT_MAP_HEADERS = {35, 350}
 TRACKED_SAW_LOCATIONS = [
     "saw_route_210_barricade",

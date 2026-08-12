@@ -65,7 +65,6 @@ class RequiredLocations:
         return loc in self.loc_rules
 
 
-maximal_required_locations: Set[str] = {
+maximal_required_locations: Sequence[str] = [
     # TEMPLATE: MAXIMAL_REQUIRED_LOCATIONS
-    "" # TEMPLATE: DELETE
-}
+]
