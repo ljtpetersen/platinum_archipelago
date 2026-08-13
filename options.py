@@ -6,13 +6,13 @@
 from collections.abc import Mapping, MutableMapping, Sequence, Set
 from dataclasses import dataclass
 from typing import Any, Optional
-from Options import Choice, DeathLink, DefaultOnToggle, NamedRange, OptionDict, OptionError, OptionGroup, OptionSet, PerGameCommonOptions, Range, Toggle, Option, FreeText
+from Options import Choice, DeathLink, DefaultOnToggle, NamedRange, OptionDict, OptionError, OptionGroup, OptionSet, PerGameCommonOptions, Range, StartInventoryPool, Toggle, Option, FreeText
 
 from .data import special_encounters
 from .data.species import species, regional_mons, having_two_level_evos, legendary_mons, expand_set_via_evolutions
 from .data.regions import regions
-from .data.trainers import in_game_trainer_labels, trainer_party_supporting_starters, trainer_requires_national_dex, trainer_name_to_trainer_const_name
-from .data.encounters import encounters, encounter_type_pairs, national_dex_requiring_encs
+from .data.trainers import in_game_trainer_labels, trainer_party_supporting_starters, trainer_requires_national_dex, trainer_in_fight_area, trainer_name_to_trainer_const_name
+from .data.encounters import encounters, encounter_type_pairs, national_dex_requiring_encs, fight_area_encs
 
 class SpeciesBlacklist(OptionSet):
     cached_blacklist: Set[str] | None = None
@@ -1345,8 +1345,13 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
 
     prevent_poptracker_spoiling: PreventPoptrackerSpoiling
 
+    start_inventory_from_pool: StartInventoryPool
+
     def requires_badge(self, hm: str) -> bool:
         return self.hm_badge_requirement.value == 1 and hm.lower() not in self.remove_badge_requirements
+
+    def fight_area_requires_national_dex(self) -> bool:
+        return not self.randomize_fly_items.value
 
     def validate(self) -> None:
         if self.pastoria_barriers and self.randomize_fly_items.value == 0:
@@ -1400,7 +1405,8 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
                 in_logic_trainer_mons = {p.species
                     for rd in regions.values()
                     for trainer in rd.trainers
-                    if not trainer_requires_national_dex(trainer)
+                    if not trainer_requires_national_dex(trainer) \
+                        and not (trainer_in_fight_area(trainer) and self.fight_area_requires_national_dex())
                     for p in trainer_party_supporting_starters(trainer)
                     if p.species in rm_set
                 }
@@ -1419,7 +1425,9 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
                 acc_suc = set() if self.start_with_swarms else {"swarms"}
                 in_logic_encounter_mons = expand_set_via_evolutions({slot.species
                     for rd in regions.values()
-                    if rd.header in encounters and rd.header not in national_dex_requiring_encs \
+                    if rd.header in encounters \
+                        and rd.header not in national_dex_requiring_encs \
+                        and not (rd.header in fight_area_encs and self.fight_area_requires_national_dex())
                     for type, table in encounter_type_pairs
                     if type != "water" or table in self.in_logic_encounters.methods()
                     for _, slot in enumerate(getattr(encounters[rd.header], table))
@@ -1454,7 +1462,9 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
                 acc_suc = set() if self.start_with_swarms else {"swarms"}
                 in_logic_encounter_mons = {slot.species
                     for rd in regions.values()
-                    if rd.header in encounters and rd.header not in national_dex_requiring_encs \
+                    if rd.header in encounters \
+                        and rd.header not in national_dex_requiring_encs \
+                        and not (rd.header in fight_area_encs and self.fight_area_requires_national_dex())
                     for type, table in encounter_type_pairs
                     if type != "water" or table in self.in_logic_encounters.methods()
                     for slot in getattr(encounters[rd.header], table)
@@ -1465,6 +1475,7 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
                     for rd in regions.values()
                     for trainer in rd.trainers
                     if not trainer_requires_national_dex(trainer)
+                        and not (trainer_in_fight_area(trainer) and self.fight_area_requires_national_dex())
                     for p in trainer_party_supporting_starters(trainer)
                     if p.species in rm_set
                 }

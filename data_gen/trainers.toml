@@ -4471,7 +4471,7 @@ party = [
     { species = "pidgeot", level = 55, num_moves = 0 },
 ]
 label = "Route 225 - Bird Keeper Audrey"
-requires_national_dex = true
+in_fight_area = true
 
 [bird_keeper_geneva]
 id = 555
@@ -4480,7 +4480,7 @@ party = [
     { species = "xatu", level = 57, num_moves = 0 },
 ]
 label = "Route 226 Mid - Bird Keeper Geneva"
-requires_national_dex = true
+in_fight_area = true
 
 [bird_keeper_krystal]
 id = 556
@@ -4490,7 +4490,7 @@ party = [
     { species = "noctowl", level = 59, num_moves = 0 },
 ]
 label = "Stark Mountain Cavern - Bird Keeper Krystal"
-requires_national_dex = true
+in_fight_area = true
 
 [dragon_tamer_geoffrey]
 id = 557
@@ -4499,7 +4499,7 @@ party = [
     { species = "altaria", level = 55, num_moves = 0 },
 ]
 label = "Route 225 - Dragon Tamer Geoffrey"
-requires_national_dex = true
+in_fight_area = true
 
 [dragon_tamer_darien]
 id = 558
@@ -4507,7 +4507,7 @@ party = [
     { species = "dragonite", level = 60, num_moves = 0 },
 ]
 label = "Stark Mountain Outside - Dragon Tamer Darien"
-requires_national_dex = true
+in_fight_area = true
 
 [dragon_tamer_keegan]
 id = 559
@@ -4516,7 +4516,7 @@ party = [
     { species = "vibrava", level = 57, num_moves = 0 },
 ]
 label = "Route 228 - Dragon Tamer Keegan"
-requires_national_dex = true
+in_fight_area = true
 
 [dragon_tamer_stanley]
 id = 560
@@ -4525,7 +4525,7 @@ party = [
     { species = "altaria", level = 57, num_moves = 0 },
 ]
 label = "Route 226 Mid - Dragon Tamer Stanley"
-requires_national_dex = true
+in_fight_area = true
 
 [dragon_tamer_drake]
 id = 561
@@ -4535,7 +4535,7 @@ party = [
     { species = "dragonair", level = 57, num_moves = 0 },
 ]
 label = "Stark Mountain Cavern - Dragon Tamer Drake"
-requires_national_dex = true
+in_fight_area = true
 
 [dragon_tamer_kenny]
 id = 562
@@ -4545,7 +4545,7 @@ party = [
     { species = "vibrava", level = 57, num_moves = 0 },
 ]
 label = "Stark Mountain Cavern - Dragon Tamer Kenny"
-requires_national_dex = true
+in_fight_area = true
 
 [ace_trainer_rodolfo]
 id = 563
@@ -4554,7 +4554,7 @@ party = [
     { species = "vibrava", level = 56, num_moves = 4 },
 ]
 label = "Route 225 - Ace Trainer Rodolfo"
-requires_national_dex = true
+in_fight_area = true
 
 [ace_trainer_saul]
 id = 564
@@ -4562,7 +4562,7 @@ party = [
     { species = "tauros", level = 61, num_moves = 4 },
 ]
 label = "Route 227 - Ace Trainer Saul"
-requires_national_dex = true
+in_fight_area = true
 
 [ace_trainer_jose]
 id = 565
@@ -4572,7 +4572,7 @@ party = [
     { species = "manectric", level = 57, num_moves = 4 },
 ]
 label = "Route 228 - Ace Trainer Jose"
-requires_national_dex = true
+in_fight_area = true
 
 [ace_trainer_felix]
 id = 566
@@ -4581,7 +4581,7 @@ party = [
     { species = "salamence", level = 56, num_moves = 4 },
 ]
 label = "Route 229 - Ace Trainer Felix"
-requires_national_dex = true
+in_fight_area = true
 
 [ace_trainer_quinn]
 id = 567
@@ -4590,7 +4590,7 @@ party = [
     { species = "lanturn", level = 56, num_moves = 4 },
 ]
 label = "Route 225 - Ace Trainer Quinn"
-requires_national_dex = true
+in_fight_area = true
 
 [ace_trainer_graham]
 id = 568
@@ -4599,7 +4599,7 @@ party = [
     { species = "hitmonchan", level = 59, num_moves = 0 },
 ]
 label = "Route 226 Mid - Ace Trainer Graham"
-requires_national_dex = true
+in_fight_area = true
 
 [ace_trainer_keenan]
 id = 569
@@ -4609,7 +4609,7 @@ party = [
     { species = "banette", level = 59, num_moves = 0 },
 ]
 label = "Stark Mountain Cavern - Ace Trainer Keenan"
-requires_national_dex = true
+in_fight_area = true
 
 [ace_trainer_stefan]
 id = 570
@@ -4618,7 +4618,7 @@ party = [
     { species = "torterra", level = 61, num_moves = 0 },
 ]
 label = "Stark Mountain Cavern - Ace Trainer Stefan"
-requires_national_dex = true
+in_fight_area = true
 
 [ace_trainer_skylar]
 id = 571
@@ -4628,7 +4628,7 @@ party = [
     { species = "pelipper", level = 58, num_moves = 4 },
 ]
 label = "Stark Mountain Cavern - Ace Trainer Skylar"
-requires_national_dex = true
+in_fight_area = true
 
 [ace_trainer_abel]
 id = 572
@@ -4637,7 +4637,7 @@ party = [
     { species = "crobat", level = 60, num_moves = 4 },
 ]
 label = "Stark Mountain Cavern - Ace Trainer Abel"
-requires_national_dex = true
+in_fight_area = true
 
 [ace_trainer_deanna]
 id = 573
@@ -4646,7 +4646,7 @@ party = [
     { species = "tropius", level = 56, num_moves = 4 },
 ]
 label = "Route 225 - Ace Trainer Deanna"
-requires_national_dex = true
+in_fight_area = true
 
 [ace_trainer_moira]
 id = 574
@@ -4656,7 +4656,7 @@ party = [
     { species = "claydol", level = 57, num_moves = 4 },
 ]
 label = "Route 228 - Ace Trainer Moira"
-requires_national_dex = true
+in_fight_area = true
 
 [ace_trainer_dana]
 id = 575
@@ -4665,7 +4665,7 @@ party = [
     { species = "kirlia", level = 56, num_moves = 4 },
 ]
 label = "Route 229 - Ace Trainer Dana"
-requires_national_dex = true
+in_fight_area = true
 
 [ace_trainer_mikayla]
 id = 576
@@ -4675,7 +4675,7 @@ party = [
     { species = "absol", level = 56, num_moves = 4 },
 ]
 label = "Route 227 - Ace Trainer Mikayla"
-requires_national_dex = true
+in_fight_area = true
 
 [ace_trainer_meagan]
 id = 577
@@ -4684,7 +4684,7 @@ party = [
     { species = "abomasnow", level = 58, num_moves = 4 },
 ]
 label = "Route 228 - Ace Trainer Meagan"
-requires_national_dex = true
+in_fight_area = true
 
 [ace_trainer_sandra]
 id = 578
@@ -4694,7 +4694,7 @@ party = [
     { species = "ninetales", level = 54, num_moves = 0 },
 ]
 label = "Route 229 - Ace Trainer Sandra"
-requires_national_dex = true
+in_fight_area = true
 
 [ace_trainer_kassandra]
 id = 579
@@ -4704,7 +4704,7 @@ party = [
     { species = "ampharos", level = 59, num_moves = 4 },
 ]
 label = "Stark Mountain Cavern - Ace Trainer Kassandra"
-requires_national_dex = true
+in_fight_area = true
 
 [ace_trainer_jasmin]
 id = 580
@@ -4712,7 +4712,7 @@ party = [
     { species = "drapion", level = 61, num_moves = 4 },
 ]
 label = "Stark Mountain Cavern - Ace Trainer Jasmin"
-requires_national_dex = true
+in_fight_area = true
 
 [ace_trainer_natasha]
 id = 581
@@ -4722,7 +4722,7 @@ party = [
     { species = "medicham", level = 58, num_moves = 4 },
 ]
 label = "Stark Mountain Cavern - Ace Trainer Natasha"
-requires_national_dex = true
+in_fight_area = true
 
 [ace_trainer_monique]
 id = 582
@@ -4732,7 +4732,7 @@ party = [
     { species = "gliscor", level = 58, num_moves = 4 },
 ]
 label = "Stark Mountain Cavern - Ace Trainer Monique"
-requires_national_dex = true
+in_fight_area = true
 
 [psychic_corbin]
 id = 583
@@ -4741,7 +4741,7 @@ party = [
     { species = "gallade", level = 56, num_moves = 0 },
 ]
 label = "Route 228 - Psychic Corbin"
-requires_national_dex = true
+in_fight_area = true
 
 [psychic_sterling]
 id = 584
@@ -4750,7 +4750,7 @@ party = [
     { species = "gallade", level = 59, num_moves = 0 },
 ]
 label = "Stark Mountain Cavern - Psychic Sterling"
-requires_national_dex = true
+in_fight_area = true
 
 [psychic_daisy]
 id = 585
@@ -4759,7 +4759,7 @@ party = [
     { species = "slowbro", level = 56, num_moves = 0 },
 ]
 label = "Route 225 - Psychic Daisy"
-requires_national_dex = true
+in_fight_area = true
 
 [psychic_chelsey]
 id = 586
@@ -4768,7 +4768,7 @@ party = [
     { species = "gardevoir", level = 59, num_moves = 0 },
 ]
 label = "Stark Mountain Cavern - Psychic Chelsey"
-requires_national_dex = true
+in_fight_area = true
 
 [black_belt_davon]
 id = 587
@@ -4778,7 +4778,7 @@ party = [
     { species = "machamp", level = 57, num_moves = 0 },
 ]
 label = "Route 228 - Black Belt Davon"
-requires_national_dex = true
+in_fight_area = true
 
 [black_belt_griffin]
 id = 588
@@ -4787,7 +4787,7 @@ party = [
     { species = "medicham", level = 58, num_moves = 4 },
 ]
 label = "Route 227 - Black Belt Griffin"
-requires_national_dex = true
+in_fight_area = true
 
 [black_belt_ray]
 id = 589
@@ -4796,7 +4796,7 @@ party = [
     { species = "toxicroak", level = 58, num_moves = 4 },
 ]
 label = "Stark Mountain Cavern - Black Belt Ray"
-requires_national_dex = true
+in_fight_area = true
 
 [black_belt_jarrett]
 id = 590
@@ -4804,7 +4804,7 @@ party = [
     { species = "machamp", level = 60, num_moves = 4 },
 ]
 label = "Stark Mountain Cavern - Black Belt Jarrett"
-requires_national_dex = true
+in_fight_area = true
 
 [ranger_kyler]
 id = 591
@@ -4814,7 +4814,7 @@ party = [
     { species = "empoleon", level = 58, num_moves = 0 },
 ]
 label = "Route 228 - Ranger Kyler"
-requires_national_dex = true
+in_fight_area = true
 
 [ranger_deshawn]
 id = 592
@@ -4824,7 +4824,7 @@ party = [
     { species = "granbull", level = 54, num_moves = 0 },
 ]
 label = "Route 229 - Ranger Deshawn"
-requires_national_dex = true
+in_fight_area = true
 
 [ranger_dwayne]
 id = 593
@@ -4834,7 +4834,7 @@ party = [
     { species = "donphan", level = 54, num_moves = 0 },
 ]
 label = "Route 225 - Ranger Dwayne"
-requires_national_dex = true
+in_fight_area = true
 
 [ranger_ashlee]
 id = 594
@@ -4843,7 +4843,7 @@ party = [
     { species = "arbok", level = 55, num_moves = 0 },
 ]
 label = "Route 225 - Ranger Ashlee"
-requires_national_dex = true
+in_fight_area = true
 
 [ranger_felicia]
 id = 595
@@ -4852,7 +4852,7 @@ party = [
     { species = "lopunny", level = 59, num_moves = 0 },
 ]
 label = "Route 227 - Ranger Felicia"
-requires_national_dex = true
+in_fight_area = true
 
 [ranger_krista]
 id = 596
@@ -4861,7 +4861,7 @@ party = [
     { species = "marowak", level = 57, num_moves = 0 },
 ]
 label = "Route 228 - Ranger Krista"
-requires_national_dex = true
+in_fight_area = true
 
 [swimmer_glenn]
 id = 597
@@ -4870,7 +4870,7 @@ party = [
     { species = "poliwhirl", level = 53, num_moves = 0 },
 ]
 label = "Route 230 - Swimmer Glenn"
-requires_national_dex = true
+in_fight_area = true
 
 [swimmer_kurt]
 id = 598
@@ -4880,7 +4880,7 @@ party = [
     { species = "kingler", level = 54, num_moves = 0 },
 ]
 label = "Route 230 - Swimmer Kurt"
-requires_national_dex = true
+in_fight_area = true
 
 [swimmer_sam]
 id = 599
@@ -4889,7 +4889,7 @@ party = [
     { species = "gastrodon", level = 53, num_moves = 0 },
 ]
 label = "Route 230 - Swimmer Sam"
-requires_national_dex = true
+in_fight_area = true
 
 [swimmer_wade]
 id = 600
@@ -4899,7 +4899,7 @@ party = [
     { species = "sharpedo", level = 56, num_moves = 0 },
 ]
 label = "Route 226 East - Swimmer Wade"
-requires_national_dex = true
+in_fight_area = true
 
 [swimmer_joanna]
 id = 601
@@ -4908,7 +4908,7 @@ party = [
     { species = "lapras", level = 54, num_moves = 0 },
 ]
 label = "Route 230 - Swimmer Joanna"
-requires_national_dex = true
+in_fight_area = true
 
 [swimmer_sophia]
 id = 602
@@ -4917,7 +4917,7 @@ party = [
     { species = "mantine", level = 53, num_moves = 0 },
 ]
 label = "Route 230 - Swimmer Sophia"
-requires_national_dex = true
+in_fight_area = true
 
 [swimmer_mallory]
 id = 603
@@ -4926,7 +4926,7 @@ party = [
     { species = "lombre", level = 54, num_moves = 0 },
 ]
 label = "Route 230 - Swimmer Mallory"
-requires_national_dex = true
+in_fight_area = true
 
 [swimmer_lydia]
 id = 604
@@ -4936,7 +4936,7 @@ party = [
     { species = "wailmer", level = 54, num_moves = 0 },
 ]
 label = "Route 226 East - Swimmer Lydia"
-requires_national_dex = true
+in_fight_area = true
 
 [dummy_605]
 id = 605
@@ -4953,7 +4953,7 @@ party = [
     { species = "shiftry", level = 59, num_moves = 4 },
 ]
 label = "Stark Mountain Cavern - Veteran Harlan"
-requires_national_dex = true
+in_fight_area = true
 
 [rival_spear_pillar_piplup]
 id = 607
@@ -6797,7 +6797,7 @@ party = [
 ]
 check = 2738
 label = "Survival Area - Rival"
-requires_national_dex = true
+in_fight_area = true
 
 [rival_survival_area_1_turtwig]
 id = 838
@@ -6811,7 +6811,7 @@ party = [
 ]
 check = 2738
 label = "Survival Area - Rival"
-requires_national_dex = true
+in_fight_area = true
 
 [rival_survival_area_1_chimchar]
 id = 839
@@ -6825,7 +6825,7 @@ party = [
 ]
 check = 2738
 label = "Survival Area - Rival"
-requires_national_dex = true
+in_fight_area = true
 
 [rival_survival_area_unused_piplup]
 id = 840
@@ -7094,7 +7094,7 @@ party = [
     { species = "drapion", level = 69, num_moves = 4 },
 ]
 label = "Pokemon League - Elite Four Aaron Rematch"
-requires_national_dex = true
+in_fight_area = true
 
 [elite_four_bertha_rematch]
 id = 867
@@ -7106,7 +7106,7 @@ party = [
     { species = "rhyperior", level = 71, num_moves = 4 },
 ]
 label = "Pokemon League - Elite Four Bertha Rematch"
-requires_national_dex = true
+in_fight_area = true
 
 [elite_four_flint_rematch]
 id = 868
@@ -7118,7 +7118,7 @@ party = [
     { species = "magmortar", level = 73, num_moves = 4 },
 ]
 label = "Pokemon League - Elite Four Flint Rematch"
-requires_national_dex = true
+in_fight_area = true
 
 [elite_four_lucian_rematch]
 id = 869
@@ -7130,7 +7130,7 @@ party = [
     { species = "gallade", level = 75, num_moves = 4 },
 ]
 label = "Pokemon League - Elite Four Lucian Rematch"
-requires_national_dex = true
+in_fight_area = true
 
 [champion_cynthia_rematch]
 id = 870
@@ -7143,7 +7143,7 @@ party = [
     { species = "garchomp", level = 78, num_moves = 4 },
 ]
 label = "Pokemon League - Champion Cynthia Rematch"
-requires_national_dex = true
+in_fight_area = true
 
 [rival_survival_area_2_piplup]
 id = 871
@@ -7634,7 +7634,7 @@ party = [
     { species = "purugly", level = 60, num_moves = 4 },
 ]
 label = "Stark Mountain First Room - Commander Mars"
-requires_national_dex = true
+in_fight_area = true
 
 [commander_jupiter_stark_mountain]
 id = 927
@@ -7644,4 +7644,4 @@ party = [
     { species = "skuntank", level = 60, num_moves = 4 },
 ]
 label = "Stark Mountain First Room - Commander Jupiter"
-requires_national_dex = true
+in_fight_area = true

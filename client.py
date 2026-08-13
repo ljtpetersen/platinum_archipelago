@@ -60,7 +60,7 @@ TRACKED_EVENTS = [
     "activate_roaming_mesprit",
     "talk_looker_veilstone_galactic",
 ]
-TRACKED_UNRANDOMIZED_REQUIRED_LOCATIONS = sorted(maximal_required_locations)
+TRACKED_UNRANDOMIZED_REQUIRED_LOCATIONS = maximal_required_locations
 TRACKED_HEIGHT_MAP_HEADERS = {35, 350}
 TRACKED_SAW_LOCATIONS = [
     "saw_route_210_barricade",
@@ -686,7 +686,7 @@ class PokemonPlatinumClient(BizHawkClient):
 
         if cmd == "Bounced":
             tags = args.get("tags", [])
-            if "DeathLink" + self.death_link_group in tags and ctx.last_death_link != args["data"]["time"]:
+            if self.death_link_group and "DeathLink" + self.death_link_group in tags and ctx.last_death_link != args["data"]["time"]:
                 ctx.last_death_link = max(args["data"]["time"], ctx.last_death_link)
                 text = args["data"].get("cause", "")
                 if text:
@@ -710,7 +710,7 @@ class PokemonPlatinumClient(BizHawkClient):
                 await ctx.send_msgs([{"cmd": "ConnectUpdate", "tags": ctx.tags}])
             self.previous_death_link = ctx.last_death_link
 
-        if self.previous_death_link != ctx.last_death_link:
+        if self.previous_death_link < ctx.last_death_link:
             self.previous_death_link = ctx.last_death_link
             if self.ignore_next_death_link:
                 self.ignore_next_death_link = False

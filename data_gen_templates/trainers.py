@@ -27,6 +27,7 @@ class TrainerData:
     check: LocationCheck | None = None
     parent_region: str | None = None
     requires_national_dex: bool = False
+    in_fight_area: bool = False
 
     def get_raw_id(self) -> int:
         return LocationTable.TRAINERS << 16 | self.id
@@ -55,6 +56,12 @@ def trainer_requires_national_dex(name: str) -> bool:
         return trainers[name + "_turtwig"].requires_national_dex
     else:
         return trainers[name].requires_national_dex
+
+def trainer_in_fight_area(name: str) -> bool:
+    if name.startswith("lucas") or name.startswith("rival") or name.startswith("dawn"):
+        return trainers[name + "_turtwig"].in_fight_area
+    else:
+        return trainers[name].in_fight_area
 
 trainer_id_to_trainer_const_name: Mapping[int, str] = {v.id:k for k, v in trainers.items()}
 
