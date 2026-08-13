@@ -1346,7 +1346,7 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
     prevent_poptracker_spoiling: PreventPoptrackerSpoiling
 
     def requires_badge(self, hm: str) -> bool:
-        return self.hm_badge_requirement.value == 1 or hm.lower() in self.remove_badge_requirements
+        return self.hm_badge_requirement.value == 1 and hm.lower() not in self.remove_badge_requirements
 
     def validate(self) -> None:
         if self.pastoria_barriers and self.randomize_fly_items.value == 0:
