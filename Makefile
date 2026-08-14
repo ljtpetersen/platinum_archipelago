@@ -21,6 +21,7 @@ SOURCES := __init__.py \
 	rom/eventdata.py \
 	rom/itemdata.py \
 	rom/mapdata.py \
+	rom/movedata.py \
 	rom/speciesdata.py \
 	rom/trainerdata.py \
 	rom/data/maps/route_207_rock_climb.bin \

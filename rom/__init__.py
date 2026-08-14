@@ -16,12 +16,11 @@ from typing import Any, Dict, TYPE_CHECKING, Tuple
 from worlds.Files import APAutoPatchInterface
 import zipfile
 
-
 from .itemdata import patch_items
 from .encounterdata import patch_encounters, patch_speencs
 from .eventdata import BOLLARD_GFX_ID, CUT_TREE_GFX_ID, PSYDUCK_GFX_ID, ROCK_SMASH_GFX_ID, STRENGTH_BOULDER_GFX_ID, patch_events
-from ..locations import location_types
 from .mapdata import replace_maps
+from .movedata import patch_moves
 from .speciesdata import patch_species
 from .trainerdata import patch_trainer_parties
 
@@ -30,11 +29,12 @@ from ..data import Hm, special_encounters
 from ..data.charmap import encode_string, RemoteItemColor
 from ..data.locations import locations, LocationTable
 from ..data.items import items, ItemClass
-from ..data.species import species, evolutions
+from ..data.species import species, evolutions, PokemonType
 from ..data.encounters import encounters, encounter_type_pairs, EncounterSlot
 from ..data.trainers import trainer_party_supporting_starters, trainers
-from ..data.moves import move_ids
+from ..data.moves import ContestType, MoveBattleEffect, MoveContestEffect, MoveClass, MoveRange, moves
 from ..items import raw_id_to_const_name
+from ..locations import location_types
 from ..options import TMHMCompatibility
 
 if TYPE_CHECKING:
@@ -107,6 +107,9 @@ class PokemonPlatinumPatch(APAutoPatchInterface):
         if "event_patches.json" in self.files:
             event_patches = json.loads(self.get_file("event_patches.json"))
             rom.files["/fielddata/eventdata/zone_event.narc"] = patch_events(rom.files["/fielddata/eventdata/zone_event.narc"], event_patches)
+        if "move_patches.json" in self.files:
+            move_patches = json.loads(self.get_file("move_patches.json"))
+            rom.files["/poketool/waza/pl_waza_tbl.narc"] = patch_moves(rom.files["/poketool/waza/pl_waza_tbl.narc"], move_patches)
 
         with open(target, 'wb') as f:
             f.write(rom.to_bytes())
@@ -787,7 +790,7 @@ def generate_output(world: "PokemonPlatinumWorld", output_directory: str, patch:
                         np["moves"] = []
                     else:
                         move_pool = sorted(set(species[new_spec].other_learnset) | {move for level, move in species[new_spec].level_learnset if level <= p.level})
-                        np["moves"] = [move_ids[move] for move in world.random.sample(move_pool, k=min(len(move_pool), p.num_moves))]
+                        np["moves"] = [moves[move].id for move in world.random.sample(move_pool, k=min(len(move_pool), p.num_moves))]
                     new_party.append(np)
                 trainer_party_patches[trainer.id] = new_party
             else:
@@ -804,7 +807,7 @@ def generate_output(world: "PokemonPlatinumWorld", output_directory: str, patch:
                         np["moves"] = []
                     else:
                         move_pool = sorted(set(species[new_spec].other_learnset) | {move for level, move in species[new_spec].level_learnset if level <= p.level})
-                        np["moves"] = [move_ids[move] for move in world.random.sample(move_pool, k=min(len(move_pool), p.num_moves))]
+                        np["moves"] = [moves[move].id for move in world.random.sample(move_pool, k=min(len(move_pool), p.num_moves))]
                     new_party.append(np)
                 trainer_party_patches[trainer.id] = new_party
     elif world.options.randomize_starters:
@@ -876,7 +879,7 @@ def generate_output(world: "PokemonPlatinumWorld", output_directory: str, patch:
                         np["moves"] = []
                     else:
                         move_pool = sorted(set(species[new_spec].other_learnset) | {move for level, move in species[new_spec].level_learnset if level <= p.level})
-                        np["moves"] = [move_ids[move] for move in world.random.sample(move_pool, k=min(len(move_pool), p.num_moves))]
+                        np["moves"] = [moves[move].id for move in world.random.sample(move_pool, k=min(len(move_pool), p.num_moves))]
                     new_party.append(np)
                 trainer_party_patches[trainer.id] = new_party
     if len(trainer_party_patches) > 0:
@@ -896,6 +899,63 @@ def generate_output(world: "PokemonPlatinumWorld", output_directory: str, patch:
             patches.setdefault("add_tmhm_compat", []).extend(compat_to_add)
     if len(species_patches) > 0:
         patch.write_file("species_patches.json", json.dumps(species_patches).encode('utf-8'))
+
+    move_patches: Mapping[int, MutableSequence[Tuple[str, Any]]] = {}
+    move_rando = world.options.move_randomization
+    match move_rando.type:
+        case "yes":
+            pokemon_types = [int(v) for v in PokemonType]
+            for move in moves.values():
+                move_patches.setdefault(move.id, []).append(("set_type", world.random.choice(pokemon_types)))
+        case "shuffle":
+            pokemon_types = [int(v.type) for v in moves.values()]
+            world.random.shuffle(pokemon_types)
+            for i, move in enumerate(moves.values()):
+                move_patches.setdefault(move.id, []).append(("set_type", pokemon_types[i]))
+        case "no":
+            pass
+
+    match move_rando.accuracy:
+        case "yes":
+            lower, upper = min(v.accuracy for v in moves.values()), max(v.accuracy for v in moves.values())
+            for move in moves.values():
+                move_patches.setdefault(move.id, []).append(("set_accuracy", world.random.randint(lower, upper)))
+        case "shuffle":
+            accuracies = [v.accuracy for v in moves.values()]
+            world.random.shuffle(accuracies)
+            for i, move in enumerate(moves.values()):
+                move_patches.setdefault(move.id, []).append(("set_accuracy", accuracies[i]))
+        case "no":
+            pass
+
+    match move_rando.pp:
+        case "yes":
+            lower, upper = min(v.pp for v in moves.values()), max(v.pp for v in moves.values())
+            for move in moves.values():
+                move_patches.setdefault(move.id, []).append(("set_pp", world.random.randint(lower, upper)))
+        case "shuffle":
+            pps = [v.pp for v in moves.values()]
+            world.random.shuffle(pps)
+            for i, move in enumerate(moves.values()):
+                move_patches.setdefault(move.id, []).append(("set_pp", pps[i]))
+        case "no":
+            pass
+
+    match move_rando.priority:
+        case "yes":
+            lower, upper = min(v.priority for v in moves.values()), max(v.priority for v in moves.values())
+            for move in moves.values():
+                move_patches.setdefault(move.id, []).append(("set_priority", world.random.randint(lower, upper)))
+        case "shuffle":
+            priorities = [v.priority for v in moves.values()]
+            world.random.shuffle(priorities)
+            for i, move in enumerate(moves.values()):
+                move_patches.setdefault(move.id, []).append(("set_priority", priorities[i]))
+        case "no":
+            pass
+
+    if move_patches:
+        patch.write_file("move_patches.json", json.dumps(move_patches).encode('utf-8'))
 
     binary_file_index = 0
 

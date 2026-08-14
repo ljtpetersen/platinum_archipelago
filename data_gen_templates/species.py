@@ -5,8 +5,13 @@
 
 from collections.abc import Mapping, MutableSet, Sequence, Set
 from dataclasses import dataclass
+from enum import IntEnum
 from typing import Tuple
 from . import Hm
+
+class PokemonType(IntEnum):
+    DUMMY = 0 # TEMPLATE: DELETE
+    # TEMPLATE: POKEMON_TYPES
 
 @dataclass(frozen=True)
 class PreEvolution:

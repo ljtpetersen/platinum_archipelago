@@ -5,8 +5,8 @@
 
 from collections.abc import Mapping, MutableMapping, Sequence, Set
 from dataclasses import dataclass
-from typing import Any, Optional
-from Options import Choice, DeathLink, DefaultOnToggle, NamedRange, OptionDict, OptionError, OptionGroup, OptionSet, PerGameCommonOptions, Range, StartInventoryPool, Toggle, Option, FreeText
+from typing import Any, Literal, Optional
+from Options import Choice, DeathLink, DefaultOnToggle, NamedRange, OptionDict, OptionError, OptionGroup, OptionSet, PerGameCommonOptions, Range, StartInventoryPool, Toggle, Option, FreeText, Visibility
 
 from .data import special_encounters
 from .data.species import species, regional_mons, having_two_level_evos, legendary_mons, expand_set_via_evolutions
@@ -1154,6 +1154,43 @@ class PreventPoptrackerSpoiling(OptionSet):
         "early_sunyshore",
     }
 
+YES_NO_SHUFFLE = Literal["yes"] | Literal["no"] | Literal["shuffle"]
+
+class MoveRandomization(OptionDict):
+    """
+    Randomize properties of moves.
+    Each of the options can take one of three values: "no", "yes", "shuffle".
+    """
+    visibility = Visibility(0)
+    default = {
+        "type": "no",
+        "accuracy": "no",
+        "pp": "no",
+        "priority": "no",
+    }
+
+    type: YES_NO_SHUFFLE
+    clas: YES_NO_SHUFFLE
+    accuracy: YES_NO_SHUFFLE
+    pp: YES_NO_SHUFFLE
+    effect: YES_NO_SHUFFLE
+    effect_chance: YES_NO_SHUFFLE
+    range: YES_NO_SHUFFLE
+    priority: YES_NO_SHUFFLE
+    flags: YES_NO_SHUFFLE
+    contest_effect: YES_NO_SHUFFLE
+    contest_type: YES_NO_SHUFFLE
+
+    def __getattr__(self, name: str) -> Any:
+        if name in MoveRandomization.default:
+            v = self.get(name, MoveRandomization.default[name])
+            if isinstance(v, bool):
+                return "yes" if v else "no"
+            else:
+                return v
+        else:
+            raise AttributeError(name, self)
+
 slot_data_options: Sequence[str] = [
     "hms",
     "badges",
@@ -1319,6 +1356,7 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
     trainersanity_required: TrainersanityRequired
     randomize_trainer_parties: RandomizeTrainerParties
     trainer_party_blacklist: TrainerPartyBlacklist
+    move_randomization: MoveRandomization
 
     game_options: GameOptions
     blind_trainers: BlindTrainers
@@ -1577,6 +1615,13 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
         if len(self.trainersanity_required.value) > self.trainersanity.value:
             raise OptionError(f"more trainersanity locations are required ({len(self.trainersanity_required.value)}) than alloted ({self.trainersanity.value})")
 
+        if self.move_randomization.keys() - MoveRandomization.default.keys():
+            raise OptionError(f"unknown move randomization keys: {self.move_randomization.keys() - MoveRandomization.default.keys()}")
+        else:
+            for k, v in self.move_randomization.items():
+                if not isinstance(v, bool) and v not in {"no", "yes", "shuffle"}:
+                    raise OptionError(f"invalid move randomization choice for {k}: {v}")
+
     def save_options(self) -> MutableMapping[str, Any]:
         return self.as_dict(*slot_data_options)
 
@@ -1664,6 +1709,7 @@ OPTION_GROUPS = [
             RandomizeRoamers,
             RoamerBlacklist,
             CanResetLegendariesInAPHelper,
+            MoveRandomization
         ],
     ),
     OptionGroup(

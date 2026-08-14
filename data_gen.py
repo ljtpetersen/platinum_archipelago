@@ -221,6 +221,13 @@ class MiscData:
     aux_reqd_items: Sequence[str]
     national_dex_requiring_encs: Sequence[str]
     fight_area_encs: Sequence[str]
+    move_classes: Sequence[str]
+    types: Sequence[str]
+    move_battle_effects: Sequence[str]
+    move_ranges: Sequence[str]
+    move_flags: Sequence[str]
+    move_contest_effects: Sequence[str]
+    contest_types: Sequence[str]
 
 @dataclass(frozen=True)
 class PreEvolution:
@@ -327,6 +334,42 @@ class SpecialEncounters:
     roamers: Sequence[str]
     odd_keystone: Sequence[str]
 
+@dataclass(frozen=True)
+class Move:
+    id: int
+    name: str
+    clas: str
+    description: Sequence[str]
+    type: str
+    power: int
+    accuracy: int
+    pp: int
+    effect: Mapping[str, str | int]
+    range: str
+    priority: int
+    flags: Sequence[str]
+    contest: Mapping[str, str]
+
+    def __str__(self) -> str:
+        effect: str = f"MoveEffect(type=MoveBattleEffect.{self.effect["type"].upper()}"
+        if self.effect["chance"] != 0:
+            effect += f", chance={self.effect["chance"]})"
+        else:
+            effect += ")"
+
+        ret = f"Move(id={self.id}, name=\"{self.name}\", clas=MoveClass.{self.clas.upper()}, description={self.description}, type=PokemonType.{self.type.upper()}, power={self.power}"
+        if self.accuracy != 100:
+            ret += f", accuracy={self.accuracy}"
+        ret += f", pp={self.pp}, effect={effect}"
+        if self.range != "single_target":
+            ret += f", range=MoveRange.{self.range.upper()}"
+        if self.priority != 0:
+            ret += f", priority={self.priority}"
+        if self.flags:
+            ret += f", flags={" | ".join(f"MoveFlag.{v.upper()}" for v in self.flags)}"
+        ret += f", contest=MoveContest(type=ContestType.{self.contest["type"].upper()}, effect=MoveContestEffect.{self.contest["effect"].upper()}))"
+        return ret
+
 class ParserState:
     regions: Mapping[str, Region]
     encounters: Mapping[str, Encounters]
@@ -337,7 +380,7 @@ class ParserState:
     rules: Rules
     trainers: Mapping[str, Trainer]
     special_encounters: SpecialEncounters
-    moves: Mapping[str, int]
+    moves: Mapping[str, Move]
     event_checks: Mapping[str, Check]
 
     def __getattr__(self, name: str) -> Any:
@@ -409,7 +452,7 @@ class ParserState:
         self.special_encounters = SpecialEncounters(**get_toml("special_encounters"))
 
     def parse_moves(self):
-        self.moves = get_toml("moves")
+        self.moves = {k:Move(**v) for k, v in get_toml("moves").items()}
 
     def validate(self):
         loc_pairs = set()
@@ -574,7 +617,7 @@ class ParserState:
 
         for seq in [
             "regular_honey_tree_encounters",
-            "munchlax_honey_tree_encounters",
+"munchlax_honey_tree_encounters",
             "trophy_garden_daily_encounters",
             "great_marsh_observatory_encounters",
             "national_dex_great_marsh_observatory_encounters",
@@ -678,7 +721,14 @@ class ParserState:
     def generate_moves(self) -> Mapping[str, Sequence[str]]:
         ret = {}
 
-        ret["MOVE_IDS"] = [f"\"{k}\": {v},\n" for k, v in self.moves.items()]
+        ret["MOVE_CLASSES"] = [f"{k.upper()} = {v}\n" for v, k in enumerate(self.misc_data.move_classes)]
+        ret["MOVE_BATTLE_EFFECTS"] = [f"{k.upper()} = {v}\n" for v, k in enumerate(self.misc_data.move_battle_effects)]
+        ret["MOVE_BATTLE_EFFECTS_WITH_CHANCE"] = {f"MoveBattleEffect.{move.effect["type"].upper()},\n" for move in self.moves.values() if move.effect["chance"] != 0}
+        ret["MOVE_RANGES"] = [f"{k.upper()} = {v}\n" for v, k in enumerate(self.misc_data.move_ranges)]
+        ret["MOVE_FLAGS"] = [f"{k.upper()} = 1 << {v}\n" for v, k in enumerate(self.misc_data.move_flags)]
+        ret["MOVE_CONTEST_EFFECTS"] = [f"{k.upper()} = {v}\n" for v, k in enumerate(self.misc_data.move_contest_effects)]
+        ret["CONTEST_TYPES"] = [f"{k.upper()} = {v}\n" for v, k in enumerate(self.misc_data.contest_types)]
+        ret["MOVES"] = [f"\"{k}\": {v},\n" for k, v in self.moves.items()]
 
         return ret
 
@@ -743,6 +793,7 @@ class ParserState:
     def generate_species(self) -> Mapping[str, Sequence[str]]:
         ret = {}
 
+        ret["POKEMON_TYPES"] = [f"{v.upper()} = {k}\n" for k, v in enumerate(self.misc_data.types)]
         ret["SPECIES"] = [f"\"{name}\": {spec.to_string(self.item_name_map, self.misc_data.tm_of_move)},\n"
             for name, spec in self.species.items()]
         ret["REGIONAL_SPECIES"] = [f"\"{name}\",\n"
