@@ -92,6 +92,7 @@ appropriately.
 * The clown in front of Jubilife TV now moves immediately after the Team Galactic event in Jubuilife City, instead of requiring leaving and re-entering.
 * Fixed broken texture in Route 214.
 * Remove badge requirement option has incorrect effect.
+* The bag can no longer be used in the Great Marsh if it has not yet been obtained.
 ### Removed
 * The `all` key item option no longer exists.
 

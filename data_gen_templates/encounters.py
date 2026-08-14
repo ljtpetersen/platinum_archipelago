@@ -53,3 +53,11 @@ fight_area_encs: Set[str] = {
     # TEMPLATE: FIGHT_AREA_ENCS
     "" # TEMPLATE: DELETE
 }
+
+def encounter_string_to_key(s: str) -> Tuple[str, str, int]:
+    i = s.rfind("_")
+    if s[:i].endswith("rod"):
+        j = s.rfind("_", 0, i - 4)
+    else:
+        j = s.rfind("_", 0, i)
+    return s[:j], s[j + 1:i], int(s[i + 1:])

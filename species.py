@@ -411,11 +411,12 @@ def add_virt_specs(world: "PokemonPlatinumWorld", regions: Mapping[str, Region])
         location.place_locked_item(world.create_event(f"see_mon_{mon}"))
         reg.locations.append(location)
 
-    if len(world.options.dexsanity_whitelist.blacklist()) > 0:
-        possible_dexsanity_mons = sorted(accessible_dexsanity & world.options.dexsanity_whitelist.blacklist())
-    else:
-        possible_dexsanity_mons = sorted(accessible_dexsanity - world.options.dexsanity_blacklist.blacklist())
-    world.dexsanity_specs = world.random.sample(possible_dexsanity_mons, k=world.options.dexsanity.value - len(required_dexsanity)) + sorted(required_dexsanity)
+    if world.slot_data is None:
+        if len(world.options.dexsanity_whitelist.blacklist()) > 0:
+            possible_dexsanity_mons = sorted(accessible_dexsanity & world.options.dexsanity_whitelist.blacklist())
+        else:
+            possible_dexsanity_mons = sorted(accessible_dexsanity - world.options.dexsanity_blacklist.blacklist())
+        world.dexsanity_specs = world.random.sample(possible_dexsanity_mons, k=world.options.dexsanity.value - len(required_dexsanity)) + sorted(required_dexsanity)
 
 def encounter_slot_label(key: Tuple[str, str, int], in_logic_encounters: Set[str]) -> str:
     (header, table, index) = key

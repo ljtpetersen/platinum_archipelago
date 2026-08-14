@@ -4,6 +4,7 @@
 # Licensed under MIT. See LICENSE
 
 from collections.abc import Sequence, Set
+from typing import Tuple
 
 regular_honey_tree: Sequence[str] = [
     # TEMPLATE: REGULAR_HONEY_TREE_ENCOUNTERS
@@ -38,3 +39,7 @@ roamers: Sequence[str] = [
 ]
 
 requiring_national_dex: Set[str] = {"roamers", "great_marsh_observatory_national_dex", "trophy_garden"}
+
+def encounter_string_to_key(s: str) -> Tuple[str, int]:
+    i = s.rfind("_")
+    return s[:i], int(s[i + 1:])

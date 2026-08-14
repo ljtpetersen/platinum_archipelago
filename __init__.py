@@ -8,11 +8,11 @@ from collections import defaultdict
 from collections.abc import Iterable, Mapping, MutableMapping, MutableSequence, MutableSet, Sequence
 import pkgutil
 import settings
-from typing import ClassVar, Any, Tuple
+from typing import ClassVar, Any, Optional, Tuple
 from worlds.AutoWorld import WebWorld, World
 
 from .client import PokemonPlatinumClient
-from .data import items as itemdata, rules as ruledata, Hm, species as speciesdata, regions as regiondata, trainers as trainerdata, map_header_labels
+from .data import encounters as encounterdata, items as itemdata, rules as ruledata, Hm, species as speciesdata, special_encounters, regions as regiondata, trainers as trainerdata, map_header_labels
 from .data.locations import RequiredLocations, LocationTable
 from .items import create_item_label_to_code_map, get_item_classification, PokemonPlatinumItem, get_item_groups
 from .locations import PokemonPlatinumLocation, create_location_label_to_code_map, create_locations
@@ -89,8 +89,7 @@ class PokemonPlatinumWorld(World):
     ruledata: ruledata.Rules
 
     itempool: Sequence[PokemonPlatinumItem]
-
-    seed: int
+    slot_data: Optional[Mapping[str, Any]]
 
     def __init__(self, multiworld: MultiWorld, player: int) -> None:
         super().__init__(multiworld, player)
@@ -105,17 +104,23 @@ class PokemonPlatinumWorld(World):
         self.added_hm_compatibility = {}
         self.itempool = []
         self.long_grass_slots = []
+        self.slot_data = None
 
     def generate_early(self) -> None:
         if hasattr(self.multiworld, "generation_is_fake") \
             and hasattr(self.multiworld, "re_gen_passthrough") \
             and "Pokemon Platinum" in self.multiworld.re_gen_passthrough: # type: ignore
             slot_data: Mapping[str, Any] = self.multiworld.re_gen_passthrough["Pokemon Platinum"] # type: ignore
-            self.seed = slot_data["seed"]
             self.options.load_options(slot_data)
-        else:
-            self.seed = self.random.getrandbits(64)
-        self.random.seed(self.seed)
+            self.dexsanity_specs = [speciesdata.species_id_to_const_name[id] for id in slot_data["dexsanity_specs"]]
+            self.trainersanity_trainers = [trainerdata.trainer_raw_id_to_trainer_const_name[id] for id in slot_data["trainersanity_trainers"]]
+            ool_encounters = set(slot_data["ool_encounters"])
+            self.generated_encounters = {encounterdata.encounter_string_to_key(k):speciesdata.species_id_to_const_name[v] for k, v in slot_data["generated_encounters"].items() if k not in ool_encounters}
+            ool_speencs = set(slot_data["ool_special_encounters"])
+            self.generated_speencs = {special_encounters.encounter_string_to_key(k):speciesdata.species_id_to_const_name[v] for k, v in slot_data["generated_special_encounters"].items() if k not in ool_speencs}
+            self.generated_roamers = tuple(speciesdata.species_id_to_const_name[v] for v in slot_data["generated_roamers"]) # type: ignore
+            self.generated_munchlax_trees = slot_data["generated_munchlax_trees"]
+            self.slot_data = slot_data
 
         self.required_locations = RequiredLocations(self.options)
         self.options.validate()
@@ -125,20 +130,23 @@ class PokemonPlatinumWorld(World):
         return "Great Ball"
 
     def create_regions(self) -> None:
-        self.generated_munchlax_trees = tuple(self.random.sample(list(range(21)), k=4)) # type: ignore
+        if self.slot_data is None:
+            self.generated_munchlax_trees = tuple(self.random.sample(list(range(21)), k=4)) # type: ignore
         regions, trainers = create_regions(self)
 
         randomize_starters(self)
-        randomize_trainer_parties_and_encounters(self)
-        randomize_roamers(self)
+        if self.slot_data is None:
+            randomize_trainer_parties_and_encounters(self)
+            randomize_roamers(self)
         add_virt_specs(self, regions)
-        required_trainersanity = self.options.trainersanity_required.to_const_names()
-        trainers = trainers - required_trainersanity
-        if len(self.options.trainersanity_whitelist.value) > 0:
-            possible_trainersanity = sorted(trainers & self.options.trainersanity_whitelist.to_const_names())
-        else:
-            possible_trainersanity = sorted(trainers - self.options.trainersanity_blacklist.to_const_names())
-        self.trainersanity_trainers = self.random.sample(possible_trainersanity, k=self.options.trainersanity.value - len(required_trainersanity)) + sorted(required_trainersanity)
+        if self.slot_data is None:
+            required_trainersanity = self.options.trainersanity_required.to_const_names()
+            trainers = trainers - required_trainersanity
+            if len(self.options.trainersanity_whitelist.value) > 0:
+                possible_trainersanity = sorted(trainers & self.options.trainersanity_whitelist.to_const_names())
+            else:
+                possible_trainersanity = sorted(trainers - self.options.trainersanity_blacklist.to_const_names())
+            self.trainersanity_trainers = self.random.sample(possible_trainersanity, k=self.options.trainersanity.value - len(required_trainersanity)) + sorted(required_trainersanity)
         create_locations(self, regions)
         self.multiworld.regions.extend(regions.values())
 
@@ -206,16 +214,24 @@ class PokemonPlatinumWorld(World):
 
     def generate_basic(self) -> None:
         fill_species(self)
-        verify_hm_accessibility(self)
+        if self.slot_data is None:
+            verify_hm_accessibility(self)
+        else:
+            for spec, seq in self.slot_data["added_hm_compatibility"]:
+                for hm in seq:
+                    self.ruledata.hm_mons[Hm(hm.upper())].append("mon_" + spec)
 
     def fill_slot_data(self) -> Mapping[str, Any]:
+        if self.slot_data is not None:
+            return self.slot_data
         ret = self.options.save_options()
-        ret["seed"] = self.seed
         ret["dexsanity_specs"] = [speciesdata.species[spec].id for spec in self.dexsanity_specs]
         ret["trainersanity_trainers"] = [trainerdata.trainers[trainer + "_turtwig" if trainer.startswith("rival_") else trainer].get_raw_id() for trainer in self.trainersanity_trainers]
         ret["generated_encounters"] = {f"{region}_{table}_{i}":speciesdata.species[spec].id for (region, table, i), spec in self.generated_encounters.items()}
+        ret["ool_encounters"] = [f"{region}_{table}_{i}" for (region, table, i) in self.ool_encounters]
         ret["generated_encounters"].update({f"{region}_{table}_{i}":speciesdata.species[spec].id for (region, table, i), spec in self.ool_encounters.items()})
         ret["generated_special_encounters"] = {f"{speenc}_{i}":speciesdata.species[spec].id for (speenc, i), spec in self.generated_speencs.items()}
+        ret["ool_special_encounters"] = {f"{speenc}_{i}" for (speenc, i) in self.ool_speencs}
         ret["generated_special_encounters"].update({f"{speenc}_{i}":speciesdata.species[spec].id for (speenc, i), spec in self.ool_speencs.items()})
         ret["generated_roamers"] = [speciesdata.species[spec].id for spec in self.generated_roamers]
         ret["generated_munchlax_trees"] = list(self.generated_munchlax_trees)

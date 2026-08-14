@@ -85,3 +85,5 @@ in_game_trainers: Sequence[str] = get_in_game_trainers()
 in_game_trainer_labels: Sequence[str] = list({trainers[add_starter_suffix(v)].label for v in in_game_trainers})
 
 trainer_name_to_trainer_const_name: Mapping[str, str] = {v.label:remove_starter_suffix(k) for k, v in trainers.items()}
+
+trainer_raw_id_to_trainer_const_name: Mapping[int, str] = {v.get_raw_id():remove_starter_suffix(k) for k, v in trainers.items()}
