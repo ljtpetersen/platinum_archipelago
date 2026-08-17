@@ -2621,7 +2621,7 @@ original_item = "awakening"
 type = "overworld"
 table = "overworld"
 check = 1268
-label = "Upper Route 204 - Item Above Cave Entrance"
+label = "Route 204 North - Item Above Cave Entrance"
 id = 254
 
 [route_204_north_tm09]
@@ -2629,7 +2629,7 @@ original_item = "tm09"
 type = "overworld"
 table = "overworld"
 check = 1028
-label = "Upper Route 204 - Item on Left"
+label = "Route 204 North - Item on Left"
 id = 14
 
 [route_204_north_tm78]
@@ -2637,7 +2637,7 @@ original_item = "tm78"
 type = "npc_gift"
 table = "base"
 check = 197
-label = "Upper Route 204 - Woman Behind Cut Tree"
+label = "Route 204 North - Woman Behind Cut Tree"
 id = 54
 
 [route_204_south_hp_up]
@@ -2645,7 +2645,7 @@ original_item = "hp_up"
 type = "overworld"
 table = "overworld"
 check = 1024
-label = "Route 204 - Item Behind Eastern Pond"
+label = "Route 204 South - Item Behind Eastern Pond"
 id = 10
 
 [route_204_south_parlyz_heal]
@@ -2653,7 +2653,7 @@ original_item = "parlyz_heal"
 type = "overworld"
 table = "overworld"
 check = 1096
-label = "Route 204 - Item Behind Small Pond"
+label = "Route 204 South - Item Behind Small Pond"
 id = 82
 
 [route_204_south_sea_incense]
@@ -2661,7 +2661,7 @@ original_item = "sea_incense"
 type = "overworld"
 table = "overworld"
 check = 1023
-label = "Route 204 - Item Behind Southwest Pond"
+label = "Route 204 South - Item Behind Southwest Pond"
 id = 9
 
 [route_205_north_guard_spec]
@@ -2669,7 +2669,7 @@ original_item = "guard_spec"
 type = "overworld"
 table = "overworld"
 check = 1037
-label = "Route 205 - Item South of Pond"
+label = "Route 205 North - Item South of Pond"
 id = 23
 
 [route_205_south_heal_ball]
