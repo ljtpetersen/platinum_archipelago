@@ -3127,7 +3127,7 @@ original_item = "red_shard"
 type = "overworld"
 table = "overworld"
 check = 1293
-label = "Route 210 North - Item to Left of Grass"
+label = "Route 210 Center - Item to Left of Grass"
 id = 278
 
 [route_210_north_shiny_stone]
@@ -3135,7 +3135,7 @@ original_item = "shiny_stone"
 type = "hidden"
 table = "hidden"
 check = 775
-label = "Route 210 North - Hidden Item on Ledge in Pit"
+label = "Route 210 Center - Hidden Item on Ledge in Pit"
 id = 45
 
 [route_210_north_smoke_ball]
@@ -3146,7 +3146,7 @@ check = 1131
 label = "Route 210 North - Item Under Bridge Next to Hidden Ninja Boy"
 id = 117
 
-[route_210_north_tm30]
+[_north_tm30]
 original_item = "tm30"
 type = "overworld"
 table = "overworld"
@@ -3154,7 +3154,7 @@ check = 1133
 label = "Route 210 North - Item Behind Breakable Rocks"
 id = 119
 
-[route_210_north_wave_incense]
+[_north_wave_incense]
 original_item = "wave_incense"
 type = "overworld"
 table = "overworld"
@@ -3162,55 +3162,55 @@ check = 1132
 label = "Route 210 North - Item Under West Bridge"
 id = 118
 
-[route_210_north_zinc]
+[_north_zinc]
 original_item = "zinc"
 type = "overworld"
 table = "overworld"
 check = 1294
-label = "Route 210 North - Item on Ledge Below Move Tutor"
+label = "Route 210 Center - Item on Ledge Below Move Tutor"
 id = 279
 
-[route_210_south_full_heal]
+[_south_full_heal]
 original_item = "full_heal"
 type = "hidden"
 table = "hidden"
 check = 769
-label = "Route 210 Middle - Hidden Item in Long Grass Lower Left"
+label = "Route 210 Center - Hidden Item in Long Grass Lower Left"
 id = 39
 
-[route_210_south_hyper_potion]
+[_south_hyper_potion]
 original_item = "hyper_potion"
 type = "overworld"
 table = "overworld"
 check = 1117
-label = "Route 210 Middle - Item in Center"
+label = "Route 210 Center - Item in Center"
 id = 103
 
-[route_210_south_hyper_potion_0]
+[_south_hyper_potion_0]
 original_item = "hyper_potion"
 type = "hidden"
 table = "hidden"
 check = 919
-label = "Route 210 Middle - Hidden Item in Long Grass Lower Right"
+label = "Route 210 Center - Hidden Item in Long Grass Lower Right"
 id = 189
 
-[route_210_south_max_repel]
+[_south_max_repel]
 original_item = "max_repel"
 type = "overworld"
 table = "overworld"
 check = 1114
-label = "Route 210 Middle - Item Near Bottom Left Tree in Long Grass"
+label = "Route 210 Center - Item Near Bottom Left Tree in Long Grass"
 id = 100
 
-[route_210_south_nest_ball]
+[_south_nest_ball]
 original_item = "nest_ball"
 type = "overworld"
 table = "overworld"
 check = 1116
-label = "Route 210 Middle - Item in Northeast Grass Corner"
+label = "Route 210 Center - Item in Northeast Grass Corner"
 id = 102
 
-[route_210_south_old_charm]
+[_south_old_charm]
 id = 79
 check = 263
 original_item = "old_charm"
@@ -3218,7 +3218,7 @@ type = "key_item"
 table = "base"
 label = "Route 210 South - Third Item from Cynthia"
 
-[route_210_south_rare_candy]
+[_south_rare_candy]
 original_item = "rare_candy"
 type = "hidden"
 table = "hidden"
@@ -3226,7 +3226,7 @@ check = 884
 label = "Route 210 South - Hidden Item in Grass Next to Honey Tree"
 id = 154
 
-[route_210_south_super_repel]
+[_south_super_repel]
 original_item = "super_repel"
 type = "overworld"
 table = "overworld"
@@ -3234,7 +3234,7 @@ check = 1113
 label = "Route 210 South - Item in Northwest Corner"
 id = 99
 
-[route_210_south_tm51]
+[_south_tm51]
 id = 78
 check = 199
 original_item = "tm51"
@@ -3242,20 +3242,20 @@ type = "npc_gift"
 table = "base"
 label = "Route 210 South - Gift from Girl on Hill"
 
-[route_210_south_ultra_ball]
+[_south_ultra_ball]
 original_item = "ultra_ball"
 type = "hidden"
 table = "hidden"
 check = 879
-label = "Route 210 Middle - Hidden Item in Long Grass Upper Left"
+label = "Route 210 Center - Hidden Item in Long Grass Upper Left"
 id = 149
 
-[route_210_south_ultra_ball_0]
+[_south_ultra_ball_0]
 original_item = "ultra_ball"
 type = "hidden"
 table = "hidden"
 check = 932
-label = "Route 210 Middle - Hidden Item in Long Grass Upper Right"
+label = "Route 210 Center - Hidden Item in Long Grass Upper Right"
 id = 202
 
 [route_211_east_calcium]
