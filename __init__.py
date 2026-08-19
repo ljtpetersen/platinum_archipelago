@@ -311,7 +311,7 @@ class PokemonPlatinumWorld(World):
 
         if encounters_per_pokemon:
             spoiler_handle.write(f"\nRandomized Pokemon ({self.player_name}):\n")
-            lines = [f"{speciesdata.species[mon].label}: {', '.join(locations)}\n"
+            lines = [f"{speciesdata.species[mon].label}: {', '.join(sorted(locations))}\n"
                      for mon, locations in encounters_per_pokemon.items()]
             lines.sort()
             spoiler_handle.writelines(lines)

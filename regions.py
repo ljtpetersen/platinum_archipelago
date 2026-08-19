@@ -50,7 +50,7 @@ def create_regions(world: "PokemonPlatinumWorld") -> Tuple[Mapping[str, Region],
         if header not in encounters:
             return
         encs = encounters[wild_region_data.header]
-        for type in wild_region_data.accessible_encounters:
+        for type in sorted(wild_region_data.accessible_encounters):
             name = f"{header}_{type}"
             if name not in regions:
                 wild_region = Region(name, world.player, world.multiworld)

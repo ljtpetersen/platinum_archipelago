@@ -56,6 +56,7 @@ location_types: Mapping[str, LocationType] = {
     "fly_location": LocationType(
         is_enabled = lambda opts : opts.randomize_fly_items.value != 0,
         should_be_added = lambda opts : opts.randomize_fly_items.value != 0 or opts.require_fly_items_for_flight.value == 1,
+        should_have_item = lambda opts : opts.randomize_fly_items.value != 0 or opts.require_fly_items_for_flight.value == 1,
     ),
     "fly_location_league": LocationType(
         is_enabled = lambda opts : opts.randomize_fly_items.value == RandomizeFlyItems.option_all,

@@ -1,3 +1,7 @@
+# rom/movedata.py
+#
+# Copyright (C) 2026 James Petersen <m@jamespetersen.ca>
+# Licensed under MIT. See LICENSE
 
 from collections.abc import Mapping, Sequence
 from dataclasses import astuple, dataclass

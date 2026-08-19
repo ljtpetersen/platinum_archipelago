@@ -98,7 +98,7 @@ def fill_unrandomized_trainer_parties(world: "PokemonPlatinumWorld") -> None:
             for i, slot in enumerate(trainer_party_supporting_starters(trainer)):
                 world.generated_trainer_parties[(trainer, i)] = slot.species
 
-def randomize_encounters(world: "PokemonPlatinumWorld", req_specs: Set[str]) -> None:
+def randomize_encounters(world: "PokemonPlatinumWorld", req_specs: Set[str], req_before_specs: Set[str]) -> None:
     slots = {(rd.header, table, i)
         for name, rd in regiondata.items()
         if is_region_enabled(name, world.options) and rd.header in encounterdata \
@@ -141,10 +141,10 @@ def randomize_encounters(world: "PokemonPlatinumWorld", req_specs: Set[str]) -> 
         before_dex_slots_spe = sorted(before_dex_slots_spe_set)
         after_dex_slots = sorted(slots - before_dex_slots_set)
         after_dex_slots_spe = sorted(speenc_slots - before_dex_slots_spe_set)
-    before_mons = sorted(req_specs)
+    before_mons = sorted(req_before_specs)
     assert len(before_mons) <= len(before_dex_slots) + len(before_dex_slots_spe)
     bl = world.options.encounter_species_blacklist.blacklist()
-    new_specs = []
+    new_specs = sorted(req_specs)
     pokemon_pool = [mon for mon in speciesdata if mon not in bl]
     new_specs += world.random.choices(pokemon_pool, k=len(slots) + len(speenc_slots) - len(new_specs) - len(before_mons))
     world.random.shuffle(new_specs)
@@ -262,7 +262,7 @@ def randomize_trainer_parties_and_encounters(world: "PokemonPlatinumWorld") -> N
         } - world.options.encounter_species_blacklist.blacklist()
         amity_square_mon = world.random.choice(sorted(amity_square_mons))
         munchlax_mon = world.random.choice(sorted({"munchlax", "snorlax"} & all_enc)) if "level_happiness" in world.options.in_logic_evolution_methods.methods() else "snorlax"
-        randomize_encounters(world, generate_required_encounter_species(world) | set(world.random.sample(poss_enc, k=num_enc)) | {munchlax_mon, "kecleon", "geodude", amity_square_mon})
+        randomize_encounters(world, generate_required_encounter_species(world) | {munchlax_mon, "kecleon", "geodude", amity_square_mon}, set(world.random.sample(poss_enc, k=num_enc)))
         randomize_trainer_parties(world, set(world.random.sample(poss_trp, k=num_trp)))
     elif world.options.randomize_encounters:
         bl = world.options.encounter_species_blacklist.blacklist()
@@ -313,7 +313,7 @@ def randomize_trainer_parties_and_encounters(world: "PokemonPlatinumWorld") -> N
         } - world.options.encounter_species_blacklist.blacklist()
         amity_square_mon = world.random.choice(sorted(amity_square_mons))
         munchlax_mon = world.random.choice(sorted({"munchlax", "snorlax"} & (speciesdata.keys() - bl))) if "level_happiness" in world.options.in_logic_evolution_methods.methods() else "snorlax"
-        randomize_encounters(world, generate_required_encounter_species(world) | req_encounter_specs | {munchlax_mon, "kecleon", "geodude", amity_square_mon})
+        randomize_encounters(world, generate_required_encounter_species(world) | {munchlax_mon, "kecleon", "geodude", amity_square_mon}, req_encounter_specs)
         fill_unrandomized_trainer_parties(world)
     elif world.options.randomize_trainer_parties:
         bl = world.options.trainer_party_blacklist.blacklist()
@@ -452,7 +452,7 @@ def generate_required_encounter_species(world: "PokemonPlatinumWorld") -> Set[st
     ret = set()
     accessible = set()
     poss_enc = speciesdata.keys() - world.options.encounter_species_blacklist.blacklist()
-    not_added = list(poss_enc)
+    not_added = sorted(poss_enc)
     world.random.shuffle(not_added)
     if len(world.options.dexsanity_whitelist.blacklist()) > 0:
         poss_dexs = world.options.dexsanity_whitelist.blacklist()

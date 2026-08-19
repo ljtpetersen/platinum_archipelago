@@ -39,6 +39,7 @@ SOURCES := __init__.py \
 	rom/data/maps/route_215_west_surf_fence.bin \
 	rom/data/maps/route_215_west_waterfall.bin \
 	rom/data/maps/route_215_west_waterfall_fence.bin \
+	.apignore \
 	LICENSE
 DATA := data_gen/encounters.toml \
        data_gen/event_checks.toml \
