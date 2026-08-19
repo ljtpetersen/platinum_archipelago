@@ -518,7 +518,7 @@ party = [
     { species = "girafarig", level = 32, num_moves = 4 },
     { species = "grotle", level = 33, num_moves = 3 },
 ]
-label = "Route 210 North - Ace Trainer Alyssa"
+label = "Route 210 Center - Ace Trainer Alyssa"
 
 [veteran_brian]
 id = 68
@@ -544,7 +544,7 @@ party = [
     { species = "stunky", level = 29, num_moves = 0 },
     { species = "golbat", level = 29, num_moves = 0 },
 ]
-label = "Route 210 North - Ninja Boy Joel"
+label = "Route 210 Center - Ninja Boy Joel"
 
 [ninja_boy_nathan]
 id = 71
@@ -566,7 +566,7 @@ id = 73
 party = [
     { species = "gible", level = 34, num_moves = 0 },
 ]
-label = "Route 210 North - Dragon Tamer Patrick"
+label = "Route 210 Center - Dragon Tamer Patrick"
 
 [bird_keeper_brianna]
 id = 74
@@ -2178,14 +2178,14 @@ id = 275
 party = [
     { species = "heracross", level = 25, num_moves = 0 },
 ]
-label = "Route 210 South - Collector Fernando"
+label = "Route 210 Cafe Cabin - Collector Fernando"
 
 [collector_edwin]
 id = 276
 party = [
     { species = "munchlax", level = 25, num_moves = 0 },
 ]
-label = "Route 210 South - Collector Edwin"
+label = "Route 210 Cafe Cabin - Collector Edwin"
 
 [dragon_tamer_hayden]
 id = 277
@@ -2906,7 +2906,7 @@ id = 366
 party = [
     { species = "clefairy", level = 25, num_moves = 0 },
 ]
-label = "Route 210 South - Waitress Kati"
+label = "Route 210 Cafe Cabin - Waitress Kati"
 
 [worker_gerardo]
 id = 367
@@ -3950,7 +3950,7 @@ party = [
     { species = "croagunk", level = 31, num_moves = 0 },
     { species = "croagunk", level = 31, num_moves = 0 },
 ]
-label = "Route 210 South - Ninja Boy Fabian"
+label = "Route 210 Center - Ninja Boy Fabian"
 
 [ninja_boy_brennan]
 id = 489
@@ -3958,14 +3958,14 @@ party = [
     { species = "zubat", level = 30, num_moves = 0 },
     { species = "skorupi", level = 32, num_moves = 0 },
 ]
-label = "Route 210 South - Ninja Boy Brennan"
+label = "Route 210 Center - Ninja Boy Brennan"
 
 [ninja_boy_bruce]
 id = 490
 party = [
     { species = "stunky", level = 33, num_moves = 0 },
 ]
-label = "Route 210 South - Ninja Boy Bruce"
+label = "Route 210 Center - Ninja Boy Bruce"
 
 [beauty_devon]
 id = 491

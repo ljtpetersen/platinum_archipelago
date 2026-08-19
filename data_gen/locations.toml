@@ -2621,7 +2621,7 @@ original_item = "awakening"
 type = "overworld"
 table = "overworld"
 check = 1268
-label = "Upper Route 204 - Item Above Cave Entrance"
+label = "Route 204 North - Item Above Cave Entrance"
 id = 254
 
 [route_204_north_tm09]
@@ -2629,7 +2629,7 @@ original_item = "tm09"
 type = "overworld"
 table = "overworld"
 check = 1028
-label = "Upper Route 204 - Item on Left"
+label = "Route 204 North - Item on Left"
 id = 14
 
 [route_204_north_tm78]
@@ -2637,7 +2637,7 @@ original_item = "tm78"
 type = "npc_gift"
 table = "base"
 check = 197
-label = "Upper Route 204 - Woman Behind Cut Tree"
+label = "Route 204 North - Woman Behind Cut Tree"
 id = 54
 
 [route_204_south_hp_up]
@@ -2645,7 +2645,7 @@ original_item = "hp_up"
 type = "overworld"
 table = "overworld"
 check = 1024
-label = "Route 204 - Item Behind Eastern Pond"
+label = "Route 204 South - Item Behind Eastern Pond"
 id = 10
 
 [route_204_south_parlyz_heal]
@@ -2653,7 +2653,7 @@ original_item = "parlyz_heal"
 type = "overworld"
 table = "overworld"
 check = 1096
-label = "Route 204 - Item Behind Small Pond"
+label = "Route 204 South - Item Behind Small Pond"
 id = 82
 
 [route_204_south_sea_incense]
@@ -2661,7 +2661,7 @@ original_item = "sea_incense"
 type = "overworld"
 table = "overworld"
 check = 1023
-label = "Route 204 - Item Behind Southwest Pond"
+label = "Route 204 South - Item Behind Southwest Pond"
 id = 9
 
 [route_205_north_guard_spec]
@@ -2669,7 +2669,7 @@ original_item = "guard_spec"
 type = "overworld"
 table = "overworld"
 check = 1037
-label = "Route 205 - Item South of Pond"
+label = "Route 205 North - Item South of Pond"
 id = 23
 
 [route_205_south_heal_ball]
@@ -3127,7 +3127,7 @@ original_item = "red_shard"
 type = "overworld"
 table = "overworld"
 check = 1293
-label = "Route 210 North - Item to Left of Grass"
+label = "Route 210 Center - Item to Left of Grass"
 id = 278
 
 [route_210_north_shiny_stone]
@@ -3135,7 +3135,7 @@ original_item = "shiny_stone"
 type = "hidden"
 table = "hidden"
 check = 775
-label = "Route 210 North - Hidden Item on Ledge in Pit"
+label = "Route 210 Center - Hidden Item on Ledge in Pit"
 id = 45
 
 [route_210_north_smoke_ball]
@@ -3167,7 +3167,7 @@ original_item = "zinc"
 type = "overworld"
 table = "overworld"
 check = 1294
-label = "Route 210 North - Item on Ledge Below Move Tutor"
+label = "Route 210 Center - Item on Ledge Below Move Tutor"
 id = 279
 
 [route_210_south_full_heal]
@@ -3175,7 +3175,7 @@ original_item = "full_heal"
 type = "hidden"
 table = "hidden"
 check = 769
-label = "Route 210 Middle - Hidden Item in Long Grass Lower Left"
+label = "Route 210 Center - Hidden Item in Long Grass Lower Left"
 id = 39
 
 [route_210_south_hyper_potion]
@@ -3183,7 +3183,7 @@ original_item = "hyper_potion"
 type = "overworld"
 table = "overworld"
 check = 1117
-label = "Route 210 Middle - Item in Center"
+label = "Route 210 Center - Item in Center"
 id = 103
 
 [route_210_south_hyper_potion_0]
@@ -3191,7 +3191,7 @@ original_item = "hyper_potion"
 type = "hidden"
 table = "hidden"
 check = 919
-label = "Route 210 Middle - Hidden Item in Long Grass Lower Right"
+label = "Route 210 Center - Hidden Item in Long Grass Lower Right"
 id = 189
 
 [route_210_south_max_repel]
@@ -3199,7 +3199,7 @@ original_item = "max_repel"
 type = "overworld"
 table = "overworld"
 check = 1114
-label = "Route 210 Middle - Item Near Bottom Left Tree in Long Grass"
+label = "Route 210 Center - Item Near Bottom Left Tree in Long Grass"
 id = 100
 
 [route_210_south_nest_ball]
@@ -3207,7 +3207,7 @@ original_item = "nest_ball"
 type = "overworld"
 table = "overworld"
 check = 1116
-label = "Route 210 Middle - Item in Northeast Grass Corner"
+label = "Route 210 Center - Item in Northeast Grass Corner"
 id = 102
 
 [route_210_south_old_charm]
@@ -3247,7 +3247,7 @@ original_item = "ultra_ball"
 type = "hidden"
 table = "hidden"
 check = 879
-label = "Route 210 Middle - Hidden Item in Long Grass Upper Left"
+label = "Route 210 Center - Hidden Item in Long Grass Upper Left"
 id = 149
 
 [route_210_south_ultra_ball_0]
@@ -3255,7 +3255,7 @@ original_item = "ultra_ball"
 type = "hidden"
 table = "hidden"
 check = 932
-label = "Route 210 Middle - Hidden Item in Long Grass Upper Right"
+label = "Route 210 Center - Hidden Item in Long Grass Upper Right"
 id = 202
 
 [route_211_east_calcium]
