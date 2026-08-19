@@ -1170,16 +1170,9 @@ class MoveRandomization(OptionDict):
     }
 
     type: YES_NO_SHUFFLE
-    clas: YES_NO_SHUFFLE
     accuracy: YES_NO_SHUFFLE
     pp: YES_NO_SHUFFLE
-    effect: YES_NO_SHUFFLE
-    effect_chance: YES_NO_SHUFFLE
-    range: YES_NO_SHUFFLE
     priority: YES_NO_SHUFFLE
-    flags: YES_NO_SHUFFLE
-    contest_effect: YES_NO_SHUFFLE
-    contest_type: YES_NO_SHUFFLE
 
     def __getattr__(self, name: str) -> Any:
         if name in MoveRandomization.default:
