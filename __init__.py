@@ -119,6 +119,10 @@ class PokemonPlatinumWorld(World):
             ool_speencs = set(slot_data["ool_special_encounters"])
             self.generated_speencs = {special_encounters.encounter_string_to_key(k):speciesdata.species_id_to_const_name[v] for k, v in slot_data["generated_special_encounters"].items() if k not in ool_speencs}
             self.generated_roamers = tuple(speciesdata.species_id_to_const_name[v] for v in slot_data["generated_roamers"]) # type: ignore
+            def trainer_string_to_key(v) -> Tuple[str, int]:
+                i = v.rfind("_")
+                return (v[:i], int(v[i + 1:]))
+            self.generated_trainer_parties = {trainer_string_to_key(k):speciesdata.species_id_to_const_name[v] for k, v in slot_data["generated_trainer_parties"].items()}
             self.generated_munchlax_trees = slot_data["generated_munchlax_trees"]
             self.slot_data = slot_data
 
@@ -235,6 +239,7 @@ class PokemonPlatinumWorld(World):
         ret["generated_special_encounters"].update({f"{speenc}_{i}":speciesdata.species[spec].id for (speenc, i), spec in self.ool_speencs.items()})
         ret["generated_roamers"] = [speciesdata.species[spec].id for spec in self.generated_roamers]
         ret["generated_munchlax_trees"] = list(self.generated_munchlax_trees)
+        ret["generated_trainer_parties"] = {f"{tr}_{i}":speciesdata.species[spec].id for (tr, i), spec in self.generated_trainer_parties.items()}
         ret["added_hm_compatibility"] = {spec:[hm.name.lower() for hm in compat] for spec, compat in self.added_hm_compatibility.items()}
         ret["version"] = "0.2.0"
         return ret

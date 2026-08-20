@@ -95,6 +95,7 @@ appropriately.
 * The bag can no longer be used in the Great Marsh if it has not yet been obtained.
 ### Removed
 * The `all` key item option no longer exists.
+* The `hm_badge_requirement` option no longer exists.
 
 ## [0.1.8] - 2026-02-21
 ### Fixed

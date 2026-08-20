@@ -250,14 +250,10 @@ def generate_output(world: "PokemonPlatinumWorld", output_directory: str, patch:
     else:
         raise ValueError(f"invalid text frame: \"{text_frame}\"")
 
-    if world.options.hm_badge_requirement.value == 1:
-        hm_accum = 0
-        hm_order = ["cut", "fly", "surf", "strength", "defog", "rock_smash", "waterfall", "rock_climb"]
-        for i, v in enumerate(hm_order):
-            if v in world.options.remove_badge_requirements:
-                hm_accum |= 1 << i
-    else:
-        hm_accum = 0xFF
+    hm_accum = 0
+    for i, v in enumerate(list(Hm)[:-1]):
+        if not world.options.requires_badge(v.name):
+            hm_accum |= 1 << i
     ap_bin += hm_accum.to_bytes(length=1, byteorder='little')
 
     add_opt_byte("poketch_route_203")

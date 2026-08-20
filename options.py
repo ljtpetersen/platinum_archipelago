@@ -8,7 +8,7 @@ from dataclasses import dataclass
 from typing import Any, Literal, Optional
 from Options import Choice, DeathLink, DefaultOnToggle, NamedRange, OptionDict, OptionError, OptionGroup, OptionSet, PerGameCommonOptions, Range, StartInventoryPool, Toggle, Option, FreeText, Visibility
 
-from .data import special_encounters
+from .data import Hm, special_encounters
 from .data.species import species, regional_mons, having_two_level_evos, legendary_mons, expand_set_via_evolutions
 from .data.regions import regions
 from .data.trainers import in_game_trainer_labels, trainer_party_supporting_starters, trainer_requires_national_dex, trainer_in_fight_area, trainer_name_to_trainer_const_name
@@ -101,18 +101,21 @@ class RandomizeTimeItems(Choice):
     option_false = 0
     option_no_location = 2
 
-class HmBadgeRequirements(DefaultOnToggle):
-    """Require the corresponding badge to use an HM outside of battle."""
-    display_name = "Require Badges for HMs"
-
 class RemoveBadgeRequirement(OptionSet):
     """
     Specify which HMs do not require a badge to use outside of battle. This overrides the HM Badge Requirements setting.
 
     HMs should be provided in the form: "fly", "waterfall", "rock_smash", etc.
+    They can be specified all at once with "all".
     """
     display_name = "Remove Badge Requirement"
-    valid_keys = ["cut", "fly", "surf", "strength", "defog", "rock_smash", "waterfall", "rock_climb"]
+    valid_keys = ["cut", "fly", "surf", "strength", "defog", "rock_smash", "waterfall", "rock_climb", "all"]
+
+    def export(self):
+        if "all" in self:
+            return [hm.name.lower() for hm in list(Hm)[:-1]]
+        else:
+            return sorted(self.value)
 
 class VisibilityHmLogic(DefaultOnToggle):
     """Logically require Flash or Defog for traversing and finding locations in applicable regions."""
@@ -654,6 +657,8 @@ class RandomizeBunearyInIntro(DefaultOnToggle):
     """Randomize the species of the Pokémon that is shown in the intro."""
     display_name = "Randomize Intro Pokémon"
 
+NUM_TRAINERS = sum(len(r.trainers) for r in regions.values())
+
 class TrainersanityCount(NamedRange):
     """
     Each trainer adds a location to the game. These locations are
@@ -662,7 +667,7 @@ class TrainersanityCount(NamedRange):
     display_name = "Trainersanity Count"
     default = 0
     range_start = 0
-    range_end = 457
+    range_end = NUM_TRAINERS
     special_range_names = {
         "none": default,
         "full": range_end,
@@ -1131,6 +1136,7 @@ class PreventPoptrackerSpoiling(OptionSet):
     The value of the barricades will be spoiled by the Poptracker by default.
     It can be preferred to avoid this, if the options are weighted. This option
     will prevent poptracker from spoiling these options until they are seen in-game.
+    Specify "all" for every barricade.
 
     Options:
     - route_207_barricade
@@ -1152,7 +1158,14 @@ class PreventPoptrackerSpoiling(OptionSet):
         "boat_pastoria_snowpoint",
         "pastoria_barriers",
         "early_sunyshore",
+        "all",
     }
+
+    def export(self):
+        if "all" in self:
+            return set(PreventPoptrackerSpoiling.valid_keys) - {"all"}
+        else:
+            return self.value
 
 YES_NO_SHUFFLE = Literal["yes"] | Literal["no"] | Literal["shuffle"]
 
@@ -1200,7 +1213,6 @@ slot_data_options: Sequence[str] = [
     "cartridges",
     "time_items",
 
-    "hm_badge_requirement",
     "remove_badge_requirements",
     "visibility_hm_logic",
     "dowsing_machine_logic",
@@ -1296,7 +1308,6 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
     cartridges: RandomizeCartridges
     time_items: RandomizeTimeItems
 
-    hm_badge_requirement: HmBadgeRequirements
     remove_badge_requirements: RemoveBadgeRequirement
     visibility_hm_logic: VisibilityHmLogic
     dowsing_machine_logic: DowsingMachineLogic
@@ -1379,7 +1390,7 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
     start_inventory_from_pool: StartInventoryPool
 
     def requires_badge(self, hm: str) -> bool:
-        return self.hm_badge_requirement.value == 1 and hm.lower() not in self.remove_badge_requirements
+        return "all" not in self.remove_badge_requirements and hm.lower() not in self.remove_badge_requirements
 
     def fight_area_requires_national_dex(self) -> bool:
         return not self.randomize_fly_items.value
@@ -1616,7 +1627,13 @@ class PokemonPlatinumOptions(PerGameCommonOptions):
                     raise OptionError(f"invalid move randomization choice for {k}: {v}")
 
     def save_options(self) -> MutableMapping[str, Any]:
-        return self.as_dict(*slot_data_options)
+        def exported_opt(name: str) -> Any:
+            opt = getattr(self, name)
+            if hasattr(opt, "export"):
+                return opt.export()
+            else:
+                return opt.value
+        return {k:exported_opt(k) for k in slot_data_options}
 
     def load_options(self, slot_data: Mapping[str, Any]) -> None:
         for key in slot_data_options:
@@ -1719,7 +1736,6 @@ OPTION_GROUPS = [
     OptionGroup(
         "HMs",
         [
-            HmBadgeRequirements,
             RemoveBadgeRequirement,
             AddHMReader,
             HMReaderMode,
