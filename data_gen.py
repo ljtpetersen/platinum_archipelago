@@ -666,6 +666,8 @@ class ParserState:
             rule.add_dependent_items(item_conds)
         for rule in self.rules.trainers.values():
             rule.add_dependent_items(item_conds)
+        for rule in self.rules.events.values():
+            rule.add_dependent_items(item_conds)
         item_conds.add_all(self.misc_data.hm.values())
         item_conds.add_all(self.misc_data.hm_badge.values())
         item_conds.add_all(self.misc_data.reusable_evo_items)

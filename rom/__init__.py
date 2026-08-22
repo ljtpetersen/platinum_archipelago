@@ -842,7 +842,7 @@ def generate_output(world: "PokemonPlatinumWorld", output_directory: str, patch:
                 for p in trainer.party:
                     if p.species in tps and (name_ns, tps[p.species]) in world.generated_trainer_parties:
                         new_spec = world.generated_trainer_parties[name_ns, tps[p.species]]
-                        is_randomized = True
+                        is_randomized = False
                     elif p.species in starter_idx_map:
                         chain = starter_evos[starter_idx_map[p.species]]
                         level_for_nonlevel = 20
