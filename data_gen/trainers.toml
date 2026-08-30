@@ -3275,7 +3275,7 @@ party = [
     { species = "zubat", level = 17, num_moves = 0 },
     { species = "stunky", level = 17, num_moves = 0 },
 ]
-label = "Team Galactic Eterna Building 1F - Galactic Grunt 1"
+label = "Galactic Eterna Building 1F - Galactic Grunt 1"
 
 [dummy_411]
 id = 411
@@ -3289,7 +3289,7 @@ id = 412
 party = [
     { species = "croagunk", level = 19, num_moves = 0 },
 ]
-label = "Team Galactic Eterna Building 2F - Galactic Grunt 1"
+label = "Galactic Eterna Building 2F - Galactic Grunt 1"
 
 [dummy_413]
 id = 413
@@ -3360,14 +3360,14 @@ party = [
     { species = "zubat", level = 16, num_moves = 0 },
     { species = "glameow", level = 18, num_moves = 0 },
 ]
-label = "Team Galactic Eterna Building 1F - Galactic Grunt 2"
+label = "Galactic Eterna Building 1F - Galactic Grunt 2"
 
 [galactic_grunt_team_galactic_eterna_building_2f_2]
 id = 422
 party = [
     { species = "glameow", level = 19, num_moves = 0 },
 ]
-label = "Team Galactic Eterna Building 2F - Galactic Grunt 2"
+label = "Galactic Eterna Building 2F - Galactic Grunt 2"
 
 [galactic_grunt_team_galactic_eterna_building_3f]
 id = 423
@@ -3376,7 +3376,7 @@ party = [
     { species = "croagunk", level = 16, num_moves = 0 },
     { species = "glameow", level = 16, num_moves = 0 },
 ]
-label = "Team Galactic Eterna Building 3F - Galactic Grunt"
+label = "Galactic Eterna Building 3F - Galactic Grunt"
 
 [dummy_424]
 id = 424
@@ -6741,7 +6741,7 @@ id = 831
 party = [
     { species = "kadabra", level = 20, num_moves = 1 },
 ]
-label = "Team Galactic Eterna Building 3F - Scientist Travon"
+label = "Galactic Eterna Building 3F - Scientist Travon"
 
 [poke_kid_janet]
 id = 832
