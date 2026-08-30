@@ -21,6 +21,7 @@ from .regions import create_regions
 from .rom import generate_output, PokemonPlatinumPatch
 from .rules import set_rules, verify_hm_accessibility
 from .species import add_virt_specs, encounter_slot_label, fill_species, randomize_starters, randomize_trainer_parties_and_encounters, randomize_roamers, speenc_labels, roamer_labels
+from .version import VERSION as WORLD_VERSION
 
 class PokemonPlatinumSettings(settings.Group):
     class RomFile(settings.UserFilePath):
@@ -241,7 +242,7 @@ class PokemonPlatinumWorld(World):
         ret["generated_munchlax_trees"] = list(self.generated_munchlax_trees)
         ret["generated_trainer_parties"] = {f"{tr}_{i}":speciesdata.species[spec].id for (tr, i), spec in self.generated_trainer_parties.items()}
         ret["added_hm_compatibility"] = {spec:[hm.name.lower() for hm in compat] for spec, compat in self.added_hm_compatibility.items()}
-        ret["version"] = "0.2.0"
+        ret["version"] = WORLD_VERSION
         return ret
 
     @staticmethod

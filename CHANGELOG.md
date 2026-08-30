@@ -78,6 +78,7 @@ appropriately.
 * The journal is now a trap item.
 * Various location name changes.
 * VS Seeker location is now correctly classified as a `key_item` location.
+* Structure of version data in client now better supports backwards compatibility.
 ### Fixed
 * Non-determinism of generation. (hopefully)
 * Elite Four rematch is triggered only if the game has been completed and stark mountain has been cleared.

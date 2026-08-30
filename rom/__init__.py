@@ -32,10 +32,11 @@ from ..data.items import items, ItemClass
 from ..data.species import species, evolutions, PokemonType
 from ..data.encounters import encounters, encounter_type_pairs, EncounterSlot
 from ..data.trainers import trainer_party_supporting_starters, trainers
-from ..data.moves import ContestType, MoveBattleEffect, MoveContestEffect, MoveClass, MoveRange, moves
+from ..data.moves import moves
 from ..items import raw_id_to_const_name
 from ..locations import location_types
 from ..options import TMHMCompatibility
+from ..version import VERSION_INT as WORLD_VERSION
 
 if TYPE_CHECKING:
     from .. import PokemonPlatinumWorld
@@ -83,8 +84,9 @@ class PokemonPlatinumPatch(APAutoPatchInterface):
 
         rom = Rom.from_bytes(rom_bytes)
 
-        ap_bin = self.get_file("ap.bin")
-        rom.files["/ap.bin"] = ap_bin
+        rom.files["/ap.bin"] = self.get_file("ap.bin")
+
+        rom.header.data[0x1000:0x1004] = self.get_file("world_version.bin")
 
         if "item_patches.json" in self.files:
             item_patches = json.loads(self.get_file("item_patches.json"))
@@ -965,6 +967,8 @@ def generate_output(world: "PokemonPlatinumWorld", output_directory: str, patch:
         patch.write_file("map_replacements.json", json.dumps({k:add_binary(v) for k, v in map_replacements.items()}).encode('utf-8'))
     if len(event_patches) > 0:
         patch.write_file("event_patches.json", json.dumps(event_patches).encode('utf-8'))
+
+    patch.write_file("world_version.bin", WORLD_VERSION.to_bytes(4, 'little'))
 
     out_file_name = world.multiworld.get_out_file_name_base(world.player)
     patch.write(os.path.join(output_directory, f"{out_file_name}{patch.patch_file_ending}"))

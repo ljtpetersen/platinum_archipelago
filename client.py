@@ -24,6 +24,7 @@ from .data.event_checks import event_checks
 from .items import get_item_classification
 from .locations import raw_id_to_const_name
 from .options import Goal, RemoteItems
+from .version import version_int
 
 import worlds._bizhawk as bizhawk
 from worlds._bizhawk.client import BizHawkClient
@@ -32,7 +33,6 @@ if TYPE_CHECKING:
     from worlds._bizhawk.context import BizHawkClientContext, BizHawkClientCommandProcessor
 
 AP_STRUCT_PTR_ADDRESS = 0x023DFFFC
-AP_SUPPORTED_VERSIONS = {1}
 AP_MAGIC = b' AP '
 
 TRACKED_EVENTS = [
@@ -76,6 +76,8 @@ TRACKED_SAW_LOCATIONS = [
 class CheatBits(IntEnum):
     UNLOCK_ALL_FLY_REGIONS = 1
 
+prev_version_data: "VersionData" = None # type: ignore
+
 @dataclass(frozen=True)
 class VersionData:
     savedata_ptr_offset: int
@@ -101,8 +103,12 @@ class VersionData:
     remote_item_queue_size: int
     remote_item_queue_flags_offset_in_queue: int
 
+    def __post_init__(self) -> None:
+        global prev_version_data
+        prev_version_data = self
+
 AP_VERSION_DATA: Mapping[int, VersionData] = {
-    1: VersionData(
+    version_int("0.2.0"): VersionData(
         savedata_ptr_offset=16,
         champion_flag=2404,
         vars_flags_offset_in_save=0xDC0,
@@ -369,15 +375,11 @@ class PokemonPlatinumClient(BizHawkClient):
                 remove_commands()
                 return False
             elif rom_name.startswith("PLAP "):
-                bad = True
-                try:
-                    version = int(rom_name[5:].strip(), 16)
-                    if version in AP_SUPPORTED_VERSIONS:
-                        self.rom_version = version
-                        bad = False
-                except ValueError:
-                    pass
-                if bad:
+                version_bytes = (await bizhawk.read(ctx.bizhawk_ctx, [(0x1000, 4, "ROM")]))[0]
+                version = int.from_bytes(version_bytes, 'little')
+                if version in AP_VERSION_DATA:
+                    self.rom_version = version
+                else:
                     logger.info("ERROR: The patch file used to create this ROM is not compatible with "
                                 "this client. Double-check your client version against the version being "
                                 "by the generator.")
