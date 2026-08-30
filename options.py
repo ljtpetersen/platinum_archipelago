@@ -31,7 +31,7 @@ class RandomizeHms(DefaultOnToggle):
 
     The expectation is that this will be enabled. If not, depending on
     other options—particularly barricades—certain locations may be inaccessible,
-    or certain seeds uncompletable.
+    or certain seeds incompletable.
     """
     display_name = "Randomize HMs"
 
@@ -41,7 +41,7 @@ class RandomizeBadges(DefaultOnToggle):
 
     The expectation is that this will be enabled. If not, depending on
     other options—particularly barricades—certain locations may be inaccessible,
-    or certain seeds uncompletable.
+    or certain seeds incompletable.
     """
     display_name = "Randomize Badges"
 
@@ -225,7 +225,7 @@ class GameOptions(OptionDict):
     Allowed options and values, with default first:
 
     text_speed: mid/slow/fast - Sets the text speed
-    sound: stereo/mono - Sets the shound mode
+    sound: stereo/mono - Sets the sound mode
     battle_scene: on/off - Sets whether the battle animations are shown
     battle_style: shift/set - Sets whether pokemon can be changed when the opponent's pokemon faints
     button_mode: normal/start=x/l=a - Sets the button mode
@@ -477,7 +477,7 @@ class GuaranteedEscape(Toggle):
 
     This option is modifiable in the in-game options menu.
     """
-    display_name = "Guaranteed Escape."
+    display_name = "Guaranteed Escape"
 
 class TalkTrainersWithoutFight(Toggle):
     """
@@ -617,14 +617,14 @@ class RequireTwoLevelEvolutionStarters(Toggle):
     """
     If the starters are randomized, require that they all be two-level-evolution species.
     This option only applies to the blacklist. If the whitelist is nonempty,
-    it is ignore.
+    it is ignored.
     """
     display_name = "Require Two Level Evolution Starters"
 
 class StarterWhitelist(OptionSet):
     """
     Specify the possible starters that can be randomized.
-    This has precedence over the blacklist and the require two-level-evolution
+    This has precedence over the blacklist and requiring two-level-evolution
     species.
     This has no effect if starters are not randomized.
 
@@ -1002,7 +1002,7 @@ class DexsanityRequired(SpeciesBlacklist):
     Spaces should be replaced by underscores. For example,
     Mr. Mime would be mr_mime.
 
-    legendaries, all lowercase, will be interpreted as banning all legendary
+    legendaries, all lowercase, will be interpreted as requiring all legendary
     species.
     """
     display_name = "Dexsanity Required"
