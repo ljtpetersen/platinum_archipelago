@@ -55,6 +55,7 @@ appropriately.
 * An option to prevent the PopTracker from spoiling optional roadblocks, and client support for the option.
 * `Field Machines` item group.
 * `start_inventory_from_pool` option.
+* `game_debug` client command.
 ### Changed
 * In-game game options option is now validated before generation.
 * Some evolution stones have been key-itemified, and are no longer consumed when used.

@@ -3,13 +3,14 @@
 # Copyright (C) 2025-2026 James Petersen <m@jamespetersen.ca>
 # Licensed under MIT. See LICENSE
 
+from collections import deque
 from collections.abc import Iterable, Mapping, Set, Sequence
 from dataclasses import dataclass
 from enum import IntEnum
 from itertools import batched, chain
 from NetUtils import ClientStatus, NetworkItem
 from Options import Toggle
-from struct import unpack_from
+from struct import pack_into, unpack_from
 import time
 from typing import Any, Optional, TYPE_CHECKING, Tuple
 
@@ -303,6 +304,8 @@ class PokemonPlatinumClient(BizHawkClient):
     death_link_state: bool
     loaded_death_link: bool
 
+    debug_queue: deque[Mapping[str, Any]]
+
     def __init__(self):
         super().__init__()
 
@@ -331,6 +334,8 @@ class PokemonPlatinumClient(BizHawkClient):
         self.loaded_death_link = False
         self.death_link_group = ""
         self.death_link_state = False
+
+        self.debug_queue = deque()
 
     async def get_slot_name_and_remote_items(self, ctx: "BizHawkClientContext") -> Tuple[str | None, bool]:
         remote_items: bool = False
@@ -362,7 +367,7 @@ class PokemonPlatinumClient(BizHawkClient):
     async def validate_rom(self, ctx: "BizHawkClientContext") -> bool:
         from CommonClient import logger
         def remove_commands():
-            for command in ["cheat", "death_link_state", "death_link_group"]:
+            for command in ["cheat", "death_link_state", "death_link_group", "game_debug"]:
                 if command in ctx.command_processor.commands:
                     del ctx.command_processor.commands[command]
 
@@ -453,6 +458,7 @@ class PokemonPlatinumClient(BizHawkClient):
                 self.death_link_state = True
             ctx.command_processor.commands["death_link_state"] = cmd_death_link_state
             ctx.command_processor.commands["death_link_group"] = cmd_death_link_group
+            ctx.command_processor.commands["game_debug"] = cmd_game_debug
 
         try:
             ap_struct_guard = (self.ap_struct_address, self.expected_header, "ARM9 System Bus")
@@ -582,6 +588,58 @@ class PokemonPlatinumClient(BizHawkClient):
 
                 self.local_checked_locations = local_checked_locations
 
+            vf_bytearr = bytearray(vars_flags_bytes)
+            wrote = False
+            old_queue = deque(self.debug_queue)
+            to_print = []
+            while len(self.debug_queue) > 0:
+                data = self.debug_queue.popleft()
+                match data["operation"]:
+                    case "flag_check":
+                        to_print.append(f"flag {data['id_str']} is {'set' if vars_flags.get_flag(data['id']) else 'cleared'}")
+                    case "flag_set":
+                        to_print.append(f"setting flag {data['id_str']}")
+                        flag = data["id"]
+                        print(f"{flag // 8}, {len(flags_bytes)}")
+                        if flag // 8 < len(flags_bytes):
+                            print(f"old: {vf_bytearr[version_data.flags_offset_in_vars_flags + flag // 8]:08b}")
+                            vf_bytearr[version_data.flags_offset_in_vars_flags + flag // 8] |= 1 << (flag & 7)
+                            print(f"new: {vf_bytearr[version_data.flags_offset_in_vars_flags + flag // 8]:08b}")
+                            wrote = True
+                    case "flag_clear":
+                        to_print.append(f"clearing flag {data['id_str']}")
+                        flag = data["id"]
+                        if flag // 8 < len(flags_bytes):
+                            vf_bytearr[version_data.flags_offset_in_vars_flags + flag // 8] &= ~(1 << (flag & 7))
+                    case "var_check":
+                        to_print.append(f"variable {data['id_str']}'s value is {vars_flags.get_var(data['id'])}")
+                    case "var_set":
+                        to_print.append(f"setting variable {data['id_str']}")
+                        var = data["id"]
+                        if var - 0x4000 < len(vars_bytes) // 2:
+                            pack_into("<H", vf_bytearr, (var - 0x4000) * 2, data["value"])
+                            wrote = True
+
+            if wrote:
+                print("writing changed debug")
+                if await bizhawk.guarded_write(
+                    ctx.bizhawk_ctx,
+                    [(savedata_ptr + version_data.vars_flags_offset_in_save, bytes(vf_bytearr), "ARM9 System Bus")],
+                    [
+                        guards["AP STRUCT VALID"],
+                        guards["SAVEDATA PTR"],
+                        (savedata_ptr + version_data.vars_flags_offset_in_save, vars_flags_bytes, "ARM9 System Bus"),
+                    ]
+                ):
+                    from CommonClient import logger
+                    for v in to_print:
+                        logger.info(v)
+                else:
+                    self.debug_queue = old_queue
+            else:
+                from CommonClient import logger
+                for v in to_print:
+                    logger.info(v)
 
             packages = []
 
@@ -823,3 +881,59 @@ def cmd_death_link_group(self: "BizHawkClientCommandProcessor", group: str | Non
     else:
         handler.death_link_group = group
         logger.info(f"Set death link group to \"{group}\"")
+
+def parse_int_including_base(s: str) -> int:
+    s = s.lower().strip()
+    if s.startswith("0x"):
+        return int(s[2:], 16)
+    elif s.startswith("0o"):
+        return int(s[2:], 8)
+    elif s.startswith("0b"):
+        return int(s[2:], 2)
+    else:
+        return int(s)
+
+def cmd_game_debug(self: "BizHawkClientCommandProcessor", *args) -> None:
+    """Game debug. Enter without arguments to print the usage. DO NOT USE IF YOU DON'T KNOW WHAT IT DOES."""
+    from CommonClient import logger
+
+    handler: PokemonPlatinumClient = self.ctx.client_handler # type: ignore
+
+    assert isinstance(handler, PokemonPlatinumClient)
+    if len(args) == 0:
+        logger.info("/game_debug [flag/var id] [flag: check/set/clear, var: check/set] [var set value]")
+        return
+    try:
+        id = parse_int_including_base(args[0])
+    except ValueError:
+        logger.error("first parameter of game debug is not an integer")
+        return
+    if id < 0x4000:
+        # flag
+        if len(args) == 1:
+            handler.debug_queue.append({"operation": "flag_check", "id": id, "id_str": args[0]})
+        elif len(args) != 2:
+            logger.error("unexpected extra parameter(s) passed to game debug")
+        else:
+            op = args[1].lower().strip()
+            if op in {"check", "set", "clear"}:
+                handler.debug_queue.append({"operation": "flag_" + op, "id": id, "id_str": args[0]})
+            else:
+                logger.error("unexpected flag operation: " + args[1].strip())
+    else:
+        # var
+        if len(args) == 1:
+            handler.debug_queue.append({"operation": "var_check", "id": id, "id_str": args[0]})
+        elif len(args) != 2:
+            if args[1].lower().strip() == "set":
+                try:
+                    handler.debug_queue.append({"operation": "var_set", "id": id, "value": parse_int_including_base(args[2]), "id_str": args[0]})
+                except ValueError:
+                    logger.error("parameter of game debug variable set is not an integer")
+            else:
+                logger.error("unexpected extra parameter(s) passed to game debug")
+        else:
+            if args[1].lower().strip() == "check":
+                handler.debug_queue.append({"operation": "var_check", "id": id, "id_str": args[0]})
+            else:
+                logger.error("unexpected variable operation: " + args[1].strip())
