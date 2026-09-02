@@ -321,3 +321,23 @@ class PokemonPlatinumWorld(World):
                      for mon, locations in encounters_per_pokemon.items()]
             lines.sort()
             spoiler_handle.writelines(lines)
+
+    def collect(self, state: CollectionState, item: Item) -> bool:
+        changed = super().collect(state, item)
+        if not changed:
+            return False
+        item_name = item.name
+        if item_name.startswith("mon_"):
+            state.prog_items[self.player].update(f"use_{hm.name.lower()}" for hm in speciesdata.species[item_name[4:]].hms)
+            state.prog_items[self.player].update(f"use_{hm.name.lower()}" for hm in self.added_hm_compatibility.get(item_name[4:], []))
+        return True
+
+    def remove(self, state: CollectionState, item: Item) -> bool:
+        changed = super().remove(state, item)
+        if not changed:
+            return False
+        item_name = item.name
+        if item_name.startswith("mon_"):
+            state.prog_items[self.player].subtract(f"use_{hm.name.lower()}" for hm in speciesdata.species[item_name[4:]].hms)
+            state.prog_items[self.player].subtract(f"use_{hm.name.lower()}" for hm in self.added_hm_compatibility.get(item_name[4:], []))
+        return True
