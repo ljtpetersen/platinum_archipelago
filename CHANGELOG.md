@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [0.2.1] - TBD
 ### Fixed
 * HM accessibility verification code now works properly.
+* Canalave City Gym cannot be challenged until after defeating the rival.
+* Wayward Cave now logically assumes you have flash before entering (depending on options).
+* The rival in Survival Area is now accessible all week days.
 
 ## [0.2.0] - 2026-08-30
 ### Added

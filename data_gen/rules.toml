@@ -415,6 +415,7 @@ exits.route_206_cycling_road_north_gate.cycling_road = "bicycle"
 exits.route_206_cycling_road_south_gate.cycling_road = "bicycle"
 exits.route_206.route_206_upper = "cut"
 exits.route_206_upper.wayward_cave_1f = "flash_if_opt"
+exits.route_206_upper.wayward_cave_1f_secret = "flash_if_opt"
 
 locs.wayward_cave_1f_tm32 = "rock_smash"
 locs.wayward_cave_1f_revive = "rock_smash"
