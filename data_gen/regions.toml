@@ -852,7 +852,7 @@ header = "route_228_gate_to_route_226"
 group = "fight_area"
 
 [route_230_east]
-header = "route_229"
+header = "route_230"
 accessible_encounters = ["water"]
 
 [route_229]
