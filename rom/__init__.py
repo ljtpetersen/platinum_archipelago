@@ -44,7 +44,7 @@ if TYPE_CHECKING:
 PLATINUM_1_0_US_HASH = "d66ad7a2a0068b5d46e0781ca4953ae9"
 PLATINUM_1_1_US_HASH = "ab828b0d13f09469a71460a34d0de51b"
 
-COMPATIBLE_ROM_VERSIONS: Set[int] = frozenset([version_int("0.2.0")])
+COMPATIBLE_ROM_VERSIONS: Set[int] = frozenset([version_int("0.2.0"), version_int("0.2.1")])
 
 class PokemonPlatinumPatch(APAutoPatchInterface):
     game = "Pokemon Platinum"
@@ -85,7 +85,7 @@ class PokemonPlatinumPatch(APAutoPatchInterface):
             else:
                 raise ValueError("ROM is not an accepted Pokémon Platinum copy. Only the US Rev. 0 and Rev. 1 ROMs are accepted")
             if version in COMPATIBLE_ROM_VERSIONS:
-                patch = pkgutil.get_data(__name__, f"../patches/{patch_name}")
+                patch = pkgutil.get_data(__name__[:__name__.rfind('.')], f"patches/{patch_name}")
                 version = WORLD_VERSION
             else:
                 patch = self.get_file(patch_name)
