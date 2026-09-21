@@ -3,7 +3,7 @@
 # Copyright (C) 2025-2026 James Petersen <m@jamespetersen.ca>
 # Licensed under MIT. See LICENSE
 
-from BaseClasses import CollectionState, ItemClassification, MultiWorld, Tutorial
+from BaseClasses import CollectionState, Item, ItemClassification, MultiWorld, Tutorial
 from collections import defaultdict
 from collections.abc import Iterable, Mapping, MutableMapping, MutableSequence, MutableSet, Sequence
 import pkgutil

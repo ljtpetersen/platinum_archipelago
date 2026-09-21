@@ -133,6 +133,7 @@ AP_VERSION_DATA: Mapping[int, VersionData] = {
         remote_item_queue_size=64,
         remote_item_queue_flags_offset_in_queue=136,
     ),
+    version_int("0.2.1"): prev_version_data,
 }
 
 @dataclass(frozen=True)

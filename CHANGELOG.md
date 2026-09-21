@@ -5,7 +5,9 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [0.2.1] - TBD
+## [0.2.1] - 2026-09-20
+### Changed
+* When patching, patches generated with compatible previous versions may use the new base patches.
 ### Fixed
 * HM accessibility verification code now works properly.
 * Canalave City Gym cannot be challenged until after defeating the rival.
