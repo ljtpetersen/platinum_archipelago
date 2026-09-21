@@ -1,7 +1,7 @@
 name: Test APWorld
 on:
   push:
-    branches: [ master, ci ]
+    branches: [ devel, master, ci ]
   pull_request:
     branches: [ master ]
 

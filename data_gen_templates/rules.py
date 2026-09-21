@@ -30,13 +30,11 @@ class Rules:
     trainer_rules: Mapping[str, Rule]
     opts: "PokemonPlatinumOptions"
     cached_enc_accessibility_rules: MutableMapping[frozenset[str], Rule]
-    hm_mon_rules: MutableMapping[Hm, Rule]
     
     def __init__(self, common_rules: MutableMapping[str, Callable[..., Rule] | Rule], opts: "PokemonPlatinumOptions"):
         self.opts = opts
         self.common_rules = common_rules
         self.cached_enc_accessibility_rules = {}
-        self.hm_mons = {}
         def see_regional_mons(n: int) -> Rule:
             return HasFromListUnique(*[f"see_mon_{spec}" for spec in species.regional_mons], count=n)
         def see_mons(n: int) -> Rule:
@@ -48,7 +46,6 @@ class Rules:
         self.common_rules["see_regional_mons"] = see_regional_mons
         self.common_rules["see_mons"] = see_mons
         self.common_rules["badges"] = badges
-        self.common_rules.update({f"use_{hm.name.lower()}":self.get_use_hm_rule(hm) for hm in Hm})
 
     def fill_rules(self):
         # TEMPLATE: COMMON_RULES
@@ -67,13 +64,6 @@ class Rules:
         self.trainer_rules = {
             # TEMPLATE: TRAINER_RULES
         }
-
-    def get_use_hm_rule(self, hm: Hm) -> Rule:
-        if self.opts.tmhm_compatibility > 0:
-            return True_()
-        if hm not in self.hm_mons:
-            self.hm_mons[hm] = HasAny(*["mon_" + mon for mon, data in species.species.items() if hm in data.hms])
-        return self.hm_mons[hm]
 
     def get_enc_accessibility_rule(self, accessibility: Sequence[str]) -> Rule:
         nmd = frozenset(acc for acc in accessibility if acc in self.encounter_type_rules)

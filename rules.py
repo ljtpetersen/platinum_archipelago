@@ -4,6 +4,7 @@
 # Licensed under MIT. See LICENSE
 
 from collections.abc import Sequence
+from rule_builder.rules import Has
 from typing import TYPE_CHECKING
 
 from .data import encounters as encounterdata, Hm, regions as regiondata, rules as ruledata, trainers as trainerdata, species as speciesdata
@@ -117,12 +118,11 @@ def set_rules(world: "PokemonPlatinumWorld") -> None:
 def verify_hm_accessibility(world: "PokemonPlatinumWorld") -> None:
     if world.options.hm_reader != AddHMReader.option_no and world.options.hm_reader_mode == HMReaderMode.option_noreq_mon or world.options.tmhm_compatibility != TMHMCompatibility.option_none:
         return
-    rules = world.ruledata
 
     def do_verify(hms: list[Hm]):
 
         rsvds = {
-            hm:rules.common_rules["use_" + hm.name.lower()]._instantiate(world)
+            hm:Has("use_" + hm.name.lower())._instantiate(world)
             for hm in Hm
         }
         while True:
@@ -143,7 +143,6 @@ def verify_hm_accessibility(world: "PokemonPlatinumWorld") -> None:
                     last_hm = hm_to_verify
                     valid_pokemon = [mon for mon in world.accessible_mons if state.has(f"mon_{mon}", world.player)]
                     pokemon = world.random.choice(valid_pokemon)
-                    rules.hm_mons[hm_to_verify].append("mon_" + pokemon)
                     world.added_hm_compatibility.setdefault(pokemon, []).append(hm_to_verify)
                     print("added compat:", pokemon, hm_to_verify)
                 else:

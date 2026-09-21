@@ -3,7 +3,7 @@
 # Copyright (C) 2025-2026 James Petersen <m@jamespetersen.ca>
 # Licensed under MIT. See LICENSE
 
-from collections.abc import Mapping, MutableMapping, MutableSequence, MutableSet, Sequence
+from collections.abc import Mapping, MutableMapping, MutableSequence, MutableSet, Sequence, Set
 import bsdiff4
 from collections import Counter
 import json
@@ -36,13 +36,15 @@ from ..data.moves import moves
 from ..items import raw_id_to_const_name
 from ..locations import location_types
 from ..options import TMHMCompatibility
-from ..version import VERSION_INT as WORLD_VERSION
+from ..version import VERSION_INT as WORLD_VERSION, version_int
 
 if TYPE_CHECKING:
     from .. import PokemonPlatinumWorld
 
 PLATINUM_1_0_US_HASH = "d66ad7a2a0068b5d46e0781ca4953ae9"
 PLATINUM_1_1_US_HASH = "ab828b0d13f09469a71460a34d0de51b"
+
+COMPATIBLE_ROM_VERSIONS: Set[int] = frozenset([version_int("0.2.0")])
 
 class PokemonPlatinumPatch(APAutoPatchInterface):
     game = "Pokemon Platinum"
@@ -71,22 +73,29 @@ class PokemonPlatinumPatch(APAutoPatchInterface):
             with open(environ["PLATINUM_AP_ROM_PATH"], "rb") as f:
                 rom_bytes = f.read()
             print("overwriting patched platinum rom.")
+            version = WORLD_VERSION
         else:
             data = PokemonPlatinumPatch.get_source_data_with_cache()
             rom_version = data[0x1E]
+            version = int.from_bytes(self.get_file("world_version.bin"), 'little')
             if rom_version == 0:
                 patch_name = "base_patch_us_rev0.bsdiff4"
             elif rom_version == 1:
                 patch_name = "base_patch_us_rev1.bsdiff4"
             else:
                 raise ValueError("ROM is not an accepted Pokémon Platinum copy. Only the US Rev. 0 and Rev. 1 ROMs are accepted")
-            rom_bytes = bsdiff4.patch(data, self.get_file(patch_name))
+            if version in COMPATIBLE_ROM_VERSIONS:
+                patch = pkgutil.get_data(__name__, f"../patches/{patch_name}")
+                version = WORLD_VERSION
+            else:
+                patch = self.get_file(patch_name)
+            rom_bytes = bsdiff4.patch(data, patch)
 
         rom = Rom.from_bytes(rom_bytes)
 
         rom.files["/ap.bin"] = self.get_file("ap.bin")
 
-        rom.header.data[0x1000:0x1004] = self.get_file("world_version.bin")
+        rom.header.data[0x1000:0x1004] = version.to_bytes(4, 'little')
 
         if "item_patches.json" in self.files:
             item_patches = json.loads(self.get_file("item_patches.json"))

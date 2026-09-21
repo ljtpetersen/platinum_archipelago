@@ -133,6 +133,7 @@ AP_VERSION_DATA: Mapping[int, VersionData] = {
         remote_item_queue_size=64,
         remote_item_queue_flags_offset_in_queue=136,
     ),
+    version_int("0.2.1"): prev_version_data,
 }
 
 @dataclass(frozen=True)
@@ -719,7 +720,7 @@ class PokemonPlatinumClient(BizHawkClient):
             if read_result is None:
                 return
 
-            current_x, current_y, current_z, current_map, pos_lock = unpack_from("<3IHB", read_result[0])
+            current_x, current_y, current_z, current_map, pos_lock = unpack_from("<3iHB", read_result[0])
             if current_map not in TRACKED_HEIGHT_MAP_HEADERS:
                 current_y = 0
             if pos_lock == 0 and (current_map != self.current_map or current_x != self.current_x or current_y != self.current_y or current_z != self.current_z):
