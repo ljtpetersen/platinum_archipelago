@@ -1,6 +1,6 @@
 {
   "game": "Pokemon Platinum",
-  "world_version": "0.2.1",
+  "world_version": "0.2.2",
   "authors": ["ljtpetersen"],
   "minimum_ap_version": "0.6.7"
 }
